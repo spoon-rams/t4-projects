@@ -1,155 +1,150 @@
+// Select DOM elements
 const searchInput = document.getElementById("search-input");
 const categoryInput = document.getElementById("category-select");
 const resultsDiv = document.querySelector(".fordham-stories-archives");
 const paginationDiv = document.querySelector(".pagination");
 
-fetch("./data.json")
-  .then((res) => {
-    return res.json();
+const itemsPerPage = 5;
+const categories = [
+  { name: "Please chose a category", value: "" },
+  { name: "Arts and Creativity", value: "arts and creativity" },
+  { name: "Research and Science", value: "research and science" },
+  { name: "Campus Life", value: "campus life" },
+  { name: "Business and Entrepreneurship", value: "business and entrepreneurship" },
+  { name: "Theatre", value: "theatre" },
+  { name: "Dance", value: "dance" },
+  { name: "Culture", value: "culture" },
+  { name: "Investing", value: "investing" },
+  { name: "Big Deal", value: "big deal" },
+  { name: "Alumni Advice", value: "alumni advice" },
+  { name: "From India to NYC", value: "from india to nyc" },
+  { name: "Student Research", value: "student research" },
+  { name: "Summer Project", value: "summer project" },
+  { name: "Majors", value: "majors" },
+  { name: "Study Abroad", value: "study abroad" },
+  { name: "Student Clubs", value: "student clubs" },
+  { name: "First Year", value: "first year" },
+  { name: "Commencement", value: "commencement" },
+  { name: "Career Paths", value: "career paths" },
+];
+let currentPage = 1;
+let filteredData = [];
+let data = [];
+
+categoryInput.innerHTML = categories
+  .map((item) => {
+    return `<option value="${item.value}">${item.name}</option>`;
   })
-  .then((data) => {
-    const itemsPerPage = 5;
-    let currentPage = 1;
-    let filteredData = data;
+  .join("");
 
-    function displayResults(page = 1) {
-      const start = (page - 1) * itemsPerPage;
-      const end = start + itemsPerPage;
-      const results = filteredData.slice(start, end);
+// Display results function
+const displayResults = (page = 1) => {
+  const start = (page - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  const results = filteredData.slice(start, end);
 
-      if (results.length < 1) {
-        resultsDiv.innerHTML = "<h3>No Search Results...</h3>";
-        paginationDiv.innerHTML = "";
-        return;
-      }
-
-      const html = results
+  resultsDiv.innerHTML = results.length
+    ? results
         .map(
           (item) => `
-                <div class="row archive-list">
-                    <div class="col-md-3">
-                        <a href="${item.link}">
-                            <img src="${item.img}" alt="Image" style="width: 100%; height: auto;">
-                        </a>
-                    </div>
-                    <div class="col-md-9">
-                        <p class="category"><span>${item.category}</span></p>
-                        <a href="${item.link}"><h3>${item.title}</h3></a>
-                    </div>
-                </div>
-            `,
+  <div class="row archive-list">
+      <div class="col-md-3">
+          <a href="${item.link}">
+              <img src="${item.img}" alt="Image" style="width: 100%; height: auto;">
+          </a>
+      </div>
+      <div class="col-md-9">
+          <p class="category"><span>${item.category}</span></p>
+          <a href="${item.link}"><h3>${item.title}</h3></a>
+      </div>
+  </div>
+`,
         )
-        .join("");
-      resultsDiv.innerHTML = html;
+        .join("")
+    : "<h3>No Search Results...</h3>";
+  updatePagination(filteredData.length, page);
+};
 
-      updatePagination(filteredData.length, page);
-    }
+// Displays the pagination
+const updatePagination = (totalItems, currentPage) => {
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  if (totalPages <= 1) {
+    paginationDiv.innerHTML = "";
+    return;
+  }
 
-    function updatePagination(totalItems, currentPage) {
-      const totalPages = Math.ceil(totalItems / itemsPerPage);
+  paginationDiv.innerHTML = `
+    <button class="first" ${currentPage === 1 ? "disabled" : ""}>&lt;&lt;</button>
+    <button class="prev" ${currentPage === 1 ? "disabled" : ""}>&lt;</button>
+    ${Array.from(
+      { length: totalPages },
+      (_, i) => `
+      <button class="${i + 1 === currentPage ? "active" : ""}" data-page="${i + 1}">${i + 1}</button>
+    `,
+    ).join("")}
+    <button class="next" ${currentPage === totalPages ? "disabled" : ""}>&gt;</button>
+    <button class="last" ${currentPage === totalPages ? "disabled" : ""}>&gt;&gt;</button>
+  `;
 
-      if (totalPages === 1) {
-        paginationDiv.innerHTML = "";
-        return;
-      }
+  paginationDiv.querySelectorAll("button").forEach((button) => button.addEventListener("click", handlePaginationClick));
+};
+// Handles the pagination selection
+const handlePaginationClick = (event) => {
+  const { classList, dataset } = event.target;
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
-      let paginationHtml = "";
+  if (classList.contains("first")) currentPage = 1;
+  else if (classList.contains("prev") && currentPage > 1) currentPage--;
+  else if (classList.contains("next") && currentPage < totalPages) currentPage++;
+  else if (classList.contains("last")) currentPage = totalPages;
+  else if (dataset.page) currentPage = parseInt(dataset.page);
 
-      paginationHtml += `<button class="first" ${currentPage === 1 ? "disabled" : ""}><<</button>`;
-      paginationHtml += `<button class="prev" ${currentPage === 1 ? "disabled" : ""}><</button>`;
+  displayResults(currentPage);
+};
 
-      for (let i = 1; i <= totalPages; i++) {
-        paginationHtml += `<button class="${i === currentPage ? "active" : ""}" data-page="${i}">${i}</button>`;
-      }
+const keywordSearch = (query) => {
+  const regex = new RegExp(query.trim(), "i");
+  filteredData = data.filter((item) => regex.test(item.title));
+  currentPage = 1;
+  displayResults(currentPage);
+};
 
-      paginationHtml += `<button class="next" ${currentPage === totalPages ? "disabled" : ""}>></button>`;
-      paginationHtml += `<button class="last" ${currentPage === totalPages ? "disabled" : ""}>>></button>`;
+const categorySearch = (query) => {
+  filteredData = data.filter((item) => item.category.toLowerCase() === query.toLowerCase());
+  currentPage = 1;
+  displayResults(currentPage);
+};
 
-      paginationDiv.innerHTML = paginationHtml;
+const search = () => {
+  const query = searchInput.value.trim();
+  const category = categoryInput.value.trim();
 
-      paginationDiv.querySelectorAll("button").forEach((button) => {
-        button.addEventListener("click", function () {
-          if (this.classList.contains("first")) {
-            currentPage = 1;
-          } else if (this.classList.contains("prev")) {
-            if (currentPage > 1) currentPage--;
-          } else if (this.classList.contains("next")) {
-            if (currentPage < totalPages) currentPage++;
-          } else if (this.classList.contains("last")) {
-            currentPage = totalPages;
-          } else {
-            currentPage = parseInt(this.getAttribute("data-page"));
-          }
-          displayResults(currentPage);
-        });
-      });
-    }
+  if (!query && !category) {
+    filteredData = data;
+  } else if (query && !category) {
+    keywordSearch(query);
+  } else if (!query && category) {
+    categorySearch(category);
+  } else if (query && category) {
+    keywordSearch(query);
+    filteredData = filteredData.filter((item) => item.category.toLowerCase() === category.toLowerCase());
+  }
 
-    function keywordSearch(query) {
-      const trimmedQuery = query.trim();
-      const regex = new RegExp(`${trimmedQuery}`, "i");
-      console.log("FROM KEYWORD SEARCH FUNCTION: ", data);
-      if (data && !categoryInput.value) {
-        console.log("DATA");
-        filteredData = data.filter((item) => regex.test(item.title));
-        currentPage = 1;
-        displayResults(currentPage);
-      } else {
-        console.log("FILTERDATA");
-        filteredData = filteredData.filter((item) => regex.test(item.title));
-        currentPage = 1;
-        displayResults(currentPage);
-      }
-    }
+  displayResults(currentPage);
+};
 
-    function categorySearch(query) {
-      if (data) {
-        filteredData = data.filter((item) => item.category.toLowerCase() === query);
-        currentPage = 1;
-        displayResults(currentPage);
-      } else {
-        console.log(filteredData);
-        filteredData = filteredData.filter((item) => item.category.toLowerCase() === query);
-        currentPage = 1;
-        displayResults(currentPage);
-      }
-    }
+// Fetch data and initialize
+fetch("./data.json")
+  .then((res) => res.json())
+  .then((fetchedData) => {
+    data = fetchedData;
+    filteredData = data;
+    displayResults(currentPage);
 
-    function search() {
-      const category = categoryInput.value;
-      const query = searchInput.value;
-
-      if (!query || !category) {
-        console.log("NO QUERY OR CATEGORY")
-        filteredData = data;
-        displayResults(currentPage);
-      }
-
-      if (query.trim().length > 0 && !category) {
-        console.log("KEYWORD SEARCH");
-        keywordSearch(query);
-      }
-
-      if (category.length > 0 && !query) {
-        console.log("CATEGORY SEARCH");
-
-        categorySearch(category);
-      }
-
-      if (query.length > 0 && category) {
-        console.log("CATEGORY AND KEYWORD SEARCH");
-        keywordSearch(query);
-      }
-    }
-    document.addEventListener("DOMContentLoaded", displayResults(currentPage));
+    document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
     searchInput.addEventListener("input", search);
     categoryInput.addEventListener("change", () => {
-      if (searchInput.value) {
-        searchInput.value = "";
-      }
-      return search();
+      searchInput.value = "";
+      search();
     });
-
-    // Initial display - Temporary
-    // displayResults(currentPage);
   });
