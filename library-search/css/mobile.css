@@ -1,0 +1,65 @@
+@media only screen and (max-width: 1180px) {
+  .library-search .search-buttons .btn.btn-primary {
+    padding: 10px 19.7px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .library-search .search-buttons .btn.btn-primary {
+    padding: 10px 7.8px;
+  }
+}
+
+@media only screen and (max-width: 915px) {
+  .library-search .search-buttons .btn.btn-primary {
+    padding: 10px 4.84px;
+  }
+}
+
+@media only screen and (max-width: 844px) {
+  form button {
+    margin-top: 10px;
+  }
+
+  .library-search .search-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .library-search .search-buttons .btn.btn-primary {
+    padding: 15px 31px;
+  }
+
+  .library-search .onesearch {
+    padding: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .library-search .onesearch .onesearch-form {
+    width: 80%;
+    margin: auto;
+  }
+
+  .library-search .onesearch .onesearch-form input[type="text"] {
+    width: 100% !important;
+  }
+
+  .library-search .onesearch .what-is-onesearch {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .library-search .onesearch__advanced-link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .fu_libraryhours_box {
+    display: block;
+  }
+}
+
+

@@ -1,0 +1,26 @@
+.cta-box__col--5 {
+    text-align: center;
+}
+
+.cta-box__col--5 .cta-box__img {
+    padding: 10px;
+}
+
+.cta-box__col--5 .cta-box__img img{
+    object-fit: contain !important;
+}
+
+.cta-box__block__title>span {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.cta-box__heading__title{
+    font-size: 2.5rem;
+    font-weight: 100;
+    width: 100%;
+}
+
+.cta-box__heading {
+    margin-bottom: 5rem;
+}

@@ -1,0 +1,18 @@
+/* Button Banner Content Type Colors */
+
+/* From The Ram Cam */
+section.header-button:nth-child(3n + 2) .header-button__block  {
+    background-color: black !important;
+} 
+/* Fordham New York's */
+section.header-button:nth-child(3n + 3) .header-button__block  {
+    background-color: aqua !important;
+} 
+/* TikTok */
+section.header-button:nth-child(3n + 4) .header-button__block  {
+    background-color: green !important;
+}
+/* Admissions Team */
+section.header-button:nth-last-child(3) .header-button__block  {
+    background-color: orange !important;
+}  

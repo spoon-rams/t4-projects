@@ -1,0 +1,131 @@
+ .button{all:unset;}
+/* #fu_ta_preview{ display:none;width:40%;margin:auto;} */
+.fu_ta {display:flex;}
+.fu_ta-child:first-child{flex:.5;margin: 1rem;}
+.fu_ta-child:last-child{flex:1.5;margin: 1rem;}
+
+input[type=text].fu_ta_item_right_text {width:90%;
+box-sizing: border-box;}
+input[type=text]#subject {width:50%;
+box-sizing: border-box;}
+
+ .formcls { 
+    padding: 9px; 
+    border: solid 1px #F0AD4E; 
+    outline: 0; 
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #F7D19F), to(#FFFFFF)); 
+    background: -moz-linear-gradient(top, #FFFFFF, #F7D19F 1px, #FFFFFF 25px); 
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+
+    }  
+    .col-xs-2{margin-top:10rem;}
+
+#fu_ta_message{width:90%;}
+
+.ta_form_control_left{width:100%;min-height: 20.85rem;}
+.ta_form_control_right{width:100%;min-height: 22rem;}
+.ta_form_control_filter{width:100%;height: 2.5rem;margin-bottom:.5rem;}
+#fu_groups{margin:1rem;}
+.fu_ta_groupslist{font-size:.75rem;line-height: 130%;}
+
+.fu_ta_clear:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.fu_ta_button,#fu_ta_button, .fu_ta_submit
+{all:unset;display:block;margin: auto;padding: .5rem 2rem .5rem 2rem; border:1px solid black;background-color:#900028;color:white;font-weight:bold;text-transform: uppercase;}
+
+#fu_ta_button{margin-bottom:3rem;}
+.fu_ta_submit{margin:2rem auto; display:block;}
+#fu_ta_message{margin-left:.25rem; width:90%;}
+#fu_ta_preview_box {border:1px solid #c9c9c9; width:70%; margin:auto; display:block; padding:1rem;}
+
+#lstview_to_select, #message_alert{display:none;color:red;font-weight:bold;text-align: center}
+#preview_text{font-style:italic;margin:0 2rem 1rem 2rem;}
+
+/* dropdown list boxes */
+     .fu_ta_button_right::before { content: " \00ab"  ; font-size:1.5rem; }
+     .fu_ta_button_left::after { content: "\00bb "  ; font-size:1.5rem; }
+    #lstview_rightSelected, #lstview_leftSelected { 
+color:white; font-size:.85rem; font-weight:bold;
+border:1px solid #c9c9c9; width:80%; background-color:#900028; padding-bottom:.5rem;
+} 
+
+/* Container for flexboxes */
+.fu_ta_container {
+  display: -webkit-flex;
+  display: flex;
+  border:2px solid green;
+}
+
+
+/* Create three unequal columns */
+.column {
+  padding: .5rem;
+}
+
+/* Left and right column */
+.column.col-xs-5 {
+   -webkit-flex: 2;
+   -ms-flex: 2;
+   flex: 2;
+}
+
+/* Middle column */
+.column.col-xs-2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align:center;
+.fu_ta_button{background-color:#900028;color:white;}
+}
+/* dropdown listboxes end */
+
+/*submitted button */
+#fu_ta_submitted { visibility: hidden; display: none; }
+
+#ui-datepicker-div.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all
+{width:auto;}
+
+#sendto{display: flex;
+    flex-direction: row;
+
+}
+.sendto_left {
+    width: 52%;
+padding:1rem;
+}
+
+.sendto_right {
+    width:48%;padding:1rem;
+}
+
+
+/*        MEDIA QUERIES    */ 
+@media (max-width: 1050px) {
+#fu_ta_preview_box{width:80%;}
+}
+
+@media (max-width: 800px) {
+
+  .fu_ta {
+    flex-direction: column;margin:1rem;}
+
+input[type=text].fu_ta_item_right_text {width:90%;}
+
+#fu_ta_preview{ margin:2rem; }
+
+.col-xs-2{margin:0;padding:0;margin-top:10rem;}
+#preview_text{margin:0 1rem .5rem 1rem;}
+
+#fu_ta_preview_box{width:90%;}
+}
+
+@media (max-width: 950px) {
+#fu_ta_preview_box{width:90%;}
+}
+

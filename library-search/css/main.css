@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+
+/* SEARCH BOX */
+form button {
+  height: 44px;
+  margin-bottom: 2px;
+}
+
+.library-search {
+  height: auto;
+  overflow: auto;
+  background-color: #e7ebe7;
+  border-color: #e8ebe8;
+}
+
+.library-search__content-wrapper {
+  padding: 40px;
+}
+
+.library-search .search-buttons .btn.btn-primary {
+  margin: 2px 0;
+  font-size: 1rem;
+  font-weight: 400;
+  width: auto;
+  padding: 10px 30px;
+}
+
+.library-search .onesearch {
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.library-search .onesearch .what-is-onesearch {
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+.library-search .onesearch__links {
+  margin-top: 10px;
+}
+
+/* LIBRARY BANNER - IF ACTIVE */
+#library-alert-banner {
+  background: lightpink;
+  padding: 1em;
+}
+
+#lib-covid19-banner {
+  background: #e7ebe7;
+  padding: 1em;
+  text-align: center;
+}
+#lib-covid19-banner .lib-info-icon {
+  width: 20px;
+  margin-bottom: 0;
+  margin-right: 0.5em;
+}
+
+.library-search input[type="text"] {
+  padding: 0.5em 1em;
+  width: 25em;
+  max-width: 100%;
+}
+
+/* LIBRARY HOURS */
+#fu_libraryhours {
+  clear: both;
+  width: auto;
+  padding-left: 1.5%;
+  margin: 2rem 2rem 0 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+#fu_libraryhours hr {
+  margin: 1.1em 0;
+}
+
+.fu_libraryhours_message {
+  font-size: smaller;
+}
+
+.fu_libraryhours_outerbox {
+  background-color: #900028;
+  padding: 20px 10px 10px;
+  color: #fff;
+  min-height: 270px;
+}
+
+.fu_libraryhours_box {
+  display: flex;
+}
+.fu_libraryhours_items {
+  flex: 1;
+  padding: 0 2% 1em 0;
+}
+
+/* LIBRARY QUICK LINKS */
+.columns-4.sm-margin-divider.side-divider .col-md-3 .general-content {
+  border: solid 1px #d6d5d5;
+  border-top: solid 2px brown;
+  padding: 1em;
+  box-shadow: 1px 1px 4px grey;
+  height: 100%;
+}
+
+.columns-4.sm-margin-divider.side-divider .col-md-3 .general-content ul {
+  padding-left: 2rem;
+}

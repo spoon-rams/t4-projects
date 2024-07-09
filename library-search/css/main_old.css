@@ -1,0 +1,243 @@
+form input {
+  height: 45px;
+  width: 450px;
+}
+
+form button {
+  margin-top: 14px;
+  height: 45px;
+}
+
+.tabs__content-wrapper {
+  height: auto;
+  /* max-height:300px; */
+  overflow: auto;
+  background-color: #e7ebe7;
+  margin-top: 1px;
+}
+
+#jumbotron {
+  background-image: url("https://www.fordham.edu/images/bg4_1.jpg");
+  background-repeat: no-repeat;
+  margin: 2rem;
+  padding: 2rem 0 2rem 0;
+}
+
+.tabs-ct .search-buttons .btn.btn-primary {
+  margin: 2px 0;
+  font-size: 1rem;
+  width: auto;
+  padding: 5px 31px;
+}
+
+#fu_libraryhours {
+  clear: both;
+  width: auto;
+  padding-left: 1.5%;
+  margin: 2rem 2rem 0 2rem;
+}
+.fu_libraryhours_outerbox {
+  background-color: #900028;
+  padding: 20px 10px 10px;
+  color: #fff;
+  min-height: 270px;
+}
+.fu_libraryhours_box {
+  display: flex;
+}
+.fu_libraryhours_items {
+  flex: 1;
+  padding: 0 2% 1em 0;
+}
+
+#tabs_full {
+  float: none;
+  margin: auto;
+  width: auto;
+}
+
+.tabs__content-wrapper.one-search {
+  padding: 0;
+}
+
+@media only screen and (max-width: 1000px) {
+  /* #jumbotron {
+    padding: 30px 8% 30px 8%;
+  } */
+  #tabs_full {
+    float: none;
+    margin: auto;
+    width: auto;
+  }
+  #fu_libraryhours {
+    float: none;
+  }
+  .tabs.style__accordion .tabs__content-wrapper,
+  .tabs.is__responsive .tabs__content-wrapper {
+    max-height: 300px;
+    overflow: auto;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #fu_libraryhours {
+    float: none;
+    clear: both;
+  }
+  .fu_libraryhours_box {
+    display: block;
+  }
+  .fu_libraryhours_items {
+    justify-content: center;
+    width: 90%;
+  }
+  .tabs.style__accordion .tabs__content-wrapper,
+  .tabs.is__responsive .tabs__content-wrapper {
+    max-height: 300px;
+    overflow: auto;
+  }
+}
+
+/* have to do all this cuz they don't give us access to darn CSS in T4 */
+#library-alert-banner {
+  background: lightpink;
+  padding: 1em;
+}
+
+#lib-covid19-banner {
+  background: #e7ebe7;
+  padding: 1em;
+  margin: -2.25em -2em;
+  text-align: center;
+}
+#lib-covid19-banner .lib-info-icon {
+  width: 20px;
+  margin-bottom: 0;
+  margin-right: 0.5em;
+}
+
+#jumbotron {
+  margin: 0;
+}
+#jumbotron .tabs-ct__wrapper {
+  background: rgb(0 0 0 / 5%);
+  padding-top: 1em;
+}
+@media (max-width: 1280px) {
+  #jumbotron .tabs-ct__wrapper {
+    padding: 1em 0 0 0;
+  }
+}
+#jumbotron input[type="text"] {
+  padding: 0.5em 1em;
+  width: 25em;
+  max-width: 100%;
+}
+
+#jumbotron select {
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+  padding: 0.55em 0.25em;
+}
+
+/* Sirsi */
+#jumbotron .sirsicontent,
+#jumbotron .sirsifacet {
+  margin-bottom: 0.25em;
+}
+#jumbotron .sirsifacet {
+  display: inline-grid;
+}
+#jumbotron .sirsirow input[type="submit"] {
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+}
+#jumbotron .sirsirow input[type="reset"] {
+  background: white;
+  color: black !important;
+  margin-left: -0.4em;
+  font-weight: normal;
+}
+#jumbotron input#pubyear {
+  width: auto;
+}
+#jumbotron #sirsifacet-left {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+/* DBs */
+#jumbotron #dbs-search-form {
+  margin-bottom: 1em;
+}
+#jumbotron #dbs-search-form input[type="submit"] {
+  padding: 0.6em 1.5em;
+  margin: 0;
+}
+
+/* E-Journals */
+#jumbotron #sersol-search-form {
+  margin-bottom: 1em;
+}
+#jumbotron #sersol-search-form select {
+  margin-right: 0.25em;
+  padding: 0.7em 1em;
+}
+#jumbotron #sersol-search-form input.button {
+  margin-top: 1em;
+  padding: 0.6em 1.5em;
+}
+
+/* Hours */
+#fu_libraryhours {
+  max-width: 1200px;
+  margin: auto;
+}
+#fu_libraryhours hr {
+  margin: 1.1em 0;
+}
+.fu_libraryhours_message {
+  font-size: smaller;
+}
+.tabs.style__horizontal .tabs__nav {
+  justify-content: flex-start;
+}
+.tabs__content-wrapper {
+  border-color: #e8ebe8;
+}
+
+/* for user type */
+a.header-button__wrapper .header-button__block:hover {
+  box-shadow: 2px 2px 5px gray;
+}
+a.header-button__wrapper .header-button__block span.btn-text {
+  font-size: 0.94em;
+}
+
+/* quick links */
+/* not dangerrouse at all */
+/* i mean just put content type  as a classname or sormthing */
+.columns-4.sm-margin-divider.side-divider .col-md-3 .general-content {
+  border: solid 1px #d6d5d5;
+  border-top: solid 2px brown;
+  padding: 1em;
+  box-shadow: 1px 1px 4px grey;
+  height: 100%;
+}
+
+.columns-4.sm-margin-divider.side-divider .col-md-3 .general-content ul {
+  padding-left: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .tabs-ct .search-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tabs__content-wrapper.one-search {
+    padding: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
