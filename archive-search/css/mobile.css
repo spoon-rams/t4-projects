@@ -1,0 +1,5 @@
+@media only screen and (max-width: 435px) {
+  .pagination .number {
+    display: none;
+  }
+}

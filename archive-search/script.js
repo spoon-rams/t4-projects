@@ -1,7 +1,7 @@
 // Select DOM elements
 const searchInput = document.getElementById("search-input");
 const categoryInput = document.getElementById("category-select");
-const resultsDiv = document.querySelector(".fordham-stories-archives");
+const resultsDiv = document.querySelector(".fordham-stories-archives .stories");
 const paginationDiv = document.querySelector(".pagination");
 
 const itemsPerPage = 5;
@@ -31,6 +31,12 @@ let currentPage = 1;
 let filteredData = [];
 let data = [];
 
+/**
+ * Create the category list by using the current JSON file's categories
+ * Where any new category will show up and existing category for new articles
+ * will not be used again
+ */
+
 categoryInput.innerHTML = categories
   .map((item) => {
     return `<option value="${item.value}">${item.name}</option>`;
@@ -50,12 +56,12 @@ const displayResults = (page = 1) => {
   <div class="row archive-list">
       <div class="col-md-3">
           <a href="${item.link}">
-              <img src="${item.img}" alt="Image" style="width: 100%; height: auto;">
+              <img src="${item.image}" alt="Image" style="width: 100%; height: auto;" loading="lazy">
           </a>
       </div>
       <div class="col-md-9">
           <p class="category"><span>${item.category}</span></p>
-          <a href="${item.link}"><h3>${item.title}</h3></a>
+          <a href="${item.link}"><h2>${item.title}</h2></a>
       </div>
   </div>
 `,
@@ -79,7 +85,7 @@ const updatePagination = (totalItems, currentPage) => {
     ${Array.from(
       { length: totalPages },
       (_, i) => `
-      <button class="${i + 1 === currentPage ? "active" : ""}" data-page="${i + 1}">${i + 1}</button>
+      <button class="number ${i + 1 === currentPage ? "active" : ""}" data-page="${i + 1}">${i + 1}</button>
     `,
     ).join("")}
     <button class="next" ${currentPage === totalPages ? "disabled" : ""}>&gt;</button>
@@ -88,6 +94,7 @@ const updatePagination = (totalItems, currentPage) => {
 
   paginationDiv.querySelectorAll("button").forEach((button) => button.addEventListener("click", handlePaginationClick));
 };
+
 // Handles the pagination selection
 const handlePaginationClick = (event) => {
   const { classList, dataset } = event.target;
@@ -142,7 +149,9 @@ fetch("./data.json")
     displayResults(currentPage);
 
     document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
-    searchInput.addEventListener("input", search);
+    searchInput.addEventListener("input", () => {
+      setTimeout(search, 1200);
+    });
     categoryInput.addEventListener("change", () => {
       searchInput.value = "";
       search();
