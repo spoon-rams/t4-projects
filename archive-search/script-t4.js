@@ -1,14 +1,41 @@
 // Select DOM elements
 const searchInput = document.getElementById("search-input");
 const categoryInput = document.getElementById("category-select");
-const resultsDiv = document.querySelector(".fordham-stories-archives .stories");
+const resultsDiv = document.querySelector(".fordham-stories-archive");
 const paginationDiv = document.querySelector(".pagination");
 
 const itemsPerPage = 5;
-const categories = [{ name: "Please chose a category", value: "" }];
+const categories = [
+  { name: "Please chose a category", value: "" },
+  { name: "Arts and Creativity", value: "arts and creativity" },
+  { name: "Research and Science", value: "research and science" },
+  { name: "Campus Life", value: "campus life" },
+  { name: "Business and Entrepreneurship", value: "business and entrepreneurship" },
+  { name: "Theatre", value: "theatre" },
+  { name: "Dance", value: "dance" },
+  { name: "Culture", value: "culture" },
+  { name: "Investing", value: "investing" },
+  { name: "Big Deal", value: "big deal" },
+  { name: "Alumni Advice", value: "alumni advice" },
+  { name: "From India to NYC", value: "from india to nyc" },
+  { name: "Student Research", value: "student research" },
+  { name: "Summer Project", value: "summer project" },
+  { name: "Majors", value: "majors" },
+  { name: "Study Abroad", value: "study abroad" },
+  { name: "Student Clubs", value: "student clubs" },
+  { name: "First Year", value: "first year" },
+  { name: "Commencement", value: "commencement" },
+  { name: "Career Paths", value: "career paths" },
+];
 let currentPage = 1;
 let filteredData = [];
-let data = [];
+let data = [<t4 type="navigation" name="Brand Stories Archive All - JSON" id="429" />];
+
+categoryInput.innerHTML = categories
+  .map((item) => {
+    return `<option value="${item.value}">${item.name}</option>`;
+  })
+  .join("");
 
 // Display results function
 const displayResults = (page = 1) => {
@@ -16,11 +43,11 @@ const displayResults = (page = 1) => {
   const end = start + itemsPerPage;
   const results = filteredData.slice(start, end);
 
-  if (results.length) {
-    resultsDiv.innerHTML = results
-      .map((item) => {
-        const { link, image, imageDesc, category, title } = item;
-        return `
+  resultsDiv.innerHTML = results.length
+    ? results
+        .map((item) => {
+          const { link, image, imageDesc, category, title } = item;
+          return `
                 <div class="row archive-list">
                     <div class="col-md-3">
                         <a href="${link}">
@@ -32,12 +59,10 @@ const displayResults = (page = 1) => {
                         <a href="${link}"><h2>${title}</h2></a>
                     </div>
                 </div>`;
-      })
-      .join("");
-       updatePagination(filteredData.length, page);
-  } else {
-    resultsDiv.innerHTML = "<h3>No Search Results...</h3>";
-  }
+        })
+        .join("")
+    : "<h3>No Search Results...</h3>";
+  updatePagination(filteredData.length, page);
 };
 
 // Displays the pagination
@@ -49,21 +74,20 @@ const updatePagination = (totalItems, currentPage) => {
   }
 
   paginationDiv.innerHTML = `
-    <button class="first" ${currentPage === 1 ? "disabled" : ""}>&lt;&lt;</button>
-    <button class="prev" ${currentPage === 1 ? "disabled" : ""}>&lt;</button>
+    <button class="first" ${currentPage === 1 ? "disabled" : ""}><<</button>
+    <button class="prev" ${currentPage === 1 ? "disabled" : ""}><</button>
     ${Array.from(
       { length: totalPages },
       (_, i) => `
       <button class="number ${i + 1 === currentPage ? "active" : ""}" data-page="${i + 1}">${i + 1}</button>
     `,
     ).join("")}
-    <button class="next" ${currentPage === totalPages ? "disabled" : ""}>&gt;</button>
-    <button class="last" ${currentPage === totalPages ? "disabled" : ""}>&gt;&gt;</button>
+    <button class="next" ${currentPage === totalPages ? "disabled" : ""}>></button>
+    <button class="last" ${currentPage === totalPages ? "disabled" : ""}>>></button>
   `;
 
   paginationDiv.querySelectorAll("button").forEach((button) => button.addEventListener("click", handlePaginationClick));
 };
-
 // Handles the pagination selection
 const handlePaginationClick = (event) => {
   const { classList, dataset } = event.target;
@@ -109,45 +133,14 @@ const search = () => {
   displayResults(currentPage);
 };
 
-function debounce(func, delay) {
-  let timer;
-  return function (...args) {
-    clearTimeout(timer);
-    timer = setTimeout(() => func.apply(this, args), delay);
-  };
-}
+filteredData = data;
+displayResults(currentPage);
 
-// Fetch data and initialize
-fetch("./data.json")
-  .then((res) => res.json())
-  .then((fetchedData) => {
-    data = fetchedData;
-    filteredData = data;
-    displayResults(currentPage);
-
-    data.forEach((item) => {
-      const { category } = item;
-      const value = category.toLowerCase();
-
-      // Check if the category already exists in the categories array
-      const isDuplicate = categories.some((cat) => cat.name === category);
-
-      if (!isDuplicate) {
-        categories.push({ name: category, value });
-      }
-    });
-    console.log(categories);
-    categoryInput.innerHTML = categories
-      .map((item) => {
-        return `<option value="${item.value}">${item.name}</option>`;
-      })
-      .join("");
-
-    document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
-    const debouncedSearch = debounce(search, 600);
-    searchInput.addEventListener("input", debouncedSearch);
-    categoryInput.addEventListener("change", () => {
-      searchInput.value = "";
-      search();
-    });
-  });
+document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
+searchInput.addEventListener("input", () => {
+  setTimeout(search, 1200);
+});
+categoryInput.addEventListener("change", () => {
+  searchInput.value = "";
+  search();
+});
