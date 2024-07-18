@@ -136,7 +136,7 @@ fetch("./data.json")
         categories.push({ name: category, value });
       }
     });
-    console.log(categories);
+
     categoryInput.innerHTML = categories
       .map((item) => {
         return `<option value="${item.value}">${item.name}</option>`;
