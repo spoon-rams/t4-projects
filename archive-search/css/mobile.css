@@ -1,5 +1,60 @@
-@media only screen and (max-width: 435px) {
+@media only screen and (max-width: 1280px) {
+  .fordham-stories-search .general-content.search-results .stories .category {
+    font-size: 1rem !important;
+  }
+
+  .fordham-stories-search .general-content.search-results .stories h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 991px) {
   .pagination .number {
     display: none;
+  }
+
+  .fordham-stories-search .general-content.search-results .stories h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .fordham-stories-search .search-inputs .search-bar {
+    margin-right: 0;
+  }
+
+  .fordham-stories-search .search-inputs .search-bar input {
+    margin-bottom: 10px;
+    padding-left: 20px;
+  } 
+
+  .fordham-stories-search .search-inputs .category-dropdown {
+    width: 100%;
+  }
+
+  .fordham-stories-search .search-inputs #category-select {
+    width: 100%;
+  }
+
+  .fordham-stories-search .search-inputs .search-bar,
+  .fordham-stories-search .search-inputs .search-bar input {
+    width: 100%;
+  }
+
+  .fordham-stories-search .general-content.search-results .stories h2 {
+    font-size: 1.5rem;
+  }
+  .fordham-stories-search .general-content.search-results .stories img {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 458px) {
+  .fordham-stories-search .general-content.search-results .stories .category {
+    font-size: 0.8rem !important;
+  }
+
+  .fordham-stories-search .general-content.search-results .stories h2 {
+    font-size: 1.2rem;
   }
 }

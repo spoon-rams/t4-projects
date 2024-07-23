@@ -5,7 +5,7 @@ const resultsDiv = document.querySelector(".stories");
 const paginationDiv = document.querySelector(".pagination");
 
 const itemsPerPage = 5;
-const categories = [{ name: "Please chose a category", value: "" }];
+const categories = [{ name: "Please choose a category", value: "" }];
 let currentPage = 1;
 let filteredData = [];
 let data = [];
@@ -21,17 +21,17 @@ const displayResults = (page = 1, button) => {
       .map((item) => {
         const { link, image, imageDesc, category, title } = item;
         return `
-                <div class="row archive-list">
-                    <div class="col-md-3">
-                        <a href="${link}">
-                            <img src="${image}" alt="${imageDesc}" style="width: 100%; height: auto;">
-                        </a>
-                    </div>
-                    <div class="col-md-9">
-                        <p class="category"><span>${category}</span></p>
-                        <a href="${link}"><h2>${title}</h2></a>
-                    </div>
-                </div>`;
+          <div class="row archive-list">
+            <div class="col-md-3">
+              <a href="${link}">
+                <img src="${image}" alt="${imageDesc}" style="width: 100%; height: auto;">
+              </a>
+            </div>
+            <div class="col-md-9">
+              <p class="category"><span>${category}</span></p>
+              <a href="${link}"><h2>${title}</h2></a>
+            </div>
+          </div>`;
       })
       .join("");
     updatePagination(filteredData.length, page, button);
@@ -46,38 +46,67 @@ const displayResults = (page = 1, button) => {
 // Displays the pagination
 const updatePagination = (totalItems, currentPage, button) => {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-  let nextButton = false;
-  let prevButton = false;
+  const maxVisiblePages = 5; // Maximum number of visible pages
 
   if (totalPages <= 1) {
-    paginationDiv.innerHTML = null;
+    paginationDiv.innerHTML = "";
     return;
   }
 
-  if (button) {
-    const next = button.classList.contains("next");
-    const prev = button.classList.contains("prev");
-    if (next) nextButton = true;
-    if (prev) prevButton = true;
+  let startPage = Math.max(currentPage - Math.floor(maxVisiblePages / 2), 1);
+  let endPage = Math.min(startPage + maxVisiblePages - 1, totalPages);
+
+  if (endPage - startPage < maxVisiblePages - 1) {
+    startPage = Math.max(endPage - maxVisiblePages + 1, 1);
   }
 
-  const leftDisabled = currentPage === 1 ? "disabled" : "";
-  const rightDisabled = currentPage === totalPages ? "disabled" : "";
+  paginationDiv.innerHTML = "";
 
-  paginationDiv.innerHTML = `
-    <button class="first ${leftDisabled}" ${leftDisabled}>&lt;&lt;</button>
-    <button class="prev ${leftDisabled} ${prevButton ? "active" : ""}" ${leftDisabled}>&lt;</button>
-    ${Array.from({ length: totalPages }, (_, i) => {
-      return `
-      <button class="number ${i + 1 === currentPage ? "active" : ""}" data-page="${i + 1}">${i + 1}</button>
-    `;
-    }).join("")}
-    <button class="next ${rightDisabled} ${nextButton ? "active" : ""}" ${rightDisabled}>&gt;</button>
-    <button class="last ${rightDisabled}" ${rightDisabled}>&gt;&gt;</button>
-  `;
+  // First button
+  const first = document.createElement("button");
+  first.innerText = "<<";
+  first.classList.add("first");
+  first.disabled = currentPage === 1;
+  first.classList.add("disabled")
+  first.addEventListener("click", () => displayResults(1));
+  paginationDiv.appendChild(first);
 
-  const paginationButtons = paginationDiv.querySelectorAll("button");
-  paginationButtons.forEach((button) => button.addEventListener("click", handlePaginationClick));
+  // Previous button
+  const prev = document.createElement("button");
+  prev.innerText = "<";
+  prev.classList.add("prev");
+  prev.disabled = currentPage === 1;
+  prev.addEventListener("click", () => displayResults(currentPage - 1));
+  paginationDiv.appendChild(prev);
+
+  // Page numbers
+  for (let i = startPage; i <= endPage; i++) {
+    const page = document.createElement("button");
+    page.innerText = i;
+    page.classList.add("number");
+    if (i === currentPage) {
+      page.classList.add("active");
+    } else {
+      page.addEventListener("click", () => displayResults(i));
+    }
+    paginationDiv.appendChild(page);
+  }
+
+  // Next button
+  const next = document.createElement("button");
+  next.innerText = ">";
+  next.classList.add("next");
+  next.disabled = currentPage === totalPages;
+  next.addEventListener("click", () => displayResults(currentPage + 1));
+  paginationDiv.appendChild(next);
+
+  // Last button
+  const last = document.createElement("button");
+  last.innerText = ">>";
+  last.classList.add("last");
+  last.disabled = currentPage === totalPages;
+  last.addEventListener("click", () => displayResults(totalPages));
+  paginationDiv.appendChild(last);
 };
 
 // Handles the pagination selection

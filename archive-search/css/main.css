@@ -223,10 +223,7 @@ div.h1-heading > h1 {
 .hero-banner-parallax__text-bottom .hero-banner__block .hero-banner__block__category .bg-color,
 .hero-banner-parallax__text-top .hero-banner__block .hero-banner__block__category .bg-color,
 .hero-banner .hero-banner__block .hero-banner__block__category .bg-color,
-.hero-banner-parallax__video__text-bottom
-  .hero-banner__block
-  .hero-banner__block__category
-  .bg-color {
+.hero-banner-parallax__video__text-bottom .hero-banner__block .hero-banner__block__category .bg-color {
   background-color: #900028;
   color: white;
   padding: 10px 20px;
@@ -905,45 +902,45 @@ div.h1-heading > h1 {
 */
 
 /* TEST */
-.archives-search {
-  padding-left: 30px;
-  display: flex;
+.fordham-stories-search {
+  padding-bottom: 100px;
 }
 
-.archives-search .search-bar {
-  width: 30%;
+.fordham-stories-search .search-inputs {
+  display: flex;
+  padding: 10px 30px;
+  flex-wrap: wrap;
+}
+
+.fordham-stories-search .search-inputs .search-bar {
   margin-right: 20px;
 }
 
-.archives-search .search-bar input {
+.fordham-stories-search .search-inputs .search-bar input {
   margin: 0 0 30px 0;
   height: 40px;
-  width: 100%;
+  width: 460px;
 }
 
-.archives-search .category-dropdown {
-  width: 20%;
-}
-
-.archives-search .category-dropdown select {
+.fordham-stories-search .search-inputs .category-dropdown select {
   height: 40px;
   border-radius: 2px;
-  width: 100%;
   padding-left: 20px;
+  width: 228px;
 }
 
-.archives-search label {
+.fordham-stories-search .search-inputs label {
   display: block;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
-.fordham-stories-archives {
-    margin-bottom: 150px;
+.fordham-stories-search .general-content.search-results .stories h2 {
+  font-size: 1.8rem;
 }
 
-.fordham-stories-archives .stories {
+/* .fordham-stories-archives .stories {
   min-height: 100%;
-}
+} */
 
 /* Add basic styles for pagination */
 .pagination {
@@ -954,15 +951,17 @@ div.h1-heading > h1 {
 .pagination button {
   margin: 0 5px;
   padding: 5px 10px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
+  border: 1px solid #900028;
+  color: #900028;
   cursor: pointer;
 }
 .pagination button.active {
-  background-color: #007bff;
+  background-color: #900028;
   color: white;
 }
 .pagination button.disabled {
   cursor: not-allowed;
   opacity: 0.5;
+  background-color: #900028;
+  color: white;
 }
