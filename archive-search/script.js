@@ -9,14 +9,15 @@ const categories = [{ name: "Please choose a category", value: "" }];
 let currentPage = 1;
 let filteredData = [];
 let data = [];
+let buttonElement = "";
 
 // Display results function
-const displayResults = (page = 1, button) => {
+const displayResults = (page = 1) => {
   const start = (page - 1) * itemsPerPage;
   const end = start + itemsPerPage;
   const results = filteredData.slice(start, end);
 
-  if (results.length) {
+  if (results.length > 0) {
     resultsDiv.innerHTML = results
       .map((item) => {
         const { link, image, imageDesc, category, title } = item;
@@ -28,23 +29,27 @@ const displayResults = (page = 1, button) => {
               </a>
             </div>
             <div class="col-md-9">
-              <p class="category"><span>${category}</span></p>
-              <a href="${link}"><h2>${title}</h2></a>
+              <p class="category">
+                <span>${category}</span>
+              </p>
+              <a href="${link}">
+                <h2>${title}</h2>
+              </a>
             </div>
           </div>`;
       })
       .join("");
-    updatePagination(filteredData.length, page, button);
+    updatePagination(filteredData.length, page);
   } else {
     resultsDiv.innerHTML = `<div class="row archive-list" style="padding-left: 15px;">
                               <h3>No Search Results...</h3>
                             </div>`;
-    updatePagination(filteredData.length, page, button);
+    updatePagination(filteredData.length, page);
   }
 };
 
 // Displays the pagination
-const updatePagination = (totalItems, currentPage, button) => {
+const updatePagination = (totalItems, currentPage) => {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const maxVisiblePages = 5; // Maximum number of visible pages
 
@@ -59,7 +64,6 @@ const updatePagination = (totalItems, currentPage, button) => {
   if (endPage - startPage < maxVisiblePages - 1) {
     startPage = Math.max(endPage - maxVisiblePages + 1, 1);
   }
-
   paginationDiv.innerHTML = "";
 
   // First button
@@ -67,8 +71,13 @@ const updatePagination = (totalItems, currentPage, button) => {
   first.innerText = "<<";
   first.classList.add("first");
   first.disabled = currentPage === 1;
-  first.classList.add("disabled");
-  first.addEventListener("click", () => displayResults(1));
+  if (currentPage === 1) first.style.display = "none";
+  first.addEventListener("click", (e) => {
+    if (buttonElement.length > 0) {
+      buttonElement = "";
+    }
+    return displayResults(1);
+  });
   paginationDiv.appendChild(first);
 
   // Previous button
@@ -76,7 +85,14 @@ const updatePagination = (totalItems, currentPage, button) => {
   prev.innerText = "<";
   prev.classList.add("prev");
   prev.disabled = currentPage === 1;
-  prev.addEventListener("click", () => displayResults(currentPage - 1));
+
+  if (currentPage === 1) prev.style.display = "none";
+  if (buttonElement.includes("prev")) prev.classList.add("active");
+
+  prev.addEventListener("click", (e) => {
+    buttonElement = e.target.classList.value;
+    return displayResults(currentPage - 1);
+  });
   paginationDiv.appendChild(prev);
 
   // Page numbers
@@ -87,7 +103,12 @@ const updatePagination = (totalItems, currentPage, button) => {
     if (i === currentPage) {
       page.classList.add("active");
     } else {
-      page.addEventListener("click", () => displayResults(i));
+      page.addEventListener("click", (e) => {
+        if (buttonElement.length > 0) {
+          buttonElement = "";
+        }
+        return displayResults(i);
+      });
     }
     paginationDiv.appendChild(page);
   }
@@ -97,7 +118,14 @@ const updatePagination = (totalItems, currentPage, button) => {
   next.innerText = ">";
   next.classList.add("next");
   next.disabled = currentPage === totalPages;
-  next.addEventListener("click", () => displayResults(currentPage + 1));
+
+  if (currentPage === totalPages) next.style.display = "none";
+  if (buttonElement.includes("next")) next.classList.add("active");
+
+  next.addEventListener("click", (e) => {
+    buttonElement = e.target.classList.value;
+    return displayResults(currentPage + 1);
+  });
   paginationDiv.appendChild(next);
 
   // Last button
@@ -105,7 +133,13 @@ const updatePagination = (totalItems, currentPage, button) => {
   last.innerText = ">>";
   last.classList.add("last");
   last.disabled = currentPage === totalPages;
-  last.addEventListener("click", () => displayResults(totalPages));
+  if (currentPage === totalPages) last.style.display = "none";
+  last.addEventListener("click", (e) => {
+    if (buttonElement.length > 0) {
+      buttonElement = "";
+    }
+    return displayResults(totalPages);
+  });
   paginationDiv.appendChild(last);
 };
 
@@ -120,7 +154,7 @@ const handlePaginationClick = (event) => {
   else if (classList.contains("last")) currentPage = totalPages;
   else if (dataset.page) currentPage = parseInt(dataset.page);
 
-  displayResults(currentPage, event.target);
+  displayResults(currentPage);
 };
 
 // Keyword Search - Title
