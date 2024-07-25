@@ -943,23 +943,23 @@ div.h1-heading > h1 {
 } */
 
 /* Add basic styles for pagination */
-.pagination {
+.fordham-stories-search .general-content.search-results .pagination {
   display: flex;
   justify-content: center;
   margin: 20px 0;
 }
-.pagination button {
+.fordham-stories-search .general-content.search-results .pagination button {
   margin: 0 5px;
-  padding: 5px 10px;
+  padding: 10px 15px;
   border: 1px solid #900028;
   color: #900028;
   cursor: pointer;
 }
-.pagination button.active {
+.fordham-stories-search .general-content.search-results .pagination button.active {
   background-color: #900028;
   color: white;
 }
-.pagination button.disabled {
+.fordham-stories-search .general-content.search-results .pagination button.disabled {
   cursor: not-allowed;
   opacity: 0.5;
   background-color: #900028;

@@ -12,13 +12,17 @@
   .fordham-stories-search .general-content.search-results .stories h2 {
     font-size: 1.3rem;
   }
+
+  .fordham-stories-search .general-content.search-results .pagination button {
+    padding: 7px 12px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
   .pagination .number {
     display: none;
   }
-  
+
   .fordham-stories-search .search-inputs .search-bar {
     margin-right: 0;
   }
