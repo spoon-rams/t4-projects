@@ -1,0 +1,103 @@
+@media only screen and (min-width: 982px) and (max-width: 1280px) {
+  .block-quote-closed .profile {
+    padding: 0 100px;
+  }
+
+  .block-quote-closed .author {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .block-quote-closed .profile {
+    padding: 0 20px !important;
+  }
+
+  .block-quote-closed .quote,
+  .block-quote .quote {
+    font-size: 2rem;
+    padding-left: 0 !important;
+  }
+
+  .block-quote-closed .opening-quote {
+    padding-left: 15px !important;
+  }
+
+  .block-quote__container {
+    padding: 0 120px;
+  }
+
+  .block-quote .author {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /*.block-quote-closed .author,
+  .block-quote .author {
+    font-size: 1.2rem;
+  }*/
+
+  .block-quote-closed__container,
+  .block-quote__container {
+    padding: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 546px) {
+  .block-quote .opening-quote svg,
+  .block-quote .closing-quote svg,
+  .block-quote-closed .opening-quote svg,
+  .block-quote-closed .closing-quote svg {
+    height: 50px;
+  }
+
+  .block-quote-closed .opening-quote .opening-quote::after {
+    margin-left: 10px !important;
+  }
+
+  .block-quote-closed .closing-quote .closing-quote::before {
+    margin-right: 10px !important;
+  }
+
+  .block-quote .picture,
+  .block-quote-closed .picture {
+    border-radius: 200px;
+    width: 200px !important;
+    height: 200px;
+  }
+
+  .block-quote .quote,
+  .block-quote-closed .quote {
+    font-size: 1.3rem;
+  }
+
+  .block-quote .author,
+  .block-quote-closed .author p {
+    font-size: 1.1rem;
+  }
+
+  .block-quote .link .cta-link-font,
+  .block-quote-closed .link .cta-link-font {
+    font-size: 0.94rem;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .block-quote-closed .author {
+    padding-left: 10px !important;
+    width: 120px !important;
+  }
+
+  .block-quote-closed .profile {
+    padding-top: 20px !important;
+  }
+
+  .block-quote .profile {
+    padding: 0 !important;
+  }
+
+  .block-quote-closed .author {
+    padding: 0 !important;
+  }
+}

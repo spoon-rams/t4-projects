@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* REGULAR BLOCK QUOTE */
+.block-quote {
+  display: flex;
+  position: relative;
+  padding-top: 60px;
+}
+
+.block-quote__container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 0 180px;
+}
+
+.block-quote .profile {
+  padding: 0 20px;
+}
+
+.block-quote .quote {
+  font-size: 2.3rem;
+  padding-top: 20px;
+  letter-spacing: -0.5px;
+  align-self: center;
+}
+
+.block-quote .quote {
+  text-align: center;
+}
+
+.block-quote .opening-quote {
+  align-self: start;
+}
+
+.block-quote .closing-quote {
+ align-self: end;
+}
+
+.block-quote .author {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.block-quote .link {
+  text-align: center;
+}
+
+.block-quote .link .cta-link-font {
+   font-size: 1.1rem;
+}
+
+.block-quote::after {
+  position: absolute;
+  content: "";
+  top: 20px;
+  left: 50%;
+  margin-left: -100px;
+  border-bottom: 3px solid #900028;
+  height: 3px;
+  width: 200px;
+}
+
+.block-quote .picture {
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 300px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+/*  SIDE BLOCK QUOTE  */
+.otro-blockquote {
+  font-size: 1.4em;
+  margin: 50px auto;
+  font-family: "Raleway";
+  color: #555555;
+  padding: 1.2em 30px 1.2em 75px;
+  border-left: 8px solid #900028;
+  line-height: 1.6;
+  position: relative;
+}
+
+.otro-blockquote::before {
+  font-family: "Raleway";
+  content: "\201C";
+  color: #900028;
+  font-size: 9rem;
+  position: absolute;
+  left: 10px;
+  top: -55;
+}
+
+.otro-blockquote::after {
+  content: "";
+}
+
+.otro-blockquote-after::after {
+  font-family: "Raleway";
+  content: "„";
+  color: #900028;
+  font-size: 9rem;
+  position: absolute;
+  left: 10px;
+  top: -60;
+}
+
+.otro-blockquote p {
+  display: block;
+  color: #333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 1em;
+  font-size: 1.2rem;
+}
+
+/* BLOCK QUOTE CLOSED - START  */
+.block-quote-closed {
+  text-align: center;
+}
+
+.block-quote-closed__container {
+  width: 100%;
+  margin: auto;
+  padding: 0 120px;
+}
+
+
+.block-quote-closed .col-lg-9 {
+  margin: auto;
+}
+
+.opening-quote,
+.closing-quote {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 15px;
+}
+
+.block-quote-closed__container .opening-quote {
+  padding-left: 80px;
+}
+
+.block-quote-closed .opening-quote::after {
+  content: "";
+  margin-top: 1px;
+  height: 5px;
+  background-color: #e2e2e2;
+  flex: 1 1 auto;
+  margin-right: 5%;
+  margin-left: 50px;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.block-quote-closed .closing-quote::before {
+  content: "";
+  margin-top: 1px;
+  height: 5px;
+  background-color: #e2e2e2;
+  flex: 1 1 auto;
+  margin-left: 5%;
+  margin-right: 50px;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.block-quote-closed .quote {
+  font-size: 2.3rem;
+  padding-top: 20px;
+  letter-spacing: -0.5px;
+  align-self: center;
+}
+
+.block-quote-closed .author {
+  width: 220px;
+  padding: 0 20px;
+}
+
+.block-quote-closed .author p {
+  width: 100%;
+  text-align: left;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 25px;
+}
+
+.block-quote-closed .link .cta-link-font {
+   font-size: 1.1rem;
+}
+
+.block-quote-closed .profile {
+  padding: 0 140px;
+}
+
+.remove-padding {
+  padding: 0 !important;
+}
+
+
+/* .block-quote-closed .row .col-md-4 {
+  width: 200px !important;
+}
+
+.block-quote-closed .row .col-md-8 {
+  width: 200px !important;
+} */
+
+.block-quote-closed .picture {
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 300px;
+  margin: auto;
+  width: 300px !important;
+}

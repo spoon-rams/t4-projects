@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+
+p {
+  font-family: "Raleway", sans-serif !important;
+}
+
+/* IMAGE & VIDEO PARALLAX - START */
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+.parallax-container {
+  position: relative;
+}
+
+/* HERO BANNER */
+.hero-banner-parallax {
+  height: 500px !important;
+  position: relative;
+  background-attachment: fixed !important; 
+  background-position: center !important; 
+  background-repeat: no-repeat !important; 
+  background-size: cover !important; 
+  min-height: 400px
+}
+
+.hero-banner-parallax .hero-banner__img {
+  height: 100% !important;
+}
+
+.hero-banner-parallax .hero-banner__block,
+.hero-banner-parallax__video .hero-banner__block {
+  top: 50% !important;
+  left: 50% !important;
+  margin-left: -30%;
+}
+
+.hero-banner-parallax .hero-banner__block__title > span,
+.hero-banner-parallax__video .hero-banner__block__title > span {
+  background-color: transparent;
+  font-weight: 500;
+}
+.hero-banner-parallax .hero-banner__block__content > p,
+.hero-banner-parallax__video .hero-banner__block__content > p {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.75rem;
+}
+
+div.h1-heading > h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1em;
+}
+
+.hero-banner-parallax .tint-layer {
+  background: rgb(144, 0, 40, 0.7);
+  height: 100%;
+}
+
+.parallax-container .tint-layer-white {
+  position: absolute;
+  background-color: #fff;
+  opacity: 0;
+  width: 100%;
+  height: 300px;
+  z-index: 1;
+}
+
+/* IMAGE PARALLX - TEXT BOTTOM/TEXT TOP */
+.hero-banner-parallax__text-bottom .tint-layer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.hero-banner-parallax__text-bottom .hero-banner__block,
+.hero-banner-parallax__text-top .hero-banner__block,
+.hero-banner .hero-banner__block,
+.hero-banner-parallax__video__text-bottom .hero-banner__block {
+  position: static;
+  transform: unset;
+  margin: 0 auto !important;
+  width: 60%;
+}
+
+.hero-banner-parallax__text-bottom .hero-banner__block__content p,
+.hero-banner-parallax__text-top .hero-banner__block__content p,
+.hero-banner .hero-banner__block__content p,
+.hero-banner-parallax__video__text-bottom .hero-banner__block__content p {
+  font-size: 1.75rem;
+}
+
+/* VIDEO PARALLAX CSS */
+.hero-banner-parallax__video {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.hero-banner-parallax__video .parallax-video {
+  position: absolute;
+  top: -20%;
+  width: 100%;
+  height: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-banner-parallax__video .parallax-video video {
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+}
+
+.hero-banner-parallax__video .tint-layer,
+.hero-banner-parallax__video__text-bottom .tint-layer {
+  background: black;
+  opacity: 0.3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.parallax-container .tint-layer {
+  background: white;
+  opacity: 0.3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* HERO CATEGORY HEADER */
+
+.hero-banner__block__category {
+  margin: auto;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+}
+
+.hero-banner-parallax .hero-banner__block__category .bg-color,
+.hero-banner-parallax__text-bottom .hero-banner__block__category .bg-color,
+.hero-banner-parallax__video .hero-banner__block__category .bg-color,
+.hero-banner-parallax__video__text-bottom .hero-banner__block__category .bg-color {
+  background-color: black;
+  padding: 10px;
+}
+
+.hero-banner-parallax__text-bottom .hero-banner__block .hero-banner__block__category .bg-color,
+.hero-banner-parallax__text-top .hero-banner__block .hero-banner__block__category .bg-color,
+.hero-banner .hero-banner__block .hero-banner__block__category .bg-color,
+.hero-banner-parallax__video__text-bottom .hero-banner__block .hero-banner__block__category .bg-color {
+  background-color: #900028;
+  color: white;
+  padding: 10px 20px;
+}
+
+/* H2 STYLING */
+.general-content__block .header-two {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+}
+.general-content__block .header-two span {
+  border-bottom: 5px solid #900028;
+}
+
+.header-two__article-title {
+  font-family: "Oswald", sans-serif;
+}
+
+.header-two__custom {
+  font-family: auto;
+}
+
+/* PARAGRAPH STYLING */
+/*.body-lead-font {
+  font-size: 1.1rem !important;
+}
+*/
+
+.body-regular-font {
+  font-size: 1.1rem !important;
+}
+
+/* GENERAL COLUMN 4 CSS */
+.col-md-4 {
+  padding: 0 !important;
+}
+
+.col-md-4 .general-content {
+  padding: 0 !important;
+}
+
+/* CAPTION FONT STYLING */
+.caption-white {
+  color: white;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+}
+
+.caption-black {
+  color: black;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+}
+
+.caption-photo {
+  text-align: center;
+  font-style: italic;
+  margin-top: 10px;
+}
+/* IMAGE AND VIDEO PARALLAX - END */
+
+/* TEMP */
+.content {
+  padding: 100px;
+}
+
+.spacing {
+  margin: 3rem 0;
+}
+
+.caption-font {
+  letter-spacing: 0.07rem;
+  line-height: 1.4;
+}
+
+/* #background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 1; 
+} */
+
+/* SCROLL ARROW */
+/* .hero-banner-parallax .scrollarrow::after,
+.hero-banner-parallax__video .scrollarrow::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 33px solid transparent;
+  border-right: 33px solid transparent;
+  border-top: 35px solid #910029;
+  position: absolute;
+  left: 50%;
+  margin-left: -35px;
+  bottom: 0;
+}
+.hero-banner-parallax .scrollarrow,
+.hero-banner-parallax__video .scrollarrow {
+  position: absolute;
+  left: 50%;
+  margin-left: -60px;
+  bottom: 0;
+  height: 60px;
+  width: 125px;
+  border-radius: 150px 150px 0 0;
+  background-color: #ffffff;
+  z-index: 1;
+}
+.hero-banner-parallax .scrollarrow:hover::after,
+.hero-banner-parallax__video .scrollarrow::after {
+  border-top: 35px solid #ad0031;
+} */

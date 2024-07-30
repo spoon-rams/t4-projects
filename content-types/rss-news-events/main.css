@@ -1,0 +1,63 @@
+/* Events RSS Cards */
+#events .event__card {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    /* current */
+    /* height: 115px !important; */
+    /* Update */
+    height: 140px !important;
+}
+
+#events .event__card .col-lg-3 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+#events .event__card .col-lg-3 .event__card__date--date {
+    width: 35px;
+    text-align: right;
+}
+
+#events .event__card .col-lg-9 .event__card__title {
+    font-size: 0.9rem;
+}
+
+/* News RSS Cards */
+#news .glide__slide {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    /* current */
+    /* height: 115px !important; */
+    /* update */
+    height: 140px !important;
+}
+
+#news .col-4 {
+    /* current */
+    /* height: 115px !important; */
+    height: 140px !important;
+}
+
+#news .col-4 img {
+    object-fit: fill !important;
+    height: 99%;
+}
+
+#news .col-8 h3, .col-12 h3 {
+    font-size: 0.9rem !important
+}
+
+#news .box-img-text-type-1__slide__block__link {
+    height: 12px;
+}
+
+#news .box-img-text-type-1__slide__block__link span {
+    font-size: 0.9rem;
+}
+
+#news .box-img-text-type-1__slide__block__link span svg {
+    height: 26px;
+    width: 26px;
+}

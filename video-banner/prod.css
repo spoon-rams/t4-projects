@@ -1,0 +1,215 @@
+/** VIDEO HERO STYLES **/
+div.home-hero {
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.text-container {
+  background-image: linear-gradient(#141414, #0f0f0f, #000);
+  border-left: 2px solid #212121;
+  border-right: 2px solid #212121;
+}
+
+div.home-hero video {
+  position: absolute;
+  width: 110%;
+  top: 64%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+/*  NEED TO MAKE MOBILE RESPONSIVE FOR BELOW 430px */
+
+@media screen and (orientation: landscape) {
+  /* Styles for landscape view */
+  div.home-hero {
+    width: 100vw;
+    height: 66.25vw; /* 100vw * 9 / 16 for a 16:9 aspect ratio */
+  }
+}
+
+@media (max-width: 430px) {
+  div.home-hero {
+    height: 59vh;
+    top: 50% !important;
+  }
+  div.home-hero video {
+    width: 230%;
+    top: 50%;
+  }
+}
+
+@media (min-width: 431px) and (max-width: 575.98px) {
+  div.home-hero {
+    height: 40vh;
+    top: 50% !important;
+  }
+  div.home-hero video {
+    width: 280%;
+    top: 50%;
+  }
+  .columns-4 .general-content {
+    padding: 0 !important;
+  }
+  .columns-4 .general-content__block img {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 1073px) {
+  div.home-hero video {
+    top: 50% !important;
+    width: 160%;
+  }
+}
+
+@media (min-width: 1074px) and (max-width: 1246px) {
+  div.home-hero video {
+    top: 50% !important;
+    width: 140%;
+  }
+}
+
+@media (min-width: 1247px) and (max-width: 1498px) {
+  div.home-hero video {
+    top: 50% !important;
+    width: 120%;
+  }
+}
+
+@media (min-width: 1499px) and (max-width: 1920px) {
+  div.home-hero video {
+    top: 50% !important;
+    width: 100%;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 1368px) and (min-height: 360px) and (max-height: 1024px) {
+  div.home-hero {
+    height: 100vh;
+    aspect-ratio: 16/9;
+  }
+}
+
+/* @media (max-width: 1921px) {
+  div.home-hero video {
+    top: 65%;
+  }
+} */
+
+/* OLD CSS VIDEO STYLING  */
+/* div.home-hero {
+  position: relative;
+  height: 49vh;
+  min-height: 30vh;
+  width: 100%;
+  overflow: hidden;
+}
+div.home-hero .container {
+  position: relative;
+  z-index: 2;
+  height: 70%;
+}
+.text-container {
+  background-image: linear-gradient(#141414, #0f0f0f, #000);
+  border-left: 2px solid #212121;
+  border-right: 2px solid #212121;
+}
+
+div.home-hero video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+/*  NEED TO MAKE MOBILE RESPONSIVE FOR BELOW 430px */
+/* @media (max-width: 430px) {
+  div.home-hero {
+    position: relative;
+    height: 51vh;
+    min-height: 10vh;
+  }
+  div.home-hero video {
+    width: 197%;
+    top: 50%;
+  }
+}
+
+@media (min-width: 431px) and (max-width: 575.98px) {
+  div.home-hero {
+    position: relative;
+    height: 40vh;
+    min-height: 10vh;
+  }
+  div.home-hero video {
+    width: 280%;
+    top: 50%;
+  }
+  .columns-4 .general-content {
+    padding: 0 !important;
+  }
+  .columns-4 .general-content__block img {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 1920px) {
+  div.home-hero video {
+    top: 50% !important;
+  }
+}
+@media (min-width: 1920px) {
+  div.home-hero video {
+    top: 65%;
+  }
+} */
+
+@media (min-width: 531px) and (max-width: 1740px) {
+  /* video hero - video width: 125%  */
+}
+
+@media (min-width: 1367px) and (max-width: 1530px) {
+  /* video hero - video width: 140%  */
+}
+
+@media (min-width: 1277px) and (max-width: 1366px) {
+  /* 150% */
+}
+
+@media (max-width: 1276px) {
+  /* 170% */
+}
+
+@media (max-width: 1126px) {
+  /* 190%  */
+}
+
+@media (max-width: 1007px) {
+  /* 225% */
+}
+
+@media (max-width: 850px) {
+  /* 250% */
+}
+
+@media (max-width: 768px) {
+  /* 280 */
+}
+
+@media (max-width: 680px) {
+}

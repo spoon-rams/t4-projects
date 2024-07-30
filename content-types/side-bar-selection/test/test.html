@@ -1,0 +1,48 @@
+=<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Add your custom styles here */
+    /* Style for the moving highlight effect */
+    .list-group-item {
+      position: relative;
+    }
+
+    .list-group-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #ffcc00; /* Highlight color */
+      transition: width 0.3s ease-in-out;
+    }
+
+    /* Hover effect */
+    .list-group-item:hover::before {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="list-group">
+    <a href="#" class="list-group-item">Tab 1</a>
+    <a href="#" class="list-group-item">Tab 2 with longer text</a>
+    <a href="#" class="list-group-item">Tab 3</a>
+  </div>
+</div>
+
+<!-- Add Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

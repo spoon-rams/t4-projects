@@ -1,0 +1,70 @@
+/* Modal Scroll */
+
+@media (max-width: 450px) {
+  .program-search .popup-modal {
+    height: 600px;
+  }
+  .modal-overflow {
+    overflow: scroll;
+    scrollbar-width: thin;
+    max-height: 540px;
+    padding-right: 10px;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 920px) {
+  .program-search .popup-modal {
+    height: 350px;
+  }
+  .modal-overflow {
+    overflow: scroll;
+    scrollbar-width: thin;
+    max-height: 300px;
+  }
+}
+
+/* Shown Filter options */
+#event-filters {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  margin-bottom: -30px;
+}
+
+#event-filters .program-search__form__controls__label {
+  width: 10%;
+  margin-right: 2rem !important;
+  margin-left:15px;
+}
+
+#event-filters .no-bullet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  text-align: center;
+  width: 92.2%;
+}
+
+#event-filters .no-bullet .small {
+  display: flex;
+  background-color: #e7ebe6;
+  margin: 2px 7px;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 2px;
+}
+
+#event-filters .no-bullet .small .filter-wrapper {
+  display: flex;
+}
+
+#event-filters .no-bullet .small .remove {
+  font-weight: bold;
+  padding: 5px;
+}
+
+#event-filters .no-bullet .small .filter-text {
+  padding: 5px;
+  
+}

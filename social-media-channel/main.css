@@ -1,0 +1,37 @@
+.columns-4 .row {
+  display: flex;
+  justify-content: center;
+  padding: 0 auto;
+}
+
+.columns-4 .general-content {
+  padding: none !important;
+}
+
+.columns-4 .general-content__block {
+  text-align: center;
+}
+
+.columns-4 .general-content__block img {
+  height: 65%;
+  width: 55%;
+}
+
+.columns-4 .general-content__block p {
+  padding-top: 10px;
+}
+
+.columns-4 .col-md-3 {
+  max-width: 22%;
+}
+
+@media screen and (max-width: 850px) {
+  .columns-4 .general-content {
+    padding: 0 !important;
+  }
+
+  .columns-4 .general-content__block img {
+    height: 50px;
+    width: 50px;
+  }
+}

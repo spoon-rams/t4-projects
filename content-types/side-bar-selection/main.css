@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+:root {
+  --test-border: 1px dashed black;
+}
+
+* {
+  font-family: Raleway, sans-serif;
+}
+
+.container {
+  margin-top: 100px;
+  /* max-width: 1800px; */
+}
+
+.side-tabs-maroon .row {
+  background-color: #900028;
+  height: 100%;
+  min-height: 300px;
+  padding: 30px 0;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px #888888;
+}
+
+.side-tabs-maroon .col-md-4 {
+  padding: 0;
+}
+
+.side-tabs-maroon .col-md-8 {
+  font-size: 1.1rem;
+  border-left: 1px solid white;
+  overflow: hidden;
+}
+
+.side-tabs-maroon .list-group-item {
+  position: relative;
+  background-color: #900028;
+  cursor: pointer;
+  color: white !important;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-left: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0;
+  z-index: 1;
+}
+
+.side-tabs-maroon .list-group-item span {
+  padding-left: 15px;
+}
+
+.side-tabs-maroon .list-group-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: white !important;
+  background-color: #333 !important;
+  transition: width 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.side-tabs-maroon .text,
+.side-tabs-maroon .text-1,
+.side-tabs-maroon .text-2,
+.side-tabs-maroon .text-3,
+.side-tabs-maroon .text-4,
+.side-tabs-maroon .text-5,
+.side-tabs-maroon .text-6,
+.side-tabs-maroon .text-7 {
+  color: white;
+  opacity: 0;
+  transition: opacity 0.5s;
+  position: absolute;
+  display: none;
+  /* Hidden scroll */
+  width: calc(100% + 17px);
+  height: 100%;
+  padding-right: 17px;
+  overflow-y: scroll;
+}
+
+/* Tab Animation */
+.side-tabs-maroon .list-group-item.tab-active::before {
+  width: 90%;
+}
+
+/* For color white background selection */
+.side-tabs-white .row {
+  background-color: white;
+  height: 100%;
+  min-height: 300px;
+  padding: 30px 0;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px #888888;
+}
+
+.side-tabs-white .white-item {
+  background-color: white;
+  color: #333;
+}
+
+.side-tabs-white .list-group-item span {
+  padding-left: 15px;
+}
+
+.side-tabs-white .list-group-item {
+  position: relative;
+  background-color: white;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-left: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0;
+  z-index: 1;
+}
+
+.side-tabs-white .list-group-item.white-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #900028;
+  transition: width 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.side-tabs-white .col-md-4 {
+  padding: 0;
+}
+
+.side-tabs-white .col-md-8 {
+  font-size: 1.1rem;
+  border-left: 1px solid lightgray;
+  overflow: hidden;
+}
+
+.side-tabs-white .text,
+.side-tabs-white .text-1,
+.side-tabs-white .text-2,
+.side-tabs-white .text-3,
+.side-tabs-white .text-4,
+.side-tabs-white .text-5,
+.side-tabs-white .text-6,
+.side-tabs-white .text-7 {
+  color: #333;
+  opacity: 0;
+  transition: opacity 0.5s;
+  position: absolute;
+  display: none;
+  /* Hidden scroll */
+  width: calc(100% + 17px);
+  height: 100%;
+  padding-right: 17px;
+  overflow-y: scroll;
+}
+
+/* Tab Animation */
+.side-tabs-white .list-group-item.tab-active-maroon.white-item::before {
+  width: 90%;
+  background-color: #900028;
+}

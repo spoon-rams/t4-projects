@@ -1,0 +1,190 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.hero-banner__block {
+  top: 60% !important;
+  left: 50%;
+  margin-left: -30%;
+}
+.hero-banner__block__title > span {
+  background-color: transparent;
+  font-weight: 500;
+}
+.hero-banner__block__content > p {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.75rem;
+}
+
+div.h1-heading > h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1em;
+}
+
+.general-content__block > h2 {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+}
+.general-content__block > h2 span {
+  border-bottom: 5px solid #900028;
+}
+
+.parallax {
+  background: url("") no-repeat;
+
+  /* Set a specific height 
+  min-height: 400px; */
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*background-size: 100% top;*/
+}
+.banner-img-txt__block {
+  background-color: #006e97;
+}
+
+
+
+@media only screen and (min-width: 1200px) {
+  .hero-banner__block {
+    top: 80%;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .hero-banner__block {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+  .hero-banner__img {
+    width: 100%;
+    height: 250px;
+  }
+  .hero-banner__block {
+    width: 100%;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    /*eft: 5rem;*/
+    /*padding: 2rem;*/
+  }
+  .hero-banner__block {
+    left: 0px;
+    margin-top: 0px;
+    transform: none;
+  }
+  .hero-banner__block__title {
+    padding: 10px 32px;
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 1199px) {
+    .hero-banner__block {
+      top: 60% !important;
+      left: 50% !important;
+      margin-left: 0 !important;
+    }
+    .hero-banner__block__title {
+      background-color: transparent !important;
+      font-weight: 500 !important;
+    }
+    .hero-banner__block__title > span {
+      background-color: transparent !important;
+      font-weight: 500 !important;
+    }
+    .hero-banner__block__content > p {
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 1.75rem;
+    }
+    .hero-banner__img {
+      height: 400px;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .hero-banner__block {
+      position: absolute !important;
+      top: 10% !important;
+      left: 0 !important;
+      width: 100% !important;
+      margin-left: 0 !important;
+    }
+    .hero-banner__block__title {
+      background-color: transparent !important;
+      font-weight: 500 !important;
+    }
+    .hero-banner__block__title > span {
+      background-color: transparent !important;
+      font-weight: 500 !important;
+      text-align: center !important;
+    }
+    .hero-banner__block__content > p {
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 1.75rem;
+    }
+    .hero-banner__img {
+      height: 300px !important;
+    }
+    .scrollarrow::after {
+      content: "";
+      width: 0; 
+      height: 0; 
+      border-left: 23px solid transparent;
+      border-right: 23px solid transparent;
+      border-top: 25px solid #910029;
+      position: absolute;
+      left: 50%;
+      margin-left: -23px;
+      bottom: 0;
+    }
+    .scrollarrow {
+      position: absolute;
+      left: 50%;
+      margin-left: -55px;
+      bottom: 0;
+      /*transform: translate(-50%, -50%);*/
+      height: 50px;
+      width: 100px;
+      border-radius: 125px 125px 0 0;
+      background-color: #ffffff;
+      z-index: 1;
+    }
+    .scrollarrow:hover::after {
+      border-top: 35px solid #AD0031;
+    }
+  }
+
+
+@media only screen and (max-width: 385px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+  .hero-banner__block {
+    left: 0px;
+    top: 0px;
+    transform: none;
+  }
+  .hero-banner__block__title {
+    padding: 10px 32px;
+    text-align: left;
+    margin-bottom: 0;
+    background-color: rgba(0, 110, 151, 1) !important;
+  }
+}
+
+/* <t4type="media"formatter="path/*"id="113367"/> */

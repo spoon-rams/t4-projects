@@ -1,0 +1,39 @@
+/* MOBILE RESPONSIVE VIEW */
+
+@media only screen and (max-width: 991px) {
+  .brand-stories__related-content .related-content__stories.row .col-lg-4 {
+    height: 100%;
+  }
+
+  /* .brand-stories__related-content .related-content__stories.row img {
+    height: 50% !important;
+  } */
+
+  /* .brand-stories__related-content .col-lg-4 img {
+    width: 100%;
+    height: 50%;
+  } */
+
+  .brand-stories__related-content .related-content__stories.row .category {
+    text-align: center;
+  }
+
+  .brand-stories__related-content .related-content__stories.row h3 {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .brand-stories__related-content .related-content__title h2 {
+    border-bottom: 4px #e2e2e2 solid;
+    width: 100%;
+  }
+
+  .brand-stories__related-content .related-content__title::after {
+    display: none;
+  }
+
+  .brand-stories__related-content .related-content__stories.row h3 {
+    font-size: 1.2rem;
+  }
+}

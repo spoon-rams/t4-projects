@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+:root {
+  --test-border: 1px dashed black;
+  --color-maroon: #900028;
+  --color-white: white;
+}
+
+* {
+  font-family: "Raleway", "san-serif";
+}
+
+/* .two-by-two {
+  width: 70%;;
+  margin: auto;
+} */
+
+.text-heavy {
+  font-weight: 700;
+}
+
+.two-by-two {
+  margin-bottom: 0 !important;
+}
+
+.two-by-two .overlay {
+  height: 100%;
+  width: 100%;
+  opacity: .5;
+  background-color: black;
+  position: absolute;
+  z-index: 1;
+}
+
+.two-by-two .col-lg-6 {
+  height: 300px;
+  padding-top: 25px;
+}
+
+.two-by-two .col-lg-12 {
+  height: 300px;
+  padding-top: 25px;
+}
+
+.two-by-two .content-container img {
+  height: 100%;
+  width: 100%;
+  filter: blur(0);
+  transition: filter 0.5s ease;
+  object-fit: cover;
+  object-position: center;
+}
+
+.two-by-two .content-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.two-by-two .content-container .title {
+  display: flex;
+  position: absolute;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+}
+
+.two-by-two .content-container .content {
+  position: absolute;
+  align-items: center;
+  width: 80%;
+  z-index: 2;
+}
+
+.two-by-two .content-container .content .content-text {
+  color: white;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.two-by-two .content-container .content .content-text p {
+  font-size: 1.2rem !important;
+}
+
+.two-by-two .content-container .content .content-text button {
+  background-color: #900028;
+  border-color: #900028;
+  font-weight: bold;
+}
+
+.two-by-two .content-container .title p {
+  color: white;
+  font-size: 1.8rem !important;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 2;
+}
+
+/* Hover Effects */
+.two-by-two .content-container:not(:hover) .title p {
+  opacity: 1;
+}
+
+.two-by-two .content-container:hover .content .content-text {
+  opacity: 1;
+}
+
+.two-by-two .content-container:hover img {
+  filter: blur(5px);
+}

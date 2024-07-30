@@ -1,0 +1,45 @@
+* {
+  font-family: Raleway, arial, sans-serif;
+}
+
+.home-hero {
+  position: relative;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.home-hero video {
+  width: 100%;
+}
+
+.text-overlay {
+  position: absolute;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(88, 89, 91, 1) 64%,
+    rgba(88, 89, 91, 0) 90%
+  );
+  bottom: 0;
+  /* color: #900028; */
+  color: white;
+}
+
+.overlay-title {
+  position: relative;
+  bottom: 50px;
+  padding: 0px 20px;
+}
+.overlay-title h1 {
+  font-weight: 600;
+  padding-top: 40px;
+  
+}
+
+.overlay-body {
+  /* height: 60%; */
+  width: 100%;
+  padding: 0 20px;
+  margin-top: -38px;
+}

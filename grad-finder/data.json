@@ -1,0 +1,58 @@
+{
+  "course": [
+    {
+      "courseKeywords": "",
+      "courseArea": "Computer and Information Sciences",
+      "contentID": "149696",
+      "courseMainDesc": "",
+      "courseURL": "https://fordhamedu-cms01-test.terminalfour.net/terminalfour/preview/2/en/44564",
+      "courseModality": "On Campus Only",
+      "courseSalary": "",
+      "courseDegree": "Master of Science (M.S.)",
+      "atFordham": "",
+      "courseCampuses": "Rose Hill Campus",
+      "courseName": "Computer Science",
+      "courseImage": "https://fordhamedu-cms01-test.terminalfour.net/terminalfour/SiteManager?ctfn=download&fnno=60&ceid=0567a72f8f542d567c3a562f290e7191bf01cdff",
+      "courseLocation": "Fordham College at Rose Hill",
+      "courseOverview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque dignissim enim sit amet venenatis urna cursus. Nisi lacus sed viverra tellus in hac. Suscipit adipiscing bibendum est ultricies integer quis. Consequat mauris nunc congue nisi vitae. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Morbi non arcu risus quis varius quam quisque id diam. Faucibus in ornare quam viverra orci. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Vitae auctor eu augue ut lectus arcu bibendum at varius. Tincidunt lobortis feugiat vivamus at augue eget arcu dictum. Ultrices mi tempus imperdiet nulla. Consequat interdum varius sit amet mattis.",
+      "courseCollegeSchool": "Fordham College at Rose Hill",
+      "courseOptions": "\"Concentration"
+    },
+    {
+      "courseKeywords": "",
+      "courseArea": "Computer and Information Sciences",
+      "contentID": "153000",
+      "courseMainDesc": "",
+      "courseURL": "https://fordhamedu-cms01-test.terminalfour.net/terminalfour/preview/2/en/45179",
+      "courseModality": "Hybrid",
+      "courseSalary": "",
+      "courseDegree": "Master of Science (M.S.)",
+      "atFordham": "",
+      "courseCampuses": "Rose Hill Campus",
+      "courseName": "Cyber Security",
+      "courseImage": "https://fordhamedu-cms01-test.terminalfour.net/terminalfour/SiteManager?ctfn=download&fnno=60&ceid=c45568a490c2793f4dd7aef400d372a1eefc4e2c",
+      "courseLocation": "Fordham College at Lincoln Center",
+      "courseOverview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque dignissim enim sit amet venenatis urna cursus. Nisi lacus sed viverra tellus in hac. Suscipit adipiscing bibendum est ultricies integer quis. Consequat mauris nunc congue nisi vitae. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Morbi non arcu risus quis varius quam quisque id diam. Faucibus in ornare quam viverra orci. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Vitae auctor eu augue ut lectus arcu bibendum at varius. Tincidunt lobortis feugiat vivamus at augue eget arcu dictum. Ultrices mi tempus imperdiet nulla. Consequat interdum varius sit amet mattis.",
+      "courseCollegeSchool": "Fordham College at Lincoln Center",
+      "courseOptions": ""
+    },
+    {
+      "courseKeywords": "",
+      "courseArea": "Computer and Information Sciences",
+      "contentID": "153002",
+      "courseMainDesc": "",
+      "courseURL": "https://fordhamedu-cms01-test.terminalfour.net/terminalfour/preview/2/en/45180",
+      "courseModality": "Online Only",
+      "courseSalary": "",
+      "courseDegree": "Master of Science (M.S.)",
+      "atFordham": "",
+      "courseCampuses": "Lincoln Center Campus",
+      "courseName": "Management Information Systems",
+      "courseImage": "https://fordhamedu-cms01-test.terminalfour.net/terminalfour/SiteManager?ctfn=download&fnno=60&ceid=af402786999a305fcaa1eb1d95204a488a7df7a8",
+      "courseLocation": "",
+      "courseOverview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "courseCollegeSchool": "",
+      "courseOptions": "\"Concentration"
+    }
+  ]
+}

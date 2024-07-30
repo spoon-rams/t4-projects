@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .title, .content {
+      margin: 10px 0;
+      opacity: 0;
+      transition: opacity 0.5s;
+      color: black;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const container = document.querySelector('.container');
+      const title = document.querySelector('.title');
+      const content = document.querySelector('.content');
+
+      window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+
+        // Calculate the position of the container in the viewport
+        const containerPosition = container.getBoundingClientRect().top;
+
+        // Check if the container is in the viewport
+        if (containerPosition < windowHeight * 0.75) {
+          container.style.opacity = 1;
+        } else {
+          container.style.opacity = 0;
+        }
+
+        // Check if the title is in the viewport
+        if (title.getBoundingClientRect().top < windowHeight * 0.75) {
+          title.style.opacity = 1;
+        } else {
+          title.style.opacity = 0;
+        }
+
+        // Check if the content is in the viewport
+        if (content.getBoundingClientRect().top < windowHeight * 0.75) {
+          content.style.opacity = 1;
+        } else {
+          content.style.opacity = 0;
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title" style="color: black">Your Title</h1>
+    <p class="content">Your text content goes here.</p>
+  </div>
+  <!-- Add more content or sections as needed -->
+</body>
+</html>

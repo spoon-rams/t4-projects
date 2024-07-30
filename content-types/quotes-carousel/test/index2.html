@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+      }
+
+      .carousel-container {
+        width: 100%;
+        max-width: 850px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .carousel {
+        display: flex;
+        transition: transform 0.4s ease-in-out;
+        margin-left: -10px; /* Adjusted negative margin to hide the gap on the left */
+      }
+
+      .carousel:nth-child(0) {
+        margin-left: 50px;
+      }
+
+      .carousel-item {
+        min-width: 790px; /* Minimum width for each item */
+        min-height: 300px;
+        flex-shrink: 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+      }
+
+      .carousel-dots {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #888;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+
+      .dot.active {
+        background-color: #333;
+      }
+
+      .carousel-arrows {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .arrow {
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 2000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel-container">
+      <div class="arrow" onclick="moveToSlide(currentSlide - 1)">&#9664;</div>
+      <div class="carousel">
+        <div class="carousel-item">Profile 1</div>
+        <div class="carousel-item">Profile 2</div>
+        <div class="carousel-item">Profile 3</div>
+        <div class="carousel-item">Profile 4</div>
+      </div>
+      <div class="arrow" onclick="moveToSlide(currentSlide + 1)">&#9654;</div>
+    </div>
+    <div class="carousel-dots">
+      <span class="dot active" onclick="moveToSlide(0)"></span>
+      <span class="dot" onclick="moveToSlide(1)"></span>
+      <span class="dot" onclick="moveToSlide(2)"></span>
+      <span class="dot" onclick="moveToSlide(3)"></span>
+    </div>
+
+    <script>
+      const carousel = document.querySelector(".carousel");
+      const dots = document.querySelectorAll(".dot");
+      const arrowLeft = document.querySelector(".arrow:first-child");
+      const arrowRight = document.querySelector(".arrow:last-child");
+
+      let currentSlide = 0; // Initialize to 1
+
+      function updateCarousel() {
+        const slideWidth = -currentSlide * (100 / 4); // Adjusted width for 4 items
+        carousel.style.transform = `translateX(${slideWidth}%)`;
+
+        dots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            dot.classList.add("active");
+          } else {
+            dot.classList.remove("active");
+          }
+        });
+
+        arrowLeft.style.display = currentSlide === 0 ? "none" : "block";
+        arrowRight.style.display = currentSlide === 3 ? "none" : "block";
+      }
+
+      function moveToSlide(slideIndex) {
+        if (slideIndex < 0) {
+          slideIndex = 0;
+        } else if (slideIndex > 3) {
+          slideIndex = 3;
+        }
+
+        currentSlide = slideIndex;
+        updateCarousel();
+      }
+
+      updateCarousel();
+    </script>
+  </body>
+</html>

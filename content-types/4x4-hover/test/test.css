@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+:root {
+  --test-border: 1px dashed black;
+}
+
+* {
+  font-family: "Raleway", "san-serif";
+}
+
+.container {
+  padding: 0 40px;
+}
+
+.col-lg-6 {
+  height: 300px;
+  padding: 20px;
+}
+
+.content-container img {
+  height: 100%;
+  width: 100%;
+  filter: blur(0);
+  transition: filter 0.5s ease;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.content-container .title,
+.content-container .content,
+.content-container img {
+  display: block;
+  position: static;
+  width: 100%;
+  z-index: 1;
+}
+
+.content-container .title p,
+.content-container .content p {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.content-container .title p {
+  width: 60%;
+  text-transform: uppercase;
+}
+
+.content-container .content p {
+  font-size: 1.2rem;
+  padding: 0 50px;
+  opacity: 0;
+}
+
+/* Hover Effects */
+.content-container:not(:hover) .title p {
+  opacity: 1;
+}
+
+.content-container:hover .content p {
+  opacity: 1;
+}
+
+.content-container:hover img {
+  filter: blur(2.5px);
+}
+
+/* Mobile Responsive */
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 1140px !important;
+    padding: 0 20px;
+  }
+
+  .col-lg-6 {
+    padding-bottom: 0;
+  }
+
+  .content-container {
+    flex-direction: column;
+    align-items: normal;
+    justify-content: end;
+  }
+
+  .content-container .content {
+    padding-top: 10px;
+  }
+
+  .content-container .content .content-background {
+    position: absolute;
+    background: black;
+    opacity: 0.6;
+    filter: blur(3px);
+    z-index: -1;
+  }
+
+  @media (max-width: 991px) {
+    .content-container .title {
+      width: 100%;
+    }
+
+    .content-container .content {
+      height: 31%;
+    }
+
+    .content-container .content .content-background {
+      top: 70%;
+      height: 30%;
+    }
+  }
+
+  @media (min-width: 441px) and (max-width: 768px) {
+    .container {
+      max-width: 920px !important;
+    }
+
+    .content-container .content {
+      height: 50%;
+    }
+
+    .content-container .content .content-background {
+      top: 51%;
+      height: 49%;
+    }
+  }
+
+  @media (max-width: 441px) {
+    .content-container .content {
+      height: 61%;
+    }
+
+    .content-container .content .content-background {
+      top: 40%;
+      height: 60%;
+    }
+
+    .content-container .title p {
+      padding: 0 10px;
+    }
+  }
+}
