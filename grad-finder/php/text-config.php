@@ -77,8 +77,8 @@ try {
     $queryHandler->setStopWords($stopWords);
   
     /* ADDED COURSE MODALITY TO THE BELOW METHODS - START */
-    $queryHandler->setDontRemoveStopwords(array('courseArea', 'courseDegree', 'courseCollegeSchool', 'courseDuration', 'courseLocation', 'courseFaculties', 'courseDepartments','courseType', 'courseCampuses', 'courseKeywords', 'courseModality'));
-    $queryHandler->setDontTokenize(array('courseArea', 'courseDegree', 'courseCollegeSchool', 'courseDuration', 'courseLocation', 'courseFaculties', 'courseDepartments','courseType', 'courseCampuses', 'courseKeywords', 'courseModality'));
+    $queryHandler->setDontRemoveStopwords(array('courseArea', 'courseDegree', 'courseCollegeSchool', 'courseDuration', 'courseLocation', 'courseFaculties', 'courseDepartments','courseType', 'courseCampuses', 'courseKeywords', 'courseModality', 'courseSchedule'));
+    $queryHandler->setDontTokenize(array('courseArea', 'courseDegree', 'courseCollegeSchool', 'courseDuration', 'courseLocation', 'courseFaculties', 'courseDepartments','courseType', 'courseCampuses', 'courseKeywords', 'courseModality', 'courseSchedule'));
     /* END */
   
     $queryHandler->setIgnoreQueries(array('addCourse','removeCourse','paginate','page'));
@@ -201,6 +201,16 @@ try {
     }
     /* ADDED QUERY SEARCH HANDLER - COURSE MODALITY - END */
 
+    /* ADDED QUERY SEARCH HANDLER - COURSE MODALITY - START */
+    if ($queryHandler->isQuerySet('courseSchedule')) {
+        $exactSearch->setMember('element', 'courseSchedule');
+        $exactSearch->setMember('query', $queryHandler->getQueryValue('courseSchedule'));
+        $exactSearch->setMember('multipleValueState', true);
+        $exactSearch->setMember('multipleValueSeparator', ', ');
+        $exactSearch->runFilter();
+    }
+    /* ADDED QUERY SEARCH HANDLER - COURSE MODALITY - END */
+
     if ($queryHandler->isQuerySet('courseType')) {
         $wordSearch->setMember('element', 'courseType');
         $wordSearch->setMember('query', $queryHandler->getQueryValue('courseType'));
@@ -235,8 +245,6 @@ try {
     // Get the intersection of multiple result sets if necessary
     $search->intersectDocumentResults();
 
-
-    
     if (!empty($config['groupby'])) {
         $groupBy = explode('|', $config['groupby']);
         $documents = [];

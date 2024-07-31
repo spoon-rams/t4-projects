@@ -4,6 +4,10 @@ const categoryInput = document.getElementById("category-select");
 const resultsDiv = document.querySelector(".fordham-stories-archive");
 const paginationDiv = document.querySelector(".pagination");
 
+if (!searchInput || !categoryInput || !resultsDiv || !paginationDiv) {
+  return;
+}
+
 const itemsPerPage = 5;
 const categories = [{ name: "Please chose a category", value: "" }];
 let currentPage = 1;
@@ -17,6 +21,7 @@ const displayResults = (page = 1) => {
   const results = filteredData.slice(start, end);
 
   if (results.length) {
+    loading = false;
     resultsDiv.innerHTML = results
       .map((item) => {
         const { link, image, imageDesc, category, title } = item;

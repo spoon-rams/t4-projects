@@ -15733,11 +15733,14 @@
             n = document.getElementById("college-school-button"),
             r = document.getElementById("campus-button"),
             u = document.getElementById("modality-button"),
+            k = document.getElementById("schedule-button"),
             i = document.getElementById("area-study-filter"),
             o = document.getElementById("degree-filter"),
             s = document.getElementById("college-school-filter"),
             a = document.getElementById("campus-filter"),
-            q = document.getElementById("modality-filter");
+            q = document.getElementById("modality-filter"),
+            e = document.getElementById("schedule-filter");
+
           e.addEventListener("click", function () {
             i.classList.contains("active")
               ? i.classList.remove("active")
@@ -15745,7 +15748,8 @@
               o.classList.contains("active") && o.classList.remove("active"),
               s.classList.contains("active") && s.classList.remove("active"),
               a.classList.contains("active") && a.classList.remove("active"),
-              q.classList.contains("active") && q.classList.remove("active");
+              q.classList.contains("active") && q.classList.remove("active"),
+              e.classList.contains("active") && e.classList.remove("active");
           }),
             t.addEventListener("click", function () {
               o.classList.contains("active")
@@ -15754,7 +15758,8 @@
                 i.classList.contains("active") && i.classList.remove("active"),
                 s.classList.contains("active") && s.classList.remove("active"),
                 a.classList.contains("active") && a.classList.remove("active"),
-                q.classList.contains("active") && q.classList.remove("active");
+                q.classList.contains("active") && q.classList.remove("active"),
+                e.classList.contains("active") && e.classList.remove("active");
             }),
             n.addEventListener("click", function () {
               s.classList.contains("active")
@@ -15763,7 +15768,8 @@
                 i.classList.contains("active") && i.classList.remove("active"),
                 o.classList.contains("active") && o.classList.remove("active"),
                 a.classList.contains("active") && a.classList.remove("active"),
-                q.classList.contains("active") && q.classList.remove("active");
+                q.classList.contains("active") && q.classList.remove("active"),
+                e.classList.contains("active") && e.classList.remove("active");
             }),
             r.addEventListener("click", function () {
               a.classList.contains("active")
@@ -15772,7 +15778,8 @@
                 i.classList.contains("active") && i.classList.remove("active"),
                 o.classList.contains("active") && o.classList.remove("active"),
                 s.classList.contains("active") && s.classList.remove("active"),
-                q.classList.contains("active") && q.classList.remove("active");
+                q.classList.contains("active") && q.classList.remove("active"),
+                e.classList.contains("active") && e.classList.remove("active");
             });
           u.addEventListener("click", () => {
             q.classList.contains("active")
@@ -15781,7 +15788,18 @@
               i.classList.contains("active") && i.classList.remove("active"),
               o.classList.contains("active") && o.classList.remove("active"),
               s.classList.contains("active") && s.classList.remove("active"),
-              a.classList.contains("active") && a.classList.remove("acvite");
+              a.classList.contains("active") && a.classList.remove("active"),
+              e.classList.contains("active") && e.classList.remove("active");
+          });
+          k.addEventListener("click", () => {
+            e.classList.contains("active")
+              ? e.classList.remove("active")
+              : e.classList.add("active"),
+              i.classList.contains("active") && i.classList.remove("active"),
+              o.classList.contains("active") && o.classList.remove("active"),
+              s.classList.contains("active") && s.classList.remove("active"),
+              a.classList.contains("active") && a.classList.remove("active"),
+              q.classList.contains("active") && q.classList.remove("active");
           });
         }
       };

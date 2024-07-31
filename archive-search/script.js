@@ -16,9 +16,7 @@ const displayResults = (page = 1) => {
   const start = (page - 1) * itemsPerPage;
   const end = start + itemsPerPage;
   const results = filteredData.slice(start, end);
-
-  if (results.length > 0) {
-    resultsDiv.innerHTML = results
+  const renderElements = results
       .map((item) => {
         const { link, image, imageDesc, category, title } = item;
         return `
@@ -39,13 +37,21 @@ const displayResults = (page = 1) => {
           </div>`;
       })
       .join("");
-    updatePagination(filteredData.length, page);
-  } else {
-    resultsDiv.innerHTML = `<div class="row archive-list" style="padding-left: 15px;">
-                              <h3>No Search Results...</h3>
-                            </div>`;
-    updatePagination(filteredData.length, page);
+
+  if (results.length === 5) {
+    resultsDiv.style.height = "auto";
+    resultsDiv.innerHTML = renderElements;
+    return updatePagination(filteredData.length, page);
+  } else if (results.length < 5 && results.length !== 0) {
+    resultsDiv.style.height = "1185px";
+    resultsDiv.innerHTML = renderElements;
+    return updatePagination(filteredData.length, page);
   }
+  resultsDiv.style.height = "1185px";
+  updatePagination(filteredData.length, page);
+  return (resultsDiv.innerHTML = `<div class="row archive-list" style="padding-left: 15px;">
+                              <h3>No Search Results...</h3>
+                            </div>`);
 };
 
 // Displays the pagination

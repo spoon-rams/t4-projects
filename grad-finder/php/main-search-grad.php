@@ -1,7 +1,7 @@
 <?php
     $genericFacet = \T4\PHPSearchLibrary\FacetFactory::getInstance('GenericFacet', $documentCollection, $queryHandler);
     $filters = $queryHandler->getQueryValuesForPrint();
-    $categoryFilters = array('courseArea','courseDegree','courseCollegeSchool','courseCampuses', 'courseModality');
+    $categoryFilters = array('courseArea','courseDegree','courseCollegeSchool','courseCampuses', 'courseModality', 'courseSchedule');
 ?>
 <section class="program-search" aria-label="Fordham University Program Search">
     <!--h2 class="program-search__title">
@@ -33,10 +33,14 @@
       <button type="button" class="btn btn-primary program-search__form__toggle" id="degree-button">Options</button>
       <button type="button" class="btn btn-primary program-search__form__toggle" id="college-school-button">College or School</button>
 
-      <!-- Added New button -->
+      <!-- Added Modality button -->
       <button type="button" class="btn btn-primary program-search__form__toggle" id="modality-button">Modality</button>
 
       <button type="button" class="btn btn-primary program-search__form__toggle" id="campus-button">Campus</button>
+
+      <!-- Added Enrollment Status button -->
+      <button type="button" class="btn btn-primary program-search__form__toggle" id="schedule-button">FT/PT</button>
+
       <a class="btn btn-primary program-search__form__clear ajax-load-link" href="?keywords=" id="clear-filters">Clear Filters</a>
     </div>
         
@@ -163,6 +167,38 @@
               <?php endif; ?>
           </div>
           <!-- ADDED FILTER OPTION - MODALITY - END -->
+          
+          <!-- ADDED ENROLLMENT STATUS OPTIOn - START -->
+          <div class="program-search__form__filters col-sm-12" id="schedule-filter" data-group="schedule">
+            <span class="program-search__form__filters__heading">Filter by FT/PT</span>
+            <?php
+                  $element = 'courseSchedule';
+                  $genericFacet->setMember('element', $element);
+                  $genericFacet->setMember('type', 'List');
+                  $genericFacet->setMember('facetSource', 'documents');
+                  $genericFacet->setMember('sortingState', true);
+                  $genericFacet->setMember('multipleValueState', true);
+                  $genericFacet->setMember('multipleValueSeparator', ', ');
+                  $search = $genericFacet->displayFacet(); ?>
+              <?php if (!empty($search)) : ?>
+                  <div id="checkboxes-<?php echo strtolower($element)?>">
+                    <fieldset class="form-group">
+                      <legend class="sr-only">Filter by FT/PT: </legend>
+                        <?php $i = 0; ?>
+                        <?php foreach ($search as $item) : ?>
+                          <div class="checkbox-styled">
+                            <label for="<?php echo $element.'['.$i.']'; ?>" class="label-checkbox">
+                                <input type="checkbox" id="<?php echo $element.'['.$i++.']'; ?>" value="<?php echo $item['value'] ?>" data-cookie="T4_persona" name="<?php echo $element ?>" data-t4-value="<?php echo strtolower($item['value']) ?>" <?php echo $item['selected'] ? 'checked' : '' ?> />
+                                <?php echo $item['label'] ?>
+                              	<span class="checkmark"></span>
+                            </label>
+                          </div>
+                        <?php endforeach; ?>
+                          </fieldset>
+                    </div>
+              <?php endif; ?>
+          </div>
+          <!-- ENROLLMENT STATUS - END -->
 
           
           <div class="program-search__form__filters col-sm-12" id="campus-filter" data-group="campus">
@@ -204,7 +240,6 @@
   
     <!-- FILTERS APPLIED CARD RENDER - START -->
      <div id="searchoptions-filters" role="search" data-t4-ajax-group="directorySearch">
-       
             <?php if ($filters !== null) : ?>
        				<div id="event-filters">
                    <div class="program-search__form__controls__label">Filters Applied:</div>
@@ -239,6 +274,7 @@
                                 <li class="filter-<?php echo $i++ ?> small primary"  data-t4-filter="<?php echo strtolower($value) ?>">
                                   <div class="filter-wrapper">
                                      <div class="filter-text"><?php echo $filters['keywords'] ?></div>
+                                     <div  class="remove">X</div>
                                   </div>
                                 </li>
                             <?php
@@ -281,6 +317,11 @@
             <p class="popup-modality">
               <strong>Modality:</strong> <span class="modality">
                 <?php echo $item['courseModality']; ?>
+              </span>
+            </p>
+            <p class="popup-schedule">
+              <strong>Schedule:</strong> <span class="schedule">
+                <?php echo $item['courseSchedule']; ?>
               </span>
             </p>
             <hr class="modal-popup-separator">
