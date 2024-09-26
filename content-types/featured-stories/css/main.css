@@ -49,18 +49,18 @@
   padding: 15px;
 }
 
-.featured-stories .title::after {
+/* .featured-stories .title::after {
   content: "";
   margin-top: 1px;
   height: 4px;
   background-color: #e2e2e2;
   flex: 1 1 auto;
   margin-left: 26px;
-}
+} */
 
 .featured-stories .title h2 {
-  margin: 0;
-  font-size: 2rem;
+  margin: auto;
+  font-size: 2.5rem;
   color: #343a40;
   text-transform: uppercase;
   font-family: "Raleway", sans-serif;
@@ -137,4 +137,3 @@
   text-align: left;
   font-size: 0.9rem;
 }
-
