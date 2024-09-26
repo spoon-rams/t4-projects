@@ -1,0 +1,49 @@
+@media only screen and (max-width: 991px) {
+  .block-quote-embed .block-quote__container svg {
+    height: 50px;
+  }
+
+  .block-quote-embed .block-quote .quote {
+    font-size: 2rem;
+    padding-left: 0 !important;
+  }
+
+  .block-quote-embed .block-quote__container {
+    padding: 0 120px;
+  }
+
+  .block-quote-embed .block-quote .author {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .block-quote-embed .block-quote__container {
+    padding: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 546px) {
+  .block-quote-embed .block-quote__container svg {
+    height: 35px;
+  }
+
+  .block-quote-embed .block-quote .quote {
+    font-size: 1.3rem;
+  }
+
+  .block-quote-embed .block-quote .author,
+  .block-quote-embed .block-quote-closed .author p {
+    font-size: 1.1rem;
+  }
+
+  .block-quote-embed .block-quote .link .cta-link-font {
+    font-size: 0.94rem;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .block-quote-embed .block-quote .profile {
+    padding: 0 !important;
+  }
+}

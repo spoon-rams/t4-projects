@@ -15732,12 +15732,14 @@
             t = document.getElementById("degree-button"),
             n = document.getElementById("college-school-button"),
             r = document.getElementById("campus-button"),
+            // ADDED ADDITIONAL DOM ELEMENTS
             u = document.getElementById("modality-button"),
             k = document.getElementById("schedule-button"),
             i = document.getElementById("area-study-filter"),
             o = document.getElementById("degree-filter"),
             s = document.getElementById("college-school-filter"),
             a = document.getElementById("campus-filter"),
+            // ADDED ADDITIONAL DOM ELEMENTS
             q = document.getElementById("modality-filter"),
             e = document.getElementById("schedule-filter");
 
@@ -15781,26 +15783,36 @@
                 q.classList.contains("active") && q.classList.remove("active"),
                 e.classList.contains("active") && e.classList.remove("active");
             });
-          u.addEventListener("click", () => {
-            q.classList.contains("active")
-              ? q.classList.remove("active")
-              : q.classList.add("active"),
-              i.classList.contains("active") && i.classList.remove("active"),
-              o.classList.contains("active") && o.classList.remove("active"),
-              s.classList.contains("active") && s.classList.remove("active"),
-              a.classList.contains("active") && a.classList.remove("active"),
-              e.classList.contains("active") && e.classList.remove("active");
-          });
-          k.addEventListener("click", () => {
-            e.classList.contains("active")
-              ? e.classList.remove("active")
-              : e.classList.add("active"),
-              i.classList.contains("active") && i.classList.remove("active"),
-              o.classList.contains("active") && o.classList.remove("active"),
-              s.classList.contains("active") && s.classList.remove("active"),
-              a.classList.contains("active") && a.classList.remove("active"),
-              q.classList.contains("active") && q.classList.remove("active");
-          });
+            
+
+            if (
+              document.getElementById("modality-filter") ||
+              document.getElementById("schedule-filter")
+            ) {
+              var q = document.getElementById("modality-filter"),
+                e = document.getElementById("schedule-filter");
+
+                u.addEventListener("click", () => {
+                  q.classList.contains("active")
+                    ? q.classList.remove("active")
+                    : q.classList.add("active"),
+                    i.classList.contains("active") && i.classList.remove("active"),
+                    o.classList.contains("active") && o.classList.remove("active"),
+                    s.classList.contains("active") && s.classList.remove("active"),
+                    a.classList.contains("active") && a.classList.remove("active"),
+                    e.classList.contains("active") && e.classList.remove("active");
+                });
+                k.addEventListener("click", () => {
+                  e.classList.contains("active")
+                    ? e.classList.remove("active")
+                    : e.classList.add("active"),
+                    i.classList.contains("active") && i.classList.remove("active"),
+                    o.classList.contains("active") && o.classList.remove("active"),
+                    s.classList.contains("active") && s.classList.remove("active"),
+                    a.classList.contains("active") && a.classList.remove("active"),
+                    q.classList.contains("active") && q.classList.remove("active");
+                });
+            }
         }
       };
     document.querySelector(".js").classList.add("js-ready"),

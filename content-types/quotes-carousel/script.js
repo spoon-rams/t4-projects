@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let startX = 0;
   let clickPending = false;
   let currentSlide = 0;
+  
   // CREATE INDICATOR DOTS
   if (slides.length > 1) {
     let numIndicators = slides.length;
@@ -44,11 +45,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // DESKTOP CLICK ACTION - NEED TO turn this into a function
   nextButton.addEventListener("click", (e) => {
+    console.log("FROM NEXT CLICK EVENT LISTENER - ", clickPending);
     if (clickPending) {
       e.stopImmediatePropagation();
       return;
     }
+    clickPending = true;
     handleClick("next", slidesContainer, slide);
+    setTimeout(() => (clickPending = false), 600);
   });
 
   prevButton.addEventListener("click", (e) => {
@@ -56,7 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
       e.stopImmediatePropagation();
       return;
     }
+    clickPending = true;
     handleClick("previous", slidesContainer, slide);
+    setTimeout(() => (clickPending = false), 600);
   });
 
   // MOBILE VIEW
@@ -103,12 +109,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let currentSlide = 0;
 // HELPER FUNCTION - SETS THE INDICATOR DOT - Refactoring
-function setIndicator(index, element) {
+function setIndicator(index) {
+  const prevButton = document.getElementById("slide-arrow-prev");
+  const nextButton = document.getElementById("slide-arrow-next");
+  const slides = document.querySelectorAll(".slide");
+  const indicators = document.querySelectorAll(".slider-indicator");
+
   // Hides Previous Button
   if (index === 0) {
-    element.style.display = "none";
+    prevButton.style.display = "none";
   } else {
-    element.style.display = "block";
+    prevButton.style.display = "block";
   }
 
   // Hides Next Button
@@ -133,21 +144,13 @@ function handleClick(action, container, slide, index) {
   // const slideWidth = slide.clientWidth;
   switch (action) {
     case "next":
-      clickPending = true;
       container.scrollLeft += slide.clientWidth + 2;
       currentSlide += 1;
-      setIndicator(currentSlide);
-      return setTimeout(() => {
-        clickPending = false;
-      }, 600);
+      return setIndicator(currentSlide);
     case "previous":
-      clickPending = true;
       container.scrollLeft -= slide.clientWidth + 2;
       currentSlide -= 1;
-      setIndicator(currentSlide);
-      return setTimeout(() => {
-        clickPending = false;
-      }, 600);
+      return setIndicator(currentSlide);
     case "indicator":
       container.scrollLeft = index * slide.clientWidth + 2;
       currentSlide = index;

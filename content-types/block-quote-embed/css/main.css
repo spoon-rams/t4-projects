@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+.block-quote-embed .col-lg-8.block-quote-column {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.block-quote-embed .col-lg-4.social-embed-column {
+  display: flex;
+  justify-content: center;
+}
+
+/* REGULAR BLOCK QUOTE */
+.block-quote-embed .block-quote {
+  display: flex;
+  position: relative;
+  padding-top: 60px;
+}
+
+.block-quote-embed .block-quote__container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.block-quote-embed .block-quote .profile {
+  padding: 0 20px;
+}
+
+.block-quote-embed .block-quote .quote {
+  font-size: 1.8rem;
+  padding-top: 20px;
+  letter-spacing: -0.5px;
+  align-self: center;
+}
+
+.block-quote-embed .block-quote .quote {
+  text-align: center;
+}
+
+.block-quote-embed .block-quote .opening-quote {
+  align-self: start;
+}
+
+.block-quote-embed .block-quote .closing-quote {
+  align-self: end;
+}
+
+.block-quote-embed .block-quote .author {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.block-quote-embed .block-quote .link {
+  text-align: center;
+}
+
+.block-quote-embed .block-quote .link .cta-link-font {
+  font-size: 1.1rem;
+}
+
+.block-quote-embed .block-quote::after {
+  position: absolute;
+  content: "";
+  top: 20px;
+  left: 50%;
+  margin-left: -100px;
+  border-bottom: 3px solid #900028;
+  height: 3px;
+  width: 200px;
+}
+
+.block-quote-embed .block-quote img {
+  height: 180px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 180px;
+  width: 180px;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}

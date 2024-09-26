@@ -1,0 +1,6 @@
+@media only screen and (orientation: landscape) and (max-height: 450px){
+  .modal-overflow {
+    height: 300px;
+    overflow-y: scroll;
+  }
+}

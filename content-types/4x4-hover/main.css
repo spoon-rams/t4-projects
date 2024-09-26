@@ -26,17 +26,13 @@
 .two-by-two .overlay {
   height: 100%;
   width: 100%;
-  opacity: .5;
+  opacity: 0.5;
   background-color: black;
   position: absolute;
   z-index: 1;
 }
-
-.two-by-two .col-lg-6 {
-  height: 300px;
-  padding-top: 25px;
-}
-
+.two-by-two .col-lg-4,
+.two-by-two .col-lg-6,
 .two-by-two .col-lg-12 {
   height: 300px;
   padding-top: 25px;
@@ -93,18 +89,45 @@
   border-color: #900028;
   font-weight: bold;
 }
+.two-by-two .content-container .title {
+  flex-direction: column;
+}
 
-.two-by-two .content-container .title p {
+.two-by-two .content-container .title img,
+.two-by-two .content-container .title svg,
+.two-by-two .content-container .title p,
+.two-by-two .content-container .title p.title-desc {
   color: white;
-  font-size: 1.8rem !important;
   opacity: 0;
   text-align: center;
   transition: opacity 0.5s ease-in-out;
   z-index: 2;
 }
 
+.two-by-two .content-container .title svg {
+  height: 70px;
+  padding-bottom: 10px;
+}
+
+.two-by-two .content-container .title img {
+  width: 60px;
+  padding-bottom: 10px;
+}
+
+.two-by-two .content-container .title .title-header {
+  font-size: 1.8rem !important;
+  margin-bottom: 0 !important;
+}
+
+.two-by-two .content-container .title .title-desc {
+  font-size: 1rem !important;
+}
+
 /* Hover Effects */
-.two-by-two .content-container:not(:hover) .title p {
+.two-by-two .content-container:not(:hover) .title img,
+.two-by-two .content-container:not(:hover) .title svg,
+.two-by-two .content-container:not(:hover) .title .title-header,
+.two-by-two .content-container:not(:hover) .title .title-desc {
   opacity: 1;
 }
 
@@ -112,6 +135,6 @@
   opacity: 1;
 }
 
-.two-by-two .content-container:hover img {
+.two-by-two .content-container:hover > img {
   filter: blur(5px);
 }

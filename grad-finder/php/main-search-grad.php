@@ -30,12 +30,11 @@
     <div class="program-search__form__controls col-12">
       <span class="program-search__form__controls__label">Filter by:</span>
       <button type="button" class="btn btn-primary program-search__form__toggle" id="area-study-button" >Area of Interest</button>
-      <button type="button" class="btn btn-primary program-search__form__toggle" id="degree-button">Options</button>
+      <button type="button" class="btn btn-primary program-search__form__toggle" id="degree-button">Program Options</button>
       <button type="button" class="btn btn-primary program-search__form__toggle" id="college-school-button">College or School</button>
 
       <!-- Added Modality button -->
-      <button type="button" class="btn btn-primary program-search__form__toggle" id="modality-button">Modality</button>
-
+      <button type="button" class="btn btn-primary program-search__form__toggle" id="modality-button">Type</button>
       <button type="button" class="btn btn-primary program-search__form__toggle" id="campus-button">Campus</button>
 
       <!-- Added Enrollment Status button -->
@@ -60,7 +59,7 @@
             <?php if (!empty($search)) : ?>
               <div id="checkboxes-<?php echo strtolower($element)?>">
                 <fieldset class="form-group">
-                <legend class="sr-only">Filter by area of interest: </legend>
+                <legend class="sr-only">Filter by area of interest</legend>
                 
                 <?php $i = 0; ?>
                 <?php foreach ($search as $item) : ?>
@@ -78,7 +77,7 @@
             <?php endif; ?>
           </div>
           <div class="program-search__form__filters col-sm-12" id="degree-filter" data-group="degree">
-            <span class="program-search__form__filters__heading">Filter by option:</span>
+            <span class="program-search__form__filters__heading">Filter by Program Option(s)</span>
             <?php
                 $element = 'courseDegree';
                 $genericFacet->setMember('element', $element);
@@ -91,7 +90,7 @@
             <?php if (!empty($search)) : ?>
                 <div id="checkboxes-<?php echo strtolower($element)?>">
                   <fieldset class="form-group">
-                    <legend class="sr-only">Filter by option: </legend>
+                    <legend class="sr-only">Filter by Program Option(s)</legend>
                       <?php $i = 0; ?>
                       <?php foreach ($search as $item) : ?>
                         <div class="checkbox-styled">
@@ -138,7 +137,7 @@
 
           <!-- ADDED FILTER OPTION - MODALITY - START -->
            <div class="program-search__form__filters col-sm-12" id="modality-filter" data-group="modality">
-            <span class="program-search__form__filters__heading">Filter by Modality</span>
+            <span class="program-search__form__filters__heading">Filter by Type</span>
             <?php
                   $element = 'courseModality';
                   $genericFacet->setMember('element', $element);
@@ -151,7 +150,7 @@
               <?php if (!empty($search)) : ?>
                   <div id="checkboxes-<?php echo strtolower($element)?>">
                     <fieldset class="form-group">
-                      <legend class="sr-only">Filter by Modality: </legend>
+                      <legend class="sr-only">Filter by Type</legend>
                         <?php $i = 0; ?>
                         <?php foreach ($search as $item) : ?>
                           <div class="checkbox-styled">
@@ -240,7 +239,7 @@
   
     <!-- FILTERS APPLIED CARD RENDER - START -->
      <div id="searchoptions-filters" role="search" data-t4-ajax-group="directorySearch">
-            <?php if ($filters !== null) : ?>
+            <?php if ($filters !== null && !$filters['page']) : ?>
        				<div id="event-filters">
                    <div class="program-search__form__controls__label">Filters Applied:</div>
                        <ul class="no-bullet">

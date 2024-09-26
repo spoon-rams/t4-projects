@@ -18,23 +18,23 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Tabs Vertical with Animation - White Theme
-document.addEventListener("DOMContentLoaded", () => {
-  const whiteTheme = document.querySelectorAll(".side-tabs-white");
-  // Edge Case
-  if (!whiteTheme) return;
+// document.addEventListener("DOMContentLoaded", () => {
+//   const whiteTheme = document.querySelectorAll(".side-tabs-white");
+//   // Edge Case
+//   if (!whiteTheme) return;
 
-  // Handles duplication if there are more than one of these components and makes each duplication unique
-  whiteTheme.forEach((val, index) => {
-    if (whiteTheme.length > 1) {
-      val.classList.add(`duplicated-${index}`);
-      tabAnimation(`.duplicated-${index} .white-item`, `.duplicated-${index} .text`, `duplicated-${index} .col-md-8`, "tab-active-maroon", "text-white");
-    } else if (whiteTheme.length === 1) {
-      tabAnimation(".side-tabs-white .white-item", ".side-tabs-white .text", ".side-tabs-white .col-md-8", "tab-active-maroon", "text-white");
-    } else {
-      return;
-    }
-  });
-});
+//   // Handles duplication if there are more than one of these components and makes each duplication unique
+//   whiteTheme.forEach((val, index) => {
+//     if (whiteTheme.length > 1) {
+//       val.classList.add(`duplicated-${index}`);
+//       tabAnimation(`.duplicated-${index} .white-item`, `.duplicated-${index} .text`, `duplicated-${index} .col-md-8`, "tab-active-maroon", "text-white");
+//     } else if (whiteTheme.length === 1) {
+//       tabAnimation(".side-tabs-white .white-item", ".side-tabs-white .text", ".side-tabs-white .col-md-8", "tab-active-maroon", "text-white");
+//     } else {
+//       return;
+//     }
+//   });
+// });
 
 // HELPER FUNCTION FOR ANIMATION
 function tabAnimation(itemsSelector, contentSelector, parentContentSelector, activeClass, textColor) {
