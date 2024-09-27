@@ -76,14 +76,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Updates arrow visibility based on the current slide
   function updateArrowVisibility() {
     if (currentSlide === 0) {
-      prevButton.style.display = "none";
+      prevButton.style.visibility = "hidden";
     } else {
-      prevButton.style.display = "block";
+      prevButton.style.visibility = "visible";
     }
     if (currentSlide >= slides.length - slidesToShow) {
-      nextButton.style.display = "none";
+      nextButton.style.visibility = "hidden";
     } else {
-      nextButton.style.display = "block";
+      nextButton.style.visibility = "visible";
     }
   }
 
