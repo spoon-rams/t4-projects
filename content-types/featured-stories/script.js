@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // HELPER FUNCTION - SETS THE ARROS
-  function setButton(index) {
+  function setButton(index, container, slide) {
     // Hides Previous Arrow
     if (index === 0) {
       prevButton.style.display = "none";
@@ -92,23 +92,31 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // CLICK ACTION REFACTOR
-  function handleClick(action, container, slide ) {
-     let targetScrollPosition;
-     switch (action) {
-       case "next":
-         targetScrollPosition = container.scrollLeft + slide.clientWidth;
-         currentSlide += 1;
-         break;
-       case "previous":
-         targetScrollPosition = container.scrollLeft - slide.clientWidth;
-         currentSlide -= 1;
-         break;
-       case "resize":
-         targetScrollPosition = currentSlide * slide.clientWidth;
-         break;
-     }
-     smoothScroll(container, targetScrollPosition, 600); // Smooth scroll with 600ms duration
-     setButton(currentSlide);
+  function handleClick(action, container, slide) {
+    let targetScrollPosition;
+    switch (action) {
+      case "next":
+        console.log("CONTAINER SCROLL LEFT: ", container.scrollLeft);
+        console.log("SLIDE CLIENT WIDTH: ", slide.clientWidth);
+        console.log("CONTAINER REACHED END: ", container.scrollLeft === slide.clientWidth);
+        console.log("EQUAL", currentSlide % 3);
+        targetScrollPosition = container.scrollLeft + slide.clientWidth;
+        currentSlide += 1;
+        break;
+      case "previous":
+        console.log("CONTAINER SCROLL LEFT: ", container.scrollLeft);
+        console.log("SLIDE CLIENT WIDTH: ", slide.clientWidth);
+        console.log("CONTAINER REACHED END: ", container.scrollLeft === slide.clientWidth);
+        console.log("EQUAL", currentSlide % 3);
+        targetScrollPosition = container.scrollLeft - slide.clientWidth;
+        currentSlide -= 1;
+        break;
+      case "resize":
+        targetScrollPosition = currentSlide * slide.clientWidth;
+        break;
+    }
+    smoothScroll(container, targetScrollPosition, 600); // Smooth scroll with 600ms duration
+    setButton(currentSlide);
   }
 
   // SMOOTH SCROLL FUNCTION - for custom scroll speed

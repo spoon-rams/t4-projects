@@ -1,113 +1,93 @@
 document.addEventListener("DOMContentLoaded", () => {
   const slidesContainer = document.querySelector(".featured-stories .slide-container");
-  const slide = document.querySelector(".featured-stories .slide");
   const slides = document.querySelectorAll(".featured-stories .slide");
   const prevButton = document.querySelector(".featured-stories .carousel-arrow.prev");
   const nextButton = document.querySelector(".featured-stories .carousel-arrow.next");
 
-  let startX = 0;
-  let clickPending = false;
   let currentSlide = 0;
+  let slidesToShow = 1; // Default for mobile view
+  let slideWidth = slides[0].clientWidth;
 
-  // INITIAL FEATURE RENDER
-  if (slides.length > 1) {
-    prevButton.style.display = "none";
-  } else {
-    prevButton.style.display = "none";
-    nextButton.style.display = "none";
-  }
+  // Initialize on page load
+  updateSlidesToShow();
+  updateArrowVisibility();
 
-  // DESKTOP CLICK ACTION
-  nextButton.addEventListener("click", (e) => {
-    if (clickPending) {
-      e.stopImmediatePropagation();
-      return;
-    }
-    clickPending = true;
-    handleClick("next", slidesContainer, slide);
-    setTimeout(() => (clickPending = false), 800);
+  // Handle window resize
+  window.addEventListener("resize", () => {
+    updateSlidesToShow();
+    updateArrowVisibility();
+    adjustScrollPosition();
   });
 
-  prevButton.addEventListener("click", (e) => {
-    if (clickPending) {
-      e.stopImmediatePropagation();
-      return;
+  // Arrow click handling
+  nextButton.addEventListener("click", () => {
+    if (currentSlide < slides.length - slidesToShow) {
+      currentSlide++;
+      adjustScrollPosition();
+      updateArrowVisibility();
     }
-    clickPending = true;
-    handleClick("previous", slidesContainer, slide);
-    setTimeout(() => (clickPending = false), 800);
   });
 
-  // MOBILE TOUCH ACTION
+  prevButton.addEventListener("click", () => {
+    if (currentSlide > 0) {
+      currentSlide--;
+      adjustScrollPosition();
+      updateArrowVisibility();
+    }
+  });
+
+  // Mobile swipe handling
+  let startX = 0;
   slidesContainer.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
   });
 
   slidesContainer.addEventListener("touchend", (e) => {
-    var endX = e.changedTouches[0].clientX;
-    var deltaX = startX - endX;
+    const endX = e.changedTouches[0].clientX;
+    const deltaX = startX - endX;
+    const swipeThreshold = 50; // Minimum swipe distance
 
-    var swipeThreshold = 50; // Set a threshold for swipe distance
-
-    if (deltaX > swipeThreshold) {
-      // Swipe left, scroll to the next box
-      if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        setButton(currentSlide);
-      }
-    } else if (deltaX < -swipeThreshold) {
-      // Swipe right, scroll to the previous box
-      if (currentSlide > 0) {
-        currentSlide--;
-        setButton(currentSlide);
-      }
+    if (deltaX > swipeThreshold && currentSlide < slides.length - slidesToShow) {
+      currentSlide++;
+    } else if (deltaX < -swipeThreshold && currentSlide > 0) {
+      currentSlide--;
     }
-
-    // Calculate the scroll position based on the current index
-    var scrollPosition = slides[currentSlide].offsetLeft - slidesContainer.offsetLeft;
-
-    // Scroll to the selected box with a smooth animation
-    smoothScroll(slidesContainer, scrollPosition, 600); // Custom smooth scroll with duration of 600ms
+    adjustScrollPosition();
+    updateArrowVisibility();
   });
 
-  // HELPER FUNCTION - SETS THE ARROWS
-  function setButton(index) {
-    // Hides Previous Arrow
-    if (index === 0) {
-      prevButton.style.display = "none";
+  // Updates the number of slides to show based on screen width
+  function updateSlidesToShow() {
+    const screenWidth = window.innerWidth;
+    if (screenWidth >= 1024) {
+      slidesToShow = 3; // Desktop
     } else {
-      prevButton.style.display = "block";
+      slidesToShow = 1; // Mobile
     }
+    slideWidth = slides[0].clientWidth;
+  }
 
-    // Hides Next Arrow
-    if (index === slides.length - 1) {
-      nextButton.style.display = "none";
+  // Adjusts the scroll position based on the current slide index
+  function adjustScrollPosition() {
+    const targetScrollPosition = currentSlide * slideWidth;
+    smoothScroll(slidesContainer, targetScrollPosition, 600);
+  }
+
+  // Updates arrow visibility based on the current slide
+  function updateArrowVisibility() {
+    if (currentSlide === 0) {
+      prevButton.style.visibility = "hidden";
     } else {
-      nextButton.style.display = "block";
+      prevButton.style.visibility = "visible";
+    }
+    if (currentSlide >= slides.length - slidesToShow) {
+      nextButton.style.visibility = "hidden";
+    } else {
+      nextButton.style.visibility = "visible";
     }
   }
 
-  // CLICK ACTION REFACTOR
-  function handleClick(action, container, slide) {
-    let targetScrollPosition;
-    switch (action) {
-      case "next":
-        targetScrollPosition = container.scrollLeft + slide.clientWidth;
-        currentSlide += 1;
-        break;
-      case "previous":
-        targetScrollPosition = container.scrollLeft - slide.clientWidth;
-        currentSlide -= 1;
-        break;
-      case "resize":
-        targetScrollPosition = currentSlide * slide.clientWidth;
-        break;
-    }
-    smoothScroll(container, targetScrollPosition, 600); // Smooth scroll with 600ms duration
-    setButton(currentSlide);
-  }
-
-  // SMOOTH SCROLL FUNCTION - for custom scroll speed
+  // Smooth scroll function for custom scroll animation
   function smoothScroll(element, target, duration) {
     const startPosition = element.scrollLeft;
     const distance = target - startPosition;
