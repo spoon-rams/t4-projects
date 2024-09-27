@@ -1,7 +1,7 @@
 /* MOBILE RESPONSIVE VIEW */
 @media only screen and (min-width: 992px) {
   .featured-stories .carousel-arrow {
-    display: none !important;
+    display: block;
   }
 }
 
