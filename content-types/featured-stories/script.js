@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentSlide = 0;
   let slidesToShow = 1; // Default for mobile view
   let slideWidth = slides[0].clientWidth;
+  let slideSnapShot;
 
   // Initialize on page load
   updateSlidesToShow();
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       updateArrowVisibility();
       console.log("CURRENT SLIDE: ", currentSlide);
       console.log("SLIDES TO SHOW: ", slidesToShow);
+      console.log("SLIDE SNAP SHOT: ", slideSnapShot);
     }
   });
 
@@ -39,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       updateArrowVisibility();
       console.log("CURRENT SLIDE: ", currentSlide);
       console.log("SLIDES TO SHOW: ", slidesToShow);
+      console.log("SLIDE SNAP SHOT: ", slideSnapShot)
     }
   });
 
@@ -65,17 +68,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Updates the number of slides to show based on screen width
   function updateSlidesToShow() {
     const screenWidth = window.innerWidth;
-    if (screenWidth >= 991) {
-      slidesToShow = 3; // Desktop
-      console.log("FROM UPDATE SLIDES TO SHOW FUNCTION - WHEN SCREEN IS LARGER THAN 1024");
-    } else {
-      slidesToShow = 1; // Mobile
-    }
 
-    // if (screenWidth >= 991 && currentSlide === 3) {
-    //   slidesToShow = 3;
-    //   currentSlide--;
-    // }
+    if (screenWidth >= 991 && currentSlide > 2) {
+      console.log(currentSlide, "CURRENT SLIDE BEFORE SNAPSHOT");
+      slideSnapShot = currentSlide;
+      slidesToShow = 3; // Desktop
+      currentSlide = 2;
+      console.log("SLIDE SNAPSHOT: ", slideSnapShot);
+    } else if (screenWidth >= 991) {
+      slidesToShow = 3; // Mobile
+    } else if (screenWidth < 991 && slideSnapShot) {
+      slidesToShow = 1;
+      currentSlide = slideSnapShot;
+      console.log("SLIDE SNAPSHOT MOBILE: ", slideSnapShot);
+    } else {
+      slidesToShow = 1;
+    }
+    
     slideWidth = slides[0].clientWidth;
   }
 
