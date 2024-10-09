@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       updateArrowVisibility();
       console.log("CURRENT SLIDE: ", currentSlide);
       console.log("SLIDES TO SHOW: ", slidesToShow);
-      console.log("SLIDE SNAP SHOT: ", slideSnapShot)
+      console.log("SLIDE SNAP SHOT: ", slideSnapShot);
     }
   });
 
@@ -84,14 +84,14 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       slidesToShow = 1;
     }
-    
+
     slideWidth = slides[0].clientWidth;
   }
 
   // Adjusts the scroll position based on the current slide index
   function adjustScrollPosition() {
     const targetScrollPosition = currentSlide * slideWidth;
-    smoothScroll(slidesContainer, targetScrollPosition, 600);
+    smoothScroll(slidesContainer, targetScrollPosition, 100);
   }
 
   // Updates arrow visibility based on the current slide
