@@ -14,7 +14,7 @@
   width: 70%;
 }
 
-.desc-background .desc-background-wrapper .title h2 {
+.desc-background .desc-background-wrapper .title {
   font-size: 2.5rem;
   font-weight: 400;
 }
@@ -23,15 +23,11 @@
   color: #900028;
 }
 
-.desc-background .desc-background-wrapper .desc {
-  /* padding: 0 250px; */
-}
-
-.desc-background .desc-background-wrapper .desc {
+.desc-background .desc-background-wrapper .content {
   width: 70%;
 }
 
-.desc-background .desc-background-wrapper .desc p {
+.desc-background .desc-background-wrapper .content p {
   font-size: 1.25rem;
 }
 
@@ -42,11 +38,12 @@
 
 .desc-background .desc-background-wrapper .video-embed iframe {
   width: 100%;
-  height: 600px;
+  height: 500px;
   min-height: initial;
 }
 
 /* TEST CSS */
-button.btn.btn-primary {
-  margin: .5rem 0;
+.desc-background-button.btn-primary {
+  margin: 0.5rem 0;
+  font-weight: 300;
 }
