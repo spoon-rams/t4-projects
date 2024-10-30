@@ -33,14 +33,12 @@
 
 .desc-background .desc-background-wrapper .video-embed {
   width: 60%;
-  height: auto;
 }
 
-.desc-background .desc-background-wrapper .video-embed iframe {
-  width: 100%;
-  height: 550px;
-  min-height: initial;
+.desc-background .desc-background-wrapper .video-embed.video-content__video--youtube {
+  padding-bottom: 30.55%;
 }
+
 
 .desc-background-button.btn-primary {
   margin: 0.5rem 0;
