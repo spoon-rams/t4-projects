@@ -1,51 +1,60 @@
 /*  MOBILE RESPONSIVE  */
 @media only screen and (max-width: 1480px) {
-  .desc-background .desc-background-wrapper .video-embed iframe {
+  .desc-background .desc-background-wrapper .video-embed iframe,
+  .desc-background.side-divider .desc-background-wrapper .video-embed iframe {
     height: 400px;
   }
 }
 
 @media only screen and (max-width: 1280px) {
-  .desc-background .desc-background-wrapper .video-embed iframe {
+  .desc-background .desc-background-wrapper .video-embed iframe,
+  .desc-background.side-divider .desc-background-wrapper .video-embed iframe {
     height: 350px;
   }
 }
 
 @media only screen and (max-width: 1024px) {
-  .desc-background .desc-background-wrapper .video-embed {
+  .desc-background .desc-background-wrapper .video-embed,
+  .desc-background.side-divider .desc-background-wrapper .video-embed {
     width: 70%;
   }
 }
 
 @media only screen and (max-width: 991px) {
-  .desc-background .desc-background-wrapper .video-embed iframe {
+  .desc-background .desc-background-wrapper .video-embed iframe,
+  .desc-background.side-divider .desc-background-wrapper .video-embed iframe {
     height: 300px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .desc-background .desc-background-wrapper .video-embed {
+  .desc-background .desc-background-wrapper .video-embed,
+  .desc-background.side-divider .desc-background-wrapper .video-embed {
     width: 80%;
   }
-  .desc-background .desc-background-wrapper .video-embed iframe {
+  .desc-background .desc-background-wrapper .video-embed iframe,
+  .desc-background.side-divider .desc-background-wrapper .video-embed iframe {
     height: 300px;
   }
 }
 
 @media only screen and (max-width: 540px) {
-  .desc-background .desc-background-wrapper .video-embed iframe {
+  .desc-background .desc-background-wrapper .video-embed iframe,
+  .desc-background.side-divider .desc-background-wrapper .video-embed iframe {
     height: 250px;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .desc-background .desc-background-wrapper .video-embed iframe {
+  .desc-background .desc-background-wrapper .video-embed iframe,
+  .desc-background.side-divider .desc-background-wrapper .video-embed iframe {
     height: 200px;
   }
 }
 
 @media only screen and (max-width: 390px) {
-  .desc-background .desc-background-wrapper .video-embed iframe {
+  .desc-background .desc-background-wrapper .video-embed iframe,
+  .desc-background.side-divider .desc-background-wrapper .video-embed iframe {
     height: 170px;
   }
 }

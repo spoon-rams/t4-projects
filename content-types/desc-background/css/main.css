@@ -42,8 +42,12 @@
   min-height: initial;
 }
 
-/* TEST CSS */
 .desc-background-button.btn-primary {
   margin: 0.5rem 0;
   font-weight: 300;
+}
+
+/* WHEN USING SIDE DIVIDER CLASS */
+.desc-background.side-divider .desc-background-wrapper .video-embed iframe {
+  height: 400px;
 }
