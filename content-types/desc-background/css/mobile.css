@@ -10,14 +10,13 @@
   }
 }
 
-
 @media only screen and (max-width: 991px) {
-   .desc-background .desc-background-wrapper .video-embed {
+  .desc-background .desc-background-wrapper .video-embed {
     width: 80%;
   }
 
   .desc-background .desc-background-wrapper .video-embed.video-content__video--youtube {
-    padding-bottom: 35.55%;
+    padding-bottom: 42.55%;
   }
 }
 
