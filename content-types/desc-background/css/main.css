@@ -36,9 +36,8 @@
 }
 
 .desc-background .desc-background-wrapper .video-embed.video-content__video--youtube {
-  padding-bottom: 30.55%;
+  padding-bottom: 34.55%;
 }
-
 
 .desc-background-button.btn-primary {
   margin: 0.5rem 0;
@@ -46,6 +45,6 @@
 }
 
 /* WHEN USING SIDE DIVIDER CLASS */
-.desc-background.side-divider .desc-background-wrapper .video-embed iframe {
-  height: 400px;
+.desc-background.side-divider .desc-background-wrapper .video-embed {
+  padding-bottom: 33.35%;
 }
