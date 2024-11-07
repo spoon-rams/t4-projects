@@ -27,7 +27,8 @@
     display: none; /* Hide scrollbar on webkit browsers */
   }
 
-  .block-quote-embed .row .col-lg-4.slide {
+  .block-quote-embed .row .col-lg-4.slide,
+  .block-quote-embed .row .col-lg-6.slide {
     flex: 0 0 100%; /* Make each item 100% of the container */
     max-width: 100%;
     height: 100%;
@@ -37,7 +38,8 @@
     padding: 0 30px;
   }
 
-  .block-quote-embed .row .col-lg-4.slide iframe {
+  .block-quote-embed .row .col-lg-4.slide iframe,
+  .block-quote-embed .row .col-lg-6.slide iframe {
     width: 100% !important;
     max-width: 100% !important;
   }
@@ -91,7 +93,7 @@
   .block-quote-embed .row .col-lg-4.slide {
     padding: 0 15px;
   }
-  
+
   .block-quote-embed .block-quote__container svg {
     height: 35px;
   }

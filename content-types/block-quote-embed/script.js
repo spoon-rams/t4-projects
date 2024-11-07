@@ -90,22 +90,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Updates arrow visibility based on the current slide
   function updateArrowVisibility() {
     const screenWidth = window.innerWidth;
-    console.log(screenWidth);
-    if (currentSlide === 0 && screenWidth > 991) {
-      
+    
+    if (screenWidth > 991) {
+      // Hide both arrows when the viewport is above 991
       prevButton.style.visibility = "hidden";
       nextButton.style.visibility = "hidden";
-    }
-
-    if (currentSlide === 0 && screenWidth < 991) {
-      prevButton.style.visibility = "hidden";
     } else {
-      prevButton.style.visibility = "visible";
-    }
-    if (currentSlide >= slides.length - slidesToShow && screenWidth < 991) {
-      nextButton.style.visibility = "hidden";
-    } else {
-      nextButton.style.visibility = "visible";
+      // Show or hide arrows based on the current slide and slides to show when below 991
+      prevButton.style.visibility = currentSlide === 0 ? "hidden" : "visible";
+      nextButton.style.visibility = currentSlide >= slides.length - slidesToShow ? "hidden" : "visible";
     }
   }
 
