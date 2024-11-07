@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
-.desc-background .desc-background-wrapper {
+.video-embed-background .video-embed-background-wrapper {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -8,43 +8,43 @@
   background-size: cover !important;
   background-position: top !important;
   background-repeat: no-repeat !important;
-  padding: 10px 0;
+  padding-bottom: 10px;
 }
-.desc-background .desc-background-wrapper title {
+.video-embed-background .video-embed-background-wrapper title {
   width: 70%;
 }
 
-.desc-background .desc-background-wrapper .title {
+.video-embed-background .video-embed-background-wrapper .title {
   font-size: 2.5rem;
   font-weight: 400;
 }
 
-.desc-background .desc-background-wrapper .title h2 span {
+.video-embed-background .video-embed-background-wrapper .title h2 span {
   color: #900028;
 }
 
-.desc-background .desc-background-wrapper .content {
+.video-embed-background .video-embed-background-wrapper .content {
   width: 70%;
 }
 
-.desc-background .desc-background-wrapper .content p {
+.video-embed-background .video-embed-background-wrapper .content p {
   font-size: 1.25rem;
 }
 
-.desc-background .desc-background-wrapper .video-embed {
+.video-embed-background .video-embed-background-wrapper .video-embed {
   width: 60%;
 }
 
-.desc-background .desc-background-wrapper .video-embed.video-content__video--youtube {
+.video-embed-background .video-embed-background-wrapper .video-embed.video-content__video--youtube {
   padding-bottom: 34.55%;
 }
 
-.desc-background-button.btn-primary {
+.video-embed-background .link.btn-primary {
   margin: 0.5rem 0;
   font-weight: 300;
 }
 
 /* WHEN USING SIDE DIVIDER CLASS */
-.desc-background.side-divider .desc-background-wrapper .video-embed {
+.video-embed-background.side-divider .video-embed-background-wrapper .video-embed {
   padding-bottom: 33.35%;
 }
