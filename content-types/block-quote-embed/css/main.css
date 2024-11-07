@@ -5,9 +5,14 @@
   align-items: center !important;
 }
 
-.block-quote-embed .col-lg-4.social-embed-column {
+.block-quote-embed .col-lg-4.social-embed-column,
+.block-quote-embed .row .slide-container {
   display: flex;
   justify-content: center;
+}
+
+.block-quote-embed .row .slide-container {
+  width: 100%;
 }
 
 /* REGULAR BLOCK QUOTE */
@@ -81,4 +86,49 @@
   margin: 0 auto;
   aspect-ratio: 16/9;
   object-fit: cover;
+}
+
+
+/* FOR SLIDER ARROWS */
+.block-quote-embed .carousel-arrows {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  height: 0;
+  top: 80;
+  width: 100%;
+}
+.block-quote-embed .carousel-arrow {
+  position: static;
+  height: 4rem;
+  background-color: #900028;
+  color: white;
+  border: none;
+  width: 4rem;
+  font-size: 3rem;
+  line-height: 1.15em;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 100ms;
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
+
+.block-quote-embed .carousel-arrow:hover,
+.block-quote-embed .carousel-arrow:focus {
+  opacity: 1;
+}
+
+.block-quote-embed .carousel-arrow.prev {
+  left: 0;
+  padding-left: 1.5rem;
+  /* margin: 31px; */
+  /* border-radius: 0 2rem 2rem 0 !important; */
+}
+
+.block-quote-embed .carousel-arrow.next {
+  right: 0;
+  padding-left: 1.5rem;
+  /* margin: 31px; */
+  /* border-radius: 2rem 0 0 2rem !important; */
 }
