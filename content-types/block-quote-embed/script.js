@@ -18,8 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateSlidesToShow();
     updateArrowVisibility();
     adjustScrollPosition();
-    console.log("CURRENT SLIDE: ", currentSlide);
-    console.log("SLIDES TO SHOW: ", slidesToShow);
   });
 
   // Arrow click handling
@@ -28,9 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
       currentSlide++;
       adjustScrollPosition();
       updateArrowVisibility();
-      console.log("CURRENT SLIDE: ", currentSlide);
-      console.log("SLIDES TO SHOW: ", slidesToShow);
-      console.log("SLIDE SNAP SHOT: ", slideSnapShot);
     }
   });
 
@@ -39,9 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
       currentSlide--;
       adjustScrollPosition();
       updateArrowVisibility();
-      console.log("CURRENT SLIDE: ", currentSlide);
-      console.log("SLIDES TO SHOW: ", slidesToShow);
-      console.log("SLIDE SNAP SHOT: ", slideSnapShot);
     }
   });
 
@@ -70,17 +62,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const screenWidth = window.innerWidth;
 
     if (screenWidth >= 991 && currentSlide > 2) {
-      console.log(currentSlide, "CURRENT SLIDE BEFORE SNAPSHOT");
       slideSnapShot = currentSlide;
       slidesToShow = 3; // Desktop
       currentSlide = 2;
-      console.log("SLIDE SNAPSHOT: ", slideSnapShot);
+      prevButton.style.visibility = "hidden";
+      nextButton.style.visibility = "hidden";
     } else if (screenWidth >= 991) {
       slidesToShow = 3; // Mobile
+      prevButton.style.visibility = "hidden";
+      nextButton.style.visibility = "hidden";
     } else if (screenWidth < 991 && slideSnapShot) {
       slidesToShow = 1;
       currentSlide = slideSnapShot;
-      console.log("SLIDE SNAPSHOT MOBILE: ", slideSnapShot);
     } else {
       slidesToShow = 1;
     }
@@ -96,12 +89,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Updates arrow visibility based on the current slide
   function updateArrowVisibility() {
-    if (currentSlide === 0) {
+    const screenWidth = window.innerWidth;
+    console.log(screenWidth);
+    if (currentSlide === 0 && screenWidth > 991) {
+      
+      prevButton.style.visibility = "hidden";
+      nextButton.style.visibility = "hidden";
+    }
+
+    if (currentSlide === 0 && screenWidth < 991) {
       prevButton.style.visibility = "hidden";
     } else {
       prevButton.style.visibility = "visible";
     }
-    if (currentSlide >= slides.length - slidesToShow) {
+    if (currentSlide >= slides.length - slidesToShow && screenWidth < 991) {
       nextButton.style.visibility = "hidden";
     } else {
       nextButton.style.visibility = "visible";
