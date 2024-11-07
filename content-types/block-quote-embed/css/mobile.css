@@ -90,7 +90,8 @@
     padding: 0 15px;
   }
 
-  .block-quote-embed .row .col-lg-4.slide {
+  .block-quote-embed .row .col-lg-4.slide,
+  .block-quote-embed .row .col-lg-6.slide {
     padding: 0 15px;
   }
 
