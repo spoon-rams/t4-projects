@@ -5,8 +5,8 @@
   align-items: center !important;
 }
 
-.block-quote-embed .col-lg-4.social-embed-column,
-.block-quote-embed .col-lg-6.social-embed-column,
+.block-quote-embed .col-lg-4.social-embed-column-3,
+.block-quote-embed .col-lg-6.social-embed-column-2,
 .block-quote-embed .row .slide-container {
   display: flex;
   justify-content: center;

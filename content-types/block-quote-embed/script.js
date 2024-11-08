@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const slidesContainer = document.querySelector(".block-quote-embed .slide-container");
-  const slides = document.querySelectorAll(".block-quote-embed .social-embed-column.slide");
+  const slides = document.querySelectorAll(".block-quote-embed .slide");
   const prevButton = document.querySelector(".block-quote-embed .carousel-arrow.prev");
   const nextButton = document.querySelector(".block-quote-embed .carousel-arrow.next");
 
@@ -23,6 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Arrow click handling
   nextButton.addEventListener("click", () => {
     if (currentSlide < slides.length - slidesToShow) {
+      const iframe = document.querySelectorAll(".block-quote-embed iframe"); // Select your iframe element
+      const src = iframe[currentSlide].src; // Save the current src
+      iframe[currentSlide].src = ""; // Clear the src to stop the video
+      iframe[currentSlide].src = src; // Reset src to original value to reload the video
       currentSlide++;
       adjustScrollPosition();
       updateArrowVisibility();
@@ -31,6 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   prevButton.addEventListener("click", () => {
     if (currentSlide > 0) {
+      const iframe = document.querySelectorAll(".block-quote-embed iframe"); // Select your iframe element
+      const src = iframe[currentSlide].src; // Save the current src
+      iframe[currentSlide].src = ""; // Clear the src to stop the video
+      iframe[currentSlide].src = src; // Reset src to original value to reload the video
       currentSlide--;
       adjustScrollPosition();
       updateArrowVisibility();
@@ -90,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Updates arrow visibility based on the current slide
   function updateArrowVisibility() {
     const screenWidth = window.innerWidth;
-    
+
     if (screenWidth > 991) {
       // Hide both arrows when the viewport is above 991
       prevButton.style.visibility = "hidden";
