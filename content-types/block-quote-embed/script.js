@@ -22,24 +22,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Arrow click handling
   nextButton.addEventListener("click", () => {
+    const iframe = document.querySelectorAll(".block-quote-embed iframe");
     if (currentSlide < slides.length - slidesToShow) {
-      const iframe = document.querySelectorAll(".block-quote-embed iframe"); // Select your iframe element
-      const src = iframe[currentSlide].src; // Save the current src
-      iframe[currentSlide].src = ""; // Clear the src to stop the video
-      iframe[currentSlide].src = src; // Reset src to original value to reload the video
+      const currentIframe = iframe[currentSlide];
+      const src = currentIframe.src; // Save the current src
+      currentIframe.src = ""; // Clear the src
+      currentIframe.src = src; // Reset to original
+
+      // Hide the iframe briefly to stop video
+      //   currentIframe.classList.add("hide-iframe");
+
+      // Reset the src with a timeout
+      //   setTimeout(() => {
+      // currentIframe.src = ""; // Clear the src
+      // currentIframe.src = src; // Reset to original
+      //     currentIframe.classList.remove("hide-iframe"); // Show the iframe again
+      //     currentIframe.classList.add("show-iframe");
+      //   }, 100); // Adjust delay if needed
       currentSlide++;
+
       adjustScrollPosition();
       updateArrowVisibility();
     }
   });
 
   prevButton.addEventListener("click", () => {
+    const iframe = document.querySelectorAll(".block-quote-embed iframe");
     if (currentSlide > 0) {
-      const iframe = document.querySelectorAll(".block-quote-embed iframe"); // Select your iframe element
-      const src = iframe[currentSlide].src; // Save the current src
-      iframe[currentSlide].src = ""; // Clear the src to stop the video
-      iframe[currentSlide].src = src; // Reset src to original value to reload the video
+      const currentIframe = iframe[currentSlide];
+      const src = currentIframe.src; // Save the current src
+      currentIframe.src = ""; // Clear the src
+      currentIframe.src = src; // Reset to original
+
+      // Hide the iframe briefly to stop video
+      //   currentIframe.classList.add("hide-iframe");
+
+      // Reset the src with a timeout
+      //   setTimeout(() => {
+      // currentIframe.src = ""; // Clear the src
+      // currentIframe.src = src; // Reset to original
+      //     currentIframe.classList.remove("hide-iframe"); // Show the iframe again
+      //     currentIframe.classList.add("show-iframe");
+      //   }, 100); // Adjust delay if needed
       currentSlide--;
+
       adjustScrollPosition();
       updateArrowVisibility();
     }
