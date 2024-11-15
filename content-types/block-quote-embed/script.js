@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let slidesToShow = 1; // Default for mobile view
   let slideWidth = slides[0].clientWidth;
   let slideSnapShot;
+  let prevSlide;
 
   // Initialize on page load
   updateSlidesToShow();
@@ -24,23 +25,16 @@ document.addEventListener("DOMContentLoaded", () => {
   nextButton.addEventListener("click", () => {
     const iframe = document.querySelectorAll(".block-quote-embed iframe");
     if (currentSlide < slides.length - slidesToShow) {
+      iframe[currentSlide].style.display = "none";
       const currentIframe = iframe[currentSlide];
-      const src = currentIframe.src; // Save the current src
-      currentIframe.src = ""; // Clear the src
-      currentIframe.src = src; // Reset to original
-
-      // Hide the iframe briefly to stop video
-      //   currentIframe.classList.add("hide-iframe");
-
-      // Reset the src with a timeout
-      //   setTimeout(() => {
-      // currentIframe.src = ""; // Clear the src
-      // currentIframe.src = src; // Reset to original
-      //     currentIframe.classList.remove("hide-iframe"); // Show the iframe again
-      //     currentIframe.classList.add("show-iframe");
-      //   }, 100); // Adjust delay if needed
+      const src = currentIframe.src;
+      currentIframe.src = "";
+      prevSlide = currentSlide;
+      setTimeout(() => {
+        iframe[prevSlide].style.display = "block";
+        currentIframe.src = src;
+      }, 100);
       currentSlide++;
-
       adjustScrollPosition();
       updateArrowVisibility();
     }
@@ -49,21 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
   prevButton.addEventListener("click", () => {
     const iframe = document.querySelectorAll(".block-quote-embed iframe");
     if (currentSlide > 0) {
+      iframe[currentSlide].style.display = "none";
       const currentIframe = iframe[currentSlide];
-      const src = currentIframe.src; // Save the current src
-      currentIframe.src = ""; // Clear the src
-      currentIframe.src = src; // Reset to original
-
-      // Hide the iframe briefly to stop video
-      //   currentIframe.classList.add("hide-iframe");
-
-      // Reset the src with a timeout
-      //   setTimeout(() => {
-      // currentIframe.src = ""; // Clear the src
-      // currentIframe.src = src; // Reset to original
-      //     currentIframe.classList.remove("hide-iframe"); // Show the iframe again
-      //     currentIframe.classList.add("show-iframe");
-      //   }, 100); // Adjust delay if needed
+      const src = currentIframe.src;
+      currentIframe.src = "";
+      prevSlide = currentSlide;
+      setTimeout(() => {
+        iframe[prevSlide].style.display = "block";
+        currentIframe.src = src;
+      }, 100);
       currentSlide--;
 
       adjustScrollPosition();
