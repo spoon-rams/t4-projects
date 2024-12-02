@@ -34,7 +34,7 @@
   color: #900028;
 }
 
-.brand-stories__related-content .related-content__stories.row {
+.brand-stories__related-content .related-content__stories.row .slide-container {
   display: flex;
   justify-content: center;
   padding: 0 25px;
@@ -89,7 +89,6 @@
 
 /* TEST */
 
-
 /* FROM FORDHAM STORIES CSS WHEN REMOVED */
 /* BRAND STORIES RELATED CONTENT - START */
 
@@ -136,8 +135,6 @@
   height: auto; /* changed */
 }
 
-
-
 .brand-stories__related-content .related-content__stories.row img {
   max-width: 100%;
   max-height: 100%;
@@ -177,11 +174,82 @@
   font-size: 0.9rem;
 }
 
+/* FOR SLIDER ARROWS */
+.brand-stories__related-content .carousel-arrows {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  height: 0;
+  top: 80;
+  width: 100%;
+}
+.brand-stories__related-content .carousel-arrow {
+  position: static;
+  height: 4rem;
+  background-color: #900028;
+  color: white;
+  border: none;
+  width: 4rem;
+  font-size: 3rem;
+  line-height: 1.15em;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 100ms;
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
 
+.brand-stories__related-content .carousel-arrow:hover,
+.brand-stories__related-content .carousel-arrow:focus {
+  opacity: 1;
+}
 
+.brand-stories__related-content .carousel-arrow.prev {
+  left: 0;
+  /* padding-left: 1.5rem; */
+  margin: 31px;
+  /* border-radius: 0 2rem 2rem 0 !important; */
+}
+
+.brand-stories__related-content .carousel-arrow.next {
+  right: 0;
+  /* padding-left: 1.5rem; */
+  margin: 31px;
+  /* border-radius: 2rem 0 0 2rem !important; */
+}
 
 /* MOBILE RESPONSIVE VIEW */
 @media only screen and (max-width: 991px) {
+  .brand-stories__related-content .related-content__stories.row .slide-container{
+    position: relative;
+    flex-direction: row;
+  }
+  .brand-stories__related-content .related-content__stories.row .slide-container {
+    flex-wrap: nowrap; /* No wrapping for carousel effect */
+    overflow: hidden; /* Ensure scrolling */
+    justify-content: start; /* Align items to the left */
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+    scroll-behavior: smooth;
+    padding: 0; /* Remove padding to center items better */
+    -ms-overflow-style: none; /* IE 10+ */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .brand-stories__related-content .related-content__stories.row::-webkit-scrollbar {
+    display: none; /* Hide scrollbar on webkit browsers */
+  }
+
+  .brand-stories__related-content .related-content__stories.row .col-lg-4 {
+    flex: 0 0 100%; /* Make each item 100% of the container */
+    max-width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    text-align: center; /* Center the content */
+    margin-right: 0; /* Remove right margin */
+    padding: 0 30px;
+  }
+
   .brand-stories__related-content .related-content__stories.row .col-lg-4 {
     height: 100%;
   }
@@ -189,7 +257,7 @@
   .brand-stories__related-content .col-lg-4 .img-container {
     height: auto;
   }
-  
+
   .brand-stories__related-content .related-content__stories.row .category {
     text-align: center;
   }
@@ -206,13 +274,12 @@
   }
 
   .brand-stories__related-content .related-content__title::after {
-   display: none;
+    display: none;
   }
 
-   .brand-stories__related-content .related-content__stories.row h3 {
+  .brand-stories__related-content .related-content__stories.row h3 {
     font-size: 1.2rem;
   }
 }
-
 
 /* BRAND STORIES RELATED CONTENT - END */
