@@ -1,33 +1,27 @@
 @media only screen and (max-width: 991px) {
-  .slide-wrapper {
+  .founders-slider .slide-wrapper {
     height: 300px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .container {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  .slides-container {
+  .founders-slider .slides-container {
     overflow-y: hidden;
   }
-  .slide-wrapper {
-    height: auto;
+  .founders-slider .slide-wrapper {
     margin: 0 !important;
   }
 
-  .slide .row {
-    height: auto;
+  .founders-slider .slide .row {
+    height: 100%;
     margin: 0 !important;
   }
 
-  .slide-arrow.next {
-    right: 15px;
+  .founders-slider .slide-arrow.next {
+    right: 15px !important;
   }
 
-  .slide-arrow.prev {
-    left: 15px;
+  .founders-slider .slide-arrow.prev {
+    left: 15px !important;
   }
 }

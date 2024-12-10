@@ -17,3 +17,13 @@ window.addEventListener("load", () => {
   }
   return;
 });
+
+
+window.addEventListener("load", () => {
+  const instagramEmbeds = document.querySelectorAll(".instagram-media-rendered");
+  
+
+  instagramEmbeds.forEach(((embed, index) => {
+
+  }))
+})

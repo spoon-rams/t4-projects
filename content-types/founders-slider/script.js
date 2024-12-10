@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const slidesContainer = document.querySelector(".founders-slider .slides-container");
   const slide = document.querySelector(".founders-slider .slide");
   const slides = document.querySelectorAll(".founders-slider .slide");
+  const findContent = document.querySelectorAll(".founders-slider .slide .col-lg-12");
   const prevButton = document.querySelector(".founders-slider .slide-arrow.prev");
   const nextButton = document.querySelector(".founders-slider .slide-arrow.next");
   const indicatorParent = document.querySelector(".founders-slider .slider-indicators");
@@ -27,12 +28,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // DEFAULT ARROW SETUP
   if (slides.length > 1) {
     prevButton.style.display = "none";
   } else {
     prevButton.style.display = "none";
     nextButton.style.display = "none";
   }
+
+  // CHECK IF CONTENT ELEMENTS IS THERE
+  findContent.forEach((element) => {
+    const content = element.children[1];
+    const image = element.children[0];
+    if (!content) {
+      image.style.height = "100%";
+    }
+  });
 
   // INDICATORS CLICK ACTION
   const indicators = document.querySelectorAll(".slider-indicator");
@@ -68,27 +79,54 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // SMOOTH SCROLL FUNCTION - for custom scroll speed
+  function smoothScroll(element, target, duration) {
+    const startPosition = element.scrollLeft;
+    const distance = target - startPosition;
+    let startTime = null;
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+      element.scrollLeft = run;
+      if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function easeInOutQuad(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t--;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+  }
+
   // CLICK ACTION REFACTOR
   function handleClick(action, container, slide, index) {
+    let targetScrollPosition;
+    let position = container.scrollLeft;
     switch (action) {
       case "next":
-        container.scrollLeft += slide.clientWidth;
+        targetScrollPosition = position += slide.clientWidth;
         currentSlide += 1;
         break;
       case "previous":
-        container.scrollLeft -= slide.clientWidth;
+        targetScrollPosition = position -= slide.clientWidth;
         currentSlide -= 1;
         break;
       case "indicator":
-        container.scrollLeft = index * slide.clientWidth;
+        targetScrollPosition = position = index * slide.clientWidth;
         currentSlide = index;
         setIndicator(index);
         break;
       case "resize":
-        container.scrollLeft = currentSlide * slide.clientWidth;
+        targetScrollPosition = position = currentSlide * slide.clientWidth;
         break;
     }
     setIndicator(currentSlide);
+    smoothScroll(container, targetScrollPosition, 800);
   }
 
   // DESKTOP CLICK ACTION - NEED TO turn this into a function
@@ -97,10 +135,10 @@ document.addEventListener("DOMContentLoaded", () => {
       e.stopImmediatePropagation();
       return;
     }
-    
+
     clickPending = true;
     handleClick("next", slidesContainer, slide);
-    return setTimeout(() => (clickPending = false), 600);
+    return setTimeout(() => (clickPending = false), 800);
   });
 
   prevButton.addEventListener("click", (e) => {
@@ -108,9 +146,10 @@ document.addEventListener("DOMContentLoaded", () => {
       e.stopImmediatePropagation;
       return;
     }
+
     clickPending = true;
     handleClick("previous", slidesContainer, slide);
-    return setTimeout(() => (clickPending = false), 600);
+    return setTimeout(() => (clickPending = false), 800);
   });
 
   // MOBILE VIEW
@@ -145,12 +184,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Calculate the scroll position based on the current index
-    var scrollPosition = slides[currentSlide].offsetLeft - slidesContainer.offsetLeft;
-
+    const scrollPosition = slides[currentSlide].offsetLeft - slidesContainer.offsetLeft;
     // Scroll to the selected box with a smooth animation
-    slidesContainer.scrollTo({
-      left: scrollPosition,
-      behavior: "smooth",
-    });
+    smoothScroll(slidesContainer, scrollPosition, 800);
   });
 });
