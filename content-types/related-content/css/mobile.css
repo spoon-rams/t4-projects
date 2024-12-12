@@ -1,8 +1,41 @@
 /* MOBILE RESPONSIVE VIEW */
-
 @media only screen and (max-width: 991px) {
+  .brand-stories__related-content .related-content__stories.row .slide-container{
+    position: relative;
+    flex-direction: row;
+  }
+  .brand-stories__related-content .related-content__stories.row .slide-container {
+    flex-wrap: nowrap; /* No wrapping for carousel effect */
+    overflow: hidden; /* Ensure scrolling */
+    justify-content: start; /* Align items to the left */
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+    scroll-behavior: smooth;
+    padding: 0; /* Remove padding to center items better */
+    -ms-overflow-style: none; /* IE 10+ */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .brand-stories__related-content .related-content__stories.row::-webkit-scrollbar {
+    display: none; /* Hide scrollbar on webkit browsers */
+  }
+
+  .brand-stories__related-content .related-content__stories.row .col-lg-4 {
+    flex: 0 0 100%; /* Make each item 100% of the container */
+    max-width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    text-align: center; /* Center the content */
+    margin-right: 0; /* Remove right margin */
+    padding: 0 30px;
+  }
+
   .brand-stories__related-content .related-content__stories.row .col-lg-4 {
     height: 100%;
+  }
+
+  .brand-stories__related-content .col-lg-4 .img-container {
+    height: auto;
   }
 
   .brand-stories__related-content .related-content__stories.row .category {

@@ -36,14 +36,29 @@
 
 .brand-stories__related-content .related-content__stories.row .slide-container {
   display: flex;
-  justify-content: center;
-  padding: 0 25px;
-  text-align: center;
+  flex-wrap: nowrap; /* No wrapping for carousel effect */
+  overflow: scroll; /* Ensure scrolling */
+  justify-content: start; /* Align items to the left */
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  scroll-behavior: smooth;
+  padding: 0; /* Remove padding to center items better */
+  -ms-overflow-style: none; /* IE 10+ */
+  -webkit-overflow-scrolling: touch;
+}
+
+.brand-stories__related-content .related-content__stories.row::-webkit-scrollbar {
+  display: none; /* Hide scrollbar on webkit browsers */
 }
 
 .brand-stories__related-content .related-content__stories.row .col-lg-4 {
-  margin-bottom: 10px;
-  height: auto; /* changed */
+  flex: 3 0 33.33%; /* Make each item 100% of the container */
+  max-width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+  text-align: center; /* Center the content */
+  margin-right: 0; /* Remove right margin */
+  padding: 0 20px;
 }
 
 .brand-stories__related-content .related-content__stories.row img {
@@ -124,10 +139,12 @@
 }
 
 .brand-stories__related-content .related-content__stories.row {
-  display: flex;
+  position: relative;
+  overflow: hidden;
+  /* display: flex;
   justify-content: center;
-  padding: 0 25px;
-  text-align: center;
+  padding: 0 25px; */
+  /* text-align: center; */
 }
 
 .brand-stories__related-content .related-content__stories.row .col-lg-4 {
@@ -184,7 +201,10 @@
   width: 100%;
 }
 .brand-stories__related-content .carousel-arrow {
-  position: static;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
   height: 4rem;
   background-color: #900028;
   color: white;
@@ -216,70 +236,6 @@
   /* padding-left: 1.5rem; */
   margin: 31px;
   /* border-radius: 2rem 0 0 2rem !important; */
-}
-
-/* MOBILE RESPONSIVE VIEW */
-@media only screen and (max-width: 991px) {
-  .brand-stories__related-content .related-content__stories.row .slide-container{
-    position: relative;
-    flex-direction: row;
-  }
-  .brand-stories__related-content .related-content__stories.row .slide-container {
-    flex-wrap: nowrap; /* No wrapping for carousel effect */
-    overflow: hidden; /* Ensure scrolling */
-    justify-content: start; /* Align items to the left */
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Firefox */
-    scroll-behavior: smooth;
-    padding: 0; /* Remove padding to center items better */
-    -ms-overflow-style: none; /* IE 10+ */
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .brand-stories__related-content .related-content__stories.row::-webkit-scrollbar {
-    display: none; /* Hide scrollbar on webkit browsers */
-  }
-
-  .brand-stories__related-content .related-content__stories.row .col-lg-4 {
-    flex: 0 0 100%; /* Make each item 100% of the container */
-    max-width: 100%;
-    height: 100%;
-    scroll-snap-align: start;
-    text-align: center; /* Center the content */
-    margin-right: 0; /* Remove right margin */
-    padding: 0 30px;
-  }
-
-  .brand-stories__related-content .related-content__stories.row .col-lg-4 {
-    height: 100%;
-  }
-
-  .brand-stories__related-content .col-lg-4 .img-container {
-    height: auto;
-  }
-
-  .brand-stories__related-content .related-content__stories.row .category {
-    text-align: center;
-  }
-
-  .brand-stories__related-content .related-content__stories.row h3 {
-    text-align: center;
-  }
-}
-
-@media only screen and (max-width: 620px) {
-  .brand-stories__related-content .related-content__title h2 {
-    border-bottom: 4px #e2e2e2 solid;
-    width: 100%;
-  }
-
-  .brand-stories__related-content .related-content__title::after {
-    display: none;
-  }
-
-  .brand-stories__related-content .related-content__stories.row h3 {
-    font-size: 1.2rem;
-  }
 }
 
 /* BRAND STORIES RELATED CONTENT - END */
