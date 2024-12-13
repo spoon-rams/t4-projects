@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
 
-/* BRAND STORIES RELATED CONTENT - START */
-
 .brand-stories__related-content .related-content__title {
   display: flex;
   justify-content: space-between;
@@ -74,7 +72,7 @@
 
 .brand-stories__related-content .related-content__stories.row h3 {
   font-family: "Raleway", sans-serif;
-  font-size: 1.4rem; /* changed */
+  font-size: 1.4rem;
   text-align: left;
 }
 
@@ -99,13 +97,6 @@
   text-align: left;
   font-size: 0.9rem;
 }
-
-/* BRAND STORIES RELATED CONTENT - END */
-
-/* TEST */
-
-/* FROM FORDHAM STORIES CSS WHEN REMOVED */
-/* BRAND STORIES RELATED CONTENT - START */
 
 .brand-stories__related-content .related-content__title {
   display: flex;
@@ -141,15 +132,11 @@
 .brand-stories__related-content .related-content__stories.row {
   position: relative;
   overflow: hidden;
-  /* display: flex;
-  justify-content: center;
-  padding: 0 25px; */
-  /* text-align: center; */
 }
 
 .brand-stories__related-content .related-content__stories.row .col-lg-4 {
   margin-bottom: 10px;
-  height: auto; /* changed */
+  height: auto;
 }
 
 .brand-stories__related-content .related-content__stories.row img {
@@ -165,7 +152,7 @@
 
 .brand-stories__related-content .related-content__stories.row h3 {
   font-family: "Raleway", sans-serif;
-  font-size: 1.4rem; /* changed */
+  font-size: 1.4rem;
   text-align: left;
 }
 
@@ -193,18 +180,15 @@
 
 /* FOR SLIDER ARROWS */
 .brand-stories__related-content .carousel-arrows {
+  position: absolute;
   display: flex;
   justify-content: space-between;
-  position: relative;
-  height: 0;
-  top: 80;
+  align-items: center;
+  height: 100% !important;
   width: 100%;
+  top: -80;
 }
 .brand-stories__related-content .carousel-arrow {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  display: flex;
   height: 4rem;
   background-color: #900028;
   color: white;
@@ -226,16 +210,12 @@
 
 .brand-stories__related-content .carousel-arrow.prev {
   left: 0;
-  /* padding-left: 1.5rem; */
-  margin: 31px;
-  /* border-radius: 0 2rem 2rem 0 !important; */
+  padding-left: 1.5rem;
+  margin: 21px;
 }
 
 .brand-stories__related-content .carousel-arrow.next {
   right: 0;
-  /* padding-left: 1.5rem; */
-  margin: 31px;
-  /* border-radius: 2rem 0 0 2rem !important; */
+  padding-left: 1.5rem;
+  margin: 21px;
 }
-
-/* BRAND STORIES RELATED CONTENT - END */

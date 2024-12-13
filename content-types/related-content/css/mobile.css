@@ -1,6 +1,6 @@
 /* MOBILE RESPONSIVE VIEW */
 @media only screen and (max-width: 991px) {
-  .brand-stories__related-content .related-content__stories.row .slide-container{
+  .brand-stories__related-content .related-content__stories.row .slide-container {
     position: relative;
     flex-direction: row;
   }
@@ -44,6 +44,11 @@
 
   .brand-stories__related-content .related-content__stories.row h3 {
     text-align: center;
+  }
+
+  .brand-stories__related-content .carousel-arrow.prev,
+  .brand-stories__related-content .carousel-arrow.next {
+    margin: 31px;
   }
 }
 

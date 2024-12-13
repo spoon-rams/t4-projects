@@ -14,6 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Handle window resize
   window.addEventListener("resize", () => {
+    const screenWidth = window.innerWidth;
+    if (currentSlide === slides.length - 1 && screenWidth >= 991) {
+      currentSlide = 2;
+    }
     updateSlidesToShow();
     updateArrowVisibility();
     adjustScrollPosition();
@@ -25,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
       currentSlide++;
       adjustScrollPosition();
       updateArrowVisibility();
+      console.log("CURRENT SLIDE: ", currentSlide);
+      console.log("CURRENT SLIDE TO SHOW: ", slidesToShow);
     }
   });
 
@@ -33,6 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
       currentSlide--;
       adjustScrollPosition();
       updateArrowVisibility();
+      console.log("CURRENT SLIDE: ", currentSlide);
+      console.log("CURRENT SLIDE TO SHOW: ", slidesToShow);
     }
   });
 
