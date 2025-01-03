@@ -1,4 +1,49 @@
 @media only screen and (max-width: 991px) {
+  .block-quote-embed .row {
+    position: relative;
+    flex-direction: row;
+  }
+
+  .block-quote-embed .carousel-arrows {
+    width: 568px;
+    margin: auto;
+    padding: 0 16px;
+    top: 350;
+  }
+
+  .block-quote-embed .row .slide-container {
+    flex-wrap: nowrap; /* No wrapping for carousel effect */
+    overflow: hidden; /* Ensure scrolling */
+    justify-content: start; /* Align items to the left */
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+    scroll-behavior: smooth;
+    padding: 0; /* Remove padding to center items better */
+    -ms-overflow-style: none; /* IE 10+ */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .block-quote-embed .row::-webkit-scrollbar {
+    display: none; /* Hide scrollbar on webkit browsers */
+  }
+
+  .block-quote-embed .row .social-embed-column-3.slide,
+  .block-quote-embed .row .social-embed-column-2.slide {
+    flex: 0 0 100%; /* Make each item 100% of the container */
+    max-width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    text-align: center; /* Center the content */
+    margin-right: 0; /* Remove right margin */
+    padding: 0 30px;
+  }
+
+  /* .block-quote-embed .row .col-lg-4.slide iframe,
+  .block-quote-embed .row .col-lg-6.slide iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+  } */
+
   .block-quote-embed .block-quote__container svg {
     height: 50px;
   }
@@ -23,7 +68,39 @@
   }
 }
 
+/* @media only screen and (max-width: 599px) {
+  .block-quote-embed .carousel-arrows {
+    width: 100%;
+  }
+
+  .block-quote-embed .carousel-arrow.prev,
+  .block-quote-embed .carousel-arrow.next {
+    margin: 0 32px;
+  }
+} */
+
+/* @media only screen and (max-width: 700px) {
+  .block-quote-embed .carousel-arrows {
+    top: 400;
+  }
+} */
+
+@media only screen and (max-width: 570px) {
+  .block-quote-embed .carousel-arrows {
+    width: 99%;
+  }
+}
+
 @media only screen and (max-width: 546px) {
+  .block-quote-embed .row {
+    padding: 0 15px;
+  }
+
+  .block-quote-embed .row .social-embed-column-3.slide,
+  .block-quote-embed .row .social-embed-column-2.slide {
+    padding: 0 15px;
+  }
+
   .block-quote-embed .block-quote__container svg {
     height: 35px;
   }
@@ -42,8 +119,24 @@
   }
 }
 
+@media only screen and (max-width: 495px) {
+  .block-quote-embed .carousel-arrows {
+    top: 300;
+  }
+}
+
 @media only screen and (max-width: 435px) {
+  .block-quote-embed .carousel-arrows {
+    top: 270;
+  }
+
   .block-quote-embed .block-quote .profile {
     padding: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 356px) {
+  .block-quote-embed .carousel-arrows {
+    top: 220;
   }
 }

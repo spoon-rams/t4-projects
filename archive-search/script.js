@@ -16,6 +16,9 @@ const displayResults = (page = 1) => {
   const start = (page - 1) * itemsPerPage;
   const end = start + itemsPerPage;
   const results = filteredData.slice(start, end);
+  const noResults = `<div class="row archive-list" style="padding-left: 15px;">
+                       <h3>No Search Results...</h3>
+                     </div>`;
   const renderElements = results
       .map((item) => {
         const { link, image, imageDesc, category, title } = item;
@@ -49,9 +52,9 @@ const displayResults = (page = 1) => {
   }
   resultsDiv.style.height = "1185px";
   updatePagination(filteredData.length, page);
-  return (resultsDiv.innerHTML = `<div class="row archive-list" style="padding-left: 15px;">
-                              <h3>No Search Results...</h3>
-                            </div>`);
+  
+
+  return resultsDiv.innerHTML = noResults;
 };
 
 // Displays the pagination
@@ -216,7 +219,7 @@ fetch("./data.json")
 
     data.forEach((item) => {
       // Check if the category already exists in the categories array
-      const isDuplicate = categories.some((cat) => cat.name === item.category);
+      const isDuplicate = categories.some((category) => category.name === item.category);
 
       if (!isDuplicate) {
         const value = item.category.toLowerCase();
