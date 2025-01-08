@@ -9,7 +9,13 @@
 }
 
 .content-seperator .content-container {
-    display: flex;
-    justify-content: center;
-    padding: 50px 100px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 0;
+}
+
+.content-seperator .content-container .content-label {
+  color: #900028;
+  font-weight: bold;
+  text-transform: uppercase;
 }

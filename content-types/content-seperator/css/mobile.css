@@ -1,0 +1,11 @@
+@media only screen and (max-width: 1820px) {
+  .content-seperator {
+    margin: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .content-seperator .content-container {
+    padding: 50px 20px;
+  }
+}
