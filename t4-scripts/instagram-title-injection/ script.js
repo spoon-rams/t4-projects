@@ -1,5 +1,3 @@
-console.log("CONNECTED TO TEST SCRIPT!");
-
 window.addEventListener("load", () => {
   const instaTitles = {
     1: "Input Title One",
@@ -10,21 +8,20 @@ window.addEventListener("load", () => {
     6: "",
   };
 
-  const instaReels = document.querySelectorAll(".instagram-media");
+  const instaReels = document.querySelectorAll(".instagram-media-rendered");
   const titles = [];
 
   for (let key in instaTitles) {
     if (instaTitles[key].length > 0) {
-      titles.push(instaTitles[key]);
+        titles.push(instaTitles[key]);
     }
   }
-
-  console.log(titles);
-
+  
+  
+   
   if (instaReels.length > 0 && titles.length > 0) {
     titles.forEach((title, index) => {
-      console.log(title)
-      if (title.length > 0 && index !== titles.length - 1) {
+      if (title.length > 0) {
         instaReels[index].setAttribute("title", title);
       }
       return;
