@@ -1,5 +1,4 @@
 console.log("CONNECTED TO TEST SCRIPT!");
-
 window.addEventListener("load", () => {
   const instaTitles = {
     1: "Input Title One",
@@ -19,12 +18,11 @@ window.addEventListener("load", () => {
     }
   }
 
-  console.log(titles);
-
   if (instaReels.length > 0 && titles.length > 0) {
     titles.forEach((title, index) => {
-      console.log(title)
-      if (title.length > 0 && index !== titles.length - 1) {
+     
+      if (instaReels[index]) {
+        console.log(title, instaReels[index]);
         instaReels[index].setAttribute("title", title);
       }
       return;
