@@ -9,11 +9,14 @@ const {
   dataset: { school, program },
 } = cardContent;
 
-const getData = async (school, selectedProgram) => {
+const getData = async (school, program) => {
   if (!school || typeof school !== "string" || school.length < 3) return;
-  if (!selectedProgram || typeof selectedProgram !== "string") return;
+  if (!program || typeof program !== "string") return;
 
-  const url = "https://dintprx.erp.fordham.edu/student_calculator/data/calcjson.jsp?wchSchool=" + school;
+  const url = `https://dintprx.erp.fordham.edu/student_calculator/data/calcjson.jsp?wchSchool=${school}`;
+  
+  // Temporary
+  courseProgram.innerText = program;
 
   try {
     const res = await fetch(url);
@@ -26,19 +29,16 @@ const getData = async (school, selectedProgram) => {
 
     value.forEach((val) => {
       const { costtype, section } = val;
-      const costType = costtype.toLowerCase();
-      const program = section.toLowerCase();
-      if (costType === "direct" && program === selectedProgram.toLowerCase()) {
+      if (costtype.toLowerCase() === "direct" && section.toLowerCase() === program.toLowerCase()) {
         val.order === 1 ? (totalCreditCost = val.default) : (totalFees = val.default * 2);
         return;
       }
     });
 
-    courseProgram.innerText = program;
     costPerCredit.innerText = "$" + totalCreditCost;
     totalTuition.innerText = "$" + (totalCreditHours * totalCreditCost + totalFees);
   } catch (err) {
-    throw new Error(err.message);
+    throw err.message
   }
 };
 
