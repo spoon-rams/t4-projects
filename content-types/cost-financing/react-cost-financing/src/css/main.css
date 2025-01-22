@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+.card {
+  background: #e1e1e1;
+  border-top: 5px solid #900028 !important;
+}
+
+.card h2 {
+  color: 5px solid #900028;
+}
+
+.card .card-content .content span {
+    margin-left: 5px;
+}

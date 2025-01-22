@@ -1,7 +1,102 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
 
-/* BRAND STORIES RELATED CONTENT - START */
+.brand-stories__related-content .related-content__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 15px;
+}
+
+.brand-stories__related-content .related-content__title::after {
+  content: "";
+  margin-top: 1px;
+  height: 4px;
+  background-color: #e2e2e2;
+  flex: 1 1 auto;
+  margin-left: 26px;
+}
+
+.brand-stories__related-content .related-content__title h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #343a40;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+.brand-stories__related-content .related-content__title h2 span {
+  color: #900028;
+}
+
+.brand-stories__related-content .related-content__stories.row .slide-container {
+  display: flex;
+  flex-wrap: nowrap; /* No wrapping for carousel effect */
+  overflow: scroll; /* Ensure scrolling */
+  justify-content: start; /* Align items to the left */
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  scroll-behavior: smooth;
+  padding: 0; /* Remove padding to center items better */
+  -ms-overflow-style: none; /* IE 10+ */
+  -webkit-overflow-scrolling: touch;
+}
+
+.brand-stories__related-content .related-content__stories.row::-webkit-scrollbar {
+  display: none; /* Hide scrollbar on webkit browsers */
+}
+
+.brand-stories__related-content .related-content__stories.row .col-lg-4 {
+  flex: 3 0 33.33%; /* Make each item 100% of the container */
+  max-width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+  text-align: center; /* Center the content */
+  margin-right: 0; /* Remove right margin */
+  padding: 0 20px;
+}
+
+.brand-stories__related-content .related-content__stories.row img {
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 50%;
+  width: 100%;
+  border: 1px solid #e2e2e2;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.brand-stories__related-content .related-content__stories.row h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.4rem;
+  text-align: left;
+}
+
+.brand-stories__related-content .related-content__stories.row a {
+  color: black !important;
+}
+
+.brand-stories__related-content .related-content__stories.row .category {
+  margin: 8px 0 !important;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.brand-stories__related-content .related-content__stories.row .category span {
+  background-color: #900028;
+  color: white;
+  padding: 5px 10px;
+  font-weight: 500;
+}
+
+.brand-stories__related-content .related-content__stories.row p {
+  text-align: left;
+  font-size: 0.9rem;
+}
 
 .brand-stories__related-content .related-content__title {
   display: flex;
@@ -35,15 +130,13 @@
 }
 
 .brand-stories__related-content .related-content__stories.row {
-  display: flex;
-  justify-content: center;
-  padding: 0 25px;
-  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .brand-stories__related-content .related-content__stories.row .col-lg-4 {
   margin-bottom: 10px;
-  height: auto; /* changed */
+  height: auto;
 }
 
 .brand-stories__related-content .related-content__stories.row img {
@@ -59,7 +152,7 @@
 
 .brand-stories__related-content .related-content__stories.row h3 {
   font-family: "Raleway", sans-serif;
-  font-size: 1.4rem; /* changed */
+  font-size: 1.4rem;
   text-align: left;
 }
 
@@ -85,134 +178,44 @@
   font-size: 0.9rem;
 }
 
-/* BRAND STORIES RELATED CONTENT - END */
-
-/* TEST */
-
-
-/* FROM FORDHAM STORIES CSS WHEN REMOVED */
-/* BRAND STORIES RELATED CONTENT - START */
-
-.brand-stories__related-content .related-content__title {
+/* FOR SLIDER ARROWS */
+.brand-stories__related-content .carousel-arrows {
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
-  padding: 15px;
-}
-
-.brand-stories__related-content .related-content__title::after {
-  content: "";
-  margin-top: 1px;
-  height: 4px;
-  background-color: #e2e2e2;
-  flex: 1 1 auto;
-  margin-left: 26px;
-}
-
-.brand-stories__related-content .related-content__title h2 {
-  margin: 0;
-  font-size: 2rem;
-  color: #343a40;
-  text-transform: uppercase;
-  font-family: "Raleway", sans-serif;
-  flex-shrink: 0;
-  max-width: 100%;
-}
-
-.brand-stories__related-content .related-content__title h2 span {
-  color: #900028;
-}
-
-.brand-stories__related-content .related-content__stories.row {
-  display: flex;
-  justify-content: center;
-  padding: 0 25px;
-  text-align: center;
-}
-
-.brand-stories__related-content .related-content__stories.row .col-lg-4 {
-  margin-bottom: 10px;
-  height: auto; /* changed */
-}
-
-
-
-.brand-stories__related-content .related-content__stories.row img {
-  max-width: 100%;
-  max-height: 100%;
-  min-height: 50%;
+  height: 100% !important;
   width: 100%;
-  border: 1px solid #e2e2e2;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  top: -80;
 }
-
-.brand-stories__related-content .related-content__stories.row h3 {
-  font-family: "Raleway", sans-serif;
-  font-size: 1.4rem; /* changed */
-  text-align: left;
-}
-
-.brand-stories__related-content .related-content__stories.row a {
-  color: black !important;
-}
-
-.brand-stories__related-content .related-content__stories.row .category {
-  margin: 8px 0 !important;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-}
-
-.brand-stories__related-content .related-content__stories.row .category span {
+.brand-stories__related-content .carousel-arrow {
+  height: 4rem;
   background-color: #900028;
   color: white;
-  padding: 5px 10px;
-  font-weight: 500;
+  border: none;
+  width: 4rem;
+  font-size: 3rem;
+  line-height: 1.15em;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 100ms;
+  z-index: 1;
+  transition: opacity 0.5s ease;
 }
 
-.brand-stories__related-content .related-content__stories.row p {
-  text-align: left;
-  font-size: 0.9rem;
+.brand-stories__related-content .carousel-arrow:hover,
+.brand-stories__related-content .carousel-arrow:focus {
+  opacity: 1;
 }
 
-
-
-
-/* MOBILE RESPONSIVE VIEW */
-@media only screen and (max-width: 991px) {
-  .brand-stories__related-content .related-content__stories.row .col-lg-4 {
-    height: 100%;
-  }
-
-  .brand-stories__related-content .col-lg-4 .img-container {
-    height: auto;
-  }
-  
-  .brand-stories__related-content .related-content__stories.row .category {
-    text-align: center;
-  }
-
-  .brand-stories__related-content .related-content__stories.row h3 {
-    text-align: center;
-  }
+.brand-stories__related-content .carousel-arrow.prev {
+  left: 0;
+  padding-left: 1.5rem;
+  margin: 21px;
 }
 
-@media only screen and (max-width: 620px) {
-  .brand-stories__related-content .related-content__title h2 {
-    border-bottom: 4px #e2e2e2 solid;
-    width: 100%;
-  }
-
-  .brand-stories__related-content .related-content__title::after {
-   display: none;
-  }
-
-   .brand-stories__related-content .related-content__stories.row h3 {
-    font-size: 1.2rem;
-  }
+.brand-stories__related-content .carousel-arrow.next {
+  right: 0;
+  padding-left: 1.5rem;
+  margin: 21px;
 }
-
-
-/* BRAND STORIES RELATED CONTENT - END */

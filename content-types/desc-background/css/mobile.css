@@ -1,0 +1,31 @@
+/*  MOBILE RESPONSIVE  */
+
+@media only screen and (max-width: 1280px) {
+  .desc-background .desc-background-wrapper .video-embed {
+    width: 70%;
+  }
+
+  .desc-background .desc-background-wrapper .video-embed.video-content__video--youtube {
+    padding-bottom: 40.55%;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .desc-background .desc-background-wrapper .video-embed {
+    width: 80%;
+  }
+
+  .desc-background .desc-background-wrapper .video-embed.video-content__video--youtube {
+    padding-bottom: 42.55%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .desc-background .desc-background-wrapper .video-embed {
+    width: 80%;
+  }
+
+  .desc-background .desc-background-wrapper .video-embed.video-content__video--youtube {
+    padding-bottom: 45.55%;
+  }
+}

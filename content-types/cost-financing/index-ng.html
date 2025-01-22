@@ -1,0 +1,497 @@
+<link rel="stylesheet" href="https://assets.fordham.edu/t4_template/css/angular-csp.css" />
+<script nonce="intFmSKAFmGlbuyP" src="https://assets.fordham.edu/t4_template/js/angular.js"></script>
+<script nonce="intFmSKAFmGlbuyP" src="https://assets.fordham.edu/t4_template/js/angular-animate.js"></script>
+
+<script nonce="intFmSKAFmGlbuyP">
+  basicform = angular.module("basicform", []);
+  basicform.controller("InfoController", function ($scope, $http) {
+    $scope.page = { loading: null, rtmsg: "" };
+    $scope.sectionsarr = [];
+    $scope.creditsarr = [];
+    $scope.chgSchool = [];
+
+    $scope.shwcol = { all: true, fall: false, spring: false, summer: false };
+    $scope.selsch = "PCS";
+
+    for (var i = 0; i < 30; i++) {
+      $scope.creditsarr.push(i);
+    }
+
+    $scope.rldPage = function () {
+      //alert($scope.selsch);
+      window.location = "?wchsch=" + $scope.selsch;
+    };
+
+    $scope.percredittotal = 0;
+
+    $scope.FullTotals = { direct: { fall: 0, spring: 0, summer: 0, total: 0 }, indirect: { fall: 0, spring: 0, summer: 0, total: 0 }, full: { fall: 0, spring: 0, summer: 0, total: 0 } };
+
+    $scope.loadSchoolJson = function () {
+      let d = new Date();
+      let ms = d.getMilliseconds();
+
+      $scope.page.loading = "Loading Info";
+      
+      $http({
+        method: "POST",
+        url: "https://dintprx.erp.fordham.edu/student_calculator/data/calcjson.jsp?rnd=" + ms,
+        data: "wchSchool=" + $scope.selsch,
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      })
+        .success(function (data) {
+          console.log(data);
+          $scope.page.loading = null;
+          $scope.page.rtmsg = data.rtmsg;
+          if (data.status == "good") {
+            $scope.defaultDirect = data.value;
+            $scope.sectionsarr = [];
+            for (var i = 0; i < $scope.defaultDirect.length; i++) {
+              if ($scope.sectionsarr.indexOf($scope.defaultDirect[i].section) < 0 && $scope.defaultDirect[i].section != "all") {
+                $scope.sectionsarr.push($scope.defaultDirect[i].section);
+              }
+            }
+            $scope.selsec = $scope.sectionsarr[0];
+            $scope.fullcalc();
+            console.log($scope.sectionsarr);
+          } else {
+            $scope.defaultDirect = [];
+            $scope.page.loading = null;
+            $scope.page.rtmsg = "No school info returned.";
+          }
+        })
+        .error(function (data, status, header, config) {
+          $scope.page.loading = null;
+          $scope.page.rtmsg = "Loading Error";
+        });
+    };
+
+    $scope.directFilter = function (lineitem) {
+      if (lineitem.costtype === "direct" && (lineitem.section === "all" || lineitem.section === $scope.selsec)) {
+        return lineitem;
+      }
+    };
+    $scope.indirectFilter = function (lineitem) {
+      if (lineitem.costtype === "indirect" && (lineitem.section === "all" || lineitem.section === $scope.selsec)) {
+        return lineitem;
+      }
+    };
+
+    $scope.sumcalc = function (val1, val2, val3) {
+      //alert(val1 + " " + val2);
+      if (val1 === undefined) {
+        val1 = 0;
+      }
+      if (val2 === undefined) {
+        val2 = 0;
+      }
+      if (val3 === undefined) {
+        val3 = 0;
+      }
+      return val1 + val2 + val3;
+    };
+
+    $scope.crdcalc = function (val1, val2, disp) {
+      if (disp == "Y") {
+        if (val2 > 0) {
+          return val1 * val2;
+        } else {
+          return 0;
+        }
+      } else {
+        return 0;
+      }
+    };
+    $scope.termcalc = function (val1, val2, disp) {
+      if (disp == "Y") {
+        if (val2 > 0) {
+          return val1;
+        } else {
+          return 0;
+        }
+      } else {
+        return 0;
+      }
+    };
+    $scope.percreditcalc = function (val1, val2) {
+      if (val2 > 0) {
+        return val1 / val2;
+      } else {
+        return 0;
+      }
+    };
+
+    $scope.credits_fall = $scope.creditsarr[12];
+    $scope.credits_spg = $scope.creditsarr[12];
+    $scope.credits_smr = $scope.creditsarr[12];
+    $scope.credits_ttl = function () {
+      var rtnsum = 0;
+      if ($scope.shwcol.fall) {
+        rtnsum = rtnsum + $scope.credits_fall;
+      }
+      if ($scope.shwcol.spring) {
+        rtnsum = rtnsum + $scope.credits_spg;
+      }
+      if ($scope.shwcol.summer) {
+        rtnsum = rtnsum + $scope.credits_smr;
+      }
+      return rtnsum;
+    };
+
+    $scope.cleartots = function () {
+      $scope.FullTotals.direct.fall = 0;
+      $scope.FullTotals.direct.spring = 0;
+      $scope.FullTotals.direct.summer = 0;
+      $scope.FullTotals.direct.total = 0;
+      $scope.FullTotals.indirect.fall = 0;
+      $scope.FullTotals.indirect.spring = 0;
+      $scope.FullTotals.indirect.summer = 0;
+      $scope.FullTotals.indirect.total = 0;
+      $scope.FullTotals.full.fall = 0;
+      $scope.FullTotals.full.spring = 0;
+      $scope.FullTotals.full.summer = 0;
+      $scope.FullTotals.full.total = 0;
+    };
+
+    $scope.fullcalc = function () {
+      //"name":"Tuition","spring":0,"fall":0,"total":0,"default":995,"type":"credit"},
+      //  $scope.credits_ttl = $scope.sumcalc($scope.credits_fall,$scope.credits_spg,$scope.credits_smr);
+      $scope.cleartots();
+      $scope.shwcol = { all: true, fall: false, spring: false, summer: false };
+      $scope.defaultDirect.forEach(function (e, i) {
+        if ($scope.selsec == e.section || e.section == "all") {
+          if (e.disfall == "Y") {
+            $scope.shwcol.fall = true;
+          }
+          if (e.disspg == "Y") {
+            $scope.shwcol.spring = true;
+          }
+          if (e.dissmr == "Y") {
+            $scope.shwcol.summer = true;
+          }
+          if (e.type == "credit") {
+            e.fall = $scope.crdcalc(e.default, $scope.credits_fall, e.disfall);
+            e.spring = $scope.crdcalc(e.default, $scope.credits_spg, e.disspg);
+            e.summer = $scope.crdcalc(e.default, $scope.credits_smr, e.dissmr);
+          }
+          if (e.type == "term") {
+            if (e.name == "Tuition") {
+              $scope.shwcol.all = false;
+              console.log(e);
+            }
+            e.fall = $scope.termcalc(e.default, $scope.credits_fall, e.disfall);
+            e.spring = $scope.termcalc(e.default, $scope.credits_spg, e.disspg);
+            e.summer = $scope.termcalc(e.default, $scope.credits_smr, e.dissmr);
+          }
+          e.total = e.fall + e.spring + e.summer;
+          if (e.costtype == "direct") {
+            $scope.FullTotals.direct.fall = $scope.FullTotals.direct.fall + e.fall;
+            $scope.FullTotals.direct.spring = $scope.FullTotals.direct.spring + e.spring;
+            $scope.FullTotals.direct.summer = $scope.FullTotals.direct.summer + e.summer;
+            $scope.FullTotals.direct.total = $scope.FullTotals.direct.total + e.total;
+          }
+          if (e.costtype == "indirect") {
+            $scope.FullTotals.indirect.fall = $scope.FullTotals.indirect.fall + e.fall;
+            $scope.FullTotals.indirect.spring = $scope.FullTotals.indirect.spring + e.spring;
+            $scope.FullTotals.indirect.summer = $scope.FullTotals.indirect.summer + e.summer;
+            $scope.FullTotals.indirect.total = $scope.FullTotals.indirect.total + e.total;
+          }
+        }
+      });
+
+      $scope.FullTotals.full.fall = $scope.FullTotals.direct.fall + $scope.FullTotals.indirect.fall;
+      $scope.FullTotals.full.spring = $scope.FullTotals.direct.spring + $scope.FullTotals.indirect.spring;
+      $scope.FullTotals.full.summer = $scope.FullTotals.direct.summer + $scope.FullTotals.indirect.summer;
+      $scope.FullTotals.full.total = $scope.FullTotals.direct.total + $scope.FullTotals.indirect.total;
+
+      $scope.percredittotal = $scope.percreditcalc($scope.FullTotals.full.total, $scope.credits_ttl());
+    };
+
+    $scope.loadSchoolJson();
+  });
+</script>
+
+<style>
+  #tempcss {
+    font-size: 1.1em;
+  }
+  #tempcss legend {
+    font-size: 16px;
+  }
+  #tempcss table.table-display tr th {
+    font-weight: bold;
+    color: #900028 !important;
+    border-bottom: solid 2px #900028 !important;
+    background: #ffffff;
+    padding: 0.3636363636363636em 0.1818181818181818em;
+    text-align: left;
+    vertical-align: center;
+  }
+  #tempcss table.table-display thead,
+  table.table-display tbody {
+    display: block;
+  }
+
+  /*
+#tempcss table.table-display tr {display:flex; flex-wrap: nowrap;  justify-content: space-between; align-items: stretch}
+#tempcss table.table-display tr th , #tempcss table.table-display tr td {display: flex; flex-grow: 1;   flex-flow: column nowrap; }
+#tempcss table.table-display tr th:nth-of-type(1) ,#tempcss table.table-display tr td:nth-of-type(1) {flex: 50%;   flex-flow: column nowrap;}
+*/
+  #tempcss table.table-display {
+    display: table;
+    width: 100%;
+  }
+
+  #tempcss table.table-display tr {
+    display: table-row;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  #tempcss table.table-display thead {
+    display: table-header-group;
+  }
+  #tempcss table.table-display tbody {
+    display: table-row-group;
+  }
+  #tempcss table.table-display tr th,
+  #tempcss table.table-display tr td {
+    display: table-cell;
+  }
+  #tempcss table.table-display tr th:not(:first-child),
+  #tempcss table.table-display tr td:not(:first-child) {
+    text-align: center;
+  }
+
+  select {
+    -webkit-appearance: listbox !important;
+    appearance: listbox !important;
+  }
+
+  @media screen and (max-width: 600px) {
+    #tempcss table.table-display {
+      display: block;
+      border: none;
+    }
+    #tempcss table.table-display tbody {
+      display: block;
+    }
+    #tempcss table.table-display tbody tr {
+      flex-direction: row;
+      flex-wrap: wrap;
+      background: #ffffff;
+      display: flex;
+      border: 1px solid #999;
+      border-radius: 10px;
+      margin-bottom: 2em;
+    }
+    #tempcss table.table-display thead {
+      display: none;
+    }
+    #tempcss table.table-display tbody td:before {
+      content: attr(data-label);
+      display: block;
+      padding: 0;
+      margin: 0;
+      font-weight: bold;
+      text-align: center;
+      font-size: 0.85em;
+      color: #900029;
+    }
+    #tempcss table.table-display tbody td {
+      text-align: center;
+      flex-flow: column nowrap;
+      flex: 25%;
+      display: flex;
+      padding: 0.85em 0.5em;
+      border: 1px dashed #ddd;
+    }
+    #tempcss table.table-display tbody td:nth-of-type(1) {
+      flex: 100%;
+      text-align: left;
+      font-size: 1.25em;
+    }
+    #tempcss table.table-display tbody td.fullheader {
+      flex: 100%;
+    }
+    #tempcss table.table-display tbody td.rsphide {
+      display: none;
+    }
+  }
+</style>
+
+<div ng-app="basicform">
+  <!-- Start Red and Green Lions -->
+  <main class="fullwidth" id="main-content" ng-controller="InfoController">
+    <section class="container">
+      <div class="row">
+        <div class="col">
+          <div id="tempcss">
+            <div><t4 type="content" name="Main body" output="normal" modifiers="medialibrary,nav_sections" /></div>
+
+            <!--for botom section -->
+
+            <div ng-show="page.loading">
+              <div class="fa-3x"><i class="fas fa-spinner fa-pulse"></i></div>
+              Loading...
+            </div>
+            <div ng-show="!page.loading">
+              <div ng-show="page.rtmsg" class="alert alert-warning">
+                <h3><i class="fas fa-exclamation-triangle"></i> {{page.rtmsg}}</h3>
+              </div>
+
+              <div class="row" ng-show="chgSchool.length>1">
+                <div class="col-sm-6">
+                  <h4>
+                    <div><label for="selsch">Change School: </label></div>
+                    <select ng-model="selsch" class="p-2" name="selsch" id="selsch" ng-change="loadSchoolJson();">
+                      <option ng-repeat="item in chgSchool" value="{{item.value}}">{{item.text}}</option>
+                    </select>
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row" ng-show="sectionsarr.length>1">
+                <div class="col-sm-6">
+                  <h4>
+                    <div><label for="selsec">Select Program: </label></div>
+                    <select
+                      ng-model="selsec"
+                      class="p-2"
+                      aria-label="Select Program"
+                      name="selsec"
+                      id="selsec"
+                      ng-change="fullcalc()"
+                      ng-options="option as option for option in sectionsarr track by option "
+                    ></select>
+                  </h4>
+                </div>
+              </div>
+              <table width="100%" border="0" cellspacing="0" cellpadding="5" class="restable table-display">
+                <thead>
+                  <tr>
+                    <th>Credits</th>
+                    <th ng-show="shwcol.fall">Fall</th>
+                    <th ng-show="shwcol.spring">Spring</th>
+                    <th ng-show="shwcol.summer">Summer</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Number of Credits</td>
+                    <td class="sdata inpdata" data-label="Fall" ng-show="shwcol.fall">
+                      <select
+                        ng-model="credits_fall"
+                        name="credits_fall"
+                        ng-change="fullcalc()"
+                        aria-label="Fall Credits"
+                        ng-options="option as option for option in creditsarr track by option "
+                      ></select>
+                    </td>
+                    <td class="sdata inpdata" data-label="Spring" ng-show="shwcol.spring">
+                      <select
+                        ng-model="credits_spg"
+                        name="credits_spg"
+                        ng-change="fullcalc()"
+                        aria-label="Spring Credits"
+                        ng-options="option as option for option in creditsarr track by option "
+                      ></select>
+                    </td>
+                    <td class="sdata inpdata" data-label="Summer" ng-show="shwcol.summer">
+                      <select
+                        ng-model="credits_smr"
+                        name="credits_smr"
+                        ng-change="fullcalc()"
+                        aria-label="Summer Credits"
+                        ng-options="option as option for option in creditsarr track by option "
+                      ></select>
+                    </td>
+                    <td class="sdata inpdata fullheader" data-label="Total">{{credits_ttl()}}</td>
+                  </tr>
+                </tbody>
+                <thead>
+                  <tr>
+                    <th>Direct Expenses (billed by Fordham)</th>
+                    <th ng-show="shwcol.fall">Fall</th>
+                    <th ng-show="shwcol.spring">Spring</th>
+                    <th ng-show="shwcol.summer">Summer</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="direct in defaultDirect |  filter: directFilter | orderBy : 'order'">
+                    <td data-label="Direct Expense">
+                      {{direct.name}}
+                      <div><small>${{direct.default | number}} / {{direct.type}}</small></div>
+                    </td>
+                    <td data-label="Fall" ng-show="shwcol.fall">${{direct.fall | number}}</td>
+                    <td data-label="Spring" ng-show="shwcol.spring">${{direct.spring | number}}</td>
+                    <td data-label="Summer" ng-show="shwcol.summer">${{direct.summer | number}}</td>
+                    <td data-label="Total" class="fullheader">${{direct.total | number}}</td>
+                  </tr>
+                  <tr>
+                    <td>Total Direct</td>
+                    <td class="sdata inpdata" data-label="Fall" ng-show="shwcol.fall">${{FullTotals.direct.fall | number}}</td>
+                    <td class="sdata inpdata" data-label="Spring" ng-show="shwcol.spring">${{FullTotals.direct.spring | number}}</td>
+                    <td class="sdata inpdata" data-label="Summer" ng-show="shwcol.summer">${{FullTotals.direct.summer | number}}</td>
+                    <td class="sdata inpdata fullheader" data-label="Total">${{FullTotals.direct.total | number}}</td>
+                  </tr>
+                </tbody>
+                <thead>
+                  <tr>
+                    <th>Indirect Expenses (costs you may incur)</th>
+                    <th ng-show="shwcol.fall">Fall</th>
+                    <th ng-show="shwcol.spring">Spring</th>
+                    <th ng-show="shwcol.summer">Summer</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="indirect in defaultDirect |  filter: indirectFilter | orderBy : 'order'">
+                    <td data-label="Indirect Expense">
+                      {{indirect.name}}
+                      <div><small>${{indirect.default | number}} / {{indirect.type}}</small></div>
+                    </td>
+                    <td data-label="Fall" ng-show="shwcol.fall">${{indirect.fall | number}}</td>
+                    <td data-label="Spring" ng-show="shwcol.spring">${{indirect.spring | number}}</td>
+                    <td data-label="Summer" ng-show="shwcol.summer">${{indirect.summer | number}}</td>
+                    <td data-label="Total" class="fullheader">${{indirect.total | number}}</td>
+                  </tr>
+                  <tr>
+                    <td>Total Indirect</td>
+                    <td data-label="Fall" class="sdata inpdata" data-label="" ng-show="shwcol.fall">${{FullTotals.indirect.fall | number}}</td>
+                    <td data-label="Spring" class="sdata inpdata" data-label="" ng-show="shwcol.spring">${{FullTotals.indirect.spring | number}}</td>
+                    <td data-label="Summer" class="sdata inpdata" data-label="" ng-show="shwcol.summer">${{FullTotals.indirect.summer | number}}</td>
+                    <td data-label="Total" class="sdata inpdata fullheader" data-label="">${{FullTotals.indirect.total | number}}</td>
+                  </tr>
+                </tbody>
+                <thead>
+                  <tr>
+                    <th>Grand Total</th>
+                    <th ng-show="shwcol.fall">Fall</th>
+                    <th ng-show="shwcol.spring">Spring</th>
+                    <th ng-show="shwcol.summer">Summer</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="">Grand Total</td>
+                    <td class="sdata inpdata" data-label="Fall" ng-show="shwcol.fall">${{FullTotals.full.fall | number}}</td>
+                    <td class="sdata inpdata" data-label="Spring" ng-show="shwcol.spring">${{FullTotals.full.spring | number}}</td>
+                    <td class="sdata inpdata" data-label="Summer" ng-show="shwcol.summer">${{FullTotals.full.summer | number}}</td>
+                    <td class="sdata inpdata fullheader" data-label="Total">${{FullTotals.full.total | number}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!--for botom section -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- End Red and Green Lions -->
+  <!--Start Footer-->
+</div>

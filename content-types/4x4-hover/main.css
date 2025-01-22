@@ -93,10 +93,7 @@
   flex-direction: column;
 }
 
-.two-by-two .content-container .title img,
-.two-by-two .content-container .title svg,
-.two-by-two .content-container .title p,
-.two-by-two .content-container .title p.title-desc {
+.two-by-two .content-container .title {
   color: white;
   opacity: 0;
   text-align: center;
@@ -123,18 +120,25 @@
   font-size: 1rem !important;
 }
 
-/* Hover Effects */
-.two-by-two .content-container:not(:hover) .title img,
-.two-by-two .content-container:not(:hover) .title svg,
-.two-by-two .content-container:not(:hover) .title .title-header,
-.two-by-two .content-container:not(:hover) .title .title-desc {
+/* HOVER & FOCUS EFFECTS */
+.two-by-two .content-container:not(:hover) .title {
   opacity: 1;
 }
 
-.two-by-two .content-container:hover .content .content-text {
+.two-by-two .content-container:hover .content .content-text,
+.two-by-two .content-container:focus .content .content-text,
+.two-by-two .content-container:focus-within .content .content-text {
   opacity: 1;
 }
 
-.two-by-two .content-container:hover > img {
+.two-by-two .content-container:focus .title,
+.two-by-two .content-container:focus-within .title {
+  opacity: 0 !important;
+}
+
+.two-by-two .content-container:hover > img,
+.two-by-two .content-container:focus > img,
+.two-by-two .content-container:focus-within > img {
   filter: blur(5px);
 }
+
