@@ -6572,7 +6572,7 @@ pre code {
   z-index: 1100;
 }
 .header-nav__bottom__link:hover:before {
-  background-image: url(<t4type="media"id="89479"formatter="path/*"/>);
+  background-image: url();
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: cover;
@@ -6582,7 +6582,7 @@ pre code {
   animation: a forwards cubic-bezier(0.21, 1.3, 0.94, 1.12) 0.25s;
 }
 .header-nav__bottom__link--active:before {
-  background-image: url(<t4type="media"id="89479"formatter="path/*"/>);
+  background-image: url();
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: cover;
