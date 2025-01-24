@@ -1,18 +1,14 @@
+console.log("CONNECTED TO SOCIAL MEDIA TITLE INJECTION SCRIPT!");
 // Waits until all DOM items are loaded including CSS and JS before execution
 window.addEventListener("load", () => {
-  
   // Object Literal for title names
-  const instaTitles = {
-    1: "Input Title One",
-    2: "Input Title Two",
-    3: "Input Title Three",
-    4: "",
-    5: "",
-    6: "",
-  };
+  const instaReels = document.querySelectorAll("iframe");
+  const jsScript = document.querySelector(".test-js");
+  const data = JSON.parse(jsScript.dataset.json);
+  let instaTitles = data;
 
-  const instaReels = document.querySelectorAll(".instagram-media");
   const titles = [];
+  let count = 0;
 
   // Searches the object literal for title names
   for (let key in instaTitles) {
@@ -22,20 +18,31 @@ window.addEventListener("load", () => {
       titles.push(instaTitles[key]);
     }
   }
-  
+
   // Checks if the reels is equal to the amount of titles
   if (instaReels.length > 0 && titles.length > 0) {
-    // Search through the added titles
-    titles.forEach((title, index) => {
-      // If the reel exists
-      if (instaReels[index]) {
-        // Create a title attribute 
-        instaReels[index].setAttribute("title", title);
+    // Search through the reels on the page
+    instaReels.forEach((reel) => {
+      const socialMedia = ["instagram", "tiktok", "twitter"];
+      const hasTitle = reel.hasAttribute("title");
+      const source = reel.getAttribute("src");
+      const isSocialMedia = socialMedia.includes(extractDomain(source));
+
+      // If there's a reel, the reel doesn't have a title, and it's a social media reel
+      if (reel && !hasTitle && isSocialMedia) {
+        // Create a title attribute
+        reel.setAttribute("title", titles[count]);
+        count++;
       }
       return;
     });
-
   } else {
     return;
   }
 });
+
+const extractDomain = (url) => {
+  const match = url.match(/www\.(.*?)\.com/);
+  const result = match ? match[1] : null;
+  return result;
+};

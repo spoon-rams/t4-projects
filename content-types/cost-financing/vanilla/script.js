@@ -2,6 +2,7 @@ console.log("CONNECTED!");
 const cardContent = document.querySelector(".card-content");
 const costPerCredit = document.querySelector(".cost-per-credit span");
 const totalTuition = document.querySelector(".total-tuition span");
+const totalFeesEl = document.querySelector(".total-fees span");
 const creditHours = document.querySelector(".credit-hours span");
 const courseProgram = document.querySelector(".program span");
 
@@ -14,7 +15,7 @@ const getData = async (school, program) => {
   if (!program || typeof program !== "string") return;
 
   const url = `https://dintprx.erp.fordham.edu/student_calculator/data/calcjson.jsp?wchSchool=${school}`;
-  
+
   // Temporary
   courseProgram.innerText = program;
 
@@ -35,10 +36,11 @@ const getData = async (school, program) => {
       }
     });
 
-    costPerCredit.innerText = "$" + totalCreditCost;
-    totalTuition.innerText = "$" + (totalCreditHours * totalCreditCost + totalFees);
+    costPerCredit.innerText = `$ ${totalCreditCost}`;
+    totalFeesEl.innerText = `$ ${totalFees}`;
+    totalTuition.innerText = `$ ${totalCreditHours * totalCreditCost + totalFees}`;
   } catch (err) {
-    throw err.message
+    throw err.message;
   }
 };
 
