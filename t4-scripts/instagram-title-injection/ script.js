@@ -3,8 +3,8 @@ console.log("CONNECTED TO SOCIAL MEDIA TITLE INJECTION SCRIPT!");
 window.addEventListener("load", () => {
   // Object Literal for title names
   const instaReels = document.querySelectorAll("iframe");
-  const jsScript = document.querySelector(".test-js");
-  const data = JSON.parse(jsScript.dataset.json);
+  const {dataset: json} = document.querySelector(".test-js");
+  const data = JSON.parse(json);
   let instaTitles = data;
 
   const titles = [];
@@ -42,6 +42,7 @@ window.addEventListener("load", () => {
 });
 
 const extractDomain = (url) => {
+  if(!url) return;
   const match = url.match(/www\.(.*?)\.com/);
   const result = match ? match[1] : null;
   return result;

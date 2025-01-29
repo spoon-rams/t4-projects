@@ -1,16 +1,17 @@
 console.log("CONNECTED!");
-const cardContent = document.querySelector(".card-content");
-const costPerCredit = document.querySelector(".cost-per-credit span");
-const totalTuition = document.querySelector(".total-tuition span");
-const totalFeesEl = document.querySelector(".total-fees span");
-const creditHours = document.querySelector(".credit-hours span");
-const courseProgram = document.querySelector(".program span");
 
-const {
-  dataset: { school, program },
-} = cardContent;
+const getData = async () => {
+  const cardContent = document.querySelector(".card-content");
+  const costPerCredit = document.querySelector(".cost-per-credit span");
+  const totalTuition = document.querySelector(".total-tuition span");
+  const totalFeesEl = document.querySelector(".total-fees span");
+  const creditHours = document.querySelector(".credit-hours span");
+  const courseProgram = document.querySelector(".program span");
 
-const getData = async (school, program) => {
+  const {
+    dataset: { school, program },
+  } = cardContent;
+
   if (!school || typeof school !== "string" || school.length < 3) return;
   if (!program || typeof program !== "string") return;
 
@@ -44,4 +45,4 @@ const getData = async (school, program) => {
   }
 };
 
-document.addEventListener("DOMContentLoaded", getData(school, program));
+document.addEventListener("DOMContentLoaded", getData());
