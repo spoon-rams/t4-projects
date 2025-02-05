@@ -30,9 +30,9 @@ const getData = async () => {
     const { value } = data;
 
     value.forEach((val) => {
-      const { costtype, section, order } = val;
+      const { costtype, section } = val;
       if (costtype.toLowerCase() === "direct" && section.toLowerCase() === program.toLowerCase()) {
-        order === 1 ? (totalCreditCost = val.default) : (totalFees = val.default * 2);
+        val.order === 1 ? (totalCreditCost = val.default) : (totalFees = val.default * 2);
         return;
       }
     });

@@ -10,6 +10,7 @@ body {
 }
 
 /* MAIN CSS */
+
 .founders-slider .slider-wrapper {
   position: relative;
   overflow: hidden;
@@ -20,7 +21,7 @@ body {
   overflow: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  height: 100%;
+  height: fit-content;
 }
 
 .founders-slider .slide .row {
