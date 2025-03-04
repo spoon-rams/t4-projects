@@ -1,10 +1,9 @@
-console.log("CONNECTED TO SOCIAL MEDIA TITLE INJECTION SCRIPT!");
 // Waits until all DOM items are loaded including CSS and JS before execution
 window.addEventListener("load", () => {
   // Object Literal for title names
   const instaReels = document.querySelectorAll("iframe");
-  const {dataset: json} = document.querySelector(".test-js");
-  const data = JSON.parse(json);
+  const jsScript = document.querySelector("#instagram-title-injection");
+  const data = JSON.parse(jsScript.dataset.json);
   let instaTitles = data;
 
   const titles = [];
@@ -29,8 +28,12 @@ window.addEventListener("load", () => {
       const isSocialMedia = socialMedia.includes(extractDomain(source));
 
       // If there's a reel, the reel doesn't have a title, and it's a social media reel
-      if (reel && !hasTitle && isSocialMedia) {
+      if (reel && !hasTitle && isSocialMedia && titles[count]) {
         // Create a title attribute
+        reel.setAttribute("title", titles[count]);
+        count++;
+        // If there's a reel, the reel has a title, and it's a social media reel
+      } else if (reel && hasTitle && isSocialMedia && titles[count]) {
         reel.setAttribute("title", titles[count]);
         count++;
       }
@@ -42,8 +45,8 @@ window.addEventListener("load", () => {
 });
 
 const extractDomain = (url) => {
-  if(!url) return;
-  const match = url.match(/www\.(.*?)\.com/);
+  if (!url) return;
+  const match = url.match(/(twitter|instagram|tiktok|youtube|facebook|snapchat)\.com/);
   const result = match ? match[1] : null;
   return result;
 };

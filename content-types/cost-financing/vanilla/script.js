@@ -14,6 +14,10 @@ const getData = async () => {
     <p style="font-size: 3rem">NO DATA</p>
     <p>Please review your selections in the content type.</p>
   `;
+  const errorHTML = `
+    <p style="font-size: 3rem">ERROR</p>
+    <p>There's seems to be an issue right now, please check back later or contact an admin</p>
+  `
 
   const {
     dataset: { school, program },
@@ -93,6 +97,8 @@ const getData = async () => {
       creditHours.innerText = "-";
     }
   } catch (err) {
+    loading.innerHTML = errorHTML;
+    cardContent.innerHTML = "";
     throw err.message;
   }
 };
