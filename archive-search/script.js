@@ -20,9 +20,9 @@ const displayResults = (page = 1) => {
                        <h3>No Search Results...</h3>
                      </div>`;
   const renderElements = results
-      .map((item) => {
-        const { link, image, imageDesc, category, title } = item;
-        return `
+    .map((item) => {
+      const { link, image, imageDesc, category, title } = item;
+      return `
           <div class="row archive-list">
             <div class="col-md-3">
               <a href="${link}">
@@ -38,8 +38,8 @@ const displayResults = (page = 1) => {
               </a>
             </div>
           </div>`;
-      })
-      .join("");
+    })
+    .join("");
 
   if (results.length === 5) {
     resultsDiv.style.height = "auto";
@@ -52,9 +52,8 @@ const displayResults = (page = 1) => {
   }
   resultsDiv.style.height = "1185px";
   updatePagination(filteredData.length, page);
-  
 
-  return resultsDiv.innerHTML = noResults;
+  return (resultsDiv.innerHTML = noResults);
 };
 
 // Displays the pagination
@@ -183,12 +182,18 @@ const categorySearch = (query) => {
 
 // Search Action Type
 const search = () => {
-  const query = searchInput.value.trim();
+  const search = searchInput.value.trim();
+  const newURL = new URL(window.location);
   const category = categoryInput.value;
+
+  newURL.searchParams.set("search", search);
+  const query = newURL.searchParams.get("search");
+  history.replaceState(null, "", newURL);
 
   if (!query && !category) {
     filteredData = data;
   } else if (query && !category) {
+    
     keywordSearch(query);
   } else if (!query && category) {
     categorySearch(category);
@@ -236,6 +241,7 @@ fetch("./data.json")
       .join("");
 
     document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
+
     const debouncedSearch = debounce(search, 600);
     searchInput.addEventListener("input", debouncedSearch);
     categoryInput.addEventListener("change", () => {
