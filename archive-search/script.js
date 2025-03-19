@@ -185,20 +185,22 @@ const search = () => {
   const search = searchInput.value.trim();
   const newURL = new URL(window.location);
   const category = categoryInput.value;
+  console.log(search);
+  // newURL.searchParams.set("search", search);
+  // const query = newURL.searchParams.get("search");
+  // history.replaceState(null, "", newURL);
 
-  newURL.searchParams.set("search", search);
-  const query = newURL.searchParams.get("search");
-  history.replaceState(null, "", newURL);
-
-  if (!query && !category) {
+  if (!search && !category) {
     filteredData = data;
-  } else if (query && !category) {
-    
+  } else if (search && !category) {
+    newURL.searchParams.set("search", search);
+    const query = newURL.searchParams.get("search");
     keywordSearch(query);
-  } else if (!query && category) {
+    history.replaceState(null, "", newURL);
+  } else if (!search && category) {
     categorySearch(category);
-  } else if (query && category) {
-    keywordSearch(query);
+  } else if (search && category) {
+    keywordSearch(search);
     filteredData = filteredData.filter((item) => item.category.toLowerCase() === category.toLowerCase());
   }
 
