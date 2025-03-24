@@ -185,10 +185,15 @@ const search = () => {
   const search = searchInput.value.trim();
   const newURL = new URL(window.location);
   const category = categoryInput.value;
-  console.log(search);
-  // newURL.searchParams.set("search", search);
-  // const query = newURL.searchParams.get("search");
-  // history.replaceState(null, "", newURL);
+
+  if (!search) {
+    newURL.searchParams.delete("search");
+    history.replaceState(null, "", newURL);
+  }
+  if (!category) {
+    newURL.searchParams.delete("category");
+    history.replaceState(null, "", newURL);
+  }
 
   if (!search && !category) {
     filteredData = data;
@@ -198,12 +203,19 @@ const search = () => {
     keywordSearch(query);
     history.replaceState(null, "", newURL);
   } else if (!search && category) {
-    categorySearch(category);
+    newURL.searchParams.set("category", category);
+    const query = newURL.searchParams.get("category");
+    categorySearch(query);
+    history.replaceState(null, "", newURL);
   } else if (search && category) {
-    keywordSearch(search);
-    filteredData = filteredData.filter((item) => item.category.toLowerCase() === category.toLowerCase());
+    newURL.searchParams.set("search", search);
+    const querySearch = newURL.searchParams.get("search");
+    newURL.searchParams.set("category", category);
+    const queryCategory = newURL.searchParams.get("category");
+    keywordSearch(querySearch);
+    filteredData = filteredData.filter((item) => item.category.toLowerCase() === queryCategory.toLowerCase());
+    history.replaceState(null, "", newURL);
   }
-
   displayResults(currentPage);
 };
 
@@ -243,11 +255,20 @@ fetch("./data.json")
       .join("");
 
     document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
-
     const debouncedSearch = debounce(search, 600);
+    const newURL = new URL(window.location);
+    const searchQuery = newURL.searchParams.get("search");
+    const categoryQuery = newURL.searchParams.get("category");
+
+    if (searchQuery || categoryQuery) {
+      searchInput.value = searchQuery || "";
+      categoryInput.value = categoryQuery || "";
+      search();
+    }
+
     searchInput.addEventListener("input", debouncedSearch);
     categoryInput.addEventListener("change", () => {
-      if (!categoryInput.value) {
+      if (!categoryInput.value && !searchInput.value) {
         searchInput.value = "";
       }
       search();
