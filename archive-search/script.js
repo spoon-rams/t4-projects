@@ -3,6 +3,7 @@ const searchInput = document.getElementById("search-input");
 const categoryInput = document.getElementById("category-select");
 const resultsDiv = document.querySelector(".stories");
 const paginationDiv = document.querySelector(".pagination");
+const clearButton = document.querySelector(".clear-button button");
 
 const itemsPerPage = 5;
 const categories = [{ name: "Please choose a category", value: "" }];
@@ -288,4 +289,11 @@ fetch("./data.json")
       }
       search();
     });
+
+    clearButton.addEventListener("click", () => {
+      searchInput.value = "";
+      categoryInput.value = "";
+      search();
+    })
+
   });
