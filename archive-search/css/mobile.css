@@ -18,8 +18,8 @@
   }
 }
 
-@media only screen and (max-width: 767px) {
-  .pagination .number {
+@media only screen and (max-width: 991px) {
+  .fordham-stories-search .pagination .number {
     display: none;
   }
 
@@ -51,6 +51,10 @@
   .fordham-stories-search .general-content.search-results .stories img {
     margin-bottom: 0;
   }
+
+  .fordham-stories-search .clear-button button {
+    margin-left: 0;
+  }
 }
 
 @media only screen and (max-width: 458px) {
@@ -60,5 +64,10 @@
 
   .fordham-stories-search .general-content.search-results .stories h2 {
     font-size: 1.2rem;
+  }
+
+  .fordham-stories-search .clear-button, 
+  .fordham-stories-search .clear-button button {
+    width: 100%;
   }
 }

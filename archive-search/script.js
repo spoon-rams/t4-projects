@@ -24,12 +24,12 @@ const displayResults = (page = 1) => {
       const { link, image, imageDesc, category, title } = item;
       return `
           <div class="row archive-list">
-            <div class="col-md-3">
+            <div class="col-lg-3">
               <a href="${link}">
                 <img src="${image}" alt="${imageDesc}" style="width: 100%; height: auto;">
               </a>
             </div>
-            <div class="col-md-9">
+            <div class="col-lg-9">
               <p class="category">
                 <span>${category}</span>
               </p>
