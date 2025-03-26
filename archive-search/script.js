@@ -291,9 +291,11 @@ fetch("./data.json")
     });
 
     clearButton.addEventListener("click", () => {
+      if (!searchInput.value && !categoryInput.value) {
+        return;
+      }
       searchInput.value = "";
       categoryInput.value = "";
       search();
-    })
-
+    });
   });
