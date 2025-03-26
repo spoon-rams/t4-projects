@@ -96,18 +96,32 @@ const categorySearch = (query) => {
   displayResults(currentPage);
 };
 
-const search = () => {
-  const query = searchInput.value.trim();
-  const category = categoryInput.value.trim();
+const changeURL = (url) => {
+  return history.replaceState(null, "", url);
+}
 
-  if (!query && !category) {
+const search = () => {
+  const search = searchInput.value.trim();
+  const category = categoryInput.value.trim();
+  const url = new URL(window.location);
+  
+  if(!search) {
+    url.searchParams.delete("search");
+    changeURL(url);
+  }
+
+  if(!category) {
+    url.searchParams.delete()
+  }
+
+  if (!search && !category) {
     filteredData = data;
-  } else if (query && !category) {
-    keywordSearch(query);
-  } else if (!query && category) {
+  } else if (search && !category) {
+    keywordSearch(search);
+  } else if (!search && category) {
     categorySearch(category);
-  } else if (query && category) {
-    keywordSearch(query);
+  } else if (search && category) {
+    keywordSearch(search);
     filteredData = filteredData.filter((item) => item.category.toLowerCase() === category.toLowerCase());
   }
 

@@ -180,41 +180,56 @@ const categorySearch = (query) => {
   displayResults(currentPage);
 };
 
+const changeURL = (url, type, queryString, query) => {
+  switch (type) {
+    case "delete":
+      url.searchParams.delete(queryString);
+      return history.replaceState(null, "", url);
+    case "set":
+      url.searchParams.set(queryString, query);
+      return history.replaceState(null, "", url);
+    case "get":
+      return url.searchParams.get(queryString);
+    default:
+      return history.replaceState(null, "", url);
+  }
+};
+
 // Search Action Type
 const search = () => {
   const search = searchInput.value.trim();
-  const newURL = new URL(window.location);
-  const category = categoryInput.value;
+  const category = categoryInput.value.trim();
+  const url = new URL(window.location);
+
+  let querySearch = "";
+  let queryCategory = "";
 
   if (!search) {
-    newURL.searchParams.delete("search");
-    history.replaceState(null, "", newURL);
+    changeURL(url, "delete", "search");
   }
   if (!category) {
-    newURL.searchParams.delete("category");
-    history.replaceState(null, "", newURL);
+    changeURL(url, "delete", "category");
   }
 
   if (!search && !category) {
     filteredData = data;
   } else if (search && !category) {
-    newURL.searchParams.set("search", search);
-    const query = newURL.searchParams.get("search");
-    keywordSearch(query);
-    history.replaceState(null, "", newURL);
+    changeURL(url, "set", "search", search);
+    querySearch = changeURL(url, "get", "search");
+    keywordSearch(querySearch);
   } else if (!search && category) {
-    newURL.searchParams.set("category", category);
-    const query = newURL.searchParams.get("category");
-    categorySearch(query);
-    history.replaceState(null, "", newURL);
+    changeURL(url, "set", "category", category);
+    queryCategory = changeURL(url, "get", "category");
+    categorySearch(queryCategory);
   } else if (search && category) {
-    newURL.searchParams.set("search", search);
-    const querySearch = newURL.searchParams.get("search");
-    newURL.searchParams.set("category", category);
-    const queryCategory = newURL.searchParams.get("category");
+    changeURL(url, "set", "search", search);
+    changeURL(url, "set", "category", category);
+
+    querySearch = changeURL(url, "get", "search");
+    queryCategory = changeURL(url, "get", "category");
+
     keywordSearch(querySearch);
     filteredData = filteredData.filter((item) => item.category.toLowerCase() === queryCategory.toLowerCase());
-    history.replaceState(null, "", newURL);
   }
   displayResults(currentPage);
 };
