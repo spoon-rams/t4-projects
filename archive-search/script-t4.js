@@ -42,7 +42,8 @@ const displayResults = (page = 1) => {
                 <h2>${title}</h2>
               </a>
             </div>
-          </div>`;
+          </div>
+          <hr />`;
     })
     .join("");
   if (results.length === 5) {
@@ -54,7 +55,7 @@ const displayResults = (page = 1) => {
     resultsDiv.innerHTML = renderElements;
     return updatePagination(filteredData.length, page);
   }
-  
+
   updatePagination(filteredData.length, page);
   resultsDiv.classList.add("temp-height");
   return (resultsDiv.innerHTML = noResults);

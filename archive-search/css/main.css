@@ -99,6 +99,7 @@
   height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  margin-bottom: 0;
 }
 
 .fordham-stories-search .archive-list h3 {
