@@ -55,6 +55,14 @@
   .fordham-stories-search .clear-button button {
     margin-left: 0;
   }
+
+  .fordham-stories-search .general-content.search-results .stories {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  
 }
 
 @media only screen and (max-width: 458px) {
@@ -66,7 +74,7 @@
     font-size: 1.2rem;
   }
 
-  .fordham-stories-search .clear-button, 
+  .fordham-stories-search .clear-button,
   .fordham-stories-search .clear-button button {
     width: 100%;
   }

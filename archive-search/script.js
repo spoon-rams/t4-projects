@@ -43,11 +43,9 @@ const displayResults = (page = 1) => {
     .join("");
 
   if (results.length === 5) {
-    resultsDiv.style.height = "auto";
     resultsDiv.innerHTML = renderElements;
     return updatePagination(filteredData.length, page);
   } else if (results.length < 5 && results.length !== 0) {
-    resultsDiv.style.height = "1185px";
     resultsDiv.innerHTML = renderElements;
     return updatePagination(filteredData.length, page);
   }
@@ -302,11 +300,3 @@ fetch("./data.json")
       return clearButton.blur();
     });
   });
-
-window.addEventListener("resize", function () {
-  if (window.innerWidth <= 768) {
-    return resultsDiv.style.height = "auto";
-  } else {
-    return resultsDiv.style.height = "1185px";
-  }
-});

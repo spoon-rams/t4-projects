@@ -35,13 +35,13 @@
   font-size: 1.1rem;
 }
 
+.fordham-stories-search .general-content.search-results .stories {
+  height: 1185px;
+}
+
 .fordham-stories-search .general-content.search-results .stories h2 {
   font-size: 1.8rem;
 }
-
-/* .fordham-stories-archives .stories {
-  min-height: 100%;
-} */
 
 /* Add basic styles for pagination */
 .fordham-stories-search .general-content.search-results .pagination {
@@ -67,14 +67,13 @@
   color: white;
 }
 
-
 /* Fordham Stories Archive List */
 
 .fordham-stories-search .archive-list .category {
   margin: 8px 0 !important;
   text-transform: uppercase;
   font-size: 1.1rem;
-}       
+}
 
 .fordham-stories-search .archive-list .category span {
   background-color: #900028;
@@ -139,11 +138,11 @@
 
 /* Fordham Stories Clear Button */
 .fordham-stories-search .clear-button {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .fordham-stories-search .clear-button button {
-    margin-top: 5px;
-    margin-left: 10px;
+  margin-top: 5px;
+  margin-left: 10px;
 }
