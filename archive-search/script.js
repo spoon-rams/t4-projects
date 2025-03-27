@@ -302,3 +302,11 @@ fetch("./data.json")
       return clearButton.blur();
     });
   });
+
+window.addEventListener("resize", function () {
+  if (window.innerWidth <= 768) {
+    return resultsDiv.style.height = "auto";
+  } else {
+    return resultsDiv.style.height = "1185px";
+  }
+});
