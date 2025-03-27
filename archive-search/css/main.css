@@ -35,8 +35,8 @@
   font-size: 1.1rem;
 }
 
-.fordham-stories-search .general-content.search-results .stories {
-  height: 1185px;
+.fordham-stories-search .general-content.search-results .stories.temp-height {
+  height: 1237px;
 }
 
 .fordham-stories-search .general-content.search-results .stories h2 {

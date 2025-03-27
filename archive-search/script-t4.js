@@ -46,17 +46,17 @@ const displayResults = (page = 1) => {
     })
     .join("");
   if (results.length === 5) {
-    resultsDiv.style.height = "auto";
+    resultsDiv.classList.remove("temp-height");
     resultsDiv.innerHTML = renderElements;
     return updatePagination(filteredData.length, page);
   } else if (results.length < 5 && results.length !== 0) {
-    resultsDiv.style.height = "1185px";
+    resultsDiv.classList.add("temp-height");
     resultsDiv.innerHTML = renderElements;
     return updatePagination(filteredData.length, page);
   }
-  resultsDiv.style.height = "1185px";
+  
   updatePagination(filteredData.length, page);
-
+  resultsDiv.classList.add("temp-height");
   return (resultsDiv.innerHTML = noResults);
 };
 
