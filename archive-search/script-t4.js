@@ -267,7 +267,6 @@ categoryInput.innerHTML = categories
 
 document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
 const debouncedSearch = debounce(search, 600);
-const url = new URL(window.location);
 const searchQuery = changeURL("get", "search");
 const categoryQuery = changeURL("get", "category");
 
@@ -288,9 +287,10 @@ categoryInput.addEventListener("change", () => {
 
 clearButton.addEventListener("click", () => {
   if (!searchInput.value && !categoryInput.value) {
-    return;
+    return clearButton.blur();
   }
   searchInput.value = "";
   categoryInput.value = "";
   search();
+  return clearButton.blur();
 });

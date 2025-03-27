@@ -168,6 +168,7 @@ const handlePaginationClick = (event) => {
 
 // Keyword Search - Title
 const keywordSearch = (query) => {
+  if (!query) return;
   const regex = new RegExp(query.trim(), "i");
   filteredData = data.filter((item) => regex.test(item.title));
   currentPage = 1;
@@ -176,6 +177,7 @@ const keywordSearch = (query) => {
 
 // Category Search Selection
 const categorySearch = (query) => {
+  if (!query) return;
   filteredData = data.filter((item) => item.category.toLowerCase() === query.toLowerCase());
   currentPage = 1;
   displayResults(currentPage);
@@ -201,7 +203,7 @@ const changeURL = (type, queryString, query) => {
 const search = () => {
   const search = searchInput.value.trim();
   const category = categoryInput.value.trim();
-  
+
   let querySearch = "";
   let queryCategory = "";
 
@@ -216,7 +218,7 @@ const search = () => {
     filteredData = data;
   } else if (search && !category) {
     changeURL("set", "search", search);
-    querySearch = changeURL(url, "get", "search");
+    querySearch = changeURL("get", "search");
     keywordSearch(querySearch);
   } else if (!search && category) {
     changeURL("set", "category", category);
@@ -282,7 +284,7 @@ fetch("./data.json")
     }
 
     searchInput.addEventListener("input", debouncedSearch);
-    
+
     categoryInput.addEventListener("change", () => {
       if (!categoryInput.value && !searchInput.value) {
         searchInput.value = "";
@@ -292,10 +294,11 @@ fetch("./data.json")
 
     clearButton.addEventListener("click", () => {
       if (!searchInput.value && !categoryInput.value) {
-        return;
+        return clearButton.blur();
       }
       searchInput.value = "";
       categoryInput.value = "";
       search();
+      return clearButton.blur();
     });
   });
