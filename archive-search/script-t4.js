@@ -170,6 +170,7 @@ const handlePaginationClick = (event) => {
 };
 
 const keywordSearch = (query) => {
+  if (!query) return;
   const regex = new RegExp(query.trim(), "i");
   filteredData = data.filter((item) => regex.test(item.title));
   currentPage = 1;
@@ -177,6 +178,7 @@ const keywordSearch = (query) => {
 };
 
 const categorySearch = (query) => {
+  if (!query) return;
   filteredData = data.filter((item) => item.category.toLowerCase() === query.toLowerCase());
   currentPage = 1;
   displayResults(currentPage);
@@ -202,7 +204,6 @@ const search = () => {
   const search = searchInput.value.trim();
   const category = categoryInput.value.trim();
   
-
   let querySearch = "";
   let queryCategory = "";
 
