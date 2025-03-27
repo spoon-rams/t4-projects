@@ -181,7 +181,8 @@ const categorySearch = (query) => {
   displayResults(currentPage);
 };
 
-const changeURL = (url, type, queryString, query) => {
+const changeURL = (type, queryString, query) => {
+  const url = new URL(window.location);
   switch (type) {
     case "delete":
       url.searchParams.delete(queryString);
@@ -200,34 +201,33 @@ const changeURL = (url, type, queryString, query) => {
 const search = () => {
   const search = searchInput.value.trim();
   const category = categoryInput.value.trim();
-  const url = new URL(window.location);
-
+  
   let querySearch = "";
   let queryCategory = "";
 
   if (!search) {
-    changeURL(url, "delete", "search");
+    changeURL("delete", "search");
   }
   if (!category) {
-    changeURL(url, "delete", "category");
+    changeURL("delete", "category");
   }
 
   if (!search && !category) {
     filteredData = data;
   } else if (search && !category) {
-    changeURL(url, "set", "search", search);
+    changeURL("set", "search", search);
     querySearch = changeURL(url, "get", "search");
     keywordSearch(querySearch);
   } else if (!search && category) {
-    changeURL(url, "set", "category", category);
-    queryCategory = changeURL(url, "get", "category");
+    changeURL("set", "category", category);
+    queryCategory = changeURL("get", "category");
     categorySearch(queryCategory);
   } else if (search && category) {
-    changeURL(url, "set", "search", search);
-    changeURL(url, "set", "category", category);
+    changeURL("set", "search", search);
+    changeURL("set", "category", category);
 
-    querySearch = changeURL(url, "get", "search");
-    queryCategory = changeURL(url, "get", "category");
+    querySearch = changeURL("get", "search");
+    queryCategory = changeURL("get", "category");
 
     keywordSearch(querySearch);
     filteredData = filteredData.filter((item) => item.category.toLowerCase() === queryCategory.toLowerCase());
@@ -272,9 +272,8 @@ fetch("./data.json")
 
     document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
     const debouncedSearch = debounce(search, 600);
-    const url = new URL(window.location);
-    const searchQuery = changeURL(url, "get", "search");
-    const categoryQuery = changeURL(url, "get", "category");
+    const searchQuery = changeURL("get", "search");
+    const categoryQuery = changeURL("get", "category");
 
     if (searchQuery || categoryQuery) {
       searchInput.value = searchQuery || "";

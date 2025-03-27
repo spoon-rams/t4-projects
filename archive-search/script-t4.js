@@ -21,30 +21,43 @@ const displayResults = (page = 1) => {
   const start = (page - 1) * itemsPerPage;
   const end = start + itemsPerPage;
   const results = filteredData.slice(start, end);
-
-  if (results.length > 0) {
-    loading = false;
-    resultsDiv.innerHTML = results
-      .map((item) => {
-        const { link, image, imageDesc, category, title } = item;
-        return `
-                <div class="row archive-list">
-                    <div class="col-md-3">
-                        <a href="${link}">
-                            <img src="${image}" alt="${imageDesc}" style="width: 100%; height: auto;">
-                        </a>
-                    </div>
-                    <div class="col-md-9">
-                        <p class="category"><span>${category}</span></p>
-                        <a href="${link}"><h2>${title}</h2></a>
-                    </div>
-                </div>`;
-      })
-      .join("");
-    updatePagination(filteredData.length, page);
-  } else {
-    resultsDiv.innerHTML = "<h3>No Search Results...</h3>";
+  const noResults = `<div class="row archive-list" style="padding-left: 15px;">
+                       <h3>No Search Results...</h3>
+                     </div>`;
+  const renderElements = results
+    .map((item) => {
+      const { link, image, imageDesc, category, title } = item;
+      return `
+          <div class="row archive-list">
+            <div class="col-lg-3">
+              <a href="${link}">
+                <img src="${image}" alt="${imageDesc}" style="width: 100%; height: auto;">
+              </a>
+            </div>
+            <div class="col-lg-9">
+              <p class="category">
+                <span>${category}</span>
+              </p>
+              <a href="${link}">
+                <h2>${title}</h2>
+              </a>
+            </div>
+          </div>`;
+    })
+    .join("");
+  if (results.length === 5) {
+    resultsDiv.style.height = "auto";
+    resultsDiv.innerHTML = renderElements;
+    return updatePagination(filteredData.length, page);
+  } else if (results.length < 5 && results.length !== 0) {
+    resultsDiv.style.height = "1185px";
+    resultsDiv.innerHTML = renderElements;
+    return updatePagination(filteredData.length, page);
   }
+  resultsDiv.style.height = "1185px";
+  updatePagination(filteredData.length, page);
+
+  return (resultsDiv.innerHTML = noResults);
 };
 
 // Displays the pagination
@@ -169,7 +182,8 @@ const categorySearch = (query) => {
   displayResults(currentPage);
 };
 
-const changeURL = (url, type, queryString, query) => {
+const changeURL = (type, queryString, query) => {
+  const url = new URL(window.location);
   switch (type) {
     case "delete":
       url.searchParams.delete(queryString);
@@ -187,34 +201,34 @@ const changeURL = (url, type, queryString, query) => {
 const search = () => {
   const search = searchInput.value.trim();
   const category = categoryInput.value.trim();
-  const url = new URL(window.location);
+  
 
   let querySearch = "";
   let queryCategory = "";
 
   if (!search) {
-    changeURL(url, "delete", "search");
+    changeURL("delete", "search");
   }
   if (!category) {
-    changeURL(url, "delete", "category");
+    changeURL("delete", "category");
   }
 
   if (!search && !category) {
     filteredData = data;
   } else if (search && !category) {
-    changeURL(url, "set", "search", search);
-    querySearch = changeURL(url, "get", "search");
+    changeURL("set", "search", search);
+    querySearch = changeURL("get", "search");
     keywordSearch(querySearch);
   } else if (!search && category) {
-    changeURL(url, "set", "category", category);
-    queryCategory = changeURL(url, "get", "category");
+    changeURL("set", "category", category);
+    queryCategory = changeURL("get", "category");
     categorySearch(queryCategory);
   } else if (search && category) {
-    changeURL(url, "set", "search", search);
-    changeURL(url, "set", "category", category);
+    changeURL("set", "search", search);
+    changeURL("set", "category", category);
 
-    querySearch = changeURL(url, "get", "search");
-    queryCategory = changeURL(url, "get", "category");
+    querySearch = changeURL("get", "search");
+    queryCategory = changeURL("get", "category");
 
     keywordSearch(querySearch);
     filteredData = filteredData.filter((item) => item.category.toLowerCase() === queryCategory.toLowerCase());
@@ -254,8 +268,8 @@ categoryInput.innerHTML = categories
 document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
 const debouncedSearch = debounce(search, 600);
 const url = new URL(window.location);
-const searchQuery = changeURL(url, "get", "search");
-const categoryQuery = changeURL(url, "get", "category");
+const searchQuery = changeURL("get", "search");
+const categoryQuery = changeURL("get", "category");
 
 if (searchQuery || categoryQuery) {
   searchInput.value = searchQuery || "";
