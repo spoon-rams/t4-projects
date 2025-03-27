@@ -272,9 +272,9 @@ fetch("./data.json")
 
     document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
     const debouncedSearch = debounce(search, 600);
-    const newURL = new URL(window.location);
-    const searchQuery = newURL.searchParams.get("search");
-    const categoryQuery = newURL.searchParams.get("category");
+    const url = new URL(window.location);
+    const searchQuery = changeURL(url, "get", "search");
+    const categoryQuery = changeURL(url, "get", "category");
 
     if (searchQuery || categoryQuery) {
       searchInput.value = searchQuery || "";
@@ -283,6 +283,7 @@ fetch("./data.json")
     }
 
     searchInput.addEventListener("input", debouncedSearch);
+    
     categoryInput.addEventListener("change", () => {
       if (!categoryInput.value && !searchInput.value) {
         searchInput.value = "";

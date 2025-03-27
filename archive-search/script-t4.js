@@ -1,8 +1,9 @@
 // Select DOM elements
 const searchInput = document.getElementById("search-input");
 const categoryInput = document.getElementById("category-select");
-const resultsDiv = document.querySelector(".fordham-stories-archive");
+const resultsDiv = document.querySelector(".stories");
 const paginationDiv = document.querySelector(".pagination");
+const clearButton = document.querySelector(".clear-button button");
 
 if (!searchInput || !categoryInput || !resultsDiv || !paginationDiv) {
   return;
@@ -13,6 +14,7 @@ const categories = [{ name: "Please chose a category", value: "" }];
 let currentPage = 1;
 let filteredData = [];
 let data = [<t4 type="navigation" name="Brand Stories Archive All - JSON" id="429" />];
+let buttonElement = "";
 
 // Display results function
 const displayResults = (page = 1) => {
@@ -20,7 +22,7 @@ const displayResults = (page = 1) => {
   const end = start + itemsPerPage;
   const results = filteredData.slice(start, end);
 
-  if (results.length) {
+  if (results.length > 0) {
     loading = false;
     resultsDiv.innerHTML = results
       .map((item) => {
@@ -48,25 +50,96 @@ const displayResults = (page = 1) => {
 // Displays the pagination
 const updatePagination = (totalItems, currentPage) => {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const maxVisiblePages = 5; // Maximum number of visible pages
+
   if (totalPages <= 1) {
     paginationDiv.innerHTML = "";
     return;
   }
 
-  paginationDiv.innerHTML = `
-    <button class="first" ${currentPage === 1 ? "disabled" : ""}><<</button>
-    <button class="prev" ${currentPage === 1 ? "disabled" : ""}><</button>
-    ${Array.from(
-      { length: totalPages },
-      (_, i) => `
-      <button class="number ${i + 1 === currentPage ? "active" : ""}" data-page="${i + 1}">${i + 1}</button>
-    `,
-    ).join("")}
-    <button class="next" ${currentPage === totalPages ? "disabled" : ""}>></button>
-    <button class="last" ${currentPage === totalPages ? "disabled" : ""}>>></button>
-  `;
+  let startPage = Math.max(currentPage - Math.floor(maxVisiblePages / 2), 1);
+  let endPage = Math.min(startPage + maxVisiblePages - 1, totalPages);
 
-  paginationDiv.querySelectorAll("button").forEach((button) => button.addEventListener("click", handlePaginationClick));
+  if (endPage - startPage < maxVisiblePages - 1) {
+    startPage = Math.max(endPage - maxVisiblePages + 1, 1);
+  }
+  paginationDiv.innerHTML = "";
+
+  // First button
+  const first = document.createElement("button");
+  first.innerText = "<<";
+  first.classList.add("first");
+  first.disabled = currentPage === 1;
+  if (currentPage === 1) first.style.display = "none";
+  first.addEventListener("click", (e) => {
+    if (buttonElement.length > 0) {
+      buttonElement = "";
+    }
+    return displayResults(1);
+  });
+  paginationDiv.appendChild(first);
+
+  // Previous button
+  const prev = document.createElement("button");
+  prev.innerText = "<";
+  prev.classList.add("prev");
+  prev.disabled = currentPage === 1;
+
+  if (currentPage === 1) prev.style.display = "none";
+  if (buttonElement.includes("prev")) prev.classList.add("active");
+
+  prev.addEventListener("click", (e) => {
+    buttonElement = e.target.classList.value;
+    return displayResults(currentPage - 1);
+  });
+  paginationDiv.appendChild(prev);
+
+  // Page numbers
+  for (let i = startPage; i <= endPage; i++) {
+    const page = document.createElement("button");
+    page.innerText = i;
+    page.classList.add("number");
+    if (i === currentPage) {
+      page.classList.add("active");
+    } else {
+      page.addEventListener("click", (e) => {
+        if (buttonElement.length > 0) {
+          buttonElement = "";
+        }
+        return displayResults(i);
+      });
+    }
+    paginationDiv.appendChild(page);
+  }
+
+  // Next button
+  const next = document.createElement("button");
+  next.innerText = ">";
+  next.classList.add("next");
+  next.disabled = currentPage === totalPages;
+
+  if (currentPage === totalPages) next.style.display = "none";
+  if (buttonElement.includes("next")) next.classList.add("active");
+
+  next.addEventListener("click", (e) => {
+    buttonElement = e.target.classList.value;
+    return displayResults(currentPage + 1);
+  });
+  paginationDiv.appendChild(next);
+
+  // Last button
+  const last = document.createElement("button");
+  last.innerText = ">>";
+  last.classList.add("last");
+  last.disabled = currentPage === totalPages;
+  if (currentPage === totalPages) last.style.display = "none";
+  last.addEventListener("click", (e) => {
+    if (buttonElement.length > 0) {
+      buttonElement = "";
+    }
+    return displayResults(totalPages);
+  });
+  paginationDiv.appendChild(last);
 };
 
 // Handles the pagination selection
@@ -96,35 +169,56 @@ const categorySearch = (query) => {
   displayResults(currentPage);
 };
 
-const changeURL = (url) => {
-  return history.replaceState(null, "", url);
-}
+const changeURL = (url, type, queryString, query) => {
+  switch (type) {
+    case "delete":
+      url.searchParams.delete(queryString);
+      return history.replaceState(null, "", url);
+    case "set":
+      url.searchParams.set(queryString, query);
+      return history.replaceState(null, "", url);
+    case "get":
+      return url.searchParams.get(queryString);
+    default:
+      return history.replaceState(null, "", url);
+  }
+};
 
 const search = () => {
   const search = searchInput.value.trim();
   const category = categoryInput.value.trim();
   const url = new URL(window.location);
-  
-  if(!search) {
-    url.searchParams.delete("search");
-    changeURL(url);
-  }
 
-  if(!category) {
-    url.searchParams.delete()
+  let querySearch = "";
+  let queryCategory = "";
+
+  if (!search) {
+    changeURL(url, "delete", "search");
+  }
+  if (!category) {
+    changeURL(url, "delete", "category");
   }
 
   if (!search && !category) {
     filteredData = data;
   } else if (search && !category) {
-    keywordSearch(search);
+    changeURL(url, "set", "search", search);
+    querySearch = changeURL(url, "get", "search");
+    keywordSearch(querySearch);
   } else if (!search && category) {
-    categorySearch(category);
+    changeURL(url, "set", "category", category);
+    queryCategory = changeURL(url, "get", "category");
+    categorySearch(queryCategory);
   } else if (search && category) {
-    keywordSearch(search);
-    filteredData = filteredData.filter((item) => item.category.toLowerCase() === category.toLowerCase());
-  }
+    changeURL(url, "set", "search", search);
+    changeURL(url, "set", "category", category);
 
+    querySearch = changeURL(url, "get", "search");
+    queryCategory = changeURL(url, "get", "category");
+
+    keywordSearch(querySearch);
+    filteredData = filteredData.filter((item) => item.category.toLowerCase() === queryCategory.toLowerCase());
+  }
   displayResults(currentPage);
 };
 
@@ -159,8 +253,30 @@ categoryInput.innerHTML = categories
 
 document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
 const debouncedSearch = debounce(search, 600);
+const url = new URL(window.location);
+const searchQuery = changeURL(url, "get", "search");
+const categoryQuery = changeURL(url, "get", "category");
+
+if (searchQuery || categoryQuery) {
+  searchInput.value = searchQuery || "";
+  categoryInput.value = categoryQuery || "";
+  search();
+}
+
 searchInput.addEventListener("input", debouncedSearch);
+
 categoryInput.addEventListener("change", () => {
+  if (!categoryInput.value && !searchInput.value) {
+    searchInput.value = "";
+  }
+  search();
+});
+
+clearButton.addEventListener("click", () => {
+  if (!searchInput.value && !categoryInput.value) {
+    return;
+  }
   searchInput.value = "";
+  categoryInput.value = "";
   search();
 });
