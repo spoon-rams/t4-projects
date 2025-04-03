@@ -1,3 +1,5 @@
+/* Search as Columns */
+
 // Select DOM elements
 const searchInput = document.getElementById("search-input");
 const categoryInput = document.getElementById("category-select");
@@ -5,15 +7,11 @@ const resultsDiv = document.querySelector(".stories");
 const paginationDiv = document.querySelector(".pagination");
 const clearButton = document.querySelector(".clear-button button");
 
-if (!searchInput || !categoryInput || !resultsDiv || !paginationDiv) {
-  return;
-}
-
-const itemsPerPage = 5;
-const categories = [{ name: "Please chose a category", value: "" }];
+const itemsPerPage = 9;
+const categories = [{ name: "Please choose a category", value: "" }];
 let currentPage = 1;
 let filteredData = [];
-let data = [<t4 type="navigation" name="Brand Stories Archive All - JSON" id="429" />];
+let data = [];
 let buttonElement = "";
 
 // Display results function
@@ -28,30 +26,29 @@ const displayResults = (page = 1) => {
     .map((item) => {
       const { link, image, imageDesc, category, title } = item;
       return `
-          <div class="row archive-list">
-            <div class="col-lg-3">
-              <a href="${link}">
-                <img src="${image}" alt="${imageDesc}" style="width: 100%; height: auto;">
+            <div class="story col-lg-4">
+              <a href="${link}" class="story-link-wrapper">
+                <div class="story-image">
+                  <img src="${image}" alt="${imageDesc}">
+                </div>
+                <div class="story-text">
+                  <p class="category">
+                    <span>${category}</span>
+                  </p>
+                  <h2>${title}</h2>
+                </div>
               </a>
             </div>
-            <div class="col-lg-9">
-              <p class="category">
-                <span>${category}</span>
-              </p>
-              <a href="${link}">
-                <h2>${title}</h2>
-              </a>
-            </div>
-          </div>
-          <hr />`;
+          `;
     })
     .join("");
-  if (results.length === 5) {
+
+  if (results.length === 9) {
     resultsDiv.classList.remove("temp-height");
     resultsDiv.innerHTML = renderElements;
     return updatePagination(filteredData.length, page);
-  } else if (results.length < 5 && results.length !== 0) {
-    resultsDiv.classList.add("temp-height");
+  } else if (results.length < 9 && results.length !== 0) {
+    // resultsDiv.classList.add("temp-height");
     resultsDiv.innerHTML = renderElements;
     return updatePagination(filteredData.length, page);
   }
@@ -170,6 +167,7 @@ const handlePaginationClick = (event) => {
   displayResults(currentPage);
 };
 
+// Keyword Search - Title
 const keywordSearch = (query) => {
   if (!query) return;
   const regex = new RegExp(query.trim(), "i");
@@ -178,6 +176,7 @@ const keywordSearch = (query) => {
   displayResults(currentPage);
 };
 
+// Category Search Selection
 const categorySearch = (query) => {
   if (!query) return;
   filteredData = data.filter((item) => item.category.toLowerCase() === query.toLowerCase());
@@ -201,6 +200,7 @@ const changeURL = (type, queryString, query) => {
   }
 };
 
+// Search Action Type
 const search = () => {
   const search = searchInput.value.trim();
   const category = categoryInput.value.trim();
@@ -238,6 +238,7 @@ const search = () => {
   displayResults(currentPage);
 };
 
+// Search Debouncing
 function debounce(func, delay) {
   let timer;
   return function (...args) {

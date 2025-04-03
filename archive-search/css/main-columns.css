@@ -11,6 +11,8 @@
   display: flex;
   padding: 10px 30px;
   flex-wrap: wrap;
+  border-bottom: 1.5px solid #e7e7e7;
+  margin-bottom: 15px;
 }
 
 .fordham-stories-search .search-inputs .search-bar {
@@ -33,14 +35,6 @@
 .fordham-stories-search .search-inputs label {
   display: block;
   font-size: 1.1rem;
-}
-
-.fordham-stories-search .general-content.search-results .stories.temp-height {
-  height: 1237px;
-}
-
-.fordham-stories-search .general-content.search-results .stories h2 {
-  font-size: 1.8rem;
 }
 
 /* Add basic styles for pagination */
@@ -69,28 +63,28 @@
 
 /* Fordham Stories Archive List */
 
-.fordham-stories-search .archive-list .category {
+.fordham-stories-search .stories.row .story-text .category {
   margin: 8px 0 !important;
   text-transform: uppercase;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
-.fordham-stories-search .archive-list .category span {
+.fordham-stories-search .stories.row .story-text .category span {
   background-color: #900028;
   color: white;
   padding: 5px 10px;
   font-weight: 500;
 }
 
-.fordham-stories-search .archive-list a {
+.fordham-stories-search .stories.row a {
   color: black !important;
 }
 
-.fordham-stories-search .archive-list a:hover {
+.fordham-stories-search .stories.row a:hover {
   text-decoration: underline !important;
 }
 
-.fordham-stories-search .archive-list img {
+.fordham-stories-search .stories.row .story-image img {
   max-width: 100%;
   max-height: 100%;
   min-height: 50%;
@@ -102,10 +96,14 @@
   margin-bottom: 0;
 }
 
-.fordham-stories-search .archive-list h3 {
-  font-family: "Raleway", sans-serif;
-  /* font-size: 1.4rem; changed */
-  text-align: left;
+.fordham-stories-search .stories.temp-height {
+  height: 1237px;
+}
+
+.fordham-stories-search .stories .story-text h2 {
+  font-size: 1.4rem;
+  height: 6vh;
+  margin-bottom: 1.6rem;
 }
 
 /* Fordham Stories Search Pagination */

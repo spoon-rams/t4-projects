@@ -1,22 +1,35 @@
 @media only screen and (max-width: 1280px) {
-  .fordham-stories-search .general-content.search-results .stories .category {
-    font-size: 1rem !important;
+  .fordham-stories-search .stories .story-text .category {
+    font-size: 0.8rem !important;
   }
 
-  .fordham-stories-search .general-content.search-results .stories h2 {
-    font-size: 1.5rem;
+  .fordham-stories-search .stories .story-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .fordham-stories-search .general-content.search-results .search-inputs label {
+    font-size: 1rem;
+  }
+
+  .fordham-stories-search .general-content.search-results .pagination button {
+    padding: 7px 12px;
   }
 }
 
 @media only screen and (max-width: 991px) {
-  .fordham-stories-search .general-content.search-results .stories {
+  .fordham-stories-search .stories {
     height: auto !important;
   }
-  .fordham-stories-search .general-content.search-results .stories h2 {
-    font-size: 1.3rem;
+  .fordham-stories-search .stories .story-text .category {
+    font-size: 1rem !important;
   }
 
-  .fordham-stories-search .general-content.search-results .pagination button {
+  .fordham-stories-search .stories .story-text h2 {
+    font-size: 1.3rem;
+    height: auto;
+  }
+
+  .fordham-stories-search .pagination button {
     padding: 7px 12px;
   }
 
@@ -46,10 +59,10 @@
     width: 100%;
   }
 
-  .fordham-stories-search .general-content.search-results .stories h2 {
+  .fordham-stories-search .stories .story-text h2 {
     font-size: 1.5rem;
   }
-  .fordham-stories-search .general-content.search-results .stories img {
+  .fordham-stories-search .stories .story-image img {
     margin-bottom: 0;
   }
 
@@ -59,11 +72,11 @@
 }
 
 @media only screen and (max-width: 458px) {
-  .fordham-stories-search .general-content.search-results .stories .category {
+  .fordham-stories-search .stories .story-text .category {
     font-size: 0.8rem !important;
   }
 
-  .fordham-stories-search .general-content.search-results .stories h2 {
+  .fordham-stories-search .stories .story-text h2 {
     font-size: 1.2rem;
   }
 

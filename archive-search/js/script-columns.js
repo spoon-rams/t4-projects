@@ -1,3 +1,5 @@
+/* Search as Columns */
+
 // Select DOM elements
 const searchInput = document.getElementById("search-input");
 const categoryInput = document.getElementById("category-select");
@@ -24,18 +26,19 @@ const displayResults = (page = 1) => {
     .map((item) => {
       const { link, image, imageDesc, category, title } = item;
       return `
-            <div class="col-lg-4">
-              <a href="${link}">
-                <img src="${image}" alt="${imageDesc}" style="width: 100%; height: auto;">
-              </a>
-               <p class="category">
-                <span>${category}</span>
-              </p>
-              <a href="${link}">
-                <h2>${title}</h2>
+            <div class="story col-lg-4">
+              <a href="${link}" class="story-link-wrapper">
+                <div class="story-image">
+                  <img src="${image}" alt="${imageDesc}">
+                </div>
+                <div class="story-text">
+                  <p class="category">
+                    <span>${category}</span>
+                  </p>
+                  <h2>${title}</h2>
+                </div>
               </a>
             </div>
-          </div>
           `;
     })
     .join("");
