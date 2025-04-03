@@ -5,7 +5,7 @@ const resultsDiv = document.querySelector(".stories");
 const paginationDiv = document.querySelector(".pagination");
 const clearButton = document.querySelector(".clear-button button");
 
-const itemsPerPage = 5;
+const itemsPerPage = 9;
 const categories = [{ name: "Please choose a category", value: "" }];
 let currentPage = 1;
 let filteredData = [];
@@ -24,14 +24,11 @@ const displayResults = (page = 1) => {
     .map((item) => {
       const { link, image, imageDesc, category, title } = item;
       return `
-          <div class="row archive-list">
-            <div class="col-lg-3">
+            <div class="col-lg-4">
               <a href="${link}">
                 <img src="${image}" alt="${imageDesc}" style="width: 100%; height: auto;">
               </a>
-            </div>
-            <div class="col-lg-9">
-              <p class="category">
+               <p class="category">
                 <span>${category}</span>
               </p>
               <a href="${link}">
@@ -39,16 +36,16 @@ const displayResults = (page = 1) => {
               </a>
             </div>
           </div>
-          <hr />`;
+          `;
     })
     .join("");
 
-  if (results.length === 5) {
+  if (results.length === 9) {
     resultsDiv.classList.remove("temp-height");
     resultsDiv.innerHTML = renderElements;
     return updatePagination(filteredData.length, page);
-  } else if (results.length < 5 && results.length !== 0) {
-    resultsDiv.classList.add("temp-height");
+  } else if (results.length < 9 && results.length !== 0) {
+    // resultsDiv.classList.add("temp-height");
     resultsDiv.innerHTML = renderElements;
     return updatePagination(filteredData.length, page);
   }
