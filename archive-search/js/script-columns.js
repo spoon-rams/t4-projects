@@ -248,7 +248,7 @@ function debounce(func, delay) {
 }
 
 // Fetch data and initialize
-fetch("./data.json")
+fetch("../data.json")
   .then((res) => res.json())
   .then((fetchedData) => {
     data = fetchedData;
