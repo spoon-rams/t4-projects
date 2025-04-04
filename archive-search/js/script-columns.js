@@ -44,7 +44,7 @@ const displayResults = (page = 1) => {
     .join("");
 
   if (results.length === 9) {
-    resultsDiv.classList.remove("temp-height");
+    // resultsDiv.classList.remove("temp-height");
     resultsDiv.innerHTML = renderElements;
     return updatePagination(filteredData.length, page);
   } else if (results.length < 9 && results.length !== 0) {
@@ -54,7 +54,7 @@ const displayResults = (page = 1) => {
   }
 
   updatePagination(filteredData.length, page);
-  resultsDiv.classList.add("temp-height");
+  // resultsDiv.classList.add("temp-height");
   return (resultsDiv.innerHTML = noResults);
 };
 
@@ -82,10 +82,12 @@ const updatePagination = (totalItems, currentPage) => {
   first.classList.add("first");
   first.disabled = currentPage === 1;
   if (currentPage === 1) first.style.display = "none";
+
   first.addEventListener("click", (e) => {
     if (buttonElement.length > 0) {
       buttonElement = "";
     }
+    window.scrollTo(0, resultsDiv.scrollTop);
     return displayResults(1);
   });
   paginationDiv.appendChild(first);
@@ -101,6 +103,7 @@ const updatePagination = (totalItems, currentPage) => {
 
   prev.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
+    window.scrollTo(0, resultsDiv.scrollTop);
     return displayResults(currentPage - 1);
   });
   paginationDiv.appendChild(prev);
@@ -117,6 +120,7 @@ const updatePagination = (totalItems, currentPage) => {
         if (buttonElement.length > 0) {
           buttonElement = "";
         }
+        window.scrollTo(0, resultsDiv.scrollTop);
         return displayResults(i);
       });
     }
@@ -134,6 +138,7 @@ const updatePagination = (totalItems, currentPage) => {
 
   next.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
+    window.scrollTo(0, resultsDiv.scrollTop);
     return displayResults(currentPage + 1);
   });
   paginationDiv.appendChild(next);
@@ -148,6 +153,7 @@ const updatePagination = (totalItems, currentPage) => {
     if (buttonElement.length > 0) {
       buttonElement = "";
     }
+    window.scrollTo(0, resultsDiv.scrollTop);
     return displayResults(totalPages);
   });
   paginationDiv.appendChild(last);

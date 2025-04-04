@@ -96,14 +96,18 @@
   margin-bottom: 0;
 }
 
-.fordham-stories-search .stories.temp-height {
-  height: 1237px;
+/* .fordham-stories-search .stories.temp-height {
+  height: auto;
+  min-height: 83vh;
+} */
+
+.fordham-stories-search .stories .story-text {
+  height: auto;
+  min-height: 5vh;
 }
 
 .fordham-stories-search .stories .story-text h2 {
   font-size: 1.4rem;
-  height: 6vh;
-  margin-bottom: 1.6rem;
 }
 
 /* Fordham Stories Search Pagination */

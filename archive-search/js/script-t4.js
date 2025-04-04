@@ -11,7 +11,7 @@ const itemsPerPage = 9;
 const categories = [{ name: "Please choose a category", value: "" }];
 let currentPage = 1;
 let filteredData = [];
-let data = [];
+let data = [<t4 type="navigation" name="Brand Stories Archive All - JSON" id="429" />];
 let buttonElement = "";
 
 // Display results function
@@ -44,7 +44,7 @@ const displayResults = (page = 1) => {
     .join("");
 
   if (results.length === 9) {
-    resultsDiv.classList.remove("temp-height");
+    // resultsDiv.classList.remove("temp-height");
     resultsDiv.innerHTML = renderElements;
     return updatePagination(filteredData.length, page);
   } else if (results.length < 9 && results.length !== 0) {
@@ -54,7 +54,7 @@ const displayResults = (page = 1) => {
   }
 
   updatePagination(filteredData.length, page);
-  resultsDiv.classList.add("temp-height");
+  // resultsDiv.classList.add("temp-height");
   return (resultsDiv.innerHTML = noResults);
 };
 
@@ -82,10 +82,13 @@ const updatePagination = (totalItems, currentPage) => {
   first.classList.add("first");
   first.disabled = currentPage === 1;
   if (currentPage === 1) first.style.display = "none";
+
   first.addEventListener("click", (e) => {
     if (buttonElement.length > 0) {
       buttonElement = "";
     }
+    window.scrollTo(0, resultsDiv.scrollTop);
+    changeURL("set", "page", 1);
     return displayResults(1);
   });
   paginationDiv.appendChild(first);
@@ -101,6 +104,8 @@ const updatePagination = (totalItems, currentPage) => {
 
   prev.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
+    window.scrollTo(0, resultsDiv.scrollTop);
+    changeURL("set", "page", currentPage - 1);
     return displayResults(currentPage - 1);
   });
   paginationDiv.appendChild(prev);
@@ -117,6 +122,8 @@ const updatePagination = (totalItems, currentPage) => {
         if (buttonElement.length > 0) {
           buttonElement = "";
         }
+        window.scrollTo(0, resultsDiv.scrollTop);
+        changeURL("set", "page", i);
         return displayResults(i);
       });
     }
@@ -134,6 +141,8 @@ const updatePagination = (totalItems, currentPage) => {
 
   next.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
+    window.scrollTo(0, resultsDiv.scrollTop);
+    changeURL("set", "page", currentPage + 1);
     return displayResults(currentPage + 1);
   });
   paginationDiv.appendChild(next);
@@ -148,6 +157,8 @@ const updatePagination = (totalItems, currentPage) => {
     if (buttonElement.length > 0) {
       buttonElement = "";
     }
+    window.scrollTo(0, resultsDiv.scrollTop);
+    changeURL("set", "page", totalPages);
     return displayResults(totalPages);
   });
   paginationDiv.appendChild(last);
@@ -166,6 +177,7 @@ const handlePaginationClick = (event) => {
 
   displayResults(currentPage);
 };
+
 
 // Keyword Search - Title
 const keywordSearch = (query) => {

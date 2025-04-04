@@ -20,13 +20,16 @@
   .fordham-stories-search .stories {
     height: auto !important;
   }
+
+  .fordham-stories-search .stories .story-text {
+    min-height: unset;
+  }
   .fordham-stories-search .stories .story-text .category {
     font-size: 1rem !important;
   }
 
   .fordham-stories-search .stories .story-text h2 {
     font-size: 1.3rem;
-    height: auto;
   }
 
   .fordham-stories-search .pagination button {
