@@ -87,7 +87,7 @@ const updatePagination = (totalItems, currentPage) => {
     if (buttonElement.length > 0) {
       buttonElement = "";
     }
-    window.scrollTo(0, resultsDiv.scrollTop);
+    scrollToTop(resultsDiv);
     return displayResults(1);
   });
   paginationDiv.appendChild(first);
@@ -103,7 +103,7 @@ const updatePagination = (totalItems, currentPage) => {
 
   prev.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
-    window.scrollTo(0, resultsDiv.scrollTop);
+    scrollToTop(resultsDiv);
     return displayResults(currentPage - 1);
   });
   paginationDiv.appendChild(prev);
@@ -120,7 +120,7 @@ const updatePagination = (totalItems, currentPage) => {
         if (buttonElement.length > 0) {
           buttonElement = "";
         }
-        window.scrollTo(0, resultsDiv.scrollTop);
+        scrollToTop(resultsDiv);
         return displayResults(i);
       });
     }
@@ -138,7 +138,7 @@ const updatePagination = (totalItems, currentPage) => {
 
   next.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
-    window.scrollTo(0, resultsDiv.scrollTop);
+    scrollToTop(resultsDiv);
     return displayResults(currentPage + 1);
   });
   paginationDiv.appendChild(next);
@@ -153,7 +153,7 @@ const updatePagination = (totalItems, currentPage) => {
     if (buttonElement.length > 0) {
       buttonElement = "";
     }
-    window.scrollTo(0, resultsDiv.scrollTop);
+    scrollToTop(resultsDiv);
     return displayResults(totalPages);
   });
   paginationDiv.appendChild(last);
@@ -188,6 +188,12 @@ const categorySearch = (query) => {
   filteredData = data.filter((item) => item.category.toLowerCase() === query.toLowerCase());
   currentPage = 1;
   displayResults(currentPage);
+};
+
+const scrollToTop = (el) => {
+  setTimeout(() => {
+    return window.scrollTo(0, el.scrollTop);
+  }, 300);
 };
 
 const changeURL = (type, queryString, query) => {
