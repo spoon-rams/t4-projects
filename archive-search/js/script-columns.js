@@ -103,6 +103,7 @@ const updatePagination = (totalItems, currentPage) => {
 
   prev.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
+    changeURL("set", "page", currentPage - 1);
     scrollToTop(resultsDiv);
     return displayResults(currentPage - 1);
   });
@@ -120,6 +121,7 @@ const updatePagination = (totalItems, currentPage) => {
         if (buttonElement.length > 0) {
           buttonElement = "";
         }
+        changeURL("set", "page", i);
         scrollToTop(resultsDiv);
         return displayResults(i);
       });
@@ -153,6 +155,7 @@ const updatePagination = (totalItems, currentPage) => {
     if (buttonElement.length > 0) {
       buttonElement = "";
     }
+    changeURL("set", "page", totalPages);
     scrollToTop(resultsDiv);
     return displayResults(totalPages);
   });
@@ -216,6 +219,7 @@ const changeURL = (type, queryString, query) => {
 const search = () => {
   const search = searchInput.value.trim();
   const category = categoryInput.value.trim();
+  const page = changeURL("get", "page");
 
   let querySearch = "";
   let queryCategory = "";
@@ -230,14 +234,24 @@ const search = () => {
   if (!search && !category) {
     filteredData = data;
   } else if (search && !category) {
+    // If page query param exists
+    page && changeURL("delete", "page");
+
     changeURL("set", "search", search);
     querySearch = changeURL("get", "search");
     keywordSearch(querySearch);
   } else if (!search && category) {
+
+    // If page query param exists
+    page && changeURL("delete", "page");
+
     changeURL("set", "category", category);
     queryCategory = changeURL("get", "category");
     categorySearch(queryCategory);
   } else if (search && category) {
+    // If page query param exists
+    page && changeURL("delete", "page");
+    
     changeURL("set", "search", search);
     changeURL("set", "category", category);
 
@@ -289,8 +303,9 @@ fetch("../data.json")
     const debouncedSearch = debounce(search, 600);
     const searchQuery = changeURL("get", "search");
     const categoryQuery = changeURL("get", "category");
+    const page = changeURL("get", "page");
 
-    if (searchQuery || categoryQuery) {
+    if (searchQuery || categoryQuery || page) {
       searchInput.value = searchQuery || "";
       categoryInput.value = categoryQuery || "";
       search();
