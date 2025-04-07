@@ -24,32 +24,7 @@
   margin-bottom: 50px;
 }
 
-.pagination,
-.fordham-stories-archive .pagination {
-  float: right;
-}
 
-.pagination a,
-.fordham-stories-archive .pagination a {
-  font-size: 1.2rem;
-  border: 1px solid #900028;
-  padding: 5px 12px;
-  margin: 0 5px;
-  height: auto;
-  background-color: #900028;
-  color: #fff !important;
-}
-
-.pagination span.currentpage,
-.fordham-stories-archive .pagination span.currentpage {
-  font-size: 1.2rem;
-  border: 1px solid #900028;
-  padding: 5px 12px;
-  margin: 0 5px;
-  height: auto;
-  background-color: none;
-  color: #900028;
-}
 
 @media only screen and (max-width: 991px) {
   .archive-list h3 {
@@ -901,67 +876,3 @@ div.h1-heading > h1 {
 }
 */
 
-/* TEST */
-.fordham-stories-search {
-  padding-bottom: 100px;
-}
-
-.fordham-stories-search .search-inputs {
-  display: flex;
-  padding: 10px 30px;
-  flex-wrap: wrap;
-}
-
-.fordham-stories-search .search-inputs .search-bar {
-  margin-right: 20px;
-}
-
-.fordham-stories-search .search-inputs .search-bar input {
-  margin: 0 0 30px 0;
-  height: 40px;
-  width: 460px;
-}
-
-.fordham-stories-search .search-inputs .category-dropdown select {
-  height: 40px;
-  border-radius: 2px;
-  padding-left: 16px;
-  width: 228px;
-}
-
-.fordham-stories-search .search-inputs label {
-  display: block;
-  font-size: 1.1rem;
-}
-
-.fordham-stories-search .general-content.search-results .stories h2 {
-  font-size: 1.8rem;
-}
-
-/* .fordham-stories-archives .stories {
-  min-height: 100%;
-} */
-
-/* Add basic styles for pagination */
-.fordham-stories-search .general-content.search-results .pagination {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-.fordham-stories-search .general-content.search-results .pagination button {
-  margin: 0 5px;
-  padding: 10px 15px;
-  border: 1px solid #900028;
-  color: #900028;
-  cursor: pointer;
-}
-.fordham-stories-search .general-content.search-results .pagination button.active {
-  background-color: #900028;
-  color: white;
-}
-.fordham-stories-search .general-content.search-results .pagination button.disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-  background-color: #900028;
-  color: white;
-}

@@ -1,16 +1,14 @@
 @media only screen and (max-width: 1280px) {
-  .fordham-stories-search .general-content.search-results .stories .category {
-    font-size: 1rem !important;
+  .fordham-stories-search .stories .story-text .category {
+    font-size: 0.8rem !important;
   }
 
-  .fordham-stories-search .general-content.search-results .stories h2 {
-    font-size: 1.5rem;
+  .fordham-stories-search .stories .story-text h2 {
+    font-size: 1.2rem;
   }
-}
 
-@media only screen and (max-width: 991px) {
-  .fordham-stories-search .general-content.search-results .stories h2 {
-    font-size: 1.3rem;
+  .fordham-stories-search .general-content.search-results .search-inputs label {
+    font-size: 1rem;
   }
 
   .fordham-stories-search .general-content.search-results .pagination button {
@@ -18,8 +16,27 @@
   }
 }
 
-@media only screen and (max-width: 767px) {
-  .pagination .number {
+@media only screen and (max-width: 991px) {
+  .fordham-stories-search .stories {
+    height: auto !important;
+  }
+
+  .fordham-stories-search .stories .story-text {
+    min-height: unset;
+  }
+  .fordham-stories-search .stories .story-text .category {
+    font-size: 1rem !important;
+  }
+
+  .fordham-stories-search .stories .story-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .fordham-stories-search .pagination button {
+    padding: 7px 12px;
+  }
+
+  .fordham-stories-search .pagination .number {
     display: none;
   }
 
@@ -45,20 +62,29 @@
     width: 100%;
   }
 
-  .fordham-stories-search .general-content.search-results .stories h2 {
+  .fordham-stories-search .stories .story-text h2 {
     font-size: 1.5rem;
   }
-  .fordham-stories-search .general-content.search-results .stories img {
+  .fordham-stories-search .stories .story-image img {
     margin-bottom: 0;
+  }
+
+  .fordham-stories-search .clear-button button {
+    margin-left: 0;
   }
 }
 
 @media only screen and (max-width: 458px) {
-  .fordham-stories-search .general-content.search-results .stories .category {
+  .fordham-stories-search .stories .story-text .category {
     font-size: 0.8rem !important;
   }
 
-  .fordham-stories-search .general-content.search-results .stories h2 {
+  .fordham-stories-search .stories .story-text h2 {
     font-size: 1.2rem;
+  }
+
+  .fordham-stories-search .clear-button,
+  .fordham-stories-search .clear-button button {
+    width: 100%;
   }
 }

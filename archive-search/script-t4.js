@@ -1,8 +1,9 @@
 // Select DOM elements
 const searchInput = document.getElementById("search-input");
 const categoryInput = document.getElementById("category-select");
-const resultsDiv = document.querySelector(".fordham-stories-archive");
+const resultsDiv = document.querySelector(".stories");
 const paginationDiv = document.querySelector(".pagination");
+const clearButton = document.querySelector(".clear-button button");
 
 if (!searchInput || !categoryInput || !resultsDiv || !paginationDiv) {
   return;
@@ -13,60 +14,146 @@ const categories = [{ name: "Please chose a category", value: "" }];
 let currentPage = 1;
 let filteredData = [];
 let data = [<t4 type="navigation" name="Brand Stories Archive All - JSON" id="429" />];
+let buttonElement = "";
 
 // Display results function
 const displayResults = (page = 1) => {
   const start = (page - 1) * itemsPerPage;
   const end = start + itemsPerPage;
   const results = filteredData.slice(start, end);
-
-  if (results.length) {
-    loading = false;
-    resultsDiv.innerHTML = results
-      .map((item) => {
-        const { link, image, imageDesc, category, title } = item;
-        return `
-                <div class="row archive-list">
-                    <div class="col-md-3">
-                        <a href="${link}">
-                            <img src="${image}" alt="${imageDesc}" style="width: 100%; height: auto;">
-                        </a>
-                    </div>
-                    <div class="col-md-9">
-                        <p class="category"><span>${category}</span></p>
-                        <a href="${link}"><h2>${title}</h2></a>
-                    </div>
-                </div>`;
-      })
-      .join("");
-    updatePagination(filteredData.length, page);
-  } else {
-    resultsDiv.innerHTML = "<h3>No Search Results...</h3>";
+  const noResults = `<div class="row archive-list" style="padding-left: 15px;">
+                       <h3>No Search Results...</h3>
+                     </div>`;
+  const renderElements = results
+    .map((item) => {
+      const { link, image, imageDesc, category, title } = item;
+      return `
+          <div class="row archive-list">
+            <div class="col-lg-3">
+              <a href="${link}">
+                <img src="${image}" alt="${imageDesc}" style="width: 100%; height: auto;">
+              </a>
+            </div>
+            <div class="col-lg-9">
+              <p class="category">
+                <span>${category}</span>
+              </p>
+              <a href="${link}">
+                <h2>${title}</h2>
+              </a>
+            </div>
+          </div>
+          <hr />`;
+    })
+    .join("");
+  if (results.length === 5) {
+    resultsDiv.classList.remove("temp-height");
+    resultsDiv.innerHTML = renderElements;
+    return updatePagination(filteredData.length, page);
+  } else if (results.length < 5 && results.length !== 0) {
+    resultsDiv.classList.add("temp-height");
+    resultsDiv.innerHTML = renderElements;
+    return updatePagination(filteredData.length, page);
   }
+
+  updatePagination(filteredData.length, page);
+  resultsDiv.classList.add("temp-height");
+  return (resultsDiv.innerHTML = noResults);
 };
 
 // Displays the pagination
 const updatePagination = (totalItems, currentPage) => {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const maxVisiblePages = 5; // Maximum number of visible pages
+
   if (totalPages <= 1) {
     paginationDiv.innerHTML = "";
     return;
   }
 
-  paginationDiv.innerHTML = `
-    <button class="first" ${currentPage === 1 ? "disabled" : ""}><<</button>
-    <button class="prev" ${currentPage === 1 ? "disabled" : ""}><</button>
-    ${Array.from(
-      { length: totalPages },
-      (_, i) => `
-      <button class="number ${i + 1 === currentPage ? "active" : ""}" data-page="${i + 1}">${i + 1}</button>
-    `,
-    ).join("")}
-    <button class="next" ${currentPage === totalPages ? "disabled" : ""}>></button>
-    <button class="last" ${currentPage === totalPages ? "disabled" : ""}>>></button>
-  `;
+  let startPage = Math.max(currentPage - Math.floor(maxVisiblePages / 2), 1);
+  let endPage = Math.min(startPage + maxVisiblePages - 1, totalPages);
 
-  paginationDiv.querySelectorAll("button").forEach((button) => button.addEventListener("click", handlePaginationClick));
+  if (endPage - startPage < maxVisiblePages - 1) {
+    startPage = Math.max(endPage - maxVisiblePages + 1, 1);
+  }
+  paginationDiv.innerHTML = "";
+
+  // First button
+  const first = document.createElement("button");
+  first.innerText = "<<";
+  first.classList.add("first");
+  first.disabled = currentPage === 1;
+  if (currentPage === 1) first.style.display = "none";
+  first.addEventListener("click", (e) => {
+    if (buttonElement.length > 0) {
+      buttonElement = "";
+    }
+    return displayResults(1);
+  });
+  paginationDiv.appendChild(first);
+
+  // Previous button
+  const prev = document.createElement("button");
+  prev.innerText = "<";
+  prev.classList.add("prev");
+  prev.disabled = currentPage === 1;
+
+  if (currentPage === 1) prev.style.display = "none";
+  if (buttonElement.includes("prev")) prev.classList.add("active");
+
+  prev.addEventListener("click", (e) => {
+    buttonElement = e.target.classList.value;
+    return displayResults(currentPage - 1);
+  });
+  paginationDiv.appendChild(prev);
+
+  // Page numbers
+  for (let i = startPage; i <= endPage; i++) {
+    const page = document.createElement("button");
+    page.innerText = i;
+    page.classList.add("number");
+    if (i === currentPage) {
+      page.classList.add("active");
+    } else {
+      page.addEventListener("click", (e) => {
+        if (buttonElement.length > 0) {
+          buttonElement = "";
+        }
+        return displayResults(i);
+      });
+    }
+    paginationDiv.appendChild(page);
+  }
+
+  // Next button
+  const next = document.createElement("button");
+  next.innerText = ">";
+  next.classList.add("next");
+  next.disabled = currentPage === totalPages;
+
+  if (currentPage === totalPages) next.style.display = "none";
+  if (buttonElement.includes("next")) next.classList.add("active");
+
+  next.addEventListener("click", (e) => {
+    buttonElement = e.target.classList.value;
+    return displayResults(currentPage + 1);
+  });
+  paginationDiv.appendChild(next);
+
+  // Last button
+  const last = document.createElement("button");
+  last.innerText = ">>";
+  last.classList.add("last");
+  last.disabled = currentPage === totalPages;
+  if (currentPage === totalPages) last.style.display = "none";
+  last.addEventListener("click", (e) => {
+    if (buttonElement.length > 0) {
+      buttonElement = "";
+    }
+    return displayResults(totalPages);
+  });
+  paginationDiv.appendChild(last);
 };
 
 // Handles the pagination selection
@@ -84,6 +171,7 @@ const handlePaginationClick = (event) => {
 };
 
 const keywordSearch = (query) => {
+  if (!query) return;
   const regex = new RegExp(query.trim(), "i");
   filteredData = data.filter((item) => regex.test(item.title));
   currentPage = 1;
@@ -91,26 +179,62 @@ const keywordSearch = (query) => {
 };
 
 const categorySearch = (query) => {
+  if (!query) return;
   filteredData = data.filter((item) => item.category.toLowerCase() === query.toLowerCase());
   currentPage = 1;
   displayResults(currentPage);
 };
 
+const changeURL = (type, queryString, query) => {
+  const url = new URL(window.location);
+  switch (type) {
+    case "delete":
+      url.searchParams.delete(queryString);
+      return history.replaceState(null, "", url);
+    case "set":
+      url.searchParams.set(queryString, query);
+      return history.replaceState(null, "", url);
+    case "get":
+      return url.searchParams.get(queryString);
+    default:
+      return history.replaceState(null, "", url);
+  }
+};
+
 const search = () => {
-  const query = searchInput.value.trim();
+  const search = searchInput.value.trim();
   const category = categoryInput.value.trim();
 
-  if (!query && !category) {
-    filteredData = data;
-  } else if (query && !category) {
-    keywordSearch(query);
-  } else if (!query && category) {
-    categorySearch(category);
-  } else if (query && category) {
-    keywordSearch(query);
-    filteredData = filteredData.filter((item) => item.category.toLowerCase() === category.toLowerCase());
+  let querySearch = "";
+  let queryCategory = "";
+
+  if (!search) {
+    changeURL("delete", "search");
+  }
+  if (!category) {
+    changeURL("delete", "category");
   }
 
+  if (!search && !category) {
+    filteredData = data;
+  } else if (search && !category) {
+    changeURL("set", "search", search);
+    querySearch = changeURL("get", "search");
+    keywordSearch(querySearch);
+  } else if (!search && category) {
+    changeURL("set", "category", category);
+    queryCategory = changeURL("get", "category");
+    categorySearch(queryCategory);
+  } else if (search && category) {
+    changeURL("set", "search", search);
+    changeURL("set", "category", category);
+
+    querySearch = changeURL("get", "search");
+    queryCategory = changeURL("get", "category");
+
+    keywordSearch(querySearch);
+    filteredData = filteredData.filter((item) => item.category.toLowerCase() === queryCategory.toLowerCase());
+  }
   displayResults(currentPage);
 };
 
@@ -145,8 +269,30 @@ categoryInput.innerHTML = categories
 
 document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
 const debouncedSearch = debounce(search, 600);
-searchInput.addEventListener("input", debouncedSearch);
-categoryInput.addEventListener("change", () => {
-  searchInput.value = "";
+const searchQuery = changeURL("get", "search");
+const categoryQuery = changeURL("get", "category");
+
+if (searchQuery || categoryQuery) {
+  searchInput.value = searchQuery || "";
+  categoryInput.value = categoryQuery || "";
   search();
+}
+
+searchInput.addEventListener("input", debouncedSearch);
+
+categoryInput.addEventListener("change", () => {
+  if (!categoryInput.value && !searchInput.value) {
+    searchInput.value = "";
+  }
+  search();
+});
+
+clearButton.addEventListener("click", () => {
+  if (!searchInput.value && !categoryInput.value) {
+    return clearButton.blur();
+  }
+  searchInput.value = "";
+  categoryInput.value = "";
+  search();
+  return clearButton.blur();
 });

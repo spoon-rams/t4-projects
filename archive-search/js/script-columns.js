@@ -1,3 +1,5 @@
+/* Search as Columns */
+
 // Select DOM elements
 const searchInput = document.getElementById("search-input");
 const categoryInput = document.getElementById("category-select");
@@ -5,7 +7,7 @@ const resultsDiv = document.querySelector(".stories");
 const paginationDiv = document.querySelector(".pagination");
 const clearButton = document.querySelector(".clear-button button");
 
-const itemsPerPage = 5;
+const itemsPerPage = 9;
 const categories = [{ name: "Please choose a category", value: "" }];
 let currentPage = 1;
 let filteredData = [];
@@ -24,37 +26,35 @@ const displayResults = (page = 1) => {
     .map((item) => {
       const { link, image, imageDesc, category, title } = item;
       return `
-          <div class="row archive-list">
-            <div class="col-lg-3">
-              <a href="${link}">
-                <img src="${image}" alt="${imageDesc}" style="width: 100%; height: auto;">
+            <div class="story col-lg-4">
+              <a href="${link}" class="story-link-wrapper">
+                <div class="story-image">
+                  <img src="${image}" alt="${imageDesc}">
+                </div>
+                <div class="story-text">
+                  <p class="category">
+                    <span>${category}</span>
+                  </p>
+                  <h2>${title}</h2>
+                </div>
               </a>
             </div>
-            <div class="col-lg-9">
-              <p class="category">
-                <span>${category}</span>
-              </p>
-              <a href="${link}">
-                <h2>${title}</h2>
-              </a>
-            </div>
-          </div>
-          <hr />`;
+          `;
     })
     .join("");
 
-  if (results.length === 5) {
-    resultsDiv.classList.remove("temp-height");
+  if (results.length === 9) {
+    // resultsDiv.classList.remove("temp-height");
     resultsDiv.innerHTML = renderElements;
     return updatePagination(filteredData.length, page);
-  } else if (results.length < 5 && results.length !== 0) {
-    resultsDiv.classList.add("temp-height");
+  } else if (results.length < 9 && results.length !== 0) {
+    // resultsDiv.classList.add("temp-height");
     resultsDiv.innerHTML = renderElements;
     return updatePagination(filteredData.length, page);
   }
 
   updatePagination(filteredData.length, page);
-  resultsDiv.classList.add("temp-height");
+  // resultsDiv.classList.add("temp-height");
   return (resultsDiv.innerHTML = noResults);
 };
 
@@ -82,10 +82,12 @@ const updatePagination = (totalItems, currentPage) => {
   first.classList.add("first");
   first.disabled = currentPage === 1;
   if (currentPage === 1) first.style.display = "none";
+
   first.addEventListener("click", (e) => {
     if (buttonElement.length > 0) {
       buttonElement = "";
     }
+    scrollToTop(resultsDiv);
     return displayResults(1);
   });
   paginationDiv.appendChild(first);
@@ -101,6 +103,7 @@ const updatePagination = (totalItems, currentPage) => {
 
   prev.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
+    scrollToTop(resultsDiv);
     return displayResults(currentPage - 1);
   });
   paginationDiv.appendChild(prev);
@@ -117,6 +120,7 @@ const updatePagination = (totalItems, currentPage) => {
         if (buttonElement.length > 0) {
           buttonElement = "";
         }
+        scrollToTop(resultsDiv);
         return displayResults(i);
       });
     }
@@ -134,6 +138,7 @@ const updatePagination = (totalItems, currentPage) => {
 
   next.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
+    scrollToTop(resultsDiv);
     return displayResults(currentPage + 1);
   });
   paginationDiv.appendChild(next);
@@ -148,6 +153,7 @@ const updatePagination = (totalItems, currentPage) => {
     if (buttonElement.length > 0) {
       buttonElement = "";
     }
+    scrollToTop(resultsDiv);
     return displayResults(totalPages);
   });
   paginationDiv.appendChild(last);
@@ -182,6 +188,12 @@ const categorySearch = (query) => {
   filteredData = data.filter((item) => item.category.toLowerCase() === query.toLowerCase());
   currentPage = 1;
   displayResults(currentPage);
+};
+
+const scrollToTop = (el) => {
+  setTimeout(() => {
+    return window.scrollTo(0, el.scrollTop);
+  }, 300);
 };
 
 const changeURL = (type, queryString, query) => {
@@ -248,7 +260,7 @@ function debounce(func, delay) {
 }
 
 // Fetch data and initialize
-fetch("./data.json")
+fetch("../data.json")
   .then((res) => res.json())
   .then((fetchedData) => {
     data = fetchedData;

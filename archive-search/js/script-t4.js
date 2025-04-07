@@ -1,3 +1,5 @@
+/* Search as Columns */
+
 // Select DOM elements
 const searchInput = document.getElementById("search-input");
 const categoryInput = document.getElementById("category-select");
@@ -5,11 +7,11 @@ const resultsDiv = document.querySelector(".stories");
 const paginationDiv = document.querySelector(".pagination");
 const clearButton = document.querySelector(".clear-button button");
 
-const itemsPerPage = 5;
+const itemsPerPage = 9;
 const categories = [{ name: "Please choose a category", value: "" }];
 let currentPage = 1;
 let filteredData = [];
-let data = [];
+let data = [<t4 type="navigation" name="Brand Stories Archive All - JSON" id="429" />];
 let buttonElement = "";
 
 // Display results function
@@ -24,37 +26,35 @@ const displayResults = (page = 1) => {
     .map((item) => {
       const { link, image, imageDesc, category, title } = item;
       return `
-          <div class="row archive-list">
-            <div class="col-lg-3">
-              <a href="${link}">
-                <img src="${image}" alt="${imageDesc}" style="width: 100%; height: auto;">
+            <div class="story col-lg-4">
+              <a href="${link}" class="story-link-wrapper">
+                <div class="story-image">
+                  <img src="${image}" alt="${imageDesc}">
+                </div>
+                <div class="story-text">
+                  <p class="category">
+                    <span>${category}</span>
+                  </p>
+                  <h2>${title}</h2>
+                </div>
               </a>
             </div>
-            <div class="col-lg-9">
-              <p class="category">
-                <span>${category}</span>
-              </p>
-              <a href="${link}">
-                <h2>${title}</h2>
-              </a>
-            </div>
-          </div>
-          <hr />`;
+          `;
     })
     .join("");
 
-  if (results.length === 5) {
-    resultsDiv.classList.remove("temp-height");
+  if (results.length === 9) {
+    // resultsDiv.classList.remove("temp-height");
     resultsDiv.innerHTML = renderElements;
     return updatePagination(filteredData.length, page);
-  } else if (results.length < 5 && results.length !== 0) {
-    resultsDiv.classList.add("temp-height");
+  } else if (results.length < 9 && results.length !== 0) {
+    // resultsDiv.classList.add("temp-height");
     resultsDiv.innerHTML = renderElements;
     return updatePagination(filteredData.length, page);
   }
 
   updatePagination(filteredData.length, page);
-  resultsDiv.classList.add("temp-height");
+  // resultsDiv.classList.add("temp-height");
   return (resultsDiv.innerHTML = noResults);
 };
 
@@ -82,10 +82,13 @@ const updatePagination = (totalItems, currentPage) => {
   first.classList.add("first");
   first.disabled = currentPage === 1;
   if (currentPage === 1) first.style.display = "none";
+
   first.addEventListener("click", (e) => {
     if (buttonElement.length > 0) {
       buttonElement = "";
     }
+    scrollToTop(resultsDiv);
+    changeURL("set", "page", 1);
     return displayResults(1);
   });
   paginationDiv.appendChild(first);
@@ -101,6 +104,8 @@ const updatePagination = (totalItems, currentPage) => {
 
   prev.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
+    scrollToTop(resultsDiv);
+    changeURL("set", "page", currentPage - 1);
     return displayResults(currentPage - 1);
   });
   paginationDiv.appendChild(prev);
@@ -117,6 +122,8 @@ const updatePagination = (totalItems, currentPage) => {
         if (buttonElement.length > 0) {
           buttonElement = "";
         }
+        scrollToTop(resultsDiv);
+        changeURL("set", "page", i);
         return displayResults(i);
       });
     }
@@ -134,6 +141,8 @@ const updatePagination = (totalItems, currentPage) => {
 
   next.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
+    scrollToTop(resultsDiv);;
+    changeURL("set", "page", currentPage + 1);
     return displayResults(currentPage + 1);
   });
   paginationDiv.appendChild(next);
@@ -148,6 +157,8 @@ const updatePagination = (totalItems, currentPage) => {
     if (buttonElement.length > 0) {
       buttonElement = "";
     }
+    scrollToTop(resultsDiv);
+    changeURL("set", "page", totalPages);
     return displayResults(totalPages);
   });
   paginationDiv.appendChild(last);
@@ -167,6 +178,7 @@ const handlePaginationClick = (event) => {
   displayResults(currentPage);
 };
 
+
 // Keyword Search - Title
 const keywordSearch = (query) => {
   if (!query) return;
@@ -182,6 +194,12 @@ const categorySearch = (query) => {
   filteredData = data.filter((item) => item.category.toLowerCase() === query.toLowerCase());
   currentPage = 1;
   displayResults(currentPage);
+};
+
+const scrollToTop = (el) => {
+  setTimeout(() => {
+    return window.scrollTo(0, el.scrollTop);
+  }, 300);
 };
 
 const changeURL = (type, queryString, query) => {
@@ -247,59 +265,53 @@ function debounce(func, delay) {
   };
 }
 
-// Fetch data and initialize
-fetch("./data.json")
-  .then((res) => res.json())
-  .then((fetchedData) => {
-    data = fetchedData;
-    filteredData = data;
-    displayResults(currentPage);
+filteredData = data;
+displayResults(currentPage);
 
-    data.forEach((item) => {
-      // Check if the category already exists in the categories array
-      const isDuplicate = categories.some((category) => category.name === item.category);
+data.forEach((item) => {
+  const { category } = item;
+  const value = category.toLowerCase();
 
-      if (!isDuplicate) {
-        const value = item.category.toLowerCase();
-        const name = item.category;
-        categories.push({ name, value });
-      }
-    });
+  // Check if the category already exists in the categories array
+  const isDuplicate = categories.some((cat) => cat.name === category);
 
-    categoryInput.innerHTML = categories
-      .map((item) => {
-        const { value, name } = item;
-        return `<option value="${value}">${name}</option>`;
-      })
-      .join("");
+  if (!isDuplicate) {
+    categories.push({ name: category, value });
+  }
+});
 
-    document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
-    const debouncedSearch = debounce(search, 600);
-    const searchQuery = changeURL("get", "search");
-    const categoryQuery = changeURL("get", "category");
+categoryInput.innerHTML = categories
+  .map((item) => {
+    return `<option value="${item.value}">${item.name}</option>`;
+  })
+  .join("");
 
-    if (searchQuery || categoryQuery) {
-      searchInput.value = searchQuery || "";
-      categoryInput.value = categoryQuery || "";
-      search();
-    }
+document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
+const debouncedSearch = debounce(search, 600);
+const searchQuery = changeURL("get", "search");
+const categoryQuery = changeURL("get", "category");
 
-    searchInput.addEventListener("input", debouncedSearch);
+if (searchQuery || categoryQuery) {
+  searchInput.value = searchQuery || "";
+  categoryInput.value = categoryQuery || "";
+  search();
+}
 
-    categoryInput.addEventListener("change", () => {
-      if (!categoryInput.value && !searchInput.value) {
-        searchInput.value = "";
-      }
-      search();
-    });
+searchInput.addEventListener("input", debouncedSearch);
 
-    clearButton.addEventListener("click", () => {
-      if (!searchInput.value && !categoryInput.value) {
-        return clearButton.blur();
-      }
-      searchInput.value = "";
-      categoryInput.value = "";
-      search();
-      return clearButton.blur();
-    });
-  });
+categoryInput.addEventListener("change", () => {
+  if (!categoryInput.value && !searchInput.value) {
+    searchInput.value = "";
+  }
+  search();
+});
+
+clearButton.addEventListener("click", () => {
+  if (!searchInput.value && !categoryInput.value) {
+    return clearButton.blur();
+  }
+  searchInput.value = "";
+  categoryInput.value = "";
+  search();
+  return clearButton.blur();
+});
