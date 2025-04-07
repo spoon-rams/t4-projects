@@ -241,7 +241,6 @@ const search = () => {
     querySearch = changeURL("get", "search");
     keywordSearch(querySearch);
   } else if (!search && category) {
-
     // If page query param exists
     page && changeURL("delete", "page");
 
@@ -251,7 +250,7 @@ const search = () => {
   } else if (search && category) {
     // If page query param exists
     page && changeURL("delete", "page");
-    
+
     changeURL("set", "search", search);
     changeURL("set", "category", category);
 
@@ -292,6 +291,11 @@ fetch("../data.json")
       }
     });
 
+    /* TEST AREA */
+    const pageTest = changeURL("get", "page");
+    if (pageTest) currentPage = pageTest;
+    /* TEST AREA - END */
+
     categoryInput.innerHTML = categories
       .map((item) => {
         const { value, name } = item;
@@ -306,6 +310,7 @@ fetch("../data.json")
     const page = changeURL("get", "page");
 
     if (searchQuery || categoryQuery || page) {
+      console.log(currentPage);
       searchInput.value = searchQuery || "";
       categoryInput.value = categoryQuery || "";
       search();
