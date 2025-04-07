@@ -291,9 +291,13 @@ fetch("../data.json")
       }
     });
 
-    /* TEST AREA */
-    const pageTest = changeURL("get", "page");
-    if (pageTest) currentPage = pageTest;
+    /* TEST AREA - Page Query */
+    /**
+     * This is a test for when a link is created using 
+     * pagination and renders the page number recieved
+     * within the pagination */ 
+    const pageQuery = changeURL("get", "page");
+    if (pageQuery) currentPage = pageQuery;
     /* TEST AREA - END */
 
     categoryInput.innerHTML = categories
