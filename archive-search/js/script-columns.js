@@ -13,6 +13,7 @@ let currentPage = 1;
 let filteredData = [];
 let data = [];
 let buttonElement = "";
+let pageLink = null;
 
 // Display results function
 const displayResults = (page = 1) => {
@@ -181,7 +182,7 @@ const keywordSearch = (query) => {
   if (!query) return;
   const regex = new RegExp(query.trim(), "i");
   filteredData = data.filter((item) => regex.test(item.title));
-  currentPage = 1;
+  !pageLink ? (currentPage = 1) : (currentPage = currentPage);
   displayResults(currentPage);
 };
 
@@ -189,7 +190,7 @@ const keywordSearch = (query) => {
 const categorySearch = (query) => {
   if (!query) return;
   filteredData = data.filter((item) => item.category.toLowerCase() === query.toLowerCase());
-  currentPage = 1;
+  !pageLink ? (currentPage = 1) : (currentPage = currentPage);
   displayResults(currentPage);
 };
 
@@ -220,36 +221,37 @@ const search = () => {
   const search = searchInput.value.trim();
   const category = categoryInput.value.trim();
   const page = changeURL("get", "page");
-
   let querySearch = "";
   let queryCategory = "";
 
   if (!search) {
     changeURL("delete", "search");
+    page && !pageLink && changeURL("delete", "page");
   }
   if (!category) {
     changeURL("delete", "category");
+    page && !pageLink && changeURL("delete", "page");
   }
 
   if (!search && !category) {
     filteredData = data;
   } else if (search && !category) {
     // If page query param exists
-    page && changeURL("delete", "page");
+    page && !pageLink && changeURL("delete", "page");
 
     changeURL("set", "search", search);
     querySearch = changeURL("get", "search");
     keywordSearch(querySearch);
   } else if (!search && category) {
     // If page query param exists
-    page && changeURL("delete", "page");
+    page && !pageLink && changeURL("delete", "page");
 
     changeURL("set", "category", category);
     queryCategory = changeURL("get", "category");
     categorySearch(queryCategory);
   } else if (search && category) {
     // If page query param exists
-    page && changeURL("delete", "page");
+    page && !pageLink && changeURL("delete", "page");
 
     changeURL("set", "search", search);
     changeURL("set", "category", category);
@@ -278,7 +280,7 @@ fetch("../data.json")
   .then((fetchedData) => {
     data = fetchedData;
     filteredData = data;
-    displayResults(currentPage);
+    // displayResults(currentPage);
 
     data.forEach((item) => {
       // Check if the category already exists in the categories array
@@ -291,15 +293,6 @@ fetch("../data.json")
       }
     });
 
-    /* TEST AREA - Page Query */
-    /**
-     * This is a test for when a link is created using 
-     * pagination and renders the page number recieved
-     * within the pagination */ 
-    const pageQuery = changeURL("get", "page");
-    if (pageQuery) currentPage = pageQuery;
-    /* TEST AREA - END */
-
     categoryInput.innerHTML = categories
       .map((item) => {
         const { value, name } = item;
@@ -307,35 +300,57 @@ fetch("../data.json")
       })
       .join("");
 
-    document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
-    const debouncedSearch = debounce(search, 600);
+    // document.addEventListener("DOMContentLoaded", () => {
+    //   displayResults(currentPage);
+    //   console.log("FROM PAGE QUERY CONDITION: ", paginationButtons);
+    // });
+
+    // For Links that contain any of existing query params
     const searchQuery = changeURL("get", "search");
     const categoryQuery = changeURL("get", "category");
     const page = changeURL("get", "page");
 
     if (searchQuery || categoryQuery || page) {
-      console.log(currentPage);
       searchInput.value = searchQuery || "";
       categoryInput.value = categoryQuery || "";
-      search();
+      currentPage = page || 1;
+      pageLink = true;
+      return search();
     }
-
-    searchInput.addEventListener("input", debouncedSearch);
-
-    categoryInput.addEventListener("change", () => {
-      if (!categoryInput.value && !searchInput.value) {
-        searchInput.value = "";
-      }
-      search();
-    });
-
-    clearButton.addEventListener("click", () => {
-      if (!searchInput.value && !categoryInput.value) {
-        return clearButton.blur();
-      }
-      searchInput.value = "";
-      categoryInput.value = "";
-      search();
-      return clearButton.blur();
-    });
+    return search();
+  })
+  .then(() => {
+    if (pageLink) {
+      const paginationButtons = document.querySelectorAll(".number");
+      paginationButtons.forEach((val) => {
+        if (val.innerText === currentPage) {
+          val.classList.add("active");
+        }
+      });
+      pageLink = null;
+    }
   });
+
+searchInput.addEventListener("input", debounce(search, 600));
+
+categoryInput.addEventListener("change", () => {
+  if (!categoryInput.value && !searchInput.value) {
+    searchInput.value = "";
+  }
+  search();
+});
+
+clearButton.addEventListener("click", () => {
+  if (!searchInput.value && !categoryInput.value) {
+    changeURL("delete", "page");
+    currentPage = 1;
+    search();
+    return clearButton.blur();
+  }
+  searchInput.value = "";
+  categoryInput.value = "";
+  changeURL("delete", "page");
+  currentPage = 1;
+  search();
+  return clearButton.blur();
+});

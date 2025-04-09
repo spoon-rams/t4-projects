@@ -9,10 +9,13 @@
 
 .fordham-stories-search .search-inputs {
   display: flex;
-  padding: 10px 30px;
+  padding: 30px;
   flex-wrap: wrap;
   border-bottom: 1.5px solid #e7e7e7;
   margin-bottom: 15px;
+  margin-left: 32px;
+  margin-right: 32px;
+  background-color: #e7e7e7;
 }
 
 .fordham-stories-search .search-inputs .search-bar {
