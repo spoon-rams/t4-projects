@@ -88,6 +88,7 @@ const updatePagination = (totalItems, currentPage) => {
     if (buttonElement.length > 0) {
       buttonElement = "";
     }
+    changeURL("set", "page", 1);
     scrollToTop(resultsDiv);
     return displayResults(1);
   });
@@ -141,6 +142,7 @@ const updatePagination = (totalItems, currentPage) => {
 
   next.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
+    changeURL("set", "page", currentPage + 1);
     scrollToTop(resultsDiv);
     return displayResults(currentPage + 1);
   });
@@ -274,9 +276,7 @@ function debounce(func, delay) {
   };
 }
 
-filteredData = data;
-displayResults(currentPage);
-
+// Initial Load of categories from current stories
 data.forEach((item) => {
   const { category } = item;
   const value = category.toLowerCase();
@@ -295,31 +295,49 @@ categoryInput.innerHTML = categories
   })
   .join("");
 
-document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
-const searchQuery = changeURL("get", "search");
-const categoryQuery = changeURL("get", "category");
-const page = changeURL("get", "page");
+// Initial Load of all stories and stories if provided as a link
+document.addEventListener("DOMContentLoaded", () => {
+  const searchQuery = changeURL("get", "search");
+  const categoryQuery = changeURL("get", "category");
+  const page = changeURL("get", "page");
 
-if (searchQuery || categoryQuery || page) {
-  searchInput.value = searchQuery || "";
-  categoryInput.value = categoryQuery || "";
-  currentPage = page || 1;
-  pageLink = true;
-  search();
-} else {
-  search();
-}
+  if (searchQuery || categoryQuery || page) {
+    searchInput.value = searchQuery || "";
+    categoryInput.value = categoryQuery || "";
+    currentPage = parseInt(page) || 1;
+    pageLink = true;
+    search();
 
-if (pageLink) {
-  const paginationButtons = document.querySelectorAll(".number");
-  paginationButtons.forEach((val) => {
-    if (val.innerText === currentPage) {
-      val.classList.add("active");
-    }
-  });
-  pageLink = null;
-}
+    const paginationButtons = document.querySelectorAll(".number");
+    const next = document.querySelector(".next");
+    const last = document.querySelector(".last");
+    const prev = document.querySelector(".prev");
+    const first = document.querySelector(".first");
+    const totalItems = Math.ceil(filteredData.length / itemsPerPage);
 
+    paginationButtons.forEach((button) => {
+      if (button.innerText === currentPage && totalItems === parseInt(currentPage)) {
+        button.classList.add("active");
+        next.style.display = "none";
+        last.style.display = "none";
+      } else if (button.innerText === currentPage && parseInt(currentPage) === 1) {
+        button.classList.add("active");
+        prev.style.display = "none";
+        first.style.display = "none";
+      } else if (button.innerText === currentPage) {
+        button.classList.add("active");
+      } else {
+        return;
+      }
+    });
+    pageLink = false;
+  } else {
+    filteredData = data;
+    search();
+  }
+});
+
+// Event Listners for button and input actions
 searchInput.addEventListener("input", debounce(search, 600));
 
 categoryInput.addEventListener("change", () => {

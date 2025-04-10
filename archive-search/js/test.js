@@ -13,6 +13,7 @@ let currentPage = 1;
 let filteredData = [];
 let data = [<t4 type="navigation" name="Brand Stories Archive All - JSON" id="429" />];
 let buttonElement = "";
+let pageLink = null;
 
 // Display results function
 const displayResults = (page = 1) => {
@@ -88,7 +89,6 @@ const updatePagination = (totalItems, currentPage) => {
       buttonElement = "";
     }
     scrollToTop(resultsDiv);
-    changeURL("set", "page", 1);
     return displayResults(1);
   });
   paginationDiv.appendChild(first);
@@ -142,7 +142,6 @@ const updatePagination = (totalItems, currentPage) => {
   next.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
     scrollToTop(resultsDiv);
-    changeURL("set", "page", currentPage + 1);
     return displayResults(currentPage + 1);
   });
   paginationDiv.appendChild(next);
@@ -183,7 +182,7 @@ const keywordSearch = (query) => {
   if (!query) return;
   const regex = new RegExp(query.trim(), "i");
   filteredData = data.filter((item) => regex.test(item.title));
-  currentPage = 1;
+  !pageLink ? (currentPage = 1) : (currentPage = currentPage);
   displayResults(currentPage);
 };
 
@@ -191,7 +190,7 @@ const keywordSearch = (query) => {
 const categorySearch = (query) => {
   if (!query) return;
   filteredData = data.filter((item) => item.category.toLowerCase() === query.toLowerCase());
-  currentPage = 1;
+  !pageLink ? (currentPage = 1) : (currentPage = currentPage);
   displayResults(currentPage);
 };
 
@@ -221,28 +220,39 @@ const changeURL = (type, queryString, query) => {
 const search = () => {
   const search = searchInput.value.trim();
   const category = categoryInput.value.trim();
-
+  const page = changeURL("get", "page");
   let querySearch = "";
   let queryCategory = "";
 
   if (!search) {
     changeURL("delete", "search");
+    page && !pageLink && changeURL("delete", "page");
   }
   if (!category) {
     changeURL("delete", "category");
+    page && !pageLink && changeURL("delete", "page");
   }
 
   if (!search && !category) {
     filteredData = data;
   } else if (search && !category) {
+    // If page query param exists
+    page && !pageLink && changeURL("delete", "page");
+
     changeURL("set", "search", search);
     querySearch = changeURL("get", "search");
     keywordSearch(querySearch);
   } else if (!search && category) {
+    // If page query param exists
+    page && !pageLink && changeURL("delete", "page");
+
     changeURL("set", "category", category);
     queryCategory = changeURL("get", "category");
     categorySearch(queryCategory);
   } else if (search && category) {
+    // If page query param exists
+    page && !pageLink && changeURL("delete", "page");
+
     changeURL("set", "search", search);
     changeURL("set", "category", category);
 
@@ -264,9 +274,6 @@ function debounce(func, delay) {
   };
 }
 
-filteredData = data;
-displayResults(currentPage);
-
 data.forEach((item) => {
   const { category } = item;
   const value = category.toLowerCase();
@@ -285,18 +292,35 @@ categoryInput.innerHTML = categories
   })
   .join("");
 
-document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
-const debouncedSearch = debounce(search, 600);
-const searchQuery = changeURL("get", "search");
-const categoryQuery = changeURL("get", "category");
+document.addEventListener("DOMContentLoaded", () => {
+  const searchQuery = changeURL("get", "search");
+  const categoryQuery = changeURL("get", "category");
+  const page = changeURL("get", "page");
 
-if (searchQuery || categoryQuery) {
-  searchInput.value = searchQuery || "";
-  categoryInput.value = categoryQuery || "";
-  search();
-}
+  if (searchQuery || categoryQuery || page) {
+    searchInput.value = searchQuery || "";
+    categoryInput.value = categoryQuery || "";
+    currentPage = page || 1;
+    pageLink = true;
+    search();
 
-searchInput.addEventListener("input", debouncedSearch);
+    const paginationButtons = document.querySelectorAll(".number");
+    console.log(currentPage);
+    paginationButtons.forEach((button) => {
+      if (button.innerText === currentPage) {
+        console.log("FOUND MATCH");
+        console.log(button.innerText);
+        button.classList.add("active");
+      }
+    });
+  } else {
+    console.log("IF STATEMENT");
+    filteredData = data;
+    search();
+  }
+});
+
+searchInput.addEventListener("input", debounce(search, 600));
 
 categoryInput.addEventListener("change", () => {
   if (!categoryInput.value && !searchInput.value) {
@@ -307,10 +331,15 @@ categoryInput.addEventListener("change", () => {
 
 clearButton.addEventListener("click", () => {
   if (!searchInput.value && !categoryInput.value) {
+    changeURL("delete", "page");
+    currentPage = 1;
+    search();
     return clearButton.blur();
   }
   searchInput.value = "";
   categoryInput.value = "";
+  changeURL("delete", "page");
+  currentPage = 1;
   search();
   return clearButton.blur();
 });

@@ -88,6 +88,7 @@ const updatePagination = (totalItems, currentPage) => {
     if (buttonElement.length > 0) {
       buttonElement = "";
     }
+    changeURL("set", "page", 1);
     scrollToTop(resultsDiv);
     return displayResults(1);
   });
@@ -141,6 +142,7 @@ const updatePagination = (totalItems, currentPage) => {
 
   next.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
+    changeURL("set", "page", currentPage + 1);
     scrollToTop(resultsDiv);
     return displayResults(currentPage + 1);
   });
@@ -313,18 +315,34 @@ fetch("../data.json")
     if (searchQuery || categoryQuery || page) {
       searchInput.value = searchQuery || "";
       categoryInput.value = categoryQuery || "";
-      currentPage = page || 1;
+      currentPage = parseInt(page) || 1;
       pageLink = true;
-      return search();
+      search();
     }
-    return search();
+    search();
   })
   .then(() => {
     if (pageLink) {
       const paginationButtons = document.querySelectorAll(".number");
-      paginationButtons.forEach((val) => {
-        if (val.innerText === currentPage) {
-          val.classList.add("active");
+      const next = document.querySelector(".next");
+      const last = document.querySelector(".last");
+      const prev = document.querySelector(".prev");
+      const first = document.querySelector(".first");
+      const totalItems = Math.ceil(filteredData.length / itemsPerPage);
+
+      paginationButtons.forEach((button) => {
+        if (button.innerText === currentPage && totalItems === parseInt(currentPage)) {
+          button.classList.add("active");
+          next.style.display = "none";
+          last.style.display = "none";
+        } else if (button.innerText === currentPage && parseInt(currentPage) === 1) {
+          button.classList.add("active");
+          prev.style.display = "none";
+          first.style.display = "none";
+        } else if (button.innerText === currentPage) {
+          button.classList.add("active");
+        } else {
+          return;
         }
       });
       pageLink = null;
