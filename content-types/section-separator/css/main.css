@@ -1,20 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 .section-separator .wrapper {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
   background-size: cover !important;
   background-position: top !important;
   background-repeat: no-repeat !important;
-  padding: 10px;
+  padding: 10rem 1rem;
   max-width: 100%;
-  height: 800px; /*TEMP*/
+  position: relative;
 }
 
 /* BACKGROUND COLORS */
-.fordha-black {
+.fordham-black {
   background-color: #282220;
 }
 
@@ -40,4 +36,19 @@
 
 .fordham-jesuit-gold {
   background-color: #9E8959;
+}
+
+.section-separator .wrapper .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Make sure the content stays above the overlay */
+.section-separator .wrapper > *:not(.overlay) {
+  position: relative;
+  z-index: 2;
 }
