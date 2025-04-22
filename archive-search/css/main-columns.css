@@ -83,7 +83,7 @@
   color: black !important;
 }
 
-.fordham-stories-search .stories.row a:hover {
+.fordham-stories-search .stories.row a:hover h2 {
   text-decoration: underline !important;
 }
 

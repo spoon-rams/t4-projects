@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+.at-a-glance .card {
+  background: #e1e1e1;
+  border-top: 5px solid #900028 !important;
+}
+
+.at-a-glance .card h2 {
+  color: 5px solid #900028;
+}
+
+.at-a-glance .card .card-content{
+  display: none;
+}
+
+.at-a-glance .card .card-content .content span {
+  margin-left: 5px;
+}
+
+.at-a-glance .card .pre-load {
+  width: 100%;
+  padding: 147px;
+  text-align: center;
+}
+
+.at-a-glance .card .image img {
+  width: 100%;
+  height: auto;
+}
+
+/* TEMP */
+/* .card .pre-load {
+  display: none;
+}
+
+.card .no-data {
+  display: block;
+} */
