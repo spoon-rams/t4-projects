@@ -141,7 +141,7 @@ const updatePagination = (totalItems, currentPage) => {
 
   next.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
-    scrollToTop(resultsDiv);;
+    scrollToTop(resultsDiv);
     changeURL("set", "page", currentPage + 1);
     return displayResults(currentPage + 1);
   });
@@ -177,7 +177,6 @@ const handlePaginationClick = (event) => {
 
   displayResults(currentPage);
 };
-
 
 // Keyword Search - Title
 const keywordSearch = (query) => {

@@ -1,0 +1,97 @@
+@media only screen and (max-width: 1280px) {
+  .fordham-stories-search .stories .story-text .category,
+  .fordham-stories-archive-all .archive-list .story-text .category {
+    font-size: 0.8rem !important;
+  }
+
+  .fordham-stories-search .stories .story-text h2,
+  .fordham-stories-archive-all .stories .story-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .fordham-stories-search .general-content.search-results .search-inputs label {
+    font-size: 1rem;
+  }
+
+  .fordham-stories-search .general-content.search-results .pagination button {
+    padding: 7px 12px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .fordham-stories-search .stories,
+  .fordham-stories-archive-all .archive-list {
+    height: auto !important;
+  }
+
+  .fordham-stories-search .stories .story-text,
+  .fordham-stories-archive-all .archive-list .story-text {
+    min-height: unset;
+  }
+  .fordham-stories-search .stories .story-text .category,
+  .fordham-stories-archive-all .archive-list .story-text .category {
+    font-size: 1rem !important;
+  }
+
+  .fordham-stories-search .stories .story-text h2,
+  .fordham-stories-archive-all .archive-list .story-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .fordham-stories-search .pagination button,
+  .fordham-stories-archive-all .pagination button {
+    padding: 7px 12px;
+  }
+
+  .fordham-stories-search .pagination .number {
+    display: none;
+  }
+
+  .fordham-stories-search .search-inputs .search-bar {
+    margin-right: 0;
+  }
+
+  .fordham-stories-search .search-inputs .search-bar input {
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+
+  .fordham-stories-search .search-inputs .category-dropdown {
+    width: 100%;
+  }
+
+  .fordham-stories-search .search-inputs #category-select {
+    width: 100%;
+  }
+
+  .fordham-stories-search .search-inputs .search-bar,
+  .fordham-stories-search .search-inputs .search-bar input {
+    width: 100%;
+  }
+
+  .fordham-stories-search .stories .story-text h2 {
+    font-size: 1.5rem;
+  }
+  .fordham-stories-search .stories .story-image img {
+    margin-bottom: 0;
+  }
+
+  .fordham-stories-search .clear-button button {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 458px) {
+  .fordham-stories-search .stories .story-text .category {
+    font-size: 0.8rem !important;
+  }
+
+  .fordham-stories-search .stories .story-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .fordham-stories-search .clear-button,
+  .fordham-stories-search .clear-button button {
+    width: 100%;
+  }
+}
