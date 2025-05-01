@@ -142,6 +142,10 @@ const updatePagination = (totalItems, currentPage) => {
 
   next.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
+<<<<<<< HEAD:archive-search/js/script-t4.js
+=======
+    scrollToTop(resultsDiv);
+>>>>>>> main:archive-search/js/fs-search-script.js
     changeURL("set", "page", currentPage + 1);
     scrollToTop(resultsDiv);
     return displayResults(currentPage + 1);
@@ -289,17 +293,36 @@ data.forEach((item) => {
   }
 });
 
-categoryInput.innerHTML = categories
+const sortedCategoriesList = categories.sort((a, b) => {
+  return a.value.localeCompare(b.value);
+});
+const categoriesList = sortedCategoriesList
   .map((item) => {
-    return `<option value="${item.value}">${item.name}</option>`;
+    const { value, name } = item;
+    return `<option value="${value}">${name}</option>`;
   })
   .join("");
 
+<<<<<<< HEAD:archive-search/js/script-t4.js
 // Initial Load of all stories and stories if provided as a link
 document.addEventListener("DOMContentLoaded", () => {
   const searchQuery = changeURL("get", "search");
   const categoryQuery = changeURL("get", "category");
   const page = changeURL("get", "page");
+=======
+categoryInput.innerHTML = categoriesList;
+
+// categoryInput.innerHTML = categories
+//   .map((item) => {
+//     return `<option value="${item.value}">${item.name}</option>`;
+//   })
+//   .join("");
+
+document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
+const debouncedSearch = debounce(search, 600);
+const searchQuery = changeURL("get", "search");
+const categoryQuery = changeURL("get", "category");
+>>>>>>> main:archive-search/js/fs-search-script.js
 
   if (searchQuery || categoryQuery || page) {
     searchInput.value = searchQuery || "";
