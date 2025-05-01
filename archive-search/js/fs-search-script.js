@@ -279,11 +279,23 @@ data.forEach((item) => {
   }
 });
 
-categoryInput.innerHTML = categories
+const sortedCategoriesList = categories.sort((a, b) => {
+  return a.value.localeCompare(b.value);
+});
+const categoriesList = sortedCategoriesList
   .map((item) => {
-    return `<option value="${item.value}">${item.name}</option>`;
+    const { value, name } = item;
+    return `<option value="${value}">${name}</option>`;
   })
   .join("");
+
+categoryInput.innerHTML = categoriesList;
+
+// categoryInput.innerHTML = categories
+//   .map((item) => {
+//     return `<option value="${item.value}">${item.name}</option>`;
+//   })
+//   .join("");
 
 document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
 const debouncedSearch = debounce(search, 600);

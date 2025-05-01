@@ -278,12 +278,17 @@ fetch("../data.json")
       }
     });
 
-    categoryInput.innerHTML = categories
+    const sortedCategoriesList = categories.sort((a, b) => {
+      return a.value.localeCompare(b.value);
+    });
+    const categoriesList = sortedCategoriesList
       .map((item) => {
         const { value, name } = item;
         return `<option value="${value}">${name}</option>`;
       })
       .join("");
+
+    categoryInput.innerHTML = categoriesList;
 
     document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
     const debouncedSearch = debounce(search, 600);
