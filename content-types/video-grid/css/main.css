@@ -37,6 +37,8 @@
   font-size: 1.15rem;
   text-align: center;
   font-weight: bold;
+  height: 50px;
+  margin-top: 5px;
 }
 
 .video-grid .video-grid-wrapper p {
