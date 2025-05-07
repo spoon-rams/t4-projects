@@ -142,10 +142,7 @@ const updatePagination = (totalItems, currentPage) => {
 
   next.addEventListener("click", (e) => {
     buttonElement = e.target.classList.value;
-<<<<<<< HEAD:archive-search/js/script-t4.js
-=======
     scrollToTop(resultsDiv);
->>>>>>> main:archive-search/js/fs-search-script.js
     changeURL("set", "page", currentPage + 1);
     scrollToTop(resultsDiv);
     return displayResults(currentPage + 1);
@@ -303,62 +300,48 @@ const categoriesList = sortedCategoriesList
   })
   .join("");
 
-<<<<<<< HEAD:archive-search/js/script-t4.js
-// Initial Load of all stories and stories if provided as a link
-document.addEventListener("DOMContentLoaded", () => {
-  const searchQuery = changeURL("get", "search");
-  const categoryQuery = changeURL("get", "category");
-  const page = changeURL("get", "page");
-=======
-categoryInput.innerHTML = categoriesList;
-
-// categoryInput.innerHTML = categories
-//   .map((item) => {
-//     return `<option value="${item.value}">${item.name}</option>`;
-//   })
-//   .join("");
+categoryInput.innerHTML = categoriesList
 
 document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
 const debouncedSearch = debounce(search, 600);
 const searchQuery = changeURL("get", "search");
 const categoryQuery = changeURL("get", "category");
->>>>>>> main:archive-search/js/fs-search-script.js
+const page = changeURL("get", "page");
 
-  if (searchQuery || categoryQuery || page) {
-    searchInput.value = searchQuery || "";
-    categoryInput.value = categoryQuery || "";
-    currentPage = parseInt(page) || 1;
-    pageLink = true;
-    search();
+if (searchQuery || categoryQuery || page) {
+  searchInput.value = searchQuery || "";
+  categoryInput.value = categoryQuery || "";
+  currentPage = parseInt(page) || 1;
+  pageLink = true;
+  search();
 
-    const paginationButtons = document.querySelectorAll(".number");
-    const next = document.querySelector(".next");
-    const last = document.querySelector(".last");
-    const prev = document.querySelector(".prev");
-    const first = document.querySelector(".first");
-    const totalItems = Math.ceil(filteredData.length / itemsPerPage);
+  const paginationButtons = document.querySelectorAll(".number");
+  const next = document.querySelector(".next");
+  const last = document.querySelector(".last");
+  const prev = document.querySelector(".prev");
+  const first = document.querySelector(".first");
+  const totalItems = Math.ceil(filteredData.length / itemsPerPage);
 
-    paginationButtons.forEach((button) => {
-      if (button.innerText === currentPage && totalItems === parseInt(currentPage)) {
-        button.classList.add("active");
-        next.style.display = "none";
-        last.style.display = "none";
-      } else if (button.innerText === currentPage && parseInt(currentPage) === 1) {
-        button.classList.add("active");
-        prev.style.display = "none";
-        first.style.display = "none";
-      } else if (button.innerText === currentPage) {
-        button.classList.add("active");
-      } else {
-        return;
-      }
-    });
-    pageLink = false;
-  } else {
-    filteredData = data;
-    search();
-  }
-});
+  paginationButtons.forEach((button) => {
+    if (button.innerText === currentPage && totalItems === parseInt(currentPage)) {
+      button.classList.add("active");
+      next.style.display = "none";
+      last.style.display = "none";
+    } else if (button.innerText === currentPage && parseInt(currentPage) === 1) {
+      button.classList.add("active");
+      prev.style.display = "none";
+      first.style.display = "none";
+    } else if (button.innerText === currentPage) {
+      button.classList.add("active");
+    } else {
+      return;
+    }
+  });
+  pageLink = false;
+} else {
+  filteredData = data;
+  search();
+}
 
 // Event Listners for button and input actions
 searchInput.addEventListener("input", debounce(search, 600));

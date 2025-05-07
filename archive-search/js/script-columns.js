@@ -305,19 +305,10 @@ fetch("../data.json")
       })
       .join("");
 
-<<<<<<< HEAD
-    // document.addEventListener("DOMContentLoaded", () => {
-    //   displayResults(currentPage);
-    //   console.log("FROM PAGE QUERY CONDITION: ", paginationButtons);
-    // });
-
     // For Links that contain any of existing query params
-=======
     categoryInput.innerHTML = categoriesList;
 
     document.addEventListener("DOMContentLoaded", () => displayResults(currentPage));
-    const debouncedSearch = debounce(search, 600);
->>>>>>> main
     const searchQuery = changeURL("get", "search");
     const categoryQuery = changeURL("get", "category");
     const page = changeURL("get", "page");
