@@ -29,8 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
       currentSlide++;
       adjustScrollPosition();
       updateArrowVisibility();
-      console.log("CURRENT SLIDE: ", currentSlide);
-      console.log("CURRENT SLIDE TO SHOW: ", slidesToShow);
     }
   });
 
@@ -39,8 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
       currentSlide--;
       adjustScrollPosition();
       updateArrowVisibility();
-      console.log("CURRENT SLIDE: ", currentSlide);
-      console.log("CURRENT SLIDE TO SHOW: ", slidesToShow);
     }
   });
 
