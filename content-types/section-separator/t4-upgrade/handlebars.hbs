@@ -1,0 +1,14 @@
+{{#eq (selectedValues element="Opening or Closing HTML Tag Selection") "1"}}
+   <section class='section-separator {{selectedValues element="Top/Bottom Spacing"}} {{selectedValues element="Limit Width"}}'>
+     {{#ifSet element="Background Image" }}
+  	   <div class="wrapper {{selectedValues element='Font Color'}}" style='background-image: url("{{media id=(mediaId element="Select Background Image") layout="path/*" }}")'>
+       {{#ifSet element="Overlay Color" }}
+         <div class="overlay" style='background-color: {{publish element="Overlay Color"}}; opacity: {{publish element="Overlay Opacity"}};'></div>
+       {{/ifSet}}
+     {{else}}
+       <div class="wrapper {{selectedValues element='Background Color Selection'}} {{selectedValues element='Font Color'}}">
+     {{/ifSet}}
+  {{else}}		 
+     </div>
+   </section>
+{{/eq}}
