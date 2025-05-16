@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const sectionTop = section.getBoundingClientRect().top;
       const windowHeight = window.innerHeight;
 
-      if (sectionTop < windowHeight * 0.7 && !section.classList.contains("active")) {
+      if (sectionTop < windowHeight * 0.6 && !section.classList.contains("active")) {
         const animationClass = Array.from(section.classList).find((cls) => cls.startsWith("animate__") && cls !== "animate__animated");
 
         if (!animationClass) {
