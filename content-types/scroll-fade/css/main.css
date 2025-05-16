@@ -2,12 +2,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
 
-
 section {
-    opacity: 0 !important;
-    transition: opacity .8s ease-in-out !important;
-  }
-  
-  section.active {
-      opacity: 1 !important;
-  }
+  opacity: 0;
+}
+
+section.animate__animated.animate__fadeInUp {
+  animation-duration: 1.5s;
+  animation-delay: 0.1s;
+  animation-timing-function: ease-out;
+}
+
+.active {
+  opacity: 1;
+  animation-duration: 1.5s;
+  animation-delay: 0.1s;
+  animation-timing-function: ease-out;
+}
