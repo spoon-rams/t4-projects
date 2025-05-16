@@ -1,0 +1,2161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS EDITS -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/mobile.css" />
+
+    <!-- CSS MAIN -->
+    <link rel="stylesheet" href="../../css/fordham-stories.css" />
+    <link rel="stylesheet" href="../../css/t4extras.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/fu_ta.css" />
+    <link rel="stylesheet" href="../../css/fu_ta1.css" />
+    <link rel="stylesheet" href="../../css/subsite-t4extras.css" />
+    <link rel="stylesheet" href="../../css/fu_targetedannounce.css" />
+    <link rel="stylesheet" href="../../css/outage.css" />
+    <link rel="stylesheet" href="../../css/tinymce.css" />
+    <!-- TEMPORARY -->
+    <!-- <link rel="stylesheet" href="./temp.css" /> -->
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- HEADER START -->
+    <header class="header-sticky" data-notice-url="/media/home/admin-use-only/javascript/notices.json" aria-label="Site header">
+      <nav class="header-nav">
+        <div class="header-nav__top">
+          <!-- Desktop Quick Links -->
+          <div class="header-nav__top__container header-nav__top__outer-quick-list">
+            <ul class="header-nav__top__list header-nav__top__list--primary log-in-out">
+              <li class="header-nav__top__item">
+                <!--<a href="https://myapps.web.fordham.edu/portaloutage/">Log in</a>-->
+                <a href="#" class="header-nav__top__link">Log in</a>
+              </li>
+            </ul>
+
+            <ul class="header-nav__top__list header-nav__top__list--secondary">
+              <li id="information-for" class="header-nav__top__link information-for header-nav__top__item">
+                <a href="#" class="header-nav__top__link">Information For</a>
+                <svg class="svg-md-18px" focusable="false" aria-hidden="true">
+                  <title>Information for dropdown links</title>
+
+                  <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"></path>
+                </svg>
+                <ul class="header-nav-top-dropdown information-for__dropdown">
+                  <li><a href="#">Current Students</a></li>
+                  <li>
+                    <a href="/information-for/info-for-faculty-and-staff/">Faculty and Staff</a>
+                  </li>
+                  <li><a href="#">Families</a></li>
+                  <li><a href="#" target="_blank">Alumni</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="header-nav__top__list header-nav__top__list--secondary">
+              <li class="header-nav__top__item">
+                <a href="#" class="header-nav__top__link">Find a Degree</a>
+              </li>
+              <li class="header-nav__top__item">
+                <a href="#" class="header-nav__top__link">Find People</a>
+              </li>
+              <li class="header-nav__top__item">
+                <a href="#" class="header-nav__top__link">Apply</a>
+              </li>
+              <li class="header-nav__top__item">
+                <a href="#" class="header-nav__top__link">Visit</a>
+              </li>
+              <li class="header-nav__top__item">
+                <a href="#" target="_blank" class="header-nav__top__link">Give</a>
+              </li>
+              <li class="header-nav__top__item">
+                <a href="#" class="header-nav__top__link">News</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="header-nav__bottom">
+          <div class="header-nav__bottom__container">
+            <h1 class="header-nav__logo">
+              <a href="/">
+                <img src="/media/review/site-assets/images/logos/secondary-logo-no-tagline.svg" alt="Fordham University" />
+              </a>
+              <span class="sr-only">Fordham University - Homepage</span>
+            </h1>
+
+            <div class="header-nav__mobile">
+              <div class="header-nav__mobile__close-toggler">
+                <button class="header-nav__mobile__search-toggler__button btn-close-nav" type="button" aria-label="Close mobile header navigation">
+                  <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                    <title>Search icon</title>
+
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+                  </svg>
+                  <span class="header-nav__mobile__close-toggler__label">Close Menu</span>
+                </button>
+              </div>
+              <ul class="header-nav__bottom__list">
+                <li class="header-nav__bottom__item header-nav__dropdown">
+                  <a href="#" class="header-nav__bottom__link">About</a>
+                  <div class="header-nav__dropdown-menu">
+                    <div class="header-nav__dropdown-menu__back-toggler">
+                      <button class="header-nav__dropdown-menu__back-toggler__button btn-back-nav" type="button" aria-label="Back">
+                        <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                          <title>Arrow left icon</title>
+
+                          <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+                        </svg>
+                        <span class="header-nav__dropdown-menu__back-toggler__label">Back</span>
+                      </button>
+                    </div>
+
+                    <div class="header-nav__dropdown-menu__lists-widget">
+                      <div class="header-nav__dropdown-menu__lists-widget--top">
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">About Fordham</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="#" class="header-nav__dropdown-menu__link">Fordham Facts</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="#" class="header-nav__dropdown-menu__link">Leadership and Administration</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="#" class="header-nav__dropdown-menu__link">Fordham’s History</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">University Initiatives</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/sustainability-at-fordham/" class="header-nav__dropdown-menu__link">Sustainability at Fordham</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/strategic-planning/" class="header-nav__dropdown-menu__link">Strategic Planning</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/give/" class="header-nav__dropdown-menu__link">Support Fordham</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Quick Links</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/campuses/" class="header-nav__dropdown-menu__link">Campuses</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/leadership-and-administration/administrative-offices/office-of-the-president/" class="header-nav__dropdown-menu__link">Office of the President</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/leadership-and-administration/administrative-offices/" class="header-nav__dropdown-menu__link">Administrative Offices</a>
+                            </li>
+                          </ul>
+                        </ul>
+                      </div>
+
+                      <!-- Mobile Dropdown Quick Links -->
+                      <ul class="header-nav__dropdown-menu__lists-widget--bottom header-nav__bottom__inner-quick-list">
+                        <li class="header-nav__dropdown-menu__item">
+                          <span class="header-nav__dropdown-menu__link-title">Related Links</span>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Globe-Solid.svg" alt="Virtual Tour" />
+                          <a href="https://www.youvisit.com/tour/fordham?pl=v" class="header-nav__dropdown-menu__link">Virtual Tour</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Map-Marked-Alt-Solid.svg" alt="Maps &amp; Directions" />
+                          <a href="/about/maps-and-directions/" class="header-nav__dropdown-menu__link">Maps &amp; Directions</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Chart-Pie-Solid.svg" alt="Undergraduate Outcomes" />
+                          <a href="/undergraduate-admission/outcomes/" class="header-nav__dropdown-menu__link">Undergraduate Outcomes</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Users-Solid.svg" alt="Diversity / Inclusion" />
+                          <a href="/about/diversity-equity-and-inclusion-at-fordham/" class="header-nav__dropdown-menu__link">Diversity / Inclusion</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="header-nav__dropdown-menu__images-widget">
+                      <div class="header-nav__dropdown-menu__img">
+                        <img src="/media/home/admin-use-only/mega-menu/President_Tetlow_082422_9090_240x240.jpg" alt="Meet President Tania&nbsp;Tetlow" />
+                        <a href="/about/leadership-and-administration/administrative-offices/office-of-the-president/" class="header-nav__dropdown-menu__img__link">Meet President Tania&nbsp;Tetlow</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="header-nav__bottom__item header-nav__dropdown">
+                  <a href="/about/living-the-mission/" class="header-nav__bottom__link">Mission</a>
+                  <div class="header-nav__dropdown-menu">
+                    <div class="header-nav__dropdown-menu__back-toggler">
+                      <button class="header-nav__dropdown-menu__back-toggler__button btn-back-nav" type="button" aria-label="Back">
+                        <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                          <title>Arrow left icon</title>
+
+                          <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+                        </svg>
+                        <span class="header-nav__dropdown-menu__back-toggler__label">Back</span>
+                      </button>
+                    </div>
+
+                    <div class="header-nav__dropdown-menu__lists-widget">
+                      <div class="header-nav__dropdown-menu__lists-widget--top">
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Living the Mission</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/mission-statement/" class="header-nav__dropdown-menu__link">Mission Statement</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/living-the-mission/campus-ministry/" class="header-nav__dropdown-menu__link">Campus Ministry</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/living-the-mission/center-for-community-engaged-learning/" class="header-nav__dropdown-menu__link">Center for Community Engaged Learning</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/living-the-mission/center-on-religion-and-culture/" class="header-nav__dropdown-menu__link">Center on Religion and Culture</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Teaching and Scholarship</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/living-the-mission/teaching-and-scholarship/ignatian-faculty-and-staff-development/" class="header-nav__dropdown-menu__link">Ignatian Development</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/living-the-mission/teaching-and-scholarship/jesuit-educational-philosophy/" class="header-nav__dropdown-menu__link">Jesuit Educational Philosophy</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/living-the-mission/teaching-and-scholarship/religionfordham/" class="header-nav__dropdown-menu__link">Religion@Fordham</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Jesuit and Catholic</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/living-the-mission/jesuit-and-catholic/characteristics-of-a-catholic-and-jesuit-university/" class="header-nav__dropdown-menu__link"
+                                >Characteristics of a Catholic and Jesuit University</a
+                              >
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/living-the-mission/jesuit-and-catholic/jesuits-at-fordham/" class="header-nav__dropdown-menu__link">Jesuits at Fordham</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/living-the-mission/jesuit-and-catholic/st-ignatius-founder-of-the-jesuits/" class="header-nav__dropdown-menu__link">St. Ignatius</a>
+                            </li>
+                          </ul>
+                        </ul>
+                      </div>
+
+                      <!-- Mobile Dropdown Quick Links -->
+                      <ul class="header-nav__dropdown-menu__lists-widget--bottom header-nav__bottom__inner-quick-list">
+                        <li class="header-nav__dropdown-menu__item">
+                          <span class="header-nav__dropdown-menu__link-title">Related Links</span>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Landmark-Solid.svg" alt="Fordham's History" />
+                          <a href="/about/fordhams-history/" class="header-nav__dropdown-menu__link">Fordham's History</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Books-Solid.svg" alt="Jesuit Education" />
+                          <a href="/about/living-the-mission/teaching-and-scholarship/jesuit-educational-philosophy/" class="header-nav__dropdown-menu__link">Jesuit Education</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Church-Solid.svg" alt="Campus Ministry" />
+                          <a href="/about/living-the-mission/campus-ministry/" class="header-nav__dropdown-menu__link">Campus Ministry</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Hands-Helping-Solid.svg" alt="Community Engagement" />
+                          <a href="/about/living-the-mission/center-for-community-engaged-learning/community-and-ccel/" class="header-nav__dropdown-menu__link">Community Engagement</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="header-nav__dropdown-menu__images-widget">
+                      <div class="header-nav__dropdown-menu__img"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="header-nav__bottom__item header-nav__dropdown">
+                  <a href="/academics/" class="header-nav__bottom__link">Academics</a>
+                  <div class="header-nav__dropdown-menu">
+                    <div class="header-nav__dropdown-menu__back-toggler">
+                      <button class="header-nav__dropdown-menu__back-toggler__button btn-back-nav" type="button" aria-label="Back">
+                        <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                          <title>Arrow left icon</title>
+
+                          <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+                        </svg>
+                        <span class="header-nav__dropdown-menu__back-toggler__label">Back</span>
+                      </button>
+                    </div>
+
+                    <div class="header-nav__dropdown-menu__lists-widget">
+                      <div class="header-nav__dropdown-menu__lists-widget--top">
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Undergraduate Schools</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/fordham-college-at-lincoln-center/" class="header-nav__dropdown-menu__link">Fordham College at Lincoln Center</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/fordham-college-at-rose-hill/" class="header-nav__dropdown-menu__link">Fordham College at Rose Hill</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/gabelli-school-of-business/" class="header-nav__dropdown-menu__link">Gabelli School of Business</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/school-of-professional-and-continuing-studies/" class="header-nav__dropdown-menu__link">Professional and Continuing Studies</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Graduate Schools</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/graduate-school-of-arts-and-sciences/" class="header-nav__dropdown-menu__link">Arts and Sciences</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/graduate-school-of-education/" class="header-nav__dropdown-menu__link">Education</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/gabelli-school-of-business/" class="header-nav__dropdown-menu__link">Gabelli School of Business</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/school-of-professional-and-continuing-studies/" class="header-nav__dropdown-menu__link">Professional and Continuing Studies</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/graduate-school-of-religion-and-religious-education/" class="header-nav__dropdown-menu__link">Religion and Religious Education</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/school-of-law/" class="header-nav__dropdown-menu__link">School of Law</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/graduate-school-of-social-service/" class="header-nav__dropdown-menu__link">Social Service</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Academic Opportunities</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/academics/undergraduate-education/honors-programs/" class="header-nav__dropdown-menu__link">Honors Programs</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/summer-session/" class="header-nav__dropdown-menu__link">Summer at Fordham</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/academics/student-fellowships/office-of-prestigious-fellowships/" class="header-nav__dropdown-menu__link">Student Fellowships</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/academics/new-york-city-partners/" class="header-nav__dropdown-menu__link">Partnerships and Affiliations</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Quick Links</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/resources/libraries/" class="header-nav__dropdown-menu__link">Libraries</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/academics/departments/" class="header-nav__dropdown-menu__link">Departments</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/academics/faculty/" class="header-nav__dropdown-menu__link">Faculty</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/academics/academic-resources/" class="header-nav__dropdown-menu__link">Academic Resources</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/commencement/" class="header-nav__dropdown-menu__link">Commencement</a>
+                            </li>
+                          </ul>
+                        </ul>
+                      </div>
+
+                      <!-- Mobile Dropdown Quick Links -->
+                      <ul class="header-nav__dropdown-menu__lists-widget--bottom header-nav__bottom__inner-quick-list">
+                        <li class="header-nav__dropdown-menu__item">
+                          <span class="header-nav__dropdown-menu__link-title">Related Links</span>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Calendar-Alt-Solid.svg" alt="Academic Calendar" />
+                          <a href="/resources/academic-calendars/" class="header-nav__dropdown-menu__link">Academic Calendar</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Plane-Departure-Solid.svg" alt="Study Abroad" />
+                          <a href="/study-abroad/" class="header-nav__dropdown-menu__link">Study Abroad</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Laptop-Solid.svg" alt="Online Learning" />
+                          <a href="/about/leadership-and-administration/administrative-offices/office-of-the-provost/provost-office-units/online-learning/" class="header-nav__dropdown-menu__link"
+                            >Online Learning</a
+                          >
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Books-Solid.svg" alt="Libraries" />
+                          <a href="/resources/libraries/" class="header-nav__dropdown-menu__link">Libraries</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="header-nav__dropdown-menu__images-widget">
+                      <div class="header-nav__dropdown-menu__img"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="header-nav__bottom__item header-nav__dropdown">
+                  <a href="/admissions-and-aid/" class="header-nav__bottom__link">Admissions and Aid</a>
+                  <div class="header-nav__dropdown-menu">
+                    <div class="header-nav__dropdown-menu__back-toggler">
+                      <button class="header-nav__dropdown-menu__back-toggler__button btn-back-nav" type="button" aria-label="Back">
+                        <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                          <title>Arrow left icon</title>
+
+                          <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+                        </svg>
+                        <span class="header-nav__dropdown-menu__back-toggler__label">Back</span>
+                      </button>
+                    </div>
+
+                    <div class="header-nav__dropdown-menu__lists-widget">
+                      <div class="header-nav__dropdown-menu__lists-widget--top">
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Undergraduate</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/undergraduate-admission/" class="header-nav__dropdown-menu__link">Undergraduate Admission</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/undergraduate-financial-aid/" class="header-nav__dropdown-menu__link">Undergraduate Financial Aid</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Graduate</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/admissions-and-aid/graduate-admission/" class="header-nav__dropdown-menu__link">Graduate Admission</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/graduate-financial-aid/" class="header-nav__dropdown-menu__link">Graduate Financial Aid</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Cost and Affordability</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/admissions-and-aid/costs-and-financing-options/tuition-and-fees/" class="header-nav__dropdown-menu__link">Tuition and Fees</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/admissions-and-aid/costs-and-financing-options/costs-of-attendance/" class="header-nav__dropdown-menu__link">Costs of Attendance</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/undergraduate-financial-aid/financing-your-fordham-education/net-price-calculator/" class="header-nav__dropdown-menu__link">Net Price Calculator</a>
+                            </li>
+                          </ul>
+                        </ul>
+                      </div>
+
+                      <!-- Mobile Dropdown Quick Links -->
+                      <ul class="header-nav__dropdown-menu__lists-widget--bottom header-nav__bottom__inner-quick-list">
+                        <li class="header-nav__dropdown-menu__item">
+                          <span class="header-nav__dropdown-menu__link-title">Related Links</span>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Suitcase-Solid.svg" alt="Adult / Part-time Students" />
+                          <a href="/school-of-professional-and-continuing-studies/" class="header-nav__dropdown-menu__link">Adult / Part-time Students</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Ribbon-Solid.svg" alt="Veterans" />
+                          <a href="/veterans/" class="header-nav__dropdown-menu__link">Veterans</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Globe-Americas-Solid.svg" alt="International Students" />
+                          <a href="/information-for/international-students/" class="header-nav__dropdown-menu__link">International Students</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Suitcase-Rolling-Solid.svg" alt="Transfer Students" />
+                          <a href="/undergraduate-admission/transfer-students/" class="header-nav__dropdown-menu__link">Transfer Students</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="header-nav__dropdown-menu__images-widget">
+                      <div class="header-nav__dropdown-menu__img">
+                        <img src="/media/review/site-assets/images/t4-default/Megamenu_Fordham_Ram_Mascot.jpg" alt="Virtual Tour" />
+                        <a href="https://www.youvisit.com/tour/fordham?pl=v" class="header-nav__dropdown-menu__img__link">Virtual Tour</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="header-nav__bottom__item header-nav__dropdown">
+                  <a href="/academics/research/" class="header-nav__bottom__link">Research</a>
+                  <div class="header-nav__dropdown-menu">
+                    <div class="header-nav__dropdown-menu__back-toggler">
+                      <button class="header-nav__dropdown-menu__back-toggler__button btn-back-nav" type="button" aria-label="Back">
+                        <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                          <title>Arrow left icon</title>
+
+                          <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+                        </svg>
+                        <span class="header-nav__dropdown-menu__back-toggler__label">Back</span>
+                      </button>
+                    </div>
+
+                    <div class="header-nav__dropdown-menu__lists-widget">
+                      <div class="header-nav__dropdown-menu__lists-widget--top">
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Research at Fordham</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="https://now.fordham.edu/tag/research" target="_blank" rel="noopener" class="header-nav__dropdown-menu__link">Faculty Research</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/academics/research/student-research/" class="header-nav__dropdown-menu__link">Student Research</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/academics/research/libraries-and-collections/digital-humanities-at-fordham/" class="header-nav__dropdown-menu__link">Digital Humanities</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/academics/research/libraries-and-collections/journals-published-at-fordham/" class="header-nav__dropdown-menu__link">Journals Published at Fordham</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Research Resources</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/academics/research/office-of-research/" class="header-nav__dropdown-menu__link">Office of Research</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/academics/research/office-of-sponsored-programs/" class="header-nav__dropdown-menu__link">Office of Sponsored Programs</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/academics/research/institutional-review-board/" class="header-nav__dropdown-menu__link">Institutional Review Board</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/resources/libraries/" class="header-nav__dropdown-menu__link">Libraries</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Quick Links</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/academics/centers-and-institutes/" class="header-nav__dropdown-menu__link">Centers and Institutes</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/campuses/the-louis-calder-center/research-opportunities/" class="header-nav__dropdown-menu__link">Louis Calder Center Biological Field Station</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/academics/research/office-of-research/initiatives-and-infrastructure/partnerships/" class="header-nav__dropdown-menu__link">NYC Research Partners</a>
+                            </li>
+                          </ul>
+                        </ul>
+                      </div>
+
+                      <!-- Mobile Dropdown Quick Links -->
+                      <ul class="header-nav__dropdown-menu__lists-widget--bottom header-nav__bottom__inner-quick-list">
+                        <li class="header-nav__dropdown-menu__item">
+                          <span class="header-nav__dropdown-menu__link-title">Related Links</span>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Newspaper-Solid.svg" alt="Research News" />
+                          <a href="https://now.fordham.edu/tag/research/" class="header-nav__dropdown-menu__link">Research News</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Microscope-Solid.svg" alt="Calder Center" />
+                          <a href="/about/campuses/the-louis-calder-center/research-opportunities/" class="header-nav__dropdown-menu__link">Calder Center</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/User-Tie-Solid.svg" alt="NYC Partners" />
+                          <a href="/academics/research/office-of-research/initiatives-and-infrastructure/partnerships/" class="header-nav__dropdown-menu__link">NYC Partners</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Books-Solid.svg" alt="Libraries" />
+                          <a href="/resources/libraries/" class="header-nav__dropdown-menu__link">Libraries</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="header-nav__dropdown-menu__images-widget">
+                      <div class="header-nav__dropdown-menu__img"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="header-nav__bottom__item header-nav__dropdown">
+                  <a href="/student-life/" class="header-nav__bottom__link">Student Life</a>
+                  <div class="header-nav__dropdown-menu">
+                    <div class="header-nav__dropdown-menu__back-toggler">
+                      <button class="header-nav__dropdown-menu__back-toggler__button btn-back-nav" type="button" aria-label="Back">
+                        <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                          <title>Arrow left icon</title>
+
+                          <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+                        </svg>
+                        <span class="header-nav__dropdown-menu__back-toggler__label">Back</span>
+                      </button>
+                    </div>
+
+                    <div class="header-nav__dropdown-menu__lists-widget">
+                      <div class="header-nav__dropdown-menu__lists-widget--top">
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Campus Culture</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/student-life/living-on-campus/" class="header-nav__dropdown-menu__link">Living on Campus</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="https://fordham.campusdish.com/" target="_blank" class="header-nav__dropdown-menu__link">Dining and Ram Hospitality</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/student-life/safety-health-and-wellness/" class="header-nav__dropdown-menu__link">Safety, Health, and Wellness</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/student-life/multicultural-affairs/" class="header-nav__dropdown-menu__link">Multicultural Affairs</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/student-life/safety-health-and-wellness/public-safety/" class="header-nav__dropdown-menu__link">Public Safety</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Services</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/student-life/commuter-student-services/" class="header-nav__dropdown-menu__link">Commuter Services</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/student-life/disability-services/" class="header-nav__dropdown-menu__link">Disability Services</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/resources/career-resources/" class="header-nav__dropdown-menu__link">Career Resources</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/student-life/department-of-transportation/" class="header-nav__dropdown-menu__link">Transportation</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Get Involved</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/student-life/events-and-activities/" class="header-nav__dropdown-menu__link">Events and Activities</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/student-life/student-involvement/" class="header-nav__dropdown-menu__link">Student Involvement</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/student-life/student-organizations/" class="header-nav__dropdown-menu__link">Student Organizations</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Quicklinks</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/student-life/deans-of-students-and-student-life/student-handbook/" class="header-nav__dropdown-menu__link">Student Handbook</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/student-life/bookstore/" class="header-nav__dropdown-menu__link">Bookstore</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/student-life/deans-of-students-and-student-life/" class="header-nav__dropdown-menu__link">Deans of Students and Student Life</a>
+                            </li>
+                          </ul>
+                        </ul>
+                      </div>
+
+                      <!-- Mobile Dropdown Quick Links -->
+                      <ul class="header-nav__dropdown-menu__lists-widget--bottom header-nav__bottom__inner-quick-list">
+                        <li class="header-nav__dropdown-menu__item">
+                          <span class="header-nav__dropdown-menu__link-title">Related Links</span>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Book-Solid.svg" alt="Bookstore" />
+                          <a href="/student-life/bookstore/" class="header-nav__dropdown-menu__link">Bookstore</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Subway-Solid.svg" alt="Commuter Services" />
+                          <a href="/student-life/commuter-student-services/" class="header-nav__dropdown-menu__link">Commuter Services</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Building-Solid.svg" alt="Residential Life" />
+                          <a href="/student-life/living-on-campus/" class="header-nav__dropdown-menu__link">Residential Life</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Utensils-Solid.svg" alt="Dining" />
+                          <a href="https://fordham.campusdish.com/" class="header-nav__dropdown-menu__link">Dining</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="header-nav__dropdown-menu__images-widget">
+                      <div class="header-nav__dropdown-menu__img">
+                        <img src="/media/review/site-assets/images/t4-default/Megamenu_Fordham_Ram_Mascot.jpg" alt="Student Handbook" />
+                        <a href="/student-life/deans-of-students-and-student-life/student-handbook/" class="header-nav__dropdown-menu__img__link">Student Handbook</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="header-nav__bottom__item header-nav__dropdown">
+                  <a href="/resources/" class="header-nav__bottom__link">Resources</a>
+                  <div class="header-nav__dropdown-menu">
+                    <div class="header-nav__dropdown-menu__back-toggler">
+                      <button class="header-nav__dropdown-menu__back-toggler__button btn-back-nav" type="button" aria-label="Back">
+                        <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                          <title>Arrow left icon</title>
+
+                          <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+                        </svg>
+                        <span class="header-nav__dropdown-menu__back-toggler__label">Back</span>
+                      </button>
+                    </div>
+
+                    <div class="header-nav__dropdown-menu__lists-widget">
+                      <div class="header-nav__dropdown-menu__lists-widget--top">
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Resources</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/resources/libraries/" class="header-nav__dropdown-menu__link">Libraries</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/information-technology/" class="header-nav__dropdown-menu__link">Information Technology</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/human-resources/" class="header-nav__dropdown-menu__link">Human Resources</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/about/leadership-and-administration/administrative-offices/" class="header-nav__dropdown-menu__link">Administrative Offices</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title"><span class="column-title-hidden">Hidden</span></span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/student-life/safety-health-and-wellness/public-safety/" class="header-nav__dropdown-menu__link">Public Safety</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/wfuv/" class="header-nav__dropdown-menu__link">WFUV</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="https://www.fordhampress.com/" target="_blank" rel="noopener" class="header-nav__dropdown-menu__link">Fordham University Press</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="https://www.library.fordham.edu/digital/collection/Hist?" class="header-nav__dropdown-menu__link">Fordham Antiquities Museum</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title"><span class="column-title-hidden">Hidden</span></span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="https://my.fordham.edu/" class="header-nav__dropdown-menu__link">Log In</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="https://news.fordham.edu/" target="_blank" rel="noopener" class="header-nav__dropdown-menu__link">Fordham News</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/resources/policies/" class="header-nav__dropdown-menu__link">Policies</a>
+                            </li>
+                          </ul>
+                        </ul>
+                      </div>
+
+                      <!-- Mobile Dropdown Quick Links -->
+                      <ul class="header-nav__dropdown-menu__lists-widget--bottom header-nav__bottom__inner-quick-list">
+                        <li class="header-nav__dropdown-menu__item">
+                          <span class="header-nav__dropdown-menu__link-title">Related Links</span>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Calendar-Alt-Solid.svg" alt="Academic Calendar" />
+                          <a href="/resources/academic-calendars/" class="header-nav__dropdown-menu__link">Academic Calendar</a>
+                        </li>
+
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/User-Group-Solid.svg" alt="Jobs at Fordham" />
+                          <a href="/human-resources/career-opportunities/" class="header-nav__dropdown-menu__link">Jobs at Fordham</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="header-nav__dropdown-menu__images-widget">
+                      <div class="header-nav__dropdown-menu__img"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="header-nav__bottom__item header-nav__dropdown">
+                  <a href="/athletics/" class="header-nav__bottom__link">Athletics</a>
+                  <div class="header-nav__dropdown-menu">
+                    <div class="header-nav__dropdown-menu__back-toggler">
+                      <button class="header-nav__dropdown-menu__back-toggler__button btn-back-nav" type="button" aria-label="Back">
+                        <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                          <title>Arrow left icon</title>
+
+                          <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+                        </svg>
+                        <span class="header-nav__dropdown-menu__back-toggler__label">Back</span>
+                      </button>
+                    </div>
+
+                    <div class="header-nav__dropdown-menu__lists-widget">
+                      <div class="header-nav__dropdown-menu__lists-widget--top">
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title">Athletics</span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="https://fordhamsports.com/" target="_blank" class="header-nav__dropdown-menu__link">Varsity Sports</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/athletics/club-sports/" class="header-nav__dropdown-menu__link">Club Sports</a>
+                            </li>
+                          </ul>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <span class="header-nav__dropdown-menu__link-title"><span class="column-title-hidden">Hidden</span></span>
+                          </li>
+                          <ul>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/athletics/intramurals/" class="header-nav__dropdown-menu__link">Intramurals</a>
+                            </li>
+                            <li class="header-nav__dropdown-menu__item">
+                              <a href="/student-life/safety-health-and-wellness/fitness-and-recreation/fitness-and-recreation-centers/" class="header-nav__dropdown-menu__link">Athletics Facilities</a>
+                            </li>
+                          </ul>
+                        </ul>
+                      </div>
+
+                      <!-- Mobile Dropdown Quick Links -->
+                      <ul class="header-nav__dropdown-menu__lists-widget--bottom header-nav__bottom__inner-quick-list">
+                        <li class="header-nav__dropdown-menu__item">
+                          <span class="header-nav__dropdown-menu__link-title">Related Links</span>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Ticket-Alt-Solid.svg" alt="Tickets" />
+                          <a href="https://fordhamsports.com/sports/2015/10/24/TicketCentral.aspx?path=tickets" class="header-nav__dropdown-menu__link">Tickets</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Box-Heart-Solid.svg" alt="Maroon Club" />
+                          <a href="https://forever.fordham.edu/s/1362/18/interior.aspx?sid=1362&amp;gid=1&amp;pgid=651" class="header-nav__dropdown-menu__link">Maroon Club</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Flag-Pennant-Solid.svg" alt="Varsity Sports" />
+                          <a href="https://fordhamsports.com/" class="header-nav__dropdown-menu__link">Varsity Sports</a>
+                        </li>
+                        <li class="header-nav__dropdown-menu__item">
+                          <img src="/media/home/commonly-used-images/icons/Person-Biking-Solid.svg" alt="Fitness and Recreation" />
+                          <a href="/student-life/safety-health-and-wellness/fitness-and-recreation/" class="header-nav__dropdown-menu__link">Fitness and Recreation</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="header-nav__dropdown-menu__images-widget">
+                      <div class="header-nav__dropdown-menu__img">
+                        <img src="/media/home/commonly-used-images/Students-Cheering-at-Football-Game.jpg" alt="Tickets" />
+                        <a href="https://fordhamsports.com/sports/2022/1/5/ticket-central-2.aspx" class="header-nav__dropdown-menu__img__link">Tickets</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <!-- Mobile Quick Links -->
+              <div class="header-nav__bottom__outer-quick-list info-for-mobile">
+                <ul class="header-nav__bottom__outer-quick-list--secondary header-nav__bottom__list">
+                  <li class="header-nav__bottom__my-pages-mobile header-nav__bottom__item header-nav__dropdown">
+                    <a href="#" class="header-nav__bottom__link">Information for</a>
+                    <div class="header-nav__dropdown-menu">
+                      <div class="header-nav__dropdown-menu__back-toggler">
+                        <button class="header-nav__dropdown-menu__back-toggler__button btn-back-nav" type="button" aria-label="Back">
+                          <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                            <title>Arrow left icon</title>
+
+                            <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+                          </svg>
+                          <span class="header-nav__dropdown-menu__back-toggler__label">Back</span>
+                        </button>
+                      </div>
+                      <div class="header-nav__dropdown-menu__lists-widget">
+                        <div class="header-nav__dropdown-menu__lists-widget--top">
+                          <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                            <ul class="header-nav-top-dropdown information-for__dropdown">
+                              <li class="header-nav__dropdown-menu__item">
+                                <a href="/information-for/information-for-current-students/" class="header-nav__dropdown-menu__link">Current Students</a>
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a href="/information-for/info-for-faculty-and-staff/" class="header-nav__dropdown-menu__link">Faculty and Staff</a>
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a href="/families/" class="header-nav__dropdown-menu__link">Families</a>
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a href="https://forever.fordham.edu/s/1362/18/home.aspx" target="_blank" class="header-nav__dropdown-menu__link">Alumni</a>
+                              </li>
+                            </ul>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="header-nav__bottom__item">
+                    <a href="/academics/degrees-and-programs/" class="header-nav__bottom__link">Find a Degree</a>
+                  </li>
+                  <li class="header-nav__bottom__item">
+                    <a href="https://411.fordham.edu/" class="header-nav__bottom__link">Find People</a>
+                  </li>
+                  <li class="header-nav__bottom__item">
+                    <a href="/undergraduate-admission/apply/" class="header-nav__bottom__link">Apply</a>
+                  </li>
+                  <li class="header-nav__bottom__item">
+                    <a href="/undergraduate-admission/visit/" class="header-nav__bottom__link">Visit</a>
+                  </li>
+                  <li class="header-nav__bottom__item">
+                    <a href="https://give.fordham.edu/campaigns/28164/donations/new?a=5516916" target="_blank" class="header-nav__bottom__link">Give</a>
+                  </li>
+                  <li class="header-nav__bottom__item">
+                    <a href="https://now.fordham.edu/" class="header-nav__bottom__link">News</a>
+                  </li>
+                </ul>
+
+                <ul class="header-nav__bottom__outer-quick-list--primary log-in-out-btn log-in-out--btn">
+                  <li class="header-nav__bottom__item">
+                    <!--<a href="https://myapps.web.fordham.edu/portaloutage/">Log in</a>-->
+                    <a href="https://www.fordham.edu/login/?r=https%3A%2F%2Fwww.fordham.edu%2Fmy-pages%2F" class="header-nav__bottom__link btn-primary">Log in</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="header-nav__bottom__search-toggler">
+              <button class="header-nav__bottom__search-toggler__button btn-open-search" type="button" aria-label="Open search bar">
+                <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                  <title>Search icon</title>
+
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                  ></path>
+                </svg>
+                <span class="header-nav__bottom__search-toggler__label">Search</span>
+              </button>
+            </div>
+
+            <div class="header-nav__bottom__nav-toggler">
+              <button class="header-nav__bottom__nav-toggler__button btn-open-nav" type="button" aria-label="Open mobile navigation">
+                <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                  <title>Menu icon</title>
+
+                  <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div id="site-search" class="site-search">
+            <div class="site-search__container">
+              <form action="https://www.fordham.edu/_search/s/search.html" method="get" class="site-search__form" id="global-search">
+                <div class="search-form-container">
+                  <label for="site-search-input" class="sr-only">Search the site</label>
+                  <input type="text" id="site-search-input" size="18" maxlength="40" name="query" class="search-form-container__input-search" placeholder="Enter Keywords" aria-live="polite" />
+                  <input type="hidden" name="collection" value="fordham-meta" />
+                  <button class="search-form-container__button search-form-container__button--search btn-submit-search" type="submit" aria-label="Submit search">
+                    <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                      <title>Search icon</title>
+
+                      <path
+                        d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                      ></path>
+                    </svg>
+                  </button>
+
+                  <button class="search-form-container__button search-form-container__button--close btn-close-search" type="button" aria-label="Close site search">
+                    <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                      <title>Close icon</title>
+
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="header-placeholder" style="height: 109.758px"></div>
+    <!-- HEADER END -->
+    <aside class="site-wide-notice" aria-live="assertive" aria-label="Notice" aria-atomic="true"></aside>
+
+    <!-- MAIN -->
+    <main class="fullwidth" id="main-content">
+      <!-- START CONTENT TYPE - Featured Item Banner -->
+      <section class="carousel-header">
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="img-container">
+              <div class="carousel-arrow prev" tabindex="0" style="display: none">‹<span class="sr-only">Previous slide</span></div>
+              <div class="carousel-arrow next" tabindex="0" style="display: none">›<span class="sr-only">Next slide</span></div>
+              <div class="content">
+                <a class="homepage_hero_carousel_link" href="https://www.fordham.edu/commencement/" alt="All the Commencement Details Link">
+                  <div class="content-wrapper">
+                    <div class="overlay"></div>
+                    <!-- <span class="featured-item-banner__block__inner__label category"></span> -->
+                    <h2 class="title">Fordham’s 180th Commencement is Saturday, May 17</h2>
+                    <!-- <p class="description"></p> -->
+                    <span class="btn btn-primary button-text">All the Commencement Details</span>
+                  </div>
+                </a>
+              </div>
+              <div class="slide-container">
+                <div
+                  class="slide"
+                  data-category=""
+                  data-title="Fordham’s 180th Commencement is Saturday, May 17"
+                  data-button-text="All the Commencement Details"
+                  data-button-link="https://www.fordham.edu/commencement/"
+                >
+                  <picture>
+                    <source
+                      srcset="
+                        https://pxl-fordhamedu.terminalfour.net/fit-in/600x400/filters:quality(75)/prod01/channel_2/media/home/admin-use-only/university-news/news-banner-for-homepage/main-story/commencement-ep.jpg
+                      "
+                      media="(max-width: 600px)"
+                    />
+                    <source
+                      srcset="
+                        https://pxl-fordhamedu.terminalfour.net/fit-in/1500x1000/prod01/channel_2/media/home/admin-use-only/university-news/news-banner-for-homepage/main-story/commencement-ep.jpg
+                      "
+                      media="(min-width: 601px)"
+                    />
+                    <img
+                      src="https://pxl-fordhamedu.terminalfour.net/fit-in/1500x1000/prod01/channel_2/media/home/admin-use-only/university-news/news-banner-for-homepage/main-story/commencement-ep.jpg"
+                      alt="Commencement Ceremony on Edward's Parade at Rose Hill"
+                      loading="eager"
+                    />
+                  </picture>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 cta-container">
+            <a class="btn btn-primary" href="/academics/degrees-and-programs/">
+              <div class="cta-one button-wrapper">
+                <div class="cta-icon">
+                  <img
+                    src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/admin-use-only/homepage/Fordham-Landing-Page-Icons_Programs.svg"
+                    alt="Icon of a stack of text books"
+                    style=""
+                  />
+                </div>
+                <div class="cta-text">
+                  <p>Explore Our Programs</p>
+                </div>
+              </div>
+            </a>
+
+            <a class="btn btn-primary" href="/about/visit-fordham-university/">
+              <div class="cta-two button-wrapper">
+                <div class="cta-icon">
+                  <img
+                    src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/admin-use-only/homepage/Fordham-Landing-Page-Icons_Plan_Visit.svg"
+                    alt="Icon of a calendar with a eye glass zoomed onto a date"
+                    style=""
+                  />
+                </div>
+                <div class="cta-text">
+                  <p>Plan Your Visit</p>
+                </div>
+              </div>
+            </a>
+
+            <a class="btn btn-primary" href="/academics/undergraduate-education/fordham-internship-promise/">
+              <div class="cta-three button-wrapper">
+                <div class="cta-icon">
+                  <img
+                    src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/admin-use-only/homepage/Fordham-Landing-Page-Icons_Internship.svg"
+                    alt="Icon of a document with an approval checkmark"
+                    style=""
+                  />
+                </div>
+                <div class="cta-text">
+                  <p>Internship Promise</p>
+                </div>
+              </div>
+            </a>
+
+            <a class="btn btn-primary" href="/fordham-bound/">
+              <div class="cta-four button-wrapper">
+                <div class="cta-icon">
+                  <img src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/admin-use-only/homepage/Fordham-Landing-Page-Icons_Plan_Welcome.png" alt="Open Door icon" style="" />
+                </div>
+                <div class="cta-text">
+                  <p>Are You Fordham Bound?</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="featured-stories sm-margin-divider">
+        <div class="featured-stories-container row">
+          <div class="carousel-arrows">
+            <div class="carousel-arrow prev" style="visibility: hidden">‹<span class="sr-only">Previous slide</span></div>
+            <div class="carousel-arrow next" style="visibility: visible">›<span class="sr-only">Next slide</span></div>
+          </div>
+
+          <div class="slide-container">
+            <div class="col-lg-4 slide">
+              <div class="slide-inner">
+                <img src="https://pxl-fordhamedu.terminalfour.net/fit-in/1000x667/prod01/channel_2/media/home/admin-use-only/brand-stories/AbybpKOM-1280X720.jpg" alt="" loading="lazy" />
+                <p class="featured-item-banner__block__inner__label category"><span>Commencement</span></p>
+                <h3>
+                  <a class="homepage_news_carousel_link" href="https://now.fordham.edu/commencement/faqs-fordham-commencement-2025/"> FAQs | Fordham Commencement 2025 </a>
+                </h3>
+
+                <div class="fordham-logo">
+                  <img src="https://pxl-fordhamedu.terminalfour.net/fit-in/1000x667/prod01/channel_2/media/home/commonly-used-images/logos/fordham-now-label-v2.jpg" alt="Fordham Now" loading="lazy" />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 slide">
+              <div class="slide-inner">
+                <img
+                  src="https://pxl-fordhamedu.terminalfour.net/fit-in/1000x667/prod01/channel_2/media/home/admin-use-only/university-news/news-banner-for-homepage/main-story/esbannouncement-25.jpg"
+                  alt="Empire State Building lit maroon."
+                  loading="lazy"
+                />
+                <p class="featured-item-banner__block__inner__label category"><span>Commencement</span></p>
+                <h3>
+                  <a class="homepage_news_carousel_link" href="https://now.fordham.edu/commencement/empire-state-building-to-shine-maroon-for-fordham-class-of-2025/">
+                    Empire State Building to Shine Maroon for Class of 2025
+                  </a>
+                </h3>
+
+                <div class="fordham-logo">
+                  <img src="https://pxl-fordhamedu.terminalfour.net/fit-in/1000x667/prod01/channel_2/media/home/commonly-used-images/logos/fordham-now-label-v2.jpg" alt="Fordham Now" loading="lazy" />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 slide">
+              <div class="slide-inner">
+                <img
+                  src="https://pxl-fordhamedu.terminalfour.net/fit-in/1000x667/prod01/channel_2/media/home/admin-use-only/brand-stories/Petalcorin-1280.jpg"
+                  alt="Jade Catherine Petalcorin"
+                  loading="lazy"
+                />
+                <p class="featured-item-banner__block__inner__label category"><span>Commencement</span></p>
+                <h3>
+                  <a class="homepage_news_carousel_link" href="/fordham-stories/class-of-2025/"> Meet the Class of 2025 </a>
+                </h3>
+
+                <div class="fordham-logo">
+                  <img
+                    src="https://pxl-fordhamedu.terminalfour.net/fit-in/1000x667/prod01/channel_2/media/home/commonly-used-images/logos/fordham-stories-label-v2.jpg"
+                    alt="A brand logo for Fordham Stories"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 slide">
+              <div class="slide-inner">
+                <img
+                  src="https://pxl-fordhamedu.terminalfour.net/fit-in/1000x667/prod01/channel_2/media/home/admin-use-only/brand-stories/finalbythenumbers.jpg"
+                  alt="A group of graduates smiling at Rose Hill"
+                  loading="lazy"
+                />
+                <p class="featured-item-banner__block__inner__label category"><span>Commencement</span></p>
+                <h3>
+                  <a class="homepage_news_carousel_link" href="https://now.fordham.edu/commencement/class-of-2025-by-the-numbers/"> Class of 2025 By the Numbers </a>
+                </h3>
+
+                <div class="fordham-logo">
+                  <img src="https://pxl-fordhamedu.terminalfour.net/fit-in/1000x667/prod01/channel_2/media/home/commonly-used-images/logos/fordham-now-label-v2.jpg" alt="Fordham Now" loading="lazy" />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 slide">
+              <div class="slide-inner">
+                <img
+                  src="https://pxl-fordhamedu.terminalfour.net/fit-in/1000x667/prod01/channel_2/media/home/admin-use-only/brand-stories/Ramses-Reveal-main-photo.jpg"
+                  alt="Abby Hartlieb poses in graduation portrait with Ramses"
+                  loading="lazy"
+                />
+                <p class="featured-item-banner__block__inner__label category"><span>Commencement</span></p>
+                <h3>
+                  <a class="homepage_news_carousel_link" href="/fordham-stories/campus-and-city-life/ramses-exit-interview-saying-goodbye-to-playing-fordhams-beloved-mascot/">
+                    Ramses’ Exit Interview: Saying Goodbye to Playing Fordham’s Beloved Mascot
+                  </a>
+                </h3>
+
+                <div class="fordham-logo">
+                  <img
+                    src="https://pxl-fordhamedu.terminalfour.net/fit-in/1000x667/prod01/channel_2/media/home/commonly-used-images/logos/fordham-stories-label-v2.jpg"
+                    alt="A brand logo for Fordham Stories"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 slide">
+              <div class="slide-inner">
+                <img
+                  src="https://pxl-fordhamedu.terminalfour.net/fit-in/1000x667/prod01/channel_2/media/home/admin-use-only/university-news/news-banner-for-homepage/side-stories/keating1280.jpg"
+                  alt="4 women in caps and gowns, smiling holding hands on Edwards parade. Keating Hall in background."
+                  loading="lazy"
+                />
+                <p class="featured-item-banner__block__inner__label category"><span>Commencement</span></p>
+                <h3>
+                  <a class="homepage_news_carousel_link" href="https://now.fordham.edu/commencement/12-picture-perfect-spots-for-fordham-graduation-photos/">
+                    12 Picture-Perfect Spots for Fordham Graduation Photos
+                  </a>
+                </h3>
+
+                <div class="fordham-logo">
+                  <img src="https://pxl-fordhamedu.terminalfour.net/fit-in/1000x667/prod01/channel_2/media/home/commonly-used-images/logos/fordham-now-label-v2.jpg" alt="Fordham Now" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="video-embed-background sm-margin-divider">
+        <div class="video-embed-background-wrapper" style="background: url('https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/admin-use-only/homepage_sample_bg2.jpg')">
+          <div class="title">
+            <h2><span>Of New York City</span>, For&nbsp;the&nbsp;World</h2>
+          </div>
+
+          <div class="content">
+            <p style="text-align: center">
+              As the Jesuit University of New York, we question assumptions, dig deeper, and rise to the challenges of our times. At Fordham, we're a tight-knit community in New York City, and we
+              value and educate the whole person. We connect the people and communities who shape a more hopeful world.
+            </p>
+          </div>
+
+          <div class="video-embed video-content__video video-content__video--youtube">
+            <iframe
+              title="This is Fordham University"
+              src="https://www.youtube.com/embed/LfWE_OvViu4?si=3CKdMW-EUtEE8BaR&amp;enablejsapi=1&amp;origin=https:%2F%2Fwww.fordham.edu"
+              width="560"
+              frameborder="0"
+              allowfullscreen=""
+              id="widget2"
+              data-gtm-yt-inspected-67="true"
+            ></iframe>
+          </div>
+
+          <a href="/undergraduate-admission/new-york-is-my-campus/" class="link btn btn-primary"> About Fordham's New York </a>
+        </div>
+      </section>
+      <section class="general-content md-margin-divider-top">
+        <span id="d.en.174451"></span>
+        <div class="general-content__block">
+          <h2 class="h2-font" style="text-align: center"><span style="color: #900028">Fordham</span> By&nbsp;The&nbsp;Numbers</h2>
+        </div>
+      </section>
+      <div class="statistics-blocks sm-margin-divider-bottom">
+        <div class="statistics-blocks__block bg-primary">
+          <div class="statistics-blocks__block__inner">
+            <span class="statistics-blocks__block__number">17K</span>
+            <span class="statistics-blocks__block__title">students</span>
+            <span class="statistics-blocks__block__caption"></span>
+          </div>
+        </div>
+
+        <div class="statistics-blocks__block bg-secondary-grey-10">
+          <div class="statistics-blocks__block__inner">
+            <span class="statistics-blocks__block__number">18%</span>
+            <span class="statistics-blocks__block__title">first-generation college students</span>
+            <span class="statistics-blocks__block__caption"></span>
+          </div>
+        </div>
+
+        <div class="statistics-blocks__block bg-rams-maroon">
+          <div class="statistics-blocks__block__inner">
+            <span class="statistics-blocks__block__number">200k</span>
+            <span class="statistics-blocks__block__title">alumni around the world</span>
+            <span class="statistics-blocks__block__caption"></span>
+          </div>
+        </div>
+
+        <div class="statistics-blocks__block bg-secondary-grey-10">
+          <div class="statistics-blocks__block__inner">
+            <span class="statistics-blocks__block__number">14:1</span>
+            <span class="statistics-blocks__block__title">undergraduate student-to-teacher ratio</span>
+            <span class="statistics-blocks__block__caption"></span>
+          </div>
+        </div>
+      </div>
+      <section class="general-content sm-margin-divider">
+        <span id="d.en.174453"></span>
+        <div class="general-content__block">
+          <p style="text-align: center"><a href="/about/fordham-facts/" class="btn-primary">View More Fordham Facts</a></p>
+        </div>
+      </section>
+      <div style="background: #e7ebe7; padding: 10px 0px">
+        <section class="general-content sm-margin-divider side-divider">
+          <span id="d.en.174454"></span>
+          <div class="general-content__block">
+            <h2 class="h2-font" style="text-align: center"><span style="color: #900028">Fordham&nbsp;in&nbsp;NYC</span> and&nbsp;Beyond</h2>
+            <p style="text-align: center">
+              <span class="body-lead-font"
+                >Fordham students can study on our 85-acre Rose Hill campus in the Bronx or in the heart of Manhattan at our Lincoln Center campus. Outside of the city, Fordham London, the Calder
+                Center, and Westchester campus offer opportunities for study abroad, research, and professional studies. If you are not able to make it to campus, take advantage of our online
+                degrees.</span
+              >
+            </p>
+          </div>
+        </section>
+        <section class="two-by-two single-three-box sm-margin-divider-top side-divider">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="content-container" tabindex="0">
+                <div class="overlay"></div>
+                <!-- Image Selection -->
+                <img
+                  src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/admin-use-only/homepage/RH_student_running_1.webp"
+                  loading="lazy"
+                  alt="Student running in front of Keating Hall on Rose Hill Campus"
+                />
+
+                <!-- Title  Text -->
+                <div class="title">
+                  <!-- Title Icon -->
+                  <img
+                    src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/commonly-used-images/icons/Fordham-Campus-Icon-RH-W.png"
+                    alt="Rose Hill Campus Icon - Keating Hall"
+                    style=""
+                  />
+
+                  <!-- Title -->
+                  <h2 class="title-header text-heavy">Rose Hill</h2>
+
+                  <!-- Title Description -->
+                  <p class="title-desc">The Bronx, New York City</p>
+                </div>
+
+                <div class="content">
+                  <!-- Content Text -->
+                  <div class="content-text">
+                    <p>Our Rose Hill campus, in the north Bronx, is as idyllic as college campuses get: 85 acres featuring Gothic architecture and tree-lined walkways.</p>
+
+                    <!-- Button Link -->
+                    <a href="/about/campuses/rose-hill-campus/" class="btn btn-primary info-box-button"> Explore Rose Hill </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="content-container" tabindex="0">
+                <div class="overlay"></div>
+                <!-- Image Selection -->
+                <img
+                  src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/admin-use-only/homepage/LC-Ram-8_1.webp"
+                  loading="lazy"
+                  alt="Fordham Ram status on the Lincoln Center campus"
+                />
+
+                <!-- Title  Text -->
+                <div class="title">
+                  <!-- Title Icon -->
+                  <img
+                    src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/commonly-used-images/icons/Fordham-Campus-Icon-LC-W.png"
+                    alt="Lincoln Center Campus Icon - Law School Building"
+                    style=""
+                  />
+
+                  <!-- Title -->
+                  <h2 class="title-header text-heavy">Lincoln Center</h2>
+
+                  <!-- Title Description -->
+                  <p class="title-desc">Manhattan, New York City</p>
+                </div>
+
+                <div class="content">
+                  <!-- Content Text -->
+                  <div class="content-text">
+                    <p>Our Lincoln Center campus, in Midtown Manhattan, allows you to take full advantage of both the city that surrounds us and our welcoming campus.</p>
+
+                    <!-- Button Link -->
+                    <a href="/about/campuses/lincoln-center-campus/" class="btn btn-primary info-box-button"> Explore Lincoln Center </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="content-container" tabindex="0">
+                <div class="overlay"></div>
+                <!-- Image Selection -->
+                <img
+                  src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/commonly-used-images/campus-beauty/Fordham-Westchester-Banners-for-the-School-of-Professional-and-Continuing-Studies.jpg"
+                  loading="lazy"
+                  alt="Fordham Westchester Banners for the School of Professional and Continuing Studies."
+                />
+
+                <!-- Title  Text -->
+                <div class="title">
+                  <!-- Title Icon -->
+                  <img
+                    src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/commonly-used-images/icons/Fordham-Campus-Icon-W-W.png"
+                    alt="Westchester Campus Icon - Harrison"
+                    style=""
+                  />
+
+                  <!-- Title -->
+                  <h2 class="title-header text-heavy">Westchester</h2>
+
+                  <!-- Title Description -->
+                  <p class="title-desc">West Harrison, New York</p>
+                </div>
+
+                <div class="content">
+                  <!-- Content Text -->
+                  <div class="content-text">
+                    <p>Our Westchester campus is located in a three-story, state-of-the-art building on 32 landscaped acres in West Harrison, NY.</p>
+
+                    <!-- Button Link -->
+                    <a href="/about/campuses/westchester-campus/" class="btn btn-primary info-box-button"> Explore Westchester </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="two-by-two single-three-box no-margin-divider side-divider">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="content-container" tabindex="0">
+                <div class="overlay"></div>
+                <!-- Image Selection -->
+                <img
+                  src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/review/content-assets/migrated/images/Lodge_from_north_side_of_lake_1865_x_865.jpg"
+                  loading="lazy"
+                  alt="Louis Calder Center Lodge from North Side of the Lake"
+                />
+
+                <!-- Title  Text -->
+                <div class="title">
+                  <!-- Title Icon -->
+                  <img src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/admin-use-only/homepage/fordham_icons_calder.png" alt="Calder Center campus building icon" style="" />
+
+                  <!-- Title -->
+                  <h2 class="title-header text-heavy">Louis Calder Center</h2>
+
+                  <!-- Title Description -->
+                  <p class="title-desc">Armonk, New York</p>
+                </div>
+
+                <div class="content">
+                  <!-- Content Text -->
+                  <div class="content-text">
+                    <p>Fordham's biological field station comprises 113 forested acres with a variety of ecosystems and communities available for study.</p>
+
+                    <!-- Button Link -->
+                    <a href="/about/campuses/the-louis-calder-center/" class="btn btn-primary info-box-button"> Explore Calder Center </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="content-container" tabindex="0">
+                <div class="overlay"></div>
+                <!-- Image Selection -->
+                <img
+                  src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/admin-use-only/homepage/FordhamLondon_bus_street.jpg"
+                  loading="lazy"
+                  alt="Fordham London with double-decker bus passing in the street"
+                />
+
+                <!-- Title  Text -->
+                <div class="title">
+                  <!-- Title Icon -->
+                  <img src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/admin-use-only/homepage/fordham_icons_london.png" alt="Fordham London campus building icon" style="" />
+
+                  <!-- Title -->
+                  <h2 class="title-header text-heavy">London</h2>
+
+                  <!-- Title Description -->
+                  <p class="title-desc">Clerkenwell, London, UK</p>
+                </div>
+
+                <div class="content">
+                  <!-- Content Text -->
+                  <div class="content-text">
+                    <p>Fordham London is home to academic programs in business and the liberal arts, along with a robust internship program.</p>
+
+                    <!-- Button Link -->
+                    <a href="/study-abroad/programs/fordham-in-london/" class="btn btn-primary info-box-button"> Explore London </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="content-container" tabindex="0">
+                <div class="overlay"></div>
+                <!-- Image Selection -->
+                <img
+                  src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/commonly-used-images/admission-advice/pexels-mikhail-nilov-8296981.jpg"
+                  loading="lazy"
+                  alt="Finances and affordability"
+                />
+
+                <!-- Title  Text -->
+                <div class="title">
+                  <!-- Title Icon -->
+                  <img src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/commonly-used-images/icons/globe-pointer-sharp-light.svg" alt="Globe Icon with Pointer" style="" />
+
+                  <!-- Title -->
+                  <h2 class="title-header text-heavy">Online</h2>
+
+                  <!-- Title Description -->
+                  <p class="title-desc">Global Access</p>
+                </div>
+
+                <div class="content">
+                  <!-- Content Text -->
+                  <div class="content-text">
+                    <p>Fordham provides high-quality online and hybrid programs that allow students to earn credits, certificates and degrees.</p>
+
+                    <!-- Button Link -->
+                    <a href="/about/campuses/online-campus/" class="btn btn-primary info-box-button"> View Online Offerings </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="general-content sm-margin-divider side-divider">
+          <span id="d.en.174457"></span>
+          <div class="general-content__block">
+            <p style="text-align: center"><a href="/about/campuses/" class="btn-primary">View All Fordham Locations</a></p>
+          </div>
+        </section>
+      </div>
+      <section class="banner-img-txt sm-margin-divider side-divider">
+        <div class="row">
+          <div class="banner-img-txt__col col-lg-7">
+            <div class="banner-img-txt__img">
+              <img
+                srcset="
+                  https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/commonly-used-images/campus-beauty/KGamble-20141027-0776.jpg,
+                  https://pxl-fordhamedu.terminalfour.net/fit-in/750x500/prod01/channel_2/media/home/commonly-used-images/campus-beauty/KGamble-20141027-0776.jpg   0.5x,
+                  https://pxl-fordhamedu.terminalfour.net/fit-in/1000x667/prod01/channel_2/media/home/commonly-used-images/campus-beauty/KGamble-20141027-0776.jpg  1x,
+                  https://pxl-fordhamedu.terminalfour.net/fit-in/1500x1000/prod01/channel_2/media/home/commonly-used-images/campus-beauty/KGamble-20141027-0776.jpg 1.5x,
+                  https://pxl-fordhamedu.terminalfour.net/fit-in/2000x1333/prod01/channel_2/media/home/commonly-used-images/campus-beauty/KGamble-20141027-0776.jpg 2x
+                "
+                src="https://pxl-fordhamedu.terminalfour.net/prod01/channel_2/media/home/commonly-used-images/campus-beauty/KGamble-20141027-0776.jpg"
+                alt="Fordham banner on a lightpole on the Rose Hill Campus"
+              />
+            </div>
+          </div>
+
+          <div class="banner-img-txt__col col-lg-5">
+            <div class="banner-img-txt__block">
+              <h2 class="banner-img-txt__block__title">
+                <span>Evolving Political Landscape</span>
+              </h2>
+
+              <div class="banner-img-txt__block__content">
+                <p>
+                  Fordham continues to monitor federal legislation, executive orders, and policy shifts, in an effort to provide clear and timely updates on how the shifting landscape may affect you.
+                </p>
+
+                <a href="/updates-on-evolving-political-landscape/" class="banner-img-txt__block__link">
+                  <span>View Updates and Guidance</span>
+                  <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                    <title>Arrow right icon</title>
+
+                    <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="general-content sm-margin-divider">
+        <span id="d.en.174460"></span>
+        <div class="general-content__block">
+          <h2 class="h2-font" style="text-align: center"><span style="color: #900028">Fordham</span> Voices</h2>
+        </div>
+      </section>
+      <section class="block-quote-embed sm-margin-divider side-divider">
+        <div class="carousel-arrows">
+          <div class="carousel-arrow prev" style="visibility: hidden">‹</div>
+          <div class="carousel-arrow next" style="visibility: hidden">›</div>
+        </div>
+        <div class="row">
+          <div class="slide-container">
+            <div class="col-lg-4 social-embed-column-3 slide">
+              <iframe
+                class="instagram-media instagram-media-rendered"
+                id="instagram-embed-0"
+                src="https://www.instagram.com/reel/DBRLrWex9Qd/embed/?cr=1&amp;v=14&amp;wp=756&amp;rd=https%3A%2F%2Fwww.fordham.edu&amp;rp=%2F#%7B%22ci%22%3A0%2C%22os%22%3A233.09999999403954%2C%22ls%22%3A15.299999982118607%2C%22le%22%3A81.90000000596046%7D"
+                allowtransparency="true"
+                allowfullscreen="true"
+                frameborder="0"
+                height="678"
+                data-instgrm-payload-id="instagram-media-payload-0"
+                scrolling="no"
+                style="
+                  background: white;
+                  max-width: 540px;
+                  width: calc(100% - 2px);
+                  border-radius: 3px;
+                  border: 1px solid rgb(219, 219, 219);
+                  box-shadow: none;
+                  display: block;
+                  margin: 0px 0px 12px;
+                  min-width: 326px;
+                  padding: 0px;
+                "
+                data-gtm-yt-inspected-67="true"
+                title="How cool is it to intern at a show"
+              ></iframe>
+              <script async="" src="//www.instagram.com/embed.js"></script>
+            </div>
+            <div class="col-lg-4 social-embed-column-3 slide">
+              <iframe
+                class="instagram-media instagram-media-rendered"
+                id="instagram-embed-1"
+                src="https://www.instagram.com/reel/DBMLoG-Rq7o/embed/?cr=1&amp;v=14&amp;wp=756&amp;rd=https%3A%2F%2Fwww.fordham.edu&amp;rp=%2F#%7B%22ci%22%3A1%2C%22os%22%3A234.7999999821186%2C%22ls%22%3A15.299999982118607%2C%22le%22%3A81.90000000596046%7D"
+                allowtransparency="true"
+                allowfullscreen="true"
+                frameborder="0"
+                height="678"
+                data-instgrm-payload-id="instagram-media-payload-1"
+                scrolling="no"
+                style="
+                  background: white;
+                  max-width: 540px;
+                  width: calc(100% - 2px);
+                  border-radius: 3px;
+                  border: 1px solid rgb(219, 219, 219);
+                  box-shadow: none;
+                  display: block;
+                  margin: 0px 0px 12px;
+                  min-width: 326px;
+                  padding: 0px;
+                "
+                data-gtm-yt-inspected-67="true"
+                title="A Day in the Life"
+              ></iframe>
+              <script async="" src="//www.instagram.com/embed.js"></script>
+            </div>
+            <div class="col-lg-4 social-embed-column-3 slide">
+              <iframe
+                class="instagram-media instagram-media-rendered"
+                id="instagram-embed-2"
+                src="https://www.instagram.com/reel/DCj48agRSFz/embed/?cr=1&amp;v=14&amp;wp=756&amp;rd=https%3A%2F%2Fwww.fordham.edu&amp;rp=%2F#%7B%22ci%22%3A2%2C%22os%22%3A235.90000000596046%2C%22ls%22%3A15.299999982118607%2C%22le%22%3A81.90000000596046%7D"
+                allowtransparency="true"
+                allowfullscreen="true"
+                frameborder="0"
+                height="678"
+                data-instgrm-payload-id="instagram-media-payload-2"
+                scrolling="no"
+                style="
+                  background: white;
+                  max-width: 540px;
+                  width: calc(100% - 2px);
+                  border-radius: 3px;
+                  border: 1px solid rgb(219, 219, 219);
+                  box-shadow: none;
+                  display: block;
+                  margin: 0px 0px 12px;
+                  min-width: 326px;
+                  padding: 0px;
+                "
+                data-gtm-yt-inspected-67="true"
+                title="Guess My Major"
+              ></iframe>
+              <script async="" src="//www.instagram.com/embed.js"></script>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="events events-slider-type-1 sm-margin-divider">
+        <div class="events-slider-type-1__wrapper">
+          <div class="events-slider-type-1__glide glide glide--ltr glide--slider glide--swipeable">
+            <div class="events-slider-type-1__widget">
+              <div class="glide__arrows events-slider-type-1__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" aria-label="move slider to the left" data-glide-dir="<">
+                  <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                    <title>Arrow left icon</title>
+
+                    <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+                  </svg>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="glide__arrow glide__arrow--right" aria-label="move slider to the right" data-glide-dir=">">
+                  <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                    <title>Arrow right icon</title>
+
+                    <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"></path>
+                  </svg>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <div class="glide__track events-slider-type-1__track" data-glide-el="track">
+              <div class="glide__slides" style="transition: transform ease-in-out; width: 1043.4px; transform: translate3d(-10px, 0px, 0px)">
+                <div class="glide__slide events-slider-type-1__slide glide__slide--active" style="width: 317.8px; margin-right: 15px">
+                  <a
+                    href="https://now.fordham.edu/event/fordham-london-responsible-ai-leadership-organizational-and-strategic-implementation-short-course/2025-05-16/"
+                    class="event__card"
+                    style="height: 300px"
+                  >
+                    <div class="event__card__date">
+                      <div>
+                        <span class="event__card__date--date">16</span>
+                      </div>
+                      <div>
+                        <span class="event__card__date--month">May</span>
+                        <span class="event__card__date--day">Fri</span>
+                      </div>
+                    </div>
+
+                    <div class="event__card__content">
+                      <span class="event__card__title">Fordham London: Responsible AI Leadership: Organizational and Strategic Implementation Short Course</span>
+                      <span class="event__card__time">2:30 pm</span>
+                      <span class="event__card__venue">Fordham London</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="glide__slide events-slider-type-1__slide" style="width: 317.8px; margin-left: 15px; margin-right: 15px">
+                  <a href="https://now.fordham.edu/event/flannery-abroad-a-conference-in-celebration-of-flannery-oconnors-centenary/" class="event__card" style="height: 300px">
+                    <div class="event__card__date">
+                      <div>
+                        <span class="event__card__date--date">5</span>
+                      </div>
+                      <div>
+                        <span class="event__card__date--month">Jun</span>
+                        <span class="event__card__date--day">Thu</span>
+                      </div>
+                    </div>
+
+                    <div class="event__card__content">
+                      <span class="event__card__title">Flannery Abroad: A Conference in Celebration of Flannery O’Connor’s Centenary</span>
+                      <span class="event__card__time"> </span>
+                      <span class="event__card__venue">Fordham London</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="glide__slide events-slider-type-1__slide" style="width: 317.8px; margin-left: 15px">
+                  <a href="https://now.fordham.edu/event/lecture-ilana-pardes-on-ruth-a-migrants-tale/" class="event__card" style="height: 300px">
+                    <div class="event__card__date">
+                      <div>
+                        <span class="event__card__date--date">27</span>
+                      </div>
+                      <div>
+                        <span class="event__card__date--month">Oct</span>
+                        <span class="event__card__date--day">Mon</span>
+                      </div>
+                    </div>
+
+                    <div class="event__card__content">
+                      <span class="event__card__title">The Anne Golomb Hoffman Memorial Lecture: Ilana Pardes on Ruth: A Migrant’s Tale</span>
+                      <span class="event__card__time">6:00 pm</span>
+                      <span class="event__card__venue">McMahon 109</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="header-button_half sm-margin-divider">
+        <a href="/admissions-and-aid/" class="header-button__wrapper">
+          <div class="header-button__block header-button__block_half_left">
+            <h2 class="header-button__title">
+              <span>
+                Interested in Beginning Your
+                <span class="bold">Application?</span>
+              </span>
+            </h2>
+
+            <div class="header-button__button">
+              <span class="btn-text">Learn How to Apply</span>
+              <span class="btn-arrow-icon"></span>
+            </div>
+          </div>
+        </a>
+        <a href="/about/visit-fordham-university/" class="header-button__wrapper">
+          <div class="header-button__block header-button__block_half_right">
+            <h2 class="header-button__title">
+              <span>
+                Interested in Visiting
+                <span class="bold">Fordham in NYC?</span>
+              </span>
+            </h2>
+
+            <div class="header-button__button">
+              <span class="btn-text">Plan Your Visit</span>
+              <span class="btn-arrow-icon"></span>
+            </div>
+          </div>
+        </a>
+      </section>
+      <div style="margin: 2rem 2rem 0 2rem; padding: 2rem; box-sizing: border-box; border: 1px solid #ddd">
+        <p><strong>Notice of Nondiscriminatory Policy:</strong></p>
+        <p>
+          Fordham University admits students of any race, color, national and ethnic origin to all the rights, privileges, programs, and activities generally accorded or made available to students at
+          the school. It does not discriminate on the basis of race, color, national and ethnic origin in administration of its educational policies, admissions policies, scholarship and loan
+          programs, and athletic and other school-administered programs.
+        </p>
+        <p style="margin-bottom: 0 !important">
+          Fordham University is an Equal Opportunity Employer committed to the principle of equal opportunity in education and employment in compliance with Title IX of the Education Amendments of
+          1972, Section 504 of the Rehabilitation Act of 1973, Title VI and Title VII of the Civil Rights Act of 1964, the Age Discrimination Act of 1975, the Americans with Disabilities Act of 1990,
+          the Violence Against Women Act, and other federal, state, and local laws.
+        </p>
+      </div>
+      <style>
+        .events-slider-type-1__widget {
+          justify-content: flex-end;
+        }
+
+        .featured-stories .title h2 {
+          color: #900028;
+        }
+
+        .featured-stories .title h2 span {
+          color: #343a40;
+        }
+
+        .featured-stories .carousel-arrow,
+        .block-quote-embed .carousel-arrow {
+          opacity: 0.9 !important;
+        }
+
+        .featured-item-banner__block__inner__label {
+          line-height: 1.5;
+        }
+
+        .general-content .h2-font,
+        .general-content h2 {
+          font-weight: 400 !important;
+        }
+
+        .two-by-two.two-box .col-lg-6 {
+          height: 600px;
+        }
+
+        .two-by-two.two-box .col-lg-6 .title .title-header {
+          font-size: 2.5rem !important;
+        }
+
+        .two-by-two .content-container .title img {
+          width: 90px !important;
+        }
+
+        .statistics-blocks .statistics-blocks__block__number {
+          font-size: 5rem;
+        }
+        .statistics-blocks .statistics-blocks__block__title {
+          font-size: 1.35rem;
+        }
+
+        .header-button__block {
+          background-color: #5a0414;
+        }
+
+        .carousel-header .cta-container .cta-icon img {
+          height: unset;
+          width: 90px;
+        }
+
+        @media only screen and (max-width: 1571px) {
+          .carousel-header .cta-container .btn img {
+            width: 80px;
+          }
+
+          .carousel-header .cta-container .cta-text p {
+            font-size: 1.2rem;
+          }
+
+          .carousel-header .img-container .content h2 {
+            font-size: 1.3rem;
+          }
+
+          .carousel-header .img-container .content .btn {
+            font-size: 1rem;
+          }
+        }
+
+        @media only screen and (max-width: 1398px) {
+          .carousel-header .cta-container .btn img {
+            height: unset;
+            width: 100%;
+          }
+
+          .carousel-header .cta-container {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+
+        @media only screen and (max-width: 1280px) {
+          .carousel-header .cta-container .cta-text p {
+            font-size: 1.2rem;
+          }
+        }
+
+        @media only screen and (max-width: 1064px) {
+          .carousel-header .cta-container .cta-text p {
+            font-size: 1.1rem;
+          }
+        }
+
+        @media only screen and (max-width: 991px) {
+          .carousel-header .cta-container .btn img {
+            width: 45px;
+          }
+          .carousel-header .img-container .content h2 {
+            font-size: 1.6rem;
+          }
+          .carousel-header .cta-container {
+            padding: 0 50px;
+          }
+          .two-by-two.two-box .col-lg-6 {
+            height: 400px;
+          }
+          .two-by-two.single-three-box .col-lg-4 {
+            height: 300px;
+          }
+        }
+
+        @media only screen and (max-width: 768px) {
+          .carousel-header .cta-container {
+            padding: 0 20px;
+          }
+          .video-embed-background .video-embed.video-content__video--youtube {
+            width: 80% !important;
+            padding-bottom: 45.55% !important;
+          }
+        }
+
+        @media only screen and (max-width: 546px) {
+          .events-slider-type-1__widget {
+            justify-content: center;
+          }
+
+          .general-content .h2-font.fordham-events {
+            position: static !important;
+          }
+        }
+
+        @media only screen and (max-width: 486px) {
+          .two-by-two.two-box .col-lg-6 .title .title-header {
+            font-size: 1.8rem !important;
+          }
+        }
+
+        @media only screen and (max-width: 320px) {
+          .carousel-header .cta-container {
+            padding: 0;
+          }
+        }
+      </style>
+      <script
+        async=""
+        type="text/javascript"
+        id="instagram-title-injection"
+        data-json='
+              {
+                "1": "How cool is it to intern at a show", 
+                "2": "A Day in the Life", 
+                "3": "Guess My Major", 
+                "4": "", 
+                "5": "", 
+                "6": ""
+              }'
+        src="/media/home/admin-use-only/javascript/social_title_script.js"
+      ></script>
+      <div class="body-blackout" id="modal"></div>
+      <button id="scrollbtn" aria-label="scroll to top of page" class="scrollbutton"></button>
+    </main>
+
+    <!-- FOOTER START -->
+    <footer class="footer" aria-label="Site footer">
+      <div class="footer__container container-fluid">
+        <div class="row">
+          <div class="footer__col footer__col--primary col-xl-8">
+            <div class="footer__logo__container">
+              <a href="https://t4.fordham.edu/terminalfour/preview/2/en/7735" class="footer__logo">
+                <img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=7dbb2c2a2d61d0356295a0d9c211eb8001508008" alt="Fordham University" />
+              </a>
+              <div class="footer__tagline">
+                <p>New York is my campus. Fordham is my school.<span class="footer-tm">™</span></p>
+              </div>
+              <div class="be-ix-link-block"><!--Link Block Target Div--></div>
+            </div>
+
+            <!-- Desktop Social Media -->
+            <div class="footer__social footer__social--desktop">
+              <ul class="footer__social__list">
+                <li class="footer__social__item">
+                  <a href="https://www.facebook.com/FordhamUniversity" class="footer__social__link">
+                    <img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=bd94350e63733aaaf755c72df67b35e86db6a909" alt="Link to our Facebook" />
+                  </a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://www.instagram.com/fordhamuniversity/" class="footer__social__link">
+                    <img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=f8322b3143c671b37443f2c444ff0489b7bddcd3" alt="Link to our Instagram" />
+                  </a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://www.linkedin.com/school/7338?pathWildcard=7338" class="footer__social__link">
+                    <img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=d69bd664f6adba21333788b18ebd01ec5dfb9c70" alt="Link to our LinkedIn" />
+                  </a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://twitter.com/FordhamNYC" class="footer__social__link">
+                    <img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=0e3108f83b474e259ca3015177bbf4e873c3e8d6" alt="Link to our X" />
+                  </a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://www.youtube.com/user/FordhamUniversity/featured" class="footer__social__link">
+                    <img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=a1c53ead03305ddebda1ed2188980a7193fb14a7" alt="Link to our YouTube" />
+                  </a>
+                </li>
+                <li class="footer__social__item footer__social__item--show-more">
+                  <a href="https://t4.fordham.edu/terminalfour/preview/2/en/20242" class="footer__social__link">
+                    <span class="footer__social__link__text">More on social media</span>
+                    <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                      <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer__col footer__col--secondary col-xl-4">
+            <div class="footer__link-widget">
+              <ul class="footer__link-widget__col">
+                <li class="footer__link-widget__item footer__link-widget__item--title">
+                  <span class="footer__link-widget__link-title">Helpful Links</span>
+                </li>
+                <ul>
+                  <li><a href="https://411.fordham.edu/" target="blank">University Directory</a></li>
+                  <li><a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/23612" data-t4-ss-link-id="14">Careers at Fordham</a></li>
+                  <li><a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/20032" data-t4-ss-link-id="15">Nondiscrimination Policy</a></li>
+                  <li><a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/24083" data-t4-ss-link-id="16">Accessibility</a></li>
+                  <li><a href="https://www.fordham.edu/privacy" target="blank">Privacy Policy</a></li>
+                </ul>
+              </ul>
+
+              <ul class="footer__link-widget__col">
+                <li class="footer__link-widget__item footer__link-widget__item--title">
+                  <span class="footer__link-widget__link-title">Visit</span>
+                </li>
+                <ul>
+                  <li><a href="https://admission.fordham.edu/portal/campusvisit">Campus Tours</a></li>
+                  <li><a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/20241" data-t4-ss-link-id="18">Maps and Directions</a></li>
+                  <li><a href="https://www.youvisit.com/tour/fordham/" target="_blank">Virtual Tour</a></li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer__col footer__col--tertiary col-12">
+            <!-- Mobile Social Media -->
+            <div class="footer__social footer__social--mobile">
+              <ul class="footer__social__list">
+                <li class="footer__social__item">
+                  <a href="https://www.facebook.com/FordhamUniversity" class="footer__social__link">
+                    <img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=bd94350e63733aaaf755c72df67b35e86db6a909" alt="Link to our Facebook" />
+                  </a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://www.instagram.com/fordhamuniversity/" class="footer__social__link">
+                    <img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=f8322b3143c671b37443f2c444ff0489b7bddcd3" alt="Link to our Instagram" />
+                  </a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://www.linkedin.com/school/7338?pathWildcard=7338" class="footer__social__link">
+                    <img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=d69bd664f6adba21333788b18ebd01ec5dfb9c70" alt="Link to our LinkedIn" />
+                  </a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://twitter.com/FordhamNYC" class="footer__social__link">
+                    <img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=0e3108f83b474e259ca3015177bbf4e873c3e8d6" alt="Link to our X" />
+                  </a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://www.youtube.com/user/FordhamUniversity/featured" class="footer__social__link">
+                    <img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=a1c53ead03305ddebda1ed2188980a7193fb14a7" alt="Link to our YouTube" />
+                  </a>
+                </li>
+                <li class="footer__social__item footer__social__item--show-more">
+                  <a href="https://t4.fordham.edu/terminalfour/preview/2/en/20242" class="footer__social__link"> <span class="footer__social__link__text">More on social media</span> </a
+                  ><svg class="svg-md-24px" focusable="false" aria-hidden="true" style="fill: #fff">
+                    <title>Arrow right icon</title>
+                    <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"></path>
+                  </svg>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+  </body>
+  <script type="text/javascript" src="./script.js"></script>
+</html>
