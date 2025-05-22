@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
-
 :root {
   --test-border: 1px dashed black;
 }
@@ -8,17 +6,17 @@
   font-family: Raleway, sans-serif;
 }
 
-.container {
-  margin-top: 100px;
+.container.side-tabs-maroon {
+  margin-top: 20px;
   /* max-width: 1800px; */
 }
 
 .side-tabs-maroon .row {
   background-color: #900028;
   height: 100%;
-  min-height: 700px;
+  min-height: 350px;
   padding: 30px 0;
-  border-radius: 5px;
+  border-radius: 2px;
   box-shadow: 5px 5px 10px #888888;
 }
 
@@ -32,6 +30,19 @@
   overflow: hidden;
 }
 
+.side-tabs-maroon .col-lg-8 h2 {
+  font-size: 1.7rem; 
+}
+
+.side-tabs-maroon .col-lg-8 h3 {
+  font-size: 1.5rem;
+}
+
+.side-tabs-maroon .col-lg-8 ul {
+  padding-left: 25px !important;
+  list-style: disc !important;
+}
+ 
 .side-tabs-maroon .list-group-item {
   position: relative;
   background-color: #900028;
@@ -81,7 +92,7 @@
   width: 100%;
   height: 100%;
   padding-right: 17px;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 /* Tab Animation */
