@@ -1,40 +1,51 @@
-// Tabs Vertical with Animation - Maroon Theme
 document.addEventListener("DOMContentLoaded", () => {
   const maroonTheme = document.querySelectorAll(".side-tabs-maroon");
+  const whiteTheme = document.querySelectorAll(".side-tabs-white");
+
+  // Tabs Vertical with Animation - Maroon Theme
   // Edge Case
   if (!maroonTheme) return;
 
   // Handles duplication if there are more than one of these components and makes each duplication unique
   maroonTheme.forEach((val, index) => {
     if (maroonTheme.length > 1) {
-      val.classList.add(`duplicated-${index}`);
-      tabAnimation(`.duplicated-${index} .maroon-item`, `.duplicated-${index} .text`, `.duplicated-${index} .col-md-8`, "tab-active");
+      val.classList.add(`maroon-duplicated-${index}`);
+      tabAnimation(`.maroon-duplicated-${index} .maroon-item`, `.maroon-duplicated-${index} .text`, `.maroon-duplicated-${index} .col-md-8`, "tab-active");
     } else if (maroonTheme.length === 1) {
       tabAnimation(".side-tabs-maroon .maroon-item", ".side-tabs-maroon .text", ".side-tabs-maroon .col-md-8", "tab-active");
     } else {
       return;
     }
   });
+
+  // Tabs Vertical with Animation - White Theme
+  // Edge Case
+  if (!whiteTheme) return;
+
+  // Handles duplication if there are more than one of these components and makes each duplication unique
+  whiteTheme.forEach((val, index) => {
+    if (whiteTheme.length > 1) {
+      val.classList.add(`white-duplicated-${index}`);
+      tabAnimation(`.white-duplicated-${index} .white-item`, `.white-duplicated-${index} .text`, `.white-duplicated-${index} .col-md-8`, "tab-active-maroon", "text-white");
+    } else if (whiteTheme.length === 1) {
+      tabAnimation(".side-tabs-white .white-item", ".side-tabs-white .text", ".side-tabs-white .col-md-8", "tab-active-maroon", "text-white");
+    } else {
+      return;
+    }
+  });
 });
 
-// Tabs Vertical with Animation - White Theme
-// document.addEventListener("DOMContentLoaded", () => {
-//   const whiteTheme = document.querySelectorAll(".side-tabs-white");
-//   // Edge Case
-//   if (!whiteTheme) return;
-
-//   // Handles duplication if there are more than one of these components and makes each duplication unique
-//   whiteTheme.forEach((val, index) => {
-//     if (whiteTheme.length > 1) {
-//       val.classList.add(`duplicated-${index}`);
-//       tabAnimation(`.duplicated-${index} .white-item`, `.duplicated-${index} .text`, `duplicated-${index} .col-md-8`, "tab-active-maroon", "text-white");
-//     } else if (whiteTheme.length === 1) {
-//       tabAnimation(".side-tabs-white .white-item", ".side-tabs-white .text", ".side-tabs-white .col-md-8", "tab-active-maroon", "text-white");
-//     } else {
-//       return;
-//     }
-//   });
-// });
+/**
+ * Initializes a tab animation component within a specified root element.
+ * This function is designed to work with multiple independent tab sets on a single page.
+ *
+ * @param {HTMLElement} itemSelector - The main container element for this specific tab component.
+ * @param {string} contentSelector - CSS selector for the tab list items (e.g., '.tab-list-item').
+ * @param {string} parentContentSelector - The ID prefix for the content elements (e.g., 'content-fruit-').
+ * The full ID will be constructed as `parentContentSelector + index`.
+ * @param {string} activeClass - The CSS class to apply to the active tab list item (e.g., 'active-tab').
+ * @param {string} [textColor] - Optional CSS class for changing text color on active tab (e.g., 'active-text-color').
+ */
 
 // HELPER FUNCTION FOR ANIMATION
 function tabAnimation(itemsSelector, contentSelector, parentContentSelector, activeClass, textColor) {
