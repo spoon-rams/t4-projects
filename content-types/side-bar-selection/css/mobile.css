@@ -27,7 +27,8 @@
     overflow: hidden;
   }
 
-  .side-tabs-maroon .row {
+  .side-tabs-maroon .row,
+   .side-tabs-white .row {
     overflow: hidden;
     height: 100%;
     border-radius: 0;

@@ -1,3 +1,6 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
   --test-border: 1px dashed black;
 }
@@ -31,7 +34,7 @@
 }
 
 .side-tabs-maroon .col-lg-8 h2 {
-  font-size: 1.7rem; 
+  font-size: 1.7rem;
 }
 
 .side-tabs-maroon .col-lg-8 h3 {
@@ -42,7 +45,7 @@
   padding-left: 25px !important;
   list-style: disc !important;
 }
- 
+
 .side-tabs-maroon .list-group-item {
   position: relative;
   background-color: #900028;
@@ -166,13 +169,13 @@
   color: #333;
   opacity: 0;
   transition: opacity 0.5s;
-  position: absolute;
+  /* position: absolute; */
   display: none;
   /* Hidden scroll */
-  width: calc(100% + 17px);
+  width: 100%;
   height: 100%;
   padding-right: 17px;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 /* Tab Animation */
