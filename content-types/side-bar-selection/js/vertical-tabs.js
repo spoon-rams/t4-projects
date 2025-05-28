@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
   maroonTheme.forEach((val, index) => {
     if (maroonTheme.length > 1) {
       val.classList.add(`maroon-duplicated-${index}`);
-      tabAnimation(`.maroon-duplicated-${index} .maroon-item`, `.maroon-duplicated-${index} .text`, `.maroon-duplicated-${index} .col-md-8`, "tab-active");
+      tabAnimation(`.maroon-duplicated-${index} .maroon-item`, `.maroon-duplicated-${index} .text`, "tab-active");
     } else if (maroonTheme.length === 1) {
-      tabAnimation(".side-tabs-maroon .maroon-item", ".side-tabs-maroon .text", ".side-tabs-maroon .col-md-8", "tab-active");
+      tabAnimation(".side-tabs-maroon .maroon-item", ".side-tabs-maroon .text", "tab-active");
     } else {
       return;
     }
@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
   whiteTheme.forEach((val, index) => {
     if (whiteTheme.length > 1) {
       val.classList.add(`white-duplicated-${index}`);
-      tabAnimation(`.white-duplicated-${index} .white-item`, `.white-duplicated-${index} .text`, `.white-duplicated-${index} .col-md-8`, "tab-active-maroon", "text-white");
+      tabAnimation(`.white-duplicated-${index} .white-item`, `.white-duplicated-${index} .text`, "tab-active-maroon", "text-white");
     } else if (whiteTheme.length === 1) {
-      tabAnimation(".side-tabs-white .white-item", ".side-tabs-white .text", ".side-tabs-white .col-md-8", "tab-active-maroon", "text-white");
+      tabAnimation(".side-tabs-white .white-item", ".side-tabs-white .text", "tab-active-maroon", "text-white");
     } else {
       return;
     }
@@ -41,14 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
  *
  * @param {HTMLElement} itemSelector - The main container element for this specific tab component.
  * @param {string} contentSelector - CSS selector for the tab list items (e.g., '.tab-list-item').
- * @param {string} parentContentSelector - The ID prefix for the content elements (e.g., 'content-fruit-').
  * The full ID will be constructed as `parentContentSelector + index`.
  * @param {string} activeClass - The CSS class to apply to the active tab list item (e.g., 'active-tab').
  * @param {string} [textColor] - Optional CSS class for changing text color on active tab (e.g., 'active-text-color').
  */
 
 // HELPER FUNCTION FOR ANIMATION
-function tabAnimation(itemsSelector, contentSelector, parentContentSelector, activeClass, textColor) {
+function tabAnimation(itemsSelector, contentSelector, activeClass, textColor) {
   // Initialization of variables/DOM elements/Objects
   const listitems = document.querySelectorAll(itemsSelector);
   const content = document.querySelector(contentSelector);
@@ -73,8 +72,6 @@ function tabAnimation(itemsSelector, contentSelector, parentContentSelector, act
       // Updates the content selector to attach the tab index to show the correct text/content
       const updateContentSelector = index === 0 ? contentSelector : contentSelector.concat(`-${index}`);
       const newContent = document.querySelector(updateContentSelector);
-      // Targets the parent textbox content
-      const parent = document.querySelector(parentContentSelector);
 
       // Tracks the current and previous text/content
       if (!text.current) {
