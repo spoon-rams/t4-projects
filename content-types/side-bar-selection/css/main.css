@@ -16,7 +16,6 @@
 
 .side-tabs-maroon .row {
   background-color: #900028;
-  height: 100%;
   min-height: 350px;
   padding: 30px 0;
   border-radius: 2px;
@@ -106,8 +105,7 @@
 /* For color white background selection */
 .side-tabs-white .row {
   background-color: white;
-  height: 100%;
-  min-height: 300px;
+  min-height: 350px;
   padding: 30px 0;
   border-radius: 5px;
   box-shadow: 5px 5px 10px #888888;
@@ -148,11 +146,11 @@
   z-index: -1;
 }
 
-.side-tabs-white .col-md-4 {
+.side-tabs-white .col-lg-4 {
   padding: 0;
 }
 
-.side-tabs-white .col-md-8 {
+.side-tabs-white .col-lg-8 {
   font-size: 1.1rem;
   border-left: 1px solid lightgray;
   overflow: hidden;
