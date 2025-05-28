@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
  * Initializes a tab animation component within a specified root element.
  * This function is designed to work with multiple independent tab sets on a single page.
  *
- * @param {HTMLElement} itemSelector - The main container element for this specific tab component.
+ * @param {string} itemSelector - The main container css selector for this specific tab component.
  * @param {string} contentSelector - CSS selector for the tab list items (e.g., '.tab-list-item').
  * The full ID will be constructed as `parentContentSelector + index`.
  * @param {string} activeClass - The CSS class to apply to the active tab list item (e.g., 'active-tab').

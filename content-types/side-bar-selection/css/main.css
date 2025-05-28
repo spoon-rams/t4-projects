@@ -2,7 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --test-border: 1px dashed black;
+  --border-white: 1px solid var(--white);
+  --border-gray: 1px solid var(--fordham-light-gray);
+  --fordham-maroon: #900028;
+  --white: #fff;
+  --fordham-gray: #333;
+  --fordham-light-gray: #f0f0f0;
+  --fordham-dark-gray: #888;
 }
 
 * {
@@ -11,15 +17,14 @@
 
 .container.side-tabs-maroon {
   margin-top: 20px;
-  /* max-width: 1800px; */
 }
 
 .side-tabs-maroon .row {
-  background-color: #900028;
+  background-color: var(--fordham-maroon);
   min-height: 350px;
   padding: 30px 0;
-  border-radius: 2px;
-  box-shadow: 5px 5px 10px #888888;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px var(--fordham-dark-gray);
 }
 
 .side-tabs-maroon .col-lg-4 {
@@ -28,7 +33,7 @@
 
 .side-tabs-maroon .col-lg-8 {
   font-size: 1.1rem;
-  border-left: 1px solid white;
+  border-left: var(--border-white);
   overflow: hidden;
 }
 
@@ -47,9 +52,9 @@
 
 .side-tabs-maroon .list-group-item {
   position: relative;
-  background-color: #900028;
+  background-color: var(--fordham-maroon);
   cursor: pointer;
-  color: white !important;
+  color: var(--white) !important;
   font-weight: bold;
   font-size: 1.2rem;
   padding-left: 0;
@@ -61,7 +66,6 @@
 
 .side-tabs-maroon .list-group-item span {
   padding-left: 15px;
-  font-size: 1rem;
 }
 
 .side-tabs-maroon .list-group-item::before {
@@ -71,8 +75,8 @@
   left: 0;
   width: 0;
   height: 100%;
-  color: white !important;
-  background-color: #333 !important;
+  color: var(--white) !important;
+  background-color: var(--fordham-gray);
   transition: width 0.3s ease-in-out;
   z-index: -1;
 }
@@ -85,16 +89,13 @@
 .side-tabs-maroon .text-5,
 .side-tabs-maroon .text-6,
 .side-tabs-maroon .text-7 {
-  color: white;
+  color: var(--white);
   opacity: 0;
   transition: opacity 0.5s;
-  /* position: absolute; */
   display: none;
-  /* Hidden scroll */
   width: 100%;
   height: 100%;
   padding-right: 17px;
-  /* overflow-y: scroll; */
 }
 
 /* Tab Animation */
@@ -104,15 +105,15 @@
 
 /* For color white background selection */
 .side-tabs-white .row {
-  background-color: white;
+  background-color: var(--white);
   min-height: 350px;
   padding: 30px 0;
   border-radius: 5px;
-  box-shadow: 5px 5px 10px #888888;
+  box-shadow: 5px 5px 10px var(--fordham-dark-gray);
 }
 
 .side-tabs-white .white-item {
-  background-color: white;
+  background-color: var(--white);
   color: #333;
 }
 
@@ -122,7 +123,7 @@
 
 .side-tabs-white .list-group-item {
   position: relative;
-  background-color: white;
+  background-color: var(--white);
   cursor: pointer;
   color: #333;
   font-weight: bold;
@@ -141,7 +142,7 @@
   left: 0;
   width: 0;
   height: 100%;
-  background-color: #900028;
+  background-color: var(--fordham-maroon);
   transition: width 0.3s ease-in-out;
   z-index: -1;
 }
@@ -152,7 +153,7 @@
 
 .side-tabs-white .col-lg-8 {
   font-size: 1.1rem;
-  border-left: 1px solid lightgray;
+  border-left: var(--border-gray);
   overflow: hidden;
 }
 
@@ -167,17 +168,14 @@
   color: #333;
   opacity: 0;
   transition: opacity 0.5s;
-  /* position: absolute; */
   display: none;
-  /* Hidden scroll */
   width: 100%;
   height: 100%;
   padding-right: 17px;
-  /* overflow-y: scroll; */
 }
 
 /* Tab Animation */
 .side-tabs-white .list-group-item.tab-active-maroon.white-item::before {
   width: 90%;
-  background-color: #900028;
+  background-color: var(--fordham-maroon);
 }
