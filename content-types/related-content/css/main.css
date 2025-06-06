@@ -121,6 +121,7 @@
 .brand-stories__related-content .related-content__stories.row {
   position: relative;
   overflow: hidden;
+  padding: 0 20px !important;
 }
 
 /* FOR SLIDER ARROWS */
