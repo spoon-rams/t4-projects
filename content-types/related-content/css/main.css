@@ -49,15 +49,14 @@
   display: none; /* Hide scrollbar on webkit browsers */
 }
 
-.brand-stories__related-content .related-content__stories.row .col-lg-4.slide {
-  flex: 3 0 33.33%; /* Make each item 100% of the container */
+.brand-stories__related-content .related-content__stories.row .col-lg-4 {
+  flex: 0 0 33.33%; /* Make each item 100% of the container */
   max-width: 100%;
   height: 100%;
   scroll-snap-align: start;
   text-align: center; /* Center the content */
-  margin: 0 10px; /* Remove right margin */
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  margin-right: 0; /* Remove right margin */
+  padding: 0 20px;
   margin-bottom: 10px;
   height: auto;
 }
@@ -121,7 +120,6 @@
 .brand-stories__related-content .related-content__stories.row {
   position: relative;
   overflow: hidden;
-  padding: 0 20px !important;
 }
 
 /* FOR SLIDER ARROWS */
@@ -132,8 +130,8 @@
   align-items: center;
   height: 100% !important;
   width: 100%;
-  top: -80;
-  background: none !important;
+  top: -80px;
+  background-color: unset !important;
 }
 .brand-stories__related-content .carousel-arrow {
   height: 4rem;
