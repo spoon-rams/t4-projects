@@ -7,7 +7,7 @@
   --border-dark-gray: 1px solid var(--fordham-dark-gray);
   --fordham-maroon: #900028;
   --white: #fff;
-  --fordham-gray: #888;
+  --fordham-gray: #585858;
   --fordham-light-gray: #f0f0f0;
   --fordham-dark-gray: #333;
 }
@@ -26,7 +26,7 @@
   padding: 30px 0;
   margin: 0 15px;
   border-radius: 5px;
-  box-shadow: 5px 5px 10px var(--fordham-dark-gray);
+  /* box-shadow: 5px 5px 10px var(--fordham-dark-gray); */
 }
 
 .side-tabs-maroon .col-lg-4 {
@@ -112,7 +112,8 @@
   padding: 30px 0;
   margin: 0 15px;
   border-radius: 5px;
-  box-shadow: 5px 5px 10px var(--fordham-dark-gray);
+  border: var(--border-gray);
+  /* box-shadow: 5px 5px 10px var(--fordham-dark-gray); */
 }
 
 .side-tabs-white .white-item {
