@@ -1771,7 +1771,7 @@ content: '';
 
 /* BRAND STORIES RELATED CONTENT - START */
 
-/* .brand-stories__related-content .related-content__title {
+.brand-stories__related-content .related-content__title {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1811,7 +1811,7 @@ content: '';
 
 .brand-stories__related-content .related-content__stories.row .col-lg-4 {
   margin-bottom: 10px;
-  height: auto; 
+  height: auto; /* changed */
 }
 
 .brand-stories__related-content .related-content__stories.row img {
@@ -1827,7 +1827,7 @@ content: '';
 
 .brand-stories__related-content .related-content__stories.row h3 {
   font-family: "Raleway", sans-serif;
-  font-size: 1.4rem; 
+  font-size: 1.4rem; /* changed */
   text-align: left;
 }
 
@@ -1853,10 +1853,8 @@ content: '';
   font-size: 0.9rem;
 }
 
-*/
-
 /* MOBILE RESPONSIVE VIEW */
-/* @media only screen and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .brand-stories__related-content .related-content__stories.row .col-lg-4 {
     height: 100%;
   }
@@ -1887,7 +1885,7 @@ content: '';
   .brand-stories__related-content .related-content__stories.row h3 {
     font-size: 1.2rem;
   }
-} *
+}
 
 /* BRAND STORIES RELATED CONTENT - END */
 
