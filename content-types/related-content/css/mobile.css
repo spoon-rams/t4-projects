@@ -1,4 +1,11 @@
 /* MOBILE RESPONSIVE VIEW */
+@media only screen and (max-width: 1196px) {
+  .brand-stories__related-content .carousel-arrow.next,
+  .brand-stories__related-content .carousel-arrow.prev {
+    top: 35%;
+  }
+}
+
 @media only screen and (max-width: 991px) {
   .brand-stories__related-content .related-content__stories.row .slide-container {
     position: relative;
@@ -48,7 +55,8 @@
 
   .brand-stories__related-content .carousel-arrow.prev,
   .brand-stories__related-content .carousel-arrow.next {
-    margin: 31px;
+    margin: 26px;
+    top: 42%;
   }
 }
 
@@ -65,4 +73,12 @@
   .brand-stories__related-content .related-content__stories.row h3 {
     font-size: 1.2rem;
   }
+}
+
+
+@media only screen and (max-width: 356px) {
+  .brand-stories__related-content .carousel-arrow.next, 
+    .brand-stories__related-content .carousel-arrow.prev {
+      top: 35%;
+    }
 }
