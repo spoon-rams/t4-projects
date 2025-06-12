@@ -1,0 +1,17 @@
+<div class="col-lg-4 slide">
+ <a href='{{nav id="417" name="Brand Stories - Related Content - Links"}}'>
+  {{{media id=(mediaId element="Parallax Image") layout="image/normal" }}}
+ </a>
+  <p class="category">
+   <span>
+     {{#eq (selectedValues element="Categories") ""}}
+       No Category
+     {{else}}
+       {{publish element="Categories"}}
+   	 {{/eq}}
+   </span>
+  </p>
+ <a href='{{nav id="417" name="Brand Stories - Related Content - Links"}}'>
+   <h3>{{publish element="Title"}}</h3>
+ </a>
+</div>
