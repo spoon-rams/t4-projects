@@ -1,0 +1,19 @@
+<div class="story col-lg-4">
+  <a href='{{nav id="417" name="Brand Stories - Related Content - Links"}}'>
+    <div class="story-image">
+      <img src='{{media id=(mediaId element="Parallax Image") layout="path/*"}}' alt='{{media id=(mediaId element="Parallax Image") layout="image/description"}}' style="width: 100%; height: auto;" />
+    </div>
+  	<div class="story-text">
+  	 <p class="category">
+       <span>
+         {{#eq (element="Categories") ""}}
+           No Category
+         {{else}}
+           {{publish element="Categories"}}
+         {{/eq}}
+       </span>
+     </p>
+     <h2>{{publish element="Title"}}</h2>
+    </div>
+  </a>
+</div>
