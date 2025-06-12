@@ -1,0 +1,10 @@
+<!-- SINGLE SECTION PARALLAX -->
+<section class='single-parallax-container {{selectedValues element="Top/Bottom Spacing"}} {{selectedValues element="Limit Width"}}'>
+  <div class="parallax-container" style='background: url("{{media id=(mediaId element="Parallax Image") layout="path/*" }}"); background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; min-height: 400px'></div>
+  {{#eq (selectedValues element="Remove Overlay") ""}}
+	<div class="tint-layer"></div>';
+  {{/eq}}
+  {{#ifSet element="Photo Caption" }}
+   <div class="caption-font caption-photo">{{publish element="Photo Caption"}}</div>
+  {{/ifSet}}
+</section>

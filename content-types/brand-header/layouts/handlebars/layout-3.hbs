@@ -1,0 +1,57 @@
+<!-- VIDEO HERO PARALLAX -->
+<section class='hero-banner-parallax__video {{selectedValues element="Top/Bottom Spacing"}} {{selectedValues element="Limit Width"}}'>
+  
+  <!-- VIDEO BANNER -->
+  <div class="parallax-video">
+    <video 
+      autoplay="autoplay"
+      loop="loop"
+      muted
+      defaultMuted
+      playsinline
+      oncontextmenu="return false;"  
+      preload="auto" 
+      poster='{{media id=(mediaId element="Poster Image") layout="path/*" }}'
+     >
+      <source 
+        src='{{publish element="Video URL"}}'
+        type="video/mp4"
+      />
+       Your browser does not support the video tag.
+    </video>
+  </div>
+  
+  <!-- VIDEO BANNER OVERLAY -->
+  {{#eq (selectedValues element="Remove Overlay") ""}}
+	<div class="tint-layer"></div>';
+  {{/eq}}
+  
+  <!-- BANNER BLOCK CATEGORIES/TITLE/CONTENT -->
+  <div class="hero-banner__block" style="text-align: center">
+    <!-- BANNER BLOCK CATEGORY HEADER -->
+    {{#ifSet element="Categories" }}
+      <div class='hero-banner__block__category featured-item-list__widget-item__block__label'>
+        <span class='bg-color'>{{publish element="Categories" }}</span>
+      </div>
+    {{/ifSet}}
+    <!-- BANNER BLOCK TITLE -->
+   	{{#ifSet element="Title" }}
+      <div class='hero-banner__block__title h1-heading'>
+        <h1>{{ publish element="Title"}}</h1>
+      </div>
+    {{/ifSet}}
+   	<!-- BANNER BLOCK CONTENT/TEXT -->
+   	{{#ifSet element="Content" }}
+      <div class='hero-banner__block__content'>
+        <p>{{ publish element="Content" }}</p>
+      </div>
+    {{/ifSet}}
+    <!-- BANNER BLOCK AUTHOR CAPTION -->
+    {{#ifSet element="Author" }}
+      <div class='author caption-font caption-white'>By {{publish element="Author" }}</div>
+    {{/ifSet}}
+    {{#ifSet element="Published Date" }}
+      <div class='date' style='height: 0;overflow: hidden;'>{{publish element="Published Date" }}</div>
+    {{/ifSet}}
+  </div>
+</section>

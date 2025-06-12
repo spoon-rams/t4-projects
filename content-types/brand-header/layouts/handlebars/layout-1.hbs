@@ -1,0 +1,47 @@
+<!-- HERO PARALLAX WITH OVERLAY -->
+<section class='hero-banner-parallax__overlay {{selectedValues element="Top/Bottom Spacing"}} {{selectedValues element="Limit Width"}}'>
+  <div 
+    class='hero-banner-parallax {{selectedValues element="Parallax Window Height"}}' 
+    style='background: url("{{media id=(mediaId element="Parallax Image") layout="path/*" }}");'
+   >
+    
+    <!-- OVERLAY -->
+    {{#eq (selectedValues element="Remove Overlay") ""}}
+	  <div class="tint-layer"></div>';
+    {{/eq}}
+    <!-- BANNER CATEGORIES/TITLE/CONTENT BLOCK -->
+    <div class="hero-banner__block" style="text-align: center">
+      
+      <!-- BANNER BLOCK CATEGORY HEADER  -->
+      {{#ifSet element="Categories" }}
+        <div class='hero-banner__block__category featured-item-list__widget-item__block__label'>
+          <span class='bg-color'>{{publish element="Categories" }}</span>
+        </div>
+      {{/ifSet}}
+      <!-- BANNER BLOCK TITLE -->
+      {{#ifSet element="Title" }}
+        <div class='hero-banner__block__title h1-heading'>
+          <h1>{{ publish element="Title"}}</h1>
+        </div>
+      {{/ifSet}}
+      <!-- BANNER BLOCK CONTENT/TEXT -->
+      {{#ifSet element="Content" }}
+        <div class='hero-banner__block__content'>
+          <p>{{ publish element="Content" }}</p>
+        </div>
+      {{/ifSet}}
+      <!-- BANNER BLOCK AUTHOR CAPTION -->
+      {{#ifSet element="Author" }}
+        <div class='author caption-font caption-white'>By {{publish element="Author" }}</div>
+      {{/ifSet}}
+      {{#ifSet element="Published Date" }}
+        <div class='date' style='height: 0;overflow: hidden;'>{{publish element="Published Date" }}</div>
+      {{/ifSet}}
+    </div>
+  </div>
+  
+  <!-- BANNER PHOTO CAPTION -->
+  {{#ifSet element="Photo Caption" }}
+   <div class="caption-font caption-photo">{{publish element="Photo Caption"}}</div>
+  {{/ifSet}}
+</section>

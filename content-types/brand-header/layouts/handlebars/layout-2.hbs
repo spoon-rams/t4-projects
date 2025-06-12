@@ -1,0 +1,49 @@
+<!-- HERO PARALLAX WITH TEXT/TITLE ON THE BOTTOM -->
+<section class='hero-banner-parallax__text-bottom {{selectedValues element="Top/Bottom Spacing" }} {{selectedValues element="Limited Width" }}'>
+  
+  <!-- HERO IMAGE BANNER -->
+  <div 
+    class='hero-banner-parallax {{selectedValues element="Parallax Window Height"}}'
+    style='background: url({{media id=(mediaId element="Parallax Image") layout="path/*" }});'
+   >
+    
+    <!-- BANNER OVERLAY -->
+    {{#eq (selectedValues element="Remove Overlay") ""}}
+	  <div class="tint-layer"></div>';
+    {{/eq}}
+  </div>
+  
+  <!-- BANNER PHOTO CAPTION -->
+  {{#ifSet element="Photo Caption" }}
+   <div class="caption-font caption-photo">{{publish element="Photo Caption"}}</div>
+  {{/ifSet}}
+  
+  <!-- BANNER CATEGORIES/TEXT/CONTENT BLOCK -->
+  <div class="hero-banner__block" style="text-align: center">
+    <!-- BANNER BLOCK CATEGORY HEADER -->
+    {{#ifSet element="Categories" }}
+      <div class='hero-banner__block__category featured-item-list__widget-item__block__label'>
+        <span class='bg-color'>{{publish element="Categories" }}</span>
+      </div>
+    {{/ifSet}}
+    <!-- BANNER BLOCK TITLE -->
+    {{#ifSet element="Title" }}
+      <div class='hero-banner__block__title h1-heading text-bottom'>
+        <h1 style="color: black;">{{publish element="Title"}}</h1>
+      </div>
+    {{/ifSet}}
+    <!-- BANNER BLOCK CONTENT/TEXT -->
+    {{#ifSet element="Content" }}
+      <div class='hero-banner__block__content text-bottom'>
+        <p>{{ publish element="Content" }}</p>
+      </div>
+    {{/ifSet}}
+    <!-- BANNER  AUTHOR CAPTION -->
+    {{#ifSet element="Author" }}
+      <div class='author caption-font caption-black'>By {{publish element="Author" }}</div>
+    {{/ifSet}}
+    {{#ifSet element="Published Date" }}
+      <div class='date' style='height: 0;overflow: hidden;'>{{publish element="Published Date" }}</div>
+    {{/ifSet}}
+  </div>
+</section>
