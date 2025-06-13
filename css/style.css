@@ -6544,7 +6544,7 @@ pre code {
   height: 100%;
 }
 .header-nav__bottom__link {
-  color: #333 !important;
+  color: #333;
   padding: 0.25rem 0.5rem;
   position: relative;
   height: inherit;
