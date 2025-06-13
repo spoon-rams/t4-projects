@@ -18,7 +18,36 @@
     <link rel="stylesheet" href="../../css/tinymce.css" />
     <!-- TEMPORARY -->
     <!-- <link rel="stylesheet" href="./temp.css" /> -->
-
+    <script>
+      (function (d) {
+        var config = {
+            kitId: "xvj1dos",
+            scriptTimeout: 3000,
+            async: true,
+          },
+          h = d.documentElement,
+          t = setTimeout(function () {
+            h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+          }, config.scriptTimeout),
+          tk = d.createElement("script"),
+          f = false,
+          s = d.getElementsByTagName("script")[0],
+          a;
+        h.className += " wf-loading";
+        tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function () {
+          a = this.readyState;
+          if (f || (a && a != "complete" && a != "loaded")) return;
+          f = true;
+          clearTimeout(t);
+          try {
+            Typekit.load(config);
+          } catch (e) {}
+        };
+        s.parentNode.insertBefore(tk, s);
+      })(document);
+    </script>
     <title>Document</title>
   </head>
   <body>
@@ -1049,14 +1078,16 @@
         </video>
 
         <div class="hero-banner__block">
-          <h2 class="hero-banner__block__title"><span>Header</span></h2>
+          <h2 class="hero-banner__block__title"><span>At Fordham University,</span></h2>
 
           <div class="hero-banner__block__content">
-            <p class="hero-banner__block__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i</p>
+            <p class="hero-banner__block__desc">We Stand For What Matters Most</p>
 
-            <a href="https://www.google.com" class="hero-banner__block__button-link-break btn btn-primary"> Learn More </a>
+            <a href="https://www.google.com" class="hero-banner__block__button-link-break btn btn-primary">Apply Now</a>
 
-            <a href="https://www.apple.com" class="hero-banner__block__button-link-break btn btn-primary"> Read More </a>
+            <a href="https://www.apple.com" class="hero-banner__block__button-link-break btn btn-primary">Visit Us</a>
+
+            <a href="https://www.apple.com" class="hero-banner__block__button-link-break btn btn-primary">Explore Programs</a>
           </div>
         </div>
       </section>
