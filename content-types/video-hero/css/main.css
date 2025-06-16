@@ -137,6 +137,42 @@
   fill: white;
 }
 
+.header-nav__top__list--secondary {
+  background-color: #900028 !important;
+}
+
+.header-nav__top__container {
+  height: 35px;
+}
+
+.header-nav__bottom__link:hover {
+  text-decoration: none;
+  color: #d93f32 !important;
+}
+
+/* NEW CTA BUTTONS CSS */
+
+.hero-banner__block__buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 31%;
+  margin: 10px auto;
+}
+
+.hero-banner__block__buttons .hero-banner__block__button-link-break {
+  margin: 0 !important;
+  background-color: #fff;
+  color: #d93f32 !important;
+  border-radius: 10px;
+  border: 2px solid #d93f32;
+  font-size: 1rem;
+}
+
+.btn-primary:visited {
+  background-color: #d93f32 !important;
+  color: #fff !important;
+}
+
 /* UNIVERSAL CSS ADJUSTMENTS */
 
 .header-placeholder {
