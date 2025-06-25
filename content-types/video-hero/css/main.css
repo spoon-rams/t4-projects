@@ -1,7 +1,7 @@
 /** VIDEO HERO STYLES **/
 .video-hero {
   position: relative;
-  height: 1000px;
+  height: 883px;
   overflow: hidden;
 }
 
@@ -104,7 +104,6 @@
 }
 
 .header-nav__bottom__link {
-  color: #fff !important;
   padding: 0.25rem 0.8rem !important;
   position: relative;
   height: inherit;
