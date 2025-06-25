@@ -1,0 +1,89 @@
+/* GSS Content Type - Image Text Bottom - Right/Left - START */
+.banner-img-txt-bottom {
+  padding-bottom: 16rem;
+}
+
+.side-divider-custom {
+  padding-bottom: 16rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner-img-txt-bottom__wrapper {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 60px;
+  height: auto;
+}
+
+.banner-img-txt-bottom__img {
+  width: 100%;
+  max-height: 800px;
+}
+
+.banner-img-txt-bottom__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  font-family: "object-fit: cover; object-position: 50% 50%;";
+}
+
+.banner-img-txt-bottom__block {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 2rem;
+  width: 45%;
+  top: 75%;
+  height: auto;
+  min-height: 320px;
+  background-color: #900028;
+  color: #ffff !important;
+}
+
+.banner-img-txt-bottom__block.right {
+  left: 55%;
+}
+
+.banner-img-txt-bottom__block.left {
+  right: 55%;
+}
+
+.banner-img-txt-alt__block__link {
+  color: #ffff !important;
+}
+
+.banner-img-txt-alt__block__link > svg {
+  fill: #ffff !important;
+}
+
+/* LINK AND LOGO */
+
+.banner-img-txt-bottom_link_logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.banner-img-txt-bottom_link_logo .link {
+  width: 100%;
+}
+
+.banner-img-txt-bottom_link_logo .fordham-now-logo,
+.banner-img-txt-bottom_link_logo .fordham-magazine-logo {
+  width: 100%;
+  text-align: right;
+}
+
+.banner-img-txt-bottom_link_logo .fordham-now-logo img {
+  width: 155px;
+}
+
+.banner-img-txt-bottom_link_logo .fordham-magazine-logo img {
+  width: 215px;
+}
+
+
+/* NEW REBRAND */
