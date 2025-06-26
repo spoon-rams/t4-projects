@@ -96,7 +96,6 @@
   width: 1200px;
   height: 300px;
   top: 40%;
-  left: 33.3%;
   /* opacity: 0.8;
   background: url("../images/Risograph-texture.png") lightgray 2.091px -56.298px / 100% 149.484% no-repeat;
   background-size: cover;
@@ -112,13 +111,28 @@
   mix-blend-mode: darken;
 }
 
+.banner-img-txt-bottom__wrapper.left .background-texture {
+  left: 33.3%;
+}
+
+.banner-img-txt-bottom__wrapper.right .background-texture {
+  right: 33.3%;
+}
+
 .banner-svg-asset.svg-top-right {
   position: absolute;
   top: 28%;
-  left: 93.8%;
   width: 5%;
   height: auto;
   z-index: 1;
+}
+
+.banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-top-right {
+  left: 93.8%;
+}
+
+.banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-top-right {
+  right: 93.8%;
 }
 
 .banner-svg-asset.svg-top-right svg {
@@ -126,17 +140,32 @@
   height: 100%;
 }
 
+.banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-top-right svg {
+  transform: rotate(180deg) scaleY(-1);
+}
+
 .banner-svg-asset.svg-bottom-right {
   position: absolute;
   top: 62%;
-  right: 92.02%;
   width: 8%;
   height: auto;
+}
+
+.banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-bottom-right {
+    right: 92.02%;
+}
+
+.banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-bottom-right {
+    left: 92.02%;
 }
 
 .banner-svg-asset.svg-bottom-right svg {
   width: 100%;
   height: 100%;
+}
+
+.banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-bottom-right svg {
+  transform: rotate(180deg) scaleY(-1);
 }
 
 @container (max-width: 1200px) {
@@ -184,12 +213,12 @@
 }
 
 .banner-img-txt-alt__block__title span::before {
-  content: ""; 
-  display: block; 
-  position: absolute; 
-  top: 15px; 
-  left: 30px; 
-  width: 50px; 
-  height: 3px; 
-  background-color: #dd3224; 
+  content: "";
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  width: 50px;
+  height: 3px;
+  background-color: #dd3224;
 }
