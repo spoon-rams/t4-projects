@@ -1,11 +1,21 @@
 /* MOBILE VIEW PORTS - RESPONSIVE */
 
-
 @media (min-width: 1025px) and (max-width: 1200px) {
+  .banner-img-txt-bottom__wrapper {
+    padding: 0 100px;
+  }
+
+  .banner-img-txt-bottom__block {
+    width: 45%;
+    top: 75%;
+    left: 2.5%;
+  }
+
   .banner-img-txt-bottom__wrapper .background-texture {
     width: 70%;
     height: 52%;
-    top: 60%;
+    top: 56%;
+    left: 28%;
   }
 
   .side-divider-custom.banner-img-txt-bottom {
@@ -18,6 +28,11 @@
 }
 
 @media (min-width: 685px) and (max-width: 1024px) {
+  .banner-img-txt-bottom__wrapper .background-texture,
+  .banner-svg-asset.svg-top-right,
+  .banner-svg-asset.svg-bottom-right {
+    display: none;
+  }
   .banner-img-txt-bottom {
     padding-bottom: 0 !important;
   }
