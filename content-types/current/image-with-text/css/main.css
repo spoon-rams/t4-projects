@@ -152,11 +152,11 @@
 }
 
 .banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-bottom-right {
-    right: 92.02%;
+  right: 92.02%;
 }
 
 .banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-bottom-right {
-    left: 92.02%;
+  left: 92.02%;
 }
 
 .banner-svg-asset.svg-bottom-right svg {
@@ -178,14 +178,14 @@
     left: 2.5%;
   }
 
-  .banner-img-txt-bottom__wrapper .background-texture {
+  .banner-img-txt-bottom__wrapper.left .background-texture {
     width: 70%;
     height: 52%;
     top: 56%;
     left: 28%;
   }
 
-  .banner-svg-asset.svg-top-right {
+  .banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-top-right {
     position: absolute;
     top: 36%;
     left: 88%;
@@ -198,7 +198,7 @@
     height: 100%;
   }
 
-  .banner-svg-asset.svg-bottom-right {
+  .banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-bottom-right {
     position: absolute;
     top: 62%;
     right: 89.5%;
