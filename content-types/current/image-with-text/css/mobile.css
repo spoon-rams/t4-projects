@@ -8,14 +8,22 @@
   .banner-img-txt-bottom__block {
     width: 45%;
     top: 75%;
-    left: 2.5%;
   }
+
+ 
 
   .banner-img-txt-bottom__wrapper .background-texture {
     width: 70%;
     height: 52%;
     top: 56%;
+  }
+
+  .banner-img-txt-bottom__wrapper.left .background-texture {
     left: 28%;
+  }
+
+  .banner-img-txt-bottom__wrapper.right .background-texture {
+    right: 28%;
   }
 
   .side-divider-custom.banner-img-txt-bottom {

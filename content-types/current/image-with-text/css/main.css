@@ -40,7 +40,7 @@
   padding: 1.5rem 2rem;
   width: 35%;
   top: 74%;
-  left: 0;
+
   height: auto;
   min-height: 250px;
   background-color: #7e072a;
@@ -49,11 +49,11 @@
 }
 
 .banner-img-txt-bottom__block.right {
-  left: 55%;
+  right: 0;
 }
 
 .banner-img-txt-bottom__block.left {
-  right: 55%;
+  left: 0;
 }
 
 .banner-img-txt-alt__block__link {
@@ -119,6 +119,10 @@
   right: 33.3%;
 }
 
+.banner-img-txt-bottom__wrapper.right .background-texture img {
+  transform: rotate(180deg) scaleY(-1);
+}
+
 .banner-svg-asset.svg-top-right {
   position: absolute;
   top: 28%;
@@ -152,11 +156,11 @@
 }
 
 .banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-bottom-right {
-  right: 92.02%;
+  right: 92.013%;
 }
 
 .banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-bottom-right {
-  left: 92.02%;
+  left: 92.013%;
 }
 
 .banner-svg-asset.svg-bottom-right svg {
@@ -175,22 +179,44 @@
   .banner-img-txt-bottom__block {
     width: 45%;
     top: 75%;
+  }
+
+  .banner-img-txt-bottom__wrapper.left .banner-img-txt-bottom__block {
     left: 2.5%;
   }
 
-  .banner-img-txt-bottom__wrapper.left .background-texture {
+  .banner-img-txt-bottom__wrapper.right .banner-img-txt-bottom__block {
+    right: 2.5%;
+  }
+
+  .background-texture {
     width: 70%;
     height: 52%;
     top: 56%;
+  }
+
+  .banner-img-txt-bottom__wrapper.left .background-texture {
     left: 28%;
   }
 
-  .banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-top-right {
+  .banner-img-txt-bottom__wrapper.right .background-texture {
+    right: 28%;
+  }
+
+  .banner-svg-asset.svg-top-right {
     position: absolute;
     top: 36%;
-    left: 88%;
+
     width: 8%;
     height: auto;
+  }
+
+  .banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-top-right {
+    left: 88%;
+  }
+
+  .banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-top-right {
+    right: 88%;
   }
 
   .banner-svg-asset.svg-top-right svg {
@@ -198,12 +224,19 @@
     height: 100%;
   }
 
-  .banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-bottom-right {
+  .banner-svg-asset.svg-bottom-right {
     position: absolute;
     top: 62%;
-    right: 89.5%;
     width: 8%;
     height: auto;
+  }
+
+  .banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-bottom-right {
+    right: 89.5%;
+  }
+
+  .banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-bottom-right {
+    left: 89.5%;
   }
 
   .banner-svg-asset.svg-bottom-right svg {
