@@ -10,8 +10,6 @@
     top: 75%;
   }
 
- 
-
   .banner-img-txt-bottom__wrapper .background-texture {
     width: 70%;
     height: 52%;
@@ -36,11 +34,11 @@
 }
 
 @media (min-width: 685px) and (max-width: 1024px) {
-  .banner-img-txt-bottom__wrapper .background-texture,
+  /* .banner-img-txt-bottom__wrapper .background-texture,
   .banner-svg-asset.svg-top-right,
   .banner-svg-asset.svg-bottom-right {
     display: none;
-  }
+  } */
   .banner-img-txt-bottom {
     padding-bottom: 0 !important;
   }
@@ -49,7 +47,7 @@
   }
 
   .banner-img-txt-bottom__block {
-    position: static;
+    /* position: static; */
     transform: translateY(0);
     width: 100%;
   }

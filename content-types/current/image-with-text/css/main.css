@@ -40,7 +40,6 @@
   padding: 1.5rem 2rem;
   width: 35%;
   top: 74%;
-
   height: auto;
   min-height: 250px;
   background-color: #7e072a;
@@ -281,8 +280,9 @@
   background-color: black;
 }
 
-.banner-img-txt__block {
+.banner-img-txt__block.standard {
   background: #fff !important;
+  z-index: 2;
 }
 
 .banner-img-txt__block h2,
@@ -292,4 +292,16 @@
 
 .banner-img-txt__block p {
   color: black;
+}
+
+
+/* OVERLAY */
+.overlay {
+  height: 100%;
+  width: 100%;
+  opacity: 0.9;
+  top: 0;
+  background-color: black;
+  position: absolute;
+  z-index: 1;
 }
