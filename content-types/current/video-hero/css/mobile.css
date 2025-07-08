@@ -1,148 +1,18 @@
-/* LAND SCAPE VIEW - VIDEO HERO MOBILE RESPONSIVE
-@media screen and (min-width: 650px) and (max-width: 1368px) and (orientation: landscape) {
-  div.video-hero {
-    width: 100vw;
-    height: 78.25vw;
-  }
-} 
-*/
-
-/* MOBILE RESPONSIVE VIEW - PORTRAIT/DESKTOP */
-/* @media (max-width: 375px) {
-  .video-hero {
-    height: 64vh;
-  }
-  .video-hero video {
-    width: 230%;
-    top: 50%;
-  }
-  .columns-4 .general-content {
-    padding: 0 !important;
-  }
-  .columns-4 .general-content__block img {
-    height: 50px;
-    width: 50px;
-  }
-}
-
-@media (min-width: 376px) and (max-width: 430px) {
-  .video-hero {
-    height: 54vh;
-  }
-  .video-hero video {
-    width: 230%;
-    top: 250px;
-  }
-  .columns-4 .general-content {
-    padding: 0 !important;
-  }
-  .columns-4 .general-content__block img {
-    height: 50px;
-    width: 50px;
-  }
-}
-
-@media (min-width: 431px) and (max-width: 484px) {
-  .video-hero {
-    height: 35vh;
-  }
-  .video-hero video {
-    width: 230%;
-    top: 280px;
-  }
-  .columns-4 .general-content {
-    padding: 0 !important;
-  }
-  .columns-4 .general-content__block img {
-    height: 50px;
-    width: 50px;
-  }
-}
-
-@media (min-width: 485px) and (max-width: 575px) {
-  .video-hero {
-    height: 35vh;
-  }
-  .video-hero video {
-    width: 200%;
-    top: 280px;
-  }
-  .columns-4 .general-content {
-    padding: 0 !important;
-  }
-  .columns-4 .general-content__block img {
-    height: 50px;
-    width: 50px;
-  }
-}
-
-@media (min-width: 576px) and (max-width: 687px) {
-  .video-hero video {
-    top: 45%;
-    width: 190%;
-  }
-}
-
-@media (min-width: 688px) and (max-width: 768px) {
-  .video-hero video {
-    top: 350px;
-    width: 190%;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 824px) {
-  .video-hero video {
-    top: 55%;
-    width: 190%;
-  }
-}
-
-@media (min-width: 825px) and (max-width: 940px) {
-  .video-hero video {
-    top: 60%;
-    width: 180%;
-  }
-}
-
-@media (min-width: 941px) and (max-width: 1073px) {
-  .video-hero video {
-    top: 60%;
-    width: 160%;
-  }
-}
-
-@media (min-width: 1074px) and (max-width: 1246px) {
-  .video-hero video {
-    top: 60%;
-    width: 140%;
-  }
-}
-
-@media (min-width: 1247px) and (max-width: 1498px) {
-  .video-hero video {
-    top: 390px;
-    width: 110%;
-  }
-} */
-
-/* @media (min-width: 1499px) and (max-width: 1919px) {
-  .video-hero video {
-    top: 65%;
-    width: 110%;
-  } 
-} 
-
-@media (min-width: 1920px) {
-  .video-hero video {
-    top: 500px;
+/* --- Mobile Responsiveness --- */
+@media only screen and (max-width: 1800px) {
+  .header-nav.rebrand .header-nav__top__container.header-nav__top__outer-quick-list {
+    width: 100%;
   }
 }
 
 
-/* --- Media Queries for Mobile Responsiveness --- */
 @media only screen and (max-width: 1427px) {
+  .video-hero {
+    padding-bottom: 60%;
+    min-height: 500px; 
+  }
   .hero-banner__block__desc {
-    font-size: 5rem; /* Smaller description for mobile */
+    font-size: 5rem; 
   }
 }
 
@@ -157,6 +27,11 @@
 }
 
 @media only screen and (max-width: 991px) {
+  .video-hero {
+    padding-bottom: 70%;
+    min-height: 500px; 
+  }
+
   .hero-banner__block__desc {
     font-size: 3rem;
   }
@@ -165,71 +40,83 @@
 /* Small tablets and large phones (e.g., up to 768px wide) */
 @media only screen and (max-width: 768px) {
   .video-hero {
-    /* For mobile, you might want a taller aspect ratio to show more of the video vertically. */
-    /* Example: 4:3 aspect ratio (75% for 3/4 * 100) */
-    padding-bottom: 75%;
-    min-height: 300px; /* Ensure a decent minimum height */
+    padding-bottom: 80%;
+    min-height: 500px; 
   }
 
   .video-hero .hero-banner__block {
-    padding: 15px; /* Reduce padding on mobile */
+    padding: 15px; 
+    margin-top: 5%;
   }
 
   .video-hero .hero-banner__block__title span {
-    font-size: 1.7rem; /* Smaller title for mobile */
+    font-size: 1.7rem;
   }
 
   .hero-banner__block__desc {
-    font-size: 3.5rem; /* Smaller description for mobile */
-    line-height: 1.1; /* Adjust line height if needed */
-    letter-spacing: 0.05rem; /* Reduce letter spacing */
+    font-size: 2.5rem; 
+    line-height: 1.1; 
+    letter-spacing: 0.05rem; 
   }
 
   .hero-banner__block__buttons {
-    flex-direction: column; /* Stack buttons vertically on smaller screens */
-    align-items: center; /* Center stacked buttons */
-    gap: 10px; /* Smaller gap between stacked buttons */
-    width: 90%; /* Allow buttons block to take more width on mobile */
-    max-width: 300px; /* Limit max width for stacked buttons */
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px; 
+    width: 90%; 
+    max-width: 300px; 
   }
 
   .hero-banner__block__buttons .hero-banner__block__button-link-break {
-    width: 100%; /* Make individual buttons full width when stacked */
-    max-width: 250px; /* Max width for stacked buttons */
-    padding: 10px 20px; /* Slightly smaller padding for buttons */
-    font-size: 0.9rem; /* Smaller font for buttons */
+    width: 100%; 
+    max-width: 250px; 
+    padding: 10px 20px; 
+    font-size: 0.9rem; 
+  }
+
+  .play-pause-btn {
+    left: 94.5%;
   }
 }
 
-/* Extra small devices (e.g., up to 480px wide - typical mobile phones) */
+@media only screen and (max-width: 610px) {
+  .hero-banner__block__desc {
+    font-size: 2rem;
+  }
+}
+
+
 @media only screen and (max-width: 480px) {
   .video-hero {
-    /* Potentially even taller aspect ratio for very small screens */
-    padding-bottom: 90%; /* Example: even taller aspect ratio */
+    padding-bottom: 110%; 
     min-height: 250px;
   }
 
   .video-hero .hero-banner__block__title span {
-    font-size: 1.4rem; /* Even smaller title */
+    font-size: 1.4rem; 
   }
 
   .hero-banner__block__desc {
-    font-size: 2.5rem; /* Even smaller description */
+    font-size: 1.8rem; 
     line-height: 1.1;
     letter-spacing: 0.03rem;
   }
 
   .play-pause-btn {
-    width: 40px; /* Smaller button */
+    width: 40px; 
     height: 40px;
-    bottom: 10px; /* Closer to bottom on smaller screens */
+    bottom: 10px; 
+  }
+
+  .header-nav.rebrand .header-nav__bottom__search-toggler__button > svg {
+    margin-right: 15px !important;
   }
 }
 
 /* Optional: Landscape mode for phones (adjust as needed if you have specific layouts for this) */
 @media only screen and (max-height: 450px) and (orientation: landscape) {
   .video-hero {
-    padding-bottom: 40%; /* Make it wider for landscape to fit more horizontally */
+    padding-bottom: 40%; 
     min-height: 200px;
   }
   .hero-banner__block__title span {
@@ -239,14 +126,57 @@
     font-size: 2.8rem;
   }
   .hero-banner__block__buttons {
-    flex-direction: row; /* Try to keep them in a row in landscape if space allows */
+    flex-direction: row; 
     flex-wrap: wrap;
     gap: 10px;
     max-width: 100%;
   }
   .hero-banner__block__buttons .hero-banner__block__button-link-break {
-    width: auto; /* Auto width */
+    width: auto; 
     max-width: none;
     padding: 8px 15px;
+  }
+
+
+}
+
+
+
+
+/* FOR NAVIGATION */
+
+@media only screen and (max-width: 1279px) {
+  .header-sticky .header-nav.rebrand .header-nav__bottom {
+    justify-content: normal;
+    background-color: #fff;
+  }
+
+  .header-sticky .header-nav.rebrand .header-nav__bottom__container {
+    justify-content: normal;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  .header-nav.rebrand .header-nav__logo {
+    justify-content: normal;
+    padding: .5rem 0 !important;
+  }
+
+  .header-nav.rebrand .header-nav__logo svg {
+    fill: #7e072a;
+    width: 10rem !important;
+  }
+
+  .header-nav__bottom__nav-toggler__button {
+    border: 2px solid #7e072a;
+    border-radius: 10px;
+    color: #7e072a;;
+    padding: 5px 30px !important;
+  }
+
+  .header-nav.rebrand .header-nav__bottom__search-toggler__button > svg {
+    transform: scale(1.6) !important;
+    fill: #7e072a;
+    margin-right: 5px;
   }
 }
