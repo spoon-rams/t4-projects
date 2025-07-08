@@ -1,14 +1,12 @@
 /* --- Mobile Responsiveness --- */
 
-
-
 @media only screen and (max-width: 1427px) {
   .video-hero {
     padding-bottom: 60%;
-    min-height: 500px; 
+    min-height: 500px;
   }
   .hero-banner__block__desc {
-    font-size: 5rem; 
+    font-size: 5rem;
   }
 }
 
@@ -25,7 +23,7 @@
 @media only screen and (max-width: 991px) {
   .video-hero {
     padding-bottom: 70%;
-    min-height: 500px; 
+    min-height: 500px;
   }
 
   .hero-banner__block__desc {
@@ -37,11 +35,11 @@
 @media only screen and (max-width: 768px) {
   .video-hero {
     padding-bottom: 80%;
-    min-height: 500px; 
+    min-height: 500px;
   }
 
   .video-hero .hero-banner__block {
-    padding: 15px; 
+    padding: 15px;
     margin-top: 5%;
   }
 
@@ -50,24 +48,24 @@
   }
 
   .hero-banner__block__desc {
-    font-size: 2.5rem; 
-    line-height: 1.1; 
-    letter-spacing: 0.05rem; 
+    font-size: 2.5rem;
+    line-height: 1.1;
+    letter-spacing: 0.05rem;
   }
 
   .hero-banner__block__buttons {
-    flex-direction: column; 
-    align-items: center; 
-    gap: 10px; 
-    width: 90%; 
-    max-width: 300px; 
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 90%;
+    max-width: 300px;
   }
 
   .hero-banner__block__buttons .hero-banner__block__button-link-break {
-    width: 100%; 
-    max-width: 250px; 
-    padding: 10px 20px; 
-    font-size: 0.9rem; 
+    width: 100%;
+    max-width: 250px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 
   .play-pause-btn {
@@ -81,34 +79,33 @@
   }
 }
 
-
 @media only screen and (max-width: 480px) {
   .video-hero {
-    padding-bottom: 110%; 
+    padding-bottom: 110%;
     min-height: 250px;
   }
 
   .video-hero .hero-banner__block__title span {
-    font-size: 1.4rem; 
+    font-size: 1.4rem;
   }
 
   .hero-banner__block__desc {
-    font-size: 1.8rem; 
+    font-size: 1.8rem;
     line-height: 1.1;
     letter-spacing: 0.03rem;
   }
 
   .play-pause-btn {
-    width: 40px; 
+    width: 40px;
     height: 40px;
-    bottom: 10px; 
+    bottom: 10px;
   }
 }
 
 /* Optional: Landscape mode for phones (adjust as needed if you have specific layouts for this) */
 @media only screen and (max-height: 450px) and (orientation: landscape) {
   .video-hero {
-    padding-bottom: 40%; 
+    padding-bottom: 40%;
     min-height: 200px;
   }
   .hero-banner__block__title span {
@@ -118,22 +115,17 @@
     font-size: 2.8rem;
   }
   .hero-banner__block__buttons {
-    flex-direction: row; 
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
     max-width: 100%;
   }
   .hero-banner__block__buttons .hero-banner__block__button-link-break {
-    width: auto; 
+    width: auto;
     max-width: none;
     padding: 8px 15px;
   }
-
-
 }
-
-
-
 
 /* FOR NAVIGATION */
 
@@ -157,7 +149,7 @@
 
   .header-nav.rebrand .header-nav__logo {
     justify-content: normal;
-    padding: .5rem 0 !important;
+    padding: 0.5rem 0 !important;
   }
 
   .header-nav.rebrand .header-nav__logo svg {
@@ -168,7 +160,7 @@
   .header-nav__bottom__nav-toggler__button {
     border: 2px solid #7e072a;
     border-radius: 10px;
-    color: #7e072a;;
+    color: #7e072a;
     padding: 5px 30px !important;
   }
 
@@ -176,6 +168,24 @@
     transform: scale(1.6) !important;
     fill: #7e072a;
     margin-right: 5px;
+  }
+
+  .header-overlay {
+    z-index: 1 !important;
+  }
+
+  .header-nav.rebrand .header-nav__bottom__list .header-nav__bottom__link {
+    color: #333 !important;
+    display: flex;
+  }
+  .header-nav.rebrand .header-nav__bottom__outer-quick-list--secondary .header-nav__bottom__link {
+    color: #fff !important
+  }
+
+  .header-nav__bottom__link > svg {
+    position: static !important;
+    margin-left: auto;
+    padding-left: 0.5em;
   }
 }
 
