@@ -7,15 +7,8 @@
 } 
 */
 
-@media (min-width: 1499px) and (max-width: 1919px) {
-    .video-hero video {
-        top: 500px !important;
-        width: 100% !important;
-    }
-}
-
 /* MOBILE RESPONSIVE VIEW - PORTRAIT/DESKTOP */
-@media (max-width: 375px) {
+/* @media (max-width: 375px) {
   .video-hero {
     height: 64vh;
   }
@@ -130,17 +123,130 @@
     top: 390px;
     width: 110%;
   }
-}
+} */
 
-@media (min-width: 1499px) and (max-width: 1919px) {
+/* @media (min-width: 1499px) and (max-width: 1919px) {
   .video-hero video {
     top: 65%;
     width: 110%;
-  }
-}
+  } 
+} 
 
 @media (min-width: 1920px) {
   .video-hero video {
     top: 500px;
+  }
+}
+
+
+/* --- Media Queries for Mobile Responsiveness --- */
+@media only screen and (max-width: 1427px) {
+  .hero-banner__block__desc {
+    font-size: 5rem; /* Smaller description for mobile */
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .hero-banner__block__desc {
+    font-size: 4.07rem;
+  }
+  .hero-banner__block__title {
+    background-color: unset !important;
+    padding: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .hero-banner__block__desc {
+    font-size: 3rem;
+  }
+}
+
+/* Small tablets and large phones (e.g., up to 768px wide) */
+@media only screen and (max-width: 768px) {
+  .video-hero {
+    /* For mobile, you might want a taller aspect ratio to show more of the video vertically. */
+    /* Example: 4:3 aspect ratio (75% for 3/4 * 100) */
+    padding-bottom: 75%;
+    min-height: 300px; /* Ensure a decent minimum height */
+  }
+
+  .video-hero .hero-banner__block {
+    padding: 15px; /* Reduce padding on mobile */
+  }
+
+  .video-hero .hero-banner__block__title span {
+    font-size: 1.7rem; /* Smaller title for mobile */
+  }
+
+  .hero-banner__block__desc {
+    font-size: 3.5rem; /* Smaller description for mobile */
+    line-height: 1.1; /* Adjust line height if needed */
+    letter-spacing: 0.05rem; /* Reduce letter spacing */
+  }
+
+  .hero-banner__block__buttons {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+    align-items: center; /* Center stacked buttons */
+    gap: 10px; /* Smaller gap between stacked buttons */
+    width: 90%; /* Allow buttons block to take more width on mobile */
+    max-width: 300px; /* Limit max width for stacked buttons */
+  }
+
+  .hero-banner__block__buttons .hero-banner__block__button-link-break {
+    width: 100%; /* Make individual buttons full width when stacked */
+    max-width: 250px; /* Max width for stacked buttons */
+    padding: 10px 20px; /* Slightly smaller padding for buttons */
+    font-size: 0.9rem; /* Smaller font for buttons */
+  }
+}
+
+/* Extra small devices (e.g., up to 480px wide - typical mobile phones) */
+@media only screen and (max-width: 480px) {
+  .video-hero {
+    /* Potentially even taller aspect ratio for very small screens */
+    padding-bottom: 90%; /* Example: even taller aspect ratio */
+    min-height: 250px;
+  }
+
+  .video-hero .hero-banner__block__title span {
+    font-size: 1.4rem; /* Even smaller title */
+  }
+
+  .hero-banner__block__desc {
+    font-size: 2.5rem; /* Even smaller description */
+    line-height: 1.1;
+    letter-spacing: 0.03rem;
+  }
+
+  .play-pause-btn {
+    width: 40px; /* Smaller button */
+    height: 40px;
+    bottom: 10px; /* Closer to bottom on smaller screens */
+  }
+}
+
+/* Optional: Landscape mode for phones (adjust as needed if you have specific layouts for this) */
+@media only screen and (max-height: 450px) and (orientation: landscape) {
+  .video-hero {
+    padding-bottom: 40%; /* Make it wider for landscape to fit more horizontally */
+    min-height: 200px;
+  }
+  .hero-banner__block__title span {
+    font-size: 1.5rem;
+  }
+  .hero-banner__block__desc {
+    font-size: 2.8rem;
+  }
+  .hero-banner__block__buttons {
+    flex-direction: row; /* Try to keep them in a row in landscape if space allows */
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 100%;
+  }
+  .hero-banner__block__buttons .hero-banner__block__button-link-break {
+    width: auto; /* Auto width */
+    max-width: none;
+    padding: 8px 15px;
   }
 }
