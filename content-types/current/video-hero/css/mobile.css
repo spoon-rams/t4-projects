@@ -1,9 +1,5 @@
 /* --- Mobile Responsiveness --- */
-@media only screen and (max-width: 1800px) {
-  .header-nav.rebrand .header-nav__top__container.header-nav__top__outer-quick-list {
-    width: 100%;
-  }
-}
+
 
 
 @media only screen and (max-width: 1427px) {
@@ -107,10 +103,6 @@
     height: 40px;
     bottom: 10px; 
   }
-
-  .header-nav.rebrand .header-nav__bottom__search-toggler__button > svg {
-    margin-right: 15px !important;
-  }
 }
 
 /* Optional: Landscape mode for phones (adjust as needed if you have specific layouts for this) */
@@ -145,6 +137,12 @@
 
 /* FOR NAVIGATION */
 
+@media only screen and (max-width: 1800px) {
+  .header-nav.rebrand .header-nav__top__container.header-nav__top__outer-quick-list {
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 1279px) {
   .header-sticky .header-nav.rebrand .header-nav__bottom {
     justify-content: normal;
@@ -178,5 +176,11 @@
     transform: scale(1.6) !important;
     fill: #7e072a;
     margin-right: 5px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header-nav.rebrand .header-nav__bottom__search-toggler__button > svg {
+    margin-right: 15px !important;
   }
 }
