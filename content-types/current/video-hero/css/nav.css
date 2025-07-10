@@ -91,6 +91,7 @@
 .header-nav__dropdown-menu {
   position: absolute;
   width: 1800px !important;
+  margin-top: 2em;
   left: 50%;
   transform: translateX(-50%);
   display: none;
@@ -101,20 +102,35 @@
   z-index: 1000;
 }
 
+.header-nav__dropdown-menu::before {
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 20px;
+  background-image: url("../../../../images/arrow-up.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-top: -15px;
+  margin-left: 34.5%;
+  /* REMOVE THIS LINE: */
+  background-color: #fff;
+}
+
 .header-nav__dropdown-menu__lists-widget {
-    flex: 0 0 85%;
+  flex: 0 0 85%;
 }
 .header-nav__dropdown-menu__images-widget {
-    flex: 0 0 10%;
+  flex: 0 0 10%;
 }
 
 .header-nav__dropdown-menu__quick-list {
-    width: 1800px;
-    flex: 0 0 100%;
+  width: 1800px;
+  flex: 0 0 100%;
 }
 
 .header-nav__dropdown-menu__lists-widget--bottom {
-    width: 100% !important;
+  width: 100% !important;
 }
 
 /* UNIVERSAL CSS ADJUSTMENTS */
