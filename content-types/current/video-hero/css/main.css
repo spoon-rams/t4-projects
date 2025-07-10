@@ -191,7 +191,7 @@
   margin: 20px auto 10px auto; 
 }
 
-.hero-banner__block__buttons .hero-banner__block__button-link-break {
+.hero-banner__block__buttons .hero-banner__block__button-link-break.btn-secondary {
   margin: 0 !important; 
   background-color: #fff;
   color: #d93f32 !important;
@@ -206,9 +206,30 @@
   transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
-.hero-banner__block__buttons .hero-banner__block__button-link-break:hover {
-  background-color: #d93f32; 
+.hero-banner__block__buttons .hero-banner__block__button-link-break.btn-primary {
+  margin: 0 !important; 
+  background-color: #d93f32 !important;
   color: #fff !important;
+  border-radius: 10px;
+  border: 2px solid #d93f32;
+  font-size: 1rem;
+  padding: 12px 25px; 
+  text-decoration: none; 
+  display: inline-block; 
+  min-width: 150px; 
+  text-align: center; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.hero-banner__block__buttons .hero-banner__block__button-link-break.btn-secondary:hover { 
+  background-color: #fff !important;
+  color: #7E072A !important;
+  border-color: #7E072A !important;
+}
+
+.hero-banner__block__buttons .hero-banner__block__button-link-break.btn-primary:hover {
+  background-color: #7E072A !important;
+  border-color: #7E072A !important;
 }
 
 /* Keep your existing .btn-primary:visited style if it's applied via JS or specific state */
