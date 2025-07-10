@@ -1,4 +1,3 @@
-
 /* Styling for the main navigation links */
 .has-submenu a {
   position: relative; /* Essential for positioning the pseudo-element */
@@ -95,8 +94,6 @@
   visibility: visible;
 }
 
-
-
 .parent-flex-only {
   display: flex;
   flex-wrap: wrap; /* Allows items to wrap to the next line */
@@ -112,7 +109,8 @@
   box-sizing: border-box; /* Include padding/border in width calculation */
 }
 
-.div1, .div2 {
+.div1,
+.div2 {
   flex: 0 0 50%; /* Each takes 50% width, forcing two per line */
   /* Or use width: 50%; if no flex-grow/shrink needed */
 }
@@ -120,4 +118,67 @@
 .div3 {
   flex: 0 0 100%; /* Forces div3 to take up the full width, effectively on a new line */
   background-color: lightcoral;
+}
+
+/* 1. Styles for the overall container that provides the light gray background */
+.main-header-area {
+  background-color: #f0f0f0; /* Light gray background */
+  padding-bottom: 0; /* Adjust if you need space above the line */
+  /* Add any other global header styles like height, width, etc. */
+}
+
+/* 2. Styles for the element that will visually hold the red line and the arrow */
+/* This element (or its pseudo-elements) creates the line and gap. */
+/* It should be positioned just above your .header-nav__dropdown-menu */
+.line-and-arrow-connector {
+  position: relative; /* Important for positioning its pseudo-elements */
+  border-bottom: 2px solid #a0203a; /* This creates the main red horizontal line */
+  height: 0; /* Keep its height minimal, as the border creates the visual line */
+  background-color: transparent; /* Ensure no background here, let .main-header-area show through */
+  /* You might need to adjust margin-top or padding to align it correctly
+     with content above it in your specific layout. */
+}
+
+/* 3. Creating the 'gap' in the red line */
+/* We use a pseudo-element that overlays the border-bottom with the gray background color */
+.line-and-arrow-connector::before {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Position it exactly on top of the border-bottom */
+  left: 50%; /* Center it horizontally */
+  transform: translateX(-50%); /* Adjust for true centering */
+  width: 20px; /* Adjust this width to control the size of the gap in the line */
+  height: 2px; /* Same height as the border-bottom */
+  background-color: #f0f0f0; /* Matches the .main-header-area background to create the visual 'gap' */
+  z-index: 1; /* Ensures it sits above the border */
+}
+
+/* 4. Styles for the actual dropdown menu (the white background area) */
+.header-nav__dropdown-menu {
+  background-color: #fff; /* White background for the dropdown content */
+  position: relative; /* Important for positioning its ::before pseudo-element */
+  /* Add other dropdown styles like padding, box-shadow, border-radius, etc. */
+}
+
+/* 5. The red outline arrow with its middle filled with white */
+/* This uses the ::before pseudo-element of your .header-nav__dropdown-menu */
+.header-nav__dropdown-menu::before {
+  content: "";
+  display: block; /* Use block for better positioning control */
+  position: absolute;
+  top: -15px; /* Adjust this negative value to pull the triangle up into the gap. */
+  /* Experiment with this value until it aligns perfectly with the line. */
+  left: 50%; /* Center the arrow horizontally */
+  transform: translateX(-50%); /* Adjust for true centering */
+  width: 13px; /* As per your SVG width */
+  height: 20px; /* As per your SVG height */
+  background-image: url("../images/arr"); /* Your red outline SVG */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #fff; /* This is what makes the interior of the outline triangle white. */
+  /* IMPORTANT: This will also make the entire 13x20px area of this
+                              pseudo-element white, meaning the area directly outside the triangle's
+                              outline (within this 13x20px box) will also be white. */
+  z-index: 2; /* Ensures the arrow sits above the gap and the line */
 }
