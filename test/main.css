@@ -1,16 +1,123 @@
-/* @media only screen and (orientation: landscape) and (max-height: 450px){
-  .modal-overflow {
-    height: 300px;
-    overflow-y: scroll;
-  }
-} */
 
-/* .container {
-  display: flex;
-  justify-content: center;
+/* Styling for the main navigation links */
+.has-submenu a {
+  position: relative; /* Essential for positioning the pseudo-element */
+  padding-bottom: 10px; /* Add some space below the text for the arrow */
+  display: block; /* Ensures padding works correctly */
 }
 
-.container .item-one,
-.container .item-two {
-  flex: 0 0 33%;
-} */
+/* The arrow itself */
+.has-submenu a::after {
+  content: ""; /* Required for pseudo-elements */
+  position: absolute;
+  bottom: 0; /* Adjust this to control the arrow's distance from the text */
+  left: 50%;
+  transform: translateX(-50%); /* Center the arrow horizontally */ /* Basic reset and body styling */
+  body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+  }
+
+  /* Main navigation styling */
+  .main-nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Makes menu items sit next to each other */
+    background-color: #333; /* Dark background for the nav bar */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+
+  .main-nav li {
+    margin-right: 30px; /* Space between menu items */
+  }
+
+  /* Styling for the main navigation links */
+  .main-nav a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    padding-bottom: 10px; /* Add space for the arrow */
+    display: block; /* Important for padding and pseudo-element positioning */
+    position: relative; /* Essential for positioning the ::after pseudo-element */
+    font-size: 18px;
+    transition: color 0.3s ease; /* Smooth color change on hover */
+  }
+
+  .main-nav a:hover {
+    color: #ffd700; /* Yellowish color on hover */
+  }
+
+  /* The arrow itself (pointing downwards) */
+  .has-submenu a::after {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute;
+    bottom: 0; /* Position just below the link text */
+    left: 50%;
+    transform: translateX(-50%); /* Center the arrow horizontally */
+
+    width: 0;
+    height: 0;
+    /* Create the triangle using borders */
+    border-left: 8px solid transparent; /* Size of the arrow base */
+    border-right: 8px solid transparent;
+    border-top: 8px solid white; /* Color and direction of the arrow */
+
+    opacity: 0; /* Hidden by default */
+    visibility: hidden; /* Also hide from screen readers when not active */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+  }
+
+  /* Show the arrow on hover of the main menu item */
+  .has-submenu:hover a::after {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Create the triangle using borders */
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent; /* Adjust size as needed */
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white; /* The color of your arrow */
+  /* If you want it pointing down, use border-top and position it differently */
+
+  opacity: 0; /* Hidden by default */
+  visibility: hidden; /* Also hide from screen readers when not active */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+}
+
+/* Show the arrow on hover of the main menu item */
+.has-submenu:hover a::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+.parent-flex-only {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  width: 300px; /* Needs a defined width for wrapping to occur */
+  border: 2px solid blue;
+  padding: 10px;
+}
+
+.parent-flex-only > div {
+  padding: 20px;
+  background-color: lightgray;
+  border: 1px solid #333;
+  box-sizing: border-box; /* Include padding/border in width calculation */
+}
+
+.div1, .div2 {
+  flex: 0 0 50%; /* Each takes 50% width, forcing two per line */
+  /* Or use width: 50%; if no flex-grow/shrink needed */
+}
+
+.div3 {
+  flex: 0 0 100%; /* Forces div3 to take up the full width, effectively on a new line */
+  background-color: lightcoral;
+}
