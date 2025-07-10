@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS EDITS -->
+    <link rel="stylesheet" href="./css/nav.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/mobile.css" />
 
@@ -338,7 +339,10 @@
                 </li>
                 <li class="header-nav__bottom__item header-nav__dropdown">
                   <a href="/academics/" class="header-nav__bottom__link">Academics</a>
-                  <div class="header-nav__dropdown-menu">
+
+                  <!-- NAVIGATION ACTIVE EDIT START -->
+
+                  <div class="header-nav__dropdown-menu header-nav__dropdown-menu--active">
                     <div class="header-nav__dropdown-menu__back-toggler">
                       <button class="header-nav__dropdown-menu__back-toggler__button btn-back-nav" type="button" aria-label="Back">
                         <svg class="svg-md-24px" focusable="false" aria-hidden="true">
@@ -441,7 +445,11 @@
                           </ul>
                         </ul>
                       </div>
-
+                    </div>
+                    <div class="header-nav__dropdown-menu__images-widget">
+                      <div class="header-nav__dropdown-menu__img"></div>
+                    </div>
+                    <div class="header-nav__dropdown-menu__quick-list">
                       <!-- Mobile Dropdown Quick Links -->
                       <ul class="header-nav__dropdown-menu__lists-widget--bottom header-nav__bottom__inner-quick-list">
                         <li class="header-nav__dropdown-menu__item">
@@ -467,10 +475,9 @@
                         </li>
                       </ul>
                     </div>
-                    <div class="header-nav__dropdown-menu__images-widget">
-                      <div class="header-nav__dropdown-menu__img"></div>
-                    </div>
                   </div>
+
+                  <!-- NAVIGATION ACTIVE EDIT - END -->
                 </li>
                 <li class="header-nav__bottom__item header-nav__dropdown">
                   <a href="/admissions-and-aid/" class="header-nav__bottom__link">Admissions and Aid</a>

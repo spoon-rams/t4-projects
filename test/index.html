@@ -3,32 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover Arrow Menu</title>
     <link rel="stylesheet" href="main.css" />
-    <title>Data Atrribute Test</title>
   </head>
   <body>
-    <!-- DATA ATTRIBUTE TEST -->
-    <!-- <div class="main">
-      <h1>Data Attribute Test</h1>
-      <div class="data-test" data-test-info='{"data": [{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"},{"title":"hello World!", "content": "this is a test"}]}'></div>
-    </div> -->
-
-    <div class="container" style="display: flex; justify-content: center">
-      <div class="item-one" style="flex: 0 0 33%">
-        <h3>ICON</h3>
-        <p>
-          Lorem ipsum odor amet, consectetuer adipiscing elit. Mollis adipiscing senectus sapien class tempus. Nisl eros aenean condimentum magna at integer est condimentum. Phasellus justo
-          scelerisque per penatibus vivamus. Pulvinar pulvinar commodo egestas conubia rhoncus.
-        </p>
-      </div>
-      <div class="item-two" style="flex: 0 0 33%">
-        <h3>ICON</h3>
-        <p>
-          Lorem ipsum odor amet, consectetuer adipiscing elit. Mollis adipiscing senectus sapien class tempus. Nisl eros aenean condimentum magna at integer est condimentum. Phasellus justo
-          scelerisque per penatibus vivamus. Pulvinar pulvinar commodo egestas conubia rhoncus.
-        </p>
-      </div>
+    <nav class="main-nav">
+      <ul>
+        <li class="has-submenu">
+          <a href="#">About</a>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Mission</a>
+        </li>
+      </ul>
+    </nav>
+    <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="10" viewBox="0 0 1440 10" fill="none">
+      <path d="M0 9H547L557 2L567 9H1440" stroke="#7E072A" stroke-width="2" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="8" viewBox="0 0 13 8" fill="none">
+      <path d="M0 1H0.5L6.5 6.5L12.5 1H13" stroke="gray" stroke-opacity="0.5" />
+    </svg>
+    
+    <div class="parent-flex-only">
+      <div class="div1">Div 1</div>
+      <div class="div2">Div 2</div>
+      <div class="div3">Div 3</div>
     </div>
+   
   </body>
-  <script type="text/javascript" src="app.js"></script>
 </html>
