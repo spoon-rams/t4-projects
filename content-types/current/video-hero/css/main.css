@@ -219,15 +219,24 @@
   transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
-/* .hero-banner__block__buttons .hero-banner__block__button-link-break:hover {
-  background-color: #d93f32; 
+.hero-banner__block__buttons .hero-banner__block__button-link-break.btn-primary:hover {
+  background-color: #7e072a !important; 
   color: #fff !important;
-} */
+  border-color: #7e072a !important;
+}
 
-.btn-primary:visited {
+.hero-banner__block__buttons .hero-banner__block__button-link-break.btn-secondary:hover {
+  background-color: #fff !important; 
+  color: #7e072a !important;
+  border-color: #7e072a !important;
+}
+
+
+
+/* .btn-primary:visited {
   background-color: #d93f32 !important;
   color: #fff !important;
-}
+} */
 
 /* Style the transparent play/pause button */
 .play-pause-btn {
