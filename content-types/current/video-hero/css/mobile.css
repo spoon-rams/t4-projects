@@ -129,7 +129,13 @@
 
 @media only screen and (max-width: 380px) {
   .video-hero {
-    padding-bottom: 180%;
+    padding-bottom: 200%;
+  }
+}
+
+@media only screen and (max-width: 285px) {
+  .video-hero {
+    padding-bottom: 240%;
   }
 }
 
