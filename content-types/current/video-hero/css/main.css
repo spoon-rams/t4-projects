@@ -88,8 +88,6 @@
   background-color: #7e072a !important;
 }
 
- 
-
 /* UNIVERSAL CSS ADJUSTMENTS */
 
 .header-placeholder {
@@ -125,7 +123,6 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  z-index: 1;
 }
 
 .video-hero .overlay {
@@ -135,10 +132,11 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
-  z-index: 2; 
+  z-index: 1; 
 }
 
 .video-hero .hero-banner__block {
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3; 
@@ -150,7 +148,6 @@
   max-width: 1440px; 
   padding: 20px; 
   box-sizing: border-box; 
-  margin-top: 20%;
 }
 
 .video-hero .hero-banner__block__title {
@@ -192,7 +189,7 @@
   margin: 20px auto 10px auto; 
 }
 
-.hero-banner__block__buttons .hero-banner__block__button-link-break {
+.hero-banner__block__buttons .hero-banner__block__button-link-break.btn-secondary {
   margin: 0 !important; 
   background-color: #fff;
   color: #d93f32 !important;
@@ -205,14 +202,28 @@
   min-width: 150px; 
   text-align: center; 
   transition: background-color 0.3s ease, color 0.3s ease; 
+} 
+
+.hero-banner__block__buttons .hero-banner__block__button-link-break.btn-primary {
+  margin: 0 !important; 
+  background-color: #d93f32 !important;
+  color: #fff !important;
+  border-radius: 10px;
+  border: 2px solid #d93f32;
+  font-size: 1rem;
+  padding: 12px 25px; 
+  text-decoration: none; 
+  display: inline-block; 
+  min-width: 150px; 
+  text-align: center; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
-.hero-banner__block__buttons .hero-banner__block__button-link-break:hover {
+/* .hero-banner__block__buttons .hero-banner__block__button-link-break:hover {
   background-color: #d93f32; 
   color: #fff !important;
-}
+} */
 
-/* Keep your existing .btn-primary:visited style if it's applied via JS or specific state */
 .btn-primary:visited {
   background-color: #d93f32 !important;
   color: #fff !important;
@@ -222,7 +233,7 @@
 .play-pause-btn {
   position: absolute;
   bottom: 20px; 
-  left: 96.5%; 
+  left: 97.5%; 
   transform: translateX(-50%); 
   background-color: transparent;
   border: 2px solid white;
@@ -249,4 +260,96 @@
 .play-pause-btn:focus:not(:focus-visible) {
   outline: none !important;
   box-shadow: none;
+}
+
+
+.header-nav.rebrand .header-nav__logo {
+  justify-content: center;
+  align-self: flex-start;
+  width: 100% !important;
+}
+
+.header-nav.rebrand .header-nav__logo svg {
+  width: 15rem !important;
+  height: auto;
+  fill: #fff;
+}
+
+.header-nav.rebrand .header-nav__mobile {
+  align-self: flex-end;
+  margin-left: 0 !important;
+}
+
+.header-nav.rebrand .header-nav__top__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 1800px;
+  margin: 0 auto;
+}
+
+.header-sticky .header-nav.rebrand .header-nav__bottom {
+  border-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.header-sticky .header-nav.rebrand .header-nav__bottom__container {
+  z-index: 1;
+  justify-content: center;
+}
+
+.header-nav.rebrand .header-nav__bottom__link {
+  padding: 0.25rem 0.8rem !important;
+  position: relative;
+  height: inherit;
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+  color: #fff !important;
+}
+
+.header-nav.rebrand .header-nav__bottom__search-toggler {
+  margin-left: 0 !important;
+}
+
+.header-nav.rebrand .header-nav__bottom__search-toggler__button {
+  display: flex;
+  flex-direction: row-reverse;
+  color: #fff;
+  padding: 0 !important;
+}
+
+.header-nav.rebrand .header-nav__bottom__search-toggler__label {
+  text-transform: unset !important;
+  font-weight: bold !important;
+  margin-left: 0.5rem !important;
+  font-size: 1rem !important;
+  margin-right: 0.4rem !important;
+}
+
+.header-nav.rebrand .header-nav__bottom__search-toggler__button > svg {
+  transform: scale(1) !important;
+  fill: white;
+}
+
+.header-nav.rebrand .header-nav__top__container {
+  height: 35px;
+}
+
+.header-nav.rebrand .header-nav__bottom__link:hover {
+  text-decoration: none;
+  color: #d93f32 !important;
+}
+
+.header-nav.rebrand .header-nav__top__list--secondary {
+  background-color: #7e072a !important;
+}
+
+/* TEMPORARY UNIVERSAL CSS ADJUSTMENTS */
+
+.header-placeholder {
+  display: none;
 }
