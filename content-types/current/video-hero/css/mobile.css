@@ -1,12 +1,19 @@
 /* --- Mobile Responsiveness --- */
 
 @media only screen and (max-width: 1427px) {
-  .video-hero {
-    padding-bottom: 60%;
-    min-height: 500px;
-  }
   .hero-banner__block__desc {
     font-size: 5rem;
+  }
+
+  .hero-banner__block {
+    top: 60% !important;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .video-hero {
+    padding-bottom: 65%;
+    min-height: 500px;
   }
 }
 
@@ -22,25 +29,28 @@
 
 @media only screen and (max-width: 991px) {
   .video-hero {
-    padding-bottom: 70%;
+    padding-bottom: 80%;
     min-height: 500px;
   }
 
   .hero-banner__block__desc {
     font-size: 3rem;
   }
+
+  .play-pause-btn {
+    left: 95.5%
+  }
 }
 
 /* Small tablets and large phones (e.g., up to 768px wide) */
 @media only screen and (max-width: 768px) {
   .video-hero {
-    padding-bottom: 80%;
+    padding-bottom: 90%;
     min-height: 500px;
   }
 
   .video-hero .hero-banner__block {
     padding: 15px;
-    margin-top: 5%;
   }
 
   .video-hero .hero-banner__block__title span {
@@ -69,20 +79,30 @@
   }
 
   .play-pause-btn {
-    left: 94.5%;
+    left: 93.5%;
   }
 }
 
-@media only screen and (max-width: 610px) {
+@media only screen and (max-width: 625px) {
+  .video-hero {
+    padding-bottom: 100%;
+    min-height: 500px;
+  }
+
   .hero-banner__block__desc {
     font-size: 2rem;
   }
 }
 
+@media only screen and (max-width: 520px) {
+  .video-hero {
+    padding-bottom: 120%;
+  }
+}
+
 @media only screen and (max-width: 480px) {
   .video-hero {
-    padding-bottom: 110%;
-    min-height: 250px;
+    padding-bottom: 140%;
   }
 
   .video-hero .hero-banner__block__title span {
@@ -101,11 +121,22 @@
     bottom: 10px;
   }
 }
+@media only screen and (max-width: 420px) {
+  .video-hero {
+    padding-bottom: 160%;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .video-hero {
+    padding-bottom: 180%;
+  }
+}
 
 /* Optional: Landscape mode for phones (adjust as needed if you have specific layouts for this) */
 @media only screen and (max-height: 450px) and (orientation: landscape) {
   .video-hero {
-    padding-bottom: 40%;
+    padding-bottom: 85%;
     min-height: 200px;
   }
   .hero-banner__block__title span {
@@ -179,7 +210,7 @@
     display: flex;
   }
   .header-nav.rebrand .header-nav__bottom__outer-quick-list--secondary .header-nav__bottom__link {
-    color: #fff !important
+    color: #fff !important;
   }
 
   .header-nav__bottom__link > svg {
