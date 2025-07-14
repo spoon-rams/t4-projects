@@ -240,6 +240,10 @@
     margin-left: auto;
     padding-left: 0.5em;
   }
+
+  .header-nav__dropdown-menu--active.slide-in-right {
+    width: 90% !important;
+  }
 }
 
 @media only screen and (max-width: 480px) {

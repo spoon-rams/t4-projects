@@ -75,10 +75,6 @@
   background-color: #900028 !important;
 }
 
-.header-nav.rebrand .header-nav__top__container {
-  height: 35px;
-}
-
 .header-nav.rebrand .header-nav__bottom__link:hover {
   text-decoration: none;
   color: #d93f32 !important;
@@ -89,17 +85,14 @@
 }
 
 .header-nav__dropdown-menu {
-  position: absolute;
   width: 1800px !important;
-  margin-top: .5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: none;
-  flex-wrap: wrap;
-  background-color: #fff;
+  margin-top: 0.5rem;
   border-top: 2px solid #7e072a !important;
   border-bottom: 2px solid #7e072a !important;
-  z-index: 1000;
+}
+
+.header-nav__bottom__link:hover:before {
+  background-image: none !important;
 }
 
 .header-nav__dropdown-menu::before {
@@ -163,6 +156,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+
+.header-nav__dropdown-menu__link {
+  color: #7e072a !important;
 }
 
 /* UNIVERSAL CSS ADJUSTMENTS */
