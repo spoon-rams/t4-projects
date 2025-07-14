@@ -75,10 +75,6 @@
   background-color: #900028 !important;
 }
 
-.header-nav.rebrand .header-nav__top__container {
-  height: 35px;
-}
-
 .header-nav.rebrand .header-nav__bottom__link:hover {
   text-decoration: none;
   color: #d93f32 !important;
@@ -89,19 +85,82 @@
 }
 
 .header-nav__dropdown-menu {
-  position: absolute;
   width: 1800px !important;
-  left: 50%;
-  transform: translateX(-50%);
-  display: none;
-  flex-wrap: wrap;
-  background-color: #fff;
+  margin-top: 0.5rem;
   border-top: 2px solid #7e072a !important;
   border-bottom: 2px solid #7e072a !important;
-  z-index: 1000;
 }
 
-.header-nav__dropdown-menu 
+.header-nav__bottom__link:hover:before {
+  background-image: none !important;
+}
+
+.header-nav__dropdown-menu::before {
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 20px;
+  background-image: url("../../../../images/arrow-up.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-top: -15px;
+  margin-left: 34.5%;
+  /* REMOVE THIS LINE: */
+  background-color: #fff;
+}
+
+.header-nav__dropdown-menu__lists-widget {
+  flex: 0 0 85%;
+}
+.header-nav__dropdown-menu__images-widget {
+  flex: 0 0 10%;
+  border-left: 2px solid #dbdbd3;
+}
+
+.header-nav__dropdown-menu__quick-list {
+  width: 1800px;
+  flex: 0 0 100%;
+  border-top: 2px solid #dbdbd3;
+}
+
+.header-nav__dropdown-menu__lists-widget--bottom {
+  width: 100% !important;
+  margin-top: 0 !important;
+  border-top: 2px solid #dbdbd3 !important;
+}
+
+.header-nav__dropdown-menu__link-title {
+  font-size: 16px !important;
+  text-decoration: none !important;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #d93f32;
+}
+
+.header-nav__dropdown-menu__item {
+  margin: 1rem 0 !important;
+}
+
+.header-nav__dropdown-menu__lists-widget--top--list li a {
+  color: #7e072a !important;
+}
+
+.header-nav__dropdown-menu__lists-widget--top--list li a::after,
+.header-nav__dropdown-menu__link::after {
+  display: inline-block;
+  content: " ";
+  height: 8px;
+  width: 8px;
+  margin-left: 5px;
+  background-image: url("../../../../images/arrow-right.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.header-nav__dropdown-menu__link {
+  color: #7e072a !important;
+}
 
 /* UNIVERSAL CSS ADJUSTMENTS */
 

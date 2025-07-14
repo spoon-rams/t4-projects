@@ -79,7 +79,7 @@
   }
 
   .play-pause-btn {
-    left: 93.5% !important;
+    left: 93.5%;
   }
 }
 
@@ -136,6 +136,17 @@
 @media only screen and (max-width: 285px) {
   .video-hero {
     padding-bottom: 240%;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .video-hero {
+    padding-bottom: 160%;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .video-hero {
+    padding-bottom: 180%;
   }
 }
 
@@ -221,13 +232,17 @@
   }
   
   .header-nav.rebrand .header-nav__bottom__outer-quick-list--secondary .header-nav__bottom__link {
-    color: #fff !important
+    color: #fff !important;
   }
 
   .header-nav__bottom__link > svg {
     position: static !important;
     margin-left: auto;
     padding-left: 0.5em;
+  }
+
+  .header-nav__dropdown-menu--active.slide-in-right {
+    width: 90% !important;
   }
 }
 
