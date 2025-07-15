@@ -47,7 +47,7 @@
   }
 
   .banner-img-txt-bottom__block {
-    /* position: static; */
+    position: static;
     transform: translateY(0);
     width: 100%;
   }
