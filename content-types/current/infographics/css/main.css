@@ -1,8 +1,7 @@
+
 .statistics-blocks {
-  max-height: 288px;
   height: 288px;
 }
-
 .statistics-blocks .statistics-blocks__block {
   position: relative;
   margin: 0 !important;
