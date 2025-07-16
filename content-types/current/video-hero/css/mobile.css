@@ -221,6 +221,14 @@
     fill: #7e072a;
     margin-right: 5px;
   }
+  
+  .header-nav__bottom__search-toggler__button.btn-open-search {
+    margin-bottom: 0;
+  }
+
+  .header-nav__bottom__item {
+    margin-bottom: 0;
+  }
 
   .header-overlay {
     z-index: 1 !important;
@@ -232,7 +240,7 @@
   }
   
   .header-nav.rebrand .header-nav__bottom__outer-quick-list--secondary .header-nav__bottom__link {
-    color: #fff !important;
+    color: #fff !important
   }
 
   .header-nav__bottom__link > svg {
