@@ -1,184 +1,59 @@
-/* Styling for the main navigation links */
-.has-submenu a {
-  position: relative; /* Essential for positioning the pseudo-element */
-  padding-bottom: 10px; /* Add some space below the text for the arrow */
-  display: block; /* Ensures padding works correctly */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
 }
 
-/* The arrow itself */
-.has-submenu a::after {
-  content: ""; /* Required for pseudo-elements */
-  position: absolute;
-  bottom: 0; /* Adjust this to control the arrow's distance from the text */
-  left: 50%;
-  transform: translateX(-50%); /* Center the arrow horizontally */ /* Basic reset and body styling */
-  body {
-    font-family: sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
-  }
-
-  /* Main navigation styling */
-  .main-nav ul {
-    list-style: none; /* Remove bullet points */
-    padding: 0;
-    margin: 0;
-    display: flex; /* Makes menu items sit next to each other */
-    background-color: #333; /* Dark background for the nav bar */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-  }
-
-  .main-nav li {
-    margin-right: 30px; /* Space between menu items */
-  }
-
-  /* Styling for the main navigation links */
-  .main-nav a {
-    color: white; /* Link color */
-    text-decoration: none; /* Remove underline */
-    padding-bottom: 10px; /* Add space for the arrow */
-    display: block; /* Important for padding and pseudo-element positioning */
-    position: relative; /* Essential for positioning the ::after pseudo-element */
-    font-size: 18px;
-    transition: color 0.3s ease; /* Smooth color change on hover */
-  }
-
-  .main-nav a:hover {
-    color: #ffd700; /* Yellowish color on hover */
-  }
-
-  /* The arrow itself (pointing downwards) */
-  .has-submenu a::after {
-    content: ""; /* Required for pseudo-elements */
-    position: absolute;
-    bottom: 0; /* Position just below the link text */
-    left: 50%;
-    transform: translateX(-50%); /* Center the arrow horizontally */
-
-    width: 0;
-    height: 0;
-    /* Create the triangle using borders */
-    border-left: 8px solid transparent; /* Size of the arrow base */
-    border-right: 8px solid transparent;
-    border-top: 8px solid white; /* Color and direction of the arrow */
-
-    opacity: 0; /* Hidden by default */
-    visibility: hidden; /* Also hide from screen readers when not active */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
-  }
-
-  /* Show the arrow on hover of the main menu item */
-  .has-submenu:hover a::after {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  /* Create the triangle using borders */
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent; /* Adjust size as needed */
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid white; /* The color of your arrow */
-  /* If you want it pointing down, use border-top and position it differently */
-
-  opacity: 0; /* Hidden by default */
-  visibility: hidden; /* Also hide from screen readers when not active */
-  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+#main-nav {
+  position: fixed; /* Makes the nav stick to the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent; /* Initial transparent background */
+  padding: 15px 0;
+  text-align: center;
+  transition: background-color 0.3s ease; /* Smooth transition for background */
+  z-index: 1000; /* Ensure it stays on top of other content */
 }
 
-/* Show the arrow on hover of the main menu item */
-.has-submenu:hover a::after {
-  opacity: 1;
-  visibility: visible;
+#main-nav.scrolled {
+  background-color: #333; /* Dark background when scrolled */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: add a subtle shadow */
 }
 
-.parent-flex-only {
+#main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap to the next line */
-  width: 300px; /* Needs a defined width for wrapping to occur */
-  border: 2px solid blue;
-  padding: 10px;
+  justify-content: center;
 }
 
-.parent-flex-only > div {
-  padding: 20px;
-  background-color: lightgray;
-  border: 1px solid #333;
-  box-sizing: border-box; /* Include padding/border in width calculation */
+#main-nav ul li {
+  margin: 0 20px;
 }
 
-.div1,
-.div2 {
-  flex: 0 0 50%; /* Each takes 50% width, forcing two per line */
-  /* Or use width: 50%; if no flex-grow/shrink needed */
+#main-nav ul li a {
+  color: white; /* Text color is white by default for the transparent nav */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: color 0.3s ease; /* Transition for text color if you change it */
 }
 
-.div3 {
-  flex: 0 0 100%; /* Forces div3 to take up the full width, effectively on a new line */
-  background-color: lightcoral;
+#main-nav.scrolled ul li a {
+  color: white; /* Keep text white when scrolled, or change to a different color */
 }
 
-/* 1. Styles for the overall container that provides the light gray background */
-.main-header-area {
-  background-color: #f0f0f0; /* Light gray background */
-  padding-bottom: 0; /* Adjust if you need space above the line */
-  /* Add any other global header styles like height, width, etc. */
+
+.content {
+  padding-top: 100px; /* Adjust this value to push content down so it doesn't hide under the fixed nav */
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: 1500px; /* Make content tall enough to scroll */
 }
 
-/* 2. Styles for the element that will visually hold the red line and the arrow */
-/* This element (or its pseudo-elements) creates the line and gap. */
-/* It should be positioned just above your .header-nav__dropdown-menu */
-.line-and-arrow-connector {
-  position: relative; /* Important for positioning its pseudo-elements */
-  border-bottom: 2px solid #a0203a; /* This creates the main red horizontal line */
-  height: 0; /* Keep its height minimal, as the border creates the visual line */
-  background-color: transparent; /* Ensure no background here, let .main-header-area show through */
-  /* You might need to adjust margin-top or padding to align it correctly
-     with content above it in your specific layout. */
-}
-
-/* 3. Creating the 'gap' in the red line */
-/* We use a pseudo-element that overlays the border-bottom with the gray background color */
-.line-and-arrow-connector::before {
-  content: "";
-  position: absolute;
-  bottom: -2px; /* Position it exactly on top of the border-bottom */
-  left: 50%; /* Center it horizontally */
-  transform: translateX(-50%); /* Adjust for true centering */
-  width: 20px; /* Adjust this width to control the size of the gap in the line */
-  height: 2px; /* Same height as the border-bottom */
-  background-color: #f0f0f0; /* Matches the .main-header-area background to create the visual 'gap' */
-  z-index: 1; /* Ensures it sits above the border */
-}
-
-/* 4. Styles for the actual dropdown menu (the white background area) */
-.header-nav__dropdown-menu {
-  background-color: #fff; /* White background for the dropdown content */
-  position: relative; /* Important for positioning its ::before pseudo-element */
-  /* Add other dropdown styles like padding, box-shadow, border-radius, etc. */
-}
-
-/* 5. The red outline arrow with its middle filled with white */
-/* This uses the ::before pseudo-element of your .header-nav__dropdown-menu */
-.header-nav__dropdown-menu::before {
-  content: "";
-  display: block; /* Use block for better positioning control */
-  position: absolute;
-  top: -15px; /* Adjust this negative value to pull the triangle up into the gap. */
-  /* Experiment with this value until it aligns perfectly with the line. */
-  left: 50%; /* Center the arrow horizontally */
-  transform: translateX(-50%); /* Adjust for true centering */
-  width: 13px; /* As per your SVG width */
-  height: 20px; /* As per your SVG height */
-  background-image: url("../images/arr"); /* Your red outline SVG */
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-color: #fff; /* This is what makes the interior of the outline triangle white. */
-  /* IMPORTANT: This will also make the entire 13x20px area of this
-                              pseudo-element white, meaning the area directly outside the triangle's
-                              outline (within this 13x20px box) will also be white. */
-  z-index: 2; /* Ensures the arrow sits above the gap and the line */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
 }
