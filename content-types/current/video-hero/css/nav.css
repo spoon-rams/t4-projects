@@ -30,6 +30,7 @@
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  margin: 0 auto;
 }
 
 .header-nav__bottom__item {
@@ -168,4 +169,14 @@
 
 .header-placeholder {
   display: none;
+}
+
+/* TEMPORARY TEST */
+
+.test-content {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 20px 0;
 }
