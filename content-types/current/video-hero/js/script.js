@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", () => {
     let scrollY = window.scrollY;
-    if (windowSize > 1279 && scrollY > 2) {
+    if (windowSize > 1279 && scrollY > -1) {
       // Calculate the progress of the scroll within the fill range
       let progress = (scrollY - fillStart) / (fillEnd - fillStart);
 
