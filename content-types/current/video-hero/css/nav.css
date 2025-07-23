@@ -38,7 +38,6 @@
 }
 
 .header-sticky .header-nav.rebrand .header-nav__bottom__container {
-  z-index: 1;
   justify-content: center;
 }
 
@@ -199,7 +198,3 @@
 .pre-footer-cta .col-md-4 .general-content .general-content__block p {
   margin-bottom: 0 !important;
 }
-
-
-
-
