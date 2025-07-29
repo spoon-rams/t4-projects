@@ -1,4 +1,4 @@
-/* NAVIGATION Changes */
+/* NAVIGATION Changes - Homepage */
 .header-nav.rebrand .header-nav__logo {
   justify-content: center;
   align-self: flex-start;
@@ -33,7 +33,7 @@
   margin: 0 auto;
 }
 
-.header-nav__bottom__item {
+.header-nav.rebrand .header-nav__bottom__item {
   margin-bottom: 2rem;
 }
 
@@ -79,14 +79,18 @@
   fill: white;
 }
 
-
 .header-nav.rebrand .header-nav__top__list--secondary {
   background-color: #7e072a !important;
 }
 
-.header-nav__dropdown-menu {
+.header-nav.rebrand .header-nav__dropdown-menu {
   max-width: 1800px !important;
   border-top: 2px solid #7e072a !important;
+  border-bottom: 2px solid #7e072a !important;
+}
+
+.header-nav.left-column .header-nav__dropdown-menu {
+  border-top: 6px solid #7e072a !important;
   border-bottom: 2px solid #7e072a !important;
 }
 
