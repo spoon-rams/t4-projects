@@ -79,7 +79,6 @@
   fill: white;
 }
 
-
 .header-nav.rebrand .header-nav__top__list--secondary {
   background-color: #7e072a !important;
 }
@@ -169,6 +168,7 @@
 .header-placeholder {
   display: none;
 }
+
 
 /* TEMPORARY TEST */
 
