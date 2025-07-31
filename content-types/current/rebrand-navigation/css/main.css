@@ -168,15 +168,26 @@
 .header-nav__bottom__link > svg {
   display: none;
 }
+
+.header-nav__mobile--open {
+  background-color: unset !important;
+}
+
+.header-nav__mobile .header-nav__logo.mobile {
+  display: none;
+}
+
+.header-nav__bottom__outer-quick-list--primary.log-in-out--btn {
+  display: none;
+}
+
 /* TEMPORARY UNIVERSAL CSS ADJUSTMENTS */
 
 .header-placeholder {
   display: none;
 }
 
-.header-nav__mobile--open {
-  background-color: unset !important;
-}
+
 
 /* TEMPORARY TEST */
 
