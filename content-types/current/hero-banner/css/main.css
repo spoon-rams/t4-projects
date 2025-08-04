@@ -1,0 +1,52 @@
+.hero-banner__block__desc,
+.hero-banner__block__title > span {
+  background-color: unset !important;
+}
+
+.hero-banner .hero-banner__wrapper {
+  height: 500px;
+}
+
+.hero-banner .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 80%);
+  z-index: 0;
+}
+
+.hero-banner .hero-banner__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 192.023%;
+  background-position: 0px -304.529px;
+  background-repeat: no-repeat;
+  background-color: lightgray;
+}
+
+.hero-banner__block__button-link-break-3buttons::after {
+  content: " " !important;
+  position: relative;
+  background-image: url("../../../../images/arrow-right-white.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  padding-left: 1rem;
+  height: 12px;
+  top: 2px;
+}
+
+/* TEMPORARY UNIVERSAL CSS ADJUSTMENTS */
+.hero-banner {
+  margin-bottom: 200px;
+}
+
+/* .hero-banner .hero-banner__block {
+    top: 30rem;
+} */

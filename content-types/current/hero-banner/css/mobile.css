@@ -1,0 +1,14 @@
+@media only screen and (max-width: 1280px) {
+  .hero-banner .hero-banner__img {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .header-placeholder {
+    height: 104px !important;
+  }
+
+  .hero-banner__block__title {
+    background-color: unset !important;
+  }
+}
