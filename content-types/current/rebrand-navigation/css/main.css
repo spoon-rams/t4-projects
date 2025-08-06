@@ -14,6 +14,8 @@
 .header-nav.rebrand .header-nav__mobile {
   align-self: flex-end;
   margin-left: 0 !important;
+}.header-nav__top__list--secondary {
+    background-color: #7e072a;
 }
 
 .header-nav.rebrand .header-nav__top__container {
@@ -47,7 +49,7 @@
   height: inherit;
   display: inline-flex;
   align-items: center;
-  font-weight: bold;
+  font-weight: 500;
   color: #fff !important;
 }
 
@@ -68,7 +70,7 @@
 
 .header-nav.rebrand .header-nav__bottom__search-toggler__label {
   text-transform: unset !important;
-  font-weight: bold !important;
+  font-weight: 500 !important;
   margin-left: 0.5rem !important;
   font-size: 1rem !important;
   margin-right: 0.4rem !important;
@@ -79,7 +81,7 @@
   fill: white;
 }
 
-.header-nav.rebrand .header-nav__top__list--secondary {
+.header-nav .header-nav__top__list--secondary {
   background-color: #7e072a !important;
 }
 
@@ -165,9 +167,9 @@
   color: #7e072a !important;
 }
 
-.header-nav__bottom__link > svg {
+/* .header-nav__bottom__link > svg {
   display: none;
-}
+} */
 
 .header-nav__mobile--open {
   background-color: unset !important;
@@ -177,15 +179,16 @@
   display: none;
 }
 
-.header-nav__bottom__outer-quick-list--primary.log-in-out--btn {
+.header-nav__bottom__outer-quick-list--primary.log-in-out--btn,
+.header-nav__bottom__outer-quick-list--primary.log-in-out-btn {
   display: none;
 }
 
 /* TEMPORARY UNIVERSAL CSS ADJUSTMENTS */
 
-/* .header-placeholder {
+.header-placeholder {
   display: none;
-} */
+}
 
 
 

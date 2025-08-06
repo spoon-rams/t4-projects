@@ -11,7 +11,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
   height: 100%;
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 80%);
@@ -22,17 +21,23 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
   height: 100%;
   background-size: 100% 192.023%;
   background-position: 0px -304.529px;
   background-repeat: no-repeat;
-  background-color: lightgray;
+}
+
+.hero-banner__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  font-family: "object-fit: cover; object-position: 50% 50%;";
 }
 
 .hero-banner__block__button-link-break-3buttons::after {
-  content: " " !important;
+  content: "" !important;
   position: relative;
   background-image: url("../../../../images/arrow-right-white.svg");
   background-repeat: no-repeat;
