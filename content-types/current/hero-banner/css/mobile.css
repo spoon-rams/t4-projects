@@ -11,4 +11,8 @@
   .hero-banner__block__title {
     background-color: unset !important;
   }
+  
+  .hero-banner__block__desc {
+    margin-top: 0 !important;
+  }
 }

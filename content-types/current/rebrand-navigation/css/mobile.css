@@ -203,7 +203,7 @@
   }
 
   .header-nav__mobile__auth-user {
-    background-color: #fff !important;
+    background-color: transparent !important;
   }
 
   .header-nav__mobile__auth-user > a {
@@ -211,7 +211,11 @@
   }
 
   .header-nav__bottom__outer-quick-list--primary {
-    background-color: #fff !important;
+    background-color: transparent !important;
+  }
+
+  .header-nav__bottom__outer-quick-list--primary.header-nav__bottom__list a:hover {
+    background-color: #eff0f4 !important;
   }
 }
 

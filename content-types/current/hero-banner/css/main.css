@@ -36,7 +36,8 @@
   font-family: "object-fit: cover; object-position: 50% 50%;";
 }
 
-.hero-banner__block__button-link-break-3buttons::after {
+.hero-banner__block__button-link-break-3buttons::after,
+.hero-banner__block__button-link-break::after {
   content: "" !important;
   position: relative;
   background-image: url("../../../../images/arrow-right-white.svg");
@@ -45,6 +46,15 @@
   padding-left: 1rem;
   height: 12px;
   top: 2px;
+}
+
+.hero-banner__block__desc,
+.hero-banner__block__title > span {
+  padding: .75rem 0 !important
+}
+
+.hero-banner__block__desc {
+  margin-top: 0 !important;
 }
 
 /* TEMPORARY UNIVERSAL CSS ADJUSTMENTS */
