@@ -1,7 +1,5 @@
-/* TEMPORARY CSS */
-
 /** VIDEO HERO STYLES **/
-.video-hero {
+.video-hero.fordham-rebrand {
   position: relative;
   width: 100%;
   padding-bottom: 56.25%;
@@ -13,13 +11,13 @@
   min-height: 350px;
 }
 
-.video-hero .text-container {
+.video-hero.fordham-rebrand .text-container {
   background-image: linear-gradient(#141414, #0f0f0f, #000);
   border-left: 2px solid #212121;
   border-right: 2px solid #212121;
 }
 
-.video-hero video {
+.video-hero.fordham-rebrand video {
   position: absolute;
   top: 0;
   left: 0;
@@ -29,7 +27,7 @@
   object-position: center;
 }
 
-.video-hero .overlay {
+.video-hero.fordham-rebrand .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -39,7 +37,7 @@
   z-index: 1;
 }
 
-.video-hero .hero-banner__block {
+.video-hero.fordham-rebrand .hero-banner__block {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -48,19 +46,19 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 100%; 
-  max-width: 1440px; 
-  padding: 20px; 
-  box-sizing: border-box; 
+  width: 100%;
+  max-width: 1440px;
+  padding: 20px;
+  box-sizing: border-box;
   top: 50%;
 }
 
-.video-hero .hero-banner__block__title {
+.video-hero.fordham-rebrand .hero-banner__block__title {
   margin-bottom: 0 !important;
   font-size: 1.5rem !important;
   color: white;
 }
-.video-hero .hero-banner__block__title span {
+.video-hero.fordham-rebrand .hero-banner__block__title span {
   background-color: unset !important;
   padding: unset !important;
   font-size: 2.1rem;
@@ -70,7 +68,7 @@
   line-height: 1.2;
 }
 
-.hero-banner__block__desc {
+.video-hero.fordham-rebrand .hero-banner__block__desc {
   margin: unset !important;
   background-color: unset !important;
   padding: unset !important;
@@ -84,7 +82,7 @@
 }
 
 /* NEW CTA BUTTONS CSS */
-.hero-banner__block__buttons {
+.video-hero.fordham-rebrand .hero-banner__block__buttons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -94,8 +92,8 @@
   margin: 20px auto 10px auto;
 }
 
-.hero-banner__block__buttons .hero-banner__block__button-link-break.btn-secondary {
-  margin: 0 !important; 
+.video-hero.fordham-rebrand .hero-banner__block__buttons .hero-banner__block__button-link-break.btn-secondary {
+  margin: 0 !important;
   background-color: #fff;
   color: #d93f32 !important;
   border-radius: 10px;
@@ -109,40 +107,40 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.hero-banner__block__buttons .hero-banner__block__button-link-break.btn-primary {
-  margin: 0 !important; 
+.video-hero.fordham-rebrand .hero-banner__block__buttons .hero-banner__block__button-link-break.btn-primary {
+  margin: 0 !important;
   background-color: #d93f32 !important;
   color: #fff !important;
   border-radius: 10px;
   border: 2px solid #d93f32;
   font-size: 1rem;
-  padding: 12px 25px; 
-  text-decoration: none; 
-  display: inline-block; 
-  min-width: 150px; 
-  text-align: center; 
-  transition: background-color 0.3s ease, color 0.3s ease; 
+  padding: 12px 25px;
+  text-decoration: none;
+  display: inline-block;
+  min-width: 150px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.hero-banner__block__buttons .hero-banner__block__button-link-break.btn-secondary:hover { 
+.vido-hero.fordham-rebrand .hero-banner__block__buttons .hero-banner__block__button-link-break.btn-secondary:hover {
   background-color: #fff !important;
-  color: #7E072A !important;
-  border-color: #7E072A !important;
+  color: #7e072a !important;
+  border-color: #7e072a !important;
 }
 
-.hero-banner__block__buttons .hero-banner__block__button-link-break.btn-primary:hover {
-  background-color: #7E072A !important;
-  border-color: #7E072A !important;
+.video-hero.fordham-rebrand .hero-banner__block__buttons .hero-banner__block__button-link-break.btn-primary:hover {
+  background-color: #7e072a !important;
+  border-color: #7e072a !important;
 }
 
 /* Keep your existing .btn-primary:visited style if it's applied via JS or specific state */
-.btn-primary:visited {
+.video-hero.fordham-rebrand .btn-primary:visited {
   background-color: #d93f32 !important;
   color: #fff !important;
 }
 
 /* Style the transparent play/pause button */
-.play-pause-btn {
+.video-hero.fordham-rebrand .play-pause-btn {
   position: absolute;
   bottom: 20px;
   left: 97.5%;
@@ -165,11 +163,11 @@
   transition: all 0.3s ease;
 }
 
-.play-pause-btn:hover {
+.video-hero.fordham-rebrand .play-pause-btn:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.play-pause-btn:focus:not(:focus-visible) {
+.video-hero.fordham-rebrand .play-pause-btn:focus:not(:focus-visible) {
   outline: none !important;
   box-shadow: none;
 }
