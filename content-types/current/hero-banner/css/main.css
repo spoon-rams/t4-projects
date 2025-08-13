@@ -62,6 +62,12 @@
   margin-bottom: 200px;
 }
 
+.header-placeholder {
+  display: block !important;
+}
+
 /* .hero-banner .hero-banner__block {
     top: 30rem;
 } */
+
+

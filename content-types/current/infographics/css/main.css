@@ -1,8 +1,8 @@
 
-.statistics-blocks {
+.statistics-blocks.fordham-rebrand {
   height: 288px;
 }
-.statistics-blocks .statistics-blocks__block {
+.statistics-blocks.fordham-rebrand .statistics-blocks__block {
   position: relative;
   margin: 0 !important;
   max-width: unset !important;
@@ -12,7 +12,7 @@
   background-size: cover;
 }
 
-.statistics-blocks .statistics-blocks__block img {
+.statistics-blocks.fordham-rebrand .statistics-blocks__block img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -22,11 +22,11 @@
   z-index: 0;
 }
 
-.statistics-blocks .statistics-blocks__block__inner {
+.statistics-blocks.fordham-rebrand .statistics-blocks__block__inner {
   z-index: 1;
 }
 
-.statistics-blocks .overlay {
+.statistics-blocks.fordham-rebrand .overlay {
   height: 100%;
   width: 100%;
   top: 0;
