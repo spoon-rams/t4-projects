@@ -11,8 +11,44 @@
   .hero-banner__block__title {
     background-color: unset !important;
   }
-  
+
   .hero-banner__block__desc {
     margin-top: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 1279px) {
+  .hero-banner__block__title > span {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .hero-banner__block__title > span {
+    font-size: 2rem !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-banner .hero-banner__wrapper {
+    height: 40vh;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .hero-banner__block__title > span {
+    font-size: 1.7rem !important;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .hero-banner .hero-banner__wrapper {
+    height: 65vh;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .hero-banner .hero-banner__wrapper {
+    height: 90vh;
   }
 }
