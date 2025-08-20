@@ -1,0 +1,73 @@
+@media (max-width: 1480px) {
+  #fordham-school-menu .header-nav__school_name {
+    padding-left: 10px !important;
+    margin-left: 10px !important;
+    max-width: 100% !important;
+  }
+}
+@media (min-width: 1280px) {
+    #fordham-school-menu .header-nav__logo img {
+        width: 12rem !important;
+    }
+}
+@media only screen and (max-width: 1279px) {
+  #fordham-school-menu .header-nav__logo {
+    flex: 2 !important;
+    padding-left: 0 !important;
+  }
+
+  #fordham-school-menu .header-nav__logo a {
+    width: 17.7rem !important;
+  }
+
+  #fordham-school-menu .header-nav__bottom__search-toggler {
+    flex: 0 0 3% !important;
+    margin: unset !important;
+  }
+
+  #fordham-school-menu .header-nav__bottom__nav-toggler {
+    flex: 0 0 9% !important;
+  }
+
+  #fordham-school-menu .header-nav__school_name {
+    max-width: unset !important;
+    border-left: 0;
+    font-size: 0.75rem !important;
+    margin-left: 32px !important;
+    margin-top: -10px;
+    line-height: unset !important;
+  }
+
+  #fordham-school-menu .header-nav__bottom__nav-toggler__button {
+    border: 2px solid #7e072a;
+    border-radius: 10px;
+    color: #7e072a;
+    padding: 5px 30px !important;
+  }
+
+  #fordham-school-menu .header-nav__bottom__search-toggler__button > svg {
+    transform: scale(1.6) !important;
+    fill: #7e072a;
+    margin-right: 5px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* #fordham-school-menu .header-nav__logo {
+    width: 52% !important;
+  } */
+/*   
+  #fordham-school-menu .header-nav__logo a {
+    max-width: 17.7rem !important;
+  } */
+
+  #fordham-school-menu .header-nav__logo img {
+    width: 8rem !important;
+  }
+
+  #fordham-school-menu .header-nav__school_name {
+    font-size: .68rem !important;
+    margin-left: 25px !important;
+    max-width: 11rem;
+  }
+}

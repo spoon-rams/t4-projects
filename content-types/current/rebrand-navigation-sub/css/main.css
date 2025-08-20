@@ -1,0 +1,23 @@
+#fordham-school-menu .header-nav__top {
+  justify-content: space-evenly;
+}
+#fordham-school-menu .header-nav__logo {
+  padding: 1.5rem 0 1.5rem 5rem !important;
+}
+
+#fordham-school-menu .header-nav__top__item:after {
+  margin: 0 0.5rem !important;
+}
+
+#fordham-school-menu ul.header-nav__top__list.header-nav__top__list--secondary {
+  display: flex;
+  align-items: center;
+  padding: unset !important;
+}
+
+#fordham-school-menu .header-nav__bottom__nav-toggler__button {
+  border: 2px solid #7e072a;
+  border-radius: 10px;
+  color: #7e072a;
+  padding: 5px 30px !important;
+}
