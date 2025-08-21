@@ -1,9 +1,10 @@
-
 .statistics-blocks.fordham-rebrand {
-  height: 288px;
+  height: auto;
+  container-type: inline-size;
 }
 .statistics-blocks.fordham-rebrand .statistics-blocks__block {
   position: relative;
+  height: 288px;
   margin: 0 !important;
   max-width: unset !important;
   flex: 0 0 25% !important;
@@ -34,6 +35,9 @@
 }
 
 /* TEMPORARY */
+.header-placeholder {
+  display: block !important;
+}
 .fullwidth {
   padding-top: 100px;
 }

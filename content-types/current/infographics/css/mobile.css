@@ -1,20 +1,26 @@
 @media only screen and (max-width: 991px) {
-    .statistics-blocks.fordham-rebrand {
-        flex-direction: column;
-        flex-wrap: unset;
-        height: 100%;
-    }
+  .statistics-blocks.fordham-rebrand {
+    flex-direction: column;
+    flex-wrap: unset;
+    height: 100%;
+  }
 
-    .statistics-blocks.fordham-rebrand .statistics-blocks__block {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex: unset;
-        max-width: unset;
-        width: 100%;
-    }
+  .statistics-blocks.fordham-rebrand .statistics-blocks__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: unset;
+    max-width: unset;
+    width: 100%;
+  }
 
-    .statistics-blocks.fordham-rebrand .statistics-blocks__block__inner:before {
-        content: unset !important;
-    }
+  .statistics-blocks.fordham-rebrand .statistics-blocks__block__inner:before {
+    content: unset !important;
+  }
+}
+
+@container (width < 800px) {
+  .statistics-blocks.fordham-rebrand .statistics-blocks__block {
+    flex: 0 0 50% !important;
+  }
 }
