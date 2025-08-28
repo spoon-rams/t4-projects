@@ -190,7 +190,7 @@
     padding: 5px 30px !important;
   }
 
-  .header-nav__bottom__outer-quick-list--secondary.header-nav__bottom__list .header-nav__bottom__item a:hover {
+  .header-nav__bottom__outer-quick-list--secondary.header-nav__bottom__list .header-nav__bottom__item .header-nav__bottom_link:hover {
     color: #fff !important;
   }
 
