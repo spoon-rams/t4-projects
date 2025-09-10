@@ -244,8 +244,6 @@
   }
 }
 
-
-
 .fordham-rebrand .banner-img-txt-alt__block__title span::before {
   content: "";
   display: block;
@@ -268,12 +266,35 @@
 
 /* BANNER IMGAGE TEXT - LAYOUT -1 */
 
-
-.banner-img-txt.fordham-rebrand .banner-img-txt__col.col-lg-5 {
+.banner-img-txt.fordham-rebrand .row {
   background: url("../images/map.jpg") lightgray -80.642px -110.684px / 140.194% 168.878% no-repeat;
   background-position: center;
+  background-size: cover;
   mix-blend-mode: darken;
+}
+
+.banner-img-txt.fordham-rebrand .banner-img-txt__col.col-lg-7 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.banner-img-txt.fordham-rebrand .banner-img-txt__col.col-lg-7 .banner-img-txt__img {
+  padding: 50px 0 50px 100px;
+  background-color: #282220;
+}
+
+.banner-img-txt.fordham-rebrand .banner-img-txt__col.col-lg-5 {
+  background-color: transparent;
+}
+
+.banner-img-txt.fordham-rebrand .banner-img-txt__col.col-lg-5 .banner-img-txt__standard__wrapper {
   padding: 50px 100px 50px 0;
+}
+
+.banner-img-txt.fordham-rebrand .banner-img-txt__img {
+  position: relative;
+  z-index: 1;
+  height: 100%;
 }
 
 .banner-img-txt.fordham-rebrand .banner-img-txt.fordham-rebrand .banner-img-txt .banner-img-txt__col.col-lg-7 {
@@ -282,8 +303,10 @@
 }
 
 .banner-img-txt.fordham-rebrand .banner-img-txt__block.standard {
-  background: #fff !important;
+  position: relative;
+  background: #fff;
   z-index: 2;
+  height: 100%;
 }
 
 .banner-img-txt.fordham-rebrand .banner-img-txt__block h2,
@@ -298,16 +321,17 @@
 .banner-img-txt.fordham-rebrand .overlay {
   height: 100%;
   width: 100%;
-  opacity: 0.9;
+  opacity: 0.85;
   top: 0;
   background-color: black;
   position: absolute;
   z-index: 1;
 }
 
-
 /* TEMPORARY */
 
-.header-placeholder {
+/* .header-placeholder {
   display: block !important;
-}
+} */
+
+
