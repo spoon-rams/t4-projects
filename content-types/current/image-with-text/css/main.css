@@ -247,15 +247,15 @@
 .fordham-rebrand .banner-img-txt-alt__block__title span::before {
   content: "";
   display: block;
-  position: absolute;
   top: 15px;
   left: 30px;
   width: 50px;
   height: 3px;
+  margin-bottom: 10px;
   background-color: #dd3224;
 }
 
-.fordha-rebrand .banner-img-txt__block__title span::before {
+.fordham-rebrand .banner-img-txt__block__title span::before {
   content: "";
   display: block;
   width: 50px;
@@ -285,6 +285,7 @@
 
 .banner-img-txt.fordham-rebrand .banner-img-txt__col.col-lg-5 {
   background-color: transparent;
+  padding-right: 0;
 }
 
 .banner-img-txt.fordham-rebrand .banner-img-txt__col.col-lg-5 .banner-img-txt__standard__wrapper {
@@ -307,6 +308,10 @@
   background: #fff;
   z-index: 2;
   height: 100%;
+}
+
+.banner-img-txt .banner-img-txt__block__content a {
+  color: #7e072a !important;
 }
 
 .banner-img-txt.fordham-rebrand .banner-img-txt__block h2,

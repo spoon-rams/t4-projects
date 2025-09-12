@@ -36,7 +36,7 @@
 @media only screen and (max-width: 991px) {
   .banner-img-txt.fordham-rebrand .banner-img-txt__col.col-lg-7 .banner-img-txt__img {
     background-color: transparent;
-    padding: 50px 45px 0 45px;
+    padding: 40px 45px 0 45px;
   }
 
   .banner-img-txt.fordham-rebrand .banner-img-txt__col.col-lg-5 {
@@ -44,7 +44,7 @@
   }
 
   .banner-img-txt.fordham-rebrand .banner-img-txt__col.col-lg-5 .banner-img-txt__standard__wrapper {
-    padding: 0 45px 50px 45px
+    padding: 0 45px 40px 45px
   }
 }
 
