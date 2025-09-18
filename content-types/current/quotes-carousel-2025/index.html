@@ -8,18 +8,50 @@
     <link rel="stylesheet" href="./css/mobile.css" />
 
     <!-- CSS MAIN -->
-    <link rel="stylesheet" href="../../../css/t4extras.css" />
-    <link rel="stylesheet" href="../../../css/style.css" />
+    <!-- <link rel="stylesheet" href="../../css/t4extras.css" /> -->
+    <link rel="stylesheet" href="../../../css/rebrand/r-t4extras.css" />
+    <!-- <link rel="stylesheet" href="../../css/style.css" /> -->
+    <link rel="stylesheet" href="../../../css/rebrand/r-styles.css" />
     <link rel="stylesheet" href="../../../css/fu_ta.css" />
     <link rel="stylesheet" href="../../../css/fu_ta1.css" />
-    <link rel="stylesheet" href="../../../css/subsite-t4extras.css" />
+    <!-- <link rel="stylesheet" href="../../css/subsite-t4extras.css" /> -->
+    <!-- <link rel="stylesheet" href="../../../css/rebrand/r-subsite-t4extras.css"> -->
     <link rel="stylesheet" href="../../../css/fu_targetedannounce.css" />
     <link rel="stylesheet" href="../../../css/outage.css" />
     <link rel="stylesheet" href="../../../css/tinymce.css" />
     <!-- TEMPORARY -->
     <!-- <link rel="stylesheet" href="./temp.css" /> -->
-
-    <title>Document</title>
+    <script>
+      (function (d) {
+        var config = {
+            kitId: "xvj1dos",
+            scriptTimeout: 3000,
+            async: true,
+          },
+          h = d.documentElement,
+          t = setTimeout(function () {
+            h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+          }, config.scriptTimeout),
+          tk = d.createElement("script"),
+          f = false,
+          s = d.getElementsByTagName("script")[0],
+          a;
+        h.className += " wf-loading";
+        tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function () {
+          a = this.readyState;
+          if (f || (a && a != "complete" && a != "loaded")) return;
+          f = true;
+          clearTimeout(t);
+          try {
+            Typekit.load(config);
+          } catch (e) {}
+        };
+        s.parentNode.insertBefore(tk, s);
+      })(document);
+    </script>
+    <title>Re-Brand: Quotes Carousel</title>
   </head>
   <body>
     <!-- HEADER START -->
@@ -80,7 +112,9 @@
           <div class="header-nav__bottom__container">
             <h1 class="header-nav__logo">
               <a href="/">
-                <img src="/media/review/site-assets/images/logos/secondary-logo-no-tagline.svg" alt="Fordham University" />
+                <!-- FORDHAM HOME LOGO -->
+                <!-- <img src="/images/logos/fordham_logo_full-r-white.svg" alt="Fordham University" /> -->
+                <img src="/images/logos/fordham_logo_full-r-maroon.svg" alt="" />
               </a>
               <span class="sr-only">Fordham University - Homepage</span>
             </h1>
@@ -1038,264 +1072,110 @@
 
     <!-- MAIN -->
     <main class="fullwidth" id="main-content">
-      <div class="container">
-        <div class="slider-indicators"></div>
-        <div class="slider-wrapper desktop">
-          <div id="slide-arrow-prev" class="slide-arrow">&lsaquo;</div>
-          <div id="slide-arrow-next" class="slide-arrow">&rsaquo;</div>
-          <ul class="slides-container">
-            <li class="slide">
-              <div class="row">
-                <div class="col-md-5">
-                  <div>
-                    <media-item
-                      data-t4-type="media"
-                      data-t4-media-id="145113"
-                      data-t4-instance-id="183"
-                      data-t4-markup-for="145113"
-                      data-t4-media-language="en"
-                      data-t4-media-attributes='{"attributes":{}}'
-                      data-t4-media-formatter="image/normal"
-                      data-media-html='&lt;img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=410b0a3133501a30e7ad46f21b528b00f28c5598" alt="Jenny Kim profile picture"  style="" &gt;&lt;/media&gt;'
-                      data-broken-media="false"
-                      ><img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=410b0a3133501a30e7ad46f21b528b00f28c5598" alt="Jenny Kim profile picture"
-                    /></media-item>
-                    <p>Jenny</p>
-                  </div>
-                </div>
-                <div class="col-md-7">
-                  <div>
-                    <p>
-                      "I chose to pursue my graduate education at Fordham because it has one of the few school psychology graduate programs with a bilingual track. As a Korean American who speaks
-                      fluent English and Korean, I always wanted to use my language skills in my career to help culturally and linguistically diverse students. Also, the program has a great reputation
-                      for comprehensive assessments, which excited me because, as a big part of a school psychologist&rsquo;s responsibilities, I can extensively learn in-depth about psychoeducational
-                      assessments...Thank you again for helping me pursue and continue my education, so that I can become a well-rounded bilingual school psychologist. Attending Fordham is an
-                      important step in achieving my passion and professional goals."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </li>
+      <div class="cards">
+        <input type="radio" id="radio-1" name="radio-card" checked />
+        <article class="card" style="--angle: 4deg">
+          <img class="card-img" src="https://picsum.photos/id/21/200/300" />
+          <div class="card-data">
+            <span class="card-num">1/7</span>
+            <h2>Alejandro Escamilla</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!</p>
+            <footer>
+              <label for="radio-7" aria-label="Previous">&#10094;</label>
+              <label for="radio-2" aria-label="Next">&#10095;</label>
+            </footer>
+          </div>
+        </article>
 
-            <li class="slide">
-              <div class="row">
-                <div class="col-md-5">
-                  <div>
-                    <media-item
-                      data-t4-type="media"
-                      data-t4-media-id="145112"
-                      data-t4-instance-id="185"
-                      data-t4-markup-for="145112"
-                      data-t4-media-language="en"
-                      data-t4-media-attributes='{"attributes":{}}'
-                      data-t4-media-formatter="image/normal"
-                      data-media-html='&lt;img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=d88c7bdeab8216c2db7057facd2018ed1c514ecd" alt="Gabrielle Ilagan profile picture"  style="" &gt;&lt;/media&gt;'
-                      data-broken-media="false"
-                      ><img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=d88c7bdeab8216c2db7057facd2018ed1c514ecd" alt="Gabrielle Ilagan profile picture"
-                    /></media-item>
-                    <p>Gabrielle</p>
-                  </div>
-                </div>
-                <div class="col-md-7">
-                  <div>
-                    <p>
-                      "In my home country the Philippines, there is a saying that is, roughly translated, "If you don't know how to look back at where you came from, you will not reach your
-                      destination." Years from now, when I look back on my years in graduate school,&nbsp; will remember your generosity. Thank you so much; I can't say it enough."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="slide">
-              <div class="row">
-                <div class="col-md-5">
-                  <div>
-                    <media-item
-                      data-t4-type="media"
-                      data-t4-media-id="145111"
-                      data-t4-instance-id="187"
-                      data-t4-markup-for="145111"
-                      data-t4-media-language="en"
-                      data-t4-media-attributes='{"attributes":{}}'
-                      data-t4-media-formatter="image/normal"
-                      data-media-html='&lt;img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=afdf2bfa0ca5076b20f2f74185749c3f71d427fb" alt="Daniela Akoh profile picture"  style="" &gt;&lt;/media&gt;'
-                      data-broken-media="false"
-                      ><img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=afdf2bfa0ca5076b20f2f74185749c3f71d427fb" alt="Daniela Akoh profile picture"
-                    /></media-item>
-                    <p>Daniela</p>
-                  </div>
-                </div>
-                <div class="col-md-7">
-                  <div>
-                    <p>
-                      "Fordham advocates for cura personalis, that is, &ldquo;care of the whole person.&rdquo; With every day that passes, not only do I understand that expression more, I feel it. My
-                      knowledge, emotional maturity, and worldviews have enriched tenfold, and I doubt any other university would have inspired these changes in me quite like Fordham has. Thank you
-                      endlessly for allowing me the opportunity to learn as I have, to grow as I have. For as long as Fordham stays with me, your kindness will stay with me too. I&rsquo;m looking
-                      forward to my final years here, but more than that, I&rsquo;m looking forward to entering the world with the values that Fordham, and therefore, you, have instilled in me."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="slide">
-              <div class="row">
-                <div class="col-md-5">
-                  <div>
-                    <media-item
-                      data-t4-type="media"
-                      data-t4-media-id="145114"
-                      data-t4-instance-id="189"
-                      data-t4-markup-for="145114"
-                      data-t4-media-language="en"
-                      data-t4-media-attributes='{"attributes":{}}'
-                      data-t4-media-formatter="image/normal"
-                      data-media-html='&lt;img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=2b00a6e49bdbd79f069ab62c855ddf9439cd57c8" alt="Cindy Wu profile picture"  style="" &gt;&lt;/media&gt;'
-                      data-broken-media="false"
-                      ><img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=2b00a6e49bdbd79f069ab62c855ddf9439cd57c8" alt="Cindy Wu profile picture"
-                    /></media-item>
-                    <p>Cindy</p>
-                  </div>
-                </div>
-                <div class="col-md-7">
-                  <div>
-                    <p>
-                      "Upon coming to Fordham, I found that the university focused highly on its academics and students. Since Fordham University specializes in small, intimate classes, I found that
-                      it allowed me to connect with my professors one-on-one for additional support and advice, which I have never been able to get at my last school. In addition, Fordham has given me
-                      such great career resources that help me to prepare for the near future. Since last semester, I have gained an internship with Glitter Magazine as an Entertainment/Affiliate
-                      Writer, and have worked as an Event Staff for the New York Giants through Fordham&rsquo;s Career Services. Without the help of Fordham, I would have not been able to gain these
-                      great opportunities in the heart of Manhattan. Overall, Fordham University was the right decision for me in the end because it allowed me to challenge myself academically, and in
-                      all, it was the type of social and academic that I was looking for all along. Thank you again for your generosity. Thanks to you, I am closer to reaching my goals. I hope shortly
-                      I will be able to help students achieve their dreams just like how you have helped me."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="slide">
-              <div class="row">
-                <div class="col-md-5">
-                  <div>
-                    <media-item
-                      data-t4-type="media"
-                      data-t4-media-id="145364"
-                      data-t4-instance-id="191"
-                      data-t4-markup-for="145364"
-                      data-t4-media-language="en"
-                      data-t4-media-attributes='{"attributes":{}}'
-                      data-t4-media-formatter="image/normal"
-                      data-media-html='&lt;img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=f0d5ac964e8e3177c0c2bc93e249300add79d5da" alt="Messay Nolawit profile picture"  style="" &gt;&lt;/media&gt;'
-                      data-broken-media="false"
-                      ><img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=f0d5ac964e8e3177c0c2bc93e249300add79d5da" alt="Messay Nolawit profile picture"
-                    /></media-item>
-                    <p>Messay</p>
-                  </div>
-                </div>
-                <div class="col-md-7">
-                  <div>
-                    <p>
-                      "I realized that I want to pursue a career in healthcare administration within psychology, so I can open my own clinic and pursue my practice while also running my own business.
-                      This aid will allow me to concentrate on my education so I will be able to pursue this passion of mine."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="slide">
-              <div class="row">
-                <div class="col-md-5">
-                  <div>
-                    <media-item
-                      data-t4-type="media"
-                      data-t4-media-id="145365"
-                      data-t4-instance-id="193"
-                      data-t4-markup-for="145365"
-                      data-t4-media-language="en"
-                      data-t4-media-attributes='{"attributes":{}}'
-                      data-t4-media-formatter="image/normal"
-                      data-media-html='&lt;img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=bc96f19d4b80770a017b2116733da322baa6fdd3" alt="Babalwa Nogwanya profile picture"  style="" &gt;&lt;/media&gt;'
-                      data-broken-media="false"
-                      ><img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=bc96f19d4b80770a017b2116733da322baa6fdd3" alt="Babalwa Nogwanya profile picture"
-                    /></media-item>
-                    <p>Babalwa</p>
-                  </div>
-                </div>
-                <div class="col-md-7">
-                  <div>
-                    <p>
-                      "Your investment in my future has not gone unnoticed. I am committed to working hard and making the most of this opportunity. I promise to use the knowledge and skills I gain to
-                      make a positive impact in my community and to pay it forward by helping others in need. Once again, thank you from the bottom of my heart for your generosity and support. You
-                      have allowed me to change my life and create a better future for myself and those around me. I will always be grateful for your kindness."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="slide">
-              <div class="row">
-                <div class="col-md-5">
-                  <div>
-                    <media-item
-                      data-t4-type="media"
-                      data-t4-media-id="145367"
-                      data-t4-instance-id="195"
-                      data-t4-markup-for="145367"
-                      data-t4-media-language="en"
-                      data-t4-media-attributes='{"attributes":{}}'
-                      data-t4-media-formatter="image/normal"
-                      data-media-html='&lt;img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=1645b540faf8fa1e59da4fc059e0e8c506502581" alt="Pires Rodrigues-Hold profile picture"  style="" &gt;&lt;/media&gt;'
-                      data-broken-media="false"
-                      ><img
-                        src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=1645b540faf8fa1e59da4fc059e0e8c506502581"
-                        alt="Pires Rodrigues-Hold profile picture"
-                    /></media-item>
-                    <p>Juliana</p>
-                  </div>
-                </div>
-                <div class="col-md-7">
-                  <div>
-                    <p>
-                      "My experience at Fordham University Graduate School of Education has been enlightening. I have learned with and from professors and peers who inspire me to become the best
-                      version of myself, and I cannot wait to make this impact in my future students&rsquo; lives. Thank you for supporting me towards reaching my fullest personal and professional
-                      goals."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="slide">
-              <div class="row">
-                <div class="col-md-5">
-                  <div>
-                    <media-item
-                      data-t4-type="media"
-                      data-t4-media-id="145366"
-                      data-t4-instance-id="197"
-                      data-t4-markup-for="145366"
-                      data-t4-media-language="en"
-                      data-t4-media-attributes='{"attributes":{}}'
-                      data-t4-media-formatter="image/normal"
-                      data-media-html='&lt;img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=324f6ba6c795b708df4a648a7bf1109b20e0ec24" alt="Luis Pinto profile picture"  style="" &gt;&lt;/media&gt;'
-                      data-broken-media="false"
-                      ><img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=324f6ba6c795b708df4a648a7bf1109b20e0ec24" alt="Luis Pinto profile picture"
-                    /></media-item>
-                    <p>Lu&iacute;s</p>
-                  </div>
-                </div>
-                <div class="col-md-7">
-                  <div>
-                    <p>
-                      "Your generous support has provided me with a significant opportunity to further advance my academic goals and achieve my dreams. With this scholarship, the financial burden of
-                      my education will certainly be eased, which will allow me to save resources to allocate to my personal living costs. I want to thank you for investing in my future and believing
-                      in my potential. This scholarship will not only assist me in achieving my academic aspirations but also empower me to give back to my community and contribute positively to
-                      society and the environment. I am committed to using this opportunity to the best of my abilities and achieving academic excellence. Your belief in me has inspired me to work
-                      harder and strive for greatness. I am honored to be a part of your scholarship program, and I promise to make the most of this privilege."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <!-- card 2 -->
+        <input type="radio" id="radio-2" name="radio-card" />
+        <article class="card" style="--angle: -8deg">
+          <img class="card-img" src="https://picsum.photos/id/30/200/300" />
+          <div class="card-data">
+            <span class="card-num">2/7</span>
+            <h2>Shyamanta Baruah</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!</p>
+            <footer>
+              <label for="radio-1" aria-label="Previous">&#10094;</label>
+              <label for="radio-3" aria-label="Next">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- card 3 -->
+        <input type="radio" id="radio-3" name="radio-card" />
+        <article class="card" style="--angle: -7deg">
+          <img class="card-img" src="https://picsum.photos/id/39/200/300" />
+          <div class="card-data">
+            <span class="card-num">3/7</span>
+            <h2>Luke Chesser</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!</p>
+            <footer>
+              <label for="radio-2" aria-label="Previous">&#10094;</label>
+              <label for="radio-4" aria-label="Next">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- card 4 -->
+        <input type="radio" id="radio-4" name="radio-card" />
+        <article class="card" style="--angle: 11deg">
+          <img class="card-img" src="https://picsum.photos/id/103/200/300" />
+          <div class="card-data">
+            <span class="card-num">4/7</span>
+            <h2>Ilham Rahmansyah</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!</p>
+            <footer>
+              <label for="radio-3" aria-label="Previous">&#10094;</label>
+              <label for="radio-5" aria-label="Next">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- card 5 -->
+        <input type="radio" id="radio-5" name="radio-card" />
+        <article class="card" style="--angle: 13deg">
+          <img class="card-img" src="https://picsum.photos/id/175/200/300" />
+          <div class="card-data">
+            <span class="card-num">5/7</span>
+            <h2>petradr</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!</p>
+            <footer>
+              <label for="radio-4" aria-label="Previous">&#10094;</label>
+              <label for="radio-6" aria-label="Next">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- card 6 -->
+        <input type="radio" id="radio-6" name="radio-card" />
+        <article class="card" style="--angle: -17deg">
+          <img class="card-img" src="https://picsum.photos/id/349/200/300" />
+          <div class="card-data">
+            <span class="card-num">6/7</span>
+            <h2>Caleb George</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!</p>
+            <footer>
+              <label for="radio-5" aria-label="Previous">&#10094;</label>
+              <label for="radio-7" aria-label="Next">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- card 7 -->
+        <input type="radio" id="radio-7" name="radio-card" />
+        <article class="card" style="--angle: 20deg">
+          <img class="card-img" src="https://picsum.photos/id/401/200/300" />
+          <div class="card-data">
+            <span class="card-num">7/7</span>
+            <h2>Austin Ban</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!</p>
+            <footer>
+              <label for="radio-6" aria-label="Previous">&#10094;</label>
+              <label for="radio-1" aria-label="Next">&#10095;</label>
+            </footer>
+          </div>
+        </article>
       </div>
     </main>
 
@@ -1306,7 +1186,7 @@
           <div class="footer__col footer__col--primary col-xl-8">
             <div class="footer__logo__container">
               <a href="https://t4.fordham.edu/terminalfour/preview/2/en/7735" class="footer__logo">
-                <img src="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=7dbb2c2a2d61d0356295a0d9c211eb8001508008" alt="Fordham University" />
+                <img src="/images/logos/fordham_logo_full-r-white.svg" alt="Fordham University" />
               </a>
               <div class="footer__tagline">
                 <p>New York is my campus. Fordham is my school.<span class="footer-tm">™</span></p>
@@ -1426,5 +1306,5 @@
     </footer>
     <!-- FOOTER END -->
   </body>
-  <script type="text/javascript" src="./js/script.js"></script>
+  <script type="text/javascript" src="./script.js"></script>
 </html>
