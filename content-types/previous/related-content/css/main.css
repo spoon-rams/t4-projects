@@ -1,12 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
 
+.brand-stories__related-content a {
+  text-decoration: none;
+}
+
 .brand-stories__related-content .related-content__title {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
   padding: 15px;
+  max-width: 100%;
 }
 
 .brand-stories__related-content .related-content__title::after {
@@ -25,7 +30,7 @@
   text-transform: uppercase;
   font-family: "Raleway", sans-serif;
   flex-shrink: 0;
-  max-width: 100%;
+  
 }
 
 .brand-stories__related-content .related-content__title h2 span {
