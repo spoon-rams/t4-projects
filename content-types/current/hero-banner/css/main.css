@@ -1,13 +1,18 @@
-.hero-banner__block__desc,
-.hero-banner__block__title > span {
+.hero-banner.fordham-rebrand .hero-banner__block__desc,
+.hero-banner.fordham-rebrand .hero-banner__block__title > span {
   background-color: unset !important;
+  padding: .75rem 0 !important
 }
 
-.hero-banner .hero-banner__wrapper {
+.hero-banner.fordham-rebrand .hero-banner__block__desc {
+  margin-top: 0 !important;
+}
+
+.hero-banner.fordham-rebrand .hero-banner__wrapper {
   height: 500px;
 }
 
-.hero-banner .overlay {
+.hero-banner.fordham-rebrand .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -17,7 +22,7 @@
   z-index: 0;
 }
 
-.hero-banner .hero-banner__img {
+.hero-banner.fordham-rebrand .hero-banner__img {
   position: absolute;
   top: 0;
   left: 0;
@@ -28,7 +33,7 @@
   background-repeat: no-repeat;
 }
 
-.hero-banner__img img {
+.hero-banner.fordham-rebrand .hero-banner__img img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -36,8 +41,8 @@
   font-family: "object-fit: cover; object-position: 50% 50%;";
 }
 
-.hero-banner__block__button-link-break-3buttons::after,
-.hero-banner__block__button-link-break::after {
+.hero-banner.fordham-rebrand .hero-banner__block__button-link-break-3buttons::after,
+.hero-banner.fordham-rebrand .hero-banner__block__button-link-break::after {
   content: "" !important;
   position: relative;
   background-image: url("../../../../images/white-right-arrow.svg");
@@ -48,8 +53,8 @@
   top: 2px;
 }
 
-.hero-banner__block__button-link-break-3buttons.btn-secondary::after,
-.hero-banner__block__button-link-break.btn-secondary::after {
+.hero-banner.fordham-rebrand .hero-banner__block__button-link-break-3buttons.btn-secondary::after,
+.hero-banner.fordham-rebrand .hero-banner__block__button-link-break.btn-secondary::after {
   content: "" !important;
   position: relative;
   background-image: url("../../../../images/ram-red-right-arrow.svg");
@@ -60,24 +65,17 @@
   top: 2px;
 }
 
-.hero-banner__block__button-link-break-3buttons.btn-secondary:hover,
-.hero-banner__block__button-link-break.btn-secondary:hover {
+.hero-banner.fordham-rebrand .hero-banner__block__button-link-break-3buttons.btn-secondary:hover,
+.hero-banner.fordham-rebrand .hero-banner__block__button-link-break.btn-secondary:hover {
   color: #7e072a !important;
 }
 
-.hero-banner__block__button-link-break-3buttons.btn-secondary:hover::after,
-.hero-banner__block__button-link-break.btn-secondary:hover::after {
+.hero-banner.fordham-rebrand .hero-banner__block__button-link-break-3buttons.btn-secondary:hover::after,
+.hero-banner.fordham-rebrand .hero-banner__block__button-link-break.btn-secondary:hover::after {
   background-image: url("../../../../images/maroon-right-arrow.svg") !important;
 }
 
-.hero-banner__block__desc,
-.hero-banner__block__title > span {
-  padding: .75rem 0 !important
-}
 
-.hero-banner__block__desc {
-  margin-top: 0 !important;
-}
 
 /* TEMPORARY UNIVERSAL CSS ADJUSTMENTS */
 .hero-banner {
@@ -91,5 +89,7 @@
 /* .hero-banner .hero-banner__block {
     top: 30rem;
 } */
+
+
 
 
