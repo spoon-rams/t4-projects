@@ -27,6 +27,18 @@
   .hero-banner.fordham-rebrand .hero-banner__block__title > span {
     font-size: 2rem !important;
   }
+
+  .hero-banner__block__button-link-break-3buttons:last-of-type {
+    margin-left: 0 !important;
+  }
+
+  .hero-banner__block__button-link-break-3buttons:first-of-type {
+    margin-right: 0 !important;
+  }
+
+  .hero-banner.fordham-rebrand .hero-banner__block__content a {
+    width: 70% !important;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -38,6 +50,10 @@
 @media only screen and (max-width: 580px) {
   .hero-banner.fordham-rebrand .hero-banner__block__title > span {
     font-size: 1.7rem !important;
+  }
+
+  .hero-banner.fordham-rebrand .hero-banner__block__content a {
+    width: 100% !important;
   }
 }
 
