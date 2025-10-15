@@ -36,7 +36,6 @@ input[type="radio"] {
   width: min(100% - 4rem, 800px);
   margin-inline: auto;
   display: grid;
-
   counter-reset: my-counter;
 }
 
