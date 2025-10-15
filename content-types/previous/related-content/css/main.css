@@ -1,20 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
 
-.brand-stories__related-content a {
-  text-decoration: none;
-}
 
-.brand-stories__related-content .related-content__title {
+
+.brand-stories__related-content .related-content__title,
+.brand-stories__related-content.carousel .related-content__title{
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
   padding: 15px;
-  max-width: 100%;
 }
 
-.brand-stories__related-content .related-content__title::after {
+/* LINK ANIMATION - HEADER  */
+.brand-stories__related-content .related-content__title a,
+.brand-stories__related-content.carousel .related-content__title a {
+  text-decoration: none;
+}
+
+.brand-stories__related-content .related-content__title a:hover h2,
+.brand-stories__related-content.carousel .related-content__title a:hover h2 {
+  color:#7e072a;
+}
+
+
+.brand-stories__related-content .related-content__title::after,
+.brand-stories__related-content.carousel .related-content__title::after{
   content: "";
   margin-top: 1px;
   height: 4px;
@@ -23,21 +34,40 @@
   margin-left: 26px;
 }
 
-.brand-stories__related-content .related-content__title h2 {
+
+.brand-stories__related-content .related-content__title h2,
+.brand-stories__related-content.carousel .related-content__title h2 {
   margin: 0;
   font-size: 2rem;
   color: #343a40;
   text-transform: uppercase;
-  font-family: "Raleway", sans-serif;
+  /*font-family: "Raleway", sans-serif;*/
   flex-shrink: 0;
-  
+  max-width: 100%;
+  transition: color 0.5s ease;
 }
 
-.brand-stories__related-content .related-content__title h2 span {
-  color: #900028;
+
+.brand-stories__related-content .related-content__title h2 span,
+.brand-stories__related-content.carousel .related-content__title h2 span{
+  color: #7e072a;
 }
 
-.brand-stories__related-content .related-content__stories.row .slide-container {
+
+.brand-stories__related-content .related-content__stories.row {
+  display: flex;
+  justify-content: center;
+  padding: 0 25px;
+  text-align: center;
+}
+
+.brand-stories__related-content.carousel .related-content__stories.row {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0;
+}
+
+.brand-stories__related-content.carousel .related-content__stories.row .slide-container {
   display: flex;
   flex-wrap: nowrap; /* No wrapping for carousel effect */
   overflow: scroll; /* Ensure scrolling */
@@ -50,25 +80,27 @@
   -webkit-overflow-scrolling: touch;
 }
 
-.brand-stories__related-content .related-content__stories.row::-webkit-scrollbar {
+.brand-stories__related-content.carousel .related-content__stories.row::-webkit-scrollbar {
   display: none; /* Hide scrollbar on webkit browsers */
 }
 
 .brand-stories__related-content .related-content__stories.row .col-lg-4 {
+  margin-bottom: 10px;
+  height: auto; 
+}
+
+.brand-stories__related-content.carousel .related-content__stories.row .col-lg-4 {
   flex: 0 0 33.33%; /* Make each item 100% of the container */
   max-width: 100%;
   height: 100%;
   scroll-snap-align: start;
   text-align: center; /* Center the content */
-  padding-left: 0 !important;
-  padding-right: 0 !important;
   margin-bottom: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
   height: auto;
 }
 
-.brand-stories__related-content .related-content__stories.row img {
+.brand-stories__related-content .related-content__stories.row img,
+.brand-stories__related-content.carousel .related-content__stories.row img{
   max-width: 100%;
   max-height: 100%;
   min-height: 50%;
@@ -79,58 +111,42 @@
   object-fit: cover;
 }
 
-.brand-stories__related-content .related-content__stories.row h3 {
-  font-family: "Raleway", sans-serif;
+
+.brand-stories__related-content .related-content__stories.row h3, 
+.brand-stories__related-content.carousel .related-content__stories.row h3 {
   font-size: 1.4rem;
   text-align: left;
 }
 
-.brand-stories__related-content .related-content__stories.row a {
+
+.brand-stories__related-content .related-content__stories.row a,
+.brand-stories__related-content.carousel .related-content__stories.row a {
   color: black !important;
 }
 
-.brand-stories__related-content .related-content__stories.row .category {
+.brand-stories__related-content .related-content__stories.row .category,
+.brand-stories__related-content.carousel .related-content__stories.row .category {
   margin: 8px 0 !important;
   text-transform: uppercase;
   font-size: 0.9rem;
 }
 
-.brand-stories__related-content .related-content__stories.row .category span {
-  background-color: #900028;
+.brand-stories__related-content .related-content__stories.row .category span,
+.brand-stories__related-content.carousel .related-content__stories.row .category span {
+  background-color: #7e072a;
   color: white;
   padding: 5px 10px;
   font-weight: 500;
 }
 
-.brand-stories__related-content .related-content__stories.row p {
+.brand-stories__related-content .related-content__stories.row p,
+.brand-stories__related-content.carousel .related-content__stories.row p {
   text-align: left;
   font-size: 0.9rem;
 }
 
-.brand-stories__related-content .related-content__title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-  padding: 15px;
-}
-
-.brand-stories__related-content .related-content__title::after {
-  content: "";
-  margin-top: 1px;
-  height: 4px;
-  background-color: #e2e2e2;
-  flex: 1 1 auto;
-  margin-left: 26px;
-}
-
-.brand-stories__related-content .related-content__stories.row {
-  position: relative;
-  overflow: hidden;
-}
-
 /* FOR SLIDER ARROWS */
-.brand-stories__related-content .carousel-arrows {
+.brand-stories__related-content.carousel .carousel-arrows {
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -140,7 +156,7 @@
   top: -80px;
   background-color: unset !important;
 }
-.brand-stories__related-content .carousel-arrow {
+.brand-stories__related-content.carousel .carousel-arrow {
   height: 4rem;
   background-color: #900028;
   color: white;
@@ -155,19 +171,26 @@
   transition: opacity 0.5s ease;
 }
 
-.brand-stories__related-content .carousel-arrow:hover,
-.brand-stories__related-content .carousel-arrow:focus {
+.brand-stories__related-content.carousel .carousel-arrow:hover,
+.brand-stories__related-content.carousel .carousel-arrow:focus {
   opacity: 1;
 }
 
-.brand-stories__related-content .carousel-arrow.prev {
-  left: 0;
+.brand-stories__related-content.carousel .carousel-arrow.next,
+.brand-stories__related-content.carousel .carousel-arrow.prev {
   padding-left: 1.5rem;
-  margin: 25px;
+  top: 46%;
+}
+.brand-stories__related-content.carousel .carousel-arrow.prev {
+  left: 0;
+  margin-left: 16px;
 }
 
-.brand-stories__related-content .carousel-arrow.next {
+.brand-stories__related-content.carousel .carousel-arrow.next {
   right: 0;
-  padding-left: 1.5rem;
-  margin: 25px;
+  margin-right: 16px;
 }
+
+
+
+/* BRAND STORIES RELATED CONTENT - END - UPDATE */

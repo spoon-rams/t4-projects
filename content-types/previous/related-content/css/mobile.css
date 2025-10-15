@@ -1,17 +1,24 @@
 /* MOBILE RESPONSIVE VIEW */
-@media only screen and (max-width: 1196px) {
+@media only screen and (max-width: 1296px) {
   .brand-stories__related-content .carousel-arrow.next,
   .brand-stories__related-content .carousel-arrow.prev {
-    top: 35%;
+    top: 42%;
+  }
+}
+
+@media only screen and (max-width: 1012px) {
+  .brand-stories__related-content .carousel-arrow.next,
+  .brand-stories__related-content .carousel-arrow.prev {
+    top: 38%;
   }
 }
 
 @media only screen and (max-width: 991px) {
-  .brand-stories__related-content .related-content__stories.row .slide-container {
+  .brand-stories__related-content.carousel .related-content__stories.row .slide-container {
     position: relative;
     flex-direction: row;
   }
-  .brand-stories__related-content .related-content__stories.row .slide-container {
+  .brand-stories__related-content.carousel .related-content__stories.row .slide-container {
     flex-wrap: nowrap; /* No wrapping for carousel effect */
     overflow: hidden; /* Ensure scrolling */
     justify-content: start; /* Align items to the left */
@@ -23,62 +30,74 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  .brand-stories__related-content .related-content__stories.row::-webkit-scrollbar {
+  .brand-stories__related-content.carousel .related-content__stories.row::-webkit-scrollbar {
     display: none; /* Hide scrollbar on webkit browsers */
   }
 
-  .brand-stories__related-content .related-content__stories.row .col-lg-4 {
+  .brand-stories__related-content.carousel .related-content__stories.row .col-lg-4 {
     flex: 0 0 100%; /* Make each item 100% of the container */
     max-width: 100%;
     height: 100%;
     scroll-snap-align: start;
     text-align: center; /* Center the content */
     margin-right: 0; /* Remove right margin */
-    padding: 0 30px;
   }
 
   .brand-stories__related-content .related-content__stories.row .col-lg-4 {
     height: 100%;
   }
+  
 
-  .brand-stories__related-content .col-lg-4 .img-container {
+  .brand-stories__related-content .col-lg-4 .img-container,
+  .brand-stories__related-content.carousel .col-lg-4 .img-container {
     height: auto;
   }
 
-  .brand-stories__related-content .related-content__stories.row .category {
+  .brand-stories__related-content .related-content__stories.row .category,
+  .brand-stories__related-content.carousel .related-content__stories.row .category {
+    text-align: center;
+  }
+  
+
+  .brand-stories__related-content .related-content__stories.row h3,
+  .brand-stories__related-content.carousel .related-content__stories.row h3 {
     text-align: center;
   }
 
-  .brand-stories__related-content .related-content__stories.row h3 {
-    text-align: center;
+  .brand-stories__related-content.carousel .carousel-arrow.prev,
+  .brand-stories__related-content.carousel .carousel-arrow.next {
+    top: 48%;
   }
+}
 
+@media only screen and (max-width: 833px) {
   .brand-stories__related-content .carousel-arrow.prev,
   .brand-stories__related-content .carousel-arrow.next {
-    margin: 26px;
-    top: 42%;
+    top: 45%;
   }
 }
 
 @media only screen and (max-width: 620px) {
-  .brand-stories__related-content .related-content__title h2 {
+  .brand-stories__related-content .related-content__title h2,
+  .brand-stories__related-content.carousel .related-content__title h2 {
     border-bottom: 4px #e2e2e2 solid;
     width: 100%;
   }
 
-  .brand-stories__related-content .related-content__title::after {
+  .brand-stories__related-content .related-content__title::after,
+  .brand-stories__related-content.carousel .related-content__title::after {
     display: none;
   }
 
-  .brand-stories__related-content .related-content__stories.row h3 {
+  .brand-stories__related-content .related-content__stories.row h3,
+  .brand-stories__related-content.carousel .related-content__stories.row h3 {
     font-size: 1.2rem;
   }
 }
 
-
-@media only screen and (max-width: 356px) {
-  .brand-stories__related-content .carousel-arrow.next, 
-    .brand-stories__related-content .carousel-arrow.prev {
-      top: 35%;
-    }
+@media only screen and (max-width: 396px) {
+  .brand-stories__related-content.carousel .carousel-arrow.next,
+  .brand-stories__related-content.carousel .carousel-arrow.prev {
+    top: 42%;
+  }
 }
