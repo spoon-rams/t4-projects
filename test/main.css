@@ -1,70 +1,17 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #0f172a;
-  margin: 0;
+.aging-well-img,
+.comprehensive-care-img,
+.better-health-img,
+.aging-well-text,
+.comprehensive-care-text,
+.better-health-text {
+  width: 100%;
 }
 
-.carousel {
-  position: relative;
-  width: 280px;
-  height: 380px;
-  perspective: 1200px;
+
+.comprehensive-care-img img {
+  max-width: 70% !important;
 }
 
-.card {
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  font-weight: bold;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-  transition: transform 0.6s ease, opacity 0.6s ease;
-}
-
-/* stacked look for cards behind */
-.carousel .card:nth-child(1) {
-  transform: scale(1) translateY(0);
-}
-.carousel .card:nth-child(2) {
-  transform: scale(0.96) translateY(8px);
-}
-.carousel .card:nth-child(3) {
-  transform: scale(0.92) translateY(16px);
-}
-.carousel .card:nth-child(4) {
-  transform: scale(0.88) translateY(24px);
-}
-
-.controls {
-  position: absolute;
-  bottom: 40px;
-  display: flex;
-  gap: 12px;
-}
-
-button {
-  background: #2563eb;
-  color: #fff;
-  border: 0;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.test {
-  overflow: hidden;
-  height: 100%;
-}
-
-.test iframe {
-  position: relative;
-  top: -60px;
+.better-health-img img {
+  max-width: 59% !important;
 }
