@@ -33,7 +33,6 @@ body {
 
 .quotes-carousel .slide-arrow {
   position: absolute;
-  display: flex;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -41,7 +40,7 @@ body {
   background-color: #dd3224;
   color: white;
   border: none;
-  width: 2rem;
+  width: 3.5rem;
   font-size: 3rem;
   line-height: 1.15em;
   padding: 0;
@@ -58,14 +57,14 @@ body {
 
 .quotes-carousel #slide-arrow-prev {
   left: 0;
-  padding-left: 0.25rem;
-  border-radius: 0 2rem 2rem 0 !important;
+  text-align: center;
+  border-radius: 0 0.5rem 0.5rem 0 !important;
 }
 
 .quotes-carousel #slide-arrow-next {
   right: 0;
-  padding-left: 0.75rem;
-  border-radius: 2rem 0 0 2rem !important;
+  text-align: center;
+  border-radius: 0.5rem 0 0 0.5rem !important;
 }
 
 .quotes-carousel .slide {
@@ -178,4 +177,3 @@ body {
   vertical-align: middle;
   text-align: right;
 }
-
