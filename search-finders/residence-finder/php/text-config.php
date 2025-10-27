@@ -75,11 +75,12 @@ try {
     $queryHandler->setStopWords($stopWords);
 
     /* ADDED COURSE MODALITY TO THE BELOW METHODS - START */
-    $queryHandler->setDontRemoveStopwords(['courseArea', 'courseDegree', 'courseCollegeSchool', 'courseDuration', 'courseLocation', 'courseFaculties', 'courseDepartments', 'courseType', 'courseCampuses', 'courseKeywords', 'courseModality', 'courseSchedule']);
-    $queryHandler->setDontTokenize(['courseArea', 'courseDegree', 'courseCollegeSchool', 'courseDuration', 'courseLocation', 'courseFaculties', 'courseDepartments', 'courseType', 'courseCampuses', 'courseKeywords', 'courseModality', 'courseSchedule']);
+    $queryHandler->setDontRemoveStopwords(['residenceName', 'residenceCampuses', 'residenceImage']);
+    $queryHandler->setDontTokenize(['residenceName', 'residenceCampuses', 'residenceImage'
+]);
     /* END */
 
-    $queryHandler->setIgnoreQueries(['addCourse', 'removeCourse', 'paginate', 'page']);
+    $queryHandler->setIgnoreQueries([]);
     $queryHandler->addCharactersToGenericRegex(['-', '/', '&', '.', '\'', '(', ')']);
     $queryHandler->stemQuery(['keywords']);
     $queryHandler->handleQuery();
