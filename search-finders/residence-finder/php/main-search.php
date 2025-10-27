@@ -205,18 +205,21 @@
         <?php foreach ($results as $item) : ?>
         <div class="program-search__results__item col-xl-3 col-lg-4 col-md-6 col-sm-12 popup-trigger" data-popup-trigger="id-<?php echo $item['contentID']; ?>" tabindex="0">
           <div class="program-search__results__info">
-            <img srcset="<?php echo $item['courseImage']; ?> 0.33x,
-                  <?php echo $item['courseImage']; ?> 0.5x,
-                  <?php echo $item['courseImage']; ?> 1.5x,
-                  <?php echo $item['courseImage']; ?> 2x"
-           src="<?php echo $item['courseImage']; ?>"
-           alt="Image for <?php echo $item['courseName']; ?>">
-            <span class="program-search__results__item__title"><?php echo $item['courseName']; ?></span>
+            <img srcset="<?php echo $item['residenceImage']; ?> 0.33x,
+                  <?php echo $item['residenceImage']; ?> 0.5x,
+                  <?php echo $item['residenceImage']; ?> 1.5x,
+                  <?php echo $item['residenceImage']; ?> 2x"
+           src="<?php echo $item['residenceImage']; ?>"
+           alt="Image for <?php echo $item['residenceName']; ?>">
+            <span class="program-search__results__item__title"><?php echo $item['residenceName']; ?></span>
           </div>
         </div>
+
+
+        <!-- FINDER CARD MODAL -->
         <div class="popup-modal" data-popup-modal="id-<?php echo $item['contentID']; ?>" role="dialog" aria-labelledby="title-id-<?php echo $item['contentID']; ?>">
           <div class="modal-overflow">
-          <p id="title-id-<?php echo $item['contentID']; ?>" class="popup-modal__title"><?php echo $item['courseName']; ?></p>
+          <p id="title-id-<?php echo $item['contentID']; ?>" class="popup-modal__title"><?php echo $item['residenceName']; ?></p>
           <p><?php echo $item['courseOverview']; ?></p>
             <hr class="modal-popup-separator">
           <p class="popup-options"><strong>Option(s):</strong><span class="degree-options"><?php echo $item['courseOptions']; ?></span></p>
@@ -230,13 +233,15 @@
           <p class="popup-employer"><span class="popup-outcomes"><strong>Choose Fordham because »</strong></span> <?php echo $item['atFordham']; ?></p>
           </div>
           <?php endif; ?>
-          <a class="popup-modal__more btn btn-primary" href="<?php echo $item['courseURL']; ?>" aria-label="Find out more about <?php echo $item['courseName']; ?>">Read More</a>
+          <a class="popup-modal__more btn btn-primary" href="<?php echo $item['courseURL']; ?>" aria-label="Find out more about <?php echo $item['residenceName']; ?>">Read More</a>
           <button class="popup-modal__close" aria-label="Close site search">
             <svg class="svg-md-24px" focusable="false" aria-hidden="true">
               <use xlink:href="<t4 type="media" id="10757" formatter="path/*" />#ic_close_24px"></use>
             </svg>
           </button>
         </div>
+
+
       </div>
 		<?php endforeach; ?>
         <div class="program-search__pagination-wrapper">
