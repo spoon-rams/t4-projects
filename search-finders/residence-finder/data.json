@@ -1,21 +1,46 @@
 {
   "residence": [
     {
-      "contentID": "181297",
+      "residenceType": "Women-Only, Co-Ed",
+      "residenceLiving": "Yes",
+      "residenceClass": "Freshman",
       "residenceCampuses": "",
+      "contentID": "181297",
+      "residenceOccupancy": "Single, Double",
+      "residenceCampus": "Lincoln Center",
       "residenceImage": "/media/home/commonly-used-images/campus-beauty/Lincoln-Center-Campus-37.jpg",
       "residenceName": "Lincoln Center: Residence One"
     },
     {
-      "contentID": "181299",
+      "residenceType": "Men-Only, Co-Ed",
+      "residenceLiving": "No",
+      "residenceClass": "Sophomore",
       "residenceCampuses": "",
+      "contentID": "181299",
+      "residenceOccupancy": "Triple, Quadruple",
+      "residenceCampus": "Lincoln Center",
       "residenceImage": "/media/home/schools/school-of-professional-and-continuing-studies/Lincoln-Center-Ram.jpg",
       "residenceName": "Lincoln Center: Residence Two"
     },
-    { "contentID": "181301", "residenceCampuses": "", "residenceImage": "/media/home/admin-use-only/university-news/Ram-at-Rose-Hill-2x1.jpg", "residenceName": "Rose Hill: Residence One" },
     {
-      "contentID": "181303",
+      "residenceType": "Women-Only",
+      "residenceLiving": "Yes",
+      "residenceClass": "Junior",
       "residenceCampuses": "",
+      "contentID": "181301",
+      "residenceOccupancy": "Single, Double",
+      "residenceCampus": "Rose Hill",
+      "residenceImage": "/media/home/admin-use-only/university-news/Ram-at-Rose-Hill-2x1.jpg",
+      "residenceName": "Rose Hill: Residence One"
+    },
+    {
+      "residenceType": "Co-Ed",
+      "residenceLiving": "No",
+      "residenceClass": "Senior",
+      "residenceCampuses": "",
+      "contentID": "181303",
+      "residenceOccupancy": "Quintuple",
+      "residenceCampus": "Rose Hill",
       "residenceImage": "/media/home/commonly-used-images/Students-Talking-at-a-Picnic-Table-in-Rose-Hill.jpg",
       "residenceName": "Rose Hill: Residence Two"
     }
