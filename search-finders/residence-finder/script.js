@@ -1,88 +1,86 @@
-document.addEventListener("DOMContentLoaded", function () {
-  if (document.querySelector(".program-search")) {
-    var e = document.getElementById("area-study-button"),
-      t = document.getElementById("degree-button"),
-      n = document.getElementById("college-school-button"),
-      r = document.getElementById("campus-button"),
-      i = document.getElementById("modality-button"),
-      o = document.getElementById("schedule-button"),
-      x = document.getElementById("living-learning-button"),
-      s = document.getElementById("area-study-filter"),
-      a = document.getElementById("degree-filter"),
-      c = document.getElementById("college-school-filter"),
-      l = document.getElementById("campus-filter"),
-      u = document.getElementById("modality-filter"),
-      f = document.getElementById("schedule-filter"),
-      g = document.getElementById("living-learning-filter");
-    x &&
-      x.addEventListener("click", function () {
-        g.classList.contains("active") ? g.classList.remove("active") : g.classList.add("active"),
-          s && s.classList.contains("active") && s.classList.remove("active"),
-          a && a.classList.contains("active") && a.classList.remove("active"),
-          c && c.classList.contains("active") && c.classList.remove("active"),
-          l && l.classList.contains("active") && l.classList.remove("active"),
-          f && f.classList.contains("active") && f.classList.remove("active"),
-          u && u.classList.contains("active") && u.classList.remove("active");
-      }),
-      e &&
-        e.addEventListener("click", function () {
-          s.classList.contains("active") ? s.classList.remove("active") : s.classList.add("active"),
-            a && a.classList.contains("active") && a.classList.remove("active"),
-            c && c.classList.contains("active") && c.classList.remove("active"),
-            l && l.classList.contains("active") && l.classList.remove("active"),
-            u && u.classList.contains("active") && u.classList.remove("active"),
-            g && g.classList.contains("active") && g.classList.remove("active"),
-            f && f.classList.contains("active") && f.classList.remove("active");
-        }),
-      t &&
-        t.addEventListener("click", function () {
-          a.classList.contains("active") ? a.classList.remove("active") : a.classList.add("active"),
-            s && s.classList.contains("active") && s.classList.remove("active"),
-            c && c.classList.contains("active") && c.classList.remove("active"),
-            l && l.classList.contains("active") && l.classList.remove("active"),
-            u && u.classList.contains("active") && u.classList.remove("active"),
-            g && g.classList.contains("active") && g.classList.remove("active"),
-            f && f.classList.contains("active") && f.classList.remove("active");
-        }),
-      n &&
-        n.addEventListener("click", function () {
-          c.classList.contains("active") ? c.classList.remove("active") : c.classList.add("active"),
-            s && s.classList.contains("active") && s.classList.remove("active"),
-            a && a.classList.contains("active") && a.classList.remove("active"),
-            l && l.classList.contains("active") && l.classList.remove("active"),
-            u && u.classList.contains("active") && u.classList.remove("active"),
-            g && g.classList.contains("active") && g.classList.remove("active"),
-            f && f.classList.contains("active") && f.classList.remove("active");
-        }),
-      r &&
-        r.addEventListener("click", function () {
-          l.classList.contains("active") ? l.classList.remove("active") : l.classList.add("active"),
-            s && s.classList.contains("active") && s.classList.remove("active"),
-            a && a.classList.contains("active") && a.classList.remove("active"),
-            c && c.classList.contains("active") && c.classList.remove("active"),
-            u && u.classList.contains("active") && u.classList.remove("active"),
-            g && g.classList.contains("active") && g.classList.remove("active"),
-            f && f.classList.contains("active") && f.classList.remove("active");
-        }),
-      o &&
-        o.addEventListener("click", function () {
-          f.classList.contains("active") ? f.classList.remove("active") : f.classList.add("active"),
-            s && s.classList.contains("active") && s.classList.remove("active"),
-            a && a.classList.contains("active") && a.classList.remove("active"),
-            c && c.classList.contains("active") && c.classList.remove("active"),
-            u && u.classList.contains("active") && u.classList.remove("active"),
-            g && g.classList.contains("active") && g.classList.remove("active"),
-            l && l.classList.contains("active") && l.classList.remove("active");
-        }),
-      i &&
-        i.addEventListener("click", function () {
-          u.classList.contains("active") ? u.classList.remove("active") : u.classList.add("active"),
-            s && s.classList.contains("active") && s.classList.remove("active"),
-            a && a.classList.contains("active") && a.classList.remove("active"),
-            c && c.classList.contains("active") && c.classList.remove("active"),
-            l && l.classList.contains("active") && l.classList.remove("active"),
-            g && g.classList.contains("active") && g.classList.remove("active"),
-            f && f.classList.contains("active") && f.classList.remove("active");
-        });
+document.addEventListener("DOMContentLoaded", () => {
+  const isProgramSearch = document.querySelector(".program-search");
+  if (!isProgramSearch) {
+    return;
+  }
+  // Button Elements
+  const occupancyBtn = document.getElementById("occupancy-button");
+  const classYearBtn = document.getElementById("class-year-button");
+  const housingTypeBtn = document.getElementById("housing-type-button");
+  const campusBtn = document.getElementById("campus-residence-button");
+  const livingLearningBtn = document.getElementById("learning-residence-button");
+
+  // Filter Elements
+  const occupancyFilter = document.getElementById("occupancy-filter");
+  const classYearFilter = document.getElementById("class-year-filter");
+  const housingTypeFilter = document.getElementById("housing-type-filter");
+  const campusFilter = document.getElementById("campus-residence-filter");
+  const livingLearningFilter = document.getElementById("learning-residence-filter");
+
+  if (occupancyBtn && classYearBtn && housingTypeBtn && campusBtn && livingLearningBtn) {
+    // Occupancy Button Event Listener
+    occupancyBtn.addEventListener("click", () => {
+      if (!occupancyFilter.classList.contains("active")) {
+        occupancyFilter.classList.add("active");
+      } else {
+        occupancyFilter.classList.remove("active");
+      }
+      classYearFilter.classList.remove("active");
+      housingTypeFilter.classList.remove("active");
+      campusFilter.classList.remove("active");
+      livingLearningFilter.classList.remove("active");
+    });
+
+    // Class Year Button Event Listener
+    classYearBtn.addEventListener("click", () => {
+      if (!classYearFilter.classList.contains("active")) {
+        classYearFilter.classList.add("active");
+      } else {
+        classYearFilter.classList.remove("active");
+      }
+      occupancyFilter.classList.remove("active");
+      housingTypeFilter.classList.remove("active");
+      campusFilter.classList.remove("active");
+      livingLearningFilter.classList.remove("active");
+    });
+
+    // Housing Type Button Event Listener
+    housingTypeBtn.addEventListener("click", () => {
+      if (!housingTypeFilter.classList.contains("active")) {
+        housingTypeFilter.classList.add("active");
+      } else {
+        housingTypeFilter.classList.remove("active");
+      }
+      occupancyFilter.classList.remove("active");
+      classYearFilter.classList.remove("active");
+      campusFilter.classList.remove("active");
+      livingLearningFilter.classList.remove("active");
+    });
+
+    // Campus Button Event Listener
+    campusBtn.addEventListener("click", () => {
+      if (!campusFilter.classList.contains("active")) {
+        campusFilter.classList.add("active");
+      } else {
+        campusFilter.classList.remove("active");
+      }
+      occupancyFilter.classList.remove("active");
+      classYearFilter.classList.remove("active");
+      housingTypeFilter.classList.remove("active");
+      livingLearningFilter.classList.remove("active");
+    });
+
+    // Living and Learning Button Event Listener
+    livingLearningBtn.addEventListener("click", () => {
+      if (!livingLearningFilter.classList.contains("active")) {
+        livingLearningFilter.classList.add("active");
+      } else {
+        livingLearningFilter.classList.remove("active");
+      }≠
+      occupancyFilter.classList.remove("active");
+      classYearFilter.classList.remove("active");
+      housingTypeFilter.classList.remove("active");
+      campusFilter.classList.remove("active");
+    });
   }
 });
