@@ -9,6 +9,7 @@
       "residenceOccupancy": "Single, Double",
       "residenceCampus": "Lincoln Center",
       "residenceImage": "/media/home/commonly-used-images/campus-beauty/Lincoln-Center-Campus-37.jpg",
+      "residenceDesc": "",
       "residenceName": "Lincoln Center: Residence One"
     },
     {
@@ -20,6 +21,7 @@
       "residenceOccupancy": "Triple, Quadruple",
       "residenceCampus": "Lincoln Center",
       "residenceImage": "/media/home/schools/school-of-professional-and-continuing-studies/Lincoln-Center-Ram.jpg",
+      "residenceDesc": "",
       "residenceName": "Lincoln Center: Residence Two"
     },
     {
@@ -31,6 +33,7 @@
       "residenceOccupancy": "Single, Double",
       "residenceCampus": "Rose Hill",
       "residenceImage": "/media/home/admin-use-only/university-news/Ram-at-Rose-Hill-2x1.jpg",
+      "residenceDesc": "",
       "residenceName": "Rose Hill: Residence One"
     },
     {
@@ -42,6 +45,7 @@
       "residenceOccupancy": "Quintuple",
       "residenceCampus": "Rose Hill",
       "residenceImage": "/media/home/commonly-used-images/Students-Talking-at-a-Picnic-Table-in-Rose-Hill.jpg",
+      "residenceDesc": "",
       "residenceName": "Rose Hill: Residence Two"
     }
   ]
