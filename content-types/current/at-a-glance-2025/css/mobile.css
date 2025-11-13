@@ -1,0 +1,45 @@
+@media (max-width: 812px) {
+    .program-card .header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.25rem;
+    }
+  
+    .program-card .cap-icon {
+      width: 64px;
+      margin-bottom: 0;
+    }
+  
+    .program-card .title-block {
+      align-items: center;
+    }
+  
+    .program-card .title-block h1 {
+      font-size: 28px;
+    }
+  
+    .program-card .subtext {
+      font-size: 18px;
+    }
+  
+    .program-card .info-grid {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+  
+    .program-card .box,
+    .program-card .view-more {
+      min-height: auto;
+      padding: 1rem;
+    }
+  
+    .program-card .note,
+    .program-card .box span,
+    .program-card .box p,
+    .program-card .view-more,
+    .program-card .scholarship-link {
+      font-size: 16px;
+    }
+  }
+  

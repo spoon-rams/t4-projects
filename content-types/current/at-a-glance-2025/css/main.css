@@ -1,0 +1,147 @@
+.program-card {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.program-card .card {
+  position: relative;
+  background: url("../images/map.jpg") no-repeat center;
+  background-size: cover;
+  padding: 5rem;
+}
+
+.program-card .card .overlay {
+  height: 100%;
+  width: 100%;
+  opacity: 0.85;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  position: absolute;
+  z-index: 1;
+}
+
+.program-card .card .card-wrapper {
+  position: relative;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  z-index: 2;
+}
+
+.program-card .header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.program-card .cap-icon {
+  width: 200px;
+  height: auto;
+  flex-shrink: 0;
+  float: right;
+}
+
+.program-card .title-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.program-card .title-block h1 {
+  margin: 0;
+  font-size: 3.5rem;
+  color: #7e072a;
+  font-weight: 900;
+  letter-spacing: -.5px;
+}
+
+.program-card .subtext {
+  margin: 0.3rem 0 0 0;
+  color: #000;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.program-card .note {
+  font-size: 1.3rem;
+  color: #000;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  padding: 0 10px
+}
+
+.program-card .info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.program-card .box,
+.program-card .view-more {
+  /* border: 2px solid #cabc9c; */
+  /* background: #fff; */
+  /* border-radius: 8px; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+  min-height: 90px;
+}
+
+.program-card .box span {
+  font-weight: bold;
+  color: #7e072a;
+  font-size: 20px;
+  margin-bottom: 0.3rem;
+}
+
+.program-card .box p {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+  color: #282d27;
+}
+
+.program-card a.box.btn-primary {
+  background: #dd3224;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.program-card .view-more:hover {
+  background: #7e072a;
+}
+
+.program-card .scholarship-link {
+  display: block;
+  margin-top: 1rem;
+  color: #7e072a;
+  text-decoration: underline;
+  font-weight: bold;
+  text-align: left;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.program-card .letter-reveal span {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #282d27;
+  font-size: 24px;
+  font-weight: 400;
+}
