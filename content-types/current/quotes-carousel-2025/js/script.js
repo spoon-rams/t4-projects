@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // CREATE INDICATOR DOTS
   if (slides.length > 1) {
     let numIndicators = slides.length;
-    let currentSlide = 0;
     while (numIndicators > 0) {
       const div = document.createElement("div");
       if (numIndicators === slides.length) {
@@ -64,6 +63,18 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => (clickPending = false), 800);
   });
 
+  // ACCESSIBILITY - KEYBOARD NAVIGATION
+  slidesContainer.addEventListener("focusin", (e) => {
+    console.log(currentSlide);
+    if (currentSlide < slides.length - 1) {
+      handleClick("next", slidesContainer, slide);
+    }
+
+    if (currentSlide === slides.length - 1 && e.target === slides[slides.length - 1]) {
+      return;
+    }
+  });
+
   // MOBILE VIEW
   window.addEventListener("resize", () => {
     return handleClick("resize", slidesContainer, slide);
@@ -104,58 +115,57 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: "smooth",
     });
   });
-});
 
-let currentSlide = 0;
-// HELPER FUNCTION - SETS THE INDICATOR DOT - Refactoring
-function setIndicator(index) {
-  const prevButton = document.getElementById("slide-arrow-prev");
-  const nextButton = document.getElementById("slide-arrow-next");
-  const slides = document.querySelectorAll(".slide");
-  const indicators = document.querySelectorAll(".slider-indicator");
+  // HELPER FUNCTION - SETS THE INDICATOR DOT - Refactoring
+  function setIndicator(index) {
+    const prevButton = document.getElementById("slide-arrow-prev");
+    const nextButton = document.getElementById("slide-arrow-next");
+    const slides = document.querySelectorAll(".slide");
+    const indicators = document.querySelectorAll(".slider-indicator");
 
-  // Hides Previous Button
-  if (index === 0) {
-    prevButton.style.display = "none";
-  } else {
-    prevButton.style.display = "block";
-  }
-
-  // Hides Next Button
-  if (index === slides.length - 1) {
-    nextButton.style.display = "none";
-  } else {
-    nextButton.style.display = "block";
-  }
-
-  // Sets Indicators
-  indicators.forEach((indicator, i) => {
-    if (i === index) {
-      indicator.classList.add("active");
+    // Hides Previous Button
+    if (index === 0) {
+      prevButton.style.display = "none";
     } else {
-      indicator.classList.remove("active");
+      prevButton.style.display = "block";
     }
-  });
-}
 
-// CLICK ACTION REFACTOR
-function handleClick(action, container, slide, index) {
-  // const slideWidth = slide.clientWidth;
-  switch (action) {
-    case "next":
-      container.scrollLeft += slide.clientWidth;
-      currentSlide += 1;
-      return setIndicator(currentSlide);
-    case "previous":
-      container.scrollLeft -= slide.clientWidth;
-      currentSlide -= 1;
-      return setIndicator(currentSlide);
-    case "indicator":
-      container.scrollLeft = index * slide.clientWidth;
-      currentSlide = index;
-      return setIndicator(index);
-    case "resize":
-      container.scrollLeft = currentSlide * slide.clientWidth;
-      setIndicator(currentSlide);
+    // Hides Next Button
+    if (index === slides.length - 1) {
+      nextButton.style.display = "none";
+    } else {
+      nextButton.style.display = "block";
+    }
+
+    // Sets Indicators
+    indicators.forEach((indicator, i) => {
+      if (i === index) {
+        indicator.classList.add("active");
+      } else {
+        indicator.classList.remove("active");
+      }
+    });
   }
-}
+
+  // CLICK ACTION REFACTOR
+  function handleClick(action, container, slide, index) {
+    // const slideWidth = slide.clientWidth;
+    switch (action) {
+      case "next":
+        container.scrollLeft += slide.clientWidth;
+        currentSlide += 1;
+        return setIndicator(currentSlide);
+      case "previous":
+        container.scrollLeft -= slide.clientWidth;
+        currentSlide -= 1;
+        return setIndicator(currentSlide);
+      case "indicator":
+        container.scrollLeft = index * slide.clientWidth;
+        currentSlide = index;
+        return setIndicator(index);
+      case "resize":
+        container.scrollLeft = currentSlide * slide.clientWidth;
+        setIndicator(currentSlide);
+    }
+  }
+});
