@@ -1,45 +1,117 @@
-@media (max-width: 812px) {
-    .program-card .header {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 0.25rem;
-    }
-  
-    .program-card .cap-icon {
-      width: 64px;
-      margin-bottom: 0;
-    }
-  
-    .program-card .title-block {
-      align-items: center;
-    }
-  
-    .program-card .title-block h1 {
-      font-size: 28px;
-    }
-  
-    .program-card .subtext {
-      font-size: 18px;
-    }
-  
-    .program-card .info-grid {
-      grid-template-columns: 1fr;
-      gap: 0.5rem;
-    }
-  
-    .program-card .box,
-    .program-card .view-more {
-      min-height: auto;
-      padding: 1rem;
-    }
-  
-    .program-card .note,
-    .program-card .box span,
-    .program-card .box p,
-    .program-card .view-more,
-    .program-card .scholarship-link {
-      font-size: 16px;
-    }
+@media (max-width: 768px) {
+  .program-card .card {
+    padding: 2.5rem;
   }
-  
+  .program-card .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  .program-card .cap-icon {
+    width: 150px;
+    margin-bottom: 0;
+  }
+
+  .program-card .note {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .program-card .title-block {
+    align-items: center;
+  }
+
+  .program-card .title-block h1::before {
+    position: relative;
+    width: 180px;
+    left: 25%;
+  }
+
+  .program-card .info-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .program-card .box {
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .program-card .box span {
+    font-size: 2rem;
+  }
+
+  .program-card .box p {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .program-card .card {
+    padding: 1.5rem;
+  }
+
+  .program-card .title-block h1 {
+    font-size: 2rem;
+  }
+
+  .program-card .title-block h1::before {
+    width: 160px;
+    left: 20%;
+  }
+
+  .program-card .subtext {
+    font-size: 1.2rem;
+  }
+
+  .program-card .cap-icon {
+    width: 110px;
+  }
+
+  .program-card .note {
+    font-size: 1.1rem;
+  }
+  .program-card .box span {
+    font-size: 1.5rem;
+  }
+  .program-card .box p {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .program-card .title-block h1 {
+    font-size: 1.7rem;
+  }
+
+  .program-card .title-block h1::before {
+    width: 150px;
+    left: 15%;
+  }
+
+  .program-card .subtext {
+    font-size: 1.1rem;
+  }
+
+  .program-card .cap-icon {
+    width: 100px;
+  }
+
+  .program-card .note {
+    font-size: 1rem;
+  }
+
+  .program-card .box span {
+    font-size: 1.3rem;
+  }
+
+  .program-card .box p {
+    font-size: 1.2rem;
+  }
+
+  .program-card .scholarship-link {
+    font-size: 1rem;
+  }
+}
