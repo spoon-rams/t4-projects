@@ -56,10 +56,19 @@
 
 .program-card .title-block h1 {
   margin: 0;
-  font-size: 3.5rem;
+  font-size: 2.6rem;
   color: #7e072a;
   font-weight: 900;
-  letter-spacing: -.5px;
+  letter-spacing: -0.5px;
+}
+
+.program-card .title-block h1::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  margin-bottom: 10px;
+  background-color: #dd3224;
 }
 
 .program-card .subtext {
@@ -74,18 +83,18 @@
   color: #000;
   margin-bottom: 1.5rem;
   text-align: left;
-  padding: 0 10px
+  padding: 0 10px;
 }
 
 .program-card .info-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 0.75rem;
   margin-bottom: 1rem;
 }
 
-.program-card .box,
-.program-card .view-more {
+.program-card .box {
   /* border: 2px solid #cabc9c; */
   /* background: #fff; */
   /* border-radius: 8px; */
@@ -95,29 +104,30 @@
   justify-content: center;
   padding: 1rem 0.5rem;
   min-height: 90px;
+  flex: 1 0 25%;
 }
 
 .program-card .box span {
   font-weight: bold;
   color: #7e072a;
-  font-size: 20px;
+  font-size: 1.4rem;
   margin-bottom: 0.3rem;
+  font-family: owners-wide, sans-serif !important;
 }
 
 .program-card .box p {
   margin: 0;
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 1.6rem;
+  font-weight: 600;
   color: #282d27;
 }
 
-.program-card a.box.btn-primary {
-  background: #dd3224;
+.program-card .btn-primary {
+  background: #dd3224 !important;
   color: white;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.1rem;
   text-decoration: none;
-  border: none;
   border-radius: 10px;
   transition: background 0.3s ease;
 }
@@ -130,10 +140,10 @@
   display: block;
   margin-top: 1rem;
   color: #7e072a;
-  text-decoration: underline;
+  text-transform: uppercase;
   font-weight: bold;
   text-align: left;
-  font-size: 22px;
+  font-size: 1.1rem;
   line-height: 1.4;
 }
 
@@ -142,6 +152,7 @@
   overflow: hidden;
   white-space: nowrap;
   color: #282d27;
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "Modern Gothic", sans-serif !important;
 }
