@@ -66,8 +66,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // ACCESSIBILITY - KEYBOARD NAVIGATION
   slidesContainer.addEventListener("focusin", (e) => {
     console.log(currentSlide);
-    if (currentSlide < slides.length - 1) {
+    console.log(clickPending);
+    if (clickPending) {
+      e.stopImmediatePropagation();
+      return;
+    } else if (currentSlide < slides.length - 1) {
+      clickPending = true;
       handleClick("next", slidesContainer, slide);
+      setTimeout(() => (clickPending = false), 800);
     }
 
     if (currentSlide === slides.length - 1 && e.target === slides[slides.length - 1]) {
