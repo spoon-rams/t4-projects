@@ -8,7 +8,7 @@
   position: relative;
   background: url("../images/map.jpg") no-repeat center;
   background-size: cover;
-  padding: 5rem;
+  padding: 3rem;
 }
 
 .program-card .card .overlay {
@@ -35,7 +35,6 @@
 .program-card .header {
   display: flex;
   align-items: center;
-  gap: 1rem;
   justify-content: space-between;
   padding: 0 10px;
 }
@@ -90,21 +89,17 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 0.75rem;
   margin-bottom: 1rem;
 }
 
 .program-card .box {
-  /* border: 2px solid #cabc9c; */
-  /* background: #fff; */
-  /* border-radius: 8px; */
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 1rem 0.5rem;
   min-height: 90px;
-  flex: 1 0 25%;
+  flex: 1 0 33%;
 }
 
 .program-card .box span {
