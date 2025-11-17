@@ -112,7 +112,7 @@
 
 .program-card .box p {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #282d27;
 }
@@ -127,10 +127,6 @@
   transition: background 0.3s ease;
 }
 
-.program-card .view-more:hover {
-  background: #7e072a;
-}
-
 .program-card .scholarship-link {
   display: block;
   margin-top: 1rem;
@@ -142,12 +138,3 @@
   line-height: 1.4;
 }
 
-.program-card .letter-reveal span {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  color: #282d27;
-  font-size: 1.5rem;
-  font-weight: 600;
-  font-family: "Modern Gothic", sans-serif !important;
-}

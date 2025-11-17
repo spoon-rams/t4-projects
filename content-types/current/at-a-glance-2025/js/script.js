@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const numbers = document.querySelectorAll(".count");
-  const letters = document.querySelectorAll(".letter-reveal span");
+  const letters = document.querySelectorAll(".letter-reveal");
   const duration = 1000; // 1 second
   const steps = 30;
 
@@ -34,6 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         clearInterval(interval);
       }
-    }, 40);
+    }, 60);
   });
 });
