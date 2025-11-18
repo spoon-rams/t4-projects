@@ -1,17 +1,17 @@
- .at-a-glance {
+.at-a-glance {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
- .at-a-glance .card {
+.at-a-glance .card {
   position: relative;
   background: url("../images/map.jpg") no-repeat center;
   background-size: cover;
   padding: 3rem;
 }
 
- .at-a-glance .card .overlay {
+.at-a-glance .card .overlay {
   height: 100%;
   width: 100%;
   opacity: 0.85;
@@ -23,7 +23,7 @@
   z-index: 1;
 }
 
- .at-a-glance .card .card-wrapper {
+.at-a-glance .card .card-wrapper {
   position: relative;
   background-color: #ffffff;
   width: 100%;
@@ -32,28 +32,28 @@
   z-index: 2;
 }
 
- .at-a-glance .header {
+.at-a-glance .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
 }
 
- .at-a-glance .cap-icon {
-  width: 200px;
+.at-a-glance .icon {
+  width: 140px;
   height: auto;
   flex-shrink: 0;
   float: right;
 }
 
- .at-a-glance .title-block {
+.at-a-glance .title-block {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
 }
 
- .at-a-glance .title-block h1 {
+.at-a-glance .title-block h1 {
   margin: 0;
   font-size: 2.6rem;
   color: #7e072a;
@@ -61,7 +61,7 @@
   letter-spacing: -0.5px;
 }
 
- .at-a-glance .title-block h1::before {
+.at-a-glance .title-block h1::before {
   content: "";
   display: block;
   width: 100px;
@@ -70,29 +70,30 @@
   background-color: #dd3224;
 }
 
- .at-a-glance .subtext {
+.at-a-glance .subtext {
   margin: 0.3rem 0 0 0;
   color: #000;
   font-weight: 600;
   font-size: 22px;
 }
 
- .at-a-glance .note {
-  font-size: 1.3rem;
+.at-a-glance .note {
+  font-size: 1.2rem;
   color: #000;
   margin-bottom: 1.5rem;
   text-align: left;
   padding: 0 10px;
+  margin-top: 20px;
 }
 
- .at-a-glance .info-grid {
+.at-a-glance .info-grid {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-bottom: 1rem;
 }
 
- .at-a-glance .box {
+.at-a-glance .box {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -103,7 +104,7 @@
 }
 
 /* BOX TITLES */
- .at-a-glance .box span {
+.at-a-glance .box span {
   font-weight: bold;
   color: #7e072a;
   font-size: 1.4rem;
@@ -111,14 +112,14 @@
   font-family: owners-wide, sans-serif !important;
 }
 
- .at-a-glance .box p {
+.at-a-glance .box p {
   margin: 0;
   font-size: 1.4rem;
   font-weight: 600;
   color: #282d27;
 }
 
- .at-a-glance .btn-primary {
+.at-a-glance .btn-primary {
   background: #dd3224 !important;
   color: white;
   font-weight: bold;
@@ -128,7 +129,7 @@
   transition: background 0.3s ease;
 }
 
- .at-a-glance .scholarship-link {
+.at-a-glance .link {
   display: block;
   margin-top: 1rem;
   color: #7e072a;
@@ -138,4 +139,3 @@
   font-size: 1.1rem;
   line-height: 1.4;
 }
-
