@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  
 }
 
 .at-a-glance .card {
@@ -9,6 +10,9 @@
   background: url("../images/map.jpg") no-repeat center;
   background-size: cover;
   padding: 3rem;
+  border-top: 0;
+  width: 100%;
+  container-type: inline-size;
 }
 
 .at-a-glance .card .overlay {
@@ -53,7 +57,7 @@
   text-align: left;
 }
 
-.at-a-glance .title-block h1 {
+.at-a-glance .title-block h2 {
   margin: 0;
   font-size: 2.6rem;
   color: #7e072a;
@@ -61,7 +65,15 @@
   letter-spacing: -0.5px;
 }
 
-.at-a-glance .title-block h1::before {
+.at-a-glance .title-block h3 {
+  margin: 0;
+  font-size: 2.2rem;
+  color: #7e072a;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.at-a-glance .title-block h2::before {
   content: "";
   display: block;
   width: 100px;
@@ -87,9 +99,6 @@
 }
 
 .at-a-glance .info-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   margin-bottom: 1rem;
 }
 
@@ -103,19 +112,26 @@
   flex: 1 0 33%;
 }
 
+.at-a-glance .box.cost-per-credit {
+  border-left: 2px solid #dd3224;
+  border-right: 2px solid #dd3224;
+}
+
+.at-a-glance .box.applications-due {
+  border-left: 2px solid #dd3224;
+}
+
 /* BOX TITLES */
 .at-a-glance .box span {
   font-weight: bold;
   color: #7e072a;
   font-size: 1.4rem;
   margin-bottom: 0.3rem;
-  font-family: owners-wide, sans-serif !important;
 }
 
 .at-a-glance .box p {
   margin: 0;
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.5rem;
   color: #282d27;
 }
 
@@ -138,4 +154,41 @@
   text-align: left;
   font-size: 1.1rem;
   line-height: 1.4;
+}
+
+.at-a-glance .divider {
+  background-color: #dd3224;
+  border: none;
+  height: 2px;
+}
+
+.at-a-glance .box.view-more {
+  padding: 0;
+  background-color: #dd3224;
+  border-radius: 15px;
+}
+
+.at-a-glance .box.view-more .btn-primary {
+  background-color: #dd3224 !important;
+  width: 100%;;
+  padding: 3rem 0;
+}
+
+.at-a-glance .box.view-more .btn-primary:hover {
+  background-color: #7e072a !important;
+}
+
+
+@container (width < 900px) {
+  .at-a-glance .icon {
+    width: 110px;
+  }
+
+  .at-a-glance .box span {
+    font-size: 1.2rem;
+  }
+
+  .at-a-glance .box p {
+    font-size: 1.3rem;
+  }
 }
