@@ -148,6 +148,13 @@ try {
   $exactSearch->runFilter();
  }
 
+ if ($queryHandler->isQuerySet('residenceCost')) {
+  $costSearch->setMember('element', 'residenceCost');
+  $costSearch->setMember('query', $queryHandler->getQueryValue('residenceCost'));
+  $costSearch->runFilter();
+ }
+
+
 //  if ($queryHandler->isQuerySet('courseCode')) {
 //   $substringSearch->setMember('element', 'courseCode');
 //   $substringSearch->setMember('query', $queryHandler->getQueryValue('courseCode'));

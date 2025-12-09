@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const housingTypeBtn = document.getElementById("housing-type-button");
   const campusBtn = document.getElementById("campus-residence-button");
   const livingLearningBtn = document.getElementById("learning-residence-button");
+  const pricingBtn = document.getElementById("pricing-button");
 
   // Filter Elements
   const occupancyFilter = document.getElementById("occupancy-filter");
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const housingTypeFilter = document.getElementById("housing-type-filter");
   const campusFilter = document.getElementById("campus-residence-filter");
   const livingLearningFilter = document.getElementById("learning-residence-filter");
+  const pricingFilter = document.getElementById("pricing-filter");
 
   if (occupancyBtn && classYearBtn && housingTypeBtn && campusBtn && livingLearningBtn) {
     // Occupancy Button Event Listener
@@ -76,11 +78,39 @@ document.addEventListener("DOMContentLoaded", () => {
         livingLearningFilter.classList.add("active");
       } else {
         livingLearningFilter.classList.remove("active");
-      }≠
+      }
       occupancyFilter.classList.remove("active");
       classYearFilter.classList.remove("active");
       housingTypeFilter.classList.remove("active");
       campusFilter.classList.remove("active");
     });
+
+    // Pricing Button Event Listener
+    pricingBtn.addEventListener("click", () => {
+      if (!pricingFilter.classList.contains("active")) {
+        pricingFilter.classList.add("active");
+      } else {
+        pricingFilter.classList.remove("active");
+      }
+      occupancyFilter.classList.remove("active");
+      classYearFilter.classList.remove("active");
+      housingTypeFilter.classList.remove("active");
+      campusFilter.classList.remove("active");
+      livingLearningFilter.classList.remove("active");
+    });
   }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById("priceSlider");
+  const display = document.getElementById("priceValue");
+
+  // Prevent T4 auto-submit
+  slider.addEventListener("change", (e) => e.stopImmediatePropagation());
+
+  // Update the text as the user slides
+  slider.addEventListener("input", () => {
+    display.textContent = slider.value;
+    combined.value = slider.value;
+  });
 });

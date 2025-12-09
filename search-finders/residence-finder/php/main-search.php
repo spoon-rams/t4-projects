@@ -1,7 +1,7 @@
 <?php
  $genericFacet    = \T4\PHPSearchLibrary\FacetFactory::getInstance('GenericFacet', $documentCollection, $queryHandler);
  $filters         = $queryHandler->getQueryValuesForPrint();
- $categoryFilters = ['residenceOccupancy', 'residenceClass', 'residenceType', 'residenceCampus', 'residenceLiving'];
+ $categoryFilters = ['residenceOccupancy', 'residenceClass', 'residenceType', 'residenceCampus', 'residenceLiving', 'residenceCost'];
 ?>
 <section class="program-search" aria-label="Fordham University Program Search">
     <!--h2 class="program-search__title">
@@ -32,6 +32,7 @@
           <button type="button" class="btn btn-primary program-search__form__toggle" id="housing-type-button">Housing Type</button>
           <button type="button" class="btn btn-primary program-search__form__toggle" id="campus-residence-button">Campus</button>
           <button type="button" class="btn btn-primary program-search__form__toggle" id="learning-residence-button">Living & Learning</button>
+          <button type="button" class="btn btn-primary program-search__form__toggle" id="pricing-button">Price</button>
           <a class="btn btn-primary program-search__form__clear ajax-load-link" href="?keywords=" id="clear-filters">Clear Filters</a>
         </div>
         <div id="searchoptions" role="search" data-t4-ajax-group="courseSearch" aria-label="Main Filters">
@@ -64,27 +65,27 @@
                return ($orderMap[$aVal] ?? 999) <=> ($orderMap[$bVal] ?? 999);
               });
              ?>
-						 <div id="checkboxes-<?php echo strtolower($element) ?>">
-						    <fieldset class="form-group">
-						      <legend class="sr-only">Filter by Occupancy:</legend>
-						      <?php $i = 0; ?>
-						      <?php foreach ($search as $item): ?>
-						      <div class="checkbox-styled">
-						        <label for="<?php echo $element . '[' . $i . ']'; ?>" class="label-checkbox">
-						          <input 
-                        type="checkbox"
-						            id="<?php echo $element . '[' . $i++ . ']'; ?>"
-						            value="<?php echo $item['value'] ?>"
-						            data-cookie="T4_persona"
-						            name="<?php echo $element ?>"
-						            data-t4-value="<?php echo strtolower($item['value']) ?>"
-						            <?php echo $item['selected'] ? 'checked' : '' ?> 
-                      />
-						          <?php echo $item['label'] ?>
-						          <span class="checkmark"></span>
-						        </label>
-						      </div>
-						      <?php endforeach; ?>
+													 <div id="checkboxes-<?php echo strtolower($element) ?>">
+													    <fieldset class="form-group">
+													      <legend class="sr-only">Filter by Occupancy:</legend>
+													      <?php $i = 0; ?>
+													      <?php foreach ($search as $item): ?>
+													      <div class="checkbox-styled">
+													        <label for="<?php echo $element . '[' . $i . ']'; ?>" class="label-checkbox">
+													          <input
+							                        type="checkbox"
+													            id="<?php echo $element . '[' . $i++ . ']'; ?>"
+													            value="<?php echo $item['value'] ?>"
+													            data-cookie="T4_persona"
+													            name="<?php echo $element ?>"
+													            data-t4-value="<?php echo strtolower($item['value']) ?>"
+													            <?php echo $item['selected'] ? 'checked' : '' ?>
+							                      />
+													          <?php echo $item['label'] ?>
+													          <span class="checkmark"></span>
+													        </label>
+													      </div>
+													      <?php endforeach; ?>
                 </fieldset>
               </div>
             <?php endif; ?>
@@ -92,64 +93,65 @@
           <div class="program-search__form__filters col-sm-12" id="class-year-filter" data-group="class-year">
             <span class="program-search__form__filters__heading">Filter by Class Year</span>
             <?php
-              $element = 'residenceClass';
-              $genericFacet->setMember('element', $element);
-              $genericFacet->setMember('type', 'List');
-              $genericFacet->setMember('facetSource', 'documents');
-              $genericFacet->setMember('sortingState', true);
-              $genericFacet->setMember('multipleValueState', true);
-              $genericFacet->setMember('multipleValueSeparator', ', ');
-              $search = $genericFacet->displayFacet();if (! empty($search)):
+             $element = 'residenceClass';
+             $genericFacet->setMember('element', $element);
+             $genericFacet->setMember('type', 'List');
+             $genericFacet->setMember('facetSource', 'documents');
+             $genericFacet->setMember('sortingState', true);
+             $genericFacet->setMember('multipleValueState', true);
+             $genericFacet->setMember('multipleValueSeparator', ', ');
+             $search = $genericFacet->displayFacet();if (! empty($search)):
               // Custom sort logic
               $orderMap = [
-                'first-year'  => 1,
-                'second-year' => 2,
-                'third-year'  => 3,
-                'fourth-year' => 4,
+               'first-year'  => 1,
+               'second-year' => 2,
+               'junior'      => 3,
+               'senior'      => 4,
               ];
 
               usort($search, function ($a, $b) use ($orderMap) {
-                $aVal = strtolower($a['value']);
-                $bVal = strtolower($b['value']);
-                return ($orderMap[$aVal] ?? 999) <=> ($orderMap[$bVal] ?? 999);
+               $aVal = strtolower($a['value']);
+               $bVal = strtolower($b['value']);
+               return ($orderMap[$aVal] ?? 999) <=> ($orderMap[$bVal] ?? 999);
               });
-            ?>
-			      <div id="checkboxes-<?php echo strtolower($element) ?>">
-				      <fieldset class="form-group">
-						    <legend class="sr-only">Filter by Occupancy:</legend>
-					      <?php $i = 0; ?>
-						    <?php foreach ($search as $item): ?>
-						    <div class="checkbox-styled">
-						      <label for="<?php echo $element . '[' . $i . ']'; ?>" class="label-checkbox">
-							      <input 
-                      type="checkbox"
-							        id="<?php echo $element . '[' . $i++ . ']'; ?>"
-							        value="<?php echo $item['value'] ?>"
-							        data-cookie="T4_persona"
-							        name="<?php echo $element ?>"
-						          data-t4-value="<?php echo strtolower($item['value']) ?>"
-							        <?php echo $item['selected'] ? 'checked' : '' ?>
-		                />
-						        <?php echo $item['label'] ?>
-						        <span class="checkmark"></span>
-						      </label>
-						    </div>
-				        <?php endforeach; ?>
+             ?>
+										      <div id="checkboxes-<?php echo strtolower($element) ?>">
+											      <fieldset class="form-group">
+													    <legend class="sr-only">Filter by Occupancy:</legend>
+												      <?php $i = 0; ?>
+													    <?php foreach ($search as $item): ?>
+													    <div class="checkbox-styled">
+													      <label for="<?php echo $element . '[' . $i . ']'; ?>" class="label-checkbox">
+														      <input
+							                      type="checkbox"
+														        id="<?php echo $element . '[' . $i++ . ']'; ?>"
+														        value="<?php echo $item['value'] ?>"
+														        data-cookie="T4_persona"
+														        name="<?php echo $element ?>"
+													          data-t4-value="<?php echo strtolower($item['value']) ?>"
+														        <?php echo $item['selected'] ? 'checked' : '' ?>
+									                />
+													        <?php echo $item['label'] ?>
+													        <span class="checkmark"></span>
+													      </label>
+													    </div>
+											        <?php endforeach; ?>
               </fieldset>
             </div>
             <?php endif; ?>
           </div>
+
           <div class="program-search__form__filters col-sm-12" id="housing-type-filter" data-group="house-type">
             <span class="program-search__form__filters__heading">Filter by Housing Type</span>
             <?php
-              $element = 'residenceType';
-              $genericFacet->setMember('element', $element);
-              $genericFacet->setMember('type', 'List');
-              $genericFacet->setMember('facetSource', 'documents');
-              $genericFacet->setMember('sortingState', true);
-              $genericFacet->setMember('multipleValueState', true);
-              $genericFacet->setMember('multipleValueSeparator', ', ');
-              $search = $genericFacet->displayFacet(); 
+             $element = 'residenceType';
+             $genericFacet->setMember('element', $element);
+             $genericFacet->setMember('type', 'List');
+             $genericFacet->setMember('facetSource', 'documents');
+             $genericFacet->setMember('sortingState', true);
+             $genericFacet->setMember('multipleValueState', true);
+             $genericFacet->setMember('multipleValueSeparator', ', ');
+             $search = $genericFacet->displayFacet();
             ?>
             <?php if (! empty($search)): ?>
             <div id="checkboxes-<?php echo strtolower($element) ?>">
@@ -159,14 +161,14 @@
                 <?php foreach ($search as $item): ?>
                 <div class="checkbox-styled">
                   <label for="<?php echo $element . '[' . $i . ']'; ?>" class="label-checkbox">
-                    <input 
-                      type="checkbox" 
+                    <input
+                      type="checkbox"
                       id="<?php echo $element . '[' . $i++ . ']'; ?>"
                       value="<?php echo $item['value'] ?>"
                       data-cookie="T4_persona"
                       name="<?php echo $element ?>"
                       data-t4-value="<?php echo strtolower($item['value']) ?>"
-                      <?php echo $item['selected'] ? 'checked' : '' ?> 
+                      <?php echo $item['selected'] ? 'checked' : '' ?>
                     />
                     <?php echo $item['label'] ?>
                     <span class="checkmark"></span>
@@ -177,17 +179,18 @@
             </div>
             <?php endif; ?>
           </div>
+
           <div class="program-search__form__filters col-sm-12" id="campus-residence-filter" data-group="campus">
             <span class="program-search__form__filters__heading">Filter by Campus</span>
             <?php
-              $element = 'residenceCampus';
-              $genericFacet->setMember('element', $element);
-              $genericFacet->setMember('type', 'List');
-              $genericFacet->setMember('facetSource', 'documents');
-              $genericFacet->setMember('sortingState', true);
-              $genericFacet->setMember('multipleValueState', true);
-              $genericFacet->setMember('multipleValueSeparator', ', ');
-              $search = $genericFacet->displayFacet(); 
+             $element = 'residenceCampus';
+             $genericFacet->setMember('element', $element);
+             $genericFacet->setMember('type', 'List');
+             $genericFacet->setMember('facetSource', 'documents');
+             $genericFacet->setMember('sortingState', true);
+             $genericFacet->setMember('multipleValueState', true);
+             $genericFacet->setMember('multipleValueSeparator', ', ');
+             $search = $genericFacet->displayFacet();
             ?>
             <?php if (! empty($search)): ?>
             <div id="checkboxes-<?php echo strtolower($element) ?>">
@@ -197,14 +200,14 @@
                 <?php foreach ($search as $item): ?>
                 <div class="checkbox-styled">
                   <label for="<?php echo $element . '[' . $i . ']'; ?>" class="label-checkbox">
-                    <input 
-                      type="checkbox" 
+                    <input
+                      type="checkbox"
                       id="<?php echo $element . '[' . $i++ . ']'; ?>"
                       value="<?php echo $item['value'] ?>"
                       data-cookie="T4_persona"
-                      name="<?php echo $element ?>" 
+                      name="<?php echo $element ?>"
                       data-t4-value="<?php echo strtolower($item['value']) ?>"
-                      <?php echo $item['selected'] ? 'checked' : '' ?> 
+                      <?php echo $item['selected'] ? 'checked' : '' ?>
                     />
                     <?php echo $item['label'] ?>
                     <span class="checkmark"></span>
@@ -218,14 +221,14 @@
           <div class="program-search__form__filters col-sm-12" id="learning-residence-filter" data-group="learning">
             <span class="program-search__form__filters__heading">Filter by Living & Learning</span>
             <?php
-              $element = 'residenceLiving';
-              $genericFacet->setMember('element', $element);
-              $genericFacet->setMember('type', 'List');
-              $genericFacet->setMember('facetSource', 'documents');
-              $genericFacet->setMember('sortingState', true);
-              $genericFacet->setMember('multipleValueState', true);
-              $genericFacet->setMember('multipleValueSeparator', ', ');
-              $search = $genericFacet->displayFacet(); 
+             $element = 'residenceLiving';
+             $genericFacet->setMember('element', $element);
+             $genericFacet->setMember('type', 'List');
+             $genericFacet->setMember('facetSource', 'documents');
+             $genericFacet->setMember('sortingState', true);
+             $genericFacet->setMember('multipleValueState', true);
+             $genericFacet->setMember('multipleValueSeparator', ', ');
+             $search = $genericFacet->displayFacet();
             ?>
             <?php if (! empty($search)): ?>
             <div id="checkboxes-<?php echo strtolower($element) ?>">
@@ -235,13 +238,13 @@
                 <?php foreach ($search as $item): ?>
                 <div class="checkbox-styled">
                   <label for="<?php echo $element . '[' . $i . ']'; ?>" class="label-checkbox">
-                    <input 
+                    <input
                       type="checkbox"
                       id="<?php echo $element . '[' . $i++ . ']'; ?>"
                       value="<?php echo $item['value'] ?>"
                       data-cookie="T4_persona" name="<?php echo $element ?>"
                       data-t4-value="<?php echo strtolower($item['value']) ?>"
-                      <?php echo $item['selected'] ? 'checked' : '' ?> 
+                      <?php echo $item['selected'] ? 'checked' : '' ?>
                     />
                     <?php echo $item['label'] ?>
                     <span class="checkmark"></span>
@@ -252,6 +255,41 @@
             </div>
             <?php endif; ?>
           </div>
+
+          <!-- PRICING FILTER - DEVELOPMENT - START -->
+          <div class="program-search__form__filters col-sm-12" id="pricing-filter" data-group="pricing">
+            <span class="program-search__form__filters__heading">Filter by Price</span>
+
+            <div id="checkboxes-residenceCost">
+              <fieldset class="form-group">
+                <legend class="sr-only">Filter by Price: </legend>
+
+                <label>Max Price</label>
+                <input
+                  type="range"
+                  id="priceSlider"
+                  min="0"
+                  max="10000"
+                  step="100"
+                  value="<?php echo isset($_GET['residenceCost']) ? explode('-', $_GET['residenceCost'])[1] : 0; ?>"
+                >
+
+                <div>
+                  Selected: $<span id="priceValue">0</span>
+                </div>
+
+                <!-- Hidden single value for T4 range -->
+                <input
+                  type="hidden"
+                  name="residenceCost"
+                  id="priceCombined"
+                >
+
+              </fieldset>
+            </div>
+          </div>
+          <!-- PRICING FILTER - DEVELOPMENT - END -->
+
           <div id="hidden-form-filters" data-t4-ajax-group="courseSearch">
           	<input type="hidden" name="keywords" value="<?php echo ! empty($query['keywords']) ? $query['keywords'] : '' ?>" />
           </div>
@@ -318,7 +356,7 @@
           <p id="title-id-<?php echo $item['contentID']; ?>" class="popup-modal__title"><?php echo $item['residenceName']; ?></p>
           <p><?php echo $item['residenceDesc']; ?></p>
             <hr class="modal-popup-separator">
-          <p class="popup-options"><strong>Campus:</strong><span class="degree-options"><?php echo $item['residenceCampus']; ?></span></p>
+          <p class="popup-options"><strong>Campus: </strong><span class="degree-options"><?php echo $item['residenceCampus']; ?></span></p>
             <hr class="modal-popup-separator">
            <p><strong>Class Year(s): </strong><?php echo $item['residenceClass']; ?></p>
            <p><strong> Housing Type: </strong><?php echo $item['residenceType'] ?></p>
