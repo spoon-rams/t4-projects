@@ -1,116 +1,27 @@
-/* MOBILE RESPONSIVE */
 @media only screen and (max-width: 991px) {
-  .quotes-carousel .slide .col-md-7 .quote-text {
-    justify-content: center;
-  }
-
-  .quotes-carousel .slide .col-md-7 p {
-    font-size: 1.1rem;
-  }
-
-  .quotes-carousel .slide .col-md-7 p.author {
-    font-size: 1.05rem;
-  }
-
-  .quotes-carousel .opening-quote svg {
-    height: 20px;
-    width: 20px;
-  }
-
-  .quotes-carousel .closing-quote svg {
-    height: 20px;
-    width: 20px;
+  .founders-slider .slide-wrapper {
+    height: 300px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .quotes-carousel {
-    height: auto;
-  }
-
-  .quotes-carousel .profile-picture img {
-    height: 600px !important;
-  }
-
-  .quotes-carousel .opening-quote {
-    margin-top: 20px;
-  }
-
-  .quotes-carousel .slide-arrow {
-    margin: 70px 0;
-  }
-
-  .quotes-carousel .slides-container {
+  .founders-slider .slides-container {
     overflow-y: hidden;
   }
-
-  .quotes-carousel .slide-wrapper {
-    height: auto;
+  .founders-slider .slide-wrapper {
     margin: 0 !important;
   }
 
-  .quotes-carousel .slide .row {
-    height: auto;
+  .founders-slider .slide .row {
+    height: 100%;
     margin: 0 !important;
   }
 
-  .quotes-carousel .slide .col-md-5 {
-    display: block;
-    height: auto;
+  .founders-slider .slide-arrow.next {
+    right: 15px !important;
   }
 
-  .quotes-carousel .slide .col-md-7 {
-    text-align: center;
-    /* padding-right: 0 !important; */
-    min-height: 380px;
-  }
-
-  .quotes-carousel .slide .col-md-7 .quote-text {
-    justify-content: center;
-  }
-
-  .quotes-carousel .slide .col-md-7 p {
-    font-size: 1.1rem;
-    padding: 0;
-  }
-
-  .quotes-carousel .slide .col-md-7 p.author {
-    font-size: 1.1rem;
-  }
-
-  .quotes-carousel .slider-indicators {
-    top: 560px;
-    left: 29%;
-    right: 29%;
-  }
-
-  .quotes-carousel .slide-arrow {
-    top: 190px;
-  }
-
-  .quotes-carousel .slides-container {
-    overflow-x: hidden !important;
-  }
-}
-
-@media only screen and (max-width: 535px) {
-  .quotes-carousel .profile-picture img {
-    height: 500px !important;
-  }
-
-  .quotes-carousel .slide-arrow {
-    top: 130px;
-  }
-
-  .quotes-carousel .slider-indicators {
-    top: 460px;
-  }
-}
-
-@media only screen and (max-width: 380px) {
-
-  .quotes-carousel .slider-indicators {
-    right: 20%;
-    left: 20%;
+  .founders-slider .slide-arrow.prev {
+    left: 15px !important;
   }
 }
