@@ -9,25 +9,44 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div class="general-content">
-      <div class="general-content__block">
-        <div class="aging-will">
-          <div class="image">
-            <img src="./images/Head Branch.png" alt="" />
-          </div>
-          <div class="text">
-            <a href="#" class="h3-font">Aging Well</a>
-            <p>Embracing the biological, social, psychological, and existential dimensions of getting older, to inform care that honors growth, reflection, and connection.</p>
-          </div>
-        </div>
+    <main></main>
+    <script src="app.js"></script>
+  </body>
+</html>
 
-        <div class="comprehensive-care">
-          <div class="image">
-            <img src="" alt="">
+<section class="founders-slider <t4 type='content' name='Top/Bottom Spacing' output='normal' display_field='value' /> <t4 type='content' name='Limit Width' output='normal' display_field='value' />">
+  <div class="slider-wrapper desktop">
+    <!-- SLIDE ARROWS -->
+    <div class="slide-arrow prev">&lsaquo;</div>
+    <div class="slide-arrow next">&rsaquo;</div>
+    <!-- SLIDE CONTAINER -->
+    <div class="slides-container">
+      <div class="slide">
+        <div class="row">
+          <div class="col-lg-12">
+            <t4 type="content" name="Image" output="normal" formatter="image/normal" cdn="true" />
+
+            <t4
+              type="content"
+              name="Title"
+              output="selective-output"
+              process-format="true"
+              format='<div class="content">
+          
+          <div class="title">
+            <span>$value</span>
+          </div>
+          
+          <div class="description">
+            <p><t4 type="content" name="Description" output="normal" modifiers="striptags,htmlentities" /></p>
+          </div>
+          
+        </div>'
+            />
           </div>
         </div>
       </div>
     </div>
-    <script src="app.js"></script>
-  </body>
-</html>
+  </div>
+  <div class="slider-indicators"></div>
+</section>

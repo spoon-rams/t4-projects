@@ -1,25 +1,53 @@
-const carousel = document.getElementById("carousel");
-const nextBtn = document.getElementById("next");
+console.log("App is running");
 
-function nextCard() {
-  const first = carousel.firstElementChild;
-  if (!first) return;
+document.addEventListener("DOMContentLoaded", async () => {
+  console.log("DOM fully loaded and parsed");
 
-  // Animate the first card out
-  first.style.transform = "translateX(120%) rotate(10deg)";
-  first.style.opacity = 0;
+  const google = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT-gfpWH3XRNjg-W8KMA_jtMnX9M4wcAmvBrRlOx8OQd5Db7Sn1pyiZb1jP9qwYH/pub?output=csv");
 
-  // After animation, put it at the end and reset
-  setTimeout(() => {
-    first.style.transition = "none"; // disable transition
-    first.style.transform = "";
-    first.style.opacity = "";
-    carousel.appendChild(first); // move card to end
+  if (google.ok) {
+    const csv = await google.text();
 
-    // force reflow to apply reset before re-enabling transition
-    void first.offsetWidth;
-    first.style.transition = "";
-  }, 600);
-}
+    // Convert CSV → JSON
+    const rows = csv
+      .trim()
+      .split("\n")
+      .map((r) => r.split(","));
+    const headers = rows[0];
 
-nextBtn.addEventListener("click", nextCard);
+    const jsonData = rows.slice(1).map((row) => {
+      return headers.reduce((obj, header, i) => {
+        obj[header] = row[i];
+        return obj;
+      }, {});
+    });
+
+    console.log(jsonData); // Ready to render
+  }
+
+  if (!google.ok) {
+    console.log("Google Sheets fetch failed, loading local data");
+    const local = await fetch("./data/test-data.csv");
+
+    if (!local.ok) {
+      console.error("Local data fetch failed");
+      return;
+    }
+
+    const csv = await local.text();
+    
+    // Convert CSV → JSON
+    const rows = csv
+      .trim()
+      .split("\n")
+      .map((r) => r.split(","));
+    const headers = rows[0];
+
+    const jsonData = rows.slice(1).map((row) => {
+      return headers.reduce((obj, header, i) => {
+        obj[header] = row[i];
+        return obj;
+      }, {});
+    });
+  }
+});
