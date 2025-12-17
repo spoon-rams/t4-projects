@@ -1,0 +1,54 @@
+/* Infographic Carousel */
+@media only screen and (max-width: 1024px) {
+  .statistics-blocks .slide-arrow {
+    position: absolute;
+    display: flex;
+    visibility: visible;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 4rem;
+    background-color: #DD3224;
+    color: white;
+    border: none;
+    width: 2.5rem;
+    font-size: 3rem;
+    line-height: 1.15em;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 100ms;
+    z-index: 1;
+  }
+
+  .statistics-blocks .slide-arrow:hover,
+  .statistics-blocks .slide-arrow:focus {
+    opacity: 1;
+  }
+
+  .statistics-blocks .slide-arrow.prev {
+    left: 31px;
+    padding-left: .7rem;
+    border-radius: 0 .5rem .5rem 0 !important;
+  }
+
+  .statistics-blocks .slide-arrow.next {
+    right: 31px;
+    padding-left: .9rem;
+    border-radius: .5rem 0 0 .5rem !important;
+  }
+
+  .statistics-blocks .slides-container {
+    display: flex;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    height: fit-content;
+  }
+
+  .statistics-blocks .slide {
+    scroll-snap-align: center;
+    flex: 1 0 100% !important;
+    max-width: 100% !important;
+    margin-right: 1rem !important;
+  }
+}
