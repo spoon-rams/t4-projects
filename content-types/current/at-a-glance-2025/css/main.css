@@ -82,6 +82,13 @@
   background-color: #dd3224;
 }
 
+.at-a-glance .program {
+  font-size: 1.5rem;
+  color: #7e072a;
+  margin-top: 0.3rem;
+  font-weight: 600;
+}
+
 .at-a-glance .subtext {
   margin: 0.3rem 0 0 0;
   color: #000;

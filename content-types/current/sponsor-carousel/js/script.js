@@ -392,9 +392,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return slides[0].clientWidth;
   }
 
-  /* ---------------------------------
-     INDICATORS
-  ----------------------------------- */
   if (totalSlides > 1) {
     for (let i = 0; i < totalSlides; i++) {
       const dot = document.createElement("div");
@@ -443,9 +440,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ---------------------------------
-     SMOOTH SCROLL + SNAP TOGGLE
-  ----------------------------------- */
+
   function smoothScrollTo(target, duration, onComplete) {
     const element = slidesContainer;
     const startPosition = element.scrollLeft;
@@ -481,12 +476,7 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(animation);
   }
 
-  /* ---------------------------------
-     INFINITE LOOP VIA FIFO ROTATION
-     NEXT: first out → last in
-     PREV: last out → first in
-     DOM size stays constant
-  ----------------------------------- */
+
 
   function moveNext(callback) {
     if (isAnimating || totalSlides < 2) {
@@ -540,27 +530,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ---------------------------------
-     ARROWS
-  ----------------------------------- */
+
   prevButton.style.display = "block";
   nextButton.style.display = "block";
 
   nextButton.addEventListener("click", () => moveNext());
   prevButton.addEventListener("click", () => movePrev());
 
-  /* ---------------------------------
-     AUTOPLAY
-  ----------------------------------- */
+  
   if (totalSlides > 1) {
     setInterval(() => {
       moveNext();
     }, 7000);
   }
 
-  /* ---------------------------------
-     SWIPE
-  ----------------------------------- */
   slidesContainer.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
   });
@@ -572,9 +555,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* ---------------------------------
-     RESIZE
-  ----------------------------------- */
+ 
   window.addEventListener("resize", () => {
     // Keep current slide aligned after breakpoint changes
     slidesContainer.scrollLeft = 0;
