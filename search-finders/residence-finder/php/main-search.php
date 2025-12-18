@@ -264,18 +264,18 @@
               <fieldset class="form-group">
                 <legend class="sr-only">Filter by Price: </legend>
 
-                <label>Max Price</label>
+                <label>Academic Year Rate: </label>
                 <input
                   type="range"
                   id="priceSlider"
                   min="0"
-                  max="10000"
+                  max="30000"
                   step="100"
                   value="<?php echo isset($_GET['residenceCost']) ? explode('-', $_GET['residenceCost'])[1] : 0; ?>"
                 >
 
                 <div>
-                  Selected: $<span id="priceValue">0</span>
+                  Selected Academic Year Rate: $<span id="priceValue">0</span>
                 </div>
 
                 <!-- Hidden single value for T4 range -->
