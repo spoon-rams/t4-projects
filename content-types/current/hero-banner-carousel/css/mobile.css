@@ -1,0 +1,70 @@
+@media only screen and (max-width: 1280px) {
+  .hero-banner.fordham-rebrand .hero-banner .hero-banner__img {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-banner.fordham-rebrand .header-placeholder {
+    height: 104px !important;
+  }
+
+  .hero-banner.fordham-rebrand .hero-banner__block__title {
+    background-color: unset !important;
+  }
+
+  .hero-banner.fordham-rebrand .hero-banner__block__desc {
+    margin-top: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 1279px) {
+  .hero-banner.fordham-rebrand .hero-banner__block__title > span {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .hero-banner.fordham-rebrand .hero-banner__block__title > span {
+    font-size: 2rem !important;
+  }
+
+  .hero-banner__block__button-link-break-3buttons:last-of-type {
+    margin-left: 0 !important;
+  }
+
+  .hero-banner__block__button-link-break-3buttons:first-of-type {
+    margin-right: 0 !important;
+  }
+
+  .hero-banner.fordham-rebrand .hero-banner__block__content a {
+    width: 70% !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-banner.fordham-rebrand .hero-banner__wrapper {
+    height: 40vh;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .hero-banner.fordham-rebrand .hero-banner__block__title > span {
+    font-size: 1.7rem !important;
+  }
+
+  .hero-banner.fordham-rebrand .hero-banner__block__content a {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .hero-banner.fordham-rebrand .hero-banner__wrapper {
+    height: 65vh;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .hero-banner.fordham-rebrand .hero-banner__wrapper {
+    height: 90vh;
+  }
+}
