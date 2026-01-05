@@ -32,10 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (slides.length > 1) {
-    prevButton.style.display = "none";
+    prevButton.style.visibility = "hidden";
   } else {
-    prevButton.style.display = "none";
-    nextButton.style.display = "none";
+    prevButton.style.visibility = "none";
+    nextButton.style.visibility = "none";
   }
 
   // INDICATORS CLICK ACTION
@@ -150,16 +150,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Hides Previous Button
     if (index === 0) {
-      prevButton.style.display = "none";
+      prevButton.style.visibility = "hidden";
     } else {
-      prevButton.style.display = "block";
+      prevButton.style.visibility = "visible";
     }
 
     // Hides Next Button
     if (index === slides.length - 1) {
-      nextButton.style.display = "none";
+      nextButton.style.visibility = "hidden";
     } else {
-      nextButton.style.display = "block";
+      nextButton.style.visibility = "visible";
     }
 
     // Sets Indicators

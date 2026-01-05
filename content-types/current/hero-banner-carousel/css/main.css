@@ -210,7 +210,6 @@
   left: 5rem !important;
 }
 
-
 /* Slide Indicator */
 .carousel-header .carousel-indicators {
   display: flex;
@@ -240,8 +239,51 @@
   font-size: 4.5rem;
 }
 
-
 .carousel-header .btn-primary.button-text {
   background-color: #dd3224;
+  border-radius: 10px;
+}
+
+.carousel-header .btn-primary.button-text span {
+  font-size: 1rem;
+}
+
+/* TEST */
+.carousel-header .interactions {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  margin-bottom: .2rem;
+}
+
+.carousel-header .interactions .carousel-arrow {
+  font-size: 1.5rem;
+  position: unset;
+  height: unset;
+  width: unset;
+  background-color: #dd3224;
+  align-items: center;
+  margin: 0 !important;
   border-radius: 5px
+}
+
+.carousel-header .interactions .carousel-arrow.next {
+  padding-left: .5rem !important;
+  padding-right: .5rem !important;
+  margin-left: .2rem !important; 
+}
+
+.carousel-header .interactions .carousel-arrow.prev {
+  padding-right: .5rem !important;
+  padding-left: .5rem !important;
+  margin-right: .2rem !important;
+}
+
+
+.carousel-header .carousel-indicators {
+  position: unset !important;
+  align-items: center;
+  margin: 0 !important;
 }
