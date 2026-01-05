@@ -259,25 +259,27 @@
 }
 
 .carousel-header .interactions .carousel-arrow {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   position: unset;
   height: unset;
   width: unset;
-  background-color: #dd3224;
+  /* background-color: #dd3224; */
   align-items: center;
   margin: 0 !important;
-  border-radius: 5px
+  border-radius: 5px;
+  padding-bottom: 4px;
+  font-weight: 600;
 }
 
 .carousel-header .interactions .carousel-arrow.next {
-  padding-left: .5rem !important;
-  padding-right: .5rem !important;
+  padding-left: .3rem !important;
+  padding-right: .3rem !important;
   margin-left: .2rem !important; 
 }
 
 .carousel-header .interactions .carousel-arrow.prev {
-  padding-right: .5rem !important;
-  padding-left: .5rem !important;
+  padding-right: .3rem !important;
+  padding-left: .3rem !important;
   margin-right: .2rem !important;
 }
 
