@@ -47,17 +47,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // INITIAL Default Content and Image
+  console.log(slides[currentSlide]);
   contentTitle.innerText = slides[currentSlide].dataset.title;
   contentButtonText.innerText = slides[currentSlide].dataset.buttonText;
   contentLink.setAttribute("href", slides[currentSlide].dataset.buttonLink);
   contentLink.setAttribute("alt", slides[currentSlide].dataset.buttonText + " Link");
-
   // DESKTOP CLICK ACTION - NEED TO turn this into a function
   nextButton.addEventListener("click", (e) => {
     if (clickPending) {
       e.stopImmediatePropagation();
       return;
     }
+    console.log(slides[currentSlide]);
+    contentTitle.innerText = slides[currentSlide + 1].dataset.title;
+    contentButtonText.innerText = slides[currentSlide + 1].dataset.buttonText;
+    contentLink.setAttribute("href", slides[currentSlide + 1].dataset.buttonLink);
+    contentLink.setAttribute("alt", slides[currentSlide].dataset.buttonText + " Link");
     clickPending = true;
     handleClick("next", slidesContainer, slide);
     setTimeout(() => (clickPending = false), 800);
@@ -68,6 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
       e.stopImmediatePropagation();
       return;
     }
+    contentTitle.innerText = slides[currentSlide - 1].dataset.title;
+    contentButtonText.innerText = slides[currentSlide - 1].dataset.buttonText;
+    contentLink.setAttribute("href", slides[currentSlide - 1].dataset.buttonLink);
+    contentLink.setAttribute("alt", slides[currentSlide - 1].dataset.buttonText + " Link");
     clickPending = true;
     handleClick("previous", slidesContainer, slide);
     setTimeout(() => (clickPending = false), 800);
@@ -185,6 +194,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-
-
- 
