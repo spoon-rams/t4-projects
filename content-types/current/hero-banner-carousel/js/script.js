@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const contentTitle = document.querySelector(".carousel-header .content .title");
   const contentButtonText = document.querySelector(".carousel-header .content .button-text span");
-  const contentLink = document.querySelector(".carousel-header .content a");
 
   let startX = 0;
   let clickPending = false;
@@ -47,22 +46,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // INITIAL Default Content and Image
-  console.log(slides[currentSlide]);
   contentTitle.innerText = slides[currentSlide].dataset.title;
   contentButtonText.innerText = slides[currentSlide].dataset.buttonText;
-  contentLink.setAttribute("href", slides[currentSlide].dataset.buttonLink);
-  contentLink.setAttribute("alt", slides[currentSlide].dataset.buttonText + " Link");
   // DESKTOP CLICK ACTION - NEED TO turn this into a function
   nextButton.addEventListener("click", (e) => {
     if (clickPending) {
       e.stopImmediatePropagation();
       return;
     }
-    console.log(slides[currentSlide]);
     contentTitle.innerText = slides[currentSlide + 1].dataset.title;
     contentButtonText.innerText = slides[currentSlide + 1].dataset.buttonText;
-    contentLink.setAttribute("href", slides[currentSlide + 1].dataset.buttonLink);
-    contentLink.setAttribute("alt", slides[currentSlide].dataset.buttonText + " Link");
+
     clickPending = true;
     handleClick("next", slidesContainer, slide);
     setTimeout(() => (clickPending = false), 800);
@@ -75,8 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     contentTitle.innerText = slides[currentSlide - 1].dataset.title;
     contentButtonText.innerText = slides[currentSlide - 1].dataset.buttonText;
-    contentLink.setAttribute("href", slides[currentSlide - 1].dataset.buttonLink);
-    contentLink.setAttribute("alt", slides[currentSlide - 1].dataset.buttonText + " Link");
     clickPending = true;
     handleClick("previous", slidesContainer, slide);
     setTimeout(() => (clickPending = false), 800);
@@ -108,6 +100,47 @@ document.addEventListener("DOMContentLoaded", () => {
   // MOBILE TOUCH ACTION
   slidesContainer.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
+  });
+
+  document.querySelector(".carousel-header .img-container .content").addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  document.querySelector(".carousel-header .img-container .content").addEventListener("touchend", (e) => {
+    var endX = e.changedTouches[0].clientX;
+    var deltaX = startX - endX;
+
+    // Set a threshold for swipe distance
+    var swipeThreshold = 50;
+
+    if (deltaX > swipeThreshold) {
+      // Swipe left, scroll to the next box
+      if (currentSlide < slides.length - 1) {
+        contentTitle.innerText = slides[currentSlide + 1].dataset.title;
+        contentButtonText.innerText = slides[currentSlide + 1].dataset.buttonText;
+        currentSlide++;
+        
+        setIndicator(currentSlide);
+      }
+    } else if (deltaX < -swipeThreshold) {
+      // Swipe right, scroll to the previous box
+      if (currentSlide > 0) {
+        contentTitle.innerText = slides[currentSlide - 1].dataset.title;
+        contentButtonText.innerText = slides[currentSlide - 1].dataset.buttonText;
+        currentSlide--;
+        
+        setIndicator(currentSlide);
+      }
+    }
+
+    // Calculate the scroll position based on the current index
+    var scrollPosition = slides[currentSlide].offsetLeft - slidesContainer.offsetLeft;
+
+    // Scroll to the selected box with a smooth animation
+    slidesContainer.scrollTo({
+      left: scrollPosition,
+      behavior: "smooth",
+    });
   });
 
   slidesContainer.addEventListener("touchend", (e) => {
