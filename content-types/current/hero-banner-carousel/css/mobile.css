@@ -1,3 +1,4 @@
+/* MOBILE RESPONSIVE STYLES */
 @media only screen and (max-width: 1180px) {
   .carousel-header .img-container .content .title {
     font-size: 2.4rem;
@@ -50,7 +51,7 @@
     margin-right: 0;
   }
 
-  .carousel-header .interactions .arrow-interactions {
+  .carousel-header .interactions .interactions-wrapper {
     margin: 0 auto;
   }
 }
