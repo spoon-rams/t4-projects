@@ -28,9 +28,9 @@
     bottom: -20.5% !important;
   }
 
-  /* .carousel-header .interactions {
-    left: 40%;
-  } */
+  .carousel-header.two-columns .slide {
+    flex-direction: column !important;
+  }
 }
 
 @media only screen and (max-width: 520px) {

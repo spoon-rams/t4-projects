@@ -50,7 +50,7 @@
     </script>
     <!-- TEMPORARY -->
 
-    <title>Hero Banner - Carousel</title>
+    <title>Hero Banner - Two Column Carousel</title>
   </head>
   <body>
     <!-- HEADER START -->
@@ -1069,75 +1069,37 @@
 
     <!-- MAIN -->
     <main class="fullwidth" id="main-content">
-      <section class="carousel-header">
+
+      
+      <!-- FORDHAM LAW TWO COLUMN HERO LAYOUT -->
+      <section class="carousel-header two-columns">
         <div class="img-container">
-          <div class="content">
-            <div class="content-wrapper">
-              <h2 class="title"></h2>
-              <button class="btn btn-primary button-text"></button>
-            </div>
-          </div>
           <div class="slide-container">
-            <div class="overlay"></div>
             <div
               class="slide"
               data-category="Welcome"
-              data-title="6 ‘Green’ Degrees to Fight Climate Change"
-              data-desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+             
+          
               data-button-text="Learn More"
               data-button-link="https://www.google.com"
             >
-              <img src="images/manhattan-skyline.jpg" alt="Manhattan Skyline" />
-            </div>
-            <div
-              class="slide"
-              data-category="Rose Hill"
-              data-title="Admitted to Fordham? Visit Us This Spring!"
-              data-desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              data-button-text="Visit Campus"
-              data-button-link="https://www.bing.com"
-            >
-              <img src="images/rose-hill.jpg" alt="Rose Hill" />
-            </div>
-            <div
-              class="slide"
-              data-category="Student Life"
-              data-title="Learn More About The Student Experience"
-              data-desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              data-button-text="Student Experience"
-              data-button-link="https://www.safari.com"
-            >
-              <img src="images/students-on-grass.jpg" alt="Students on grass" />
-            </div>
-            <div
-              class="slide"
-              data-category="Welcome"
-              data-title="6 ‘Green’ Degrees to Fight Climate Change"
-              data-desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              data-button-text="Learn More"
-              data-button-link="https://www.google.com"
-            >
-              <img src="images/manhattan-skyline.jpg" alt="Manhattan Skyline" />
-            </div>
-            <div
-              class="slide"
-              data-category="Rose Hill"
-              data-title="Admitted to Fordham? Visit Us This Spring!"
-              data-desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              data-button-text="Visit Campus"
-              data-button-link="https://www.bing.com"
-            >
-              <img src="images/rose-hill.jpg" alt="Rose Hill" />
-            </div>
-            <div
-              class="slide"
-              data-category="Student Life"
-              data-title="Learn More About The Student Experience"
-              data-desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              data-button-text="Student Experience"
-              data-button-link="https://www.safari.com"
-            >
-              <img src="images/students-on-grass.jpg" alt="Students on grass" />
+              <div class="col-lg-6 img-column">
+                <div class="overlay"></div>
+                <img src="images/manhattan-skyline.jpg" alt="Manhattan Skyline" />
+              </div>
+              <div class="col-lg-6 text-column">
+                <div class="content">
+                  <div class="content-wrapper">
+                    <h2 class="title">
+                      <span class="first-title-text" style="color: #EFB900">Lead</span>
+                      <span class="second-title-text" style="color: #EFB900">In The Law</span>
+                      <span class="third-title-text">In New</span>
+                      <span class="fourth-title-text">York City</span>
+                    </h2>
+                    <button class="btn btn-primary button-text">Learn More</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="interactions">
@@ -1150,6 +1112,8 @@
         </div>
       </section>
     </main>
+
+
     <!-- FORDHAM FOOTER -->
     <footer class="footer" aria-label="Site footer">
       <div class="footer__container container-fluid">
@@ -1293,5 +1257,5 @@
     </footer>
   </body>
   <!-- <script type="text/javascript" src="./script-prod.js" defer></script> -->
-  <script type="text/javascript" src="./js/script.js" defer></script>
+  <!-- <script type="text/javascript" src="./js/script.js" defer></script> -->
 </html>
