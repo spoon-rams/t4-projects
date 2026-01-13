@@ -179,7 +179,7 @@
 /* UPDATES */
 
 .carousel-header .img-container {
-  height: 500px;
+  max-height: 500px;
 }
 
 .carousel-header .slide-container .overlay {
@@ -208,6 +208,10 @@
   top: 48%;
   transform: translateY(-50%);
   left: 5rem !important;
+}
+
+.carousel-header .slide-container .slide img {
+  max-height: 500px;
 }
 
 /* Slide Indicator */
@@ -264,7 +268,6 @@
 
 .carousel-header .interactions .interactions-wrapper {
   display: flex;
-
   justify-content: center;
 }
 
