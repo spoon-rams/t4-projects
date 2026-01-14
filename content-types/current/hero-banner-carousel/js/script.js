@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (slides.length > 1) {
     prevButton.style.visibility = "hidden";
   } else {
-    prevButton.style.visibility = "none";
-    nextButton.style.visibility = "none";
+    prevButton.style.visibility = "hidden";
+    nextButton.style.visibility = "hidden";
   }
 
   // INDICATORS CLICK ACTION
