@@ -4,9 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".carousel-header .slide");
   const prevButton = document.querySelector(".carousel-header .hero-carousel-arrow.prev");
   const nextButton = document.querySelector(".carousel-header .hero-carousel-arrow.next");
+
   const indicatorParent = document.querySelector(".carousel-header .carousel-indicators");
 
   const contentBox = document.querySelector(".carousel-header .img-container .content");
+  const contentBoxWrapper = document.querySelector(".carousel-header .img-container .content .content-wrapper");
   const contentTitle = document.querySelector(".carousel-header .content .title");
   const contentButtonText = document.querySelector(".carousel-header .content .button-text");
 
@@ -39,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // INDICATORS CLICK ACTION
-  const indicators = document.querySelectorAll(".carousel-indicator");
+  const indicators = document.querySelectorAll(".carousel-header .carousel-indicators .carousel-indicator");
   indicators.forEach((indicator, index) => {
     indicator.addEventListener("click", () => {
       handleClick("indicator", slidesContainer, slide, index);
@@ -173,11 +175,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // HELPER FUNCTION - SETS THE INDICATOR DOT - Refactoring
   function setIndicator(index) {
-    const prevButton = document.querySelector(".hero-carousel-arrow.prev");
-    const nextButton = document.querySelector(".hero-carousel-arrow.next");
-    const slides = document.querySelectorAll(".slide");
-    const indicators = document.querySelectorAll(".carousel-indicator");
-
     // Hides Previous Button
     if (index === 0) {
       prevButton.style.visibility = "hidden";
@@ -205,14 +202,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // CLICK ACTION REFACTOR
   function handleClick(action, container, slide, index) {
     // const slideWidth = slide.clientWidth;
+    const test = document.querySelector(".carousel-header .slide");
     switch (action) {
       case "next":
+        animation(contentBoxWrapper, "animate__fadeInUp", 800);
         contentTitle.innerText = slides[currentSlide + 1].dataset.title;
         contentButtonText.innerText = slides[currentSlide + 1].dataset.buttonText;
         container.scrollLeft += slide.clientWidth;
         currentSlide += 1;
         return setIndicator(currentSlide);
       case "previous":
+        animation(contentBoxWrapper, "animate__fadeInUp", 800);
         contentTitle.innerText = slides[currentSlide - 1].dataset.title;
         contentButtonText.innerText = slides[currentSlide - 1].dataset.buttonText;
         container.scrollLeft -= slide.clientWidth;
@@ -221,6 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
       case "indicator":
         container.scrollLeft = index * slide.clientWidth;
         currentSlide = index;
+        animation(contentBoxWrapper, "animate__fadeInUp", 800);
         contentTitle.innerText = slides[currentSlide].dataset.title;
         contentButtonText.innerText = slides[currentSlide].dataset.buttonText;
         return setIndicator(index);
@@ -228,5 +229,12 @@ document.addEventListener("DOMContentLoaded", () => {
         container.scrollLeft = currentSlide * slide.clientWidth;
         setIndicator(currentSlide);
     }
+  }
+
+  function animation(element, animation, intervaL) {
+    element.classList.add("animate__animated", animation);
+    setTimeout(() => {
+      element.classList.remove("animate__animated", animation);
+    }, intervaL);
   }
 });

@@ -178,6 +178,11 @@
 
 /* UPDATES */
 
+.carousel-header .content .content-wrapper {
+  --animate-duration: .8s;
+  --animate-delay: .8s;
+}
+
 .carousel-header .img-container {
   max-height: 500px;
 }
