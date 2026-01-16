@@ -162,15 +162,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Calculate the scroll position based on the current index
-    var scrollPosition = slides[currentSlide].offsetLeft - slidesContainer.offsetLeft;
+    // Calculate scroll position
+    const scrollPosition = slides[currentSlide].offsetLeft - slidesContainer.offsetLeft;
 
-    // Scroll to the selected box with a smooth animation
-    slidesContainer.scrollTo({
-      left: scrollPosition,
-      behavior: "smooth",
-    });
-    // swipeAction(e, currentSlide, slides, slidesContainer, contentTitle, contentButtonText);
+    // Slower, controlled scroll
+    smoothScrollTo(slidesContainer, scrollPosition, 800);
   });
 
   // HELPER FUNCTION - SETS THE INDICATOR DOT - Refactoring
@@ -274,5 +270,28 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       btnTxtTwo.style.display = "none";
     }
+  }
+
+  function smoothScrollTo(element, target, duration = 1200) {
+    const start = element.scrollLeft;
+    const distance = target - start;
+    let startTime = null;
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // easeInOutQuad
+      const ease = progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+      element.scrollLeft = start + distance * ease;
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
   }
 });
