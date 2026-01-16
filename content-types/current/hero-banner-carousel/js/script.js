@@ -243,63 +243,36 @@ document.addEventListener("DOMContentLoaded", () => {
     switch (action) {
       case "next":
         title.innerText = slides[currentSlide + 1].dataset.title;
-        btnText.innerText = slides[currentSlide + 1].dataset.buttonText;
-        btnTxtTwo.innerText = slides[currentSlide + 1].dataset.secondButtonText;
-        if (btnText.innerText.length > 0) {
-          btnText.style.display = "inline-block";
-          slides[currentSlide + 1].dataset.buttonLink && btnText.setAttribute("href", slides[currentSlide + 1].dataset.buttonLink);
-        } else {
-          btnText.style.display = "none";
-        }
-
-        if (btnTxtTwo.innerText.length > 0) {
-          btnTxtTwo.style.display = "inline-block";
-          slides[currentSlide + 1].dataset.secondButtonLink && btnTxtTwo.setAttribute("href", slides[currentSlide + 1].dataset.secondButtonLink);
-        } else {
-          btnTxtTwo.style.display = "none";
-        }
-
+        displayButtons(btnText, btnTxtTwo, slides, currentSlide + 1);
         desc.innerText = slides[currentSlide + 1].dataset.desc;
         break;
       case "previous":
         title.innerText = slides[currentSlide - 1].dataset.title;
-        btnText.innerText = slides[currentSlide - 1].dataset.buttonText;
-        btnTxtTwo.innerText = slides[currentSlide - 1].dataset.secondButtonText;
-        if (btnText.innerText.length > 0) {
-          btnText.style.display = "inline-block";
-          slides[currentSlide - 1].dataset.buttonLink && btnText.setAttribute("href", slides[currentSlide - 1].dataset.buttonLink);
-        } else {
-          btnText.style.display = "none";
-        }
-
-        if (btnTxtTwo.innerText.length > 0) {
-          btnTxtTwo.style.display = "inline-block";
-          slides[currentSlide - 1].dataset.secondButtonLink && btnTxtTwo.setAttribute("href", slides[currentSlide - 1].dataset.secondButtonLink);
-        } else {
-          btnTxtTwo.style.display = "none";
-        }
-
+        displayButtons(btnText, btnTxtTwo, slides, currentSlide - 1);
         desc.innerText = slides[currentSlide - 1].dataset.desc;
         break;
       default:
         title.innerText = slides[currentSlide].dataset.title;
-        btnText.innerText = slides[currentSlide].dataset.buttonText;
-        btnTxtTwo.innerText = slides[currentSlide].dataset.secondButtonText;
-        if (btnText.innerText.length > 0) {
-          btnText.style.display = "inline-block";
-          slides[currentSlide].dataset.buttonLink && btnText.setAttribute("href", slides[currentSlide].dataset.buttonLink);
-        } else {
-          btnText.style.display = "none";
-        }
-
-        if (btnTxtTwo.innerText.length > 0) {
-          btnTxtTwo.style.display = "inline-block";
-          slides[currentSlide].dataset.secondButtonLink && btnTxtTwo.setAttribute("href", slides[currentSlide].dataset.secondButtonLink);
-        } else {
-          btnTxtTwo.style.display = "none";
-        }
-
+        displayButtons(btnText, btnTxtTwo, slides, currentSlide);
         desc.innerText = slides[currentSlide].dataset.desc;
+    }
+  }
+
+  function displayButtons(btnText, btnTxtTwo, slide, currentSlide) {
+    btnText.innerText = slide[currentSlide].dataset.buttonText;
+    btnTxtTwo.innerText = slide[currentSlide].dataset.secondButtonText;
+    if (slide[currentSlide].dataset.buttonText.length > 0) {
+      btnText.style.display = "inline-block";
+      slide[currentSlide].dataset.buttonLink && btnText.setAttribute("href", slide[currentSlide].dataset.buttonLink);
+    } else {
+      btnText.style.display = "none";
+    }
+
+    if (slide[currentSlide].dataset.secondButtonText.length > 0) {
+      btnTxtTwo.style.display = "inline-block";
+      slide[currentSlide].dataset.secondButtonLink && btnTxtTwo.setAttribute("href", slide[currentSlide].dataset.secondButtonLink);
+    } else {
+      btnTxtTwo.style.display = "none";
     }
   }
 });
