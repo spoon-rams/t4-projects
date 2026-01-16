@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // DOM ELEMENTS
   const slidesContainer = document.querySelector(".carousel-header .slide-container");
   const slide = document.querySelector(".carousel-header .slide");
   const slides = document.querySelectorAll(".carousel-header .slide");
@@ -10,7 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const contentBox = document.querySelector(".carousel-header .img-container .content");
   const contentBoxWrapper = document.querySelector(".carousel-header .img-container .content .content-wrapper");
   const contentTitle = document.querySelector(".carousel-header .content .title");
+  const contentDesc = document.querySelector(".carousel-header .content .desc");
   const contentButtonText = document.querySelector(".carousel-header .content .button-text");
+  const contentSecondButtonText = document.querySelector(".carousel-header .content .second-button-text");
 
   let startX = 0;
   let clickPending = false;
@@ -49,8 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // INITIAL Default Content and Image
-  contentTitle.innerText = slides[currentSlide].dataset.title;
-  contentButtonText.innerText = slides[currentSlide].dataset.buttonText;
+  insertData(contentTitle, contentButtonText, contentSecondButtonText, contentDesc, slides, currentSlide);
   // DESKTOP CLICK ACTION - NEED TO turn this into a function
   nextButton.addEventListener("click", (e) => {
     if (clickPending) {
@@ -76,8 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ACCESSIBILITY - KEYBOARD NAVIGATION
   slidesContainer.addEventListener("focusin", (e) => {
-    console.log(currentSlide);
-    console.log(clickPending);
     if (clickPending) {
       e.stopImmediatePropagation();
       return;
@@ -147,16 +147,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (deltaX > swipeThreshold) {
       // Swipe left, scroll to the next box
       if (currentSlide < slides.length - 1) {
-        contentTitle.innerText = slides[currentSlide + 1].dataset.title;
-        contentButtonText.innerText = slides[currentSlide + 1].dataset.buttonText;
+        animation(contentBoxWrapper, "animate__fadeInLeft", 800);
+        insertData(contentTitle, contentButtonText, contentSecondButtonText, contentDesc, slides, currentSlide, "next");
         currentSlide++;
         setIndicator(currentSlide);
       }
     } else if (deltaX < -swipeThreshold) {
       // Swipe right, scroll to the previous box
       if (currentSlide > 0) {
-        contentTitle.innerText = slides[currentSlide - 1].dataset.title;
-        contentButtonText.innerText = slides[currentSlide - 1].dataset.buttonText;
+        animation(contentBoxWrapper, "animate__fadeInRight", 800);
+        insertData(contentTitle, contentButtonText, contentSecondButtonText, contentDesc, slides, currentSlide, "previous");
         currentSlide--;
         setIndicator(currentSlide);
       }
@@ -199,22 +199,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // CLICK ACTION REFACTOR
+  // CLICK ACTIONS
   function handleClick(action, container, slide, index) {
     // const slideWidth = slide.clientWidth;
     const test = document.querySelector(".carousel-header .slide");
     switch (action) {
       case "next":
-        animation(contentBoxWrapper, "animate__fadeInUp", 800);
-        contentTitle.innerText = slides[currentSlide + 1].dataset.title;
-        contentButtonText.innerText = slides[currentSlide + 1].dataset.buttonText;
+        animation(contentBoxWrapper, "animate__fadeInLeft", 800);
+        insertData(contentTitle, contentButtonText, contentSecondButtonText, contentDesc, slides, currentSlide, "next");
         container.scrollLeft += slide.clientWidth;
         currentSlide += 1;
         return setIndicator(currentSlide);
       case "previous":
-        animation(contentBoxWrapper, "animate__fadeInUp", 800);
-        contentTitle.innerText = slides[currentSlide - 1].dataset.title;
-        contentButtonText.innerText = slides[currentSlide - 1].dataset.buttonText;
+        animation(contentBoxWrapper, "animate__fadeInRight", 800);
+        insertData(contentTitle, contentButtonText, contentSecondButtonText, contentDesc, slides, currentSlide, "previous");
         container.scrollLeft -= slide.clientWidth;
         currentSlide -= 1;
         return setIndicator(currentSlide);
@@ -222,8 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
         container.scrollLeft = index * slide.clientWidth;
         currentSlide = index;
         animation(contentBoxWrapper, "animate__fadeInUp", 800);
-        contentTitle.innerText = slides[currentSlide].dataset.title;
-        contentButtonText.innerText = slides[currentSlide].dataset.buttonText;
+        insertData(contentTitle, contentButtonText, contentSecondButtonText, contentDesc, slides, currentSlide);
         return setIndicator(index);
       case "resize":
         container.scrollLeft = currentSlide * slide.clientWidth;
@@ -231,10 +228,78 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function animation(element, animation, intervaL) {
+  function animation(element, animation, interval) {
+    const noAnimation = document.querySelector(".carousel-header.no-animations");
+    if (noAnimation) {
+      return;
+    }
     element.classList.add("animate__animated", animation);
     setTimeout(() => {
       element.classList.remove("animate__animated", animation);
-    }, intervaL);
+    }, interval);
+  }
+
+  function insertData(title, btnText, btnTxtTwo, desc, slides, currentSlide, action) {
+    switch (action) {
+      case "next":
+        title.innerText = slides[currentSlide + 1].dataset.title;
+        btnText.innerText = slides[currentSlide + 1].dataset.buttonText;
+        btnTxtTwo.innerText = slides[currentSlide + 1].dataset.secondButtonText;
+        if (btnText.innerText.length > 0) {
+          btnText.style.display = "inline-block";
+          slides[currentSlide + 1].dataset.buttonLink && btnText.setAttribute("href", slides[currentSlide + 1].dataset.buttonLink);
+        } else {
+          btnText.style.display = "none";
+        }
+
+        if (btnTxtTwo.innerText.length > 0) {
+          btnTxtTwo.style.display = "inline-block";
+          slides[currentSlide + 1].dataset.secondButtonLink && btnTxtTwo.setAttribute("href", slides[currentSlide + 1].dataset.secondButtonLink);
+        } else {
+          btnTxtTwo.style.display = "none";
+        }
+
+        desc.innerText = slides[currentSlide + 1].dataset.desc;
+        break;
+      case "previous":
+        title.innerText = slides[currentSlide - 1].dataset.title;
+        btnText.innerText = slides[currentSlide - 1].dataset.buttonText;
+        btnTxtTwo.innerText = slides[currentSlide - 1].dataset.secondButtonText;
+        if (btnText.innerText.length > 0) {
+          btnText.style.display = "inline-block";
+          slides[currentSlide - 1].dataset.buttonLink && btnText.setAttribute("href", slides[currentSlide - 1].dataset.buttonLink);
+        } else {
+          btnText.style.display = "none";
+        }
+
+        if (btnTxtTwo.innerText.length > 0) {
+          btnTxtTwo.style.display = "inline-block";
+          slides[currentSlide - 1].dataset.secondButtonLink && btnTxtTwo.setAttribute("href", slides[currentSlide - 1].dataset.secondButtonLink);
+        } else {
+          btnTxtTwo.style.display = "none";
+        }
+
+        desc.innerText = slides[currentSlide - 1].dataset.desc;
+        break;
+      default:
+        title.innerText = slides[currentSlide].dataset.title;
+        btnText.innerText = slides[currentSlide].dataset.buttonText;
+        btnTxtTwo.innerText = slides[currentSlide].dataset.secondButtonText;
+        if (btnText.innerText.length > 0) {
+          btnText.style.display = "inline-block";
+          slides[currentSlide].dataset.buttonLink && btnText.setAttribute("href", slides[currentSlide].dataset.buttonLink);
+        } else {
+          btnText.style.display = "none";
+        }
+
+        if (btnTxtTwo.innerText.length > 0) {
+          btnTxtTwo.style.display = "inline-block";
+          slides[currentSlide].dataset.secondButtonLink && btnTxtTwo.setAttribute("href", slides[currentSlide].dataset.secondButtonLink);
+        } else {
+          btnTxtTwo.style.display = "none";
+        }
+
+        desc.innerText = slides[currentSlide].dataset.desc;
+    }
   }
 });
