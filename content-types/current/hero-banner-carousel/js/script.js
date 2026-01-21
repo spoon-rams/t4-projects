@@ -126,11 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Calculate the scroll position based on the current index
     var scrollPosition = slides[currentSlide].offsetLeft - slidesContainer.offsetLeft;
 
-    // Scroll to the selected box with a smooth animation
-    slidesContainer.scrollTo({
-      left: scrollPosition,
-      behavior: "smooth",
-    });
+    /// Slower, controlled scroll
+    smoothScrollTo(slidesContainer, scrollPosition, 800);
   });
 
   contentBox.addEventListener("touchstart", (e) => {
