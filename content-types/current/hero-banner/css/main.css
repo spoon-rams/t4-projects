@@ -93,3 +93,38 @@
 
 
 
+/* FOR TWO COLUM SLIDE HERO CAROUSEL */
+
+.carousel-header.two-columns .slide {
+  align-items: unset !important;
+}
+
+.carousel-header.two-columns .slide .col-lg-6.img-column {
+  padding: 0 !important;
+}
+
+.carousel-header.two-columns .slide .col-lg-6.text-column {
+  display: flex !important;
+  align-items: center !important;
+  background-color: #512533 !important
+}
+
+.carousel-header.two-columns .slide .col-lg-6.text-column .content {
+  transform: unset !important;
+  position: unset !important;
+  max-width: 100% !important;
+}
+
+.carousel-header.two-columns .slide .col-lg-6.text-column .content .title {
+  font-size: 4rem !important;
+  line-height: 4rem !important;
+}
+
+.carousel-header.two-columns.side-divider .slide .col-lg-6.text-column .content .title {
+  font-size: 3rem !important;
+  line-height: 3rem !important;
+}
+
+.carousel-header.two-columns .slide .col-lg-6.text-column .content .title span {
+  display: block;
+} 
