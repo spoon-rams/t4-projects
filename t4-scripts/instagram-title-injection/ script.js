@@ -24,7 +24,7 @@ window.addEventListener("load", () => {
     instaReels.forEach((reel) => {
       const socialMedia = ["instagram", "tiktok", "twitter"];
       const hasTitle = reel.hasAttribute("title");
-      const source = reel.getAttribute("src");
+      const source = reel.getAttribute("c");
       const isSocialMedia = socialMedia.includes(extractDomain(source));
 
       // If there's a reel, the reel doesn't have a title, and it's a social media reel

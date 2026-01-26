@@ -98,12 +98,24 @@
 /* .carousel-header.two-columns .slide {
   align-items: unset !important;
 } */
+
+/* TEMPORARY UNIVERSAL CSS ADJUSTMENTS  */
+.hero-banner.two-column {
+  margin-bottom: 600px;
+}
+/* END */
+
 .hero-banner.two-column .hero-banner__wrapper {
   display: flex;
 }
 
 .hero-banner.two-column .hero-banner__wrapper .col-lg-6 {
   padding: 0 !important;
+}
+
+.hero-banner.two-column .hero-banner__img {
+  position: relative !important;
+  height: 100% !important;
 }
 
 .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column {
@@ -129,4 +141,6 @@
 .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__content .btn-primary,
 .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__content .btn-secondary {
   font-family: inherit;
+  font-size: .8rem;
+  margin: 0.2rem;
 }
