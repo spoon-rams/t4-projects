@@ -50,3 +50,18 @@ const extractDomain = (url) => {
   const result = match ? match[1] : null;
   return result;
 };
+
+
+// Test for flickr iframes
+window.addEventListener("load", () => {
+  const iframesAll = document.querySelectorAll("iframe");
+  console.log("All iframes", iframesAll);
+  iframesAll.forEach((iframe) => {
+    const classAttribute = iframe.getAttribute("class");
+    if (classAttribute && classAttribute.includes("flicker-embed-frame")) {
+      console.log("Iframe with Flickr", iframe);
+    } else {
+      console.log("Iframe without Flickr", iframe);
+    }
+  });
+});
