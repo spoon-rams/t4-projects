@@ -101,7 +101,7 @@
 
 /* TEMPORARY UNIVERSAL CSS ADJUSTMENTS  */
 .hero-banner.two-column {
-  margin-bottom: 600px;
+  margin-bottom: 300px;
 }
 /* END */
 
@@ -121,7 +121,6 @@
 .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column {
   display: flex !important;
   align-items: center !important;
-  background-color: #512533 !important
 }
 
 .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block {
@@ -132,8 +131,8 @@
 }
 
 .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title span {
-  font-size: 4rem !important;
-  line-height: 4rem !important;
+  font-size: 6rem !important;
+  line-height: 5rem !important;
   background-color: unset;
   padding: 0 !important;
 }
@@ -143,4 +142,54 @@
   font-family: inherit;
   font-size: .8rem;
   margin: 0.2rem;
+}
+
+
+.bg-fordham-maroon {
+  background-color: #7e072a !important;
+}
+
+.bg-fordham-deep-maroon {
+  background-color: #512533 !important;
+}
+
+.bg-fordham-gray {
+  background-color: #5A6675 !important;
+}
+
+.bg-fordham-black {
+  background-color: #282220 !important;
+}
+
+.bg-fordham-stone {
+  background-color: #dbdbd3 !important;
+}
+
+.bg-fordham-keating {
+  background-color: #cabc9c !important;
+}
+
+
+.font-primary-white {
+  color: #ffffff !important;
+}
+
+.font-primary-maroon {
+  color: #7e072a !important;
+}
+
+.font-spark {
+  color: #EFB900 !important;
+}
+
+.font-ram-red {
+  color: #dd3224 !important;
+}
+
+.font-elm {
+  color: #719435 !important;
+}
+
+.font-victory-blue {
+  color: #004658 !important ;
 }
