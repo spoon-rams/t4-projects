@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1280px) {
+/* @media only screen and (max-width: 1280px) {
   .hero-banner.fordham-rebrand .hero-banner .hero-banner__img {
     background-size: cover;
     background-position: center;
@@ -66,5 +66,93 @@
 @media only screen and (max-width: 390px) {
   .hero-banner.fordham-rebrand .hero-banner__wrapper {
     height: 90vh;
+  }
+}
+*/
+
+/* Mobile-specific styles for the two columnhero banner */
+@media only screen and (max-width: 1642px) {
+  .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title span {
+    font-size: 5rem !important;
+    line-height: 4rem !important;
+  }
+}
+
+
+@media only screen and (max-width: 1400px) {
+  .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title span {
+    font-size: 4rem !important;
+    line-height: 3rem !important;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title {
+    background-color: unset !important;
+  }
+
+  .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title span {
+    font-size: 3rem !important;
+    line-height: 2.5rem !important;
+    padding: 0 !important;
+  }
+
+  .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block {
+    text-align: unset !important;
+  }
+
+  .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block .hero-banner__block__content {
+    padding-left: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 883px) {
+  .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title span {
+    font-size: 2.5rem !important;
+    line-height: 2rem !important;
+    padding: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-banner.two-column .hero-banner__wrapper {
+    flex-direction: column !important;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block .hero-banner__block__content {
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+  }
+
+  .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__content .btn {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title span {
+    font-size: 2.5rem !important;
+    line-height: 2.5rem !important;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .hero-banner.two-column .hero-banner__wrapper {
+    text-align: center !important;
+  }
+  .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title {
+    padding: 20px 0 !important;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title span {
+    font-size: 2rem !important;
+    line-height: 2rem !important;
   }
 }
