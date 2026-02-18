@@ -24,7 +24,7 @@ window.addEventListener("load", () => {
     instaReels.forEach((reel) => {
       const socialMedia = ["instagram", "tiktok", "twitter"];
       const hasTitle = reel.hasAttribute("title");
-      const source = reel.getAttribute("c");
+      const source = reel.getAttribute("src");
       const isSocialMedia = socialMedia.includes(extractDomain(source));
 
       // If there's a reel, the reel doesn't have a title, and it's a social media reel
@@ -51,17 +51,3 @@ const extractDomain = (url) => {
   return result;
 };
 
-
-// Test for flickr iframes
-window.addEventListener("load", () => {
-  const iframesAll = document.querySelectorAll("iframe");
-  console.log("All iframes", iframesAll);
-  iframesAll.forEach((iframe) => {
-    const classAttribute = iframe.getAttribute("class");
-    if (classAttribute && classAttribute.includes("flicker-embed-frame")) {
-      console.log("Iframe with Flickr", iframe);
-    } else {
-      console.log("Iframe without Flickr", iframe);
-    }
-  });
-});
