@@ -78,15 +78,18 @@
   }
 }
 
-
-@media only screen and (max-width: 1400px) {
-  .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title span {
+/* @media only screen and (max-width: 1400px) {
+  .hero-banner.two-column .hero-banne2222221221211r__wrapper .col-lg-6.text-column .hero-banner__block__title span {
     font-size: 4rem !important;
     line-height: 3rem !important;
   }
-}
+} */
 
 @media only screen and (max-width: 1199px) {
+  .hero-banner.two-column .hero-banner__wrapper {
+    height: 350px;
+  }
+
   .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title {
     background-color: unset !important;
   }
@@ -108,6 +111,9 @@
 }
 
 @media only screen and (max-width: 883px) {
+  .hero-banner.fordham-rebrand .hero-banner__wrapper {
+    height: 300px;
+  }
   .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title span {
     font-size: 2.5rem !important;
     line-height: 2rem !important;
@@ -118,6 +124,10 @@
 @media only screen and (max-width: 768px) {
   .hero-banner.two-column .hero-banner__wrapper {
     flex-direction: column !important;
+  }
+  .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title {
+    margin-bottom: 0 !important;
+    padding: 1.5rem !important;
   }
 }
 
@@ -137,7 +147,7 @@
 @media only screen and (max-width: 480px) {
   .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title span {
     font-size: 2.5rem !important;
-    line-height: 2.5rem !important;
+    line-height: 2rem !important;
   }
 }
 
