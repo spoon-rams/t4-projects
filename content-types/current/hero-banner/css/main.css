@@ -105,8 +105,13 @@
 }
 /* END */
 
+.hero-banner.two-column {
+  height: 500px;
+}
+
 .hero-banner.two-column .hero-banner__wrapper {
   display: flex;
+  height: 100% !important;
 }
 
 .hero-banner.two-column .hero-banner__wrapper .col-lg-6 {
