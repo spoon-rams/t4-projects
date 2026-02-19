@@ -70,7 +70,7 @@
 }
 */
 
-/* Mobile-specific styles for the two columnhero banner */
+/* Mobile-specific styles for the two column hero banner */
 @media only screen and (max-width: 1642px) {
   .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title span {
     font-size: 5rem !important;
@@ -112,7 +112,7 @@
 
 @media only screen and (max-width: 883px) {
   .hero-banner.two-column {
-    height: 300px;
+    height: auto;
   }
 
   .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title span {
