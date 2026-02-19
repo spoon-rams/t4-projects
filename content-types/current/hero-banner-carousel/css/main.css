@@ -260,13 +260,14 @@
 .carousel-header .btn-primary {
   background-color: #dd3224 !important;
   border-radius: 10px;
-  margin-bottom: 10px;
-  display: none;
 }
 
 .carousel-header .btn-primary.button-text,
-.carousel-header .btn-primary.second-button-text {
+.carousel-header .btn-primary.second-button-text,
+.carousel-header .btn-secondary.button-text,
+.carousel-header .btn-secondary.second-button-text {
   font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 /* TEST */
