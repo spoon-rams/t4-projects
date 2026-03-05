@@ -23,17 +23,14 @@ function insertTitles() {
   }
 
   if (iframes.length > 0 && titles.length > 0) {
-    iframes.forEach((iframe) => {
-      const socialMedia = ["instagram", "tiktok", "twitter"];
+    iframes.forEach((iframe, index) => {
       const hasTitle = iframe.hasAttribute("title");
-      const source = iframe.getAttribute("src");
-      const isSocialMedia = socialMedia.includes(extractDomain(source));
 
-      if (iframe && !hasTitle && isSocialMedia && titles[count]) {
-        iframe.setAttribute("title", titles[count]);
+      if (iframe && !hasTitle && titles[count]) {
+        iframe.setAttribute("title", "Random Title" + titles[count]);
         count++;
-      } else if (iframe && hasTitle && isSocialMedia && titles[count]) {
-        iframe.setAttribute("title", titles[count]);
+      } else if (iframe && hasTitle && titles[count]) {
+        iframe.setAttribute("title", "Random Title" + titles[count]);
         count++;
       }
     });
