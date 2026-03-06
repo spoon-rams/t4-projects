@@ -1,0 +1,201 @@
+.at-a-glance {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  
+}
+
+.at-a-glance .card {
+  position: relative;
+  background: url("../images/map.jpg") no-repeat center;
+  background-size: cover;
+  padding: 3rem;
+  border-top: 0;
+  width: 100%;
+  container-type: inline-size;
+}
+
+.at-a-glance .card .overlay {
+  height: 100%;
+  width: 100%;
+  opacity: 0.85;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  position: absolute;
+  z-index: 1;
+}
+
+.at-a-glance .card .card-wrapper {
+  position: relative;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  z-index: 2;
+}
+
+.at-a-glance .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.at-a-glance .icon {
+  width: 140px;
+  height: auto;
+  flex-shrink: 0;
+  float: right;
+}
+
+.at-a-glance .title-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.at-a-glance .title-block h2 {
+  margin: 0;
+  font-size: 2.6rem;
+  color: #7e072a;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.at-a-glance .title-block h3 {
+  margin: 0;
+  font-size: 2.2rem;
+  color: #7e072a;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.at-a-glance .title-block h2::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  margin-bottom: 10px;
+  background-color: #dd3224;
+}
+
+.at-a-glance .program {
+  font-size: 1.5rem;
+  color: #7e072a;
+  margin-top: 0.3rem;
+  font-weight: 600;
+}
+
+.at-a-glance .subtext {
+  margin: 0.3rem 0 0 0;
+  color: #000;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.at-a-glance .note {
+  font-size: 1.2rem;
+  color: #000;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  padding: 0 10px;
+  margin-top: 20px;
+}
+
+.at-a-glance .info-grid {
+  margin-bottom: 1rem;
+}
+
+.at-a-glance .box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+  min-height: 90px;
+  flex: 1 0 33%;
+}
+
+.at-a-glance .box.cost-per-credit {
+  border-left: 2px solid #dd3224;
+  border-right: 2px solid #dd3224;
+}
+
+.at-a-glance .box.applications-due {
+  border-left: 2px solid #dd3224;
+}
+
+/* BOX TITLES */
+.at-a-glance .box span {
+  font-weight: bold;
+  color: #7e072a;
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.at-a-glance .box p {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #282d27;
+}
+
+.at-a-glance .btn-primary {
+  background: #dd3224 !important;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.at-a-glance .link {
+  display: block;
+  margin-top: 1rem;
+  color: #7e072a;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.at-a-glance .divider {
+  background-color: #dd3224;
+  border: none;
+  height: 2px;
+}
+
+.at-a-glance .box.view-more {
+  padding: 0;
+  background-color: #dd3224;
+  border-radius: 15px;
+}
+
+.at-a-glance .box.view-more .btn-primary {
+  background-color: #dd3224 !important;
+  width: 100%;;
+  padding: 3rem 0;
+}
+
+.at-a-glance .box.view-more .btn-primary:hover {
+  background-color: #7e072a !important;
+}
+
+
+@container (width < 900px) {
+  .at-a-glance .icon {
+    width: 110px;
+  }
+
+  .at-a-glance .box span {
+    font-size: 1.2rem;
+  }
+
+  .at-a-glance .box p {
+    font-size: 1.3rem;
+  }
+}

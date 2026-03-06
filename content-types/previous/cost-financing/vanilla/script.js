@@ -40,7 +40,7 @@ const getData = async () => {
 
     const totalCreditHours = parseInt(creditHours.innerText);
     const { value, status } = data;
-    console.log(data);
+  
     if (status !== "notdone") {
       cardContent.style.display = "block";
       loading.style.display = "none";

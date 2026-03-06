@@ -1,59 +1,17 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-}
-
-#main-nav {
-  position: fixed; /* Makes the nav stick to the top */
-  top: 0;
-  left: 0;
+.aging-well-img,
+.comprehensive-care-img,
+.better-health-img,
+.aging-well-text,
+.comprehensive-care-text,
+.better-health-text {
   width: 100%;
-  background-color: transparent; /* Initial transparent background */
-  padding: 15px 0;
-  text-align: center;
-  transition: background-color 0.3s ease; /* Smooth transition for background */
-  z-index: 1000; /* Ensure it stays on top of other content */
-}
-
-#main-nav.scrolled {
-  background-color: #333; /* Dark background when scrolled */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: add a subtle shadow */
-}
-
-#main-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-
-#main-nav ul li {
-  margin: 0 20px;
-}
-
-#main-nav ul li a {
-  color: white; /* Text color is white by default for the transparent nav */
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1em;
-  transition: color 0.3s ease; /* Transition for text color if you change it */
-}
-
-#main-nav.scrolled ul li a {
-  color: white; /* Keep text white when scrolled, or change to a different color */
 }
 
 
-.content {
-  padding-top: 100px; /* Adjust this value to push content down so it doesn't hide under the fixed nav */
-  padding-left: 20px;
-  padding-right: 20px;
-  min-height: 1500px; /* Make content tall enough to scroll */
+.comprehensive-care-img img {
+  max-width: 70% !important;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
+.better-health-img img {
+  max-width: 59% !important;
 }

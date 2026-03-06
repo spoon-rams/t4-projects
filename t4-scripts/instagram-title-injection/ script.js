@@ -50,3 +50,4 @@ const extractDomain = (url) => {
   const result = match ? match[1] : null;
   return result;
 };
+

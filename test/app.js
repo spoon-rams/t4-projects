@@ -1,29 +1,53 @@
-console.log("CONNECTED!");
+console.log("App is running");
 
-document.addEventListener('DOMContentLoaded', function() {
-    const mainNav = document.getElementById('main-nav');
-    const fillStart = 0; // Scroll position where the fill starts (e.g., at the very top)
-    const fillEnd = 200; // Scroll position where the fill is complete (e.g., 200px down)
+document.addEventListener("DOMContentLoaded", async () => {
+  console.log("DOM fully loaded and parsed");
 
-    window.addEventListener('scroll', () => {
-        let scrollY = window.scrollY;
+  const google = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT-gfpWH3XRNjg-W8KMA_jtMnX9M4wcAmvBrRlOx8OQd5Db7Sn1pyiZb1jP9qwYH/pub?output=csv");
 
-        // Calculate the progress of the scroll within the fill range
-        let progress = (scrollY - fillStart) / (fillEnd - fillStart);
+  if (google.ok) {
+    const csv = await google.text();
 
-        // Clamp the progress between 0 and 1
-        progress = Math.max(0, Math.min(1, progress));
+    // Convert CSV → JSON
+    const rows = csv
+      .trim()
+      .split("\n")
+      .map((r) => r.split(","));
+    const headers = rows[0];
 
-        // Use the progress to set the opacity of the background color
-        // For a dark navigation bar (#333), the rgba would be rgba(51, 51, 51, opacity)
-        // You can change the base color (51, 51, 51) to any RGB value you desire.
-        mainNav.style.backgroundColor = `rgba(51, 51, 51, ${progress})`;
-
-        // Optional: Change text color as well
-        // If you want text to change color, you'd calculate a color blend here
-        // or apply a class when opacity reaches a certain threshold.
-        // For simplicity, we'll assume text remains white for a dark nav bar.
+    const jsonData = rows.slice(1).map((row) => {
+      return headers.reduce((obj, header, i) => {
+        obj[header] = row[i];
+        return obj;
+      }, {});
     });
+
+    console.log(jsonData); // Ready to render
+  }
+
+  if (!google.ok) {
+    console.log("Google Sheets fetch failed, loading local data");
+    const local = await fetch("./data/test-data.csv");
+
+    if (!local.ok) {
+      console.error("Local data fetch failed");
+      return;
+    }
+
+    const csv = await local.text();
+    
+    // Convert CSV → JSON
+    const rows = csv
+      .trim()
+      .split("\n")
+      .map((r) => r.split(","));
+    const headers = rows[0];
+
+    const jsonData = rows.slice(1).map((row) => {
+      return headers.reduce((obj, header, i) => {
+        obj[header] = row[i];
+        return obj;
+      }, {});
+    });
+  }
 });
-
-

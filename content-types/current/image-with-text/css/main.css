@@ -1,5 +1,5 @@
 /* GSS Content Type - Image Text Bottom - Right/Left - START */
-.banner-img-txt-bottom {
+.banner-img-txt-bottom.fordham-rebrand {
   padding-bottom: 16rem;
   container-type: inline-size;
 }
@@ -11,7 +11,7 @@
   margin-right: auto;
 }
 
-.banner-img-txt-bottom__wrapper {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -19,13 +19,13 @@
   height: auto;
 }
 
-.banner-img-txt-bottom__img {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__img {
   width: 100%;
   max-height: 800px;
   z-index: 1;
 }
 
-.banner-img-txt-bottom__img img {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__img img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -33,13 +33,13 @@
   font-family: "object-fit: cover; object-position: 50% 50%;";
 }
 
-.banner-img-txt-bottom__block {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__block {
   position: absolute;
   display: flex;
   flex-direction: column;
   padding: 1.5rem 2rem;
   width: 35%;
-  top: 74%;
+  top: 84%;
   height: auto;
   min-height: 250px;
   background-color: #7e072a;
@@ -47,50 +47,51 @@
   z-index: 2;
 }
 
-.banner-img-txt-bottom__block.right {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__block.right {
   right: 0;
+  left: unset !important;
 }
 
-.banner-img-txt-bottom__block.left {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__block.left {
   left: 0;
 }
 
-.banner-img-txt-alt__block__link {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-alt__block__link {
   color: #ffff !important;
 }
 
-.banner-img-txt-alt__block__link > svg {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-alt__block__link > svg {
   fill: #ffff !important;
 }
 
 /* LINK AND LOGO */
 
-.banner-img-txt-bottom_link_logo {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom_link_logo {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
-.banner-img-txt-bottom_link_logo .link {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom_link_logo .link {
   width: 100%;
 }
 
-.banner-img-txt-bottom_link_logo .fordham-now-logo,
-.banner-img-txt-bottom_link_logo .fordham-magazine-logo {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom_link_logo .fordham-now-logo,
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom_link_logo .fordham-magazine-logo {
   width: 100%;
   text-align: right;
 }
 
-.banner-img-txt-bottom_link_logo .fordham-now-logo img {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom_link_logo .fordham-now-logo img {
   width: 155px;
 }
 
-.banner-img-txt-bottom_link_logo .fordham-magazine-logo img {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom_link_logo .fordham-magazine-logo img {
   width: 215px;
 }
 
 /* NEW REBRAND */
 
-.background-texture {
+.banner-img-txt-bottom.fordham-rebrand .background-texture {
   position: absolute;
   width: 1200px;
   height: 300px;
@@ -102,7 +103,7 @@
   mix-blend-mode: darken; */
 }
 
-.background-texture .risograph-image {
+.banner-img-txt-bottom.fordham-rebrand .background-texture .risograph-image {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -110,19 +111,19 @@
   mix-blend-mode: darken;
 }
 
-.banner-img-txt-bottom__wrapper.left .background-texture {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.left .background-texture {
   left: 33.3%;
 }
 
-.banner-img-txt-bottom__wrapper.right .background-texture {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.right .background-texture {
   right: 33.3%;
 }
 
-.banner-img-txt-bottom__wrapper.right .background-texture img {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.right .background-texture img {
   transform: rotate(180deg) scaleY(-1);
 }
 
-.banner-svg-asset.svg-top-right {
+.banner-img-txt-bottom.fordham-rebrand .banner-svg-asset.svg-top-right {
   position: absolute;
   top: 28%;
   width: 5%;
@@ -130,132 +131,131 @@
   z-index: 1;
 }
 
-.banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-top-right {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-top-right {
   left: 93.8%;
 }
 
-.banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-top-right {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-top-right {
   right: 93.8%;
 }
 
-.banner-svg-asset.svg-top-right svg {
+.banner-img-txt-bottom.fordham-rebrand .banner-svg-asset.svg-top-right svg {
   width: 100%;
   height: 100%;
 }
 
-.banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-top-right svg {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-top-right svg {
   transform: rotate(180deg) scaleY(-1);
 }
 
-.banner-svg-asset.svg-bottom-right {
+.banner-img-txt-bottom.fordham-rebrand .banner-svg-asset.svg-bottom-right {
   position: absolute;
-  top: 62%;
+  top: 72%;
   width: 8%;
   height: auto;
 }
 
-.banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-bottom-right {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-bottom-right {
   right: 92.013%;
 }
 
-.banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-bottom-right {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-bottom-right {
   left: 92.013%;
 }
 
-.banner-svg-asset.svg-bottom-right svg {
+.banner-img-txt-bottom.fordham-rebrand .banner-svg-asset.svg-bottom-right svg {
   width: 100%;
   height: 100%;
 }
 
-.banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-bottom-right svg {
+.banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-bottom-right svg {
   transform: rotate(180deg) scaleY(-1);
 }
 
 @container (max-width: 1200px) {
-  .banner-img-txt-bottom__wrapper {
-    padding: 0 100px;
+  .banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper {
+    padding: 0 100px !important;
   }
-  .banner-img-txt-bottom__block {
+  .banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__block {
     width: 45%;
-    top: 75%;
+    top: 84%;
   }
 
-  .banner-img-txt-bottom__wrapper.left .banner-img-txt-bottom__block {
+  .banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.left .banner-img-txt-bottom__block {
     left: 2.5%;
   }
 
-  .banner-img-txt-bottom__wrapper.right .banner-img-txt-bottom__block {
+  .banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.right .banner-img-txt-bottom__block {
     right: 2.5%;
   }
 
-  .background-texture {
+  .banner-img-txt-bottom.fordham-rebrand .background-texture {
     width: 70%;
     height: 52%;
     top: 56%;
   }
 
-  .banner-img-txt-bottom__wrapper.left .background-texture {
+  .banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.left .background-texture {
     left: 28%;
   }
 
-  .banner-img-txt-bottom__wrapper.right .background-texture {
+  .banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.right .background-texture {
     right: 28%;
   }
 
-  .banner-svg-asset.svg-top-right {
+  .banner-img-txt-bottom.fordham-rebrand .banner-svg-asset.svg-top-right {
     position: absolute;
     top: 36%;
-
     width: 8%;
     height: auto;
   }
 
-  .banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-top-right {
+  .banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-top-right {
     left: 88%;
   }
 
-  .banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-top-right {
+  .banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-top-right {
     right: 88%;
   }
 
-  .banner-svg-asset.svg-top-right svg {
+  .banner-img-txt-bottom.fordham-rebrand .banner-svg-asset.svg-top-right svg {
     width: 100%;
     height: 100%;
   }
 
-  .banner-svg-asset.svg-bottom-right {
+  .banner-img-txt-bottom.fordham-rebrand .banner-svg-asset.svg-bottom-right {
     position: absolute;
-    top: 62%;
+    top: 72%;
     width: 8%;
     height: auto;
   }
 
-  .banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-bottom-right {
+  .banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.left .banner-svg-asset.svg-bottom-right {
     right: 89.5%;
   }
 
-  .banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-bottom-right {
+  .banner-img-txt-bottom.fordham-rebrand .banner-img-txt-bottom__wrapper.right .banner-svg-asset.svg-bottom-right {
     left: 89.5%;
   }
 
-  .banner-svg-asset.svg-bottom-right svg {
+  .banner-img-txt-bottom.fordham-rebrand .banner-svg-asset.svg-bottom-right svg {
     width: 100%;
     height: 100%;
   }
 }
 
-.banner-img-txt-alt__block__title span::before {
+.fordham-rebrand .banner-img-txt-alt__block__title span::before {
   content: "";
   display: block;
-  position: absolute;
   top: 15px;
   left: 30px;
   width: 50px;
   height: 3px;
+  margin-bottom: 10px;
   background-color: #dd3224;
 }
 
-.banner-img-txt__block__title span::before {
+.fordham-rebrand .banner-img-txt__block__title span::before {
   content: "";
   display: block;
   width: 50px;
@@ -264,44 +264,79 @@
   background-color: #dd3224;
 }
 
-/* BANNER IMGAGE TEXT */
-.fullwidth {
-  margin-top: 100px;
-}
-.banner-img-txt .banner-img-txt__col.col-lg-5 {
+/* BANNER IMGAGE TEXT - LAYOUT -1 */
+
+.banner-img-txt.fordham-rebrand .row {
   background: url("../images/map.jpg") lightgray -80.642px -110.684px / 140.194% 168.878% no-repeat;
   background-position: center;
+  background-size: cover;
   mix-blend-mode: darken;
+}
+
+.banner-img-txt.fordham-rebrand .banner-img-txt__col.col-lg-7 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.banner-img-txt.fordham-rebrand .banner-img-txt__col.col-lg-7 .banner-img-txt__img {
+  padding: 50px 0 50px 100px;
+  background-color: #282220;
+}
+
+.banner-img-txt.fordham-rebrand .banner-img-txt__col.col-lg-5 {
+  background-color: transparent;
+  padding-right: 0;
+}
+
+.banner-img-txt.fordham-rebrand .banner-img-txt__col.col-lg-5 .banner-img-txt__standard__wrapper {
   padding: 50px 100px 50px 0;
 }
 
-.banner-img-txt .banner-img-txt__col.col-lg-7 {
+.banner-img-txt.fordham-rebrand .banner-img-txt__img {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.banner-img-txt.fordham-rebrand .banner-img-txt.fordham-rebrand .banner-img-txt .banner-img-txt__col.col-lg-7 {
   padding: 50px 0 50px 100px;
   background-color: black;
 }
 
-.banner-img-txt__block.standard {
-  background: #fff !important;
+.banner-img-txt.fordham-rebrand .banner-img-txt__block.standard {
+  position: relative;
+  background: #fff;
   z-index: 2;
+  height: 100%;
 }
 
-.banner-img-txt__block h2,
-.banner-img-txt__block h2 a {
+.banner-img-txt .banner-img-txt__block__content a {
+  color: #7e072a !important;
+}
+
+.banner-img-txt.fordham-rebrand .banner-img-txt__block h2,
+.banner-img-txt.fordham-rebrand .banner-img-txt__block h2 a {
   color: #7e072a;
 }
 
-.banner-img-txt__block p {
+.banner-img-txt.fordham-rebrand .banner-img-txt__block p {
   color: black;
 }
 
-
-/* OVERLAY */
-.overlay {
+.banner-img-txt.fordham-rebrand .overlay {
   height: 100%;
   width: 100%;
-  opacity: 0.9;
+  opacity: 0.85;
   top: 0;
   background-color: black;
   position: absolute;
   z-index: 1;
 }
+
+/* TEMPORARY */
+
+/* .header-placeholder {
+  display: block !important;
+} */
+
+

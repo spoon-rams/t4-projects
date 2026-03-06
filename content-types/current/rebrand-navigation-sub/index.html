@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS EDITS -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/mobile.css" />
+
+    <!-- CSS MAIN -->
+
+    <!-- <link rel="stylesheet" href="../../css/style.css" /> -->
+    <link rel="stylesheet" href="../../../css/rebrand/r-styles.css" />
+    <!-- <link rel="stylesheet" href="../../css/t4extras.css" /> -->
+    <link rel="stylesheet" href="../../../css/rebrand/r-sub-site-style.css" />
+    <link rel="stylesheet" href="../../../css/rebrand/r-sub-site-t4extras.css" />
+    <!-- <link rel="stylesheet" href="../../../css/rebrand/r-t4extras.css" /> -->
+    <link rel="stylesheet" href="../../../css/fu_ta.css" />
+    <link rel="stylesheet" href="../../../css/fu_ta1.css" />
+
+    <!-- <link rel="stylesheet" href="../../css/subsite-t4extras.css" /> -->
+    <!-- <link rel="stylesheet" href="../../../css/rebrand/r-subsite-t4extras.css"> -->
+    <link rel="stylesheet" href="../../../css/fu_targetedannounce.css" />
+    <link rel="stylesheet" href="../../../css/outage.css" />
+    <link rel="stylesheet" href="../../../css/rebrand/r-tinymce.css" />
+    <!-- TEMPORARY -->
+    <!-- <link rel="stylesheet" href="./temp.css" /> -->
+    <link rel="stylesheet" href="../hero-banner/css/main.css" />
+    <link rel="stylesheet" href="../hero-banner/css/mobile.css" />
+    <!-- <link rel="stylesheet" href="../rebrand-navigation/css/main.css" />
+    <link rel="stylesheet" href="../rebrand-navigation/css/mobile.css" /> -->
+    <script>
+      (function (d) {
+        var config = {
+            kitId: "xvj1dos",
+            scriptTimeout: 3000,
+            async: true,
+          },
+          h = d.documentElement,
+          t = setTimeout(function () {
+            h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+          }, config.scriptTimeout),
+          tk = d.createElement("script"),
+          f = false,
+          s = d.getElementsByTagName("script")[0],
+          a;
+        h.className += " wf-loading";
+        tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function () {
+          a = this.readyState;
+          if (f || (a && a != "complete" && a != "loaded")) return;
+          f = true;
+          clearTimeout(t);
+          try {
+            Typekit.load(config);
+          } catch (e) {}
+        };
+        s.parentNode.insertBefore(tk, s);
+      })(document);
+    </script>
+    <title>Re-Brand: Sub-sites Navigation</title>
+  </head>
+  <body>
+    <header
+      class="header-sticky"
+      data-notice-url="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=8349a690e33ef10488baf01ad83df6b9e056ce72"
+      aria-label="Site header"
+    >
+      <!-- Site Config header before menu -->
+
+      <nav id="fordham-school-menu" class="header-nav">
+        <div class="header-nav__top">
+          <div class="header-nav__logo">
+            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37618">
+              <img src="../../../images/logos/fordham_logo_full-r-maroon.svg" alt="Fordham" data-site-name="Fordham Graduate School of Arts and Sciences" />
+              <div class="header-nav__school_name" style="max-width: 294.2px">Graduate School of Arts and Sciences</div>
+            </a>
+          </div>
+          <!-- Desktop Quick Links -->
+          <div class="header-nav__top__container header-nav__top__outer-quick-list">
+            <ul class="header-nav__top__list header-nav__top__list--secondary">
+              <li class="header-nav__top__item">
+                <a href="https://go.activecalendar.com/FordhamUniversity/site/academic/?&amp;ql=y&amp;search=y" class="header-nav__top__link">Academic Calendar</a>
+              </li>
+              <li class="header-nav__top__item">
+                <a href="https://t4.fordham.edu/terminalfour/preview/2/en/35646" class="header-nav__top__link">Library</a>
+              </li>
+              <li class="header-nav__top__item">
+                <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37767" class="header-nav__top__link">Alumni</a>
+              </li>
+              <li class="header-nav__top__item">
+                <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37774" class="header-nav__top__link">Give</a>
+              </li>
+              <li class="header-nav__top__item">
+                <a href="https://t4.fordham.edu/terminalfour/preview/2/en/7735" class="header-nav__top__link">Fordham University</a>
+              </li>
+              <li class="header-nav__top__item">
+                <a href="https://loginp.fordham.edu/cas/login?service=https://www.fordham.edu/my-pages/" class="header-nav__top__link">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="header-nav__bottom">
+          <div class="header-nav__bottom__container">
+            <div class="header-nav__logo">
+              <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37618">
+                <img src="../../../images/logos/fordham_horizontal_shield_maroon.png" alt="Fordham" />
+                <div class="header-nav__school_name">Graduate School of Arts and Sciences</div>
+              </a>
+            </div>
+            <div class="header-nav__mobile slide-out-right">
+              <div class="header-nav__mobile__close-toggler">
+                <button class="header-nav__mobile__search-toggler__button btn-close-nav" type="button" aria-label="Close mobile header navigation">
+                  <!-- <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                    <title>Search icon</title>
+
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+                  </svg> -->
+                  <span class="header-nav__mobile__close-toggler__label">Close</span>
+                </button>
+              </div>
+
+              <!-- Site Config header before menu -->
+
+              <ul class="header-nav__bottom__list">
+                <li class="header-nav__bottom__item header-nav__dropdown">
+                  <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37896" class="header-nav__bottom__link">About</a>
+                  <div class="header-nav__dropdown-menu">
+                    <div class="header-nav__dropdown-menu__back-toggler">
+                      <button class="header-nav__dropdown-menu__back-toggler__button btn-back-nav" type="button" aria-label="Back">
+                        <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                          <title>Arrow left icon</title>
+
+                          <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+                        </svg>
+                        <span class="header-nav__dropdown-menu__back-toggler__label">Back</span>
+                      </button>
+                    </div>
+                    <div class="header-nav__dropdown-menu__sibling-link"><a href="https://t4.fordham.edu/terminalfour/preview/2/en/37896">About</a></div>
+
+                    <div class="header-nav__dropdown-menu__lists-widget">
+                      <div class="header-nav__dropdown-menu__lists-widget--top">
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37896" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link">About</a>
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37939" data-t4-ss-link-id="200" class="header-nav__dropdown-menu__link"
+                                  >Vice Dean's Welcome</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/38504" data-t4-ss-link-id="197" class="header-nav__dropdown-menu__link"
+                                  >Diversity Initiatives</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37897" data-t4-ss-link-id="188" class="header-nav__dropdown-menu__link">Mission</a>
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37915" data-t4-ss-link-id="189" class="header-nav__dropdown-menu__link"
+                                  >Learning Goals</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37912" data-t4-ss-link-id="199" class="header-nav__dropdown-menu__link"
+                                  >GSAS Who Does What</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37913" data-t4-ss-link-id="187" class="header-nav__dropdown-menu__link"
+                                  >Dean's Advisory Board</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/38189" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link">Visit Us</a>
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37898" data-t4-ss-link-id="196" class="header-nav__dropdown-menu__link"
+                                  >Maps and Directions</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37911" data-t4-ss-link-id="195" class="header-nav__dropdown-menu__link">Contact GSAS</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/38190" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link">What's New</a>
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item"><a href="https://now.fordham.edu/?s=gsas" target="_blank" rel="noopener" class="header-nav__dropdown-menu__link">News</a></li>
+                              <li class="header-nav__dropdown-menu__item"><a href="https://news.fordham.edu/events/" class="header-nav__dropdown-menu__link">Events</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- .header-nav__dropdown-menu__lists-widget--top -->
+                    </div>
+                    <!-- .header-nav__dropdown-menu__lists-widget -->
+                  </div>
+                  <!-- .header-nav__dropdown-menu -->
+                </li>
+                <li class="header-nav__bottom__item header-nav__dropdown">
+                  <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37712" class="header-nav__bottom__link">Academics</a>
+                  <div class="header-nav__dropdown-menu">
+                    <div class="header-nav__dropdown-menu__back-toggler">
+                      <button class="header-nav__dropdown-menu__back-toggler__button btn-back-nav" type="button" aria-label="Back">
+                        <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                          <title>Arrow left icon</title>
+
+                          <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+                        </svg>
+                        <span class="header-nav__dropdown-menu__back-toggler__label">Back</span>
+                      </button>
+                    </div>
+                    <div class="header-nav__dropdown-menu__sibling-link"><a href="https://t4.fordham.edu/terminalfour/preview/2/en/37712">Academics</a></div>
+
+                    <div class="header-nav__dropdown-menu__lists-widget">
+                      <div class="header-nav__dropdown-menu__lists-widget--top">
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37713" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link">Programs of Study</a>
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37713#d.en.119406" data-t4-ss-link-id="340" class="header-nav__dropdown-menu__link"
+                                  >Master's Programs</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37713#d.en.112778" data-t4-ss-link-id="339" class="header-nav__dropdown-menu__link"
+                                  >Doctoral (Ph.D.)&nbsp;Programs</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37713#d.en.111763" data-t4-ss-link-id="338" class="header-nav__dropdown-menu__link"
+                                  >Advanced Certificates</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37749" data-t4-ss-link-id="346" class="header-nav__dropdown-menu__link"
+                                  >Accelerated Master's Programs</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/38261" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link">Academic Enrichment</a>
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37725" data-t4-ss-link-id="336" class="header-nav__dropdown-menu__link"
+                                  >Consortium Programs</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37721" data-t4-ss-link-id="337" class="header-nav__dropdown-menu__link"
+                                  >Co-tutelle for Doctoral Students</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37750" data-t4-ss-link-id="345" class="header-nav__dropdown-menu__link"
+                                  >Jesuit Pedagogy Seminar</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37755" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link">Thesis and Dissertation</a>
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37760" data-t4-ss-link-id="347" class="header-nav__dropdown-menu__link"
+                                  >Master's Thesis</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37757" data-t4-ss-link-id="349" class="header-nav__dropdown-menu__link"
+                                  >Ph.D. Dissertation</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37758" data-t4-ss-link-id="335" class="header-nav__dropdown-menu__link"
+                                  >Online Dissertation Submission</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://bulletin.fordham.edu/gsas/resources/handbook/" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link">Academic Resources</a>
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a href="https://go.activecalendar.com/FordhamUniversity/site/academic/?&amp;ql=y&amp;search=y" class="header-nav__dropdown-menu__link">Academic Calendar</a>
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a href="https://bulletin.fordham.edu/gsas/resources/handbook/" class="header-nav__dropdown-menu__link">Academic Policies</a>
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37884" data-t4-ss-link-id="348" class="header-nav__dropdown-menu__link">Forms</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- .header-nav__dropdown-menu__lists-widget--top -->
+                    </div>
+                    <!-- .header-nav__dropdown-menu__lists-widget -->
+                  </div>
+                  <!-- .header-nav__dropdown-menu -->
+                </li>
+                <li class="header-nav__bottom__item header-nav__dropdown">
+                  <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37619" class="header-nav__bottom__link">Admissions</a>
+                  <div class="header-nav__dropdown-menu">
+                    <div class="header-nav__dropdown-menu__back-toggler">
+                      <button class="header-nav__dropdown-menu__back-toggler__button btn-back-nav" type="button" aria-label="Back">
+                        <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                          <title>Arrow left icon</title>
+
+                          <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+                        </svg>
+                        <span class="header-nav__dropdown-menu__back-toggler__label">Back</span>
+                      </button>
+                    </div>
+                    <div class="header-nav__dropdown-menu__sibling-link"><a href="https://t4.fordham.edu/terminalfour/preview/2/en/37619">Admissions</a></div>
+
+                    <div class="header-nav__dropdown-menu__lists-widget">
+                      <div class="header-nav__dropdown-menu__lists-widget--top">
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37619" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link">Admissions Process</a>
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a title="GSAS Application" href="https://gradadmissions.fordham.edu/portal/gsas_application" class="header-nav__dropdown-menu__link">Apply Now</a>
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37634" data-t4-ss-link-id="164" class="header-nav__dropdown-menu__link"
+                                  >Application Deadlines</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37621" data-t4-ss-link-id="165" class="header-nav__dropdown-menu__link">How to Apply</a>
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37652" data-t4-ss-link-id="175" class="header-nav__dropdown-menu__link"
+                                  >Admissions FAQ</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37638" data-t4-ss-link-id="171" class="header-nav__dropdown-menu__link"
+                                  >Admissions Events</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37619" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link">Admissions Resources</a>
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37650" data-t4-ss-link-id="162" class="header-nav__dropdown-menu__link"
+                                  >Chat with GSAS Ambassadors</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37635" data-t4-ss-link-id="167" class="header-nav__dropdown-menu__link"
+                                  >International Students</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37639" data-t4-ss-link-id="168" class="header-nav__dropdown-menu__link"
+                                  >Veteran Students</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37620" data-t4-ss-link-id="170" class="header-nav__dropdown-menu__link"
+                                  >Non-Degree Students</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/38260" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link">Tuition and Fees</a>
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37624" data-t4-ss-link-id="169" class="header-nav__dropdown-menu__link"
+                                  >Cost of Attendance</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37660" data-t4-ss-link-id="163" class="header-nav__dropdown-menu__link"
+                                  >Financial Support</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- .header-nav__dropdown-menu__lists-widget--top -->
+                    </div>
+                    <!-- .header-nav__dropdown-menu__lists-widget -->
+                  </div>
+                  <!-- .header-nav__dropdown-menu -->
+                </li>
+                <li class="header-nav__bottom__item header-nav__dropdown">
+                  <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37660" class="header-nav__bottom__link">Financial Support</a>
+                  <div class="header-nav__dropdown-menu">
+                    <div class="header-nav__dropdown-menu__back-toggler">
+                      <button class="header-nav__dropdown-menu__back-toggler__button btn-back-nav" type="button" aria-label="Back">
+                        <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                          <title>Arrow left icon</title>
+
+                          <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+                        </svg>
+                        <span class="header-nav__dropdown-menu__back-toggler__label">Back</span>
+                      </button>
+                    </div>
+                    <div class="header-nav__dropdown-menu__sibling-link"><a href="https://t4.fordham.edu/terminalfour/preview/2/en/37660">Financial Support</a></div>
+
+                    <div class="header-nav__dropdown-menu__lists-widget">
+                      <div class="header-nav__dropdown-menu__lists-widget--top">
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37660" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link">Financial Aid</a>
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37690" data-t4-ss-link-id="95" class="header-nav__dropdown-menu__link"
+                                  >Financial Aid Recipients</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/19579" data-t4-ss-link-id="88" class="header-nav__dropdown-menu__link"
+                                  >Apply for Financial Aid</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/16042" data-t4-ss-link-id="89" class="header-nav__dropdown-menu__link"
+                                  >External Funding</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37702" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link">Fellowships</a>
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37705" data-t4-ss-link-id="96" class="header-nav__dropdown-menu__link"
+                                  >Distinguished Fellowships</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37704" data-t4-ss-link-id="97" class="header-nav__dropdown-menu__link"
+                                  >Fellowship in Higher Education Leadership</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37710" data-t4-ss-link-id="98" class="header-nav__dropdown-menu__link"
+                                  >Mary Magdalene Impact Fellowship</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37711" data-t4-ss-link-id="99" class="header-nav__dropdown-menu__link"
+                                  >Renaissance Society of America Fellowship</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37804" data-t4-ss-link-id="100" class="header-nav__dropdown-menu__link"
+                                  >Santander International Internships Fellowship</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37685" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link">Stipends and Scholarships</a>
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37688" data-t4-ss-link-id="82" class="header-nav__dropdown-menu__link"
+                                  >Graduate Assistantships</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37686" data-t4-ss-link-id="83" class="header-nav__dropdown-menu__link"
+                                  >Teaching Associateships</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37687" data-t4-ss-link-id="84" class="header-nav__dropdown-menu__link"
+                                  >Teaching Fellowships</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37689" data-t4-ss-link-id="85" class="header-nav__dropdown-menu__link"
+                                  >Tuition Scholarships</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37661" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link"
+                              >Graduate Student Support Grant</a
+                            >
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37663" data-t4-ss-link-id="86" class="header-nav__dropdown-menu__link"
+                                  >Program Information</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37683" data-t4-ss-link-id="87" class="header-nav__dropdown-menu__link"
+                                  >Requirements and Eligibility</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- .header-nav__dropdown-menu__lists-widget--top -->
+                    </div>
+                    <!-- .header-nav__dropdown-menu__lists-widget -->
+                  </div>
+                  <!-- .header-nav__dropdown-menu -->
+                </li>
+                <li class="header-nav__bottom__item header-nav__dropdown">
+                  <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37781" class="header-nav__bottom__link">Student Resources</a>
+                  <div class="header-nav__dropdown-menu">
+                    <div class="header-nav__dropdown-menu__back-toggler">
+                      <button class="header-nav__dropdown-menu__back-toggler__button btn-back-nav" type="button" aria-label="Back">
+                        <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                          <title>Arrow left icon</title>
+
+                          <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+                        </svg>
+                        <span class="header-nav__dropdown-menu__back-toggler__label">Back</span>
+                      </button>
+                    </div>
+                    <div class="header-nav__dropdown-menu__sibling-link"><a href="https://t4.fordham.edu/terminalfour/preview/2/en/37781">Student Resources</a></div>
+
+                    <div class="header-nav__dropdown-menu__lists-widget">
+                      <div class="header-nav__dropdown-menu__lists-widget--top">
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/38249" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link">Professional Development</a>
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37834" data-t4-ss-link-id="436" class="header-nav__dropdown-menu__link">GSAS Futures</a>
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37726" data-t4-ss-link-id="429" class="header-nav__dropdown-menu__link"
+                                  >Preparing Future Faculty</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37789" data-t4-ss-link-id="422" class="header-nav__dropdown-menu__link"
+                                  >Three Minute Thesis Competition</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37883" data-t4-ss-link-id="426" class="header-nav__dropdown-menu__link"
+                                  >Job Opportunities</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37781" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link"
+                              >Resources for All Students</a
+                            >
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a href="https://go.activecalendar.com/FordhamUniversity/site/academic/?&amp;ql=y&amp;search=y" class="header-nav__dropdown-menu__link">Academic Calendar</a>
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37884" data-t4-ss-link-id="433" class="header-nav__dropdown-menu__link"
+                                  >Academic Forms</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37808" data-t4-ss-link-id="427" class="header-nav__dropdown-menu__link"
+                                  >Graduate Student Council</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37891" data-t4-ss-link-id="432" class="header-nav__dropdown-menu__link">Wellness</a>
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/37782" data-t4-ss-link-id="434" class="header-nav__dropdown-menu__link"
+                                  >Diploma Ceremony</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/47286" data-t4-ss-link-id="446" class="header-nav__dropdown-menu__link">GSAS at Work</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul class="header-nav__dropdown-menu__lists-widget--top--list">
+                          <li class="header-nav__dropdown-menu__item">
+                            <a href="https://t4.fordham.edu/terminalfour/preview/2/en/24232" class="header-nav__dropdown-menu__link-title header-nav__dropdown-menu__link">University Resources</a>
+                            <ul>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/24082" data-t4-ss-link-id="451" class="header-nav__dropdown-menu__link"
+                                  >Career Center</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/23062" data-t4-ss-link-id="424" class="header-nav__dropdown-menu__link">Counseling</a>
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/19704" data-t4-ss-link-id="428" class="header-nav__dropdown-menu__link"
+                                  >DEI at Fordham</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/23137" data-t4-ss-link-id="435" class="header-nav__dropdown-menu__link"
+                                  >Health Services</a
+                                >
+                              </li>
+                              <li class="header-nav__dropdown-menu__item">
+                                <a data-t4-type="sslink" href="https://t4.fordham.edu/terminalfour/preview/2/en/13471" data-t4-ss-link-id="437" class="header-nav__dropdown-menu__link"
+                                  >Language Learning Center</a
+                                >
+                              </li>
+
+                              <li class="header-nav__dropdown-menu__item--see-all header-nav__dropdown-menu__item">
+                                <a href="https://t4.fordham.edu/terminalfour/preview/2/en/24232" class="header-nav__dropdown-menu__link">See all</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- .header-nav__dropdown-menu__lists-widget--top -->
+                    </div>
+                    <!-- .header-nav__dropdown-menu__lists-widget -->
+                  </div>
+                  <!-- .header-nav__dropdown-menu -->
+                </li>
+              </ul>
+
+              <!-- Site Config header after menu -->
+
+              <!-- Mobile Quick Links -->
+              <div class="header-nav__bottom__outer-quick-list">
+                <ul class="header-nav__bottom__outer-quick-list--secondary header-nav__bottom__list">
+                  <li class="header-nav__bottom__item">
+                    <a href="https://go.activecalendar.com/FordhamUniversity/site/academic/?&amp;ql=y&amp;search=y" class="header-nav__bottom__link">Academic Calendar</a>
+                  </li>
+                  <li class="header-nav__bottom__item">
+                    <a href="https://t4.fordham.edu/terminalfour/preview/2/en/35646" class="header-nav__bottom__link">Library</a>
+                  </li>
+                  <li class="header-nav__bottom__item">
+                    <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37767" class="header-nav__bottom__link">Alumni</a>
+                  </li>
+                  <li class="header-nav__bottom__item">
+                    <a href="https://t4.fordham.edu/terminalfour/preview/2/en/37774" class="header-nav__bottom__link">Give</a>
+                  </li>
+                  <li class="header-nav__bottom__item">
+                    <a href="https://t4.fordham.edu/terminalfour/preview/2/en/7735" class="header-nav__bottom__link">Fordham University</a>
+                  </li>
+                  <li class="header-nav__bottom__item">
+                    <a href="https://loginp.fordham.edu/cas/login?service=https://www.fordham.edu/my-pages/" class="header-nav__bottom__link">Login</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!--
+        <div class="header-nav__bottom__search-toggler">
+          <button class="header-nav__bottom__search-toggler__button btn-open-search" type="button" aria-label="Open search bar">
+            <span class="header-nav__bottom__search-toggler__label">Search</span>
+            <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+              <title>Search icon</title>
+              <use xlink:href="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&fnno=60&ceid=c24427e7ffda49be0287de44cc4d58bd1ae2d301#ic_search_24px"></use>
+            </svg>
+          </button>
+		</div>
+		-->
+            <div class="header-nav__bottom__search-toggler">
+              <button class="header-nav__bottom__search-toggler__button btn-open-search" type="button" aria-label="Open  search bar">
+                <span class="header-nav__bottom__search-toggler__label"></span>
+                <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                  <title>Search icon</title>
+
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="header-nav__bottom__nav-toggler">
+              <button class="header-nav__bottom__nav-toggler__button btn-open-nav" type="button" aria-label="Open mobile navigation">
+                Menu
+                <!-- <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                  <title>Menu icon</title>
+
+                  <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                </svg> -->
+              </button>
+            </div>
+          </div>
+
+          <!--
+      <div id="site-search" class="site-search">
+  <div class="site-search__container">
+    <form action="https://www.fordham.edu/_search/s/search.html" method="get" class="site-search__form" id="global-search">
+      <div class="search-form-container">
+        <label for="site-search-input" class="sr-only">Search the site</label>
+        <input type="text" id="site-search-input" size="18" maxlength="40" name="query" class="search-form-container__input-search" placeholder="Enter Keywords" aria-live="polite">
+        <input type="hidden" name="collection" value="fordham-search">
+        <button class="search-form-container__button search-form-container__button--search btn-submit-search" type="submit" aria-label="Submit search">
+          <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+            <title>Search icon</title>
+            <use xlink:href="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&fnno=60&ceid=c24427e7ffda49be0287de44cc4d58bd1ae2d301#ic_search_24px"></use>
+          </svg>
+        </button>
+
+        <button class="search-form-container__button search-form-container__button--close btn-close-search" type="button" aria-label="Close site search">
+          <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+            <title>Close icon</title>
+            <use xlink:href="https://t4.fordham.edu/terminalfour/SiteManager?ctfn=download&fnno=60&ceid=c24427e7ffda49be0287de44cc4d58bd1ae2d301#ic_close_24px"></use>
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+-->
+
+          <div id="site-search" class="site-search">
+            <div class="site-search__container">
+              <form action="https://search.fordham.edu/s/search.html" method="get" class="site-search__form" id="global-search">
+                <div class="search-form-container">
+                  <label for="site-search-input" class="sr-only">Search the site</label>
+                  <input
+                    type="text"
+                    id="site-search-input"
+                    size="18"
+                    maxlength="40"
+                    name="query"
+                    class="search-form-container__input-search"
+                    placeholder="Enter Keywords"
+                    title="Type your keywords here"
+                    aria-live="polite"
+                  />
+                  <input type="hidden" name="collection" value="fordham~sp-search" />
+                  <button class="search-form-container__button search-form-container__button--search btn-submit-search" type="submit" aria-label="Submit search">
+                    <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                      <title>Search icon</title>
+
+                      <path
+                        d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                      ></path>
+                    </svg>
+                  </button>
+
+                  <button class="search-form-container__button search-form-container__button--close btn-close-search" type="button" aria-label="Close site search">
+                    <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                      <title>Close icon</title>
+
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Site Config header after menu -->
+    </header>
+    <div class="header-placeholder" style="height: 135.891px"></div>
+    <aside class="site-wide-notice" aria-live="assertive" aria-label="Notice" aria-atomic="true"></aside>
+    <main class="fullwidth" id="main-content">
+      <section class="hero-banner no-margin-divider-top">
+        <div class="hero-banner__wrapper">
+          <!-- WITH IMG TAG -->
+          <div class="hero-banner__img">
+            <div class="overlay"></div>
+            <img src="../hero-banner/images/keating-hall-fall.jpg" alt="" />
+          </div>
+          <!-- WITHOUT IMG TAG - BACKGROUND IMAGE -->
+          <!-- <div class="hero-banner__img" style="background-image: url('./images/keating-hall-fall.jpg')">
+            <div class="overlay"></div>
+          </div> -->
+
+          <div class="hero-banner__block">
+            <h2 class="hero-banner__block__title">
+              <span>Education for the Global Good, International Alumni's, and Everyone around the world</span>
+            </h2>
+
+            <div class="hero-banner__block__content">
+              <a href="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/preview/2/en/37713" class="hero-banner__block__button-link-break-3buttons btn btn-primary btn-primary"
+                >Explore our Degrees</a
+              >
+              <a href="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/preview/2/en/37619" class="hero-banner__block__button-link-break-3buttons btn btn-primary btn-primary"
+                >Apply to GSAS</a
+              >
+              <a href="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/preview/2/en/37781" class="hero-banner__block__button-link-break-3buttons btn btn-primary btn-primary"
+                >Student Resources
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" aria-label="Site footer">
+      <div class="footer__container container-fluid">
+        <div class="row">
+          <div class="footer__col footer__col--primary col-xl-8">
+            <div class="footer__logo__container">
+              <a href="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/preview/2/en/7735" class="footer__logo">
+                <img src="../../../images/logos/fordham_logo_full-r-white.svg" alt="Fordham University" />
+              </a>
+
+              <div class="be-ix-link-block"><!--Link Block Target Div--></div>
+            </div>
+
+            <!-- Desktop Social Media -->
+            <div class="footer__social footer__social--desktop">
+              <ul class="footer__social__list">
+                <li class="footer__social__item">
+                  <a href="https://www.facebook.com/FordhamUniversity" class="footer__social__link">
+                    <img
+                      src="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=bd94350e63733aaaf755c72df67b35e86db6a909"
+                      alt="Link to our Facebook"
+                    />
+                  </a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://www.instagram.com/fordhamuniversity/" class="footer__social__link">
+                    <img
+                      src="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=f8322b3143c671b37443f2c444ff0489b7bddcd3"
+                      alt="Link to our Instagram"
+                    />
+                  </a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://www.linkedin.com/school/7338?pathWildcard=7338" class="footer__social__link">
+                    <img
+                      src="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=d69bd664f6adba21333788b18ebd01ec5dfb9c70"
+                      alt="Link to our LinkedIn"
+                    />
+                  </a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://twitter.com/FordhamNYC" class="footer__social__link">
+                    <img
+                      src="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=0e3108f83b474e259ca3015177bbf4e873c3e8d6"
+                      alt="Link to our X"
+                    />
+                  </a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://www.youtube.com/user/FordhamUniversity/featured" class="footer__social__link">
+                    <img
+                      src="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=a1c53ead03305ddebda1ed2188980a7193fb14a7"
+                      alt="Link to our YouTube"
+                    />
+                  </a>
+                </li>
+                <li class="footer__social__item footer__social__item--show-more">
+                  <a href="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/preview/2/en/20242" class="footer__social__link">
+                    <span class="footer__social__link__text">More on social media</span>
+                    <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                      <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer__col footer__col--secondary col-xl-4">
+            <div class="footer__link-widget">
+              <ul class="footer__link-widget__col">
+                <li class="footer__link-widget__item footer__link-widget__item--title">
+                  <span class="footer__link-widget__link-title">Helpful Links</span>
+                </li>
+                <ul>
+                  <li><a href="https://411.fordham.edu/" target="blank">University Directory</a></li>
+                  <li><a data-t4-type="sslink" href="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/preview/2/en/23612" data-t4-ss-link-id="14">Careers at Fordham</a></li>
+                  <li><a data-t4-type="sslink" href="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/preview/2/en/20032" data-t4-ss-link-id="15">Nondiscrimination Policy</a></li>
+                  <li><a data-t4-type="sslink" href="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/preview/2/en/24083" data-t4-ss-link-id="16">Accessibility</a></li>
+                  <li><a href="https://www.fordham.edu/privacy" target="blank">Privacy Policy</a></li>
+                </ul>
+              </ul>
+
+              <ul class="footer__link-widget__col">
+                <li class="footer__link-widget__item footer__link-widget__item--title">
+                  <span class="footer__link-widget__link-title">Visit</span>
+                </li>
+                <ul>
+                  <li><a href="https://admission.fordham.edu/portal/campusvisit">Campus Tours</a></li>
+                  <li><a data-t4-type="sslink" href="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/preview/2/en/20241" data-t4-ss-link-id="18">Maps and Directions</a></li>
+                  <li><a href="https://www.youvisit.com/tour/fordham/" target="_blank" rel="noopener">Virtual Tour</a></li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer__col footer__col--tertiary col-12">
+            <!-- Mobile Social Media -->
+            <div class="footer__social footer__social--mobile">
+              <ul class="footer__social__list">
+                <li class="footer__social__item">
+                  <a href="https://www.facebook.com/FordhamUniversity" class="footer__social__link">
+                    <img
+                      src="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=bd94350e63733aaaf755c72df67b35e86db6a909"
+                      alt="Link to our Facebook"
+                    />
+                  </a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://www.instagram.com/fordhamuniversity/" class="footer__social__link">
+                    <img
+                      src="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=f8322b3143c671b37443f2c444ff0489b7bddcd3"
+                      alt="Link to our Instagram"
+                    />
+                  </a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://www.linkedin.com/school/7338?pathWildcard=7338" class="footer__social__link">
+                    <img
+                      src="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=d69bd664f6adba21333788b18ebd01ec5dfb9c70"
+                      alt="Link to our LinkedIn"
+                    />
+                  </a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://twitter.com/FordhamNYC" class="footer__social__link">
+                    <img
+                      src="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=0e3108f83b474e259ca3015177bbf4e873c3e8d6"
+                      alt="Link to our X"
+                    />
+                  </a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://www.youtube.com/user/FordhamUniversity/featured" class="footer__social__link">
+                    <img
+                      src="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/SiteManager?ctfn=download&amp;fnno=60&amp;ceid=a1c53ead03305ddebda1ed2188980a7193fb14a7"
+                      alt="Link to our YouTube"
+                    />
+                  </a>
+                </li>
+                <li class="footer__social__item footer__social__item--show-more">
+                  <a href="https://fordhamedu-cms01-test.terminalfour.net/terminalfour/preview/2/en/20242" class="footer__social__link">
+                    <span class="footer__social__link__text">More on social media</span> </a
+                  ><svg class="svg-md-24px" focusable="false" aria-hidden="true" style="fill: #fff">
+                    <title>Arrow right icon</title>
+                    <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"></path>
+                  </svg>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

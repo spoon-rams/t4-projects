@@ -1,0 +1,182 @@
+/* --- Mobile Responsiveness --- */
+
+@media only screen and (max-width: 1427px) {
+  .hero-banner__block__desc {
+    font-size: 5rem;
+  }
+
+  .hero-banner__block {
+    top: 60% !important;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .video-hero {
+    padding-bottom: 65%;
+    min-height: 500px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .hero-banner__block__desc {
+    font-size: 4.07rem;
+  }
+  .hero-banner__block__title {
+    background-color: unset !important;
+    padding: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .video-hero {
+    padding-bottom: 80%;
+    min-height: 500px;
+  }
+
+  .hero-banner__block__desc {
+    font-size: 3rem;
+  }
+
+  .play-pause-btn {
+    left: 95.5% !important;
+  }
+}
+
+/* Small tablets and large phones (e.g., up to 768px wide) */
+@media only screen and (max-width: 768px) {
+  .video-hero {
+    padding-bottom: 90%;
+    min-height: 500px;
+  }
+
+  .video-hero .hero-banner__block {
+    padding: 15px;
+  }
+
+  .video-hero .hero-banner__block__title span {
+    font-size: 1.7rem;
+  }
+
+  .hero-banner__block__desc {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    letter-spacing: 0.05rem;
+  }
+
+  .hero-banner__block__buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .hero-banner__block__buttons .hero-banner__block__button-link-break {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .play-pause-btn {
+    left: 93.5%;
+  }
+}
+
+@media only screen and (max-width: 625px) {
+  .video-hero {
+    padding-bottom: 100%;
+    min-height: 500px;
+  }
+
+  .hero-banner__block__desc {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .video-hero {
+    padding-bottom: 120%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .video-hero {
+    padding-bottom: 140%;
+  }
+
+  .video-hero .hero-banner__block__title span {
+    font-size: 1.4rem;
+  }
+
+  .hero-banner__block__desc {
+    font-size: 1.8rem;
+    line-height: 1.1;
+    letter-spacing: 0.03rem;
+  }
+
+  .play-pause-btn {
+    width: 40px !important;
+    height: 40px !important;
+    bottom: 10px !important;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .video-hero {
+    padding-bottom: 160%;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .video-hero {
+    padding-bottom: 200%;
+  }
+}
+
+@media only screen and (max-width: 285px) {
+  .video-hero {
+    padding-bottom: 240%;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .video-hero {
+    padding-bottom: 160%;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .video-hero {
+    padding-bottom: 180%;
+  }
+}
+
+/* Optional: Landscape mode for phones (adjust as needed if you have specific layouts for this) */
+@media only screen and (max-height: 450px) and (orientation: landscape) {
+  .video-hero {
+    padding-bottom: 85%;
+    min-height: 200px;
+  }
+  .hero-banner__block__title span {
+    font-size: 1.5rem;
+  }
+  .hero-banner__block__desc {
+    font-size: 2.8rem;
+  }
+  .hero-banner__block__buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 100%;
+  }
+  .hero-banner__block__buttons .hero-banner__block__button-link-break {
+    width: auto;
+    max-width: none;
+    padding: 8px 15px;
+  }
+}
+
+
+
+
+
+

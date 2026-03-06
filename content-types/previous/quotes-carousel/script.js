@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let startX = 0;
   let clickPending = false;
   let currentSlide = 0;
-  
+
   // CREATE INDICATOR DOTS
   if (slides.length > 1) {
     let numIndicators = slides.length;

@@ -1,0 +1,155 @@
+/*   MOBILE RESPONSIVE   */
+@media only screen and (max-width: 1047px) {
+  .at-a-glance .box.view-more {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .at-a-glance .card {
+    padding: 2.5rem;
+  }
+
+  .at-a-glance .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  .at-a-glance .note {
+    text-align: center;
+  }
+  ≠ .at-a-glance .title-block {
+    align-items: center;
+  }
+
+  .at-a-glance .title-block h2,
+  .at-a-glance .title-block h3 {
+    text-align: center;
+  }
+
+  .at-a-glance .title-block h2::before {
+    position: relative;
+    width: 180px;
+    margin: auto;
+  }
+
+  .at-a-glance .info-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .at-a-glance .info-grid .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .at-a-glance .box {
+    min-height: auto;
+    padding: 1rem;
+    width: 80%;
+  }
+
+  .at-a-glance .box p {
+    font-size: 1.7rem;
+  }
+
+  .at-a-glance .box.credit-hours,
+  .at-a-glance .box.cost-per-credit,
+  .at-a-glance .box.duration,
+  .at-a-glance .box.classes-begin {
+    border-bottom: 2px solid #dd3224;
+  }
+
+  .at-a-glance .box.cost-per-credit,
+  .at-a-glance .box.applications-due {
+    border-left: none;
+    border-right: none;
+  }
+
+  .at-a-glance .subtext {
+    text-align: center;
+  }
+
+  .at-a-glance .divider {
+    display: none;
+  }
+
+  .at-a-glance .box.view-more .btn-primary {
+    padding: 0.5rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .at-a-glance .card {
+    padding: 1.5rem;
+  }
+
+  .at-a-glance .subtext {
+    font-size: 1.2rem;
+  }
+
+  .at-a-glance .icon {
+    width: 110px;
+  }
+
+  .at-a-glance .note {
+    font-size: 1.1rem;
+  }
+
+  .at-a-glance .box span {
+    font-size: 1.3rem;
+  }
+  .at-a-glance .box p {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .at-a-glance .title-block h2::before {
+    width: 150px;
+  }
+
+  .at-a-glance .subtext {
+    font-size: 1.1rem;
+  }
+
+  .at-a-glance .icon {
+    width: 100px;
+  }
+
+  .at-a-glance .note {
+    font-size: 1rem;
+  }
+
+  .at-a-glance .box span {
+    font-size: 1.2rem;
+  }
+
+  .at-a-glance .box p {
+    font-size: 1.5rem;
+  }
+
+  .at-a-glance .scholarship-link {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .at-a-glance .title-block h2::before {
+    width: 120px;
+  }
+
+  .at-a-glance .title-block h2 {
+    font-size: 2rem;
+  }
+
+  .at-a-glance .title-block h3 {
+    font-size: 1.7rem;
+  }
+
+  .at-a-glance .icon {
+    width: 110px;
+  }
+}

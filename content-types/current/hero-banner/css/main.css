@@ -1,0 +1,208 @@
+.hero-banner.fordham-rebrand .hero-banner__block__desc,
+.hero-banner.fordham-rebrand .hero-banner__block__title > span {
+  background-color: unset !important;
+  padding: .75rem 0 !important
+}
+
+.hero-banner.fordham-rebrand .hero-banner__block__desc {
+  margin-top: 0 !important;
+}
+
+.hero-banner.fordham-rebrand .hero-banner__wrapper {
+  height: 500px;
+}
+
+.hero-banner.fordham-rebrand .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-banner.fordham-rebrand .hero-banner__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 192.023%;
+  background-position: 0px -304.529px;
+  background-repeat: no-repeat;
+}
+
+.hero-banner.fordham-rebrand .hero-banner__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  font-family: "object-fit: cover; object-position: 50% 50%;";
+}
+
+.hero-banner.fordham-rebrand .hero-banner__block__button-link-break-3buttons::after,
+.hero-banner.fordham-rebrand .hero-banner__block__button-link-break::after {
+  content: "" !important;
+  position: relative;
+  background-image: url("../../../../images/white-right-arrow.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  padding-left: 1rem;
+  height: 12px;
+  top: 2px;
+}
+
+.hero-banner.fordham-rebrand .hero-banner__block__button-link-break-3buttons.btn-secondary::after,
+.hero-banner.fordham-rebrand .hero-banner__block__button-link-break.btn-secondary::after {
+  content: "" !important;
+  position: relative;
+  background-image: url("../../../../images/ram-red-right-arrow.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  padding-left: 1rem;
+  height: 12px;
+  top: 2px;
+}
+
+.hero-banner.fordham-rebrand .hero-banner__block__button-link-break-3buttons.btn-secondary:hover,
+.hero-banner.fordham-rebrand .hero-banner__block__button-link-break.btn-secondary:hover {
+  color: #7e072a !important;
+}
+
+.hero-banner.fordham-rebrand .hero-banner__block__button-link-break-3buttons.btn-secondary:hover::after,
+.hero-banner.fordham-rebrand .hero-banner__block__button-link-break.btn-secondary:hover::after {
+  background-image: url("../../../../images/maroon-right-arrow.svg") !important;
+}
+
+
+
+/* TEMPORARY UNIVERSAL CSS ADJUSTMENTS */
+.hero-banner {
+  margin-bottom: 200px;
+}
+
+.header-placeholder {
+  display: block !important;
+}
+
+/* .hero-banner .hero-banner__block {
+    top: 30rem;
+} */
+
+
+
+
+/* FOR TWO COLUM SLIDE HERO CAROUSEL */
+
+/* .carousel-header.two-columns .slide {
+  align-items: unset !important;
+} */
+
+/* TEMPORARY UNIVERSAL CSS ADJUSTMENTS  */
+.hero-banner.two-column {
+  margin-bottom: 500px;
+}
+/* END */
+
+.hero-banner.two-column {
+  height: 500px;
+}
+
+.hero-banner.two-column .hero-banner__wrapper {
+  display: flex;
+  height: 100% !important;
+}
+
+.hero-banner.two-column .hero-banner__wrapper .col-lg-6 {
+  padding: 0 !important;
+}
+
+.hero-banner.two-column .hero-banner__img {
+  position: relative !important;
+  height: 100% !important;
+}
+
+.hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block {
+  transform: unset !important;
+  position: unset !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title span {
+  font-size: 6rem !important;
+  line-height: 5rem !important;
+  background-color: unset;
+  padding: 0 !important;
+}
+
+.hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__content .btn-primary,
+.hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__content .btn-secondary {
+  font-family: inherit;
+  font-size: 1.1rem;
+  margin: 0.2rem;
+}
+
+.hero-banner.two-column .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+
+.bg-fordham-maroon {
+  background-color: #7e072a !important;
+}
+
+.bg-fordham-deep-maroon {
+  background-color: #512533 !important;
+}
+
+.bg-fordham-gray {
+  background-color: #5A6675 !important;
+}
+
+.bg-fordham-black {
+  background-color: #282220 !important;
+}
+
+.bg-fordham-stone {
+  background-color: #dbdbd3 !important;
+}
+
+.bg-fordham-keating {
+  background-color: #cabc9c !important;
+}
+
+
+.font-primary-white {
+  color: #ffffff !important;
+}
+
+.font-primary-maroon {
+  color: #7e072a !important;
+}
+
+.font-spark {
+  color: #EFB900 !important;
+}
+
+.font-ram-red {
+  color: #dd3224 !important;
+}
+
+.font-elm {
+  color: #719435 !important;
+}
+
+.font-victory-blue {
+  color: #004658 !important ;
+}
