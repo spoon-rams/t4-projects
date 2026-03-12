@@ -153,8 +153,12 @@
 }
 
 @media only screen and (max-width: 380px) {
-  .hero-banner.two-column .hero-banner__wrapper {
+  /* .hero-banner.two-column .hero-banner__wrapper {
     text-align: center !important;
+  } */
+  .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block {
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .hero-banner.two-column .hero-banner__wrapper .col-lg-6.text-column .hero-banner__block__title {
     padding: 20px 0 !important;
