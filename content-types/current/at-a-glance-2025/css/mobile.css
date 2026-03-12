@@ -1,9 +1,4 @@
 /*   MOBILE RESPONSIVE   */
-@media only screen and (max-width: 1047px) {
-  .at-a-glance .box.view-more {
-    margin-top: 10px;
-  }
-}
 
 @media only screen and (max-width: 768px) {
   .at-a-glance .card {
@@ -55,15 +50,18 @@
     font-size: 1.7rem;
   }
 
-  .at-a-glance .box.credit-hours,
-  .at-a-glance .box.cost-per-credit,
-  .at-a-glance .box.duration,
-  .at-a-glance .box.classes-begin {
-    border-bottom: 2px solid #dd3224;
+  .at-a-glance .box.stat-one,
+  .at-a-glance .box.stat-two,
+  .at-a-glance .box.stat-three,
+  .at-a-glance .box.stat-four,
+  .at-a-glance .box.stat-five,
+  .at-a-glance .box.stat-six {
+    border-top: 2px solid #dd3224;
+    margin-top: 20px
   }
 
-  .at-a-glance .box.cost-per-credit,
-  .at-a-glance .box.applications-due {
+  .at-a-glance .box.stat-two,
+  .at-a-glance .box.stat-five {
     border-left: none;
     border-right: none;
   }
