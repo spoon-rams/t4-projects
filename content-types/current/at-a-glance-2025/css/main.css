@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 1800px;
   
 }
 
@@ -120,13 +119,10 @@
   flex: 1 0 33%;
 }
 
-.at-a-glance .box.cost-per-credit {
-  border-left: 2px solid #dd3224;
-  border-right: 2px solid #dd3224;
-}
-
+.at-a-glance .box.cost-per-credit,
 .at-a-glance .box.applications-due {
   border-left: 2px solid #dd3224;
+  border-right: 2px solid #dd3224;
 }
 
 /* BOX TITLES */
@@ -170,11 +166,11 @@
   height: 2px;
 }
 
-.at-a-glance .box.view-more {
+/* .at-a-glance .box.view-more {
   padding: 0;
   background-color: #dd3224;
   border-radius: 15px;
-}
+} */
 
 .at-a-glance .box.view-more .btn-primary {
   background-color: #dd3224 !important;
