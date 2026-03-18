@@ -1,6 +1,6 @@
 /*   MOBILE RESPONSIVE   */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .at-a-glance .card {
     padding: 2.5rem;
   }
@@ -57,7 +57,7 @@
   .at-a-glance .box.stat-five,
   .at-a-glance .box.stat-six {
     border-top: 2px solid #dd3224;
-    margin-top: 20px
+    margin-top: 20px;
   }
 
   .at-a-glance .box.stat-two,
@@ -96,11 +96,11 @@
     font-size: 1.1rem;
   }
 
-  .at-a-glance .box span {
-    font-size: 1.3rem;
+  .at-a-glance .box .stat {
+    font-size: 2rem;
   }
   .at-a-glance .box p {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 }
 
