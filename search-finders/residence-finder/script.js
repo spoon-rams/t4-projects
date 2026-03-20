@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       housingTypeFilter.classList.remove("active");
       campusFilter.classList.remove("active");
       livingLearningFilter.classList.remove("active");
+      pricingFilter.classList.remove("active");
     });
 
     // Class Year Button Event Listener
@@ -44,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       housingTypeFilter.classList.remove("active");
       campusFilter.classList.remove("active");
       livingLearningFilter.classList.remove("active");
+      pricingFilter.classList.remove("active");
     });
 
     // Housing Type Button Event Listener
@@ -57,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
       classYearFilter.classList.remove("active");
       campusFilter.classList.remove("active");
       livingLearningFilter.classList.remove("active");
+      pricingFilter.classList.remove("active");
     });
 
     // Campus Button Event Listener
@@ -70,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
       classYearFilter.classList.remove("active");
       housingTypeFilter.classList.remove("active");
       livingLearningFilter.classList.remove("active");
+      pricingFilter.classList.remove("active");
     });
 
     // Living and Learning Button Event Listener
@@ -83,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       classYearFilter.classList.remove("active");
       housingTypeFilter.classList.remove("active");
       campusFilter.classList.remove("active");
+      pricingFilter.classList.remove("active");
     });
 
     // Pricing Button Event Listener
@@ -101,12 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// FOR PRICE FILTER SLIDER
 document.addEventListener("DOMContentLoaded", () => {
   const slider = document.getElementById("priceSlider");
   const display = document.getElementById("priceValue");
-
-  // Prevent T4 auto-submit
-  slider.addEventListener("change", (e) => e.stopImmediatePropagation());
+  const combined = document.getElementById('priceCombined');
 
   // Update the text as the user slides
   slider.addEventListener("input", () => {
