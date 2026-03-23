@@ -18,93 +18,44 @@ document.addEventListener("DOMContentLoaded", () => {
   const campusFilter = document.getElementById("campus-residence-filter");
   const livingLearningFilter = document.getElementById("learning-residence-filter");
   const pricingFilter = document.getElementById("pricing-filter");
+  const allFilters = document.querySelectorAll("#searchoptions .program-search__form__filters.col-sm-12");
 
   if (occupancyBtn && classYearBtn && housingTypeBtn && campusBtn && livingLearningBtn) {
     // Occupancy Button Event Listener
-    occupancyBtn.addEventListener("click", () => {
-      if (!occupancyFilter.classList.contains("active")) {
-        occupancyFilter.classList.add("active");
-      } else {
-        occupancyFilter.classList.remove("active");
-      }
-      classYearFilter.classList.remove("active");
-      housingTypeFilter.classList.remove("active");
-      campusFilter.classList.remove("active");
-      livingLearningFilter.classList.remove("active");
-      pricingFilter.classList.remove("active");
-    });
+    occupancyBtn.addEventListener("click", () => toggleActiveClass(occupancyFilter, allFilters));
 
     // Class Year Button Event Listener
-    classYearBtn.addEventListener("click", () => {
-      if (!classYearFilter.classList.contains("active")) {
-        classYearFilter.classList.add("active");
-      } else {
-        classYearFilter.classList.remove("active");
-      }
-      occupancyFilter.classList.remove("active");
-      housingTypeFilter.classList.remove("active");
-      campusFilter.classList.remove("active");
-      livingLearningFilter.classList.remove("active");
-      pricingFilter.classList.remove("active");
-    });
+    classYearBtn.addEventListener("click", () => toggleActiveClass(classYearFilter, allFilters));
 
     // Housing Type Button Event Listener
-    housingTypeBtn.addEventListener("click", () => {
-      if (!housingTypeFilter.classList.contains("active")) {
-        housingTypeFilter.classList.add("active");
-      } else {
-        housingTypeFilter.classList.remove("active");
-      }
-      occupancyFilter.classList.remove("active");
-      classYearFilter.classList.remove("active");
-      campusFilter.classList.remove("active");
-      livingLearningFilter.classList.remove("active");
-      pricingFilter.classList.remove("active");
-    });
+    housingTypeBtn.addEventListener("click", () => toggleActiveClass(housingTypeFilter, allFilters));
 
     // Campus Button Event Listener
-    campusBtn.addEventListener("click", () => {
-      if (!campusFilter.classList.contains("active")) {
-        campusFilter.classList.add("active");
-      } else {
-        campusFilter.classList.remove("active");
-      }
-      occupancyFilter.classList.remove("active");
-      classYearFilter.classList.remove("active");
-      housingTypeFilter.classList.remove("active");
-      livingLearningFilter.classList.remove("active");
-      pricingFilter.classList.remove("active");
-    });
+    campusBtn.addEventListener("click", () => toggleActiveClass(campusFilter, allFilters));
 
     // Living and Learning Button Event Listener
-    livingLearningBtn.addEventListener("click", () => {
-      if (!livingLearningFilter.classList.contains("active")) {
-        livingLearningFilter.classList.add("active");
-      } else {
-        livingLearningFilter.classList.remove("active");
-      }
-      occupancyFilter.classList.remove("active");
-      classYearFilter.classList.remove("active");
-      housingTypeFilter.classList.remove("active");
-      campusFilter.classList.remove("active");
-      pricingFilter.classList.remove("active");
-    });
+    livingLearningBtn.addEventListener("click", () => toggleActiveClass(livingLearningFilter, allFilters));
 
     // Pricing Button Event Listener
-    pricingBtn.addEventListener("click", () => {
-      if (!pricingFilter.classList.contains("active")) {
-        pricingFilter.classList.add("active");
-      } else {
-        pricingFilter.classList.remove("active");
-      }
-      occupancyFilter.classList.remove("active");
-      classYearFilter.classList.remove("active");
-      housingTypeFilter.classList.remove("active");
-      campusFilter.classList.remove("active");
-      livingLearningFilter.classList.remove("active");
-    });
+    pricingBtn.addEventListener("click", () =>toggleActiveClass(pricingFilter, allFilters));
   }
 });
+
+// FUNCTION TO TOGGLE ACTIVE CLASS ON FILTERS
+/**
+ * @param {HTMLElement} target - The element being clicked/toggled
+ * @param {NodeList|Array} collection - All elements in the group
+ */
+function toggleActiveClass(el, collection) {
+  // Save the current state before we start looping
+  const isCurrentlyActive = el.classList.contains("active");
+
+  collection.forEach(item => {
+    const shouldBeActive = (item === el) && !isCurrentlyActive;
+    
+    item.classList.toggle("active", shouldBeActive);
+  });
+}
 
 // FOR PRICE FILTER SLIDER
 document.addEventListener("DOMContentLoaded", () => {
