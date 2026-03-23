@@ -345,6 +345,8 @@
         <?php foreach ($results as $item): ?>
         <div class="program-search__results__item col-xl-3 col-lg-4 col-md-6 col-sm-12 popup-trigger" data-popup-trigger="id-<?php echo $item['contentID']; ?>" tabindex="0">
           <div class="program-search__results__info">
+            <div class="overlay"></div>
+            <img src='<?php echo $item['residenceLogo']; ?>' alt=""/>
             <img srcset="<?php echo $item['residenceImage']; ?> 0.33x,<?php echo $item['residenceImage']; ?> 0.5x,<?php echo $item['residenceImage']; ?> 1.5x,<?php echo $item['residenceImage']; ?> 2x" src="<?php echo $item['residenceImage']; ?>" alt="Image for<?php echo $item['residenceName']; ?>">
             <span class="program-search__results__item__title"><?php echo $item['residenceName']; ?></span>
           </div>
