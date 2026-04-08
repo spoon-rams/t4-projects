@@ -1,7 +1,7 @@
 <?php
-  $genericFacet    = \T4\PHPSearchLibrary\FacetFactory::getInstance('GenericFacet', $documentCollection, $queryHandler);
-  $filters         = $queryHandler->getQueryValuesForPrint();
-  $categoryFilters = ['residenceOccupancy', 'residenceClass', 'residenceType', 'residenceCampus', 'residenceLiving', 'residenceCost'];
+ $genericFacet    = \T4\PHPSearchLibrary\FacetFactory::getInstance('GenericFacet', $documentCollection, $queryHandler);
+ $filters         = $queryHandler->getQueryValuesForPrint();
+ $categoryFilters = ['residenceOccupancy', 'residenceClass', 'residenceType', 'residenceCampus', 'residenceLiving', 'residenceCost'];
 ?>
 <section class="program-search" aria-label="Fordham University Program Search">
     <!--h2 class="program-search__title">
@@ -18,9 +18,9 @@
             </div>
             <div id="hidden-form-generic" data-t4-ajax-group="courseSearch">
                 <?php
-                  $formatQueryAsHiddenInput = \T4\PHPSearchLibrary\QueryFormatterFactory::getInstance('FormatQueryAsHiddenInput', $queryHandler);
-                  $formatQueryAsHiddenInput->setMember('excludedQueries', ['keywords', 'page', 'residenceCost']);
-                  echo $formatQueryAsHiddenInput->format();
+                 $formatQueryAsHiddenInput = \T4\PHPSearchLibrary\QueryFormatterFactory::getInstance('FormatQueryAsHiddenInput', $queryHandler);
+                 $formatQueryAsHiddenInput->setMember('excludedQueries', ['keywords', 'page', 'residenceCost']);
+                 echo $formatQueryAsHiddenInput->format();
                 ?>
             </div>
           </form>
@@ -40,30 +40,30 @@
           <div class="program-search__form__filters col-sm-12" id="occupancy-filter" data-group="occupancy">
             <span class="program-search__form__filters__heading">Filter by Occupancy</span>
             <?php
-              $element = 'residenceOccupancy';
-              $genericFacet->setMember('element', $element);
-              $genericFacet->setMember('type', 'List');
-              $genericFacet->setMember('facetSource', 'documents');
-              $genericFacet->setMember('sortingState', true);
-              $genericFacet->setMember('multipleValueState', true);
-              $genericFacet->setMember('multipleValueSeparator', ', ');
-              $search = $genericFacet->displayFacet();
+             $element = 'residenceOccupancy';
+             $genericFacet->setMember('element', $element);
+             $genericFacet->setMember('type', 'List');
+             $genericFacet->setMember('facetSource', 'documents');
+             $genericFacet->setMember('sortingState', true);
+             $genericFacet->setMember('multipleValueState', true);
+             $genericFacet->setMember('multipleValueSeparator', ', ');
+             $search = $genericFacet->displayFacet();
 
-              if (! empty($search)):
-                // Custom sort logic
-                $orderMap = [
-                  'single'    => 1,
-                  'double'    => 2,
-                  'triple'    => 3,
-                  'quadruple' => 4,
-                  'quintuple' => 5,
-                ];
+             if (! empty($search)):
+              // Custom sort logic
+              $orderMap = [
+               'single'    => 1,
+               'double'    => 2,
+               'triple'    => 3,
+               'quadruple' => 4,
+               'quintuple' => 5,
+              ];
 
-                usort($search, function ($a, $b) use ($orderMap) {
-                  $aVal = strtolower($a['value']);
-                  $bVal = strtolower($b['value']);
-                  return ($orderMap[$aVal] ?? 999) <=> ($orderMap[$bVal] ?? 999);
-                });
+              usort($search, function ($a, $b) use ($orderMap) {
+               $aVal = strtolower($a['value']);
+               $bVal = strtolower($b['value']);
+               return ($orderMap[$aVal] ?? 999) <=> ($orderMap[$bVal] ?? 999);
+              });
             ?>
 													 <div id="checkboxes-<?php echo strtolower($element) ?>">
 													    <fieldset class="form-group">
@@ -93,27 +93,27 @@
           <div class="program-search__form__filters col-sm-12" id="class-year-filter" data-group="class-year">
             <span class="program-search__form__filters__heading">Filter by Class Year</span>
             <?php
-              $element = 'residenceClass';
-              $genericFacet->setMember('element', $element);
-              $genericFacet->setMember('type', 'List');
-              $genericFacet->setMember('facetSource', 'documents');
-              $genericFacet->setMember('sortingState', true);
-              $genericFacet->setMember('multipleValueState', true);
-              $genericFacet->setMember('multipleValueSeparator', ', ');
-              $search = $genericFacet->displayFacet();if (! empty($search)):
-                // Custom sort logic
-                $orderMap = [
-                  'first-year'  => 1,
-                  'second-year' => 2,
-                  'junior'      => 3,
-                  'senior'      => 4,
-                ];
+             $element = 'residenceClass';
+             $genericFacet->setMember('element', $element);
+             $genericFacet->setMember('type', 'List');
+             $genericFacet->setMember('facetSource', 'documents');
+             $genericFacet->setMember('sortingState', true);
+             $genericFacet->setMember('multipleValueState', true);
+             $genericFacet->setMember('multipleValueSeparator', ', ');
+             $search = $genericFacet->displayFacet();if (! empty($search)):
+              // Custom sort logic
+              $orderMap = [
+               'first-year'  => 1,
+               'second-year' => 2,
+               'junior'      => 3,
+               'senior'      => 4,
+              ];
 
-                usort($search, function ($a, $b) use ($orderMap) {
-                  $aVal = strtolower($a['value']);
-                  $bVal = strtolower($b['value']);
-                  return ($orderMap[$aVal] ?? 999) <=> ($orderMap[$bVal] ?? 999);
-                });
+              usort($search, function ($a, $b) use ($orderMap) {
+               $aVal = strtolower($a['value']);
+               $bVal = strtolower($b['value']);
+               return ($orderMap[$aVal] ?? 999) <=> ($orderMap[$bVal] ?? 999);
+              });
             ?>
 						<div id="checkboxes-<?php echo strtolower($element) ?>">
 							<fieldset class="form-group">
@@ -144,14 +144,14 @@
           <div class="program-search__form__filters col-sm-12" id="housing-type-filter" data-group="house-type">
             <span class="program-search__form__filters__heading">Filter by Housing Type</span>
             <?php
-              $element = 'residenceType';
-              $genericFacet->setMember('element', $element);
-              $genericFacet->setMember('type', 'List');
-              $genericFacet->setMember('facetSource', 'documents');
-              $genericFacet->setMember('sortingState', true);
-              $genericFacet->setMember('multipleValueState', true);
-              $genericFacet->setMember('multipleValueSeparator', ', ');
-              $search = $genericFacet->displayFacet();
+             $element = 'residenceType';
+             $genericFacet->setMember('element', $element);
+             $genericFacet->setMember('type', 'List');
+             $genericFacet->setMember('facetSource', 'documents');
+             $genericFacet->setMember('sortingState', true);
+             $genericFacet->setMember('multipleValueState', true);
+             $genericFacet->setMember('multipleValueSeparator', ', ');
+             $search = $genericFacet->displayFacet();
             ?>
             <?php if (! empty($search)): ?>
             <div id="checkboxes-<?php echo strtolower($element) ?>">
@@ -183,14 +183,14 @@
           <div class="program-search__form__filters col-sm-12" id="campus-residence-filter" data-group="campus">
             <span class="program-search__form__filters__heading">Filter by Campus</span>
             <?php
-              $element = 'residenceCampus';
-              $genericFacet->setMember('element', $element);
-              $genericFacet->setMember('type', 'List');
-              $genericFacet->setMember('facetSource', 'documents');
-              $genericFacet->setMember('sortingState', true);
-              $genericFacet->setMember('multipleValueState', true);
-              $genericFacet->setMember('multipleValueSeparator', ', ');
-              $search = $genericFacet->displayFacet();
+             $element = 'residenceCampus';
+             $genericFacet->setMember('element', $element);
+             $genericFacet->setMember('type', 'List');
+             $genericFacet->setMember('facetSource', 'documents');
+             $genericFacet->setMember('sortingState', true);
+             $genericFacet->setMember('multipleValueState', true);
+             $genericFacet->setMember('multipleValueSeparator', ', ');
+             $search = $genericFacet->displayFacet();
             ?>
             <?php if (! empty($search)): ?>
             <div id="checkboxes-<?php echo strtolower($element) ?>">
@@ -221,14 +221,14 @@
           <div class="program-search__form__filters col-sm-12" id="learning-residence-filter" data-group="learning">
             <span class="program-search__form__filters__heading">Filter by Living & Learning</span>
             <?php
-              $element = 'residenceLiving';
-              $genericFacet->setMember('element', $element);
-              $genericFacet->setMember('type', 'List');
-              $genericFacet->setMember('facetSource', 'documents');
-              $genericFacet->setMember('sortingState', true);
-              $genericFacet->setMember('multipleValueState', true);
-              $genericFacet->setMember('multipleValueSeparator', ', ');
-              $search = $genericFacet->displayFacet();
+             $element = 'residenceLiving';
+             $genericFacet->setMember('element', $element);
+             $genericFacet->setMember('type', 'List');
+             $genericFacet->setMember('facetSource', 'documents');
+             $genericFacet->setMember('sortingState', true);
+             $genericFacet->setMember('multipleValueState', true);
+             $genericFacet->setMember('multipleValueSeparator', ', ');
+             $search = $genericFacet->displayFacet();
             ?>
             <?php if (! empty($search)): ?>
             <div id="checkboxes-<?php echo strtolower($element) ?>">
@@ -271,7 +271,7 @@
                   min="0"
                   max="30000"
                   step="100"
-                  
+                  value = "<?php echo isset($_GET['residenceCost']) ? explode('-', $_GET['residenceCost'])[1] : 0; ?>"
                 >
 
                 <div>
@@ -283,7 +283,6 @@
                   type="hidden"
                   name="residenceCost"
                   id="priceCombined"
-                  
                 >
 
               </fieldset>
@@ -304,42 +303,48 @@
       <div id="event-filters">
         <?php if ($filters !== null): ?>
           <?php
-            $i = 0;
-            $tagsHTML = '';
-            foreach ($categoryFilters as $key) {
-              if (isset($filters[$key]) && is_array($filters[$key])) {
-                foreach ($filters[$key] as $value) {
-                  $tagsHTML .= '<li class="filter-' . $i++ . ' small primary"  data-t4-value="' . strtolower($value) . '" data-t4-filter="' . $key . '">';
-                  $tagsHTML .= '<div class="filter-wrapper">';
-                  $tagsHTML .= '<div class="filter-text">' . $value . '</div>';
-                  $tagsHTML .= '<div class="remove">X</div>';
-                  $tagsHTML .= '</div>';
-                  $tagsHTML .= '</li>';
-                  // FOR TESTING PURPOSES
-                  echo "When filters are arrays, value is: " . $value . " and key is: " . $key . "<br>";
-                }
-              } elseif (isset($filters[$key])) {
-                $value = $filters[$key];
-                $tagsHTML .= '<li class="filter-' . $i++ . ' small primary"  data-t4-value="' . strtolower($value) . '" data-t4-filter="' . $key . '">';
-                $tagsHTML .= '<div class="filter-wrapper">';
-                $tagsHTML .= '<div class="filter-text">' . $value . '</div>';
-                $tagsHTML .= '<div class="remove">X</div>';
-                $tagsHTML .= '</div>';
-                $tagsHTML .= '</li>';
-                // FOR TESTING PURPOSES
-                echo "When filters are not arrays, value is: " . $value . " and key is: " . $key . "<br>";
-              }
-            }
-          
-            if (isset($filters['keywords'])) {
-              $tagsHTML .= '<li class="filter-' . $i++ . ' small primary"  data-t4-filter="' . strtolower($value) . '">';
+           $i        = 0;
+           $tagsHTML = '';
+           foreach ($categoryFilters as $key) {
+            if (isset($filters[$key]) && is_array($filters[$key])) {
+             foreach ($filters[$key] as $value) {
+              $tagsHTML .= '<li class="filter-' . $i++ . ' small primary"  data-t4-value="' . strtolower($value) . '" data-t4-filter="' . $key . '">';
               $tagsHTML .= '<div class="filter-wrapper">';
-              $tagsHTML .= '<div class="filter-text">' . $filters['keywords'] . '</div>';
+              $tagsHTML .= '<div class="filter-text">' . $value . '</div>';
+              $tagsHTML .= '<div class="remove">X</div>';
               $tagsHTML .= '</div>';
               $tagsHTML .= '</li>';
+              // FOR TESTING PURPOSES
+              echo "When filters are arrays, value is: " . $value . " and key is: " . $key . "<br>";
+             }
+            } elseif (isset($filters[$key])) {
+             $value = $filters[$key];
+
+             // Check if this is the cost filter
+             $isPrice = ($key === 'residenceCost');
+             // Add a specific class if it's the price so JS can find it
+             $priceClass = $isPrice ? ' js-price-tag' : null;
+
+             $tagsHTML .= '<li class="filter-' . $i++ . ' small primary ' . $priceClass . '"  data-t4-value="' . strtolower($value) . '" data-t4-filter="' . $key . '">';
+             $tagsHTML .= '<div class="filter-wrapper">';
+             $tagsHTML .= '<div class="filter-text">' . $value . '</div>';
+             $tagsHTML .= '<div class="remove">X</div>';
+             $tagsHTML .= '</div>';
+             $tagsHTML .= '</li>';
+             // FOR TESTING PURPOSES
+             echo "When filters are not arrays, value is: " . $value . " and key is: " . $key . "<br>";
             }
-            
-            echo $tagsHTML != '' ? '<div class="program-search__form__controls__label">Filters Applied:</div><ul class="no-bullet">' . $tagsHTML . '</ul>' : '';
+           }
+
+           if (isset($filters['keywords'])) {
+            $tagsHTML .= '<li class="filter-' . $i++ . ' small primary"  data-t4-filter="' . strtolower($value) . '">';
+            $tagsHTML .= '<div class="filter-wrapper">';
+            $tagsHTML .= '<div class="filter-text">' . $filters['keywords'] . '</div>';
+            $tagsHTML .= '</div>';
+            $tagsHTML .= '</li>';
+           }
+
+           echo $tagsHTML != '' ? '<div class="program-search__form__controls__label">Filters Applied:</div><ul class="no-bullet">' . $tagsHTML . '</ul>' : '';
           ?>
         <?php endif; ?>
       </div>
