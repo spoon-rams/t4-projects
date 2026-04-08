@@ -300,46 +300,48 @@
     <a id="starthere" href="#starthere" aria-label="Start Here"></a>
 
     <!-- FILTERS APPLIED CARD RENDER - START -->
-     <div id="searchoptions-filters" role="search" data-t4-ajax-group="directorySearch">
-        <div id="event-filters">
-              <?php if ($filters !== null): ?>
-                    <?php
-                      $i        = 0;
-                      $tagsHTML = '';
-                      foreach ($categoryFilters as $key) {
-                        if (isset($filters[$key]) && is_array($filters[$key])) {
-                          foreach ($filters[$key] as $value) {
-                            $tagsHTML .= '<li class="filter-' . $i++ . ' small primary"  data-t4-value="' . strtolower($value) . '" data-t4-filter="' . $key . '">';
-                            $tagsHTML .= '<div class="filter-wrapper">';
-                            $tagsHTML .= '<div class="filter-text">' . $value . '</div>';
-                            $tagsHTML .= '<div class="remove">X</div>';
-                            $tagsHTML .= '</div>';
-                            $tagsHTML .= '</li>';
-                          }
-                        } elseif (isset($filters[$key])) {
-                          $value     = $filters[$key];
-                          $tagsHTML .= '<li class="filter-' . $i++ . ' small primary"  data-t4-value="' . strtolower($value) . '" data-t4-filter="' . $key . '">';
-                          $tagsHTML .= '<div class="filter-wrapper">';
-                          $tagsHTML .= '<div class="filter-text">' . $value . '</div>';
-                          $tagsHTML .= '<div class="remove">X</div>';
-                          $tagsHTML .= '</div>';
-                          $tagsHTML .= '</li>';
-                        }
-                      }
-                      if (isset($filters['keywords'])) {
-                        $tagsHTML .= '<li class="filter-' . $i++ . ' small primary"  data-t4-filter="' . strtolower($value) . '">';
-                        $tagsHTML .= '<div class="filter-wrapper">';
-                        $tagsHTML .= '<div class="filter-text">' . $filters['keywords'] . '</div>';
-                        $tagsHTML .= '</div>';
-                        $tagsHTML .= '</li>';
-                      }
-                      echo $tagsHTML != '' ? '<div class="program-search__form__controls__label">Filters Applied:</div><ul class="no-bullet">' . $tagsHTML . '</ul>' : '';
-                    ?>
-                <?php endif; ?>
-            </div>
+    <div id="searchoptions-filters" role="search" data-t4-ajax-group="directorySearch">
+      <div id="event-filters">
+        <?php if ($filters !== null): ?>
+          <?php
+            $i = 0;
+            $tagsHTML = '';
+            foreach ($categoryFilters as $key) {
+              if (isset($filters[$key]) && is_array($filters[$key])) {
+                foreach ($filters[$key] as $value) {
+                  $tagsHTML .= '<li class="filter-' . $i++ . ' small primary"  data-t4-value="' . strtolower($value) . '" data-t4-filter="' . $key . '">';
+                  $tagsHTML .= '<div class="filter-wrapper">';
+                  $tagsHTML .= '<div class="filter-text">' . $value . '</div>';
+                  $tagsHTML .= '<div class="remove">X</div>';
+                  $tagsHTML .= '</div>';
+                  $tagsHTML .= '</li>';
+                }
+              } elseif (isset($filters[$key])) {
+                $value = $filters[$key];
+                $tagsHTML .= '<li class="filter-' . $i++ . ' small primary"  data-t4-value="' . strtolower($value) . '" data-t4-filter="' . $key . '">';
+                $tagsHTML .= '<div class="filter-wrapper">';
+                $tagsHTML .= '<div class="filter-text">' . $value . '</div>';
+                $tagsHTML .= '<div class="remove">X</div>';
+                $tagsHTML .= '</div>';
+                $tagsHTML .= '</li>';
+              }
+            }
+          
+            if (isset($filters['keywords'])) {
+              $tagsHTML .= '<li class="filter-' . $i++ . ' small primary"  data-t4-filter="' . strtolower($value) . '">';
+              $tagsHTML .= '<div class="filter-wrapper">';
+              $tagsHTML .= '<div class="filter-text">' . $filters['keywords'] . '</div>';
+              $tagsHTML .= '</div>';
+              $tagsHTML .= '</li>';
+            }
+            
+            echo $tagsHTML != '' ? '<div class="program-search__form__controls__label">Filters Applied:</div><ul class="no-bullet">' . $tagsHTML . '</ul>' : '';
+          ?>
+        <?php endif; ?>
+      </div>
     </div>
 
-   <!-- FILTERS APPLIED CARD RENDER - END -->
+    <!-- FILTERS APPLIED CARD RENDER - END -->
 
     <div class="program-search__results row" id="search-results" role="main" data-t4-ajax-group="courseSearch">
       <?php if (! empty($results)): ?>
