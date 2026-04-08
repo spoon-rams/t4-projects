@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const classYearBtn = document.getElementById("class-year-button");
   const housingTypeBtn = document.getElementById("housing-type-button");
   const campusBtn = document.getElementById("campus-residence-button");
-  const livingLearningBtn = document.getElementById("learning-residence-button");
   const pricingBtn = document.getElementById("pricing-button");
 
   // Filter Elements
@@ -16,11 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const classYearFilter = document.getElementById("class-year-filter");
   const housingTypeFilter = document.getElementById("housing-type-filter");
   const campusFilter = document.getElementById("campus-residence-filter");
-  const livingLearningFilter = document.getElementById("learning-residence-filter");
   const pricingFilter = document.getElementById("pricing-filter");
   const allFilters = document.querySelectorAll("#searchoptions .program-search__form__filters.col-sm-12");
 
-  if (occupancyBtn && classYearBtn && housingTypeBtn && campusBtn && livingLearningBtn) {
+  if (occupancyBtn && classYearBtn && housingTypeBtn && campusBtn && pricingBtn) {
     // Occupancy Button Event Listener
     occupancyBtn.addEventListener("click", () => toggleActiveClass(occupancyFilter, allFilters));
 
@@ -32,9 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Campus Button Event Listener
     campusBtn.addEventListener("click", () => toggleActiveClass(campusFilter, allFilters));
-
-    // Living and Learning Button Event Listener
-    livingLearningBtn.addEventListener("click", () => toggleActiveClass(livingLearningFilter, allFilters));
 
     // Pricing Button Event Listener
     pricingBtn.addEventListener("click", () => toggleActiveClass(pricingFilter, allFilters));
@@ -76,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   slider.addEventListener("input", function () {
     const val = this.value;
-    console.log("primative type:", val);
     // 2. Enable the input the moment the user touches the slider
     if (val !== "0") {
       combined.disabled = false;
@@ -89,4 +83,49 @@ document.addEventListener("DOMContentLoaded", () => {
       combined.value = "0";
     }
   });
+});
+
+// FOR REMOVING PRICE FILTER TAGS WITHOUT PAGE RELOAD
+document.addEventListener("click", function (e) {
+  const priceTag = e.target.closest(".js-price-tag");
+
+  // Verify the "X" was clicked and we are inside a price tag
+  if (priceTag && e.target.classList.contains("remove")) {
+    e.preventDefault();
+
+    // 1. Reference all pricing elements
+    const combined = document.getElementById("priceCombined");
+    const slider = document.getElementById("priceSlider");
+    const display = document.getElementById("priceValue");
+    const filterForm = document.querySelector("#searchoptions form.js-t4form-container");
+
+    // 2. Reset the state
+    // We disable the input so the T4 AJAX ignores 'residenceCost' entirely
+    if (combined) {
+      combined.value = ""; 
+      combined.disabled = true; 
+    }
+
+    if (display) {
+      display.innerText = "0"; // Visual reset
+    }
+
+    if (slider) {
+      slider.value = 0; // Reset slider handle
+    }
+
+    // 3. Trigger T4 AJAX (The key to no-reload)
+    if (filterForm) {
+      // Remove the tag from UI immediately for speed
+      priceTag.remove();
+
+      /* We dispatch the event from the SLIDER. 
+         T4's library listens for changes on form inputs. 
+         By bubbling a change from the slider, T4 thinks a user 
+         manually moved it and triggers the AJAX refresh automatically.
+      */
+      const changeEvent = new Event("change", { bubbles: true });
+      slider.dispatchEvent(changeEvent);
+    }
+  }
 });
