@@ -63,16 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const display = document.getElementById("priceValue");
   const combined = document.getElementById("priceCombined");
 
-  //   // Update the text as the user slides
-  //   slider.addEventListener("input", () => {
-  //     display.textContent = slider.value;
-  //     combined.value = slider.value;
-  //   });
   // 1. Start with the input DISABLED so it doesn't send in the GET request
   // Unless there is already a value in the URL (the user is currently filtering)
   if (!window.location.search.includes("residenceCost")) {
     combined.disabled = true;
-    display.innerText = "Any";
+    display.innerText = "0";
   } else {
     // If it IS in the URL, make sure the slider reflects it
     const urlParams = new URLSearchParams(window.location.search);
@@ -81,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   slider.addEventListener("input", function () {
     const val = this.value;
+    console.log("primative type:", val);
     // 2. Enable the input the moment the user touches the slider
     if (val !== "0") {
       combined.disabled = false;
