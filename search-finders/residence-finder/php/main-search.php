@@ -31,7 +31,7 @@
           <button type="button" class="btn btn-primary program-search__form__toggle" id="class-year-button">Class Year</button>
           <button type="button" class="btn btn-primary program-search__form__toggle" id="housing-type-button">Housing Type</button>
           <button type="button" class="btn btn-primary program-search__form__toggle" id="campus-residence-button">Campus</button>
-          <button type="button" class="btn btn-primary program-search__form__toggle" id="learning-residence-button">Living & Learning</button>
+          <!-- <button type="button" class="btn btn-primary program-search__form__toggle" id="learning-residence-button">Living & Learning</button> -->
           <button type="button" class="btn btn-primary program-search__form__toggle" id="pricing-button">Price</button>
           <a class="btn btn-primary program-search__form__clear ajax-load-link" href="?keywords=" id="clear-filters">Clear Filters</a>
         </div>
@@ -218,7 +218,9 @@
             </div>
             <?php endif; ?>
           </div>
-          <div class="program-search__form__filters col-sm-12" id="learning-residence-filter" data-group="learning">
+
+          <!-- LIVING & LEARNING FILTER - START -->
+          <!-- <div class="program-search__form__filters col-sm-12" id="learning-residence-filter" data-group="learning">
             <span class="program-search__form__filters__heading">Filter by Living & Learning</span>
             <?php
              $element = 'residenceLiving';
@@ -254,7 +256,8 @@
               </fieldset>
             </div>
             <?php endif; ?>
-          </div>
+          </div> -->
+          <!-- LIVING & LEARNING FILTER - END -->
 
           <!-- PRICING FILTER - DEVELOPMENT - START -->
           <div class="program-search__form__filters col-sm-12" id="pricing-filter" data-group="pricing">
