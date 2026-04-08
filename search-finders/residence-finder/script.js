@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     livingLearningBtn.addEventListener("click", () => toggleActiveClass(livingLearningFilter, allFilters));
 
     // Pricing Button Event Listener
-    pricingBtn.addEventListener("click", () =>toggleActiveClass(pricingFilter, allFilters));
+    pricingBtn.addEventListener("click", () => toggleActiveClass(pricingFilter, allFilters));
   }
 });
 
@@ -50,9 +50,9 @@ function toggleActiveClass(el, collection) {
   // Save the current state before we start looping
   const isCurrentlyActive = el.classList.contains("active");
 
-  collection.forEach(item => {
-    const shouldBeActive = (item === el) && !isCurrentlyActive;
-    
+  collection.forEach((item) => {
+    const shouldBeActive = item === el && !isCurrentlyActive;
+
     item.classList.toggle("active", shouldBeActive);
   });
 }
@@ -61,11 +61,36 @@ function toggleActiveClass(el, collection) {
 document.addEventListener("DOMContentLoaded", () => {
   const slider = document.getElementById("priceSlider");
   const display = document.getElementById("priceValue");
-  const combined = document.getElementById('priceCombined');
+  const combined = document.getElementById("priceCombined");
 
-  // Update the text as the user slides
-  slider.addEventListener("input", () => {
-    display.textContent = slider.value;
-    combined.value = slider.value;
+  //   // Update the text as the user slides
+  //   slider.addEventListener("input", () => {
+  //     display.textContent = slider.value;
+  //     combined.value = slider.value;
+  //   });
+  // 1. Start with the input DISABLED so it doesn't send in the GET request
+  // Unless there is already a value in the URL (the user is currently filtering)
+  if (!window.location.search.includes("residenceCost")) {
+    combined.disabled = true;
+    display.innerText = "Any";
+  } else {
+    // If it IS in the URL, make sure the slider reflects it
+    const urlParams = new URLSearchParams(window.location.search);
+    display.innerText = urlParams.get("residenceCost").split("-")[1];
+  }
+
+  slider.addEventListener("input", function () {
+    const val = this.value;
+    // 2. Enable the input the moment the user touches the slider
+    if (val !== "0") {
+      combined.disabled = false;
+      display.innerText = val;
+      // Adjust this string format to match whatever your T4 back-end expects (e.g., "0-5000")
+      combined.value = val;
+    } else {
+      combined.disabled = true;
+      display.innerText = "0";
+      combined.value = "0";
+    }
   });
 });

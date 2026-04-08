@@ -115,14 +115,14 @@
                   return ($orderMap[$aVal] ?? 999) <=> ($orderMap[$bVal] ?? 999);
                 });
             ?>
-										      <div id="checkboxes-<?php echo strtolower($element) ?>">
-											      <fieldset class="form-group">
-													    <legend class="sr-only">Filter by Occupancy:</legend>
-												      <?php $i = 0; ?>
-													    <?php foreach ($search as $item): ?>
-													    <div class="checkbox-styled">
-													      <label for="<?php echo $element . '[' . $i . ']'; ?>" class="label-checkbox">
-														      <input
+						<div id="checkboxes-<?php echo strtolower($element) ?>">
+							<fieldset class="form-group">
+								<legend class="sr-only">Filter by Occupancy:</legend>
+									<?php $i = 0; ?>
+										<?php foreach ($search as $item): ?>
+											<div class="checkbox-styled">
+												<label for="<?php echo $element . '[' . $i . ']'; ?>" class="label-checkbox">
+												<input
 							                      type="checkbox"
 														        id="<?php echo $element . '[' . $i++ . ']'; ?>"
 														        value="<?php echo $item['value'] ?>"
@@ -283,7 +283,7 @@
                   type="hidden"
                   name="residenceCost"
                   id="priceCombined"
-                  value = "<?php echo isset($_GET['residenceCost']) ? explode('-', $_GET['residenceCost'])[1] : null; ?>"
+                  
                 >
 
               </fieldset>
