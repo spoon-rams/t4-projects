@@ -315,6 +315,8 @@
                   $tagsHTML .= '<div class="remove">X</div>';
                   $tagsHTML .= '</div>';
                   $tagsHTML .= '</li>';
+                  // FOR TESTING PURPOSES
+                  echo "When filters are arrays, value is: " . $value . " and key is: " . $key . "<br>";
                 }
               } elseif (isset($filters[$key])) {
                 $value = $filters[$key];
@@ -324,6 +326,8 @@
                 $tagsHTML .= '<div class="remove">X</div>';
                 $tagsHTML .= '</div>';
                 $tagsHTML .= '</li>';
+                // FOR TESTING PURPOSES
+                echo "When filters are not arrays, value is: " . $value . " and key is: " . $key . "<br>";
               }
             }
           
