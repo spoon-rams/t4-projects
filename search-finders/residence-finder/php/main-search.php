@@ -323,7 +323,7 @@
              // Check if this is the cost filter
              $isPrice = ($key === 'residenceCost');
              // Add a specific class if it's the price so JS can find it
-             $priceClass = $isPrice ? ' js-price-tag' : null;
+             $priceClass = $isPrice ? ' js-price-tag' : '';
 
              $tagsHTML .= '<li class="filter-' . $i++ . ' small primary ' . $priceClass . '"  data-t4-value="' . strtolower($value) . '" data-t4-filter="' . $key . '">';
              $tagsHTML .= '<div class="filter-wrapper">';
