@@ -22,9 +22,10 @@
         </div>
       </form>
     </div>
+
     <div class="program-search__form__controls col-12">
       <span class="program-search__form__controls__label">Filter by:</span>
-      
+
       <!-- FILTER BUTTONS -->
       <button type="button" class="btn btn-primary program-search__form__toggle" id="occupancy-button" >Occupancy</button>
       <button type="button" class="btn btn-primary program-search__form__toggle" id="class-year-button">Class Year</button>
@@ -32,7 +33,7 @@
       <button type="button" class="btn btn-primary program-search__form__toggle" id="campus-residence-button">Campus</button>
       <button type="button" class="btn btn-primary program-search__form__toggle" id="pricing-button">Price</button>
       <a class="btn btn-primary program-search__form__clear ajax-load-link" href="?keywords=" id="clear-filters">Clear Filters</a>
-    
+
     </div>
 
     <div id="searchoptions" role="search" data-t4-ajax-group="courseSearch" aria-label="Main Filters">
@@ -52,22 +53,22 @@
            $search = $genericFacet->displayFacet();
 
            if (! empty($search)):
-           // Custom sort logic
-           $orderMap = [
-            'single'    => 1,
-            'double'    => 2,
-            'triple'    => 3,
-            'quadruple' => 4,
-            'quintuple' => 5,
-           ];
+            // Custom sort logic
+            $orderMap = [
+             'single'    => 1,
+             'double'    => 2,
+             'triple'    => 3,
+             'quadruple' => 4,
+             'quintuple' => 5,
+            ];
 
-           usort($search, function ($a, $b) use ($orderMap) {
+            usort($search, function ($a, $b) use ($orderMap) {
              $aVal = strtolower($a['value']);
              $bVal = strtolower($b['value']);
              return ($orderMap[$aVal] ?? 999) <=> ($orderMap[$bVal] ?? 999);
-           });
+            });
           ?>
-													 
+
             <div id="checkboxes-<?php echo strtolower($element) ?>">
 					    <fieldset class="form-group">
 					      <legend class="sr-only">Filter by Occupancy:</legend>
@@ -106,21 +107,21 @@
            $genericFacet->setMember('multipleValueState', true);
            $genericFacet->setMember('multipleValueSeparator', ', ');
            $search = $genericFacet->displayFacet();
-           
-           if (! empty($search)):
-           // Custom sort logic
-           $orderMap = [
-            'first-year'  => 1,
-            'second-year' => 2,
-            'junior'      => 3,
-            'senior'      => 4,
-           ];
 
-           usort($search, function ($a, $b) use ($orderMap) {
-            $aVal = strtolower($a['value']);
-            $bVal = strtolower($b['value']);
-            return ($orderMap[$aVal] ?? 999) <=> ($orderMap[$bVal] ?? 999);
-           });
+           if (! empty($search)):
+            // Custom sort logic
+            $orderMap = [
+             'first-year'  => 1,
+             'second-year' => 2,
+             'junior'      => 3,
+             'senior'      => 4,
+            ];
+
+            usort($search, function ($a, $b) use ($orderMap) {
+             $aVal = strtolower($a['value']);
+             $bVal = strtolower($b['value']);
+             return ($orderMap[$aVal] ?? 999) <=> ($orderMap[$bVal] ?? 999);
+            });
           ?>
 
 						<div id="checkboxes-<?php echo strtolower($element) ?>">
@@ -148,7 +149,7 @@
             </div>
           <?php endif; ?>
         </div>
-                  
+
         <!-- FILTER BY HOUSING TYPE -->
         <div class="program-search__form__filters col-sm-12" id="housing-type-filter" data-group="house-type">
           <span class="program-search__form__filters__heading">Filter by Housing Type</span>
@@ -188,7 +189,7 @@
             </div>
           <?php endif; ?>
         </div>
-        
+
         <!-- FILTER BY CAMPUS -->
         <div class="program-search__form__filters col-sm-12" id="campus-residence-filter" data-group="campus">
           <span class="program-search__form__filters__heading">Filter by Campus</span>
@@ -261,7 +262,7 @@
           </div>
         </div>
 
-  
+
         <!-- HIDDEN KEYWORD SEARCH -->
         <div id="hidden-form-filters" data-t4-ajax-group="courseSearch">
           <input type="hidden" name="keywords" value="<?php echo ! empty($query['keywords']) ? $query['keywords'] : '' ?>" />
@@ -269,100 +270,124 @@
 
       </form>
     </div>
+  </div>
 
-    <a id="starthere" href="#starthere" aria-label="Start Here"></a>
+  <a id="starthere" href="#starthere" aria-label="Start Here"></a>
 
-    <!-- FILTERS APPLIED TAG RENDER - START -->
-    <div id="searchoptions-filters" role="search" data-t4-ajax-group="directorySearch">
-      <div id="event-filters">
-        <?php if ($filters !== null): ?>
-          <?php
-           $i        = 0;
-           $tagsHTML = '';
-           foreach ($categoryFilters as $key) {
-            if (isset($filters[$key]) && is_array($filters[$key])) {
-             foreach ($filters[$key] as $value) {
-              $tagsHTML .= '<li class="filter-' . $i++ . ' small primary"  data-t4-value="' . strtolower($value) . '" data-t4-filter="' . $key . '">';
-              $tagsHTML .= '<div class="filter-wrapper">';
-              $tagsHTML .= '<div class="filter-text">' . $value . '</div>';
-              $tagsHTML .= '<div class="remove">X</div>';
-              $tagsHTML .= '</div>';
-              $tagsHTML .= '</li>';
-             }
-            } elseif (isset($filters[$key])) {
-             $value = $filters[$key];
-
-             // Check if this is the cost filter
-             $isPrice = ($key === 'residenceCost');
-             // Add a specific class if it's the price so JS can find it
-             $priceClass = $isPrice ? ' js-price-tag' : '';
-
-             $tagsHTML .= '<li class="filter-' . $i++ . ' small primary ' . $priceClass . '"  data-t4-value="' . strtolower($value) . '" data-t4-filter="' . $key . '">';
-             $tagsHTML .= '<div class="filter-wrapper">';
-             $tagsHTML .= '<div class="filter-text">' . $value . '</div>';
-             $tagsHTML .= '<div class="remove">X</div>';
-             $tagsHTML .= '</div>';
-             $tagsHTML .= '</li>';
-            }
-           }
-
-           if (isset($filters['keywords'])) {
-            $tagsHTML .= '<li class="filter-' . $i++ . ' small primary"  data-t4-filter="' . strtolower($value) . '">';
+  <!-- FILTERS APPLIED TAG RENDER - START -->
+  <div id="searchoptions-filters" role="search" data-t4-ajax-group="directorySearch">
+    <div id="event-filters">
+      <?php if ($filters !== null): ?>
+        <?php
+         $i        = 0;
+         $tagsHTML = '';
+         foreach ($categoryFilters as $key) {
+          if (isset($filters[$key]) && is_array($filters[$key])) {
+           foreach ($filters[$key] as $value) {
+            $tagsHTML .= '<li class="filter-' . $i++ . ' small primary"  data-t4-value="' . strtolower($value) . '" data-t4-filter="' . $key . '">';
             $tagsHTML .= '<div class="filter-wrapper">';
-            $tagsHTML .= '<div class="filter-text">' . $filters['keywords'] . '</div>';
+            $tagsHTML .= '<div class="filter-text">' . $value . '</div>';
+            $tagsHTML .= '<div class="remove">X</div>';
             $tagsHTML .= '</div>';
             $tagsHTML .= '</li>';
            }
+          } elseif (isset($filters[$key])) {
+           $value = $filters[$key];
 
-           echo $tagsHTML != '' ? '<div class="program-search__form__controls__label">Filters Applied:</div><ul class="no-bullet">' . $tagsHTML . '</ul>' : '';
-          ?>
-        <?php endif; ?>
-      </div>
+           // Check if this is the cost filter
+           $isPrice = ($key === 'residenceCost');
+           // Add a specific class if it's the price so JS can find it
+           $priceClass = $isPrice ? ' js-price-tag' : '';
+
+           $tagsHTML .= '<li class="filter-' . $i++ . ' small primary ' . $priceClass . '"  data-t4-value="' . strtolower($value) . '" data-t4-filter="' . $key . '">';
+           $tagsHTML .= '<div class="filter-wrapper">';
+           $tagsHTML .= '<div class="filter-text">' . $value . '</div>';
+           $tagsHTML .= '<div class="remove">X</div>';
+           $tagsHTML .= '</div>';
+           $tagsHTML .= '</li>';
+          }
+         }
+
+         if (isset($filters['keywords'])) {
+          $tagsHTML .= '<li class="filter-' . $i++ . ' small primary"  data-t4-filter="' . strtolower($value) . '">';
+          $tagsHTML .= '<div class="filter-wrapper">';
+          $tagsHTML .= '<div class="filter-text">' . $filters['keywords'] . '</div>';
+          $tagsHTML .= '</div>';
+          $tagsHTML .= '</li>';
+         }
+
+         echo $tagsHTML != '' ? '<div class="program-search__form__controls__label">Filters Applied:</div><ul class="no-bullet">' . $tagsHTML . '</ul>' : '';
+        ?>
+      <?php endif; ?>
     </div>
+  </div>
 
-    <!-- FILTERS APPLIED TAG RENDER - END -->
+  <!-- FILTERS APPLIED TAG RENDER - END -->
 
-    <div class="program-search__results row" id="search-results" role="main" data-t4-ajax-group="courseSearch">
-      <?php if (! empty($results)): ?>
-        <?php foreach ($results as $item): ?>
+
+  <div class="program-search__results row" id="search-results" role="main" data-t4-ajax-group="courseSearch">
+    <?php if (! empty($results)): ?>
+      <!-- SEARCH RESULT CARDS -->
+      <?php foreach ($results as $item): ?>
+
         <div class="program-search__results__item col-xl-3 col-lg-4 col-md-6 col-sm-12 popup-trigger" data-popup-trigger="id-<?php echo $item['contentID']; ?>" tabindex="0">
           <div class="program-search__results__info">
             <div class="overlay"></div>
+
+            <!-- CAMPUS ICONS -->
             <?php if (isset($item['residenceCampus']) && strtolower($item['residenceCampus']) === 'rose hill'): ?>
               <img class="icon" src='<t4 type="media" id="166286" formatter="path/*" />' alt=""/>
             <?php elseif (isset($item['residenceCampus']) && strtolower($item['residenceCampus']) === 'lincoln center'): ?>
               <img class="icon" src='<t4 type="media" id="166287" formatter="path/*" />' alt=""/>
             <?php endif; ?>
+
+            <!-- RESIDENCE IMAGE -->
             <img srcset="<?php echo $item['residenceImage']; ?> 0.33x,<?php echo $item['residenceImage']; ?> 0.5x,<?php echo $item['residenceImage']; ?> 1.5x,<?php echo $item['residenceImage']; ?> 2x" src="<?php echo $item['residenceImage']; ?>" alt="Image for<?php echo $item['residenceName']; ?>">
+
+            <!-- RESIDENCE NAME -->
             <span class="program-search__results__item__title"><?php echo $item['residenceName']; ?></span>
           </div>
         </div>
 
-
+        <!-- POPUP MODAL -->
         <div class="popup-modal" data-popup-modal="id-<?php echo $item['contentID']; ?>" role="dialog" aria-labelledby="title-id-<?php echo $item['contentID']; ?>">
           <div class="modal-overflow">
-          <p id="title-id-<?php echo $item['contentID']; ?>" class="popup-modal__title"><?php echo $item['residenceName']; ?></p>
-          <p><?php echo $item['residenceDesc']; ?></p>
-            <hr class="modal-popup-separator">
-          <p class="popup-options"><strong>Campus: </strong><span class="degree-options"><?php echo $item['residenceCampus']; ?></span></p>
-            <hr class="modal-popup-separator">
-           <p><strong>Class Year(s): </strong><?php echo $item['residenceClass']; ?></p>
-           <p><strong> Housing Type: </strong><?php echo $item['residenceType'] ?></p>
+            <!-- POPUP TITLE -->
+            <p id="title-id-<?php echo $item['contentID']; ?>" class="popup-modal__title"><?php echo $item['residenceName']; ?></p>
 
-          <a class="popup-modal__more btn btn-primary" href="<?php echo $item['residenceURL']; ?>" aria-label="Find out more about<?php echo $item['residenceName']; ?>">Read More</a>
-          <button class="popup-modal__close" aria-label="Close site search">
-            <svg class="svg-md-24px" focusable="false" aria-hidden="true">
-              <use xlink:href="<t4 type="media" id="10757" formatter="path/*" />#ic_close_24px"></use>
-            </svg>
-          </button>
+            <!-- POPUP DESCRIPTION -->
+            <p><?php echo $item['residenceDesc']; ?></p>
+            <hr class="modal-popup-separator">
+
+            <!-- POPUP CAMPUS -->
+            <p class="popup-options"><strong>Campus: </strong><span class="degree-options"><?php echo $item['residenceCampus']; ?></span></p>
+            <hr class="modal-popup-separator">
+
+            <!-- POPUP CLASS YEARS -->
+            <p><strong>Class Year(s): </strong><?php echo $item['residenceClass']; ?></p>
+
+            <!-- POPUP HOUSING TYPE -->
+            <p><strong> Housing Type: </strong><?php echo $item['residenceType'] ?></p>
+
+            <!-- POPUP LINK -->
+            <a class="popup-modal__more btn btn-primary" href="<?php echo $item['residenceURL']; ?>" aria-label="Find out more about<?php echo $item['residenceName']; ?>">Read More</a>
+
+            <!-- POPUP CLOSE BUTTON -->
+            <button class="popup-modal__close" aria-label="Close site search">
+              <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                <use xlink:href="<t4 type="media" id="10757" formatter="path/*" />#ic_close_24px"></use>
+              </svg>
+            </button>
+          </div>
         </div>
-      </div>
-		<?php endforeach; ?>
-        <div class="program-search__pagination-wrapper">
-          <?php if (! empty($paginationArray)): ?>
-            <ul class="program-search__pagination ajax-load-link" data-t4-ajax-link="normal" data-t4-scroll="true">
-                <?php foreach ($paginationArray as $page): ?>
-                <?php if ($page['text'] == "&lt;&lt;"): ?>
+		  <?php endforeach; ?>
+
+      <!-- PAGE PAGINATION -->
+      <div class="program-search__pagination-wrapper">
+        <?php if (! empty($paginationArray)): ?>
+          <ul class="program-search__pagination ajax-load-link" data-t4-ajax-link="normal" data-t4-scroll="true">
+            <?php foreach ($paginationArray as $page): ?>
+              <?php if ($page['text'] == "&lt;&lt;"): ?>
                 <li><a class="page" href="<?php echo $page['href']; ?>"><?php echo $page['text']; ?></a></li>
                 <?php elseif ($page['text'] == "&gt;&gt;"): ?>
                 <li><a class="page" href="<?php echo $page['href']; ?>"><?php echo $page['text']; ?></a></li>
@@ -374,16 +399,16 @@
                 <li><a class="page active" href="<?php echo $page['href']; ?>"><?php echo $page['text']; ?></a></li>
                 <?php else: ?>
                 <li><a class="page" href="<?php echo $page['href']; ?>"><?php echo $page['text']; ?></a></li>
-                <?php endif; ?>
-                <?php endforeach; ?>
-            </ul>
-            <?php endif; ?>
-         </div>
-      <?php else: ?>
-    <p>No results found. You may have filters applied, <a href="?keywords=" id="clear-filters" style="text-decoration:underline;">click here</a> to clear them.</p>
+              <?php endif; ?>
+            <?php endforeach; ?>
+          </ul>
+        <?php endif; ?>
+      </div>
+    <?php else: ?>
+      <p>No results found. You may have filters applied, <a href="?keywords=" id="clear-filters" style="text-decoration:underline;">click here</a> to clear them.</p>
     <?php endif; ?>
-    </div>
-  </section>
+  </div>
+</section>
 
 
 
