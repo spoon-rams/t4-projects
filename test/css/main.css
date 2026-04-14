@@ -1,0 +1,76 @@
+.aging-well-img,
+.comprehensive-care-img,
+.better-health-img,
+.aging-well-text,
+.comprehensive-care-text,
+.better-health-text {
+  width: 100%;
+}
+
+.comprehensive-care-img img {
+  max-width: 70% !important;
+}
+
+.better-health-img img {
+  max-width: 59% !important;
+}
+
+/* CTA ICONS - COMMENCEMENT FIX */
+.cta-box__block__title {
+  padding: 0 10px;
+}
+
+.cta-box__block__title::before {
+  position: relative;
+  left: 39.5% !important;
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 991px) {
+  .cta-box__block.bg-secondary-grey-10 {
+    display: flex;
+    align-items: center;
+    margin: 0 !important;
+    width: unset !important;
+    padding-left: 15px;
+  }
+
+  .cta-box__img img {
+    padding: 10px !important;
+  }
+
+  .cta-box__block__title {
+    text-align: left;
+  }
+
+  .cta-box__block__title::before {
+    left: 0 !important;
+  }
+
+  .cta-box__block__title span {
+    font-size: 1.85rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .cta-box__block.bg-secondary-grey-10 {
+    padding: unset !important;
+  }
+
+  .cta-box__col--5 .cta-box__img {
+    height: unset !important;
+  }
+
+  .cta-box__img img {
+    padding: unset !important;
+  }
+
+  .cta-box__block__title {
+    margin-top: -80px;
+    padding: unset;
+  }
+
+  .cta-box__block__title span {
+    font-size: 1.25rem !important;
+  }
+}
