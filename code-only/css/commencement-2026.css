@@ -136,6 +136,22 @@
 }
 
 @media only screen and (max-width: 768px) {
+  /* HEADER ADJUSTMENTS FOR COMMENCEMENT IMAGE */
+  .section-header-nav {
+    padding-bottom: 1% !important;
+  }
+
+  .title-container {
+    max-width: unset !important;
+    margin-left: 13% !important;
+  }
+
+  /* GENERAL CONTENT TYPE HEADER ADJUSTMENT */
+  .general-content.side-divider {
+    padding: 0 1rem !important;
+  }
+
+  /* CTA BOX COLUMN STYLES */
   .cta-box__col {
     display: flex;
     border-bottom: 1px solid #e7ebe7 !important;
@@ -190,5 +206,11 @@
   .general-content a.btn-secondary {
     color: #dd3224 !important;
     background-color: #fff;
+  }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 480px) {
+  .banner-container {
+    margin-bottom: -3.1px;
   }
 }
