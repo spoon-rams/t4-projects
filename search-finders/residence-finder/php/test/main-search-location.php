@@ -362,22 +362,30 @@
             <!-- POPUP CAMPUS -->
             <p class="popup-options"><strong>Campus: </strong><span class="degree-options"><?php echo $item['residenceCampus']; ?></span></p>
             <hr class="modal-popup-separator">
+            
+            <div class="modal-content-info">
+               <div class="content-info">
+                    <!-- POPUP CLASS YEARS -->
+                    <p><strong>Class Year(s): </strong><?php echo $item['residenceClass']; ?></p>
 
-            <!-- POPUP CLASS YEARS -->
-            <p><strong>Class Year(s): </strong><?php echo $item['residenceClass']; ?></p>
+                    <!-- POPUP HOUSING TYPE -->
+                    <p><strong> Housing Type: </strong><?php echo $item['residenceType'] ?></p>
 
-            <!-- POPUP HOUSING TYPE -->
-            <p><strong> Housing Type: </strong><?php echo $item['residenceType'] ?></p>
+                    <!-- POPUP LINK -->
+                    <a class="popup-modal__more btn btn-primary" href="<?php echo $item['residenceURL']; ?>" aria-label="Find out more about<?php echo $item['residenceName']; ?>">Read More</a>
 
-            <!-- POPUP LINK -->
-            <a class="popup-modal__more btn btn-primary" href="<?php echo $item['residenceURL']; ?>" aria-label="Find out more about<?php echo $item['residenceName']; ?>">Read More</a>
-
-            <!-- POPUP CLOSE BUTTON -->
-            <button class="popup-modal__close" aria-label="Close site search">
-              <svg class="svg-md-24px" focusable="false" aria-hidden="true">
-                <use xlink:href="<t4 type="media" id="10757" formatter="path/*" />#ic_close_24px"></use>
-              </svg>
-            </button>
+                    <!-- POPUP CLOSE BUTTON -->
+                    <button class="popup-modal__close" aria-label="Close site search">
+                        <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                            <use xlink:href="<t4 type="media" id="10757" formatter="path/*" />#ic_close_24px"></use>
+                        </svg>
+                    </button>
+               </div>
+            </div>
+            <div class="content-location">
+                <!-- THIS IS JUST A TEST -->
+                <img srcset="<?php echo $item['residenceImage']; ?> 0.33x,<?php echo $item['residenceImage']; ?> 0.5x,<?php echo $item['residenceImage']; ?> 1.5x,<?php echo $item['residenceImage']; ?> 2x" src="<?php echo $item['residenceImage']; ?>" alt="Image for<?php echo $item['residenceName']; ?>">
+            </div>
           </div>
         </div>
 		  <?php endforeach; ?>
