@@ -380,12 +380,16 @@
                             <use xlink:href="<t4 type="media" id="10757" formatter="path/*" />#ic_close_24px"></use>
                         </svg>
                     </button>
-               </div>
-            </div>
-            <div class="content-location">
+               </div> 
                 <!-- THIS IS JUST A TEST -->
-                <img srcset="<?php echo $item['residenceImage']; ?> 0.33x,<?php echo $item['residenceImage']; ?> 0.5x,<?php echo $item['residenceImage']; ?> 1.5x,<?php echo $item['residenceImage']; ?> 2x" src="<?php echo $item['residenceImage']; ?>" alt="Image for<?php echo $item['residenceName']; ?>">
+               <?php if (! empty($item['residenceLocation'])): ?>
+                  <div class="content-location">
+                     <img srcset="<?php echo $item['residenceLocation']; ?> 0.33x,<?php echo $item['residenceLocation']; ?> 0.5x,<?php echo $item['residenceLocation']; ?> 1.5x,<?php echo $item['residenceLocation']; ?> 2x" src="<?php echo $item['residenceLocation']; ?>" alt="Location Map for <?php echo $item['residenceName']; ?>">
+                  </div>
+               <?php endif; ?>
+               
             </div>
+           
           </div>
         </div>
 		  <?php endforeach; ?>
