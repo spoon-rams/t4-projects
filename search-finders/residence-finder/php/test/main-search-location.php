@@ -381,14 +381,18 @@
                         </svg>
                     </button>
                </div> 
-                <!-- THIS IS JUST A TEST -->
+                <!-- LOCATION MAP -->
                <?php if (! empty($item['residenceLocation'])): ?>
                   <div class="content-location">
-                     <img srcset="<?php echo $item['residenceLocation']; ?> 0.33x,<?php echo $item['residenceLocation']; ?> 0.5x,<?php echo $item['residenceLocation']; ?> 1.5x,<?php echo $item['residenceLocation']; ?> 2x" src="<?php echo $item['residenceLocation']; ?>" alt="Location Map for <?php echo $item['residenceName']; ?>">
+                    <img 
+                      srcset="<?php echo $item['residenceLocation']; ?> 0.33x,<?php echo $item['residenceLocation']; ?> 0.5x,<?php echo $item['residenceLocation']; ?> 1.5x,<?php echo $item['residenceLocation']; ?> 2x" 
+                      src="<?php echo $item['residenceLocation']; ?>" 
+                      alt="Location Map for <?php echo $item['residenceName']; ?>"
+                    />
                   </div>
                <?php endif; ?>
-               
-            </div>
+
+            </div> 
            
           </div>
         </div>
