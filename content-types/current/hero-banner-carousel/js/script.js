@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const contentDesc = document.querySelector(".carousel-header .content .desc");
   const contentButtonText = document.querySelector(".carousel-header .content .button-text");
   const contentSecondButtonText = document.querySelector(".carousel-header .content .second-button-text");
+  const contentThirdButtonText = document.querySelector(".carousel-header .content .third-button-text");
 
   let startX = 0;
   let clickPending = false;
@@ -52,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // INITIAL Default Content and Image
-  insertData(contentTitle, contentButtonText, contentSecondButtonText, contentDesc, slides, currentSlide);
+  insertData(contentTitle, contentButtonText, contentSecondButtonText, contentThirdButtonText, contentDesc, slides, currentSlide);
   // DESKTOP CLICK ACTION - NEED TO turn this into a function
   nextButton.addEventListener("click", (e) => {
     if (clickPending) {
@@ -145,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Swipe left, scroll to the next box
       if (currentSlide < slides.length - 1) {
         animation(contentBoxWrapper, "animate__fadeInLeft", 800);
-        insertData(contentTitle, contentButtonText, contentSecondButtonText, contentDesc, slides, currentSlide, "next");
+        insertData(contentTitle, contentButtonText, contentSecondButtonText, contentThirdButtonText, contentDesc, slides, currentSlide, "next");
         currentSlide++;
         setIndicator(currentSlide);
       }
@@ -153,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Swipe right, scroll to the previous box
       if (currentSlide > 0) {
         animation(contentBoxWrapper, "animate__fadeInRight", 800);
-        insertData(contentTitle, contentButtonText, contentSecondButtonText, contentDesc, slides, currentSlide, "previous");
+        insertData(contentTitle, contentButtonText, contentSecondButtonText, contentThirdButtonText, contentDesc, slides, currentSlide, "previous");
         currentSlide--;
         setIndicator(currentSlide);
       }
@@ -199,13 +200,13 @@ document.addEventListener("DOMContentLoaded", () => {
     switch (action) {
       case "next":
         animation(contentBoxWrapper, "animate__fadeInLeft", 800);
-        insertData(contentTitle, contentButtonText, contentSecondButtonText, contentDesc, slides, currentSlide, "next");
+        insertData(contentTitle, contentButtonText, contentSecondButtonText, contentThirdButtonText, contentDesc, slides, currentSlide, "next");
         container.scrollLeft += slide.clientWidth;
         currentSlide += 1;
         return setIndicator(currentSlide);
       case "previous":
         animation(contentBoxWrapper, "animate__fadeInRight", 800);
-        insertData(contentTitle, contentButtonText, contentSecondButtonText, contentDesc, slides, currentSlide, "previous");
+        insertData(contentTitle, contentButtonText, contentSecondButtonText, contentThirdButtonText, contentDesc, slides, currentSlide, "previous");
         container.scrollLeft -= slide.clientWidth;
         currentSlide -= 1;
         return setIndicator(currentSlide);
@@ -213,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
         container.scrollLeft = index * slide.clientWidth;
         currentSlide = index;
         animation(contentBoxWrapper, "animate__fadeInUp", 800);
-        insertData(contentTitle, contentButtonText, contentSecondButtonText, contentDesc, slides, currentSlide);
+        insertData(contentTitle, contentButtonText, contentSecondButtonText, contentThirdButtonText, contentDesc, slides, currentSlide);
         return setIndicator(index);
       case "resize":
         container.scrollLeft = currentSlide * slide.clientWidth;
@@ -232,28 +233,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }, interval);
   }
 
-  function insertData(title, btnText, btnTxtTwo, desc, slides, currentSlide, action) {
+  function insertData(title, btnText, btnTxtTwo, btnTxtThree, desc, slides, currentSlide, action) {
     switch (action) {
       case "next":
         title.innerText = slides[currentSlide + 1].dataset.title;
-        displayButtons(btnText, btnTxtTwo, slides, currentSlide + 1);
+        displayButtons(btnText, btnTxtTwo, btnTxtThree, slides, currentSlide + 1);
         desc.innerText = slides[currentSlide + 1].dataset.desc;
         break;
       case "previous":
         title.innerText = slides[currentSlide - 1].dataset.title;
-        displayButtons(btnText, btnTxtTwo, slides, currentSlide - 1);
+        displayButtons(btnText, btnTxtTwo, btnTxtThree, slides, currentSlide - 1);
         desc.innerText = slides[currentSlide - 1].dataset.desc;
         break;
       default:
         title.innerText = slides[currentSlide].dataset.title;
-        displayButtons(btnText, btnTxtTwo, slides, currentSlide);
+        displayButtons(btnText, btnTxtTwo, btnTxtThree, slides, currentSlide);
         desc.innerText = slides[currentSlide].dataset.desc;
     }
   }
 
-  function displayButtons(btnText, btnTxtTwo, slide, currentSlide) {
+  function displayButtons(btnText, btnTxtTwo, btnTxtThree, slide, currentSlide) {
     btnText.innerText = slide[currentSlide].dataset.buttonText;
     btnTxtTwo.innerText = slide[currentSlide].dataset.secondButtonText;
+    btnTxtThree.innerText = slide[currentSlide].dataset.thirdButtonText;
+    console.log(slide[currentSlide].dataset);
     if (slide[currentSlide].dataset.buttonText.length > 0) {
       btnText.style.display = "inline-block";
       slide[currentSlide].dataset.buttonLink && btnText.setAttribute("href", slide[currentSlide].dataset.buttonLink);
@@ -266,6 +269,13 @@ document.addEventListener("DOMContentLoaded", () => {
       slide[currentSlide].dataset.secondButtonLink && btnTxtTwo.setAttribute("href", slide[currentSlide].dataset.secondButtonLink);
     } else {
       btnTxtTwo.style.display = "none";
+    }
+
+    if (slide[currentSlide].dataset.thirdButtonText.length > 0) {
+      btnTxtThree.style.display = "inline-block";
+      slide[currentSlide].dataset.thirdButtonLink && btnTxtThree.setAttribute("href", slide[currentSlide].dataset.thirdButtonLink);
+    } else {
+      btnTxtThree.style.display = "none";
     }
   }
 
