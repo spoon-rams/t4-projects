@@ -2,51 +2,14 @@ const orb = document.querySelector(".orb");
 const heroScroll = document.querySelector("#heroScroll");
 const heroBg = document.querySelector("#heroBg");
 const heroCopy = document.querySelector("#heroCopy");
-const panel = document.querySelector("#heroPanel");
-const seal = document.querySelector("#sealShape");
-const cards = document.querySelectorAll(".stat-card");
+
 const nextSections = document.querySelectorAll(".next-section");
 
 let mouseX = 0;
 let mouseY = 0;
 let ticking = false;
 
-cards.forEach((card) => {
-  card.style.transform = card.dataset.base;
-});
 
-window.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  orb.style.left = mouseX + "px";
-  orb.style.top = mouseY + "px";
-  updateMouseParallax();
-});
-
-function updateMouseParallax() {
-  const rect = panel.getBoundingClientRect();
-  if (!rect.width || !rect.height) return;
-
-  const x = mouseX - rect.left;
-  const y = mouseY - rect.top;
-  const moveX = (x / rect.width - 0.5) * 12;
-  const moveY = (y / rect.height - 0.5) * 12;
-
-  cards.forEach((card, index) => {
-    const depth = index + 1;
-
-    card.style.transform = `
-          ${card.dataset.base}
-          translate3d(${moveX * depth}px, ${moveY * depth}px, 0)
-        `;
-  });
-}
-
-panel.addEventListener("mouseleave", () => {
-  cards.forEach((card) => {
-    card.style.transform = card.dataset.base;
-  });
-});
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
@@ -70,21 +33,8 @@ function updateScrollParallax() {
       `;
 
   heroCopy.style.opacity = clamp(1 - progress * 1.45, 0, 1);
-
   heroCopy.style.filter = `blur(${progress * 10}px)`;
 
-  panel.style.transform = `
-        translateY(${progress * -190}px)
-        scale(${1 + progress * 0.1})
-      `;
-
-  panel.style.opacity = clamp(1 - progress * 1.6, 0, 1);
-
-  seal.style.transform = `
-        translateY(${progress * -240}px)
-        rotate(${progress * 120}deg)
-        scale(${1 + progress * 0.16})
-      `;
 
   nextSections.forEach((section) => {
     section.style.transform = `
