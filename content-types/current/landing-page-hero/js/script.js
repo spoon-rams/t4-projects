@@ -5,7 +5,7 @@ const heroCopy = document.querySelector("#heroCopy");
 const panel = document.querySelector("#heroPanel");
 const seal = document.querySelector("#sealShape");
 const cards = document.querySelectorAll(".stat-card");
-const nextSection = document.querySelector("#nextSection");
+const nextSections = document.querySelectorAll(".next-section");
 
 let mouseX = 0;
 let mouseY = 0;
@@ -86,15 +86,17 @@ function updateScrollParallax() {
         scale(${1 + progress * 0.16})
       `;
 
-  nextSection.style.transform = `
-        translateY(${(1 - progress) * 100}vh)
-      `;
+  nextSections.forEach((section) => {
+    section.style.transform = `
+          translateY(${(1 - progress) * 100}vh)
+        `;
 
-  if (progress > 0.45) {
-    nextSection.classList.add("in-view");
-  } else {
-    nextSection.classList.remove("in-view");
-  }
+    if (progress > 0.45) {
+      section.classList.add("in-view");
+    } else {
+      section.classList.remove("in-view");
+    }
+  });
 
   ticking = false;
 }
