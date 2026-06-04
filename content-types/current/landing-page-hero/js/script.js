@@ -44,7 +44,7 @@ function updateScrollParallax() {
       `;
 
   heroCopy.style.opacity = clamp(1 - progress * 1.45, 0, 1);
-  heroCopy.style.filter = `blur(${progress * 10}px)`;
+  heroCopy.style.filter = `blur(${progress * 70}px)`;
 
   updateScrollCue();
 
