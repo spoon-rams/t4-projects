@@ -1,14 +1,11 @@
 const orb = document.querySelector(".orb");
-const heroScroll = document.querySelector("#heroScroll");
-const heroBg = document.querySelector("#heroBg");
-const heroCopy = document.querySelector("#heroCopy");
-
-const nextSections = document.querySelectorAll(".next-section");
+const heroScroll = document.querySelector(".hero-scroll");
+const heroBg = document.querySelector(".hero-bg");
+const heroCopy = document.querySelector(".hero-copy");
 
 let mouseX = 0;
 let mouseY = 0;
 let ticking = false;
-
 
 
 function clamp(value, min, max) {
@@ -18,7 +15,7 @@ function clamp(value, min, max) {
 function updateScrollParallax() {
   const scrollY = window.scrollY;
   const heroScrollTop = heroScroll.offsetTop;
-  const heroScrollDistance = heroScroll.offsetHeight - window.innerHeight;
+  const heroScrollDistance = Math.max(heroScroll.offsetHeight - window.innerHeight, 1);
 
   const progress = clamp((scrollY - heroScrollTop) / heroScrollDistance,0,1,);
 
@@ -34,19 +31,6 @@ function updateScrollParallax() {
 
   heroCopy.style.opacity = clamp(1 - progress * 1.45, 0, 1);
   heroCopy.style.filter = `blur(${progress * 10}px)`;
-
-
-  nextSections.forEach((section) => {
-    section.style.transform = `
-          translateY(${(1 - progress) * 100}vh)
-        `;
-
-    if (progress > 0.45) {
-      section.classList.add("in-view");
-    } else {
-      section.classList.remove("in-view");
-    }
-  });
 
   ticking = false;
 }
