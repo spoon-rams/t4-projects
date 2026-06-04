@@ -2,6 +2,7 @@ const transitionScene = document.querySelector(".hero-scroll");
 const transitionViewport = document.querySelector(".transition-viewport");
 const transitionPanels = document.querySelectorAll("[data-transition-panel]");
 const transitionControls = document.querySelectorAll("[data-transition-mode]");
+const scrollCue = document.querySelector("[data-scroll-cue]");
 
 let transitionTicking = false;
 
@@ -44,6 +45,7 @@ function updateTransitionPanels() {
   const mode = getTransitionMode();
 
   updateTransitionViewport();
+  updateScrollCue(progress, mode);
 
   transitionPanels.forEach((panel, index) => {
     const panelProgress = Math.min(Math.max(progress * transitionPanels.length - index, 0), 1);
@@ -75,6 +77,28 @@ function updateTransitionViewport() {
   transitionScene.classList.toggle("is-transition-complete", isComplete);
 }
 
+function updateScrollCue(progress, mode) {
+  if (!scrollCue) return;
+
+  const shouldHide = mode !== "vertical" || progress >= 0.995 || transitionPanels.length === 0;
+  scrollCue.classList.toggle("is-hidden", shouldHide);
+}
+
+function scrollToNextVerticalStop() {
+  if (!transitionScene || getTransitionMode() !== "vertical" || transitionPanels.length === 0) return;
+
+  const progress = getTransitionProgress();
+  const sceneTop = transitionScene.offsetTop;
+  const sceneDistance = Math.max(transitionScene.offsetHeight - window.innerHeight, 1);
+  const nextStep = Math.min(Math.floor(progress * transitionPanels.length) + 1, transitionPanels.length);
+  const targetProgress = nextStep / transitionPanels.length;
+
+  window.scrollTo({
+    top: sceneTop + sceneDistance * targetProgress,
+    behavior: "smooth",
+  });
+}
+
 function requestTransitionUpdate() {
   if (!transitionTicking) {
     window.requestAnimationFrame(updateTransitionPanels);
@@ -87,6 +111,8 @@ transitionControls.forEach((control) => {
     setTransitionMode(control.dataset.transitionMode);
   });
 });
+
+scrollCue?.addEventListener("click", scrollToNextVerticalStop);
 
 if (transitionPanels.length) {
   setTransitionSceneHeight();

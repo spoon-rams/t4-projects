@@ -76,6 +76,45 @@ body {
   bottom: 0;
 }
 
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  z-index: 30;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 999px;
+  background: rgba(43, 15, 20, 0.44);
+  color: #fff;
+  cursor: pointer;
+  transform: translateX(-50%);
+  animation: scrollCueBounce 1.45s ease-in-out infinite;
+  backdrop-filter: blur(12px);
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.scroll-cue__icon {
+  position: absolute;
+  top: 17px;
+  left: 18px;
+  width: 14px;
+  height: 14px;
+  border-right: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.hero-scroll:not(.is-vertical-transition) .scroll-cue,
+.hero-scroll.is-transition-complete .scroll-cue,
+.scroll-cue.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .landing-hero {
   position: absolute;
   inset: 0;
@@ -400,6 +439,17 @@ body > .footer {
 
   to {
     rotate: 360deg;
+  }
+}
+
+@keyframes scrollCueBounce {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 10px;
   }
 }
 
