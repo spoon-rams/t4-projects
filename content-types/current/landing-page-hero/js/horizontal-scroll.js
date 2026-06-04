@@ -80,8 +80,12 @@ function updateTransitionViewport() {
 function updateScrollCue(progress, mode) {
   if (!scrollCue) return;
 
-  const shouldHide = mode !== "vertical" || progress >= 0.995 || transitionPanels.length === 0;
+  const shouldHide = mode !== "vertical" || transitionPanels.length === 0;
+  const shouldReverse = mode === "vertical" && progress >= 0.995;
+
   scrollCue.classList.toggle("is-hidden", shouldHide);
+  scrollCue.classList.toggle("is-reverse", shouldReverse);
+  scrollCue.setAttribute("aria-label", shouldReverse ? "Scroll back to hero" : "Scroll to next section");
 }
 
 function scrollToNextVerticalStop() {
@@ -90,6 +94,15 @@ function scrollToNextVerticalStop() {
   const progress = getTransitionProgress();
   const sceneTop = transitionScene.offsetTop;
   const sceneDistance = Math.max(transitionScene.offsetHeight - window.innerHeight, 1);
+
+  if (progress >= 0.995) {
+    window.scrollTo({
+      top: sceneTop,
+      behavior: "smooth",
+    });
+    return;
+  }
+
   const nextStep = Math.min(Math.floor(progress * transitionPanels.length) + 1, transitionPanels.length);
   const targetProgress = nextStep / transitionPanels.length;
 
