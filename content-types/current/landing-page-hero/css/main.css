@@ -9,7 +9,6 @@ html {
 }
 
 body {
-  
   background: #2b0f14;
   color: #fff;
   overflow-x: hidden;
@@ -116,7 +115,25 @@ body {
   transform: rotate(225deg);
 }
 
-.hero-scroll:not(.is-vertical-transition) .scroll-cue,
+.scroll-cue.is-horizontal {
+  animation-name: scrollCueBounceHorizontal;
+}
+
+.scroll-cue.is-horizontal .scroll-cue__icon {
+  top: 18px;
+  left: 16px;
+  transform: rotate(-45deg);
+}
+
+.scroll-cue.is-horizontal.is-reverse {
+  animation-name: scrollCueBounceHorizontalReverse;
+}
+
+.scroll-cue.is-horizontal.is-reverse .scroll-cue__icon {
+  left: 21px;
+  transform: rotate(135deg);
+}
+
 .scroll-cue.is-hidden {
   opacity: 0;
   visibility: hidden;
@@ -139,7 +156,7 @@ body {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(43, 15, 20, 0.82)), url("https://images.unsplash.com/photo-1562774053-701939374585?w=1800&auto=format&fit=crop");
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(43, 15, 20, 0.82)), url("../../../../images/Fall-Rose-Hill-123.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   z-index: 0;
@@ -469,6 +486,28 @@ body > .footer {
 
   50% {
     translate: 0 -10px;
+  }
+}
+
+@keyframes scrollCueBounceHorizontal {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 10px 0;
+  }
+}
+
+@keyframes scrollCueBounceHorizontalReverse {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: -10px 0;
   }
 }
 

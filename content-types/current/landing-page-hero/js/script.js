@@ -56,16 +56,17 @@ function updateScrollCue() {
 
   const progress = getHeroScrollProgress();
   const mode = getSectionTransitionMode();
-  const shouldHide = mode !== "vertical" || scrollCuePanels.length === 0;
-  const shouldReverse = mode === "vertical" && progress >= 0.995;
+  const shouldHide = scrollCuePanels.length === 0;
+  const shouldReverse = progress >= 0.995;
 
   scrollCue.classList.toggle("is-hidden", shouldHide);
   scrollCue.classList.toggle("is-reverse", shouldReverse);
-  scrollCue.setAttribute("aria-label", shouldReverse ? "Scroll back to hero" : "Scroll to next section");
+  scrollCue.classList.toggle("is-horizontal", mode === "horizontal");
+  scrollCue.setAttribute("aria-label", shouldReverse ? "Scroll back to hero" : `Scroll to next ${mode} section`);
 }
 
-function scrollToNextVerticalStop() {
-  if (!heroScroll || getSectionTransitionMode() !== "vertical" || scrollCuePanels.length === 0) return;
+function scrollToNextTransitionStop() {
+  if (!heroScroll || scrollCuePanels.length === 0) return;
 
   const progress = getHeroScrollProgress();
   const sceneTop = heroScroll.offsetTop;
@@ -96,7 +97,7 @@ window.addEventListener("scroll", () => {
 });
 
 window.addEventListener("resize", updateScrollParallax);
-scrollCue?.addEventListener("click", scrollToNextVerticalStop);
+scrollCue?.addEventListener("click", scrollToNextTransitionStop);
 scrollCueControls.forEach((control) => {
   control.addEventListener("click", () => {
     window.requestAnimationFrame(updateScrollCue);
