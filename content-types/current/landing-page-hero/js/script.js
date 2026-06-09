@@ -10,6 +10,7 @@ let mouseX = 0;
 let mouseY = 0;
 let ticking = false;
 let scrollCueDirection = "forward";
+let isWheelScrollingToStop = false;
 
 
 function clamp(value, min, max) {
@@ -73,18 +74,26 @@ function updateScrollCue() {
   scrollCue.setAttribute("aria-label", shouldReverse ? `Scroll to previous ${mode} section` : `Scroll to next ${mode} section`);
 }
 
-function scrollToTransitionStop() {
-  if (!heroScroll || scrollCuePanels.length === 0) return;
-
-  const progress = getHeroScrollProgress();
+function getTransitionStopMetrics() {
   const sceneTop = heroScroll.offsetTop;
   const sceneDistance = Math.max(heroScroll.offsetHeight - window.innerHeight, 1);
-  const currentStep = Math.round(progress * scrollCuePanels.length);
+  const progress = getHeroScrollProgress();
+
+  return { progress, sceneTop, sceneDistance };
+}
+
+function scrollToTransitionStep(direction) {
+  if (!heroScroll || scrollCuePanels.length === 0) return false;
+
+  const { progress, sceneTop, sceneDistance } = getTransitionStopMetrics();
+  const progressStep = progress * scrollCuePanels.length;
   const targetStep =
-    scrollCueDirection === "reverse"
-      ? Math.max(currentStep - 1, 0)
-      : Math.min(Math.floor(progress * scrollCuePanels.length) + 1, scrollCuePanels.length);
+    direction > 0
+      ? Math.min(Math.floor(progressStep) + 1, scrollCuePanels.length)
+      : Math.max(Math.ceil(progressStep) - 1, 0);
+
   const targetProgress = targetStep / scrollCuePanels.length;
+  if (Math.abs(targetProgress - progress) < 0.005) return false;
 
   if (targetStep === 0) {
     scrollCueDirection = "forward";
@@ -96,6 +105,33 @@ function scrollToTransitionStop() {
     top: sceneTop + sceneDistance * targetProgress,
     behavior: "smooth",
   });
+
+  return true;
+}
+
+function scrollToTransitionStop() {
+  scrollToTransitionStep(scrollCueDirection === "reverse" ? -1 : 1);
+}
+
+function snapWheelToTransitionStop(event) {
+  if (!heroScroll || scrollCuePanels.length === 0 || isWheelScrollingToStop) return;
+  if (Math.abs(event.deltaY) <= Math.abs(event.deltaX) || Math.abs(event.deltaY) < 8) return;
+
+  const { progress } = getTransitionStopMetrics();
+  const direction = event.deltaY > 0 ? 1 : -1;
+  const isOutsideTransition = window.scrollY < heroScroll.offsetTop || window.scrollY > heroScroll.offsetTop + heroScroll.offsetHeight - window.innerHeight;
+  const isLeavingAtBoundary = (direction < 0 && progress <= 0.005) || (direction > 0 && progress >= 0.995);
+
+  if (isOutsideTransition || isLeavingAtBoundary) return;
+
+  event.preventDefault();
+
+  if (!scrollToTransitionStep(direction)) return;
+
+  isWheelScrollingToStop = true;
+  window.setTimeout(() => {
+    isWheelScrollingToStop = false;
+  }, 900);
 }
 
 window.addEventListener("scroll", () => {
@@ -106,6 +142,7 @@ window.addEventListener("scroll", () => {
 });
 
 window.addEventListener("resize", updateScrollParallax);
+window.addEventListener("wheel", snapWheelToTransitionStop, { passive: false });
 scrollCue?.addEventListener("click", scrollToTransitionStop);
 scrollCueControls.forEach((control) => {
   control.addEventListener("click", () => {
