@@ -116,6 +116,11 @@ body {
 }
 
 .scroll-cue.is-horizontal {
+  top: 50%;
+  right: 28px;
+  bottom: auto;
+  left: auto;
+  transform: translateY(-50%);
   animation-name: scrollCueBounceHorizontal;
 }
 
@@ -126,6 +131,8 @@ body {
 }
 
 .scroll-cue.is-horizontal.is-reverse {
+  right: auto;
+  left: 28px;
   animation-name: scrollCueBounceHorizontalReverse;
 }
 
