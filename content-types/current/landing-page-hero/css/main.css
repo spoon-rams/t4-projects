@@ -110,6 +110,11 @@ body {
   animation-name: scrollCueBounceReverse;
 }
 
+.scroll-cue.is-reverse:not(.is-horizontal) {
+  top: 28px;
+  bottom: auto;
+}
+
 .scroll-cue.is-reverse .scroll-cue__icon {
   top: 20px;
   transform: rotate(225deg);

@@ -9,6 +9,7 @@ const scrollCueControls = document.querySelectorAll("[data-transition-mode]");
 let mouseX = 0;
 let mouseY = 0;
 let ticking = false;
+let scrollCueDirection = "forward";
 
 
 function clamp(value, min, max) {
@@ -57,31 +58,39 @@ function updateScrollCue() {
   const progress = getHeroScrollProgress();
   const mode = getSectionTransitionMode();
   const shouldHide = scrollCuePanels.length === 0;
-  const shouldReverse = progress >= 0.995;
+
+  if (progress >= 0.995) {
+    scrollCueDirection = "reverse";
+  } else if (progress <= 0.005) {
+    scrollCueDirection = "forward";
+  }
+
+  const shouldReverse = scrollCueDirection === "reverse";
 
   scrollCue.classList.toggle("is-hidden", shouldHide);
   scrollCue.classList.toggle("is-reverse", shouldReverse);
   scrollCue.classList.toggle("is-horizontal", mode === "horizontal");
-  scrollCue.setAttribute("aria-label", shouldReverse ? "Scroll back to hero" : `Scroll to next ${mode} section`);
+  scrollCue.setAttribute("aria-label", shouldReverse ? `Scroll to previous ${mode} section` : `Scroll to next ${mode} section`);
 }
 
-function scrollToNextTransitionStop() {
+function scrollToTransitionStop() {
   if (!heroScroll || scrollCuePanels.length === 0) return;
 
   const progress = getHeroScrollProgress();
   const sceneTop = heroScroll.offsetTop;
   const sceneDistance = Math.max(heroScroll.offsetHeight - window.innerHeight, 1);
+  const currentStep = Math.round(progress * scrollCuePanels.length);
+  const targetStep =
+    scrollCueDirection === "reverse"
+      ? Math.max(currentStep - 1, 0)
+      : Math.min(Math.floor(progress * scrollCuePanels.length) + 1, scrollCuePanels.length);
+  const targetProgress = targetStep / scrollCuePanels.length;
 
-  if (progress >= 0.995) {
-    window.scrollTo({
-      top: sceneTop,
-      behavior: "smooth",
-    });
-    return;
+  if (targetStep === 0) {
+    scrollCueDirection = "forward";
+  } else if (targetStep === scrollCuePanels.length) {
+    scrollCueDirection = "reverse";
   }
-
-  const nextStep = Math.min(Math.floor(progress * scrollCuePanels.length) + 1, scrollCuePanels.length);
-  const targetProgress = nextStep / scrollCuePanels.length;
 
   window.scrollTo({
     top: sceneTop + sceneDistance * targetProgress,
@@ -97,7 +106,7 @@ window.addEventListener("scroll", () => {
 });
 
 window.addEventListener("resize", updateScrollParallax);
-scrollCue?.addEventListener("click", scrollToNextTransitionStop);
+scrollCue?.addEventListener("click", scrollToTransitionStop);
 scrollCueControls.forEach((control) => {
   control.addEventListener("click", () => {
     window.requestAnimationFrame(updateScrollCue);
