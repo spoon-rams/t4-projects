@@ -335,31 +335,8 @@ h1 span {
   animation-delay: -4s;
 }
 
-.seal-shape {
-  position: absolute;
-  z-index: 2;
-  right: 7vw;
-  bottom: -120px;
-  width: 520px;
-  height: 520px;
-  border: 1px solid rgba(214, 179, 106, 0.35);
-  border-radius: 50%;
-  animation: rotateSeal 28s linear infinite;
-  will-change: transform;
-}
 
-.seal-shape::before,
-.seal-shape::after {
-  content: "";
-  position: absolute;
-  inset: 42px;
-  border: 1px solid rgba(214, 179, 106, 0.22);
-  border-radius: 50%;
-}
 
-.seal-shape::after {
-  inset: 92px;
-}
 
 .section {
   position: relative;

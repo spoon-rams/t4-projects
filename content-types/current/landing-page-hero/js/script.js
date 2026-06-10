@@ -11,6 +11,7 @@ let mouseY = 0;
 let ticking = false;
 let scrollCueDirection = "forward";
 let isWheelScrollingToStop = false;
+let lastScrollCueActionTime = 0;
 
 
 function clamp(value, min, max) {
@@ -82,13 +83,15 @@ function getTransitionStopMetrics() {
   return { progress, sceneTop, sceneDistance };
 }
 
-function scrollToTransitionStep(direction) {
+function scrollToTransitionStep(direction, options = {}) {
   if (!heroScroll || scrollCuePanels.length === 0) return false;
 
   const { progress, sceneTop, sceneDistance } = getTransitionStopMetrics();
   const progressStep = progress * scrollCuePanels.length;
-  const targetStep =
-    direction > 0
+  const currentStep = Math.round(progressStep);
+  const targetStep = options.fromCurrentStop
+    ? clamp(currentStep + direction, 0, scrollCuePanels.length)
+    : direction > 0
       ? Math.min(Math.floor(progressStep) + 1, scrollCuePanels.length)
       : Math.max(Math.ceil(progressStep) - 1, 0);
 
@@ -110,7 +113,20 @@ function scrollToTransitionStep(direction) {
 }
 
 function scrollToTransitionStop() {
-  scrollToTransitionStep(scrollCueDirection === "reverse" ? -1 : 1);
+  const isReverseCue = scrollCue?.classList.contains("is-reverse");
+
+  scrollToTransitionStep(isReverseCue ? -1 : 1, { fromCurrentStop: true });
+}
+
+function handleScrollCueAction(event) {
+  if (event?.button > 0) return;
+
+  const now = Date.now();
+  if (now - lastScrollCueActionTime < 300) return;
+
+  event?.preventDefault();
+  lastScrollCueActionTime = now;
+  scrollToTransitionStop();
 }
 
 function snapWheelToTransitionStop(event) {
@@ -143,7 +159,8 @@ window.addEventListener("scroll", () => {
 
 window.addEventListener("resize", updateScrollParallax);
 window.addEventListener("wheel", snapWheelToTransitionStop, { passive: false });
-scrollCue?.addEventListener("click", scrollToTransitionStop);
+scrollCue?.addEventListener("pointerup", handleScrollCueAction);
+scrollCue?.addEventListener("click", handleScrollCueAction);
 scrollCueControls.forEach((control) => {
   control.addEventListener("click", () => {
     window.requestAnimationFrame(updateScrollCue);
