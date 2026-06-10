@@ -13,6 +13,7 @@ let scrollCueDirection = "forward";
 let isWheelScrollingToStop = false;
 let lastScrollCueActionTime = 0;
 
+const wheelScrollCooldown = 1200;
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
@@ -130,8 +131,13 @@ function handleScrollCueAction(event) {
 }
 
 function snapWheelToTransitionStop(event) {
-  if (!heroScroll || scrollCuePanels.length === 0 || isWheelScrollingToStop) return;
-  if (Math.abs(event.deltaY) <= Math.abs(event.deltaX) || Math.abs(event.deltaY) < 8) return;
+  if (!heroScroll || scrollCuePanels.length === 0) return;
+  if (isWheelScrollingToStop) {
+    event.preventDefault();
+    return;
+  }
+
+  if (Math.abs(event.deltaY) <= Math.abs(event.deltaX) || Math.abs(event.deltaY) < 24) return;
 
   const { progress } = getTransitionStopMetrics();
   const direction = event.deltaY > 0 ? 1 : -1;
@@ -147,7 +153,7 @@ function snapWheelToTransitionStop(event) {
   isWheelScrollingToStop = true;
   window.setTimeout(() => {
     isWheelScrollingToStop = false;
-  }, 900);
+  }, wheelScrollCooldown);
 }
 
 window.addEventListener("scroll", () => {
