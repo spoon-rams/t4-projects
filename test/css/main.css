@@ -1,0 +1,61 @@
+.aging-well-img,
+.comprehensive-care-img,
+.better-health-img,
+.aging-well-text,
+.comprehensive-care-text,
+.better-health-text {
+  width: 100%;
+}
+
+.comprehensive-care-img img {
+  max-width: 70% !important;
+}
+
+.better-health-img img {
+  max-width: 59% !important;
+}
+
+/* TEST REFACTOR*/
+.meet-oss-team {
+  padding: 24px 0;
+}
+
+.meet-oss-team .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.meet-oss-team .container .team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 220px;
+}
+.meet-oss-team .container .team-member .member-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+}
+.meet-oss-team .container .team-member .member-name {
+  font-size: 16px;
+  margin-bottom: 6px;
+  display: block;
+  margin-bottom: 0 !important;
+}
+.meet-oss-team .container .team-member .member-title {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 0 !important;
+}
+.meet-oss-team .container .team-member .member-link {
+  font-size: 14px;
+  color: #7e072a;
+  text-decoration: underline;
+}

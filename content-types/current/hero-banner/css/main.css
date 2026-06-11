@@ -1,7 +1,11 @@
+.hero-banner.fordham-rebrand .hero-banner__block {
+  top: 19rem !important;
+}
+
 .hero-banner.fordham-rebrand .hero-banner__block__desc,
 .hero-banner.fordham-rebrand .hero-banner__block__title > span {
   background-color: unset !important;
-  padding: .75rem 0 !important
+  padding: 0 !important;
 }
 
 .hero-banner.fordham-rebrand .hero-banner__block__desc {
@@ -18,6 +22,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 80%);
   z-index: 0;
 }
 

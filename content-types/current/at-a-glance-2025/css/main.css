@@ -119,48 +119,32 @@
   flex: 1 0 33%;
 }
 
-.at-a-glance .box.cost-per-credit {
+.at-a-glance .box.stat-two,
+.at-a-glance .box.stat-five {
   border-left: 2px solid #dd3224;
   border-right: 2px solid #dd3224;
 }
 
-.at-a-glance .box.applications-due {
-  border-left: 2px solid #dd3224;
-}
-
 /* BOX TITLES */
-.at-a-glance .box span {
+.at-a-glance .box .stat {
+  font-family: 'owners-wide';
   font-weight: bold;
   color: #7e072a;
-  font-size: 1.4rem;
+  font-size: 2.4rem;
   margin-bottom: 0.3rem;
 }
 
-.at-a-glance .box p {
+.at-a-glance .box .primary-text {
   margin: 0;
+  font-weight: 700;
   font-size: 1.5rem;
   color: #282d27;
 }
 
-.at-a-glance .btn-primary {
-  background: #dd3224 !important;
-  color: white;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-decoration: none;
-  border-radius: 10px;
-  transition: background 0.3s ease;
-}
-
-.at-a-glance .link {
-  display: block;
-  margin-top: 1rem;
-  color: #7e072a;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-align: left;
-  font-size: 1.1rem;
-  line-height: 1.4;
+.at-a-glance .box .secondary-text {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #282d27;
 }
 
 .at-a-glance .divider {
@@ -169,21 +153,6 @@
   height: 2px;
 }
 
-.at-a-glance .box.view-more {
-  padding: 0;
-  background-color: #dd3224;
-  border-radius: 15px;
-}
-
-.at-a-glance .box.view-more .btn-primary {
-  background-color: #dd3224 !important;
-  width: 100%;;
-  padding: 3rem 0;
-}
-
-.at-a-glance .box.view-more .btn-primary:hover {
-  background-color: #7e072a !important;
-}
 
 
 @container (width < 900px) {
@@ -191,8 +160,8 @@
     width: 110px;
   }
 
-  .at-a-glance .box span {
-    font-size: 1.2rem;
+  .at-a-glance .box .stat {
+    font-size: 2.4rem;
   }
 
   .at-a-glance .box p {

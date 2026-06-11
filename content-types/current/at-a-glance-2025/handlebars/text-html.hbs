@@ -1,0 +1,107 @@
+<section class='at-a-glance {{selectedValues element="Top/Bottom Spacing"}} {{selectedValues element="Limit Width"}}'>
+{{#eq (selectedValues element="Select Background Type") "bg-img-overlay"}}
+  <div class="card" style='background: url("{{{media id=(mediaId element="Background Image") layout="path/*" pxl-filter-id="5"}}}") no-repeat center;'>
+    <div class="overlay" style='opacity: {{publish element="Background Overlay Opacity"}}'></div>
+{{else}}
+  <div class='card {{selectedValues element="Background Color" separator=", " level-separator=">"}}'>
+{{/eq}}
+    
+    <div class='card-wrapper {{selectedValues element="Background Color" seperator=", " level-separator=">"}}'>
+    {{#eq (selectedValues element="Enable Headers and Text Options") "yes"}}
+      
+      <div class="header">
+        <div class="title-block">
+          <h2>At a Glance</h2>
+          {{#ifSet element="Program"}}
+           <h3>{{publish element="Program"}}</h3>
+          {{/ifSet}}
+        
+          {{#ifSet element="Class Type"}}
+           <p class="subtext">{{selectedValues element="Class Type" separator=", "}}</p>
+          {{/ifSet}}
+        </div>
+        <img src='{{{media id=(mediaId element="Icon") layout="path/*"}}}' alt='{{{media id=(mediaId element="Icon") layout="image/description"}}}' class="icon" />
+      </div>
+    
+      {{#ifSet element="Program Description"}}
+        <p class="note">
+         {{publish element="Program Description"}}
+        </p>
+      {{/ifSet}}
+      
+    {{/eq}}
+
+      <div class="info-grid">
+       {{#eq (publish element="Select Number of Stats to Output") "3"}}
+ 	    <div class="row">
+          <div class="box credit-hours stat-one">
+            <span class="stat">{{publish element="Primary Stat"}}</span>
+            <p class="count primary-text" data-value=''>{{publish element="Primary Text"}}</p>
+            <p class="secondary-text">{{publish element="Secondary Text"}}</p>
+          </div>
+      
+          <div class="box cost-per-credit stat-two">
+            <span class="stat">{{publish element="Primary Stat 2"}}</span>
+            <p class="count primary-text" data-value=''>{{publish element="Primary Text 2"}}</p>
+            <p class="secondary-text">{{publish element="Secondary Text 2"}}</p>
+          </div>
+      
+          <div class="box duration stat-three">
+            <span class="stat">{{publish element="Primary Stat 3"}}</span>
+            <p class="count primary-text" data-value=''>{{publish element="Primary Text 3"}}</p>
+            <p class="secondary-text">{{publish element="Secondary Text 3"}}</p>
+          </div>
+        </div>
+       {{/eq}}
+       
+       {{#eq (publish element="Select Number of Stats to Output") "6"}}
+        <div class="row">
+          <div class="box credit-hours stat-one">
+            <span class="stat">{{publish element="Primary Stat"}}</span>
+            <p class="count primary-text" data-value=''>{{publish element="Primary Text"}}</p>
+            <p class="secondary-text">{{publish element="Secondary Text"}}</p>
+          </div>
+      
+          <div class="box cost-per-credit stat-two">
+            <span class="stat">{{publish element="Primary Stat 2"}}</span>
+            <p class="count primary-text" data-value=''>{{publish element="Primary Text 2"}}</p>
+            <p class="secondary-text">{{publish element="Secondary Text 2"}}</p>
+          </div>
+      
+          <div class="box duration stat-three">
+            <span class="stat">{{publish element="Primary Stat 3"}}</span>
+            <p class="count primary-text" data-value=''>{{publish element="Primary Text 3"}}</p>
+            <p class="secondary-text">{{publish element="Secondary Text 3"}}</p>
+          </div>
+        </div>
+        
+        <hr class="divider"/>
+        
+        <div class="row">
+          <div class="box classes-begin stat-four">
+            <span class="stat">{{publish element="Primary Stat 4"}}</span>
+            <p class="count primary-text" data-value=''>{{publish element="Primary Text 4"}}</p>
+            <p class="secondary-text">{{publish element="Secondary Text 4"}}</p>
+          </div>
+      
+          <div class="box applications-due stat-five">
+            <span class="stat">{{publish element="Primary Stat 5"}}</span>
+            <p class="count primary-text" data-value=''>{{publish element="Primary Text 5"}}</p>
+            <p class="secondary-text">{{publish element="Secondary Text 5"}}</p>
+          </div>
+        
+          <div class="box view-more stat-six">
+          	<span class="stat">{{publish element="Primary Stat 6"}}</span>
+            <p class="count primary-text" data-value=''>{{publish element="Primary Text 6"}}</p>
+            <p class="secondary-text">{{publish element="Secondary Text 6"}}</p>
+          </div>
+        
+        </div>
+       {{/eq}}
+      </div>
+      
+      </div>
+      
+    </div>
+  </div>
+</section>

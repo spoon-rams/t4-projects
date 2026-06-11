@@ -1,11 +1,6 @@
 /*   MOBILE RESPONSIVE   */
-@media only screen and (max-width: 1047px) {
-  .at-a-glance .box.view-more {
-    margin-top: 10px;
-  }
-}
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .at-a-glance .card {
     padding: 2.5rem;
   }
@@ -55,15 +50,18 @@
     font-size: 1.7rem;
   }
 
-  .at-a-glance .box.credit-hours,
-  .at-a-glance .box.cost-per-credit,
-  .at-a-glance .box.duration,
-  .at-a-glance .box.classes-begin {
-    border-bottom: 2px solid #dd3224;
+  .at-a-glance .box.stat-one,
+  .at-a-glance .box.stat-two,
+  .at-a-glance .box.stat-three,
+  .at-a-glance .box.stat-four,
+  .at-a-glance .box.stat-five,
+  .at-a-glance .box.stat-six {
+    border-top: 2px solid #dd3224;
+    margin-top: 20px;
   }
 
-  .at-a-glance .box.cost-per-credit,
-  .at-a-glance .box.applications-due {
+  .at-a-glance .box.stat-two,
+  .at-a-glance .box.stat-five {
     border-left: none;
     border-right: none;
   }
@@ -98,11 +96,11 @@
     font-size: 1.1rem;
   }
 
-  .at-a-glance .box span {
-    font-size: 1.3rem;
+  .at-a-glance .box .stat {
+    font-size: 2rem;
   }
   .at-a-glance .box p {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 }
 
