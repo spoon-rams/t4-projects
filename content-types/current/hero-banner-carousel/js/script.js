@@ -199,15 +199,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const test = document.querySelector(".carousel-header .slide");
     switch (action) {
       case "next":
+        container.scrollLeft += slide.clientWidth;
         animation(contentBoxWrapper, "animate__fadeInLeft", 800);
         insertData(contentTitle, contentButtonText, contentSecondButtonText, contentThirdButtonText, contentDesc, slides, currentSlide, "next");
-        container.scrollLeft += slide.clientWidth;
+
         currentSlide += 1;
         return setIndicator(currentSlide);
       case "previous":
+        container.scrollLeft -= slide.clientWidth;
         animation(contentBoxWrapper, "animate__fadeInRight", 800);
         insertData(contentTitle, contentButtonText, contentSecondButtonText, contentThirdButtonText, contentDesc, slides, currentSlide, "previous");
-        container.scrollLeft -= slide.clientWidth;
+
         currentSlide -= 1;
         return setIndicator(currentSlide);
       case "indicator":
@@ -256,7 +258,6 @@ document.addEventListener("DOMContentLoaded", () => {
     btnText.innerText = slide[currentSlide].dataset.buttonText;
     btnTxtTwo.innerText = slide[currentSlide].dataset.secondButtonText;
     btnTxtThree.innerText = slide[currentSlide].dataset.thirdButtonText;
-    console.log(slide[currentSlide].dataset);
     if (slide[currentSlide].dataset.buttonText.length > 0) {
       btnText.style.display = "inline-block";
       slide[currentSlide].dataset.buttonLink && btnText.setAttribute("href", slide[currentSlide].dataset.buttonLink);
