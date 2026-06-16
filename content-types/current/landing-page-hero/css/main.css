@@ -403,9 +403,9 @@ body > .footer {
 }
 
 .feature {
-  background: #f7f1e6;
-  padding: 32px;
-  border-radius: 24px;
+  background: #DBDBD3;
+  padding: 100px;
+  border-radius: 5px;
   min-height: 230px;
 }
 
