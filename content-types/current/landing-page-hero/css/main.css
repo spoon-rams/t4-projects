@@ -9,8 +9,6 @@ html {
 }
 
 body {
-  background: #2b0f14;
-  color: #fff;
   overflow-x: hidden;
 }
 
@@ -48,7 +46,6 @@ body {
 .hero-scroll {
   position: relative;
   min-height: 200vh;
-  background: #2b0f14;
 }
 
 .transition-viewport {
@@ -59,7 +56,6 @@ body {
   height: 100vh;
   overflow: hidden;
   isolation: isolate;
-  background: #2b0f14;
   z-index: 1;
 }
 
@@ -81,10 +77,10 @@ body {
   z-index: 30;
   width: 52px;
   height: 52px;
-  border: 1px solid rgba(255, 255, 255, 0.56);
+  border: 3px solid #DD3224;
   border-radius: 999px;
-  background: rgba(43, 15, 20, 0.44);
-  color: #fff;
+  background: rgba(43, 15, 20, 0.2);
+  color: #DD3224;
   cursor: pointer;
   transform: translateX(-50%);
   animation: scrollCueBounce 1.45s ease-in-out infinite;
@@ -96,8 +92,8 @@ body {
 
 .scroll-cue__icon {
   position: absolute;
-  top: 17px;
-  left: 18px;
+  top: 14px;
+  left: 16px;
   width: 14px;
   height: 14px;
   border-right: 3px solid currentColor;
@@ -115,7 +111,7 @@ body {
 }
 
 .scroll-cue.is-reverse .scroll-cue__icon {
-  top: 20px;
+  top: 19px;
   transform: rotate(225deg);
 }
 
@@ -129,8 +125,8 @@ body {
 }
 
 .scroll-cue.is-horizontal .scroll-cue__icon {
-  top: 18px;
-  left: 16px;
+  top: 16px;
+  left: 14px;
   transform: rotate(-45deg);
 }
 
@@ -141,7 +137,7 @@ body {
 }
 
 .scroll-cue.is-horizontal.is-reverse .scroll-cue__icon {
-  left: 21px;
+  left: 18px;
   transform: rotate(135deg);
 }
 
@@ -191,6 +187,7 @@ h1 {
   font-size: clamp(3.5rem, 8vw, 7.5rem);
   line-height: 0.88;
   max-width: 1500px;
+  color: #fff;
   font-family: owners-wide, "Times New Roman", serif;
   text-transform: uppercase;
 }
@@ -262,19 +259,6 @@ h1 span {
   transform: translateY(-4px);
 }
 
-.btn-primary {
-  background: #d6b36a;
-  color: #2b0f14;
-  box-shadow: 0 18px 50px rgba(214, 179, 106, 0.28);
-}
-
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(12px);
-}
-
 .hero-panel {
   position: absolute;
   inset: 0;
@@ -331,16 +315,12 @@ h1 span {
   animation-delay: -4s;
 }
 
-
-
-
 .section {
   position: relative;
   z-index: 8;
   min-height: 100vh;
   padding: 110px 7vw;
   background: #fff;
-  color: #2b0f14;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -349,13 +329,15 @@ h1 span {
 }
 
 .section h2,
-.feature {
+.feature,
+.item {
   opacity: 0;
   --animate-duration: 0.85s;
 }
 
 .section.in-view h2,
-.section.in-view .feature {
+.section.in-view .feature,
+.section.in-view .item {
   opacity: 1;
   animation-name: fadeInUp;
 }
@@ -371,13 +353,6 @@ h1 span {
 .section.in-view .feature:nth-child(3) {
   animation-delay: 0.45s;
 }
-
-/* .section h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  letter-spacing: -0.05em;
-  max-width: 800px;
-} */
 
 .section-grid {
   display: grid;
@@ -411,12 +386,10 @@ body > .footer {
 
 .feature h3 {
   font-size: 1.35rem;
-
   margin-bottom: 14px;
 }
 
 .feature p {
-  color: #5f4d43;
   line-height: 1.6;
 }
 
@@ -536,8 +509,16 @@ body > .footer {
   }
 
   .section h2,
-  .feature {
+  .feature,
+  .item {
     opacity: 1;
     transform: none;
   }
+}
+
+
+/* CSS FOOTER CHANGES */
+.footer .footer__logo__container img {
+  width: 280px;
+ 
 }
