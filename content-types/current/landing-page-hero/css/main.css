@@ -79,7 +79,6 @@ body {
   height: 52px;
   border: 3px solid #DD3224;
   border-radius: 999px;
-  background: rgba(43, 15, 20, 0.2);
   color: #DD3224;
   cursor: pointer;
   transform: translateX(-50%);
@@ -88,6 +87,11 @@ body {
   transition:
     opacity 0.2s ease,
     visibility 0.2s ease;
+}
+
+.scroll-cue:focus {
+  outline: 1px solid #DD3224 !important;
+  background: rgba(221, 50, 36, 0.12);
 }
 
 .scroll-cue__icon {
