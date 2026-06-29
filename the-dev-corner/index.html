@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation Layout</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+</head>
+
+<body>
+  <div class="docs-layout">
+
+    <aside class="sidebar">
+      <h2>Docs</h2>
+
+      <nav class="docs-nav">
+
+        <div class="nav-item open">
+          <button class="accordion">
+            <span>Getting Started</span>
+            <span class="icon">⌄</span>
+          </button>
+
+          <div class="submenu">
+            <div class="submenu-inner">
+              <a href="#overview" class="active">Overview</a>
+              <a href="#requirements">Requirements</a>
+              <a href="#quick-start">Quick Start</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="accordion">
+            <span>Installation</span>
+            <span class="icon">⌄</span>
+          </button>
+
+          <div class="submenu">
+            <div class="submenu-inner">
+              <a href="#npm">NPM</a>
+              <a href="#yarn">Yarn</a>
+              <a href="#cdn">CDN</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="accordion">
+            <span>Components</span>
+            <span class="icon">⌄</span>
+          </button>
+
+          <div class="submenu">
+            <div class="submenu-inner">
+              <a href="#buttons">Buttons</a>
+              <a href="#cards">Cards</a>
+              <a href="#forms">Forms</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="accordion">
+            <span>API Reference</span>
+            <span class="icon">⌄</span>
+          </button>
+
+          <div class="submenu">
+            <div class="submenu-inner">
+              <a href="#authentication">Authentication</a>
+              <a href="#endpoints">Endpoints</a>
+              <a href="#errors">Errors</a>
+            </div>
+          </div>
+        </div>
+
+      </nav>
+    </aside>
+
+    <main class="content">
+      <div class="content-inner">
+        <h1>Documentation Page</h1>
+
+        <p class="intro">
+          A responsive documentation layout with an accordion sidebar and a clean content column.
+        </p>
+
+        <section id="overview">
+          <h2>Overview</h2>
+          <p>
+            This layout is useful for product docs, developer documentation, internal guides,
+            or knowledge base pages.
+          </p>
+
+          <div class="callout">
+            The sidebar uses accordion parent sections that expand and collapse.
+          </div>
+        </section>
+
+        <section id="requirements">
+          <h2>Requirements</h2>
+          <p>
+            List any project requirements here, such as supported browsers, dependencies,
+            or system setup.
+          </p>
+        </section>
+
+        <section id="quick-start">
+          <h2>Quick Start</h2>
+          <p>
+            Add your quick-start instructions here.
+          </p>
+
+          <pre><code>npm install your-package-name
+npm run dev</code></pre>
+        </section>
+
+        <section id="npm">
+          <h2>NPM</h2>
+          <p>
+            Install the package using npm.
+          </p>
+
+          <pre><code>npm install your-package-name</code></pre>
+        </section>
+
+        <section id="yarn">
+          <h2>Yarn</h2>
+          <p>
+            Install the package using Yarn.
+          </p>
+
+          <pre><code>yarn add your-package-name</code></pre>
+        </section>
+
+        <section id="cdn">
+          <h2>CDN</h2>
+          <p>
+            You can also include the package through a CDN.
+          </p>
+
+          <pre><code>&lt;script src="https://cdn.example.com/package.js"&gt;&lt;/script&gt;</code></pre>
+        </section>
+
+        <section id="buttons">
+          <h2>Buttons</h2>
+          <p>
+            Documentation for button styles, variants, and usage examples.
+          </p>
+        </section>
+
+        <section id="cards">
+          <h2>Cards</h2>
+          <p>
+            Documentation for card components and layout patterns.
+          </p>
+        </section>
+
+        <section id="forms">
+          <h2>Forms</h2>
+          <p>
+            Documentation for form controls, inputs, labels, and validation.
+          </p>
+        </section>
+
+        <section id="authentication">
+          <h2>Authentication</h2>
+          <p>
+            Explain authentication methods, tokens, sessions, or OAuth flows here.
+          </p>
+        </section>
+
+        <section id="endpoints">
+          <h2>Endpoints</h2>
+          <p>
+            List your API endpoints and example responses.
+          </p>
+
+          <pre><code>GET /api/docs
+
+{
+  "status": "success",
+  "data": []
+}</code></pre>
+        </section>
+
+        <section id="errors">
+          <h2>Errors</h2>
+          <p>
+            Explain common errors, status codes, and troubleshooting steps.
+          </p>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

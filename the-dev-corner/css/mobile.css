@@ -1,0 +1,26 @@
+  /* Mobile */
+    @media (max-width: 800px) {
+      .docs-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: relative;
+        height: auto;
+        padding: 1rem;
+      }
+
+      .sidebar nav {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+      }
+
+      .sidebar a {
+        white-space: nowrap;
+      }
+
+      .content {
+        padding: 2rem 1rem;
+      }
+    }
