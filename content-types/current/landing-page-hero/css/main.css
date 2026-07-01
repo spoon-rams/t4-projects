@@ -472,25 +472,7 @@ body > .footer {
   }
 }
 
-@media (max-width: 900px) {
-  .landing-hero {
-    padding-top: 64px;
-  }
 
-  .hero-panel {
-    display: none;
-  }
-
-  .seal-shape {
-    opacity: 0.4;
-
-    right: -180px;
-  }
-
-  .section-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   *,

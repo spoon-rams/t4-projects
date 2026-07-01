@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Documentation Layout</title>
+  <link rel="stylesheet" href="../css/rebrand/r-style.css" />
+  <link rel="stylesheet" href="../css/rebrand/r-t4extras.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/mobile.css" />
 </head>
@@ -12,69 +14,89 @@
   <div class="docs-layout">
 
     <aside class="sidebar">
-      <h2>Docs</h2>
+      <h2>The Development Corner</h2>
 
       <nav class="docs-nav">
 
         <div class="nav-item open">
           <button class="accordion">
-            <span>Getting Started</span>
+            <span>Introduction</span>
             <span class="icon">⌄</span>
           </button>
 
           <div class="submenu">
             <div class="submenu-inner">
-              <a href="#overview" class="active">Overview</a>
-              <a href="#requirements">Requirements</a>
-              <a href="#quick-start">Quick Start</a>
+              <a href="#overview">Overview</a>
+              <div class="submenu-item">
+                <button class="submenu-toggle">
+                  <span>Featured</span>
+                  <span class="icon">⌄</span>
+                </button>
+
+                <div class="subsubmenu">
+                  <div class="subsubmenu-inner">
+                    <a href="#requirements">Requirements</a>
+                    <a href="#quick-start">Quick Start</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="nav-item">
           <button class="accordion">
-            <span>Installation</span>
+            <span>Content Types</span>
             <span class="icon">⌄</span>
           </button>
 
           <div class="submenu">
             <div class="submenu-inner">
-              <a href="#npm">NPM</a>
-              <a href="#yarn">Yarn</a>
-              <a href="#cdn">CDN</a>
+              <div class="submenu-item">
+                <button class="submenu-toggle">
+                  <span>Hero Banners</span>
+                  <span class="icon">⌄</span>
+                </button>
+
+                <div class="subsubmenu">
+                  <div class="subsubmenu-inner">
+                    <a href="#npm">Fordham Rebrand: Hero Bannner</a>
+                    <a href="#yarn">Fordham Rebrand: Two Column Hero</a>
+                    <a href="#cdn">Fordham Rebrand: Hero Carousel</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="nav-item">
           <button class="accordion">
-            <span>Components</span>
+            <span>Page Layots</span>
             <span class="icon">⌄</span>
           </button>
 
           <div class="submenu">
             <div class="submenu-inner">
-              <a href="#buttons">Buttons</a>
-              <a href="#cards">Cards</a>
+              <div class="submenu-item">
+                <button class="submenu-toggle">
+                  <span>Interface</span>
+                  <span class="icon">⌄</span>
+                </button>
+
+                <div class="subsubmenu">
+                  <div class="subsubmenu-inner">
+                    <a href="#buttons">Buttons</a>
+                    <a href="#cards">Cards</a>
+                  </div>
+                </div>
+              </div>
               <a href="#forms">Forms</a>
             </div>
           </div>
         </div>
 
-        <div class="nav-item">
-          <button class="accordion">
-            <span>API Reference</span>
-            <span class="icon">⌄</span>
-          </button>
-
-          <div class="submenu">
-            <div class="submenu-inner">
-              <a href="#authentication">Authentication</a>
-              <a href="#endpoints">Endpoints</a>
-              <a href="#errors">Errors</a>
-            </div>
-          </div>
-        </div>
+      
 
       </nav>
     </aside>
