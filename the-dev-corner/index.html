@@ -1,225 +1,285 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Documentation Layout</title>
-  <link rel="stylesheet" href="../css/rebrand/r-style.css" />
-  <link rel="stylesheet" href="../css/rebrand/r-t4extras.css" />
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/mobile.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation Layout</title>
+    <link rel="stylesheet" href="../css/rebrand/r-style.css" />
+    <link rel="stylesheet" href="../css/rebrand/r-t4extras.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
+  </head>
 
-<body>
-  <div class="docs-layout">
+  <body>
+    <div class="docs-layout">
+      <aside class="sidebar">
+        <div class="header">
+          <img src="../images/Fordham White Logo.svg" alt="Logo" class="logo" />
+          <h2>The Development Corner</h2>
+        </div
 
-    <aside class="sidebar">
-      <h2>The Development Corner</h2>
+        <nav class="docs-nav">
+          <div class="nav-item open">
+            <button class="accordion">
+              <span>Introduction</span>
+              <span class="icon">⌄</span>
+            </button>
 
-      <nav class="docs-nav">
+            <div class="submenu">
+              <div class="submenu-inner">
+                <a href="#overview">Overview</a>
+                <div class="submenu-item">
+                  <button class="submenu-toggle">
+                    <span>Featured</span>
+                    <span class="icon">⌄</span>
+                  </button>
 
-        <div class="nav-item open">
-          <button class="accordion">
-            <span>Introduction</span>
-            <span class="icon">⌄</span>
-          </button>
-
-          <div class="submenu">
-            <div class="submenu-inner">
-              <a href="#overview">Overview</a>
-              <div class="submenu-item">
-                <button class="submenu-toggle">
-                  <span>Featured</span>
-                  <span class="icon">⌄</span>
-                </button>
-
-                <div class="subsubmenu">
-                  <div class="subsubmenu-inner">
-                    <a href="#requirements">Requirements</a>
-                    <a href="#quick-start">Quick Start</a>
+                  <div class="subsubmenu">
+                    <div class="subsubmenu-inner">
+                      <a href="#featured-one">featured content type 1</a>
+                      <a href="#featured-two">featured content type 2</a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="nav-item">
-          <button class="accordion">
-            <span>Content Types</span>
-            <span class="icon">⌄</span>
-          </button>
+          <div class="nav-item">
+            <button class="accordion">
+              <span>Content Types</span>
+              <span class="icon">⌄</span>
+            </button>
 
-          <div class="submenu">
-            <div class="submenu-inner">
-              <div class="submenu-item">
-                <button class="submenu-toggle">
-                  <span>Hero Banners</span>
-                  <span class="icon">⌄</span>
-                </button>
+            <div class="submenu">
+              <div class="submenu-inner">
+                <div class="submenu-item">
+                  <button class="submenu-toggle">
+                    <span>Hero Banners</span>
+                    <span class="icon">⌄</span>
+                  </button>
 
-                <div class="subsubmenu">
-                  <div class="subsubmenu-inner">
-                    <a href="#npm">Fordham Rebrand: Hero Bannner</a>
-                    <a href="#yarn">Fordham Rebrand: Two Column Hero</a>
-                    <a href="#cdn">Fordham Rebrand: Hero Carousel</a>
+                  <div class="subsubmenu">
+                    <div class="subsubmenu-inner">
+                      <a href="#fordham-rebrand-hero-banner">Fordham Rebrand: Hero Banner</a>
+                      <a href="#fordham-rebrand-two-column-hero">Fordham Rebrand: Two Column Hero</a>
+                      <a href="#fordham-rebrand-hero-carousel">Fordham Rebrand: Hero Carousel</a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="nav-item">
-          <button class="accordion">
-            <span>Page Layouts</span>
-            <span class="icon">⌄</span>
-          </button>
+          <div class="nav-item">
+            <button class="accordion">
+              <span>Page Layouts</span>
+              <span class="icon">⌄</span>
+            </button>
 
-          <div class="submenu">
-            <div class="submenu-inner">
-              <div class="submenu-item">
-                <button class="submenu-toggle">
-                  <span>Interface</span>
-                  <span class="icon">⌄</span>
-                </button>
+            <div class="submenu">
+              <div class="submenu-inner">
+                <div class="submenu-item">
+                  <button class="submenu-toggle">
+                    <span>Interface</span>
+                    <span class="icon">⌄</span>
+                  </button>
 
-                <div class="subsubmenu">
-                  <div class="subsubmenu-inner">
-                    <a href="#buttons">Buttons</a>
-                    <a href="#cards">Cards</a>
+                  <div class="subsubmenu">
+                    <div class="subsubmenu-inner">
+                      <a href="#buttons">Buttons</a>
+                      <a href="#cards">Cards</a>
+                    </div>
                   </div>
                 </div>
+                <a href="#forms">Forms</a>
               </div>
-              <a href="#forms">Forms</a>
             </div>
           </div>
-        </div>
+        </nav>
+      </aside>
 
-      
+      <main class="content">
+        <div class="content-inner">
+          <h1>The Development Corner</h1>
 
-      </nav>
-    </aside>
+          <section id="overview">
+            <h2>Overview</h2>
+            <p>This documentation page provides an overview of the custom Fordham Rebrand content types developed for use across landing pages and promotional experiences. Each content type is designed to support flexible, visually engaging page layouts while aligning with Fordham’s refreshed brand direction. The documentation outlines the purpose, key features, and potential future enhancements for each component, giving developers and content editors a clear reference for how these content types function, where they can be used, and how they may continue to evolve.</p>
 
-    <main class="content">
-      <div class="content-inner">
-        <h1>Documentation Page</h1>
+            <!-- <div class="callout">The sidebar uses accordion parent sections that expand and collapse.</div> -->
+          </section>
 
-        <p class="intro">
-          A responsive documentation layout with an accordion sidebar and a clean content column.
-        </p>
+          <section id="featured-one">
+            <h2>Featured Content Type 1</h2>
+            <p>Details about the first featured content type.</p>
+          </section>
 
-        <section id="overview">
-          <h2>Overview</h2>
-          <p>
-            This layout is useful for product docs, developer documentation, internal guides,
-            or knowledge base pages.
-          </p>
+          <section id="featured-two">
+            <h2>Featured Content Type 2</h2>
+            <p>Details about the second featured content type.</p>
+          </section>
 
-          <div class="callout">
-            The sidebar uses accordion parent sections that expand and collapse.
-          </div>
-        </section>
+          <section id="fordham-rebrand-hero-banner">
+            <h2>Fordham Rebrand: Hero Banner</h2>
 
-        <section id="requirements">
-          <h2>Requirements</h2>
-          <p>
-            List any project requirements here, such as supported browsers, dependencies,
-            or system setup.
-          </p>
-        </section>
+            <h3>Description:</h3>
+            <p>Refreshed the hero banner with a modern gradient overlay to improve visual depth and readability. Removed the dark text container, allowing the headline and supporting copy to sit directly over the imagery for a cleaner, more immersive design. Updated the call-to-action buttons to align with the new brand color palette, ensuring a cohesive and contemporary user experience.</p>
 
-        <section id="quick-start">
-          <h2>Quick Start</h2>
-          <p>
-            Add your quick-start instructions here.
-          </p>
+            <h3>Content Type Features:</h3>
+            <ul>
+              <li>  
+                Five image backgrounds that change randomly on load.
+              </li>
+              <li>
+                Custom title text.
+              </li>
+              <li>
+                Custom description text.
+              </li>
+              <li>
+                Three call-to-action button options.
+              </li>
+            </ul>
+             <h3>Future Possible Content Type Features:</h3>
+            <ul>
+              <li>  
+                Custom font sizes and colors.
+              </li>
+              <li>
+                Custom text content width and height.
+              </li>
+              <li>
+                Custom margins and padding.
+              </li>
+              <li>
+                Custom overlay colors.
+              </li>
+              <li>
+                Custom text location
+              </li>
+            </ul>
+          </section> 
 
-          <pre><code>npm install your-package-name
-npm run dev</code></pre>
-        </section>
+          <section id="fordham-rebrand-two-column-hero">
+            <h2>Fordham Rebrand: Two Column Hero</h2>
 
-        <section id="npm">
-          <h2>NPM</h2>
-          <p>
-            Install the package using npm.
-          </p>
+            <h3>Description:</h3>
+            <p>Developed a modern split-layout hero banner that combines professional imagery with bold, high-impact typography to establish a strong visual hierarchy. The design balances aspirational photography with concise messaging, using a high-contrast color palette to reinforce the brand identity and improve readability. The layout was optimized to create an engaging first impression while effectively directing users' attention to the site's key value proposition.</p>
 
-          <pre><code>npm install your-package-name</code></pre>
-        </section>
+            <h3>Content Type Features:</h3>
+            <ul>
+              <li>  
+                Five image backgrounds that change randomly on load.
+              </li>
+              <li>
+                Custom text background colors.
+              </li>
+              <li>
+                Three title text options for text customization with color options.
+              </li>
+              <li>
+                Three call-to-action button options.
+              </li>
+            </ul>
 
-        <section id="yarn">
-          <h2>Yarn</h2>
-          <p>
-            Install the package using Yarn.
-          </p>
+             <h3>Future Possible Content Type Features:</h3>
+            <ul>
+              <li>  
+                Custom font sizes and more color options.
+              </li>
+              <li>
+                More text background color options
+              </li>
+              <li>
+                Custom margins and padding.
+              </li>
+            </ul>
+          </section>
 
-          <pre><code>yarn add your-package-name</code></pre>
-        </section>
+          <section id="fordham-rebrand-hero-carousel">
+            <h2>Fordham Rebrand: Hero Carousel</h2>
 
-        <section id="cdn">
-          <h2>CDN</h2>
-          <p>
-            You can also include the package through a CDN.
-          </p>
+            <h3>Description:</h3>
+            <p>Developed a reusable hero carousel component to showcase multiple promotional messages within a single, engaging interface. The implementation combines responsive full-width imagery, bold headline typography, branded call-to-action buttons, and intuitive carousel controls to create a visually impactful landing experience. The component was designed with reusability, and responsive behavior in mind, making it adaptable for future campaigns and content updates.</p>
 
-          <pre><code>&lt;script src="https://cdn.example.com/package.js"&gt;&lt;/script&gt;</code></pre>
-        </section>
+            <h3>Content Type Features:</h3>
+            <ul>
+              <li>  
+                Animations for text enablement.
+              </li>
+              <li>
+                Custom image background.
+              </li>
+              <li>
+                Three title text options for text customization with color options.
+              </li>
+              <li>
+                Three call-to-action button options.
+              </li>
+            </ul>
 
-        <section id="buttons">
-          <h2>Buttons</h2>
-          <p>
-            Documentation for button styles, variants, and usage examples.
-          </p>
-        </section>
+             <h3>Future Possible Content Type Features:</h3>
+            <ul>
+              <li>  
+                Custom font sizes and more color options.
+              </li>
+              <li>
+                More text background color options
+              </li>
+              <li>
+                Custom margins and padding.
+              </li>
+            </ul>
+          </section>
 
-        <section id="cards">
-          <h2>Cards</h2>
-          <p>
-            Documentation for card components and layout patterns.
-          </p>
-        </section>
+          <section id="cdn">
+            <h2>CDN</h2>
+            <p>You can also include the package through a CDN.</p>
 
-        <section id="forms">
-          <h2>Forms</h2>
-          <p>
-            Documentation for form controls, inputs, labels, and validation.
-          </p>
-        </section>
+            <pre><code>&lt;script src="https://cdn.example.com/package.js"&gt;&lt;/script&gt;</code></pre>
+          </section>
 
-        <section id="authentication">
-          <h2>Authentication</h2>
-          <p>
-            Explain authentication methods, tokens, sessions, or OAuth flows here.
-          </p>
-        </section>
+          <section id="buttons">
+            <h2>Buttons</h2>
+            <p>Documentation for button styles, variants, and usage examples.</p>
+          </section>
 
-        <section id="endpoints">
-          <h2>Endpoints</h2>
-          <p>
-            List your API endpoints and example responses.
-          </p>
+          <section id="cards">
+            <h2>Cards</h2>
+            <p>Documentation for card components and layout patterns.</p>
+          </section>
 
-          <pre><code>GET /api/docs
+          <section id="forms">
+            <h2>Forms</h2>
+            <p>Documentation for form controls, inputs, labels, and validation.</p>
+          </section>
+
+          <section id="authentication">
+            <h2>Authentication</h2>
+            <p>Explain authentication methods, tokens, sessions, or OAuth flows here.</p>
+          </section>
+
+          <section id="endpoints">
+            <h2>Endpoints</h2>
+            <p>List your API endpoints and example responses.</p>
+
+            <pre><code>GET /api/docs
 
 {
   "status": "success",
   "data": []
 }</code></pre>
-        </section>
+          </section>
 
-        <section id="errors">
-          <h2>Errors</h2>
-          <p>
-            Explain common errors, status codes, and troubleshooting steps.
-          </p>
-        </section>
+          <section id="errors">
+            <h2>Errors</h2>
+            <p>Explain common errors, status codes, and troubleshooting steps.</p>
+          </section>
+        </div>
+      </main>
+    </div>
 
-      </div>
-    </main>
-
-  </div>
-
-  <script src="js/script.js"></script>
-</body>
+    <script src="js/script.js"></script>
+  </body>
 </html>
