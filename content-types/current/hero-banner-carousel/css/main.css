@@ -258,7 +258,7 @@
 }
 
 .carousel-header .btn-primary {
-  background-color: #dd3224 !important;
+  background-color: #dd3224 !important; /* ONLY IN DEV ENVIRONMENT */
   border-radius: 10px;
 }
 
