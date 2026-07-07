@@ -16,13 +16,6 @@ const getSectionIdsFromLinks = (links) =>
     .filter((sectionId) => document.getElementById(sectionId));
 
 const getSectionIdsForLink = (link) => {
-  const submenuItem = link.closest(".submenu-item");
-  const linkGroup = submenuItem?.querySelectorAll(".subsubmenu a");
-
-  if (linkGroup?.length) {
-    return getSectionIdsFromLinks(linkGroup);
-  }
-
   return getSectionIdsFromLinks(link.closest(".nav-item")?.querySelectorAll(".submenu a") || []);
 };
 
@@ -115,10 +108,7 @@ accordions.forEach((button) => {
 submenuToggles.forEach((button) => {
   button.addEventListener("click", () => {
     const submenuItem = button.parentElement;
-    const sectionIds = getSectionIdsFromLinks(submenuItem.querySelectorAll(".subsubmenu a"));
-
-    submenuItem.classList.add("open");
-    showSections(sectionIds, button);
+    submenuItem.classList.toggle("open");
   });
 });
 
