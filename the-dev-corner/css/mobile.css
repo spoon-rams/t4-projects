@@ -2,6 +2,8 @@
     @media (max-width: 800px) {
       .docs-layout {
         grid-template-columns: 1fr;
+        height: auto;
+        overflow: visible;
       }
 
       .sidebar {
@@ -21,6 +23,8 @@
       }
 
       .content {
+        height: auto;
+        overflow: visible;
         padding: 2rem 1rem;
       }
     }
