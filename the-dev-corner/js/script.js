@@ -15,6 +15,17 @@ const getSectionIdsFromLinks = (links) =>
     .map((link) => link.hash.slice(1))
     .filter((sectionId) => document.getElementById(sectionId));
 
+const getSectionIdsForLink = (link) => {
+  const submenuItem = link.closest(".submenu-item");
+  const linkGroup = submenuItem?.querySelectorAll(".subsubmenu a");
+
+  if (linkGroup?.length) {
+    return getSectionIdsFromLinks(linkGroup);
+  }
+
+  return getSectionIdsFromLinks(link.closest(".nav-item")?.querySelectorAll(".submenu a") || []);
+};
+
 const openParentsForLink = (link) => {
   const navItem = link.closest(".nav-item");
   const submenuItem = link.closest(".submenu-item");
@@ -29,17 +40,22 @@ const openParentsForLink = (link) => {
   submenuItem?.classList.add("open");
 };
 
-const scrollContentToTop = () => {
+const scrollToSection = (section) => {
   const contentOverflow = content ? getComputedStyle(content).overflowY : "";
 
   if (content && contentOverflow !== "visible") {
-    content.scrollTo({ top: 0, behavior: "smooth" });
+    content.scrollTo({ top: section.offsetTop, behavior: "smooth" });
   } else {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 };
 
-const showSections = (sectionIds, activeElement = null, shouldUpdateHash = true) => {
+const showSections = (
+  sectionIds,
+  activeElement = null,
+  scrollTargetId = sectionIds[0],
+  shouldUpdateHash = true
+) => {
   if (!sectionIds.length) {
     return;
   }
@@ -54,10 +70,14 @@ const showSections = (sectionIds, activeElement = null, shouldUpdateHash = true)
     activeElement.classList.add("active");
   }
 
-  scrollContentToTop();
+  const scrollTarget = document.getElementById(scrollTargetId);
+
+  if (scrollTarget) {
+    scrollToSection(scrollTarget);
+  }
 
   if (shouldUpdateHash) {
-    history.pushState(null, "", `#${sectionIds[0]}`);
+    history.pushState(null, "", `#${scrollTargetId}`);
   }
 };
 
@@ -69,7 +89,8 @@ const showSection = (sectionId, shouldUpdateHash = true) => {
     return;
   }
 
-  showSections([sectionId], activeLink, shouldUpdateHash);
+  const sectionIds = activeLink ? getSectionIdsForLink(activeLink) : [sectionId];
+  showSections(sectionIds, activeLink, sectionId, shouldUpdateHash);
 
   if (activeLink) {
     openParentsForLink(activeLink);
