@@ -4,6 +4,17 @@ const navLinks = document.querySelectorAll(".submenu a");
 const sections = document.querySelectorAll(".content section");
 const content = document.querySelector(".content");
 
+const resetActiveStates = () => {
+  navLinks.forEach((item) => item.classList.remove("active"));
+  submenuToggles.forEach((item) => item.classList.remove("active"));
+  accordions.forEach((item) => item.classList.remove("active"));
+};
+
+const getSectionIdsFromLinks = (links) =>
+  Array.from(links)
+    .map((link) => link.hash.slice(1))
+    .filter((sectionId) => document.getElementById(sectionId));
+
 const openParentsForLink = (link) => {
   const navItem = link.closest(".nav-item");
   const submenuItem = link.closest(".submenu-item");
@@ -18,6 +29,38 @@ const openParentsForLink = (link) => {
   submenuItem?.classList.add("open");
 };
 
+const scrollContentToTop = () => {
+  const contentOverflow = content ? getComputedStyle(content).overflowY : "";
+
+  if (content && contentOverflow !== "visible") {
+    content.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+};
+
+const showSections = (sectionIds, activeElement = null, shouldUpdateHash = true) => {
+  if (!sectionIds.length) {
+    return;
+  }
+
+  sections.forEach((section) => {
+    section.classList.toggle("is-hidden", !sectionIds.includes(section.id));
+  });
+
+  resetActiveStates();
+
+  if (activeElement) {
+    activeElement.classList.add("active");
+  }
+
+  scrollContentToTop();
+
+  if (shouldUpdateHash) {
+    history.pushState(null, "", `#${sectionIds[0]}`);
+  }
+};
+
 const showSection = (sectionId, shouldUpdateHash = true) => {
   const targetSection = document.getElementById(sectionId);
   const activeLink = document.querySelector(`.submenu a[href="#${sectionId}"]`);
@@ -26,49 +69,35 @@ const showSection = (sectionId, shouldUpdateHash = true) => {
     return;
   }
 
-  sections.forEach((section) => {
-    section.classList.toggle("is-hidden", section !== targetSection);
-  });
-
-  navLinks.forEach((item) => item.classList.remove("active"));
+  showSections([sectionId], activeLink, shouldUpdateHash);
 
   if (activeLink) {
-    activeLink.classList.add("active");
     openParentsForLink(activeLink);
-  }
-
-  const contentOverflow = content ? getComputedStyle(content).overflowY : "";
-
-  if (content && contentOverflow !== "visible") {
-    content.scrollTo({ top: 0, behavior: "smooth" });
-  } else {
-    targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  if (shouldUpdateHash) {
-    history.pushState(null, "", `#${sectionId}`);
   }
 };
 
 accordions.forEach((button) => {
   button.addEventListener("click", () => {
     const navItem = button.parentElement;
-    if (navItem.classList.contains("open")) {
-      navItem.classList.remove("open");
-    } else {
-      const openItem = document.querySelector(".nav-item.open");
-      if (openItem) {
-        openItem.classList.remove("open");
-      }
-      navItem.classList.add("open");
+    const openItem = document.querySelector(".nav-item.open");
+    const sectionIds = getSectionIdsFromLinks(navItem.querySelectorAll(".submenu a"));
+
+    if (openItem && openItem !== navItem) {
+      openItem.classList.remove("open");
     }
+
+    navItem.classList.add("open");
+    showSections(sectionIds, button);
   });
 });
 
 submenuToggles.forEach((button) => {
   button.addEventListener("click", () => {
     const submenuItem = button.parentElement;
-    submenuItem.classList.toggle("open");
+    const sectionIds = getSectionIdsFromLinks(submenuItem.querySelectorAll(".subsubmenu a"));
+
+    submenuItem.classList.add("open");
+    showSections(sectionIds, button);
   });
 });
 

@@ -80,7 +80,8 @@ body {
   font-weight: 500;
 }
 
-.accordion:hover {
+.accordion:hover,
+.accordion.active {
   background: #dd3224;
 }
 
@@ -94,6 +95,7 @@ body {
 }
 
 .submenu-item.open .submenu-toggle,
+.submenu-toggle.active,
 .submenu-toggle:hover {
   color: #fff;
   font-weight: bold;
