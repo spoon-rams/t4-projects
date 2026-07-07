@@ -29,9 +29,9 @@
       <!-- FILTER BUTTONS -->
       <button type="button" class="btn btn-primary program-search__form__toggle" id="occupancy-button" >Occupancy</button>
       <button type="button" class="btn btn-primary program-search__form__toggle" id="class-year-button">Class Year</button>
-      <button type="button" class="btn btn-primary program-search__form__toggle" id="housing-type-button">Housing Type</button>
+      <!-- <button type="button" class="btn btn-primary program-search__form__toggle" id="housing-type-button">Housing Type</button> -->
       <button type="button" class="btn btn-primary program-search__form__toggle" id="campus-residence-button">Campus</button>
-      <button type="button" class="btn btn-primary program-search__form__toggle" id="pricing-button">Price</button>
+      <!-- <button type="button" class="btn btn-primary program-search__form__toggle" id="pricing-button">Price</button> -->
       <a class="btn btn-primary program-search__form__clear ajax-load-link" href="?keywords=" id="clear-filters">Clear Filters</a>
 
     </div>
@@ -151,7 +151,7 @@
         </div>
 
         <!-- FILTER BY HOUSING TYPE -->
-        <div class="program-search__form__filters col-sm-12" id="housing-type-filter" data-group="house-type">
+        <!-- <div class="program-search__form__filters col-sm-12" id="housing-type-filter" data-group="house-type">
           <span class="program-search__form__filters__heading">Filter by Housing Type</span>
           <?php
            $element = 'residenceType';
@@ -188,7 +188,7 @@
               </fieldset>
             </div>
           <?php endif; ?>
-        </div>
+        </div> -->
 
         <!-- FILTER BY CAMPUS -->
         <div class="program-search__form__filters col-sm-12" id="campus-residence-filter" data-group="campus">
@@ -231,7 +231,7 @@
         </div>
 
         <!-- FILTER BY PRICE-->
-        <div class="program-search__form__filters col-sm-12" id="pricing-filter" data-group="pricing">
+       <!-- <div class="program-search__form__filters col-sm-12" id="pricing-filter" data-group="pricing">
           <span class="program-search__form__filters__heading">Filter by Price</span>
 
           <div id="checkboxes-residenceCost">
@@ -250,17 +250,17 @@
 
               <div>
                 Selected Academic Year Rate: $<span id="priceValue"></span>
-              </div>
+              </div> -->
 
               <!-- HIDDEN PRICE SLIDER SEARCH -->
-              <input
+              <!--<input
                 type="hidden"
                 name="residenceCost"
                 id="priceCombined"
               />
             </fieldset>
           </div>
-        </div>
+        </div> -->
 
 
         <!-- HIDDEN KEYWORD SEARCH -->
@@ -363,21 +363,36 @@
             <p class="popup-options"><strong>Campus: </strong><span class="degree-options"><?php echo $item['residenceCampus']; ?></span></p>
             <hr class="modal-popup-separator">
 
-            <!-- POPUP CLASS YEARS -->
-            <p><strong>Class Year(s): </strong><?php echo $item['residenceClass']; ?></p>
+            <div class="modal-content-info">
+              <div class="content-info">
+                <!-- POPUP CLASS YEARS -->
+                <p><strong>Class Year(s): </strong><?php echo $item['residenceClass']; ?></p>
 
-            <!-- POPUP HOUSING TYPE -->
-            <p><strong> Housing Type: </strong><?php echo $item['residenceType'] ?></p>
+                <!-- POPUP HOUSING TYPE -->
+                <!-- <p><strong> Housing Type: </strong><?php echo $item['residenceType'] ?></p> -->
 
-            <!-- POPUP LINK -->
-            <a class="popup-modal__more btn btn-primary" href="<?php echo $item['residenceURL']; ?>" aria-label="Find out more about<?php echo $item['residenceName']; ?>">Read More</a>
+                <!-- POPUP LINK -->
+                <a class="popup-modal__more btn btn-primary" href="<?php echo $item['residenceURL']; ?>" aria-label="Find out more about<?php echo $item['residenceName']; ?>">Read More</a>
 
-            <!-- POPUP CLOSE BUTTON -->
-            <button class="popup-modal__close" aria-label="Close site search">
-              <svg class="svg-md-24px" focusable="false" aria-hidden="true">
-                <use xlink:href="<t4 type="media" id="10757" formatter="path/*" />#ic_close_24px"></use>
-              </svg>
-            </button>
+                <!-- POPUP CLOSE BUTTON -->
+                <button class="popup-modal__close" aria-label="Close site search">
+                  <svg class="svg-md-24px" focusable="false" aria-hidden="true">
+                    <use xlink:href="<t4 type="media" id="10757" formatter="path/*" />#ic_close_24px"></use>
+                  </svg>
+                </button>
+              </div> 
+              <!-- LOCATION MAP -->
+              <?php if (! empty($item['residenceLocation'])): ?>
+                <div class="content-location">
+                  <img 
+                    srcset="<?php echo $item['residenceLocation']; ?> 0.33x,<?php echo $item['residenceLocation']; ?> 0.5x,<?php echo $item['residenceLocation']; ?> 1.5x,<?php echo $item['residenceLocation']; ?> 2x" 
+                    src="<?php echo $item['residenceLocation']; ?>" 
+                    alt="Location Map for <?php echo $item['residenceName']; ?>"
+                  />
+                </div>
+              <?php endif; ?>
+
+            </div> 
           </div>
         </div>
 		  <?php endforeach; ?>

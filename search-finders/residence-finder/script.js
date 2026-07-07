@@ -6,19 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Button Elements
   const occupancyBtn = document.getElementById("occupancy-button");
   const classYearBtn = document.getElementById("class-year-button");
-  const housingTypeBtn = document.getElementById("housing-type-button");
+  //const housingTypeBtn = document.getElementById("housing-type-button");
   const campusBtn = document.getElementById("campus-residence-button");
-  const pricingBtn = document.getElementById("pricing-button");
+  //const pricingBtn = document.getElementById("pricing-button");
 
   // Filter Elements
   const occupancyFilter = document.getElementById("occupancy-filter");
   const classYearFilter = document.getElementById("class-year-filter");
-  const housingTypeFilter = document.getElementById("housing-type-filter");
+  // const housingTypeFilter = document.getElementById("housing-type-filter");
   const campusFilter = document.getElementById("campus-residence-filter");
-  const pricingFilter = document.getElementById("pricing-filter");
+  // const pricingFilter = document.getElementById("pricing-filter");
   const allFilters = document.querySelectorAll("#searchoptions .program-search__form__filters.col-sm-12");
 
-  if (occupancyBtn && classYearBtn && housingTypeBtn && campusBtn && pricingBtn) {
+  if (occupancyBtn && classYearBtn && campusBtn) {
     // Occupancy Button Event Listener
     occupancyBtn.addEventListener("click", () => toggleActiveClass(occupancyFilter, allFilters));
 
@@ -26,13 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
     classYearBtn.addEventListener("click", () => toggleActiveClass(classYearFilter, allFilters));
 
     // Housing Type Button Event Listener
-    housingTypeBtn.addEventListener("click", () => toggleActiveClass(housingTypeFilter, allFilters));
+    // housingTypeBtn.addEventListener("click", () => toggleActiveClass(housingTypeFilter, allFilters));
 
     // Campus Button Event Listener
     campusBtn.addEventListener("click", () => toggleActiveClass(campusFilter, allFilters));
 
     // Pricing Button Event Listener
-    pricingBtn.addEventListener("click", () => toggleActiveClass(pricingFilter, allFilters));
+    //pricingBtn.addEventListener("click", () => toggleActiveClass(pricingFilter, allFilters));
   }
 });
 
