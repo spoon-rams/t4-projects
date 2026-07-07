@@ -194,6 +194,10 @@ section {
   scroll-margin-top: 2rem;
 }
 
+section.is-hidden {
+  display: none;
+}
+
 section h2 {
   font-size: 1.75rem;
   margin: 0 0 1rem;
