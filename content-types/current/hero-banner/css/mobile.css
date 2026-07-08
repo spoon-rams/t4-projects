@@ -1,4 +1,4 @@
-/* @media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1280px) {
   .hero-banner.fordham-rebrand .hero-banner .hero-banner__img {
     background-size: cover;
     background-position: center;
@@ -68,7 +68,7 @@
     height: 90vh;
   }
 }
-*/
+
 
 /* Mobile-specific styles for the two column hero banner */
 @media only screen and (max-width: 1642px) {
