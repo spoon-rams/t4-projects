@@ -28,21 +28,19 @@
     font-size: 2rem !important;
   }
 
-  .hero-banner__block__button-link-break-3buttons:last-of-type {
+  .hero-banner.fordham-rebrand .hero-banner__block__button-link-break-3buttons:last-of-type {
     margin-left: 0 !important;
   }
 
-  .hero-banner__block__button-link-break-3buttons:first-of-type {
+  .hero-banner.fordham-rebrand .hero-banner__block__button-link-break-3buttons:first-of-type {
     margin-right: 0 !important;
   }
 
   .hero-banner.fordham-rebrand .hero-banner__block__content a {
     width: 70% !important;
   }
-}
 
-@media only screen and (max-width: 768px) {
-  .hero-banner.fordham-rebrand .hero-banner__wrapper {
+   .hero-banner.fordham-rebrand .hero-banner__wrapper {
     height: 80vh;
   }
 }
@@ -59,15 +57,22 @@
 
 @media only screen and (max-width: 440px) {
   .hero-banner.fordham-rebrand .hero-banner__wrapper {
-    height: 65vh;
+    height: 75vh;
   }
 }
 
-@media only screen and (max-width: 390px) {
+/* @media only screen and (max-width: 390px) {
+  .hero-banner.fordham-rebrand .hero-banner__wrapper {
+    height: 75vh;
+  }
+} */
+
+@media only screen and (max-width: 375px) {
   .hero-banner.fordham-rebrand .hero-banner__wrapper {
     height: 90vh;
   }
 }
+
 
 
 /* Mobile-specific styles for the two column hero banner */
