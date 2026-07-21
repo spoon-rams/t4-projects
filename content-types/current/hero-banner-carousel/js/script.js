@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+  if (!document.querySelector(".carousel-header")) {
+    return;
+  }
   // DOM ELEMENTS
   const slidesContainer = document.querySelector(".carousel-header .slide-container");
   const slide = document.querySelector(".carousel-header .slide");
