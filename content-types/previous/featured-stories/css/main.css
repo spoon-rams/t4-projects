@@ -1,19 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
-
-/* FOR SLIDER ARROWS */
 .featured-stories .carousel-arrows {
   display: flex;
   justify-content: space-between;
   position: relative;
   height: 0;
-  top: 80;
+  top: 80px;
   width: 100%;
 }
+
 .featured-stories .carousel-arrow {
   position: static;
   height: 4rem;
-  background-color: #900028;
+  background-color: #dd3224;
   color: white;
   border: none;
   width: 4rem;
@@ -22,30 +19,30 @@
   cursor: pointer;
   opacity: 0.5;
   transition: opacity 100ms;
-  z-index: 1;
+  z-index: 99;
   transition: opacity 0.5s ease;
-}
-
-.featured-stories .carousel-arrow:hover,
-.featured-stories .carousel-arrow:focus {
-  opacity: 1;
 }
 
 .featured-stories .carousel-arrow.prev {
   left: 0;
   padding-left: 1.5rem;
   margin: 31px;
-  /* border-radius: 0 2rem 2rem 0 !important; */
 }
 
 .featured-stories .carousel-arrow.next {
   right: 0;
   padding-left: 1.5rem;
   margin: 31px;
-  /* border-radius: 2rem 0 0 2rem !important; */
 }
 
-/* Existing styles */
+.featured-stories .carousel-arrow:focus,
+.featured-stories .carousel-arrow:hover {
+  opacity: 1;
+}
+.featured-stories .carousel-arrow.next,
+.featured-stories .carousel-arrow.prev {
+  margin: 31px;
+}
 .featured-stories .title {
   display: flex;
   justify-content: space-between;
@@ -53,118 +50,89 @@
   flex-wrap: nowrap;
   padding: 15px;
 }
-
-/* .featured-stories .title::after {
-  content: "";
-  margin-top: 1px;
-  height: 4px;
-  background-color: #e2e2e2;
-  flex: 1 1 auto;
-  margin-left: 26px;
-} */
-
 .featured-stories .title h2 {
   margin: auto;
   font-size: 2.5rem;
-  color: #343a40;
-  font-family: "Raleway", sans-serif;
+  color: #7e072a;
+  font-family: "Modern Gothic", Arial, sans-serif;
   flex-shrink: 0;
   max-width: 100%;
 }
-
 .featured-stories .title h2 span {
-  color: #900028;
+  color: #343a40;
 }
-
-.featured-stories .featured-stories-container.row .slide-container {
+.featured-stories .slide-container {
   display: flex;
-  flex-wrap: nowrap; /* No wrapping for carousel effect */
-  overflow: scroll; /* Ensure scrolling */
-  justify-content: start; /* Align items to the left */
+  flex-wrap: nowrap;
+  overflow: scroll;
+  justify-content: start;
+  -ms-scroll-snap-type: x mandatory;
   scroll-snap-type: x mandatory;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
   scroll-behavior: smooth;
-  padding: 0; /* Remove padding to center items better */
-  -ms-overflow-style: none; /* IE 10+ */
+  padding: 0;
+  -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
 }
-
-.featured-stories .featured-stories-container.row::-webkit-scrollbar {
-  display: none; /* Hide scrollbar on webkit browsers */
+.featured-stories .featured-stories-container::-webkit-scrollbar {
+  display: none;
 }
-
-.featured-stories .featured-stories-container.row .col-lg-4 {
-  flex: 3 0 33.33%; /* Make each item 100% of the container */
-  max-width: 100%;
+.featured-stories .slide {
+  flex: 3 0 33.33%;
+  max-width: 50%;
   height: 100%;
   scroll-snap-align: start;
-  text-align: center; /* Center the content */
-  margin-right: 0; /* Remove right margin */
+  text-align: center;
+  margin-right: 0;
   padding: 0 30px;
 }
-
-/* .featured-stories .featured-stories-container.row .slide-container {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  padding: 0 25px;
-  text-align: center;
-  gap: 1rem;
-}
-
-.featured-stories .featured-stories-container.row .col-lg-4 {
-  margin-bottom: 10px;
-  height: auto;
-  flex: 1 1 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-} */
-
-.featured-stories .featured-stories-container.row img {
+.featured-stories .slide .slide-inner > img {
   max-width: 100%;
   max-height: 100%;
   min-height: 50%;
   width: 100%;
   border: 1px solid #e2e2e2;
   height: auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
   object-fit: cover;
 }
-
-.featured-stories .featured-stories-container.row .fordham-logo {
+.featured-stories .slide-inner p {
   text-align: left;
-  margin-left: -3px;
 }
-
-.featured-stories .featured-stories-container.row .fordham-logo img {
-  background-color: #900028;
-  border: none;
-  height: 20px !important;
-  width: 160px;
-  min-height: 0 !important;
-}
-
-.featured-stories .featured-stories-container.row h3 {
-  font-family: "Raleway", sans-serif;
+.featured-stories .slide h3 {
+  font-family: "Modern Gothic", Arial, sans-serif;
   font-size: 1.4rem;
   text-align: left;
 }
-
-.featured-stories .featured-stories-container.row a {
-  color: black !important;
+.featured-stories .slide a {
+  color: #000 !important;
 }
-
-.featured-stories .featured-stories-container.row .category {
+.featured-stories .slide a:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: hsla(0, 0%, 100%, 0);
+}
+.featured-stories .slide .category {
   margin: 8px 0 !important;
   text-transform: uppercase;
   font-size: 0.9rem;
+  text-align: left;
 }
-
-.featured-stories .featured-stories-container.row .category span {
+.featured-stories .slide .category span {
   color: #333;
 }
-
-.featured-stories .featured-stories-container.row p {
+.featured-stories .slide-inner {
+  position: relative;
+}
+.featured-stories .fordham-logo {
   text-align: left;
-  font-size: 0.9rem;
+}
+.featured-stories .fordham-logo img {
+  width: 170px;
 }

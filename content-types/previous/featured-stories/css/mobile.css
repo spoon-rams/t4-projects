@@ -1,151 +1,115 @@
-/* MOBILE RESPONSIVE VIEW */
 @media only screen and (max-width: 1480px) {
   .featured-stories .carousel-arrows {
-    top: 60;
+    top: 60px;
   }
 }
-
 @media only screen and (max-width: 1320px) {
   .featured-stories .carousel-arrows {
-    top: 40;
+    top: 40px;
   }
 }
-
 @media only screen and (max-width: 1120px) {
   .featured-stories .carousel-arrows {
-    top: 20;
+    top: 20px;
   }
 }
-
 @media only screen and (min-width: 992px) {
   .featured-stories .carousel-arrow {
     display: block;
   }
 }
-
 @media only screen and (max-width: 991px) {
-  .featured-stories .carousel-arrows {
-    top: 160;
-  }
-
-  .featured-stories .featured-stories-container.row {
+  .featured-stories .featured-stories-container {
     position: relative;
     flex-direction: row;
   }
-  .featured-stories .featured-stories-container.row .slide-container {
-    flex-wrap: nowrap; /* No wrapping for carousel effect */
-    overflow: hidden; /* Ensure scrolling */
-    justify-content: start; /* Align items to the left */
+  .featured-stories .featured-stories-container::-webkit-scrollbar {
+    display: none;
+  }
+  .featured-stories .slide-container {
+    flex-wrap: nowrap;
+    overflow: hidden;
+    justify-content: start;
+    -ms-scroll-snap-type: x mandatory;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
     scroll-behavior: smooth;
-    padding: 0; /* Remove padding to center items better */
-    -ms-overflow-style: none; /* IE 10+ */
+    padding: 0;
+    -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
   }
-
-  .featured-stories .featured-stories-container.row::-webkit-scrollbar {
-    display: none; /* Hide scrollbar on webkit browsers */
-  }
-
-  .featured-stories .featured-stories-container.row .col-lg-4 {
-    flex: 0 0 100%; /* Make each item 100% of the container */
+  .featured-stories .slide {
+    flex: 0 0 100%;
     max-width: 100%;
     height: 100%;
     scroll-snap-align: start;
-    text-align: center; /* Center the content */
-    margin-right: 0; /* Remove right margin */
+    text-align: center;
+    margin-right: 0;
     padding: 0 30px;
   }
-
-  .featured-stories .featured-stories-container.row img {
+  .featured-stories .slide .slide-inner > img {
     width: 100%;
   }
-
-  .featured-stories .featured-stories-container .carousel-arrow {
+  .featured-stories .carousel-arrows {
+    top: 160px;
+  }
+  .featured-stories .carousel-arrow {
     display: flex;
   }
-
-  .featured-stories .featured-stories-container .carousel-arrow.prev {
+  .featured-stories .carousel-arrow.prev {
     margin-left: 31px;
   }
-
-  .featured-stories .featured-stories-container .carousel-arrow.next {
+  .featured-stories .carousel-arrow.next {
     margin-right: 31px;
   }
-
-  .featured-stories .featured-stories-container.row .category {
-    text-align: center;
-  }
-
-  .featured-stories .featured-stories-container.row h3 {
-    text-align: center;
-  }
-
-  .featured-stories .featured-stories-container.row .fordham-logo {
-    text-align: center;
-  }
 }
-
 @media only screen and (max-width: 840px) {
   .featured-stories .carousel-arrows {
-    top: 130;
+    top: 130px;
   }
 }
-
 @media only screen and (max-width: 768px) {
   .featured-stories .carousel-arrows {
-    top: 110;
+    top: 110px;
   }
 }
-
 @media only screen and (max-width: 620px) {
-  .featured-stories .carousel-arrows {
-    top: 90;
-  }
-
   .featured-stories .title h2 {
-    border-bottom: 4px #e2e2e2 solid;
+    border-bottom: 4px solid #e2e2e2;
     width: 100%;
     text-align: center;
   }
-
-  .featured-stories .title::after {
+  .featured-stories .title h2:after {
     display: none;
   }
-
-  .featured-stories .featured-stories-container.row h3 {
+  .featured-stories .slide h3 {
     font-size: 1.2rem;
   }
+  .featured-stories .carousel-arrows {
+    top: 90px;
+  }
 }
-
 @media only screen and (max-width: 520px) {
   .featured-stories .carousel-arrows {
-    top: 70;
+    top: 70px;
   }
-
   .featured-stories .carousel-arrow {
     font-size: 2rem;
     height: 3rem;
     width: 3.5rem;
   }
-
-  .featured-stories .carousel-arrow.next {
-    padding-top: 3px;
-  }
+  .featured-stories .carousel-arrow.next,
   .featured-stories .carousel-arrow.prev {
     padding-top: 3px;
   }
 }
-
 @media only screen and (max-width: 435px) {
   .featured-stories .carousel-arrows {
-    top: 50;
+    top: 50px;
   }
 }
-
 @media only screen and (max-width: 320px) {
   .featured-stories .carousel-arrows {
-    top: 20;
+    top: 20px;
   }
 }
