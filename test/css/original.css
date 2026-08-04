@@ -1,0 +1,208 @@
+.text-heavy {
+  font-weight: 700;
+}
+
+.two-by-two .overlay {
+  height: 100%;
+  width: 100%;
+  opacity: .5;
+  background-color: black;
+  position: absolute;
+  z-index: 1;
+}
+
+.two-by-two.single-three-box .col-lg-4,
+.two-by-two .col-lg-6,
+.two-by-two .col-lg-12 {
+  height: 300px;
+  padding-top: 25px;
+}
+
+.two-by-two .content-container img {
+  height: 100%;
+  width: 100%;
+  filter: blur(0);
+  transition: filter 0.5s ease;
+  object-fit: cover;
+  object-position: center;
+}
+
+.two-by-two .content-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.two-by-two .content-container .title {
+  display: flex;
+  position: absolute;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+}
+
+.two-by-two .content-container .content {
+  position: absolute;
+  align-items: center;
+  width: 80%;
+  z-index: 2;
+}
+
+.two-by-two .content-container .content .content-text {
+  color: white;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.two-by-two .content-container .content .content-text p {
+  font-size: 1.2rem !important;
+}
+
+.two-by-two .content-container .content .content-text button {
+  background-color: #7e072a;
+  border-color: #7e072a;
+  font-weight: bold;
+}
+
+.two-by-two .content-container .title {
+  flex-direction: column;
+}
+
+.two-by-two .content-container .title img,
+.two-by-two .content-container .title svg,
+.two-by-two .content-container .title p,
+.two-by-two .content-container .title p.title-desc {
+  color: white;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 2;
+}
+
+.two-by-two .content-container .title svg {
+  height: 70px;
+  padding-bottom: 10px;
+}
+
+.two-by-two .content-container .title img {
+  width: 60px;
+  padding-bottom: 10px;
+}
+
+.two-by-two .content-container .title .title-header {
+  font-size: 1.8rem !important;
+  margin-bottom: 0 !important;
+}
+
+.two-by-two .content-container .title .title-desc {
+  font-size: 1rem !important;
+}
+
+/* Hover Effects */
+.two-by-two .content-container:not(:hover) .title img,
+.two-by-two .content-container:not(:hover) .title svg,
+.two-by-two .content-container:not(:hover) .title .title-header,
+.two-by-two .content-container:not(:hover) .title .title-desc {
+  opacity: 1;
+}
+
+.two-by-two .content-container:hover .content .content-text {
+  opacity: 1;
+}
+
+.two-by-two .content-container:hover > img {
+  filter: blur(5px);
+}
+  
+/* Mobile Responsive */
+
+@media (max-width: 1800px) {
+  .two-by-two {
+  	padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .two-by-two .container {
+    max-width: 1140px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .two-by-two .container {
+    max-width: 1140px !important;
+    padding: 0 20px;
+  }
+
+  .two-by-two .col-lg-6,
+  .two-by-two .col-lg-12,
+  .two-by-two.single-three-box .col-lg-4 {
+    padding-bottom: 0;
+    padding-top: 10px;
+  }
+
+  .two-by-two.single-three-box .col-lg-4 {
+    max-height: 300px;
+  }
+}
+
+@media (min-width: 441px) and (max-width: 768px) {
+  .two-by-two .container {
+    max-width: 920px !important;
+    padding: 0 20px;
+  }
+
+  .two-by-two .col-lg-6,
+  .two-by-two .col-lg-12,
+  .two-by-two.single-three-box .col-lg-4 {
+    padding-bottom: 0;
+    padding-top: 10px;
+  }
+
+  .two-by-two.single-three-box .col-lg-4 {
+    max-height: 300px;
+  }
+}
+
+@media (min-width: 361px) and (max-width: 441px) {
+  .two-by-two .container {
+    max-width: 920px !important;
+    padding: 0 20px;
+  }
+
+  .two-by-two .col-lg-6,
+  .two-by-two .col-lg-12,
+  .two-by-two.single-three-box .col-lg-4 {
+    padding-bottom: 0;
+    padding-top: 10px;
+  }
+
+  .two-by-two.single-three-box .col-lg-4 {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 360px) {
+  .two-by-two .container {
+    max-width: 920px !important;
+    padding: 0 20px;
+  }
+
+  .two-by-two .col-lg-6,
+  .two-by-two .col-lg-12,
+  .two-by-two.single-three-box .col-lg-4 {
+    padding-bottom: 0;
+    padding-top: 10px;
+  }
+
+  .two-by-two.single-three-box .col-lg-4 {
+    max-height: 300px;
+  }
+}
