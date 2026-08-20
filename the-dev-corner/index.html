@@ -39,29 +39,27 @@
       </aside>
 
       <!-- TEMPORARY -->
-      <div class="inner__sidebar__lists inner__sidebar__lists--collapse" style="display: block">
+      <!-- <div class="inner__sidebar__lists inner__sidebar__lists--collapse side-bar-custom" style="display: block">
         <div class="inner__sidebar__dropdown-menu">
-          <p>What's New</p>
+          <h3 class="whats-new-title">What's New</h3>
+          <p>In The Works..</p>
           <ul>
-            <li class="inner__sidebar__dropdown-menu__item">
-              <a href="#" class="inner__sidebar__dropdown-menu__link">Fordham Rebrand: Hero Bannner</a>
-            </li>
-            <li class="inner__sidebar__dropdown-menu__item">
-              <a href="#" class="inner__sidebar__dropdown-menu__link">Fordham Rebrand: Two Colum Hero</a>
-            </li>
-            <li class="inner__sidebar__dropdown-menu__item">
-              <a href="#" class="inner__sidebar__dropdown-menu__link">Fordham Rebrand: Hero Carousel</a>
-            </li>
+            <li class="inner__sidebar__dropdown-menu__item"><a class="inner__sidebar__dropdown-menu__link" href="#">Content Type 1</a></li>
+          </ul>
+          <p>Newly Released...</p>
+          <ul>
+            <li class="inner__sidebar__dropdown-menu__item"><a class="inner__sidebar__dropdown-menu__link" href="#">Rebrand: Hero Bannner</a></li>
+            <li class="inner__sidebar__dropdown-menu__item"><a class="inner__sidebar__dropdown-menu__link" href="#">Rebrand: Two Colum Hero</a></li>
+            <li class="inner__sidebar__dropdown-menu__item"><a class="inner__sidebar__dropdown-menu__link" href="#">Rebrand: Hero Carousel</a></li>
           </ul>
         </div>
-      </div>
+      </div> -->
 
       <main class="content">
         <div class="content-inner">
           <h1>The Development Corner</h1>
-
+          <h2 class="section-title">Overview</h2>
           <section id="overview">
-            <h2>Overview</h2>
             <p>
               This documentation page provides an overview of the custom Fordham Rebrand content types developed for use across landing pages and promotional experiences. Each content type is designed
               to support flexible, visually engaging page layouts while aligning with Fordham’s refreshed brand direction. The documentation outlines the purpose, key features, and potential future
@@ -71,8 +69,9 @@
 
             <!-- <div class="callout">The sidebar uses accordion parent sections that expand and collapse.</div> -->
           </section>
-          <section id="featured">
-            <h2>In the Works...</h2>
+          <hr />
+          <h2 class="section-title">In the Works...</h2>
+          <section id="in-the-works">
             <div id="featured-one">
               <h3>Content Type 1</h3>
               <p>Details about the first content type.</p>
@@ -83,25 +82,26 @@
               <p>Details about the second content type.</p>
             </div>
           </section>
-
-          <section id="fordham-rebrand-hero-banner">
-            <h2>Fordham Rebrand: Hero Banner</h2>
+          <hr />
+          <h2 class="section-title">Newly Released...</h2>
+          <section id="rebrand-hero-banner">
+            <h3>Fordham Rebrand: Hero Banner</h3>
             <img src="./images/hero-banner.png" alt="Hero Banner Example" class="example-image" />
-            <h3>Description:</h3>
+            <h4>Description:</h4>
             <p>
               Refreshed the hero banner with a modern gradient overlay to improve visual depth and readability. Removed the dark text container, allowing the headline and supporting copy to sit
               directly over the imagery for a cleaner, more immersive design. Updated the call-to-action buttons to align with the new brand color palette, ensuring a cohesive and contemporary user
               experience.
             </p>
 
-            <h3>Content Type Features:</h3>
+            <h4>Content Type Features:</h4>
             <ul>
               <li>Five image backgrounds that change randomly on load.</li>
               <li>Custom title text.</li>
               <li>Custom description text.</li>
               <li>Three call-to-action button options.</li>
             </ul>
-            <h3>Future Features:</h3>
+            <h4>Future Features:</h4>
             <ul>
               <li>Custom font sizes and colors.</li>
               <li>Custom text content width and height.</li>
@@ -111,17 +111,17 @@
             </ul>
           </section>
 
-          <section id="fordham-rebrand-two-column-hero">
-            <h2>Fordham Rebrand: Two Column Hero</h2>
+          <section id="rebrand-two-column-hero">
+            <h3>Fordham Rebrand: Two Column Hero</h3>
             <img src="./images/two-column-banner.png" alt="Two Column Hero Example" class="example-image" />
-            <h3>Description:</h3>
+            <h4>Description:</h4>
             <p>
               Developed a modern split-layout hero banner that combines professional imagery with bold, high-impact typography to establish a strong visual hierarchy. The design balances aspirational
               photography with concise messaging, using a high-contrast color palette to reinforce the brand identity and improve readability. The layout was optimized to create an engaging first
               impression while effectively directing users' attention to the site's key value proposition.
             </p>
 
-            <h3>Content Type Features:</h3>
+            <h4>Content Type Features:</h4>
             <ul>
               <li>Five image backgrounds that change randomly on load.</li>
               <li>Custom text background colors.</li>
@@ -129,7 +129,7 @@
               <li>Three call-to-action button options.</li>
             </ul>
 
-            <h3>Future Features:</h3>
+            <h4>Future Features:</h4>
             <ul>
               <li>Custom font sizes and more color options.</li>
               <li>More text background color options</li>
@@ -137,17 +137,17 @@
             </ul>
           </section>
 
-          <section id="fordham-rebrand-hero-carousel">
-            <h2>Fordham Rebrand: Hero Carousel</h2>
+          <section id="rebrand-hero-carousel">
+            <h3>Fordham Rebrand: Hero Carousel</h3>
             <img src="./images/hero-carousel-banner.png" alt="Hero Carousel Example" class="example-image" />
-            <h3>Description:</h3>
+            <h4>Description:</h4>
             <p>
               Developed a reusable hero carousel component to showcase multiple promotional messages within a single, engaging interface. The implementation combines responsive full-width imagery,
               bold headline typography, branded call-to-action buttons, and intuitive carousel controls to create a visually impactful landing experience. The component was designed with reusability,
               and responsive behavior in mind, making it adaptable for future campaigns and content updates.
             </p>
 
-            <h3>Content Type Features:</h3>
+            <h4>Content Type Features:</h4>
             <ul>
               <li>Animations for text enablement.</li>
               <li>Custom image background.</li>
@@ -155,7 +155,7 @@
               <li>Three call-to-action button options.</li>
             </ul>
 
-            <h3>Future Features:</h3>
+            <h4>Future Features:</h4>
             <ul>
               <li>Custom font sizes and more color options.</li>
               <li>More text background color options</li>
@@ -169,4 +169,3 @@
     <script src="js/script.js"></script>
   </body>
 </html>
-
