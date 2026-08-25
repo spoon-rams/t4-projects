@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Navigation Menu</title>
+
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/mobile.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="main-nav__list">
+          <!-- Parent 1 -->
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#over">Overview</a>
+          </li>
+          <!-- Parent 2 -->
+          <li class="main-nav__item has-dropdown">
+            <details class="nav-dropdown" name="main-navigation">
+              <summary class="main-nav__link">
+                In The Works...
+                <span class="arrow" aria-hidden="true"></span>
+              </summary>
+
+              <div class="dropdown">
+                <div class="dropdown__inner">
+                  <a href="#featured-one">Content Type 1</a>
+                  <a href="#featured-two">Content Type 2</a>
+                </div>
+              </div>
+            </details>
+          </li>
+          <!-- Parent 3 -->
+          <li class="main-nav__item has-dropdown">
+            <details class="nav-dropdown" name="main-navigation">
+              <summary class="main-nav__link">
+                Newly Released...
+                <span class="arrow" aria-hidden="true"></span>
+              </summary>
+
+              <div class="dropdown">
+                <div class="dropdown__inner">
+                  <a href="#rebrand-hero-banner">Fordham Rebrand: Hero Banner</a>
+                  <a href="#rebrand-two-column-hero">Fordham Rebrand: Two Column Hero</a>
+                  <a href="#rebrand-hero-carousel">Fordham Rebrand: Hero Carousel</a>
+                </div>
+              </div>
+            </details>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
