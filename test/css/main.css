@@ -59,3 +59,21 @@
   color: #7e072a;
   text-decoration: underline;
 }
+
+
+/* PRESIDENT'S CLUB MOBILE RESPONSIVE CSS FIX */
+@media only screen and (max-width: 1560px) {
+  .hero-banner__block__title.h1-heading h1 {
+    font-size: 3.5rem !important;
+  }
+
+  .hero-banner__image_block img {
+    width: 260px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .hero-banner__block__title.h1-heading h1 {
+    font-size: 2rem !important;
+  }
+}
