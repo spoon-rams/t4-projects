@@ -261,7 +261,6 @@ section.h1-heading {
 
 /* TOP NAVIGATION MENU */
 
-
 /* =========================
    Header / Navigation
 ========================= */
@@ -342,7 +341,7 @@ summary.main-nav__link::-webkit-details-marker {
 
 .main-nav__link:hover,
 .main-nav__link:focus-visible {
-  background: #DD3224;
+  background: #dd3224;
   color: white !important;
 }
 
@@ -393,9 +392,9 @@ summary.main-nav__link::-webkit-details-marker {
   display: flex;
   gap: 40px;
   justify-content: center;
-  width: min(1200px, calc(100% - 48px));
+  width: max(100%, calc(100% - 48px));
   margin: 0 auto;
-  padding: 32px 0;
+  padding: 32px 15px;
 }
 
 .dropdown__inner a {
@@ -429,13 +428,7 @@ summary.main-nav__link::-webkit-details-marker {
 /* =========================
    Mobile
 ========================= */
-
-@media (max-width: 700px) {
-  .main-nav__link {
-    padding: 0 16px;
-    font-size: 14px;
-  }
-
+@media only screen and (max-width: 1800px) {
   .dropdown__inner {
     flex-direction: column;
     gap: 16px;
@@ -443,3 +436,39 @@ summary.main-nav__link::-webkit-details-marker {
     padding: 24px 0;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .main-nav__link {
+    padding: 0 16px;
+    font-size: 14px;
+  }
+}
+
+
+
+/* LANDING PAGE UPDATE - CSS NO LONGER NEEDED */
+.fordham-logo {
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: auto;
+}
+
+@media only screen and (max-width: 1280px) {
+  .fordham-logo {
+    left: 46%;
+  }
+}
+
+@media only screen and (max-width: 590px) {
+  .fordham-logo {
+    left: 42%;
+  }
+}
+
+
+
+
+
