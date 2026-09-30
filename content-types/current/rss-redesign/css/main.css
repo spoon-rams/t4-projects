@@ -10,3 +10,7 @@
   height: 150px;
   object-fit: cover;
 }
+
+.fordham-rebrand.events .event__card .event__card__content {
+  padding-bottom: 50px;
+}
