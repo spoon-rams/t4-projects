@@ -15,6 +15,37 @@
   object-fit: cover;
   padding-top: 5px
 }
+.fordham-rebrand.events .event__card .event__card__date-container {
+ display: flex;
+ flex-direction: column;
+ text-align: center;
+ background-color: #DD3224;
+ color: #fff;
+ padding: 3px 10px 10px 10px;
+ width: 45px;
+}
+
+.fordham-rebrand.events .event__card .event__card__date-container::after {
+ content: "";
+ display: block;
+ border-top: 4px solid #DD3224;
+ position: relative;
+ width: 45px;
+ top: 19px;
+ margin-left: -10px
+}
+
+.fordham-rebrand.events .event__card .event__card__date .date-month {
+ font-size: .6rem;
+ text-transform: uppercase;
+ font-weight: 600;
+}
+.fordham-rebrand.events .event__card .event__card__date .date-day {
+    font-size: 1.35rem;
+    font-weight: bold;
+    line-height: .9rem;
+}
+
 
 .fordham-rebrand.events .event__card .event__card__content {
   padding-bottom: 50px;
