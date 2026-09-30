@@ -1,0 +1,13 @@
+.fordham-rebrand.events .event__card {
+  border: 1px solid #D3D3D3;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 10px
+}
+
+.fordham-rebrand.events .event__card .event__card__img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
