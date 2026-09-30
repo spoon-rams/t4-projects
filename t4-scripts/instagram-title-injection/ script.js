@@ -3,7 +3,8 @@ window.addEventListener("load", () => {
   // Object Literal for title names
   const instaReels = document.querySelectorAll("iframe");
   const jsScript = document.querySelector("#instagram-title-injection");
-  const data = JSON.parse(jsScript.dataset.json);
+  const data = JSON.parse(jsScript.dataset.titles) ;
+
   let instaTitles = data;
 
   const titles = [];

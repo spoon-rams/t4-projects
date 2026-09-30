@@ -60,7 +60,6 @@
   text-decoration: underline;
 }
 
-
 /* PRESIDENT'S CLUB MOBILE RESPONSIVE CSS FIX */
 @media only screen and (max-width: 1560px) {
   .hero-banner__block__title.h1-heading h1 {
@@ -76,4 +75,50 @@
   .hero-banner__block__title.h1-heading h1 {
     font-size: 2rem !important;
   }
+}
+
+/* FORDHAM MAROON MART PAGE CSS - MOBILE FIX */
+@media only screen and (max-width: 1579px) {
+  .general-content .maroon-mart-banner img {
+    margin-top: 60px;
+  }
+}
+
+@media only screen and (max-width: 1028px) {
+  .parallax-container {
+    background-attachment: unset !important;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto !important;
+    min-height: unset !important;
+  }
+  .general-content .maroon-mart-banner img {
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .section-separator .wrapper,
+  .section-separator .wrapper.fordham-maroon {
+    padding: 4rem 0 !important;
+  }
+
+  .section-separator .wrapper .general-content,
+  .section-separator .wrapper.fordham-maroon .general-content {
+    padding: 0 !important;
+  }
+
+  .section-separator .wrapper .general-content .maroon-mart-collage,
+  .section-separator .wrapper .general-content .maroon-mart-collage.text,
+  .section-separator .wrapper .general-content .google-maps-embed {
+    padding: 0 2rem;
+  }
+
+  .footer__link-widget__item--title {
+    border-bottom: 0 !important;
+  }
+}
+
+#main-content > section:nth-child(2) > div > section.general-content {
+  padding: 0 !important;
 }
