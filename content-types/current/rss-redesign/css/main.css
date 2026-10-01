@@ -1,8 +1,18 @@
+.fordham-rebrand.events .events-slider-type-1__widget {
+  border-bottom: 0;
+  padding: 0 2rem;
+}
+
+.fordham-rebrand.events .events-slider-type-1__track {
+  margin-top: 1rem;
+}
+
 .fordham-rebrand.events .event__card {
   border: 1px solid #d3d3d3;
   border-radius: 4px;
   background-color: #fff;
   padding: 10px;
+  /* box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1); */
 }
 
 .fordham-rebrand.events .event__card:hover {
@@ -18,7 +28,7 @@
 
 .fordham-rebrand.events .event__card .event__card__date {
   position: absolute;
-  top: 142px;
+  top: 137px;
   padding: 5px;
 }
 
@@ -54,10 +64,8 @@
 }
 
 .fordham-rebrand.events .event__card .event__card__content {
-  display: flex;
-  flex-direction: column;
   margin-top: 40px;
-  min-height: 150px;
+  min-height: 80px;
 }
 
 .fordham-rebrand.events .event__card .event__card__content .title {
@@ -69,8 +77,15 @@
   line-height: 130%; /* 26px */
 }
 
-.fordham-rebrand.events .event__card .event__card__content .time,
-.fordham-rebrand.events .event__card .event__card__content .venue {
+.fordham-rebrand.events .event__card .loc-time {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  min-height: 46px;
+}
+
+.fordham-rebrand.events .event__card .loc-time .time,
+.fordham-rebrand.events .event__card .loc-time .venue {
   color: #000;
   /* font-family: "Modern Gothic"; */
   font-size: 16px;
