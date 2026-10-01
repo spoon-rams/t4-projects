@@ -57,9 +57,33 @@
   display: flex;
   flex-direction: column;
   margin-top: 40px;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 
 .fordham-rebrand.events .event__card .event__card__content .title {
- 
+  color: #7e072a;
+  /* font-family: "Modern Gothic"; */
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%; /* 26px */
+}
+
+.fordham-rebrand.events .event__card .event__card__content .time,
+.fordham-rebrand.events .event__card .event__card__content .venue {
+  color: #000;
+  font-family: "Modern Gothic";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 20.8px */
+}
+
+.fordham-rebrand.events .event__card .link {
+  color: #7e072a;
+  font-family: "Modern Gothic";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 20.8px */
 }
