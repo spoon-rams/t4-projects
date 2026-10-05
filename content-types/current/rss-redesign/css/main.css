@@ -81,7 +81,7 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 10px;
-  min-height: 46px;
+  min-height: 55px;
 }
 
 .fordham-rebrand.events .event__card .loc-time .time,
