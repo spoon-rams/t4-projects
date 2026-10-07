@@ -102,3 +102,9 @@
   font-weight: 500;
   line-height: 130%; /* 20.8px */
 }
+
+.fordham-rebrand.events .glide__arrow  {
+ background-color: #dd3224;
+ padding: 10px 20px;
+ margin: 0 !important
+}
