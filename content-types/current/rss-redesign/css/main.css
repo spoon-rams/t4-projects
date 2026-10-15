@@ -8,6 +8,8 @@
 }
 
 .fordham-rebrand.events .event__card {
+  justify-content: space-between;
+  height: 419px;
   border: 1px solid #d3d3d3;
   border-radius: 4px;
   background-color: #fff;
