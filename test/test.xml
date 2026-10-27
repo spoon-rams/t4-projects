@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<events>
+  {% for event in events %}
+    <item>
+      <id>{{event.id}}</id>
+      <title>{% unless event.status == 'live' %}{{ site.snippets.event_status[event.status] }}: {% endunless %} {{ event.name }}</title>
+      <link>{{event.url | escape }}</link>
+      <time>{{ event.starts_at | date: "%l:%M %p" | downcase | strip }}</time>
+      <start-date>{{event.starts_at | date: "%d"}}</start-date>
+      <start-month>{{ event.starts_at | date: "%b" }}</start-month>
+      <start-day>{{ event.starts_at | date: "%a" }}</start-day>
+      <description>{{ event.description_text | unescape | escape }}</description>
+      <location>{{ event.place.visible_name }}{% if event.room_number %} {{ event.room_number }}{% endif %}</location>
+      <images>
+      <thumbnail>{{ event.photo.card | escape | default: event.photo.huge }}</thumbnail>
+      </images>
+      <registration>{{ event.ticket_url | escape }}</registration>
+      <departments>
+       {% for department in event.departments %}
+         <department>{{ department.name | strip }}</department>
+       {% endfor %}
+      </departments>
+    </item>
+  {% endfor %}
+</events>
+
+https://calendar.fordham.edu/widget/view?schools=fordham&types=53559865482168&days=31&num=50&experience=inperson&format=html&template=matt-test-feed
+https://calendar.fordham.edu/admin/widgets/preview/view?schools=fordham&types=53559865482168&days=31&num=50&experience=inperson&format=html&template=matt-test-feed
+
+
+'https://localist-images.azureedge.net/photos/54045703961300/huge/693c1edac35cd1baa5f3c08d4149c55bfd599212.jpg'
