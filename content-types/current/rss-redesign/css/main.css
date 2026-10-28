@@ -7,19 +7,6 @@
   margin-top: 1rem;
 }
 
-.fordham-rebrand.events .event__card {
-  justify-content: space-between;
-  height: 419px;
-  border: 1px solid #d3d3d3;
-  border-radius: 4px;
-  background-color: #fff;
-  padding: 10px;
-  /* box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1); */
-}
-
-.fordham-rebrand.events .event__card:hover {
-  color: #000 !important;
-}
 
 .fordham-rebrand.events .event__card .event__card__img {
   min-height: 160px;
@@ -70,7 +57,7 @@
 }
 
 .fordham-rebrand.events .event__card .event__card__content {
-  margin-top: 28px;
+  margin-top: 40px;
   min-height: 80px;
 }
 
@@ -87,7 +74,7 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 10px;
-  min-height: 80px;
+  min-height: 100px;
 }
 
 .fordham-rebrand.events .event__card .loc-time .time,
@@ -109,8 +96,55 @@
   line-height: 130%; /* 20.8px */
 }
 
-.fordham-rebrand.events .glide__arrow  {
- background-color: #dd3224;
- padding: 10px 20px;
- margin: 0 !important
+.fordham-rebrand.events .glide__arrow {
+  background-color: #dd3224;
+  padding: 10px 20px;
+  margin: 0 !important;
+}
+
+.fordham-rebrand.events .event__card {
+  max-width: 315px;
+  justify-content: space-between;
+  height: 419px;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 10px;
+  transform-origin: bottom center;
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    /* slight overshoot = "pop" */ box-shadow 0.35s ease;
+  will-change: transform;
+}
+
+/* HOVER EFFECTS */
+.fordham-rebrand.events .event__card:hover {
+  transform: scale(1.006) translateY(-1px);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.06),   /* tight shadow at the card's edge */
+    0 4px 12px rgba(0, 0, 0, 0.08);  /* soft spread underneath */
+  z-index: 2;
+}
+
+/* 2. The card right after it */
+.fordham-rebrand.events .event__card:hover + .event__card {
+  transform: scale(1.06) translateY(-5px);
+  z-index: 1;
+}
+
+/* 3. The card right before it */
+.fordham-rebrand.events .event__card:has(+ .event-card:hover) {
+  transform: scale(1.06) translateY(-5px);
+  z-index: 1;
+}
+
+/* Optional: a softer step two cards away */
+.fordham-rebrand.events .event__card:hover + .event__card + .event__card,
+.fordham-rebrand.events .event__card:has(+ .event__card + .event__card:hover) {
+  transform: scale(1.02);
+}
+
+/* Skip the motion for people who turn it off */
+@media (prefers-reduced-motion: reduce) {
+  .event-card { transition: none; }
 }
