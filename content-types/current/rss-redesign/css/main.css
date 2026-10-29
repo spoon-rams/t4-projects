@@ -100,6 +100,7 @@
   background-color: #dd3224;
   padding: 10px 20px;
   margin: 0 !important;
+  border-radius: 2px;
 }
 
 .fordham-rebrand.events .event__card {
@@ -126,21 +127,31 @@
   z-index: 2;
 }
 
-/* 2. The card right after it */
-.fordham-rebrand.events .event__card:hover + .event__card {
-  transform: scale(1.06) translateY(-5px);
-  z-index: 1;
+
+
+/* FOR NO IMAGE */
+.fordham-rebrand.events.no-thumbnails .event__card:hover {
+  transform: scale(1.01) translateY(-1px);
 }
 
-/* 3. The card right before it */
-.fordham-rebrand.events .event__card:has(+ .event-card:hover) {
-  transform: scale(1.06) translateY(-5px);
-  z-index: 1;
+.fordham-rebrand.events.no-thumbnails .event__card {
+  justify-content: flex-start;
+  height: 300px;
 }
 
-/* Optional: a softer step two cards away */
-.fordham-rebrand.events .event__card:hover + .event__card + .event__card,
-.fordham-rebrand.events .event__card:has(+ .event__card + .event__card:hover) {
-  transform: scale(1.02);
+.fordham-rebrand.events.no-thumbnails .event__card .event__card__date {
+  position: static;
 }
+
+.fordham-rebrand.events.no-thumbnails .event__card .event__card__content {
+  margin: 0;
+} 
+
+.fordham-rebrand.events.no-thumbnails .event__card .link {
+  margin-top: auto;
+}
+
+
+
+
 
