@@ -144,7 +144,3 @@
   transform: scale(1.02);
 }
 
-/* Skip the motion for people who turn it off */
-@media (prefers-reduced-motion: reduce) {
-  .event-card { transition: none; }
-}
