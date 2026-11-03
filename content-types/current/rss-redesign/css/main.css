@@ -61,6 +61,10 @@
   min-height: 100px;
 }
 
+.fordham-rebrand.events .event__card.no-text-link .event__card__content {
+  margin-top: 15px;
+}
+
 .fordham-rebrand.events .event__card .event__card__content .title {
   color: #7e072a;
   /* font-family: "Modern Gothic"; */
