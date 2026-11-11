@@ -1,0 +1,27 @@
+@media only screen and (max-width: 991px) {
+  .founders-slider .slide-wrapper {
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .founders-slider .slides-container {
+    overflow-y: hidden;
+  }
+  .founders-slider .slide-wrapper {
+    margin: 0 !important;
+  }
+
+  .founders-slider .slide .row {
+    height: 100%;
+    margin: 0 !important;
+  }
+
+  .founders-slider .slide-arrow.next {
+    right: 15px !important;
+  }
+
+  .founders-slider .slide-arrow.prev {
+    left: 15px !important;
+  }
+}
