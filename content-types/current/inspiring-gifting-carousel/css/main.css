@@ -11,12 +11,12 @@ body {
 
 /* MAIN CSS */
 
-.founders-slider .slider-wrapper {
+.fordham-slider-carousel .slider-wrapper {
   position: relative;
   overflow: hidden;
 }
 
-.founders-slider .slides-container {
+.fordham-slider-carousel .slides-container {
   display: flex;
   overflow: hidden;
   /* CHANGES FOR AUTO INFINITE PLAY */
@@ -25,11 +25,11 @@ body {
   height: fit-content;
 }
 
-.founders-slider .slide .row {
+.fordham-slider-carousel .slide .row {
   height: 100%;
 }
 
-.founders-slider .slide-arrow {
+.fordham-slider-carousel .slide-arrow {
   position: absolute;
   display: flex;
   top: 0;
@@ -48,38 +48,38 @@ body {
   z-index: 1;
 }
 
-.founders-slider .slide-arrow:hover,
-.founders-slider .slide-arrow:focus {
+.fordham-slider-carousel .slide-arrow:hover,
+.fordham-slider-carousel .slide-arrow:focus {
   opacity: 1;
 }
 
-.founders-slider .slide-arrow.prev {
+.fordham-slider-carousel .slide-arrow.prev {
   left: 0;
   padding-top: 0.5rem;
   padding-left: 0.5rem;
   border-radius: 0 5rem 5rem 0 !important;
 }
 
-.founders-slider .slide-arrow.next {
+.fordham-slider-carousel .slide-arrow.next {
   right: 0;
   padding-top: 0.5rem;
   padding-left: 1.25rem;
   border-radius: 5rem 0 0 5rem !important;
 }
 
-.founders-slider .slides-container {
+.fordham-slider-carousel .slides-container {
   padding: 0 !important;
   margin: 0 !important;
 }
 
-.founders-slider .slide {
+.fordham-slider-carousel .slide {
   /* flex: 1 0 100%; */
   /* CHANGES FOR AUTO INFINITE PLAY */
   flex: 1 0 auto;
   scroll-snap-align: center;
 }
 
-.founders-slider .slide img {
+.fordham-slider-carousel .slide img {
   width: 100%;
   object-fit: cover;
   aspect-ratio: 16/9;
@@ -87,13 +87,13 @@ body {
 }
 
 /* SLIDE INDICATORS */
-.founders-slider .slider-indicators {
+.fordham-slider-carousel .slider-indicators {
   display: flex;
   justify-content: center;
   margin: 1rem 0;
 }
 
-.founders-slider .slider-indicator {
+.fordham-slider-carousel .slider-indicator {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -103,13 +103,13 @@ body {
   transition: background-color 0.3s;
 }
 
-.founders-slider .slider-indicator.active {
+.fordham-slider-carousel .slider-indicator.active {
   background-color: #900028; /* Active indicator color */
 }
 
 /* FOUNDERS CONTENT SECTION */
 
-.founders-slider .slide .content {
+.fordham-slider-carousel .slide .content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -119,7 +119,7 @@ body {
   padding: 5px 15px;
 }
 
-.founders-slider .slide .content .title span {
+.fordham-slider-carousel .slide .content .title span {
   font-weight: 600;
   font-size: 0.75rem;
   line-height: 1.4;
@@ -128,7 +128,7 @@ body {
   color: #fff;
 }
 
-.founders-slider .slide .content .description p {
+.fordham-slider-carousel .slide .content .description p {
   font-weight: 400;
   font-size: 0.75rem;
   line-height: 1.4;
