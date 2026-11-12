@@ -82,14 +82,16 @@ body {
 .fordham-slider-carousel .slide {
   /* flex: 1 0 100%; */
   /* CHANGES FOR AUTO INFINITE PLAY */
-  flex: 0 0 33.333%;
+  flex: 0 0 24%;
   scroll-snap-align: center;
-  height: 600px;
+  height: 620px;
   margin: 0 10px
 }
 
 .fordham-slider-carousel .slide .col-lg-12 {
-    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    max-height: 580px;
 }
 
 .fordham-slider-carousel .slide img {
@@ -125,29 +127,35 @@ body {
 .fordham-slider-carousel .slide .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 100%;
   min-height: 75px;
-  background: #900028;
-  padding: 5px 15px;
+  padding: 5px px;
 }
 
-.fordham-slider-carousel .slide .content .title span {
-  font-weight: 600;
-  font-size: 0.75rem;
+.fordham-slider-carousel .slide .text-content .title span {
+  font-weight: 500;
+  font-size: .95rem;
   line-height: 1.4;
   letter-spacing: 0.07rem;
-  text-transform: uppercase;
-  color: #fff;
+  color: #000;
 }
 
-.fordham-slider-carousel .slide .content .description p {
+.fordham-slider-carousel .slide .text-content .description p {
   font-weight: 400;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   line-height: 1.4;
   letter-spacing: 0.07rem;
-  color: #fff;
+  color: #000;
+  padding-bottom: 5px;
+  margin-bottom: 0 !important;
 }
+
+.fordham-slider-carousel .slide .content .cta-button .btn {
+    border-radius: 4px;
+    background-color: #DD2334;
+}
+
+
 
 /* TEST QUOTE SLIDER */
 /* .row.quote {
