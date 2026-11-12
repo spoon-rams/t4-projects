@@ -4,6 +4,12 @@
 
 /* DEV - Universal */
 
+/* TEMP */
+
+.fordham-slider-carousel {
+    margin-bottom: 100px;
+}
+
 html,
 body {
   background-color: white;
@@ -23,6 +29,7 @@ body {
   /* scroll-snap-type: x mandatory;
   scroll-behavior: smooth; */
   height: fit-content;
+  max-height: 600px;
 }
 
 .fordham-slider-carousel .slide .row {
@@ -75,15 +82,21 @@ body {
 .fordham-slider-carousel .slide {
   /* flex: 1 0 100%; */
   /* CHANGES FOR AUTO INFINITE PLAY */
-  flex: 1 0 auto;
+  flex: 0 0 33.333%;
   scroll-snap-align: center;
+  height: 600px;
+  margin: 0 10px
+}
+
+.fordham-slider-carousel .slide .col-lg-12 {
+    max-height: 600px;
 }
 
 .fordham-slider-carousel .slide img {
   width: 100%;
   object-fit: cover;
   aspect-ratio: 16/9;
-  height: auto;
+  height: 600px;
 }
 
 /* SLIDE INDICATORS */
