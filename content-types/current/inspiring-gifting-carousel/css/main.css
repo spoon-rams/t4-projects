@@ -39,11 +39,11 @@ body {
 .fordham-slider-carousel .slide-arrow {
   position: absolute;
   display: flex;
-  top: 0;
+  top: -70px;
   bottom: 0;
   margin: auto;
   height: 5rem;
-  background-color: #900028;
+  background-color: #DD2334;
   color: white;
   border: none;
   width: 3rem;
@@ -61,7 +61,7 @@ body {
 }
 
 .fordham-slider-carousel .slide-arrow.prev {
-  left: 0;
+  left: 11px;
   padding-top: 0.5rem;
   padding-left: 0.5rem;
   border-radius: 0 5rem 5rem 0 !important;
@@ -119,7 +119,7 @@ body {
 }
 
 .fordham-slider-carousel .slider-indicator.active {
-  background-color: #900028; /* Active indicator color */
+  background-color: #DD2334; /* Active indicator color */
 }
 
 /* FOUNDERS CONTENT SECTION */
@@ -155,7 +155,19 @@ body {
     background-color: #DD2334;
 }
 
+.fordham-slider-carousel .slide .col-lg-12 .coming-soon {
+    position: absolute;
+    background-color: #DD2334;
+    top: 5px;
+    right: 5px;
+    margin-right: 15px;
+    text-align: center;
+    width: auto;
+    padding: 5px 10px;
+    color: #fff;
+    width: 140px;
 
+}
 
 /* TEST QUOTE SLIDER */
 /* .row.quote {
