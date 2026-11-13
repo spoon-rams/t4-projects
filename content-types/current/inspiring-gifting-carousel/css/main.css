@@ -7,7 +7,7 @@
 /* TEMP */
 
 .fordham-slider-carousel {
-    margin-bottom: 100px;
+  margin-bottom: 0px;
 }
 
 html,
@@ -43,7 +43,7 @@ body {
   bottom: 0;
   margin: auto;
   height: 5rem;
-  background-color: #DD2334;
+  background-color: #dd2334;
   color: white;
   border: none;
   width: 3rem;
@@ -61,7 +61,7 @@ body {
 }
 
 .fordham-slider-carousel .slide-arrow.prev {
-  left: 11px;
+  left: 10px;
   padding-top: 0.5rem;
   padding-left: 0.5rem;
   border-radius: 0 5rem 5rem 0 !important;
@@ -82,16 +82,31 @@ body {
 .fordham-slider-carousel .slide {
   /* flex: 1 0 100%; */
   /* CHANGES FOR AUTO INFINITE PLAY */
-  flex: 0 0 24%;
   scroll-snap-align: center;
   height: 620px;
-  margin: 0 10px
+  margin: 0 10px;
+}
+
+.fordham-slider-carousel .slide.four-slide-view {
+  flex: 0 0 24.5%;
+}
+
+.fordham-slider-carousel .slide.three-slide-view {
+  flex: 0 0 33.333%;
+}
+
+.fordham-slider-carousel .slide.two-slide-view {
+  flex: 0 0 50%;
+}
+
+.fordham-slider-carousel .slide.one-slide-view {
+    flex: 0 0 100%;
 }
 
 .fordham-slider-carousel .slide .col-lg-12 {
-    display: flex;
-    flex-direction: column;
-    max-height: 580px;
+  display: flex;
+  flex-direction: column;
+  max-height: 580px;
 }
 
 .fordham-slider-carousel .slide img {
@@ -119,7 +134,7 @@ body {
 }
 
 .fordham-slider-carousel .slider-indicator.active {
-  background-color: #DD2334; /* Active indicator color */
+  background-color: #dd2334; /* Active indicator color */
 }
 
 /* FOUNDERS CONTENT SECTION */
@@ -134,7 +149,7 @@ body {
 
 .fordham-slider-carousel .slide .text-content .title span {
   font-weight: 500;
-  font-size: .95rem;
+  font-size: 0.95rem;
   line-height: 1.4;
   letter-spacing: 0.07rem;
   color: #000;
@@ -151,22 +166,21 @@ body {
 }
 
 .fordham-slider-carousel .slide .content .cta-button .btn {
-    border-radius: 4px;
-    background-color: #DD2334;
+  border-radius: 4px;
+  background-color: #dd2334;
 }
 
 .fordham-slider-carousel .slide .col-lg-12 .coming-soon {
-    position: absolute;
-    background-color: #DD2334;
-    top: 5px;
-    right: 5px;
-    margin-right: 15px;
-    text-align: center;
-    width: auto;
-    padding: 5px 10px;
-    color: #fff;
-    width: 140px;
-
+  position: absolute;
+  background-color: #dd2334;
+  top: 5px;
+  right: 5px;
+  margin-right: 15px;
+  text-align: center;
+  width: auto;
+  padding: 5px 10px;
+  color: #fff;
+  width: 140px;
 }
 
 /* TEST QUOTE SLIDER */
